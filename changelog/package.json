@@ -1,0 +1,48 @@
+{
+  "name": "@mediatool/changelog-ui",
+  "version": "1.0.0",
+  "description": "Mediatool Changelog UI",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "start-storybook -s node_modules/mt-ui/dist -p 6007"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-typescript": "^7.15.0",
+    "@babel/register": "^7.15.3",
+    "@material-ui/styles": "^4.11.4",
+    "@mediatool/eslint-config-mediatool": "^0.2.1",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/react": "^6.3.8",
+    "@testing-library/react": "^12.1.1",
+    "@types/chai": "^4.2.22",
+    "@types/chai-spies": "^1.0.3",
+    "@types/mocha": "^9.0.0",
+    "@types/react-dom": "^17.0.9",
+    "chai": "^4.3.4",
+    "chai-spies": "^1.0.0",
+    "global-jsdom": "^8.2.0",
+    "jsdom": "^17.0.0",
+    "less": "^4.0.0",
+    "less-loader": "^7.3.0",
+    "mocha": "^9.1.2",
+    "mt-ui": "^5.2.1",
+    "rollup": "^2.57.0",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "babel-loader": "^8.2.2",
+    "babel-plugin-root-import": "^6.6.0"
+  }
+}
