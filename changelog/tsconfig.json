@@ -16,9 +16,6 @@
     "jsx": "react",
     "typeRoots": [ "@types" ],
     "types": [ "mocha", "chai-spies" ],
-    "paths": {
-      "@lib/*": [ "./lib/*" ]
-    }
   },
   "include": [
     "lib/**/*",
