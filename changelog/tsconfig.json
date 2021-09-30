@@ -20,7 +20,8 @@
   "include": [
     "lib/**/*",
     "test/**/*",
-    "index.ts"
+    "index.ts",
+    "@types"
   ],
   "exclude": [
     "node_modules",
