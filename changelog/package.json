@@ -4,6 +4,7 @@
   "description": "Mediatool Changelog UI",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js"
@@ -12,7 +13,8 @@
   "license": "MIT",
   "scripts": {
     "start": "start-storybook -s node_modules/mt-ui/dist -p 6007",
-    "test": "mocha --config test/.mocharc.component.js lib/**/*-test.tsx"
+    "test": "mocha --config test/.mocharc.component.js lib/**/*-test.tsx",
+    "build": "rollup -c rollup.config.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
@@ -22,6 +24,10 @@
     "@babel/register": "^7.15.3",
     "@material-ui/styles": "^4.11.4",
     "@mediatool/eslint-config-mediatool": "^0.2.1",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "@rollup/plugin-typescript": "^8.2.5",
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-links": "^6.3.8",
@@ -45,5 +51,6 @@
   "dependencies": {
     "babel-loader": "^8.2.2",
     "babel-plugin-root-import": "^6.6.0"
-  }
+  },
+  "files": ["dist"]
 }
