@@ -1,6 +1,6 @@
 {
   "name": "@mediatool/changelog-uii",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mediatool Changelog UI",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -14,7 +14,7 @@
   "scripts": {
     "start": "start-storybook -s node_modules/mt-ui/dist -p 6007",
     "test": "mocha --config test/.mocharc.component.js lib/**/*-test.tsx",
-    "build": "rollup -c rollup.config.js"
+    "build": "rm -rf dist && rollup -c rollup.config.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
