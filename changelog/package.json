@@ -24,8 +24,8 @@
     "@babel/register": "^7.15.3",
     "@material-ui/styles": "^4.11.4",
     "@mediatool/eslint-config-mediatool": "^0.2.1",
-    "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-image": "^2.1.1",
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@rollup/plugin-typescript": "^8.2.5",
     "@storybook/addon-actions": "^6.3.8",
@@ -52,5 +52,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-root-import": "^6.6.0"
   },
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ]
 }
