@@ -1,6 +1,6 @@
 {
   "name": "@mediatool/changelog-uii",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Mediatool Changelog UI",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -14,7 +14,8 @@
   "scripts": {
     "start": "start-storybook -s node_modules/mt-ui/dist -p 6007",
     "test": "mocha --config test/.mocharc.component.js lib/**/*-test.tsx",
-    "build": "rm -rf dist && rollup -c rollup.config.js"
+    "build": "rm -rf dist && rollup -c rollup.config.js",
+    "postbuild": "rm -rf dist/style.js && rm -rf dist/style.js.map"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
@@ -43,9 +44,12 @@
     "jsdom": "^17.0.0",
     "less": "^4.0.0",
     "less-loader": "^7.3.0",
+    "less-plugin-npm-import": "^2.1.0",
     "mocha": "^9.1.2",
     "mt-ui": "^5.2.1",
+    "postcss": "^8.3.8",
     "rollup": "^2.57.0",
+    "rollup-plugin-postcss": "^4.0.1",
     "typescript": "^4.4.3"
   },
   "dependencies": {
