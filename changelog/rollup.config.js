@@ -6,7 +6,7 @@ import image from '@rollup/plugin-image'
 // import babel from '@rollup/plugin-babel'
 import pkg from './package.json'
 
-const external = [ ...Object.keys(pkg.devDependencies), ...Object.keys(pkg.dependencies) ]
+const external = [ ...Object.keys(pkg.devDependencies), ...Object.keys(pkg.dependencies), 'react', 'react-dom' ]
 const extensions = [ '.js', '.jsx', '.ts', '.tsx' ]
 
 export default {
