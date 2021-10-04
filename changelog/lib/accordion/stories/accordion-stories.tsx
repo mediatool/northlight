@@ -1,12 +1,12 @@
 import React, { ComponentProps } from 'react'
 import { Story } from '@storybook/react'
 
-import { Accordion as AccordionComp, AccordionProps } from '../components';
+import { Accordion as AccordionComp, AccordionProps } from '../components'
 import { EntrySummary } from '../../entry-summary'
 
 export default {
   title: 'Accordion',
-  component: AccordionComp
+  component: AccordionComp,
 }
 
 const Description = () => (
@@ -18,15 +18,15 @@ const Description = () => (
 
 const Template: Story<ComponentProps<typeof AccordionComp>> = (args: AccordionProps) => (
   <AccordionComp
-    {...args}
+    { ...args }
     summary={
       <EntrySummary
-        avatar='https://filmtopp.imgix.net/media/2021/03/Avatar%201.jpg?s=ac6320a9ae319cbabdb5e65c06a110db'
-        icon='added'
-        description={<Description />}
+        avatar="https://filmtopp.imgix.net/media/2021/03/Avatar%201.jpg?s=ac6320a9ae319cbabdb5e65c06a110db"
+        icon="added"
+        description={ <Description /> }
       />
     }
-    onExpand={() => console.log('expanded')}
+    onExpand={ () => console.log('expanded') }
   >
     <p>This is expanded and works</p>
   </AccordionComp>

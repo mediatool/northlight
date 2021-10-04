@@ -13,8 +13,9 @@ export const ChangelogIcon = ({ height = 40, icon, ...rest }: ChangelogIconProps
 
   return (
     <img
-      src={iconSrc}
-      height={height}
+      src={ iconSrc }
+      height={ height }
+      alt={ icon }
       { ...rest }
     />
   )

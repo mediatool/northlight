@@ -11,21 +11,21 @@ export interface EntrySummaryProps {
 export const EntrySummary = ({
   avatar,
   description,
-  icon
+  icon,
 }: EntrySummaryProps) => (
   <>
     <div className="changelog-entry-summary__icon">
-      <ChangelogIcon height={44} icon={icon} />
+      <ChangelogIcon height={ 44 } icon={ icon } />
     </div>
     <div className="changelog-entry-summary__description">
-      {description}
+      { description }
     </div>
     <div className="changelog-entry-summary__avatar">
       <MTImage
-        round
-        item={{ image: avatar }}
-        width={44}
-        height={44}
+        round={ true }
+        item={ { image: avatar } }
+        width={ 44 }
+        height={ 44 }
       />
     </div>
   </>

@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
 import { MTIcon } from 'mt-ui'
 
 export interface AccordionProps {
@@ -15,16 +15,16 @@ export const Accordion = ({ summary, children, onExpand }: AccordionProps) => {
       onExpand?.()
     }
 
-    setIsOpen((isOpen) => !isOpen)
+    setIsOpen((open) => !open)
   }
 
   const baseClass = 'changelog-accordion'
-  const className = [baseClass, isOpen ? 'changelog-accordion--open' : ''].join(' ')
+  const className = [ baseClass, isOpen ? 'changelog-accordion--open' : '' ].join(' ')
 
   return (
     <div
       onClick={ toggle }
-      className={className}
+      className={ className }
       data-testid="changelog-accordion-root"
     >
       <div className="summary-wrapper">
@@ -39,10 +39,10 @@ export const Accordion = ({ summary, children, onExpand }: AccordionProps) => {
         </div>
       </div>
       { isOpen && (
-        <div className='content' data-testid="changelog-accordion-content">
-          {children}
+        <div className="content" data-testid="changelog-accordion-content">
+          { children }
         </div>
-      )}
+      ) }
     </div>
   )
 }

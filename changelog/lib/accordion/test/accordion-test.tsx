@@ -1,7 +1,9 @@
 import React from 'react'
-import { expect } from 'chai'
+import { assert } from 'chai'
 import { render, screen } from '@testing-library/react'
 import { Accordion } from '../components'
+
+const { isOk, equal } = assert
 
 describe('Accordion', () => {
   it('should render itself and summary', () => {
@@ -10,12 +12,13 @@ describe('Accordion', () => {
     )
 
     render(
-      <Accordion summary={<Summary />}>
+      <Accordion summary={ <Summary /> }>
+        <p>Children</p>
       </Accordion>
     )
 
-    expect(screen.getByTestId('changelog-accordion-root')).to.be.ok
-    expect(screen.getByTestId('test-summary')).to.be.ok
+    isOk(screen.getByTestId('changelog-accordion-root'))
+    isOk(screen.getByTestId('test-summary'))
   })
 
   it('should render content when expanded', () => {
@@ -27,7 +30,7 @@ describe('Accordion', () => {
 
     screen.getByTestId('changelog-accordion-root').click()
 
-    expect(screen.getByTestId('changelog-accordion-content')).to.be.ok
-    expect(screen.getByTestId('mock-content').textContent).to.equal('Mock')
+    isOk(screen.getByTestId('changelog-accordion-content'))
+    equal(screen.getByTestId('mock-content').textContent, 'Mock')
   })
 })
