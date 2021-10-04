@@ -36,7 +36,7 @@ export default {
       use: [ [ 'less', {
         plugins: [ new NpmImport({ prefix: '~' }) ],
       } ] ],
-      extract: 'style.css',
+      extract: 'style.less',
     }),
   ],
 }
