@@ -5,11 +5,11 @@ import { ChangelogIcon, IconType } from '../common'
 export interface EntrySummaryProps {
   icon: IconType
   description: ReactNode
-  avatar: string
+  actor: any
 }
 
 export const EntrySummary = ({
-  avatar,
+  actor,
   description,
   icon,
 }: EntrySummaryProps) => (
@@ -23,7 +23,7 @@ export const EntrySummary = ({
     <div className="changelog-entry-summary__avatar">
       <MTImage
         round={ true }
-        item={ { image: avatar } }
+        item={ actor }
         width={ 44 }
         height={ 44 }
       />

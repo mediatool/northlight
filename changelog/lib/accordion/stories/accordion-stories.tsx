@@ -16,12 +16,22 @@ const Description = () => (
   </div>
 )
 
+const user = {
+  _id: '8870370244424493',
+  email: 'adam@mediatool.com',
+  firstName: 'Adam',
+  lastName: 'Advertiser',
+  signedUpAt: '2021-10-05T14:15:36:774+02:00',
+  activatedAt: '2021-10-05T14:15:36:774+02:00',
+  homeOrganization: '558666952267906',
+}
+
 const Template: Story<ComponentProps<typeof AccordionComp>> = (args: AccordionProps) => (
   <AccordionComp
     { ...args }
     summary={
       <EntrySummary
-        avatar="https://filmtopp.imgix.net/media/2021/03/Avatar%201.jpg?s=ac6320a9ae319cbabdb5e65c06a110db"
+        actor={ user }
         icon="added"
         description={ <Description /> }
       />
