@@ -1,10 +1,10 @@
 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="22" cy="22" r="21" fill="white" stroke="#F6504B" stroke-width="2"/>
 <circle cx="22.0002" cy="22" r="16.9231" fill="#F6504B"/>
-<path d="M29.2718 17.64V28.92C29.2718 29.4186 29.0686 29.8968 28.7069 30.2494C28.3452 30.6019 27.8547 30.8 27.3432 30.8H17.0575C16.546 30.8 16.0554 30.6019 15.6938 30.2494C15.3321 29.8968 15.1289 29.4186 15.1289 28.92V17.64" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
-<path d="M22.2002 20.7733V27.04" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
-<path d="M18.9858 20.7733V27.04" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
-<path d="M25.4146 20.7733V27.04" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
-<path d="M18.9858 15.1333V12H25.4144V15.1333" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M31.2002 15.1333H13.2002" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M29.0716 18.4V29.2C29.0716 29.6774 28.8684 30.1353 28.5067 30.4728C28.145 30.8104 27.6545 31 27.143 31H16.8573C16.3458 31 15.8553 30.8104 15.4936 30.4728C15.1319 30.1353 14.9287 29.6774 14.9287 29.2V18.4" stroke="white" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M22 21.4V27.4" stroke="white" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M18.7856 21.4V27.4" stroke="white" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M25.2144 21.4V27.4" stroke="white" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M18.7856 16V13H25.2142V16" stroke="white" stroke-width="1.4" stroke-miterlimit="10"/>
+<path d="M31 16H13" stroke="white" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="square"/>
 </svg>

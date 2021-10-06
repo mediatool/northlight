@@ -1,7 +1,16 @@
 import React, { HTMLAttributes } from 'react'
 import * as icons from './icons'
 
-export type IconType = 'added' | 'modified' | 'deleted'
+export type IconType =
+  'added'
+  | 'modified'
+  | 'deleted'
+  | 'approved'
+  | 'approvalRequested'
+  | 'campaignCreated'
+  | 'denied'
+  | 'orgCreated'
+  | 'pending'
 
 export type ChangelogIconProps = {
   height: number
