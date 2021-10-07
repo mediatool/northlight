@@ -1,0 +1,22 @@
+.activity-item {
+  display: grid;
+  padding: 1.5rem 2.4rem;
+  transition: max-height 1s linear;
+
+  & .summary-wrapper {
+    display: flex;
+    flex: 3;
+
+    & .summary {
+      display: flex;
+      flex: 1;
+    }
+  }
+}
+
+.activity-item-time {
+  width: 9rem;
+  margin-top: 1.2rem;
+  color: @gray-4;
+  margin-right: 2.5rem;
+}
