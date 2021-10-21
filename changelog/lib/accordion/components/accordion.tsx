@@ -23,7 +23,6 @@ export const Accordion = ({ summary, children, onExpand }: AccordionProps) => {
 
   return (
     <div
-      onClick={ toggle }
       className={ className }
       data-testid="changelog-accordion-root"
     >
@@ -31,7 +30,11 @@ export const Accordion = ({ summary, children, onExpand }: AccordionProps) => {
         <div className="summary">
           { summary }
         </div>
-        <div className="caret-icon">
+        <div
+          className="caret-icon"
+          onClick={ toggle }
+          data-testid="changelog-accordion-caret-icon"
+        >
           <MTIcon
             className="icon"
             type={ isOpen ? 'caret-up' : 'caret-down' }

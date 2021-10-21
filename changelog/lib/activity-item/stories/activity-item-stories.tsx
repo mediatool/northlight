@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react'
 import { Story } from '@storybook/react'
 
-import { ActivityItem as ActivityItemComp, ActivityItemProps, ActivityItemTime } from '../components'
+import { ActivityItem as ActivityItemComp, ActivityItemProps } from '../components'
 import { EntrySummary } from '../../entry-summary'
 
 export default {
@@ -28,6 +28,18 @@ const DescriptionLong = () => (
   </div>
 )
 
+const ActivityItemTime = () => (
+  <div style={ {
+    width: '9rem',
+    marginTop: ' 1.2rem',
+    color: '#A4B7C3',
+    marginRight: '2.5rem',
+  } }
+  >
+    <p>2021-10-03</p>
+  </div>
+)
+
 const user = {
   _id: '8870370244424493',
   email: 'adam@mediatool.com',
@@ -43,11 +55,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
     <ActivityItemComp
       { ...args }
       time={
-        <ActivityItemTime
-          time="2021-10-05T10:35:30:026+00:00"
-          timeFormat="YYYY-MM-DDTHH:mm:ssZ"
-          toolTipTime="1 month ago"
-        />
+        <ActivityItemTime />
       }
       summary={
         <EntrySummary
@@ -60,11 +68,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
     <ActivityItemComp
       { ...args }
       time={
-        <ActivityItemTime
-          time="2021-06-05T10:35:30:026+00:00"
-          timeFormat="YYYY-MM-DDTHH:mm:ssZ"
-          toolTipTime="1 month ago"
-        />
+        <ActivityItemTime />
       }
       summary={
         <EntrySummary
@@ -77,11 +81,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
     <ActivityItemComp
       { ...args }
       time={
-        <ActivityItemTime
-          time="2021-02-05T10:35:30:026+00:00"
-          timeFormat="YYYY-MM-DDTHH:mm:ssZ"
-          toolTipTime="1 month ago"
-        />
+        <ActivityItemTime />
       }
       summary={
         <EntrySummary
@@ -94,11 +94,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
     <ActivityItemComp
       { ...args }
       time={
-        <ActivityItemTime
-          time="2020-12-05T10:35:30:026+00:00"
-          timeFormat="YYYY-MM-DDTHH:mm:ssZ"
-          toolTipTime="1 month ago"
-        />
+        <ActivityItemTime />
       }
       summary={
         <EntrySummary
@@ -111,11 +107,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
     <ActivityItemComp
       { ...args }
       time={
-        <ActivityItemTime
-          time="2020-09-05T10:35:30:026+00:00"
-          timeFormat="YYYY-MM-DDTHH:mm:ssZ"
-          toolTipTime="1 month ago"
-        />
+        <ActivityItemTime />
       }
       summary={
         <EntrySummary
@@ -128,11 +120,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
     <ActivityItemComp
       { ...args }
       time={
-        <ActivityItemTime
-          time="2020-06-05T10:35:30:026+00:00"
-          timeFormat="YYYY-MM-DDTHH:mm:ssZ"
-          toolTipTime="1 month ago"
-        />
+        <ActivityItemTime />
       }
       summary={
         <EntrySummary
@@ -145,11 +133,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
     <ActivityItemComp
       { ...args }
       time={
-        <ActivityItemTime
-          time="2020-02-05T10:35:30:026+00:00"
-          timeFormat="YYYY-MM-DDTHH:mm:ssZ"
-          toolTipTime="1 month ago"
-        />
+        <ActivityItemTime />
       }
       summary={
         <EntrySummary
@@ -179,11 +163,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
     <ActivityItemComp
       { ...args }
       time={
-        <ActivityItemTime
-          time="2020-02-05T10:35:30:026+00:00"
-          timeFormat="YYYY-MM-DDTHH:mm:ssZ"
-          toolTipTime="1 month ago"
-        />
+        <ActivityItemTime />
       }
       summary={
         <EntrySummary
@@ -196,11 +176,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
     <ActivityItemComp
       { ...args }
       time={
-        <ActivityItemTime
-          time="2020-02-05T10:35:30:026+00:00"
-          timeFormat="YYYY-MM-DDTHH:mm:ssZ"
-          toolTipTime="1 month ago"
-        />
+        <ActivityItemTime />
       }
       summary={
         <EntrySummary
@@ -213,11 +189,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
     <ActivityItemComp
       { ...args }
       time={
-        <ActivityItemTime
-          time="2020-02-05T10:35:30:026+00:00"
-          timeFormat="YYYY-MM-DDTHH:mm:ssZ"
-          toolTipTime="1 month ago"
-        />
+        <ActivityItemTime />
       }
       summary={
         <EntrySummary

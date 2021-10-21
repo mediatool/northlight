@@ -28,7 +28,7 @@ describe('Accordion', () => {
       </Accordion>
     )
 
-    screen.getByTestId('changelog-accordion-root').click()
+    screen.getByTestId('changelog-accordion-caret-icon').click()
 
     isOk(screen.getByTestId('changelog-accordion-content'))
     equal(screen.getByTestId('mock-content').textContent, 'Mock')
