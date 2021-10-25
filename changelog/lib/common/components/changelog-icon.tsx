@@ -11,6 +11,7 @@ export type IconType =
   | 'denied'
   | 'orgCreated'
   | 'pending'
+  | 'logo'
 
 export type ChangelogIconProps = {
   height: number

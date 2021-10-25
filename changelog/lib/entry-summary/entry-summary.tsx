@@ -21,12 +21,16 @@ export const EntrySummary = ({
       { description }
     </div>
     <div className="changelog-entry-summary__avatar">
-      <MTImage
-        round={ true }
-        item={ actor }
-        width={ 44 }
-        height={ 44 }
-      />
+      {
+        actor._id === 'system'
+        ? <ChangelogIcon height={ 44 } icon="logo" />
+        : <MTImage
+            round={ true }
+            item={ actor }
+            width={ 44 }
+            height={ 44 }
+        />
+      }
     </div>
   </>
 )

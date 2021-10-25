@@ -26,20 +26,39 @@ const user = {
   homeOrganization: '558666952267906',
 }
 
+const systemUser = {
+  _id: 'system',
+}
+
 const Template: Story<ComponentProps<typeof AccordionComp>> = (args: AccordionProps) => (
-  <AccordionComp
-    { ...args }
-    summary={
-      <EntrySummary
-        actor={ user }
-        icon="added"
-        description={ <Description /> }
-      />
-    }
-    onExpand={ () => console.log('expanded') }
-  >
-    <p>This is expanded and works</p>
-  </AccordionComp>
+  <>
+    <AccordionComp
+      { ...args }
+      summary={
+        <EntrySummary
+          actor={ user }
+          icon="added"
+          description={ <Description /> }
+        />
+      }
+      onExpand={ () => console.log('expanded') }
+    >
+      <p>This is expanded and works</p>
+    </AccordionComp>
+    <AccordionComp
+      { ...args }
+      summary={
+        <EntrySummary
+          actor={ systemUser }
+          icon="added"
+          description={ <Description /> }
+        />
+      }
+      onExpand={ () => console.log('expanded') }
+    >
+      <p>This is expanded and works</p>
+    </AccordionComp>
+  </>
 )
 
 export const Accordion = Template.bind({})
