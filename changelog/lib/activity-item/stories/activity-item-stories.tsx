@@ -31,7 +31,7 @@ const DescriptionLong = () => (
 const ActivityItemTime = () => (
   <div style={ {
     width: '9rem',
-    marginTop: ' 1.2rem',
+    marginTop: '0.7rem',
     color: '#A4B7C3',
     marginRight: '2.5rem',
   } }
@@ -54,148 +54,148 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
   <>
     <ActivityItemComp
       { ...args }
-      time={
-        <ActivityItemTime />
-      }
       summary={
         <EntrySummary
           actor={ user }
           icon="added"
           description={ <Description /> }
+          time={
+            <ActivityItemTime />
+          }
         />
       }
     />
     <ActivityItemComp
       { ...args }
-      time={
-        <ActivityItemTime />
-      }
       summary={
         <EntrySummary
           actor={ user }
           icon="modified"
           description={ <Description /> }
+          time={
+            <ActivityItemTime />
+          }
         />
     }
     />
     <ActivityItemComp
       { ...args }
-      time={
-        <ActivityItemTime />
-      }
       summary={
         <EntrySummary
           actor={ user }
           icon="approved"
           description={ <DescriptionLong /> }
+          time={
+            <ActivityItemTime />
+          }
         />
     }
     />
     <ActivityItemComp
       { ...args }
-      time={
-        <ActivityItemTime />
-      }
       summary={
         <EntrySummary
           actor={ user }
           icon="denied"
           description={ <Description /> }
+          time={
+            <ActivityItemTime />
+          }
         />
     }
     />
     <ActivityItemComp
       { ...args }
-      time={
-        <ActivityItemTime />
-      }
       summary={
         <EntrySummary
           actor={ user }
           icon="deleted"
           description={ <Description /> }
+          time={
+            <ActivityItemTime />
+          }
         />
     }
     />
     <ActivityItemComp
       { ...args }
-      time={
-        <ActivityItemTime />
-      }
       summary={
         <EntrySummary
           actor={ user }
           icon="pending"
           description={ <Description /> }
+          time={
+            <ActivityItemTime />
+          }
         />
     }
     />
     <ActivityItemComp
       { ...args }
-      time={
-        <ActivityItemTime />
-      }
       summary={
         <EntrySummary
           actor={ user }
           icon="modified"
           description={ <Description /> }
+          time={
+            <ActivityItemTime />
+          }
         />
     }
     />
     <ActivityItemComp
       { ...args }
-      time={
-        <ActivityItemTime
-          time="2019-02-05T10:35:30:026+00:00"
-          timeFormat="YYYY-MM-DDTHH:mm:ssZ"
-          toolTipTime="1 month ago"
-        />
-      }
       summary={
         <EntrySummary
           actor={ user }
           icon="approvalRequested"
           description={ <Description /> }
+          time={
+            <ActivityItemTime
+              time="2019-02-05T10:35:30:026+00:00"
+              timeFormat="YYYY-MM-DDTHH:mm:ssZ"
+              toolTipTime="1 month ago"
+            />
+          }
         />
     }
     />
     <ActivityItemComp
       { ...args }
-      time={
-        <ActivityItemTime />
-      }
       summary={
         <EntrySummary
           actor={ user }
           icon="modified"
           description={ <Description /> }
+          time={
+            <ActivityItemTime />
+          }
         />
     }
     />
     <ActivityItemComp
       { ...args }
-      time={
-        <ActivityItemTime />
-      }
       summary={
         <EntrySummary
           actor={ user }
           icon="campaignCreated"
           description={ <Description /> }
+          time={
+            <ActivityItemTime />
+          }
         />
     }
     />
     <ActivityItemComp
       { ...args }
-      time={
-        <ActivityItemTime />
-      }
       summary={
         <EntrySummary
           actor={ user }
           icon="orgCreated"
           description={ <Description /> }
+          time={
+            <ActivityItemTime />
+          }
         />
     }
     />

@@ -6,21 +6,16 @@ import { ActivityItem } from '../components'
 const { isOk } = assert
 
 describe('ActivityItem', () => {
-  it('should render itself and time and summary', () => {
+  it('should render itself and summary', () => {
     const Summary = () => (
       <span data-testid="test-summary">It renders summary</span>
     )
 
-    const Time = () => (
-      <p data-testid="activity-item-time">It renders time</p>
-    )
-
     render(
-      <ActivityItem time={ <Time /> } summary={ <Summary /> } />
+      <ActivityItem summary={ <Summary /> } />
     )
 
     isOk(screen.getByTestId('activity-item-root'))
     isOk(screen.getByTestId('test-summary'))
-    isOk(screen.getByTestId('activity-item-time'))
   })
 })
