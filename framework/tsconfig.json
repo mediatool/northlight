@@ -1,0 +1,24 @@
+{
+  "include": [
+    "index.ts",
+    "lib/**/*",
+    "@types"
+  ],
+  "exclude": ["node_modules", "dist"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "declaration": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "declarationDir": "dist/types",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "esnext",
+    "lib": ["esnext", "dom"],
+    "typeRoots": ["@types"]
+  }
+}

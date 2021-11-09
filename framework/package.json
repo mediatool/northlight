@@ -1,0 +1,43 @@
+{
+  "name": "@mediatool/ui",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
+  "description": "UI framework to power all features",
+  "license": "MIT",
+  "author": "Mediatool",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "gen:theme-typings": "chakra-cli tokens ./dist/lib/theme/index.js",
+    "postinstall": "yarn gen:theme-typings",
+    "build": "rm -rf dist && rollup --config rollup.config.js",
+    "lint": "eslint --ext ts,tsx lib/",
+    "test": "yarn lint"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@chakra-ui/cli": "^1.5.3",
+    "@mediatool/eslint-config-mediatool": "^1.0.2",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-image": "^2.1.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "react": "^17.0.2",
+    "rollup": "^2.59.0",
+    "typescript": "^4.4.4",
+    "yarn-dedupe": "^0.2.3"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.12",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^4"
+  }
+}
