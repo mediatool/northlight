@@ -2,6 +2,7 @@
   "name": "@mediatool/ui",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "module": "./index.ts",
   "types": "dist/types/index.d.ts",
   "typings": "dist/types/index.d.ts",
   "description": "UI framework to power all features",
@@ -13,9 +14,10 @@
     }
   },
   "scripts": {
-    "gen:theme-typings": "chakra-cli tokens ./dist/lib/theme/index.js",
+    "gen:theme-typings": "chakra-cli tokens ./dist/index.js",
     "postinstall": "yarn gen:theme-typings",
     "build": "rm -rf dist && rollup --config rollup.config.js",
+    "postbuild": "yarn gen:theme-typings",
     "lint": "eslint --ext ts,tsx lib/",
     "test": "yarn lint"
   },
@@ -24,12 +26,13 @@
   ],
   "devDependencies": {
     "@chakra-ui/cli": "^1.5.3",
+    "@chakra-ui/theme-tools": "^1.2.3",
     "@mediatool/eslint-config-mediatool": "^1.0.2",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-image": "^2.1.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-typescript": "^8.3.0",
-    "react": "^17.0.2",
+    "@types/react-dom": "^17.0.11",
     "rollup": "^2.59.0",
     "typescript": "^4.4.4",
     "yarn-dedupe": "^0.2.3"
@@ -38,6 +41,8 @@
     "@chakra-ui/react": "^1.6.12",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "framer-motion": "^4"
+    "framer-motion": "^4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
