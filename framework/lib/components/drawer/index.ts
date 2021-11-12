@@ -6,6 +6,4 @@ export {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  DrawerProps,
-  DrawerContentProps,
 } from '@chakra-ui/react'

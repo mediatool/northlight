@@ -6,5 +6,4 @@ export {
   AlertDialogOverlay,
   AlertDialogContent,
   AlertDialogCloseButton,
-  AlertDialogProps,
 } from '@chakra-ui/react'

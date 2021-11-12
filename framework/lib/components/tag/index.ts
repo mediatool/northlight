@@ -4,7 +4,4 @@ export {
   TagLeftIcon,
   TagRightIcon,
   TagCloseButton,
-  TagProps,
-  TagLabelProps,
-  TagCloseButtonProps,
 } from '@chakra-ui/react'

@@ -6,10 +6,4 @@ export {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  ModalProps,
-  ModalOverlayProps,
-  ModalContentProps,
-  ModalHeaderProps,
-  ModalFooterProps,
-  ModalBodyProps,
 } from '@chakra-ui/react'

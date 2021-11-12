@@ -4,12 +4,5 @@ export {
   NumberInputStepper,
   NumberIncrementStepper,
   NumberDecrementStepper,
-  NumberInputProps,
-  NumberInputFieldProps,
-  NumberInputStepperProps,
-  NumberIncrementStepperProps,
-  NumberDecrementStepperProps,
   useNumberInput,
-  UseNumberInputProps,
-  UseNumberInputReturn,
 } from '@chakra-ui/react'

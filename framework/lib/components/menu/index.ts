@@ -9,13 +9,4 @@ export {
   MenuOptionGroup,
   MenuItemOption,
   MenuCommand,
-  MenuProps,
-  MenuListProps,
-  MenuButtonProps,
-  MenuItemProps,
-  MenuGroupProps,
-  MenuDividerProps,
-  MenuOptionGroupProps,
-  MenuItemOptionProps,
-  MenuCommandProps,
 } from '@chakra-ui/react'
