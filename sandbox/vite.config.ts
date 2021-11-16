@@ -1,3 +1,4 @@
+/* eslint-disable */
 import path from 'path'
 import fs from 'fs'
 import { defineConfig } from 'vite'
@@ -14,6 +15,10 @@ const getResolvableAliases = (): ResolveConfig => {
   return fs
     .readdirSync(modulesPath)
     .reduce((acc: ResolveConfig, folder: string) => {
+      if (folder === 'sandbox' || folder === 'framework') {
+        return acc
+      }
+
       const modulePath = path.join(modulesPath, folder)
 
       const pkg = require(`${modulePath}/package.json`)
@@ -38,11 +43,7 @@ export default defineConfig({
     port: 3008,
     fs: {
       strict: false,
-    }
+    },
   },
-  resolve: {
-    alias,
-    dedupe,
-  },
-  plugins:[ reactRefresh() ],
+  plugins: [ reactRefresh() ],
 })
