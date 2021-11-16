@@ -1,6 +1,5 @@
 import {
   ThemeOverride,
-  theme as baseTheme,
   extendTheme,
 } from '@chakra-ui/react'
 import { palette } from './palette'
@@ -14,4 +13,4 @@ const overrides: ThemeOverride = {
   components,
 }
 
-export const theme = extendTheme(overrides, baseTheme)
+export const theme = extendTheme(overrides)
