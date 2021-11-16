@@ -7,6 +7,7 @@ export type Color =
   | 'orange'
   | 'purple'
   | 'yellow'
+  | 'mediatoolBlue'
 
 export type ColorGrade =
   50
@@ -21,4 +22,3 @@ export type ColorGrade =
   | 900
 
 export type ColorShades = Record<ColorGrade, string>
-export type Palette = Record<Color, ColorShades>
