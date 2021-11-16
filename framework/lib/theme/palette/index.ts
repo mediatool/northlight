@@ -40,7 +40,7 @@ export const palette: Palette = {
     900: '#09130e',
   },
   mediatoolBlue: {
-    50: 'e6eaef',
+    50: '#e6eaef',
     100: '#b3c0d0',
     200: '#99abc0',
     300: '#6682a0',
