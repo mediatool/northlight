@@ -4,12 +4,9 @@ import typescript from '@rollup/plugin-typescript'
 import image from '@rollup/plugin-image'
 import pkg from './package.json'
 
-const externalDeps = Object.keys(pkg.dependencies)
-  .filter((key) => !key.includes('@chakra'))
-
 const external = [
   ...Object.keys(pkg.devDependencies),
-  ...externalDeps,
+  ...Object.keys(pkg.dependencies),
 ]
 const extensions = [ '.ts', '.tsx' ]
 
