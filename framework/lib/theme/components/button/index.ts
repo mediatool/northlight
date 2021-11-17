@@ -1,7 +1,7 @@
 import {
   ComponentSingleStyleConfig,
 } from '@chakra-ui/react'
-import { transparentize } from '@chakra-ui/theme-tools'
+import { lighten } from '@chakra-ui/theme-tools'
 
 export const Button: ComponentSingleStyleConfig = {
   baseStyle: {
@@ -11,7 +11,7 @@ export const Button: ComponentSingleStyleConfig = {
   variants: {
     solid: ({ theme, colorScheme }) => ({
       _hover: {
-        bg: transparentize(`${colorScheme}.500`, 0.12)(theme),
+        bg: lighten(`${colorScheme}.500`, 10)(theme),
       },
     }),
   },
