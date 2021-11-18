@@ -1,17 +1,15 @@
 import React from 'react'
 import { HStack, Radio, RadioGroup } from '@mediatool/ui'
-import { ChakraDocsLink, Page } from '../../components'
+import { DefaultPageSubtitle, Page } from '../../components'
 
 const RadioButtonPage = () => (
   <Page
     title="Radio button"
     subtitle={
-      <>
-        Based on &nbsp;
-        <ChakraDocsLink slug="/form/radio">
-          Chakra radio
-        </ChakraDocsLink>
-      </>
+      <DefaultPageSubtitle
+        slug="/form/radio"
+        linkText="Chakra Radio Button"
+      />
     }
   >
     <RadioGroup>

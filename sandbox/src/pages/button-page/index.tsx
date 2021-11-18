@@ -1,17 +1,15 @@
 import React from 'react'
 import { Button, HStack } from '@mediatool/ui'
-import { ChakraDocsLink, Page } from '../../components'
+import { DefaultPageSubtitle, Page } from '../../components'
 
 const ButtonPage = () => (
   <Page
     title="Button"
     subtitle={
-      <>
-        Based on&nbsp;
-        <ChakraDocsLink slug="/form/button">
-          Chakra button
-        </ChakraDocsLink>
-      </>
+      <DefaultPageSubtitle
+        slug="/form/button"
+        linkText="Chakra Button"
+      />
     }
   >
     <HStack spacing={ 4 }>

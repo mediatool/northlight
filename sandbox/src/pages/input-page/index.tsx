@@ -1,17 +1,15 @@
 import React from 'react'
 import { Input, Stack } from '@mediatool/ui'
-import { ChakraDocsLink, Page } from '../../components'
+import { DefaultPageSubtitle, Page } from '../../components'
 
 const InputPage = () => (
   <Page
     title="Input"
     subtitle={
-      <>
-        Based on&nbsp;
-        <ChakraDocsLink slug="/form/input">
-          Chakra input
-        </ChakraDocsLink>
-      </>
+      <DefaultPageSubtitle
+        slug="/form/input"
+        linkText="Chakra Input"
+      />
     }
   >
     <Stack width="20%" spacing={ 4 }>
