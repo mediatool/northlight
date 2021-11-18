@@ -3,8 +3,8 @@ import {
   NavLink,
   NavLinkProps,
 } from 'react-router-dom'
-import { Link } from '@mediatool/ui'
 import { LinkProps } from '@chakra-ui/react'
+import { Link } from '~lib/components'
 
 type Props = LinkProps & NavLinkProps & {
   to: string

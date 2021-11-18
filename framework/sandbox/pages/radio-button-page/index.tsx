@@ -1,5 +1,5 @@
 import React from 'react'
-import { HStack, Radio, RadioGroup } from '@mediatool/ui'
+import { HStack, Radio, RadioGroup } from '~lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const RadioButtonPage = () => (

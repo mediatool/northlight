@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Heading, Stack } from '@mediatool/ui'
+import { Box, Heading, Stack } from '~lib/components'
 import { SidebarItem as ISidebarItem } from '../../types'
 import { SidebarItem } from '../sidebar-item'
 

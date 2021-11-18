@@ -1,9 +1,17 @@
 {
   "include": [
     "index.ts",
-    "lib/**/*"
+    "sandbox.tsx",
+    "lib/**/*",
+    "sandbox/**/*"
   ],
-  "exclude": ["node_modules", "dist"],
+  "files": [
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noUnusedParameters": true,
@@ -12,12 +20,24 @@
     "noImplicitAny": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "baseUrl": "./",
     "declarationDir": "dist",
     "jsx": "react",
     "moduleResolution": "node",
     "module": "esnext",
     "target": "esnext",
-    "lib": ["esnext", "dom"],
-    "types": ["@chakra-ui/react"]
+    "sourceMap": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "types": [
+      "@chakra-ui/react",
+      "vite/client"
+    ],
+    "paths": {
+      "~/*": ["./*"],
+      "~lib/*": ["./lib/*"]
+    }
   }
 }

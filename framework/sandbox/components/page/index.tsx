@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Box, Heading, Stack } from '@mediatool/ui'
+import { Box, Heading, Stack } from '~lib/components'
 
 interface Props {
   title: ReactNode

@@ -10,7 +10,9 @@ const overrides: ThemeOverride = {
     ...palette,
     primary: palette.mediatoolBlue[500],
   },
-  components,
+  components: {
+    ...components,
+  },
 }
 
 export const theme = extendTheme(overrides)

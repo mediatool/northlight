@@ -1,6 +1,6 @@
 import React, { ComponentProps } from 'react'
-import { FormControl, Switch as MediatoolSwitch, Stack } from '@mediatool/ui'
 import { FormLabel } from '@chakra-ui/react'
+import { FormControl, Switch as MediatoolSwitch, Stack } from '~lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 type Props = ComponentProps<typeof MediatoolSwitch> & {

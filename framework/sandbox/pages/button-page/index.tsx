@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, HStack } from '@mediatool/ui'
+import { Button, HStack } from '~lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const ButtonPage = () => (

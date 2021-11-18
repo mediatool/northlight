@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '@mediatool/ui'
+import { Link } from '~lib/components'
 import { LinkProps } from '@chakra-ui/react'
 
 type Props = {

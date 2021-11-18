@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import { MediatoolThemeProvider } from '@mediatool/ui'
-import { AppLayout, Sidebar } from './src/components'
-import { Routing, routes, sidebarItems } from './src/routing'
+import { MediatoolThemeProvider } from './lib/components'
+import { AppLayout, Sidebar } from './sandbox/components'
+import { Routing, routes, sidebarItems } from './sandbox/routing'
 
 ReactDOM.render(
   <MediatoolThemeProvider>

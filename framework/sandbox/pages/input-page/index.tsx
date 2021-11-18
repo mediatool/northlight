@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Stack } from '@mediatool/ui'
+import { Input, Stack } from '~lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const InputPage = () => (
