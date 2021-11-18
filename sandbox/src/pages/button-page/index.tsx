@@ -8,7 +8,7 @@ const ButtonPage = () => (
     subtitle={
       <>
         Based on&nbsp;
-        <ChakraDocsLink target="_blank" color="blue.500" slug="/form/button">
+        <ChakraDocsLink slug="/form/button">
           Chakra button
         </ChakraDocsLink>
       </>

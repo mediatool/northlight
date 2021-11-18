@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Box, Flex, Heading, Spacer, Stack } from '@mediatool/ui'
+import { Box, Heading, Stack } from '@mediatool/ui'
 
 interface Props {
   title: ReactNode
@@ -17,7 +17,7 @@ export const Page = ({
       <Heading as="h1" size="lg">{ title }</Heading>
       <Heading as="h2" size="sm">{ subtitle }</Heading>
     </Stack>
-    <Box mt={ 10 }>
+    <Box width="100%" mt={ 10 }>
       { children }
     </Box>
   </Box>

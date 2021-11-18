@@ -16,7 +16,7 @@ export const AppLayout = ({ sidebar, main }: Props) => (
     >
       { sidebar }
     </Box>
-    <Box>
+    <Box width="100%">
       { main }
     </Box>
   </Flex>
