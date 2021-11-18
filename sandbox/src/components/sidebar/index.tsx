@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Stack } from '@mediatool/ui'
+import { Box, Heading, Stack } from '@mediatool/ui'
 import { SidebarItem as ISidebarItem } from '../../types'
 import { SidebarItem } from '../sidebar-item'
 
@@ -8,7 +8,11 @@ interface Props {
 }
 
 export const Sidebar = ({ items }: Props) => (
-  <nav>
+  <Box
+    height="100%"
+    overflowY="auto"
+    overscrollBehavior="contain"
+  >
     <Heading
       letterSpacing="wide"
       fontSize="md"
@@ -26,5 +30,5 @@ export const Sidebar = ({ items }: Props) => (
         </SidebarItem>
       )) }
     </Stack>
-  </nav>
+  </Box>
 )

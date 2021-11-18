@@ -9,4 +9,8 @@ export const routes: Route[] = [
     path: '/input',
     component: () => import('../pages/input-page'),
   },
+  {
+    path: '/radio',
+    component: () => import('../pages/radio-button-page'),
+  },
 ]

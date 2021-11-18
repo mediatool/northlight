@@ -9,4 +9,8 @@ export const sidebarItems: SidebarItem[] = [
     title: 'Input',
     path: '/input',
   },
+  {
+    title: 'Radio button',
+    path: '/radio',
+  },
 ]
