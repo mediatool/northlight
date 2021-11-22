@@ -16,7 +16,7 @@
   "scripts": {
     "start": "vite",
     "build": "rm -rf dist && rollup --config rollup.config.js",
-    "lint": "eslint --ext ts,tsx ./lib/",
+    "lint": "eslint --ext ts,tsx lib/ sandbox/",
     "test": "yarn lint"
   },
   "files": [

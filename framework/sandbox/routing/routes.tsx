@@ -17,4 +17,8 @@ export const routes: Route[] = [
     path: '/switch',
     component: () => import('../pages/switch-page'),
   },
+  {
+    path: '/icon',
+    component: () => import('../pages/icon-page'),
+  },
 ]

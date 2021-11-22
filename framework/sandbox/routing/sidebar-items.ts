@@ -17,4 +17,8 @@ export const sidebarItems: SidebarItem[] = [
     title: 'Switch',
     path: '/switch',
   },
+  {
+    title: 'Icon',
+    path: '/icon',
+  },
 ]
