@@ -5,6 +5,9 @@ interface UseFormReturn<FormValues = any> {
   errors: FormikErrors<FormValues>
   setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void
   setFieldError: (field: string, message?: string) => void
+  submitForm: () => Promise<void>
+  isSubmitting: boolean
+  setSubmitting: (isSubmitting: boolean) => void
 }
 
 export const useForm = <
@@ -21,6 +24,9 @@ export const useForm = <
     errors,
     setFieldValue,
     setFieldError,
+    submitForm,
+    isSubmitting,
+    setSubmitting,
   } = formik
 
   return {
@@ -28,5 +34,8 @@ export const useForm = <
     errors,
     setFieldValue,
     setFieldError,
+    submitForm,
+    isSubmitting,
+    setSubmitting,
   }
 }
