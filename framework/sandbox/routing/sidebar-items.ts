@@ -6,8 +6,8 @@ export const sidebarItems: SidebarItem[] = [
     path: '/button',
   },
   {
-    title: 'Input',
-    path: '/input',
+    title: 'Simple TextField',
+    path: '/simple-textfield',
   },
   {
     title: 'Radio button',
@@ -20,5 +20,9 @@ export const sidebarItems: SidebarItem[] = [
   {
     title: 'Icon',
     path: '/icon',
+  },
+  {
+    title: 'Form',
+    path: '/form',
   },
 ]

@@ -1,10 +1,10 @@
 import React from 'react'
-import { Input, Stack } from '~lib/components'
+import { SimpleTextField, Stack } from '~lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const InputPage = () => (
   <Page
-    title="Input"
+    title="SimpleTextField"
     subtitle={
       <DefaultPageSubtitle
         slug="/form/input"
@@ -13,17 +13,17 @@ const InputPage = () => (
     }
   >
     <Stack width="20%" spacing={ 4 }>
-      <Input
+      <SimpleTextField
         color="primary"
         variant="outline"
         placeholder="Primary outline"
       />
-      <Input
+      <SimpleTextField
         color="primary"
         variant="filled"
         placeholder="Primary filled"
       />
-      <Input
+      <SimpleTextField
         color="primary"
         variant="flushed"
         placeholder="Primary flushed"

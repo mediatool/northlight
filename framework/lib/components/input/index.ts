@@ -1,7 +1,8 @@
 export {
-  Input,
-  InputAddon,
   InputGroup,
+  InputAddon,
   InputLeftAddon,
   InputRightAddon,
+  InputLeftElement,
+  InputRightElement,
 } from '@chakra-ui/react'

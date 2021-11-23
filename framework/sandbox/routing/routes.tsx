@@ -6,8 +6,8 @@ export const routes: Route[] = [
     component: () => import('../pages/button-page'),
   },
   {
-    path: '/input',
-    component: () => import('../pages/input-page'),
+    path: '/simple-textfield',
+    component: () => import('../pages/simple-textfield-page'),
   },
   {
     path: '/radio',
@@ -20,5 +20,9 @@ export const routes: Route[] = [
   {
     path: '/icon',
     component: () => import('../pages/icon-page'),
+  },
+  {
+    path: '/form',
+    component: () => import('../pages/form-page'),
   },
 ]

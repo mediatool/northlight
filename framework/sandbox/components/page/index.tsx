@@ -15,7 +15,9 @@ export const Page = ({
   <Box w="100%" h="100%" p={ 5 }>
     <Stack spacing={ 2 } >
       <Heading as="h1" size="lg">{ title }</Heading>
-      <Heading as="h2" size="sm">{ subtitle }</Heading>
+      { typeof subtitle === 'string' ? (
+        <Heading as="h2" size="sm">{ subtitle }</Heading>
+      ) : subtitle }
     </Stack>
     <Box width="100%" mt={ 10 }>
       { children }
