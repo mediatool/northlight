@@ -6,9 +6,10 @@ type Props = ChakraIconProps & IconProps
 
 export const HubIcon = ({
   color = 'mediatoolBlue.500',
+  size = 6,
   ...rest
 }: Props) => (
-  <Icon viewBox="0 0 32 32" color={ color } { ...rest }>
+  <Icon viewBox="0 0 32 32" color={ color } boxSize={ size } { ...rest }>
     <g
       fill="currentColor"
       stroke="currentColor"
@@ -23,3 +24,5 @@ export const HubIcon = ({
     </g>
   </Icon>
 )
+
+export default HubIcon

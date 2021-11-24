@@ -1,5 +1,6 @@
 import React from 'react'
-import { Card, Flex, Icon, SimpleGrid, Text, iconMap } from '~lib/components'
+import { Box, Card, Code, Flex, Icon, SimpleGrid, Text } from '~lib/components'
+import { iconMap } from './icon-map'
 import { Page } from '../../components'
 
 const IconPage = () => (
@@ -7,7 +8,34 @@ const IconPage = () => (
     title="Icon"
     subtitle="Using chakra Icon to render raw SVG exported from Figma"
   >
-    <SimpleGrid columns={ 3 } spacing={ 4 } w="30%">
+    <Box w="40%">
+      <Text>
+        Each icon is exported in 2 variants:&nbsp;
+        <strong>outlined</strong> and <strong>filled</strong>.
+      </Text>
+      <Text>
+        We also export an <strong>Icon</strong> component,
+        which accepts a <strong>type</strong> prop.
+        Its primary use-case is for when you need to render an icon based on a piece of data.
+      </Text>
+      <Text mt={ 2 }>
+        <strong>Worth mentioning for the Icon component</strong><br />
+        It's dynamically importing a component, based on the type of icon that's passed in.
+        Internally we import it as
+        <br />
+        <Code>
+          { 'const { type } = props' }
+        </Code> <br />
+        <Code>
+          { 'const Component = lazy(() => import(\'../icons/{type}\'))' }
+        </Code>
+        <br />
+        When creating new icons, make sure you&nbsp;
+        <strong>name the folder according to the icon</strong>,
+        in case for the hub icon component, its folder is named hub
+      </Text>
+    </Box>
+    <SimpleGrid mt={ 6 } columns={ 3 } spacing={ 4 } w="30%">
       { Object.keys(iconMap).map((iconType: any) => (
         <Card py={ 4 } key={ iconType }>
           <Flex align="center" direction="column">

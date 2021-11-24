@@ -9,4 +9,5 @@ export type IconType =
 
 export interface IconProps {
   color?: `${Color}.${ColorGrade}`
+  size?: number
 }
