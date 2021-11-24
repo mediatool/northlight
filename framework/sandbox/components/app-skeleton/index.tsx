@@ -6,16 +6,9 @@ interface Props {
   main: ReactNode
 }
 
-export const AppLayout = ({ sidebar, main }: Props) => (
+export const AppSkeleton = ({ sidebar, main }: Props) => (
   <Flex width="100%" height="100%">
-    <Box
-      p={ 2 }
-      w={ 250 }
-      h="100vh"
-      bg="gray.50"
-    >
-      { sidebar }
-    </Box>
+    { sidebar }
     <Box width="100%">
       { main }
     </Box>

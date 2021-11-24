@@ -1,28 +1,12 @@
 import { Route } from '../types'
 
-export const routes: Route[] = [
+export const sandboxRoutes: Route[] = [
   {
-    path: '/button',
-    component: () => import('../pages/button-page'),
+    path: '/docs',
+    component: () => import('../docs/app'),
   },
   {
-    path: '/simple-textfield',
-    component: () => import('../pages/simple-textfield-page'),
-  },
-  {
-    path: '/radio',
-    component: () => import('../pages/radio-button-page'),
-  },
-  {
-    path: '/switch',
-    component: () => import('../pages/switch-page'),
-  },
-  {
-    path: '/icon',
-    component: () => import('../pages/icon-page'),
-  },
-  {
-    path: '/form',
-    component: () => import('../pages/form-page'),
+    path: '/demo',
+    component: () => import('../demo/app'),
   },
 ]

@@ -5,9 +5,10 @@ import { Route as IRoute } from '../types'
 
 interface Props {
   routes: IRoute[]
+  fallback?: string
 }
 
-export const Routing = ({ routes }: Props) => (
+export const Routing = ({ routes, fallback }: Props) => (
   <Switch>
     { routes.map(({ path, component }) => (
       <Route
@@ -22,6 +23,8 @@ export const Routing = ({ routes }: Props) => (
         ) }
       />
     )) }
-    <Redirect to={ routes[0].path } />
+    { fallback && (
+      <Redirect to={ fallback } />
+    ) }
   </Switch>
 )
