@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Card, Code, Flex, Icon, SimpleGrid, Text } from '~lib/components'
-import { iconMap } from './icon-map'
+import { iconMap } from '~lib/components/icon/icon-map'
 import { Page } from '../../components'
 
 const IconPage = () => (
@@ -20,14 +20,14 @@ const IconPage = () => (
       </Text>
       <Text mt={ 2 }>
         <strong>Worth mentioning for the Icon component</strong><br />
-        It's dynamically importing a component, based on the type of icon that's passed in.
+        It's mapping to an object of icons, based on the type of icon that's passed in.
         Internally we import it as
         <br />
         <Code>
           { 'const { type } = props' }
         </Code> <br />
         <Code>
-          { 'const Component = lazy(() => import(\'../icons/{type}\'))' }
+          const Component = iconMap[type]
         </Code>
         <br />
         When creating new icons, make sure you&nbsp;

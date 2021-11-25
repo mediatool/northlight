@@ -24,5 +24,3 @@ export const SearchIcon = ({
     </g>
   </Icon>
 )
-
-export default SearchIcon

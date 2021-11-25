@@ -19,5 +19,3 @@ export const SwitchesIcon = ({
     </g>
   </Icon>
 )
-
-export default SwitchesIcon

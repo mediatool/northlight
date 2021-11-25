@@ -24,5 +24,3 @@ export const HubIcon = ({
     </g>
   </Icon>
 )
-
-export default HubIcon

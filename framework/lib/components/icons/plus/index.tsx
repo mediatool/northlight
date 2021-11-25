@@ -23,5 +23,3 @@ export const PlusIcon = ({
     </g>
   </Icon>
 )
-
-export default PlusIcon

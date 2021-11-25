@@ -31,5 +31,3 @@ export const PlugIcon = ({
     </g>
   </Icon>
 )
-
-export default PlugIcon

@@ -1,27 +1,28 @@
-import React, { Suspense, lazy } from 'react'
+import React from 'react'
 import {
   Icon as ChakraIcon,
   IconProps as ChakraIconProps,
 } from '@chakra-ui/react'
-import { IconProps } from '~lib/types'
+import { IconProps, IconType } from '~lib/types'
+import { iconMap } from './icon-map'
 
-type Props = ChakraIconProps & IconProps
+type Props = ChakraIconProps & IconProps & {
+  type: IconType
+}
 
 export const Icon = ({
   type, boxSize, size = 6, ...rest
 }: Props) => {
-  if (!type) {
+  const Component = iconMap[type]
+
+  if (!Component) {
     return <ChakraIcon title={ `No such icon ${type}` } />
   }
 
-  const Component = lazy(() => import(`../icons/${type}`))
-
   return (
-    <Suspense fallback={ null }>
-      <Component
-        boxSize={ size }
-        { ...rest }
-      />
-    </Suspense>
+    <Component
+      boxSize={ size }
+      { ...rest }
+    />
   )
 }
