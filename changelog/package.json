@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "start": "start-storybook -s node_modules/mt-ui/dist -p 6007",
-    "unit": "mocha --config test/.mocharc.component.js lib/**/*-test.tsx",
+    "unit": "mocha --config test/.mocharc.component.js 'lib/**/*-test.tsx'",
     "build": "rm -rf dist && rollup -c rollup.config.js",
     "postbuild": "rm -rf dist/style.js && rm -rf dist/style.js.map",
     "lint": "eslint --ext js,jsx,ts,tsx lib/ test/",
