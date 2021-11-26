@@ -1,8 +1,8 @@
 import { Palette } from '../../types'
 
 export const palette: Palette = {
-  white: '#FFF',
-  black: '#000',
+  white: '#FFFFFF',
+  black: '#000000',
   blue: {
     50: '#eaf3ff',
     100: '#d4e8fe',

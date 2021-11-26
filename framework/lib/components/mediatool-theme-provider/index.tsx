@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const MediatoolThemeProvider = ({ children }: Props) => (
-  <ChakraProvider theme={ theme }>
+  <ChakraProvider resetCSS={ true } theme={ theme }>
     { children }
   </ChakraProvider>
 )

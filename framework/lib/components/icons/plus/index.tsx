@@ -4,12 +4,8 @@ import { IconProps } from '~lib/types'
 
 type Props = ChakraIconProps & IconProps
 
-export const PlusIcon = ({
-  color = 'mediatoolBlue.500',
-  size = 6,
-  ...rest
-}: Props) => (
-  <Icon viewBox="0 0 32 32" color={ color } boxSize={ size } { ...rest }>
+export const PlusIcon = (props: Props) => (
+  <Icon viewBox="0 0 32 32" { ...props }>
     <g
       fill="currentColor"
       stroke="currentColor"

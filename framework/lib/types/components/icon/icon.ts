@@ -6,8 +6,8 @@ export type IconType =
   | 'plug'
   | 'search'
   | 'switches'
+  | 'mediatoolLogo'
 
 export interface IconProps {
-  color?: `${Color}.${ColorGrade}`
-  size?: number
+  color?: `${Color}.${ColorGrade}` | 'white' | 'black'
 }

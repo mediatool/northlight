@@ -2,6 +2,7 @@ import React from 'react'
 import {
   Icon as ChakraIcon,
   IconProps as ChakraIconProps,
+  useStyleConfig,
 } from '@chakra-ui/react'
 import { IconProps, IconType } from '~lib/types'
 import { iconMap } from './icon-map'
@@ -11,8 +12,9 @@ type Props = ChakraIconProps & IconProps & {
 }
 
 export const Icon = ({
-  type, boxSize, size = 6, ...rest
+  type, ...rest
 }: Props) => {
+  const styles = useStyleConfig('Icon')
   const Component = iconMap[type]
 
   if (!Component) {
@@ -21,7 +23,7 @@ export const Icon = ({
 
   return (
     <Component
-      boxSize={ size }
+      __css={ styles }
       { ...rest }
     />
   )
