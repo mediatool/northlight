@@ -1,7 +1,7 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 
 export const Breadcrumb: ComponentMultiStyleConfig = {
-  parts: [ 'link' ],
+  parts: [ 'link', 'separator' ],
   baseStyle: {
     link: {
       padding: [ 0.5, 1 ],
@@ -13,6 +13,10 @@ export const Breadcrumb: ComponentMultiStyleConfig = {
         borderRadius: 'base',
         textDecor: 'none',
       },
+    },
+    separator: {
+      color: 'gray.300',
+      fontSize: 'semibold',
     },
   },
 }
