@@ -7,7 +7,6 @@ import { sidebarItems } from '../../sidebar-items'
 export const DemoSidebar = () => (
   <Stack
     w={ 100 }
-    h="100%"
     bg="blue.50"
     py={ 8 }
     justify="space-between"
@@ -18,13 +17,13 @@ export const DemoSidebar = () => (
           boxSize={ 50 }
         />
       </Center>
-      <Center flexDirection="column" mb={ 14 }>
+      <Center flexDirection="column" mb={ 12 }>
         <Center
           boxSize="40px"
           bgColor="green.400"
           borderRadius="full"
         >
-          <PlusIcon color="white" boxSize={ 8 } />
+          <PlusIcon color="white" boxSize={ 6 } />
         </Center>
         <Text fontSize="sm">Create</Text>
       </Center>
@@ -36,7 +35,7 @@ export const DemoSidebar = () => (
         >
           <Stack spacing={ 3 } mb={ 12 } align="center">
             <Center>
-              <Icon boxSize={ 8 } type={ icon } />
+              <Icon boxSize={ 6 } type={ icon } />
             </Center>
             <Text fontSize="sm">{ title }</Text>
           </Stack>

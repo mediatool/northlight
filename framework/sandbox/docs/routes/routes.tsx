@@ -25,4 +25,8 @@ export const routes: Route[] = [
     path: '/form',
     component: () => import('../pages/form-page'),
   },
+  {
+    path: '/breadcrumbs',
+    component: () => import('../pages/breadcrumbs-page'),
+  },
 ]

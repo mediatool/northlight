@@ -25,4 +25,8 @@ export const sidebarItems: SidebarItem[] = [
     title: 'Form',
     path: '/form',
   },
+  {
+    title: 'Breadcrumbs',
+    path: '/breadcrumbs',
+  },
 ]

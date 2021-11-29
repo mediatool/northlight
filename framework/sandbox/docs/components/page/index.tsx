@@ -3,13 +3,13 @@ import { Box, Heading, Stack } from '~lib/components'
 
 interface Props {
   title: ReactNode
-  subtitle: ReactNode
+  subtitle?: ReactNode
   children: ReactNode
 }
 
 export const Page = ({
   title,
-  subtitle,
+  subtitle = null,
   children,
 }: Props) => (
   <Box w="100%" h="100%" p={ 5 }>
