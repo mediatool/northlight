@@ -1,37 +1,18 @@
 import React from 'react'
-import { Breadcrumb, BreadcrumbLink, Breadcrumbs } from '~lib/components'
+import { AppLayout } from '../../../components'
 import { PageLayout } from '../../components'
+import { SettingsBreadcrumbs } from './breadcrumbs'
 
 const SettingsPage = () => (
-  <PageLayout
-    title="Personal account"
+  <AppLayout
+    breadcrumbs={ <SettingsBreadcrumbs /> }
   >
-    <Breadcrumbs>
-      <Breadcrumb>
-        <BreadcrumbLink>
-          EL
-        </BreadcrumbLink>
-      </Breadcrumb>
-
-      <Breadcrumb>
-        <BreadcrumbLink>
-          Sweden
-        </BreadcrumbLink>
-      </Breadcrumb>
-
-      <Breadcrumb>
-        <BreadcrumbLink>
-          BrandEL-1
-        </BreadcrumbLink>
-      </Breadcrumb>
-
-      <Breadcrumb>
-        <BreadcrumbLink>
-          Plan008
-        </BreadcrumbLink>
-      </Breadcrumb>
-    </Breadcrumbs>
-  </PageLayout>
+    <PageLayout
+      title="Personal account"
+    >
+      <p>On settings page</p>
+    </PageLayout>
+  </AppLayout>
 )
 
 export default SettingsPage
