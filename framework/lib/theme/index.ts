@@ -16,6 +16,10 @@ const overrides: ThemeOverride = {
       },
     },
   },
+  fonts: {
+    heading: 'Inter, sans-serif',
+    body: 'Inter, sans-serif',
+  },
   colors: {
     ...palette,
     primary: palette.mediatoolBlue[500],
