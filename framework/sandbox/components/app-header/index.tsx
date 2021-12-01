@@ -11,7 +11,9 @@ export const AppHeader = ({
   breadcrumbs,
 }: Props) => (
   <Flex mb={ 12 } align="flex-end">
-    <Box w="20%" >{ breadcrumbs }</Box>
+    { breadcrumbs && (
+      <Box w="20%" >{ breadcrumbs }</Box>
+    ) }
     <SearchField />
     <Center flexBasis={ 8 }>
       <HelpCenterLink />

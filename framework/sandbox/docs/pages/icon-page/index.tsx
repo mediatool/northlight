@@ -40,7 +40,7 @@ const IconPage = () => (
         <Card py={ 4 } key={ iconType }>
           <Flex align="center" direction="column">
             <Text mb={ 2 }>{ iconType }</Text>
-            <Icon size={ 8 } type={ iconType } />
+            <Icon boxSize={ 8 } type={ iconType } />
           </Flex>
         </Card>
       )) }

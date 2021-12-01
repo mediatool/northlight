@@ -15,7 +15,7 @@ const ButtonPage = () => (
   >
     <HStack spacing={ 4 }>
       <Button>Primary solid</Button>
-      <Button variant="outline">Primary outlined</Button>
+      <Button disabled={ true } variant="outline">Primary outlined</Button>
       <Button variant="ghost">Primary ghost</Button>
       <Button variant="link">Primary link</Button>
     </HStack>

@@ -7,32 +7,32 @@ type Item = SidebarItem & {
 
 export const sidebarItems: Item[] = [
   {
-    path: '/search',
+    path: '/demo/search',
     title: 'Search',
     icon: 'search',
   },
   {
-    path: '/hub',
+    path: '/demo/hub',
     title: 'Hub',
     icon: 'hub',
   },
   {
-    path: '/campaigns',
+    path: '/demo/campaigns',
     title: 'Plan',
     icon: 'plug',
   },
   {
-    path: '/orders',
+    path: '/demo/orders',
     title: 'Order',
     icon: 'hub',
   },
   {
-    path: '/integrations',
+    path: '/demo/integrations',
     title: 'Integrations',
     icon: 'plug',
   },
   {
-    path: '/settings',
+    path: '/demo/settings',
     title: 'Settings',
     icon: 'switches',
   },

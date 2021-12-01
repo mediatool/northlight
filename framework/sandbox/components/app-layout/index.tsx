@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const AppLayout = ({ breadcrumbs, children }: Props) => (
-  <Box w="100%" h="100%" px={ 8 } py={ 8 }>
+  <Box w="100%" h="100%" px={ 10 } py={ 50 }>
     <AppHeader breadcrumbs={ breadcrumbs } />
     { children }
   </Box>

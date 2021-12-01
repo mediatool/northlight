@@ -30,3 +30,4 @@ const overrides: ThemeOverride = {
 }
 
 export const theme = extendTheme(overrides)
+export * from './palette'

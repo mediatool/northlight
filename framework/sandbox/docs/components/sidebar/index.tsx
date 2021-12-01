@@ -31,7 +31,7 @@ export const DocsSidebar = () => (
             p={ 2 }
             spacing={ 2 }
           >
-            <Icon type="plug" size={ 6 } />
+            <Icon type="plug" boxSize={ 6 } />
             <Text>Demo</Text>
           </HStack>
         </Link>

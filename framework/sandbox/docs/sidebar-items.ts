@@ -3,30 +3,30 @@ import { SidebarItem } from '../types'
 export const sidebarItems: SidebarItem[] = [
   {
     title: 'Button',
-    path: '/button',
+    path: '/docs/button',
   },
   {
     title: 'Simple TextField',
-    path: '/simple-textfield',
+    path: '/docs/simple-textfield',
   },
   {
     title: 'Radio button',
-    path: '/radio',
+    path: '/docs/radio',
   },
   {
     title: 'Switch',
-    path: '/switch',
+    path: '/docs/switch',
   },
   {
     title: 'Icon',
-    path: '/icon',
+    path: '/docs/icon',
   },
   {
     title: 'Form',
-    path: '/form',
+    path: '/docs/form',
   },
   {
     title: 'Breadcrumbs',
-    path: '/breadcrumbs',
+    path: '/docs/breadcrumbs',
   },
 ]

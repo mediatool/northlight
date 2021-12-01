@@ -7,7 +7,7 @@ import { Routing, sandboxRoutes } from './sandbox/routing'
 ReactDOM.render(
   <MediatoolThemeProvider>
     <BrowserRouter>
-      <Routing fallback="/demo" routes={ sandboxRoutes } />
+      <Routing fallback="/docs" routes={ sandboxRoutes } />
     </BrowserRouter>
   </MediatoolThemeProvider>,
   document.querySelector('#app')

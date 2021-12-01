@@ -11,7 +11,7 @@ export const PageLayout = ({
   title,
   children,
 }: Props) => (
-  <Box w="100%" h="100%">
+  <Box w="100%">
     <Stack spacing={ 2 }>
       <Heading as="h2">{ title }</Heading>
     </Stack>

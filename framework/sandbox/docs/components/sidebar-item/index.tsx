@@ -28,7 +28,6 @@ export const SidebarItem = ({
   <Link
     as={ NavLink }
     to={ to }
-    href={ to }
     px={ 3 }
     py={ 1 }
     borderRadius="md"

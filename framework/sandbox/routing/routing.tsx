@@ -5,24 +5,36 @@ import { Route as IRoute } from '../types'
 
 interface Props {
   routes: IRoute[]
+  basename?: string
   fallback?: string
 }
 
-export const Routing = ({ routes, fallback }: Props) => (
+const normalizePath = ({
+  basename,
+  path,
+}: { basename?: string, path: string }) => (basename
+  ? `${basename}${path}`
+  : path)
+
+export const Routing = ({ routes, basename, fallback }: Props) => (
   <Switch>
-    { routes.map(({ path, component }) => (
-      <Route
-        key={ path }
-        exact={ true }
-        path={ path }
-        render={ (props) => (
-          <LazyPage
-            loader={ component }
-            { ...props }
-          />
-        ) }
-      />
-    )) }
+    { routes.map(({ path, component, exact }) => {
+      const routePath = normalizePath({ basename, path })
+
+      return (
+        <Route
+          key={ routePath }
+          exact={ exact }
+          path={ routePath }
+          render={ (props) => (
+            <LazyPage
+              loader={ component }
+              { ...props }
+            />
+          ) }
+        />
+      )
+    }) }
     { fallback && (
       <Redirect to={ fallback } />
     ) }
