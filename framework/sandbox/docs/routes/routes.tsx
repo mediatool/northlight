@@ -36,4 +36,9 @@ export const routes: Route[] = [
     component: () => import('../pages/breadcrumbs-page'),
     exact: true,
   },
+  {
+    path: '/tag',
+    component: () => import('../pages/tag-page'),
+    exact: true,
+  },
 ]

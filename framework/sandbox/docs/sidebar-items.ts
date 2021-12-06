@@ -29,4 +29,8 @@ export const sidebarItems: SidebarItem[] = [
     title: 'Breadcrumbs',
     path: '/docs/breadcrumbs',
   },
+  {
+    title: 'Tag',
+    path: '/docs/tag',
+  },
 ]
