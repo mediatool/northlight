@@ -2,13 +2,28 @@ import { Route } from '../../types'
 
 export const routes: Route[] = [
   {
+    path: '/badge',
+    component: () => import('../pages/badge-page'),
+    exact: true,
+  },
+  {
+    path: '/breadcrumbs',
+    component: () => import('../pages/breadcrumbs-page'),
+    exact: true,
+  },
+  {
     path: '/button',
     component: () => import('../pages/button-page'),
     exact: true,
   },
   {
-    path: '/simple-textfield',
-    component: () => import('../pages/simple-textfield-page'),
+    path: '/form',
+    component: () => import('../pages/form-page'),
+    exact: true,
+  },
+  {
+    path: '/icon',
+    component: () => import('../pages/icon-page'),
     exact: true,
   },
   {
@@ -22,18 +37,8 @@ export const routes: Route[] = [
     exact: true,
   },
   {
-    path: '/icon',
-    component: () => import('../pages/icon-page'),
-    exact: true,
-  },
-  {
-    path: '/form',
-    component: () => import('../pages/form-page'),
-    exact: true,
-  },
-  {
-    path: '/breadcrumbs',
-    component: () => import('../pages/breadcrumbs-page'),
+    path: '/simple-textfield',
+    component: () => import('../pages/simple-textfield-page'),
     exact: true,
   },
   {

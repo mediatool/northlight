@@ -5,7 +5,7 @@ import { DefaultPageSubtitle, Page } from '../../components'
 
 const TagPage = () => (
   <Page
-    title="Button"
+    title="Tag"
     subtitle={
       <DefaultPageSubtitle
         slug="/data-display/tag"
