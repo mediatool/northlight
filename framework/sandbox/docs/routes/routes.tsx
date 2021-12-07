@@ -17,6 +17,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/close-button',
+    component: () => import('../pages/close-button-page'),
+    exact: true,
+  },
+  {
     path: '/form',
     component: () => import('../pages/form-page'),
     exact: true,

@@ -14,6 +14,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/breadcrumbs',
   },
   {
+    title: 'Close button',
+    path: '/docs/close-button',
+  },
+  {
     title: 'Form',
     path: '/docs/form',
   },
