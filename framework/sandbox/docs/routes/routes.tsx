@@ -2,6 +2,11 @@ import { Route } from '../../types'
 
 export const routes: Route[] = [
   {
+    path: '/abstract-text-input',
+    component: () => import('../pages/abstract-text-input'),
+    exact: true,
+  },
+  {
     path: '/badge',
     component: () => import('../pages/badge-page'),
     exact: true,
@@ -39,11 +44,6 @@ export const routes: Route[] = [
   {
     path: '/switch',
     component: () => import('../pages/switch-page'),
-    exact: true,
-  },
-  {
-    path: '/simple-textfield',
-    component: () => import('../pages/simple-textfield-page'),
     exact: true,
   },
   {

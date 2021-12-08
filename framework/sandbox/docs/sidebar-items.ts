@@ -2,6 +2,10 @@ import { SidebarItem } from '../types'
 
 export const sidebarItems: SidebarItem[] = [
   {
+    title: 'Abstract TextInput',
+    path: '/docs/abstract-text-input',
+  },
+  {
     title: 'Badge',
     path: '/docs/badge',
   },
@@ -28,10 +32,6 @@ export const sidebarItems: SidebarItem[] = [
   {
     title: 'Radio button',
     path: '/docs/radio',
-  },
-  {
-    title: 'Simple TextField',
-    path: '/docs/simple-textfield',
   },
   {
     title: 'Switch',

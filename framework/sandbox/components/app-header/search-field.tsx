@@ -1,10 +1,10 @@
 import React from 'react'
 import {
+  AbstractTextInput,
   Flex,
   InputGroup,
   InputLeftElement,
   SearchIcon,
-  SimpleTextField,
 } from '~lib/components'
 
 export const SearchField = () => (
@@ -13,7 +13,7 @@ export const SearchField = () => (
       <InputLeftElement pointerEvents="none">
         <SearchIcon color="mediatoolBlue.500" />
       </InputLeftElement>
-      <SimpleTextField
+      <AbstractTextInput
         pl={ 10 }
         variant="flushed"
         placeholder="Search Mediatool"

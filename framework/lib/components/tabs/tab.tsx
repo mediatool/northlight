@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import {
   CSSObject,
   TabProps,
@@ -19,6 +19,7 @@ export const Tab = React.forwardRef((props: Props, ref: any) => {
   const { kind = 'base', ...rest } = props
   const { tab } = useStyles()
   const tabProps = useTab({ ...rest, ref })
+  const isSelected = !!tabProps['aria-selected']
 
   const tabKindColorsTuple = kindColorsMap[kind]
   const [ baseColor, selectedColor ] = tabKindColorsTuple
@@ -30,14 +31,14 @@ export const Tab = React.forwardRef((props: Props, ref: any) => {
   // @ts-ignore
   const { _selected: selectedStyles } = tab
 
-  const css: CSSObject = {
+  const css = useMemo<CSSObject>(() => ({
     ...tab,
     color: baseColor,
     _selected: {
       ...selectedStyles,
       color: selectedColor,
     },
-  }
+  }), [ isSelected, kind ])
 
   return (
     <StyledTab __css={ css } { ...tabProps }>

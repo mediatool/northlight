@@ -1,25 +1,19 @@
 import React from 'react'
-import { FieldValidator, useField } from 'formik'
+import { useField } from 'formik'
 import {
   FormControl as ChakraFormControl,
   FormErrorMessage,
   FormLabel,
-  InputProps,
 } from '@chakra-ui/react'
-import { SimpleTextField } from './simple-textfield'
-
-type Props = InputProps & {
-  validate?: FieldValidator
-  name: string
-  label?: string
-}
+import { AbstractTextInput } from './abstract-text-input'
+import { TextFieldProps } from './types'
 
 export const TextField = ({
   name,
   validate,
   label,
   ...rest
-}: Props) => {
+}: TextFieldProps) => {
   const [ field, { error, touched } ] = useField({ name, validate })
 
   return (
@@ -27,7 +21,7 @@ export const TextField = ({
       { label && (
         <FormLabel htmlFor={ name }>{ label }</FormLabel>
       ) }
-      <SimpleTextField { ...rest } { ...field } />
+      <AbstractTextInput { ...rest } { ...field } />
       <FormErrorMessage>{ error }</FormErrorMessage>
     </ChakraFormControl>
   )

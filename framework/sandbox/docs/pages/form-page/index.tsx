@@ -36,7 +36,10 @@ const FormPage = () => (
       >
         { (form) => (
           <Stack spacing={ 3 }>
-            <TextField placeholder="First name" name="name" />
+            <TextField
+              name="name"
+              mask="+4\9 99 999 99"
+            />
             <Button type="submit" colorScheme="green">Submit</Button>
 
             <Code p={ 4 }>{ JSON.stringify(form.values, null, 2) }</Code>
