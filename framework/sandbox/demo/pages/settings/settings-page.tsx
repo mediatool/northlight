@@ -1,12 +1,15 @@
 import React from 'react'
-import { AppLayout } from '../../../components'
-import { PageLayout } from '../../components'
+import { AppLayout, PageLayout } from '~lib/components'
 import { SettingsBreadcrumbs } from './breadcrumbs'
 import { SettingsTabs } from './tabs'
+import { SearchField } from '../../../components'
 
 const SettingsPage = () => (
-  <AppLayout breadcrumbs={ <SettingsBreadcrumbs /> }>
-    <PageLayout title="Personal account">
+  <AppLayout
+    breadcrumbs={ <SettingsBreadcrumbs /> }
+    search={ <SearchField /> }
+  >
+    <PageLayout title="Personal account" subtitle="Test">
       <SettingsTabs />
     </PageLayout>
   </AppLayout>

@@ -1,20 +1,21 @@
 import React, { ReactNode } from 'react'
-import { Box, Center, Flex } from '~lib/components'
-import { HelpCenterLink } from './help-center-link'
-import { SearchField } from './search-field'
+import { Box, Center, Flex } from '@chakra-ui/react'
+import { HelpCenterLink } from '../help-center-link'
 
-interface Props {
+export interface AppHeaderProps {
   breadcrumbs: ReactNode
+  search: ReactNode
 }
 
 export const AppHeader = ({
   breadcrumbs,
-}: Props) => (
+  search,
+}: AppHeaderProps) => (
   <Flex mb={ 12 } align="flex-end">
     { breadcrumbs && (
       <Box w="20%" >{ breadcrumbs }</Box>
     ) }
-    <SearchField />
+    { search }
     <Center flexBasis={ 8 }>
       <HelpCenterLink />
     </Center>
