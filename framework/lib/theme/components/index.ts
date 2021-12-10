@@ -1,5 +1,6 @@
 export * from './breadcrumb'
 export * from './button'
 export * from './icon'
+export * from './input'
 export * from './tabs'
 export * from './tag'

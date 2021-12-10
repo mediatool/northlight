@@ -1,5 +1,5 @@
 import React from 'react'
-import { AbstractTextInput, Image, Stack, Text } from '~lib/components'
+import { AbstractTextInput, HStack, Image, InputGroup, InputLeftAddon, InputRightAddon, Stack, Text } from '~lib/components'
 import { Page } from '../../components'
 import { textfield } from '../../../assets/png'
 
@@ -8,23 +8,126 @@ const InputPage = () => (
     title="Abstract TextInput"
     subtitle="A composition component that composes other specialized inputs"
   >
-    <Stack width="20%" spacing={ 4 }>
+    <HStack spacing={ 4 }>
+      <InputGroup>
+        <InputLeftAddon>+234</InputLeftAddon>
+        <AbstractTextInput
+          variant="outline"
+          placeholder="Primary outline"
+          roundedLeft="0"
+          roundedRight="0"
+          borderLeft="0"
+          borderRight="0"
+        />
+        <InputRightAddon>.com</InputRightAddon>
+      </InputGroup>
       <AbstractTextInput
-        color="primary"
+        variant="outline"
+        placeholder="Primary outline"
+        readOnly={ true }
+        defaultValue="Read only"
+      />
+      <AbstractTextInput
+        variant="outline"
+        placeholder="Primary outline"
+        isInvalid={ true }
+        defaultValue="Invalid field"
+      />
+      <AbstractTextInput
+        variant="outline"
+        placeholder="Primary outline"
+        disabled={ true }
+        defaultValue="Disabled field"
+      />
+    </HStack>
+    <HStack spacing={ 4 } mt={ 4 }>
+      <AbstractTextInput
+        size="sm"
         variant="outline"
         placeholder="Primary outline"
       />
       <AbstractTextInput
-        color="primary"
+        size="sm"
+        variant="outline"
+        placeholder="Primary outline"
+        readOnly={ true }
+        defaultValue="Read only"
+      />
+      <AbstractTextInput
+        size="sm"
+        variant="outline"
+        placeholder="Primary outline"
+        isInvalid={ true }
+        defaultValue="Invalid field"
+      />
+      <AbstractTextInput
+        size="sm"
+        variant="outline"
+        placeholder="Primary outline"
+        disabled={ true }
+        defaultValue="Disabled field"
+      />
+    </HStack>
+    <HStack spacing={ 4 } mt={ 4 }>
+      <AbstractTextInput
+        size="lg"
+        variant="outline"
+        placeholder="Primary outline"
+      />
+      <AbstractTextInput
+        size="lg"
+        variant="outline"
+        placeholder="Primary outline"
+        readOnly={ true }
+        defaultValue="Read only"
+      />
+      <AbstractTextInput
+        size="lg"
+        variant="outline"
+        placeholder="Primary outline"
+        isInvalid={ true }
+        defaultValue="Invalid field"
+      />
+      <AbstractTextInput
+        size="lg"
+        variant="outline"
+        placeholder="Primary outline"
+        disabled={ true }
+        defaultValue="Disabled field"
+      />
+    </HStack>
+    <HStack mt={ 4 }>
+      <AbstractTextInput
         variant="filled"
         placeholder="Primary filled"
       />
       <AbstractTextInput
-        color="primary"
+        variant="filled"
+        disabled={ true }
+        placeholder="Primary filled"
+      />
+      <AbstractTextInput
+        variant="filled"
+        isInvalid={ true }
+        placeholder="Primary filled"
+      />
+    </HStack>
+    <HStack mt={ 4 }>
+      <AbstractTextInput
         variant="flushed"
         placeholder="Primary flushed"
       />
-    </Stack>
+      <AbstractTextInput
+        variant="flushed"
+        disabled={ true }
+        placeholder="Primary flushed"
+      />
+      <AbstractTextInput
+        variant="flushed"
+        isInvalid={ true }
+        placeholder="Primary flushed"
+      />
+    </HStack>
     <br /> <br />
     <Text>
       This component composes other specialized components, MaskedTextInput and FormattedTextInput.
