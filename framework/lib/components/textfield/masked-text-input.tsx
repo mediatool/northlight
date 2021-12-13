@@ -1,7 +1,7 @@
 import React from 'react'
 import InputMask from 'react-input-mask'
-import { PlainTextInputProps } from './types'
-import { PlainTextInput } from './plain-text-input'
+import { Input } from '@chakra-ui/react'
+import { MaskedTextInputProps } from './types'
 
 export const MaskedTextInput = ({
   mask,
@@ -10,21 +10,23 @@ export const MaskedTextInput = ({
   name,
   value,
   placeholder,
+  field,
   onChange,
   onBlur,
+  setValue,
   ...rest
-}: PlainTextInputProps) => (
+}: MaskedTextInputProps) => (
   <InputMask
     mask={ mask }
     maskPlaceholder={ maskPlaceholder }
     alwaysShowMask={ alwaysShowMask }
-    name={ name }
-    value={ value }
-    onChange={ onChange }
+    name={ field?.name ?? name }
+    value={ field?.value ?? value }
+    onChange={ field?.onChange ?? onChange }
     onBlur={ onBlur }
   >
     { ({ name: nameProp }: any) => (
-      <PlainTextInput
+      <Input
         placeholder={ maskPlaceholder ?? placeholder }
         name={ nameProp }
         { ...rest }

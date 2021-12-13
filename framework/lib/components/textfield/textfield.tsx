@@ -5,23 +5,28 @@ import {
   FormErrorMessage,
   FormLabel,
 } from '@chakra-ui/react'
-import { AbstractTextInput } from './abstract-text-input'
 import { TextFieldProps } from './types'
+import { PlainTextInput } from './plain-text-input'
 
-export const TextField = ({
+export function TextField ({
   name,
   validate,
   label,
+  as: As = PlainTextInput,
   ...rest
-}: TextFieldProps) => {
-  const [ field, { error, touched } ] = useField({ name, validate })
+}: TextFieldProps) {
+  const [ field, { error, touched }, { setValue } ] = useField({ name, validate })
 
   return (
     <ChakraFormControl isInvalid={ !!error && touched }>
       { label && (
         <FormLabel htmlFor={ name }>{ label }</FormLabel>
       ) }
-      <AbstractTextInput { ...rest } { ...field } />
+      <As
+        field={ field }
+        setValue={ setValue }
+        { ...rest }
+      />
       <FormErrorMessage>{ error }</FormErrorMessage>
     </ChakraFormControl>
   )

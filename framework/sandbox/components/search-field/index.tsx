@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-  AbstractTextInput,
   Flex,
   InputGroup,
   InputLeftElement,
+  PlainTextInput,
   SearchIcon,
 } from '~lib/components'
 
@@ -13,7 +13,7 @@ export const SearchField = () => (
       <InputLeftElement pointerEvents="none">
         <SearchIcon color="mediatoolBlue.500" />
       </InputLeftElement>
-      <AbstractTextInput
+      <PlainTextInput
         pl={ 10 }
         variant="flushed"
         placeholder="Search Mediatool"

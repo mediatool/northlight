@@ -1,34 +1,44 @@
 import { Props as InputMaskProps } from 'react-input-mask'
-import { FieldInputProps, FieldValidator } from 'formik'
+import { FieldHelperProps, FieldInputProps, FieldValidator } from 'formik'
 import { InputProps as ChakraInputProps } from '@chakra-ui/react'
 
-type OnChange = Pick<FieldInputProps<any>, 'onChange'>['onChange']
-
-interface TextFieldFormatter {
+export interface TextInputFormatter {
   format: (value: string) => string
-  unFormat: (value: string) => string | number
+  unFormat: (value: string) => string
 }
 
-type BaseInputProps<T = any> =
+/*
+  We need to find a better way to detect all the props of the passed 'as' component,
+  other than [prop: string]: any
+*/
+export type TextFieldProps = ChakraInputProps & {
+  name: string
+  label?: string
+  validate?: FieldValidator
+  [prop: string]: any
+}
+
+export type PlainTextInputProps =
   ChakraInputProps
-  & T
+  & Partial<FieldHelperProps<string>>
   & {
-    label?: string
-    onChange?: OnChange
+    field?: FieldInputProps<string>
   }
 
-export type TextFieldProps = BaseInputProps<Partial<InputMaskProps>> & {
-  validate?: FieldValidator
-  formatter?: TextFieldFormatter
-  name: string
-}
+export type MaskedTextInputProps =
+  ChakraInputProps
+  & InputMaskProps
+  & Partial<FieldHelperProps<string>>
+  & {
+    field?: FieldInputProps<string>
+  }
 
-export type AbstractTextInputProps = BaseInputProps<Partial<InputMaskProps>> & {
-  formatter?: TextFieldFormatter
-}
-
-export type PlainTextInputProps = BaseInputProps
-export type MaskedTextInputProps = BaseInputProps<InputMaskProps>
-export type FormattedTextInputProps = BaseInputProps & {
-  formatter: TextFieldFormatter
-}
+export type FormattedTextInputProps =
+  ChakraInputProps
+  & Partial<FieldHelperProps<string>>
+  & {
+    formatter: TextInputFormatter
+    onChange?: (value: string | number) => void
+    field?: FieldInputProps<string>
+    value?: string
+  }

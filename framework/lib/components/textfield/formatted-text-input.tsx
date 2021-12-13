@@ -1,26 +1,37 @@
 import React from 'react'
+import { Input } from '@chakra-ui/react'
 import { FormattedTextInputProps } from './types'
-import { PlainTextInput } from './plain-text-input'
 
 export const FormattedTextInput = ({
   onChange,
+  setValue,
   formatter,
+  field,
   ...rest
 }: FormattedTextInputProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { currentTarget } = e
-    const { value } = currentTarget
+    const { currentTarget: { value } } = e
+    const unFormattedValue = formatter.unFormat(value)
 
-    onChange?.(formatter.unFormat(value))
+    if (setValue) {
+      setValue(unFormattedValue)
+      return
+    }
+
+    onChange?.(unFormattedValue)
   }
 
-  const value = formatter.format(String(rest.value) ?? '')
+  const value = (field?.value ?? rest.value) ?? ''
+
+  const formattedValue = value === ''
+    ? value
+    : formatter.format(value)
 
   return (
-    <PlainTextInput
-      { ...rest }
+    <Input
       onChange={ handleChange }
-      value={ value }
+      value={ formattedValue }
+      { ...rest }
     />
   )
 }
