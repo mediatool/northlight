@@ -30,6 +30,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/icon',
   },
   {
+    title: 'Palette',
+    path: '/docs/palette',
+  },
+  {
     title: 'Radio button',
     path: '/docs/radio',
   },

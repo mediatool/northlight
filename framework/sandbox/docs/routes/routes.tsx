@@ -37,6 +37,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/palette',
+    component: () => import('../pages/palette-page'),
+    exact: true,
+  },
+  {
     path: '/radio',
     component: () => import('../pages/radio-button-page'),
     exact: true,
