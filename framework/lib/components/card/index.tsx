@@ -1,13 +1,8 @@
-import React from 'react'
-import { Box, BoxProps } from '@chakra-ui/react'
-
-type Props = BoxProps
-
-export const Card = (props: Props) => (
-  <Box
-    rounded="base"
-    shadow="base"
-    overflow="hidden"
-    { ...props }
-  />
-)
+export * from './card'
+export * from './card-actions'
+export * from './card-content'
+export * from './card-description'
+export * from './card-image'
+export * from './card-title'
+export * from './simple-card'
+export * from './types'

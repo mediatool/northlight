@@ -2,8 +2,8 @@ import { SidebarItem } from '../types'
 
 export const sidebarItems: SidebarItem[] = [
   {
-    title: 'Abstract TextInput',
-    path: '/docs/abstract-text-input',
+    title: 'Plain TextInput',
+    path: '/docs/plain-text-input',
   },
   {
     title: 'Badge',
@@ -16,6 +16,10 @@ export const sidebarItems: SidebarItem[] = [
   {
     title: 'Breadcrumbs',
     path: '/docs/breadcrumbs',
+  },
+  {
+    title: 'Card',
+    path: '/docs/card',
   },
   {
     title: 'Close button',
