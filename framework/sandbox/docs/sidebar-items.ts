@@ -34,6 +34,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/icon',
   },
   {
+    title: 'Formatted NumberInput',
+    path: '/docs/formatted-number-input',
+  },
+  {
     title: 'Palette',
     path: '/docs/palette',
   },

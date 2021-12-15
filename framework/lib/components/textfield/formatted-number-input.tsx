@@ -1,19 +1,21 @@
 import React from 'react'
 import { Input } from '@chakra-ui/react'
-import { FormattedTextInputProps } from './types'
+import { FormattedNumberInputProps } from './types'
 
-export const FormattedTextInput = ({
+export const FormattedNumberInput = ({
   onChange,
   setValue,
   formatter,
   field,
   ...rest
-}: FormattedTextInputProps) => {
+}: FormattedNumberInputProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { currentTarget: { value } } = e
-    const unFormattedValue = formatter.unFormat(value)
+    const { target: { value } } = e
+    const unFormattedValue = value === ''
+      ? value
+      : formatter.unFormat(value)
 
-    if (setValue) {
+    if (setValue !== undefined) {
       setValue(unFormattedValue)
       return
     }
@@ -29,9 +31,9 @@ export const FormattedTextInput = ({
 
   return (
     <Input
-      onChange={ handleChange }
-      value={ formattedValue }
       { ...rest }
+      value={ formattedValue }
+      onChange={ handleChange }
     />
   )
 }

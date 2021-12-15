@@ -4,7 +4,7 @@ import {
   Button,
   Code,
   Form,
-  FormattedTextInput,
+  FormattedNumberInput,
   Heading,
   Image,
   List,
@@ -82,7 +82,7 @@ const FormPage = () => (
             />
             <TextField
               name="formatted"
-              as={ FormattedTextInput }
+              as={ FormattedNumberInput }
               formatter={ formatter }
               placeholder="I format according to your locale as you type numbers"
             />

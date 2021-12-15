@@ -33,12 +33,12 @@ export type MaskedTextInputProps =
     field?: FieldInputProps<string>
   }
 
-export type FormattedTextInputProps =
-  ChakraInputProps
+export type FormattedNumberInputProps =
+  Omit<ChakraInputProps, 'onChange'>
   & Partial<FieldHelperProps<string>>
   & {
     formatter: TextInputFormatter
-    onChange?: (value: string | number) => void
+    onChange?: (value: string) => void
     field?: FieldInputProps<string>
     value?: string
   }

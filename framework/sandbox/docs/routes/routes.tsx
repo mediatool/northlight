@@ -37,6 +37,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/formatted-number-input',
+    component: () => import('../pages/formatted-number-input-page'),
+    exact: true,
+  },
+  {
     path: '/icon',
     component: () => import('../pages/icon-page'),
     exact: true,
