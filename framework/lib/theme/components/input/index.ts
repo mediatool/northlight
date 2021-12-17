@@ -1,7 +1,7 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 
 export const Input: ComponentMultiStyleConfig = {
-  parts: [ 'element', 'field', 'addon' ],
+  parts: [ 'field', 'addon' ],
   baseStyle: {
     addon: {
       transitionProperty: 'common',

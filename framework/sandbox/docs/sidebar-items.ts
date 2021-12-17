@@ -49,4 +49,8 @@ export const sidebarItems: SidebarItem[] = [
     title: 'Tag',
     path: '/docs/tag',
   },
+  {
+    title: 'Textarea',
+    path: '/docs/textarea',
+  },
 ]

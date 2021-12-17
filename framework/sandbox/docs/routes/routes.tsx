@@ -61,4 +61,9 @@ export const routes: Route[] = [
     component: () => import('../pages/tag-page'),
     exact: true,
   },
+  {
+    path: '/textarea',
+    component: () => import('../pages/textarea-page'),
+    exact: true,
+  },
 ]
