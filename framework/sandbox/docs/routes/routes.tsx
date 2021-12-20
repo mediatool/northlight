@@ -47,6 +47,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/pin-input',
+    component: () => import('../pages/pin-input-page'),
+    exact: true,
+  },
+  {
     path: '/radio',
     component: () => import('../pages/radio-button-page'),
     exact: true,

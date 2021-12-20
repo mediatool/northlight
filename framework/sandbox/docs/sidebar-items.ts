@@ -38,6 +38,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/palette',
   },
   {
+    title: 'Pin input',
+    path: '/docs/pin-input',
+  },
+  {
     title: 'Radio button',
     path: '/docs/radio',
   },
