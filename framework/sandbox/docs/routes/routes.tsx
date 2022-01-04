@@ -27,6 +27,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/checkbox',
+    component: () => import('../pages/checkbox-page'),
+    exact: true,
+  },
+  {
     path: '/close-button',
     component: () => import('../pages/close-button-page'),
     exact: true,
@@ -47,6 +52,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/icon-button',
+    component: () => import('../pages/icon-button-page'),
+    exact: true,
+  },
+  {
     path: '/palette',
     component: () => import('../pages/palette-page'),
     exact: true,
@@ -59,6 +69,11 @@ export const routes: Route[] = [
   {
     path: '/radio',
     component: () => import('../pages/radio-button-page'),
+    exact: true,
+  },
+  {
+    path: '/select',
+    component: () => import('../pages/select-page'),
     exact: true,
   },
   {

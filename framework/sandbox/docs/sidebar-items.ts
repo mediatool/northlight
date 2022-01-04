@@ -22,6 +22,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/card',
   },
   {
+    title: 'Checkbox',
+    path: '/docs/checkbox',
+  },
+  {
     title: 'Close button',
     path: '/docs/close-button',
   },
@@ -32,6 +36,10 @@ export const sidebarItems: SidebarItem[] = [
   {
     title: 'Icon',
     path: '/docs/icon',
+  },
+  {
+    title: 'Icon Button',
+    path: '/docs/icon-button',
   },
   {
     title: 'Formatted NumberInput',
@@ -48,6 +56,10 @@ export const sidebarItems: SidebarItem[] = [
   {
     title: 'Radio button',
     path: '/docs/radio',
+  },
+  {
+    title: 'Select',
+    path: '/docs/select',
   },
   {
     title: 'Switch',
