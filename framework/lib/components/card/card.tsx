@@ -7,15 +7,16 @@ export interface CardProps extends BoxProps {
 }
 
 export const Card = ({
-  size = 'xs',
+  size = 'sm',
   shadow = 'lg',
+  rounded = 6,
   ...rest
 }: CardProps) => (
   <Box
     { ...rest }
-    rounded={ 6 }
+    rounded={ rounded }
     shadow={ shadow }
     overflow="hidden"
-    w={ size }
+    w={ (rest.w || rest.width) ?? size }
   />
 )

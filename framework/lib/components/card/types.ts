@@ -1,1 +1,1 @@
-export type CardSize = 'xs' | 'sm' | 'md' | 'lg' | 'max' | 'min' | 'full'
+export type CardSize = 'xs' | 'sm' | 'md' | 'lg' | 'max' | 'min' | 'full' | 'max-content'

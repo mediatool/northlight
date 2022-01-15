@@ -30,6 +30,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/close-button',
   },
   {
+    title: 'Date picker',
+    path: '/docs/date-picker',
+  },
+  {
     title: 'Form',
     path: '/docs/form',
   },
