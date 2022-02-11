@@ -34,6 +34,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/date-picker',
   },
   {
+    title: 'Date range picker',
+    path: '/docs/date-range-picker',
+  },
+  {
     title: 'Form',
     path: '/docs/form',
   },

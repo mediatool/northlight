@@ -1,6 +1,6 @@
 import { CSSObject } from '@chakra-ui/react'
+import { palette } from '~lib/theme'
 import { DayState } from '../types'
-import { palette } from '../../../theme'
 
 export const dayStyles: Record<DayState, CSSObject> = {
   BASE: {
@@ -14,6 +14,7 @@ export const dayStyles: Record<DayState, CSSObject> = {
   TODAY_SELECTED: {
     bg: palette.blue[500],
     color: palette.white,
+    fontWeight: 'semibold',
     _hover: {
       bg: palette.gray[100],
       color: palette.gray[700],
@@ -28,10 +29,11 @@ export const dayStyles: Record<DayState, CSSObject> = {
     },
   },
   TODAY: {
-    bg: palette.mediatoolBlue[500],
-    color: palette.white,
+    bg: palette.gray[100],
+    color: palette.gray[700],
+    fontWeight: 'semibold',
     _hover: {
-      bg: palette.blue[500],
+      border: `1px solid ${palette.blue[500]}`,
     },
   },
   UNAVAILABLE: {

@@ -3,7 +3,10 @@ import { DatePicker, List, ListItem, Text } from '~lib/components'
 import { Page } from '../../components'
 
 const DatePickerPage = () => {
-  const [ dates, setDates ] = useState<Date[]>([])
+  const [ dates, setDates ] = useState<Date[]>([
+    new Date(2022, 2, 23),
+    new Date(2022, 0, 3),
+  ])
 
   return (
     <Page

@@ -29,7 +29,6 @@ export const YearsGrid = ({
       { yearRange.map((year) => (
         <Button
           variant="ghost"
-          size="sm"
           key={ year }
           onClick={ () => onYearSelect(year) }
         >

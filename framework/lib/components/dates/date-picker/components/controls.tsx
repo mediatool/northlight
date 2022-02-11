@@ -1,10 +1,10 @@
 import React from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
-import { ToggleYearsButton } from './toggle-years-button'
 import { useDatePickerState } from '../util'
-import { Flex } from '../../flex'
-import { IconButton } from '../../icon-button'
-import { HStack } from '../../stack'
+import { ToggleYearsButton } from '../../components'
+import { Flex } from '../../../flex'
+import { IconButton } from '../../../icon-button'
+import { HStack } from '../../../stack'
 
 interface Props {
   month: number

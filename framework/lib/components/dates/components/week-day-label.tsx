@@ -1,6 +1,5 @@
 import React from 'react'
-import { WeekDay } from '../types'
-import { CALENDAR_PILL_SIZE, WEEKDAY_ABBREVIATION } from '../util'
+import { CALENDAR_PILL_SIZE, WEEKDAY_ABBREVIATION, WeekDay } from '../util'
 import { Text } from '../../text'
 import { Center } from '../../center'
 
@@ -12,7 +11,12 @@ export const WeekDayLabel = ({
   label,
 }: Props) => (
   <Center boxSize={ `${CALENDAR_PILL_SIZE}px` }>
-    <Text size="sm" lineHeight={ 4 } color="gray.500">
+    <Text
+      size="sm"
+      lineHeight={ 4 }
+      color="mediatoolBlue.500"
+      fontWeight="bold"
+    >
       { label.substring(0, WEEKDAY_ABBREVIATION) }
     </Text>
   </Center>

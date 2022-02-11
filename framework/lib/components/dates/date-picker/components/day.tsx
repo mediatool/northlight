@@ -1,18 +1,14 @@
 import React from 'react'
 import { DateObj } from 'dayzed'
-import { BlankDay } from './blank-day'
-import { CALENDAR_PILL_SIZE, dayStyles, getDayState, useDatePickerState } from '../util'
-import { Center } from '../../center'
+import { dayStyles, getDayState, useDatePickerState } from '../util'
+import { CALENDAR_PILL_SIZE } from '../../util'
+import { Center } from '../../../center'
 
 interface Props {
-  day: string | DateObj
+  day: DateObj
 }
 
 export const Day = ({ day }: Props) => {
-  if (typeof day === 'string') {
-    return <BlankDay />
-  }
-
   const { dayzed } = useDatePickerState()
 
   const dayState = getDayState(day)

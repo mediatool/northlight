@@ -42,6 +42,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/date-range-picker',
+    component: () => import('../pages/date-range-picker-page'),
+    exact: true,
+  },
+  {
     path: '/form',
     component: () => import('../pages/form-page'),
     exact: true,

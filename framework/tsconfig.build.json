@@ -5,5 +5,8 @@
     "sandbox/**/*",
     "vite.config.ts"
   ],
+  "compilerOptions": {
+    "noEmitOnError": true
+  },
   "files": []
 }

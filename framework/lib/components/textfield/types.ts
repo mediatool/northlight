@@ -7,15 +7,11 @@ export interface TextInputFormatter {
   unFormat: (value: string) => string
 }
 
-/*
-  We need to find a better way to detect all the props of the passed 'as' component,
-  other than [prop: string]: any
-*/
-export type TextFieldProps = ChakraInputProps & {
+export type TextFieldProps<TComponent> = ChakraInputProps & {
   name: string
   label?: string
   validate?: FieldValidator
-  [prop: string]: any
+  as: TComponent
 }
 
 export type PlainTextInputProps =

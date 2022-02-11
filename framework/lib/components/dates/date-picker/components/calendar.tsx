@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import { Calendar as DayzedCalendar } from 'dayzed'
-import { Weeks } from './weeks'
-import { WeekDayLabels } from './week-day-labels'
-import { YearsGrid } from './years-grid'
 import { Controls } from './controls'
-import { Card } from '../../card'
-import { FirstDayOfWeek } from '../types'
-import { mondayFirstWeekDays, sundayFirstWeekDays } from '../util'
+import { Day } from './day'
+import { BlankDay, WeekDayLabels, Weeks, YearsGrid } from '../../components'
+import { FirstDayOfWeek } from '../../util'
+import { Card } from '../../../card'
 
 interface Props {
   calendar: DayzedCalendar
@@ -20,9 +18,6 @@ export const Calendar = ({
   onYearSelect,
 }: Props) => {
   const [ isSelectingYear, setIsSelectingYear ] = useState(false)
-  const weekDays = firstDayOfWeek === 0
-    ? sundayFirstWeekDays
-    : mondayFirstWeekDays
 
   const toggleYears = () => setIsSelectingYear((val) => !val)
 
@@ -47,8 +42,17 @@ export const Calendar = ({
             year={ calendar.year }
             toggleYears={ toggleYears }
           />
-          <WeekDayLabels labels={ weekDays } />
-          <Weeks weeks={ calendar.weeks } />
+          <WeekDayLabels firstDayOfWeek={ firstDayOfWeek } />
+          <Weeks
+            weeks={ calendar.weeks }
+            day={ (day, index) => (
+              typeof day === 'string'
+                ? <BlankDay key={ index } />
+                : (
+                  <Day key={ index } day={ day } />
+                )
+            ) }
+          />
         </>
       ) }
     </Card>

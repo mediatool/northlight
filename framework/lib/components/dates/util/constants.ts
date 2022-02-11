@@ -1,8 +1,8 @@
-import { Month, WeekDay } from '../types'
+import { Month, WeekDay } from '../util'
 
 export const WEEKDAY_ABBREVIATION = 2
 export const YEAR_THRESHOLD = 10
-export const CALENDAR_PILL_SIZE = 32
+export const CALENDAR_PILL_SIZE = 36
 export const months: Month[] = [
   'January',
   'February',
