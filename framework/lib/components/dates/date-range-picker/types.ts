@@ -27,6 +27,7 @@ DayzedProps,
   selected: Partial<DateTuple>
   dates?: Partial<DateTuple>
   fiscalDate?: Date
+  triggerless?: boolean
 }
 
 export interface ContextValue {

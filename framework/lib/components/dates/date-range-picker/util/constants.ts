@@ -102,35 +102,54 @@ export const getYearlyPresets = ({
   fiscalDate,
 }: {
   fiscalDate?: Date
-}): DatePreset[] => [
-  {
-    title: `This ${fiscalDate ? 'fiscal' : ''} year`,
-    range: [
-      new Date(
-        currentYear,
-        fiscalDate?.getMonth() ?? 0,
-        fiscalDate?.getDate() ?? 1
-      ),
-      new Date(
-        currentYear + 1,
-        fiscalDate?.getMonth() ?? 11,
-        fiscalDate?.getDate() ?? 31
-      ),
-    ],
-  },
-  {
-    title: `Last ${fiscalDate ? 'fiscal' : ''} year`,
-    range: [
-      new Date(
-        currentYear - 1,
-        fiscalDate?.getMonth() ?? 0,
-        fiscalDate?.getDate() ?? 1
-      ),
-      new Date(
-        currentYear,
-        fiscalDate?.getMonth() ?? 11,
-        fiscalDate?.getDate() ?? 31
-      ),
-    ],
-  },
-]
+}): DatePreset[] => (
+  fiscalDate
+    ? [
+      {
+        title: 'This fiscal year',
+        range: [
+          new Date(
+            fiscalDate.getFullYear(),
+            fiscalDate.getMonth(),
+            fiscalDate.getDate()
+          ),
+          new Date(
+            fiscalDate.getFullYear(),
+            fiscalDate.getMonth(),
+            fiscalDate.getDate() + 364
+          ),
+        ],
+      },
+      {
+        title: 'Last fiscal year',
+        range: [
+          new Date(
+            fiscalDate.getFullYear(),
+            fiscalDate.getMonth(),
+            fiscalDate.getDate() - 364
+          ),
+          new Date(
+            fiscalDate.getFullYear(),
+            fiscalDate.getMonth(),
+            fiscalDate.getDate()
+          ),
+        ],
+      },
+    ]
+    : [
+      {
+        title: 'This year',
+        range: [
+          new Date(currentYear, 0, 1),
+          new Date(currentYear, 11, 31),
+        ],
+      },
+      {
+        title: 'Last year',
+        range: [
+          new Date(currentYear - 1, 0, 1),
+          new Date(currentYear - 1, 11, 31),
+        ],
+      },
+    ]
+)

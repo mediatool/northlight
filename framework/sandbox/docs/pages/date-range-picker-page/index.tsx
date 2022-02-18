@@ -10,7 +10,8 @@ const DateRangePickerPage = () => {
       <DateRangePicker
         selected={ dates }
         onChange={ setDates }
-        fiscalDate={ undefined }
+        fiscalDate={ new Date(2022, 2, 3) }
+        firstDayOfWeek={ 1 }
       />
     </Page>
   )
