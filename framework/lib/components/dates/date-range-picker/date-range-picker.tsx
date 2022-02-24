@@ -60,6 +60,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     setSelectedPreset(preset.title)
     setStartOffset(0)
     setDateRange(preset.range)
+    props.onChange(preset.range)
   }
 
   const hoverDate = (date: Date) => {
