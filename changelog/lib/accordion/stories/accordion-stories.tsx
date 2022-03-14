@@ -34,26 +34,26 @@ const Template: Story<ComponentProps<typeof AccordionComp>> = (args: AccordionPr
   <>
     <AccordionComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="added"
           description={ <Description /> }
         />
-      }
+      ) }
       onExpand={ () => console.log('expanded') }
     >
       <p>This is expanded and works</p>
     </AccordionComp>
     <AccordionComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ systemUser }
           icon="added"
           description={ <Description /> }
         />
-      }
+      ) }
       onExpand={ () => console.log('expanded') }
     >
       <p>This is expanded and works</p>

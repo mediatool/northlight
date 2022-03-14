@@ -54,7 +54,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
   <>
     <ActivityItemComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="added"
@@ -63,11 +63,11 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
             <ActivityItemTime />
           }
         />
-      }
+      ) }
     />
     <ActivityItemComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="modified"
@@ -76,11 +76,11 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
             <ActivityItemTime />
           }
         />
-    }
+      ) }
     />
     <ActivityItemComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="approved"
@@ -89,11 +89,11 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
             <ActivityItemTime />
           }
         />
-    }
+      ) }
     />
     <ActivityItemComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="denied"
@@ -102,11 +102,11 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
             <ActivityItemTime />
           }
         />
-    }
+      ) }
     />
     <ActivityItemComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="deleted"
@@ -115,11 +115,11 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
             <ActivityItemTime />
           }
         />
-    }
+      ) }
     />
     <ActivityItemComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="pending"
@@ -128,11 +128,11 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
             <ActivityItemTime />
           }
         />
-    }
+      ) }
     />
     <ActivityItemComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="modified"
@@ -141,28 +141,28 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
             <ActivityItemTime />
           }
         />
-    }
+      ) }
     />
     <ActivityItemComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="approvalRequested"
           description={ <Description /> }
-          time={
+          time={ (
             <ActivityItemTime
               time="2019-02-05T10:35:30:026+00:00"
               timeFormat="YYYY-MM-DDTHH:mm:ssZ"
               toolTipTime="1 month ago"
             />
-          }
+          ) }
         />
-    }
+      ) }
     />
     <ActivityItemComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="modified"
@@ -171,11 +171,11 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
             <ActivityItemTime />
           }
         />
-    }
+      ) }
     />
     <ActivityItemComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="campaignCreated"
@@ -184,11 +184,11 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
             <ActivityItemTime />
           }
         />
-    }
+      ) }
     />
     <ActivityItemComp
       { ...args }
-      summary={
+      summary={ (
         <EntrySummary
           actor={ user }
           icon="orgCreated"
@@ -197,7 +197,7 @@ const Template: Story<ComponentProps<typeof ActivityItemComp>> = (args: Activity
             <ActivityItemTime />
           }
         />
-    }
+      ) }
     />
   </>
 )
