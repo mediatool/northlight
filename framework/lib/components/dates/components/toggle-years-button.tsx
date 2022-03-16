@@ -20,6 +20,7 @@ export const ToggleYearsButton = ({
     py={ 1 }
     rightIcon={ <ChevronDownIcon /> }
     onClick={ toggleYears }
+    fontSize="16px"
   >
     { months[month] } { year }
   </Button>

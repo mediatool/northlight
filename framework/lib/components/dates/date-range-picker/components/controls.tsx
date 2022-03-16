@@ -1,6 +1,7 @@
 import React from 'react'
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 
+import { ToggleYearsButton } from '../../components'
 import { months } from '../../util'
 
 import { Flex } from '../../../flex'
@@ -23,21 +24,18 @@ export const Controls = ({
   next,
 }: Props) => (
   <Flex justifyContent="space-between">
-    <Button
-      variant="ghost"
-      px={ 2 }
-      py={ 1 }
-      rightIcon={ <ChevronDownIcon /> }
-      onClick={ toggleYears }
-    >
-      { months[month] } { year }
-    </Button>
+    <ToggleYearsButton
+      month={ month }
+      year={ year }
+      toggleYears={ toggleYears }
+    />
     <Flex alignItems="center">
       <IconButton
         aria-label="Previous month"
         icon={ <ChevronLeftIcon /> }
         variant="ghost"
         size="sm"
+        fontSize="14px"
         { ...prev }
         disabled={ year === 2012 && month === 0 }
       />
@@ -46,6 +44,7 @@ export const Controls = ({
         icon={ <ChevronRightIcon /> }
         variant="ghost"
         size="sm"
+        fontSize="14px"
         { ...next }
       />
     </Flex>

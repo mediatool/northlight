@@ -16,6 +16,7 @@ export const WeekDayLabel = ({
       lineHeight={ 4 }
       color="mediatoolBlue.500"
       fontWeight="bold"
+      fontSize="14px"
     >
       { label.substring(0, WEEKDAY_ABBREVIATION) }
     </Text>

@@ -31,6 +31,7 @@ export const YearsGrid = ({
           variant="ghost"
           key={ year }
           onClick={ () => onYearSelect(year) }
+          fontSize="16px"
         >
           { year }
         </Button>

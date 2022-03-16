@@ -34,6 +34,7 @@ export const Day = ({ day, dayzedDateProps }: Props) => {
       onMouseEnter={ () => hoverDate(day.date) }
       onMouseLeave={ unHoverDate }
       fontWeight={ day.today ? 'semibold' : 'normal' }
+      fontSize="16px"
       { ...dayzedDateProps }
     >
       { day.date.getDate() }
