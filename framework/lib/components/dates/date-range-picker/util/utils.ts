@@ -87,6 +87,10 @@ export const datesAreNotInSameMonthOrYear = (start?: Date, end?: Date) => (
   start?.getMonth() !== end?.getMonth() || start?.getFullYear() !== end?.getFullYear()
 )
 
+export const isSameDaySimple = (a: Date, b?: Date) => (
+  a.toLocaleDateString() === b?.toLocaleDateString()
+)
+
 export const getDayState = ({
   day,
   hoveredDateRange,
@@ -103,11 +107,11 @@ export const getDayState = ({
     ? hoveredDateRange
     : selectedDateRange
 
-  if (day.date.getTime() === start?.getTime()) {
+  if (isSameDaySimple(day.date, start)) {
     return 'START_DATE'
   }
 
-  if (day.date.getTime() === end?.getTime()) {
+  if (isSameDaySimple(day.date, end)) {
     return 'END_DATE'
   }
 
