@@ -1,3 +1,7 @@
 # Mediatool UI framework
 This awesome collection of components, built upon Chakra, powers all of Mediatool's features.
-Feature-specific components are built by composing building blocks from this library.
+
+## Get started
+1. Run `yarn`
+2. Run `yarn start`
+3. Navigate to http://localhost:3008
