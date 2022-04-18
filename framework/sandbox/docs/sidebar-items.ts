@@ -81,4 +81,8 @@ export const sidebarItems: SidebarItem[] = [
     title: 'Textarea',
     path: '/docs/textarea',
   },
+  {
+    title: 'Status pin',
+    path: '/docs/status-pin',
+  },
 ]

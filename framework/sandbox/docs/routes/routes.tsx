@@ -101,4 +101,9 @@ export const routes: Route[] = [
     component: () => import('../pages/textarea-page'),
     exact: true,
   },
+  {
+    path: '/status-pin',
+    component: () => import('../pages/status-pin-page'),
+    exact: true,
+  },
 ]
