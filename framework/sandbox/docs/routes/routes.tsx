@@ -116,4 +116,9 @@ export const routes: Route[] = [
     component: () => import('../pages/navbar-item-page'),
     exact: true,
   },
+  {
+    path: '/status-block',
+    component: () => import('../pages/status-block-page'),
+    exact: true,
+  },
 ]

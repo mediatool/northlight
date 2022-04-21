@@ -93,4 +93,8 @@ export const sidebarItems: SidebarItem[] = [
     title: 'Navbar item',
     path: '/docs/navbar-item',
   },
+  {
+    title: 'Status block',
+    path: '/docs/status-block',
+  },
 ]

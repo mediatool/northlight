@@ -5,7 +5,7 @@ import { sidebarItems } from '../../sidebar-items'
 
 export const DemoSidebar = () => {
   // Mocked values
-  const displayLabel = false
+  const displayTitle = false
   const handleCreate = () => null
 
   return (
@@ -34,7 +34,7 @@ export const DemoSidebar = () => {
             key={ path }
             icon={ icon }
             title={ title }
-            renderLabel={ displayLabel }
+            renderTitle={ displayTitle }
           />
         )) }
       </Stack>
