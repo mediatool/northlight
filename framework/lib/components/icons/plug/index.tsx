@@ -12,7 +12,7 @@ export const PlugIcon = (props: Props) => (
       strokeLinecap="square"
       strokeLinejoin="miter"
       strokeMiterlimit="10"
-      strokeWidth={ 1 }
+      strokeWidth={ 2 }
     >
       <line fill="none" stroke="currentColor" x1="2" x2="6.001" y1="30" y2="25.999" />
       <line fill="none" stroke="currentColor" x1="14" x2="11" y1="14" y2="17" />

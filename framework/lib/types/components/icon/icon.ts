@@ -7,6 +7,14 @@ export type IconType =
   | 'search'
   | 'switches'
   | 'mediatoolLogo'
+  | 'settings'
+  | 'folderOpen'
+  | 'positionMarker'
+  | 'report'
+  | 'approved'
+  | 'rejected'
+  | 'working'
+  | 'pending'
 
 export interface IconProps {
   color?: `${Color}.${ColorGrade}` | 'white' | 'black'

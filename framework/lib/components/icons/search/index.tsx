@@ -12,7 +12,7 @@ export const SearchIcon = (props: Props) => (
       strokeLinecap="square"
       strokeLinejoin="miter"
       strokeMiterlimit="10"
-      strokeWidth={ 1 }
+      strokeWidth={ 2 }
     >
       <line fill="none" x1="29" x2="24" y1="29" y2="24" />
       <path d="M6,13a7,7,0,0,1,7-7" fill="none" strokeLinecap="butt" />

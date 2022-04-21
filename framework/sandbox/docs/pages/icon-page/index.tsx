@@ -8,7 +8,7 @@ const IconPage = () => (
     title="Icon"
     subtitle="Using chakra Icon to render raw SVG exported from Figma"
   >
-    <Box w="40%">
+    <Box w="100%" maxW={ 500 } >
       <Text>
         Each icon is exported in 2 variants:&nbsp;
         <strong>outlined</strong> and <strong>filled</strong>.
@@ -35,9 +35,9 @@ const IconPage = () => (
         in case for the hub icon component, its folder is named hub
       </Text>
     </Box>
-    <SimpleGrid mt={ 6 } columns={ 3 } spacing={ 4 } w="30%">
+    <SimpleGrid mt={ 6 } columns={ 6 } spacing={ 4 } w="100%" maxW={ 1200 }>
       { Object.keys(iconMap).map((iconType: any) => (
-        <Card py={ 4 } key={ iconType }>
+        <Card py={ 4 } key={ iconType } w="100%">
           <Flex align="center" direction="column">
             <Text mb={ 2 }>{ iconType }</Text>
             <Icon boxSize={ 8 } type={ iconType } />

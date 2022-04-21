@@ -12,7 +12,7 @@ export const PlusIcon = (props: Props) => (
       strokeLinecap="square"
       strokeLinejoin="miter"
       strokeMiterlimit="10"
-      strokeWidth={ 1 }
+      strokeWidth={ 2 }
     >
       <line fill="none" stroke="currentColor" x1="16" x2="16" y1="9" y2="23" />
       <line fill="none" stroke="currentColor" x1="23" x2="9" y1="16" y2="16" />

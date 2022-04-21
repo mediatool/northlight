@@ -4,7 +4,7 @@ import { IconProps } from '~lib/types'
 
 type Props = ChakraIconProps & IconProps
 
-export const HubIcon = (props: Props) => (
+export const PositionMarkerIcon = (props: Props) => (
   <Icon viewBox="0 0 32 32" { ...props }>
     <g
       fill="currentColor"
@@ -14,9 +14,7 @@ export const HubIcon = (props: Props) => (
       strokeMiterlimit="10"
       strokeWidth={ 2 }
     >
-      <polygon fill="none" points="6,16 2,9 6,2 14,2 18,9 13.9,16 " stroke="currentColor" />
-      <polygon fill="none" points="6,30 2,23 6,16 14,16 18,23 13.9,30 " stroke="currentColor" />
-      <polygon fill="none" points="18,23 14,16 18,9 26,9 30,16 25.9,23 " stroke="currentColor" />
+      <path fill="none" d="M16 17a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM16 17v9M12.001 23.166C6.217 23.657 2 25.188 2 27c0 2.209 6.268 4 14 4s14-1.791 14-4c0-1.812-4.217-3.343-10.001-3.834" />
     </g>
   </Icon>
 )
