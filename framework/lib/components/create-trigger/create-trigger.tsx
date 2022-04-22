@@ -1,0 +1,36 @@
+import React from 'react'
+import { CSSObject } from '@chakra-ui/system'
+import { Button } from '~lib/components'
+import { PlusIcon } from '../icons'
+
+type CreateTriggerProps = {
+  handleClick: () => void
+  disabled?: boolean
+}
+
+const disabledStyle:CSSObject = {
+  bgColor: 'gray.100',
+  cursor: 'not-allowed',
+  color: 'white',
+  _hover: {
+    bgColor: 'gray.100',
+  },
+}
+
+export const CreateTrigger = ({ handleClick, disabled }: CreateTriggerProps) => (
+  <Button
+    boxSize="40px"
+    bgColor="green.200"
+    borderRadius="full"
+    color="mediatool.500"
+    onClick={ handleClick }
+    _hover={ { bgColor: 'green.300' } }
+    _focus={ { border: 'none' } }
+    _active={ { bgColor: 'green.300' } }
+    disabled={ disabled }
+    _disabled={ disabledStyle }
+  >
+    <PlusIcon boxSize="27px" />
+  </Button>
+
+)

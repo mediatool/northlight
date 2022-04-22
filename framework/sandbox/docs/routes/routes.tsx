@@ -106,4 +106,14 @@ export const routes: Route[] = [
     component: () => import('../pages/status-pin-page'),
     exact: true,
   },
+  {
+    path: '/create-trigger',
+    component: () => import('../pages/create-trigger-page'),
+    exact: true,
+  },
+  {
+    path: '/navbar-item',
+    component: () => import('../pages/navbar-item-page'),
+    exact: true,
+  },
 ]
