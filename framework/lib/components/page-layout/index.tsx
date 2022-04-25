@@ -12,7 +12,7 @@ export const PageLayout = ({
   title,
   subtitle = null,
 }: PageLayoutProps) => (
-  <Box w="100%">
+  <Box w="100%" h="100%">
     <Stack spacing={ 2 }>
       { typeof title === 'string'
         ? <Heading as="h1" size="lg">{ title }</Heading>

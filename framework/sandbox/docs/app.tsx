@@ -1,8 +1,7 @@
 import React from 'react'
 import 'focus-visible'
-import { AppSkeleton } from '../components'
 import { Routing } from '../routing'
-import { DocsSidebar } from './components'
+import { DocsSidebar, DocsSkeleton } from './components'
 import { routes } from './routes'
 import {
   I18nProvider,
@@ -12,7 +11,7 @@ import {
 const DocsApp = () => (
   <UserProvider>
     <I18nProvider>
-      <AppSkeleton
+      <DocsSkeleton
         sidebar={ <DocsSidebar /> }
         main={ <Routing basename="/docs" routes={ routes } /> }
       />

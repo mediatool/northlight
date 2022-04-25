@@ -13,8 +13,7 @@ export const DemoSidebar = () => {
       minH="100vh"
       minW="84px"
       w="84px"
-      px={ 3 }
-      py={ 5 }
+      p={ 3 }
       spacing={ 7 }
     >
       <Center h={ 50 }>
