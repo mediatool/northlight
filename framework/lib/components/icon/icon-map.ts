@@ -5,6 +5,7 @@ import {
   HourGlassIcon,
   HubIcon,
   MediatoolLogoIcon,
+  MessageIconFilled,
   MinusIconFilled,
   PlugIcon,
   PlusIcon,
@@ -31,4 +32,5 @@ export const iconMap: Record<IconType, React.ComponentType<any>> = {
   rejected: MinusIconFilled,
   working: RefreshIcon,
   pending: HourGlassIcon,
+  messageFilled: MessageIconFilled,
 }

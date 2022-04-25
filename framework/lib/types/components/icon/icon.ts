@@ -15,6 +15,7 @@ export type IconType =
   | 'rejected'
   | 'working'
   | 'pending'
+  | 'messageFilled'
 
 export interface IconProps {
   color?: `${Color}.${ColorGrade}` | 'white' | 'black'

@@ -2,14 +2,13 @@ import React from 'react'
 import { Breadcrumb, BreadcrumbLink, Breadcrumbs } from '~lib/components'
 
 const crumbs = [
-  'EL',
+  'Mediatool',
   'Sweden',
-  'BrandEL-1',
-  'Plan007',
+  'Settings',
 ]
 
-export const SettingsBreadcrumbs = () => (
-  <Breadcrumbs>
+export const BreadcrumbsDemo = () => (
+  <Breadcrumbs flex={ 2 }>
     { crumbs.map((crumb) => (
       <Breadcrumb key={ crumb }>
         <BreadcrumbLink>{ crumb }</BreadcrumbLink>
