@@ -86,10 +86,6 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/status-pin',
   },
   {
-    title: 'Create trigger',
-    path: '/docs/create-trigger',
-  },
-  {
     title: 'Navbar item',
     path: '/docs/navbar-item',
   },

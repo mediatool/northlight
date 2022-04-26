@@ -107,11 +107,6 @@ export const routes: Route[] = [
     exact: true,
   },
   {
-    path: '/create-trigger',
-    component: () => import('../pages/create-trigger-page'),
-    exact: true,
-  },
-  {
     path: '/navbar-item',
     component: () => import('../pages/navbar-item-page'),
     exact: true,

@@ -1,12 +1,12 @@
 import React from 'react'
 import { mediatoolLogo } from '~/sandbox/assets/png'
-import { Center, CreateTrigger, Image, NavbarItem, Stack } from '~lib/components'
+import { Center, Image, NavbarItem, Stack } from '~lib/components'
 import { sidebarItems } from '../../sidebar-items'
+import { CreateTrigger } from './create-trigger'
 
 export const DemoSidebar = () => {
   // Mocked values
   const displayTitle = false
-  const handleCreate = () => null
 
   return (
     <Stack
@@ -21,7 +21,7 @@ export const DemoSidebar = () => {
         <Image src={ mediatoolLogo } alt="logo" />
       </Center>
       <Center>
-        <CreateTrigger handleClick={ handleCreate } />
+        <CreateTrigger />
       </Center>
       <Stack spacing={ 3 }>
         { sidebarItems.map(({
