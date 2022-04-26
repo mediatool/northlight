@@ -1,4 +1,5 @@
 import React from 'react'
+import 'focus-visible'
 import { DemoSidebar } from './components'
 import { AppSkeleton } from '../components'
 import { Routing } from '../routing'
