@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, HStack } from '~lib/components'
+import { Button, HStack, Text } from '~lib/components'
 import { HubIcon, SwitchesIcon } from '~lib/components/icons'
 import { DefaultPageSubtitle, Page } from '../../components'
 
@@ -14,52 +14,46 @@ const ButtonPage = () => (
     }
   >
     <HStack spacing={ 4 }>
-      <Button>Primary solid</Button>
-      <Button disabled={ true } variant="outline">Primary outlined</Button>
-      <Button variant="ghost">Primary ghost</Button>
-      <Button variant="link">Primary link</Button>
+      <Text>Variants:</Text>
+      <Button>Default</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="link">Link</Button>
     </HStack>
     <HStack spacing={ 4 } mt={ 4 }>
-      <Button disabled={ true }>Solid disabled</Button>
-      <Button disabled={ true } variant="outline">Outlined disabled</Button>
-      <Button disabled={ true } variant="ghost">Ghost disabled</Button>
-      <Button disabled={ true } variant="link">Link disabled</Button>
+      <Text>Disabled:</Text>
+      <Button disabled={ true }>Default</Button>
+      <Button disabled={ true } variant="outline">Outline</Button>
+      <Button disabled={ true } variant="ghost">Ghost</Button>
+      <Button disabled={ true } variant="link">Link</Button>
     </HStack>
     <HStack spacing={ 4 } mt={ 4 }>
-      <Button colorScheme="red">Red solid</Button>
-      <Button colorScheme="red" variant="outline">Red outlined</Button>
-      <Button colorScheme="red" variant="ghost">Red ghost</Button>
-      <Button colorScheme="red" variant="link">Red link</Button>
+      <Text>Color scheme:</Text>
+      <Button colorScheme="green">Green</Button>
+      <Button colorScheme="orange" variant="outline">Orange</Button>
+      <Button colorScheme="teal" variant="ghost">Teal</Button>
+      <Button colorScheme="red" variant="link">Red</Button>
     </HStack>
     <HStack spacing={ 4 } mt={ 4 }>
-      <Button size="xs">Solid xs</Button>
-      <Button size="sm">Solid sm</Button>
-      <Button size="md">Solid md</Button>
-      <Button size="lg">Solid lg</Button>
+      <Text>Size:</Text>
+      <Button size="xs">Size xs</Button>
+      <Button size="sm">Size sm</Button>
+      <Button size="md">Size md</Button>
+      <Button size="lg">Size lg</Button>
     </HStack>
     <HStack spacing={ 4 } mt={ 4 }>
-      <Button size="xs" variant="outline">Outlined xs</Button>
-      <Button size="sm" variant="outline">Outlined sm</Button>
-      <Button size="md" variant="outline">Outlined md</Button>
-      <Button size="lg" variant="outline">Outlined lg</Button>
+      <Text>Left Icon:</Text>
+      <Button leftIcon={ <HubIcon /> }>Hub icon</Button>
+      <Button leftIcon={ <HubIcon /> } variant="outline" colorScheme="purple">Hub icon</Button>
+      <Button leftIcon={ <HubIcon /> } variant="ghost" colorScheme="yellow">Hub icon</Button>
+      <Button leftIcon={ <HubIcon /> } variant="link" colorScheme="pink">Hub icon</Button>
     </HStack>
     <HStack spacing={ 4 } mt={ 4 }>
-      <Button size="xs" variant="ghost">Ghost xs</Button>
-      <Button size="sm" variant="ghost">Ghost sm</Button>
-      <Button size="md" variant="ghost">Ghost md</Button>
-      <Button size="lg" variant="ghost">Ghost lg</Button>
-    </HStack>
-    <HStack spacing={ 4 } mt={ 4 }>
-      <Button leftIcon={ <HubIcon /> }>Primary solid icon</Button>
-      <Button leftIcon={ <HubIcon /> } variant="outline">Primary outlined icon</Button>
-      <Button leftIcon={ <HubIcon /> } variant="ghost">Primary ghost icon</Button>
-      <Button leftIcon={ <HubIcon /> } variant="link">Primary link icon</Button>
-    </HStack>
-    <HStack spacing={ 4 } mt={ 4 }>
+      <Text>Right Icon:</Text>
       <Button rightIcon={ <SwitchesIcon /> }>Primary solid icon</Button>
-      <Button rightIcon={ <SwitchesIcon /> } variant="outline">Primary outlined icon</Button>
-      <Button rightIcon={ <SwitchesIcon /> } variant="ghost">Primary ghost icon</Button>
-      <Button rightIcon={ <SwitchesIcon /> } variant="link">Primary link icon</Button>
+      <Button rightIcon={ <SwitchesIcon /> } variant="outline" colorScheme="purple">Switches icon</Button>
+      <Button rightIcon={ <SwitchesIcon /> } variant="ghost" colorScheme="yellow">Switches icon</Button>
+      <Button rightIcon={ <SwitchesIcon /> } variant="link" colorScheme="pink">Switches icon</Button>
     </HStack>
   </Page>
 )

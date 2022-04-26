@@ -20,8 +20,8 @@ export const NavbarItem = ({
       to={ to }
       as={ NavLink }
       borderRadius={ 4 }
+      colorScheme="blue"
       _hover={ { bgColor: 'blue.100' } }
-      _focus={ { outline: 'none' } }
       _activeLink={ { bgColor: 'blue.100' } }
     >
       <Center boxSize={ 46 } >

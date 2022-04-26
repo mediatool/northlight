@@ -20,13 +20,13 @@ const disabledStyle:CSSObject = {
 export const CreateTrigger = ({ handleClick, disabled }: CreateTriggerProps) => (
   <Button
     boxSize="40px"
-    bgColor="green.200"
     borderRadius="full"
     color="mediatool.500"
+    colorScheme="green"
+    bgColor="green.200"
     onClick={ handleClick }
     _hover={ { bgColor: 'green.300' } }
-    _focus={ { border: 'none' } }
-    _active={ { bgColor: 'green.300' } }
+    _active={ { bgColor: 'green.400' } }
     disabled={ disabled }
     _disabled={ disabledStyle }
   >

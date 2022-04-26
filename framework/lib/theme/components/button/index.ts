@@ -4,43 +4,26 @@ import {
 import { whiten } from '@chakra-ui/theme-tools'
 
 export const Button: ComponentSingleStyleConfig = {
-  baseStyle: {
+  baseStyle: ({ colorScheme }) => ({
     color: 'white',
     borderRadius: 6,
-  },
+    _focusVisible: {
+      ring: '2px',
+      ringColor: `${colorScheme}.100`,
+      ringOffset: '1px',
+    },
+  }),
   variants: {
     solid: ({ theme, colorScheme }) => ({
       _hover: {
-        bg: whiten(`${colorScheme}.500`, 10)(theme),
-        _disabled: {
-          bg: 'mediatoolBlue.100',
-          opacity: 100,
-        },
-      },
-      _disabled: {
-        bg: 'mediatoolBlue.100',
-        opacity: 100,
+        bgColor: whiten(`${colorScheme}.500`, 10)(theme),
       },
     }),
     outline: {
       borderWidth: 2,
-      _disabled: {
-        color: 'mediatoolBlue.100',
-        opacity: 100,
-      },
     },
-    ghost: {
-      _disabled: {
-        color: 'mediatoolBlue.100',
-        opacity: 100,
-      },
-    },
-    link: {
-      _disabled: {
-        color: 'mediatoolBlue.100',
-        opacity: 100,
-      },
-    },
+    ghost: {},
+    link: {},
   },
   defaultProps: {
     colorScheme: 'mediatoolBlue',
