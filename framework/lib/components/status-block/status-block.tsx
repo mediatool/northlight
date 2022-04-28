@@ -13,8 +13,8 @@ export const StatusBlock = ({ variant }: Props) => {
 
   return (
     <Tag
-      w="114px"
-      h="32px"
+      w={ 28 }
+      h={ 8 }
       justifyContent="center"
       bgColor={ bgColor }
       color={ contentColor }

@@ -5,14 +5,12 @@ import { BreadcrumbsDemo } from './breadcrumbs'
 
 export const DemoTopbar = () => (
   <HStack
-    h="100%"
-    w="100%"
-    p={ 3 }
     alignItems="center"
+    p={ 3 }
     spacing={ 5 }
   >
     <BreadcrumbsDemo />
-    <InputGroup maxW="500px" flex={ 2 }>
+    <InputGroup maxW={ 96 } flex={ 2 }>
       <InputLeftElement >
         <SearchIcon />
       </InputLeftElement>
@@ -23,14 +21,14 @@ export const DemoTopbar = () => (
     </InputGroup>
     <Center justifyContent="flex-end">
       <Image
-        boxSize="40px"
+        boxSize={ 10 }
         borderRadius="full"
         src={ user }
       />
     </Center>
     <IconButton
       aria-label="Open conversations"
-      icon={ <MessageIconFilled boxSize="20px" /> }
+      icon={ <MessageIconFilled boxSize={ 5 } /> }
       bgColor="blue.500"
     />
   </HStack>

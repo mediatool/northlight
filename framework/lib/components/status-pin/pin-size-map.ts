@@ -1,9 +1,9 @@
 import { PinSize } from './types'
 
-type PinSizeTuple = [ string, string ]
+type PinSizeTuple = [ number, number ]
 
 export const pinSizeMap: Record<PinSize, PinSizeTuple > = {
-  sm: [ '20px', '11px' ],
-  md: [ '22px', '12px' ],
-  lg: [ '24px', '13px' ],
+  sm: [ 4, 2 ],
+  md: [ 5, 3 ],
+  lg: [ 6, 3.5 ],
 }

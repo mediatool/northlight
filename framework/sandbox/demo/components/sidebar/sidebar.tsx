@@ -11,13 +11,14 @@ export const DemoSidebar = () => {
   return (
     <Stack
       minH="100vh"
-      minW="84px"
-      w="84px"
       p={ 3 }
       spacing={ 7 }
     >
-      <Center h={ 50 }>
-        <Image src={ mediatoolLogo } alt="logo" />
+      <Center h="3.125rem">
+        <Image
+          src={ mediatoolLogo }
+          alt="logo"
+        />
       </Center>
       <Center>
         <CreateTrigger />

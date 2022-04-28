@@ -14,7 +14,7 @@ const disabledStyle:CSSObject = {
 
 export const CreateTrigger = () => (
   <IconButton
-    icon={ <PlusIcon boxSize="27px" /> }
+    icon={ <PlusIcon boxSize={ 7 } /> }
     aria-label="Create"
     rounded="full"
     color="mediatool.500"

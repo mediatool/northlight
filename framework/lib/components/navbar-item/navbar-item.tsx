@@ -15,7 +15,7 @@ export const NavbarItem = ({
   title,
   renderTitle = true,
 }: NavbarItemProps) => (
-  <Stack align="center" spacing={ 1 }>
+  <Stack align="center" spacing={ 1 } key={ title }>
     <Link
       to={ to }
       as={ NavLink }
@@ -24,7 +24,7 @@ export const NavbarItem = ({
       _hover={ { bgColor: 'blue.100' } }
       _activeLink={ { bgColor: 'blue.100' } }
     >
-      <Center boxSize={ 46 } >
+      <Center boxSize={ 12 } >
         <Icon boxSize={ 5 } type={ icon } />
       </Center>
     </Link>

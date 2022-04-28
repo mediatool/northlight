@@ -11,8 +11,8 @@ export const AppSkeleton = ({ sidebar, topbar, main }: Props) => (
   <Grid
     width="100%"
     height="100%"
-    templateColumns="84px auto"
-    templateRows="64px auto"
+    templateColumns="5.25rem auto"
+    templateRows="4rem auto"
     templateAreas={ `
       "sidebar topbar"
       "sidebar main"
