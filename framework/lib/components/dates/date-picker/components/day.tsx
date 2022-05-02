@@ -17,7 +17,7 @@ export const Day = ({ day }: Props) => {
   return (
     <Center
       rounded="full"
-      boxSize={ `${CALENDAR_PILL_SIZE}px` }
+      boxSize={ `${CALENDAR_PILL_SIZE}rem` }
       sx={ sx }
       { ...dayzed.getDateProps({ dateObj: day }) }
     >

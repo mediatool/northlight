@@ -27,7 +27,7 @@ export const Calendar = ({
   }
 
   return (
-    <Card size="max-content" shadow="md" p={ 4 }>
+    <Card w={ 64 } shadow="md" p={ 4 }>
       { isSelectingYear ? (
         <YearsGrid
           onYearSelect={ handleYearSelect }

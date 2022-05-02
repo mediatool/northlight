@@ -97,7 +97,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       ) }
       { isOpen && (
         <Card size="max-content" shadow="md" ref={ ref }>
-          <HStack spacing={ 6 } align="flex-start" p={ 4 }>
+          <HStack spacing={ 4 } alignItems="flex-start" p={ 4 }>
             <Presets
               selectedPreset={ selectedPreset }
               onPresetSelected={ onPresetSelected }

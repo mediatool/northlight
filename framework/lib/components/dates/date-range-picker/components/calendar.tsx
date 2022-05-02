@@ -74,7 +74,7 @@ export const Calendar = (props: Props) => {
 
   if (isSelectingYear) {
     return (
-      <Box>
+      <Box w={ 56 }>
         <YearsGrid
           onYearSelect={ handleYearSelect }
           toggleYears={ toggle }
@@ -86,7 +86,7 @@ export const Calendar = (props: Props) => {
   }
 
   return (
-    <Box>
+    <Box >
       <Controls
         prev={ getBackProps({ calendars }) }
         next={ getForwardProps({ calendars }) }

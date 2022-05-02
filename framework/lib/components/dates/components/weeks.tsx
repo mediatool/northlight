@@ -13,7 +13,7 @@ export const Weeks = ({
   weeks,
   day,
 }: Props) => (
-  <Stack spacing={ 0 }>
+  <Stack spacing={ 0.5 }>
     { weeks.map((week, weekIndex) => (
       <Flex alignItems="center" key={ weekIndex }>
         { week.map((d, dayIndex) => day(d, dayIndex)) }

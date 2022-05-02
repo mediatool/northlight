@@ -14,7 +14,7 @@ export const Preset = ({ onClick, preset, selected }: Props) => (
     onClick={ () => onClick(preset.range) }
     color={ selected ? 'blue.500' : 'mediatoolBlue.500' }
     fontWeight={ selected ? 'semibold' : 'normal' }
-    fontSize="16px"
+    fontSize="sm"
     _hover={ { fontWeight: 'semibold' } }
   >
     { preset.title }

@@ -29,6 +29,7 @@ export const Trigger = ({ onClick, dateRange, id }: Props) => (
       px={ 2 }
       color="primary"
       fontWeight="semibold"
+      fontSize="sm"
       _hover={ { cursor: 'pointer' } }
     >
       <CalendarIcon pointerEvents="none" color="primary" mr={ 2 } />

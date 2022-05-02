@@ -10,13 +10,13 @@ interface Props {
 export const WeekDayLabel = ({
   label,
 }: Props) => (
-  <Center boxSize={ `${CALENDAR_PILL_SIZE}px` }>
+  <Center boxSize={ `${CALENDAR_PILL_SIZE}rem` }>
     <Text
       size="sm"
       lineHeight={ 4 }
       color="mediatoolBlue.500"
       fontWeight="bold"
-      fontSize="14px"
+      fontSize="xs"
     >
       { label.substring(0, WEEKDAY_ABBREVIATION) }
     </Text>

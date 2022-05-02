@@ -41,8 +41,8 @@ export const Presets = ({
 
   return (
     <Box
-      pt={ 1 }
-      pr={ 6 }
+      py={ 2 }
+      pr={ 4 }
       borderRight="1px solid"
       borderColor="gray.50"
     >

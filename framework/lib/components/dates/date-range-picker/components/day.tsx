@@ -29,12 +29,12 @@ export const Day = ({ day, dayzedDateProps }: Props) => {
 
   return (
     <Center
-      boxSize={ `${CALENDAR_PILL_SIZE}px` }
+      boxSize={ `${CALENDAR_PILL_SIZE}rem` }
       sx={ sx }
       onMouseEnter={ () => hoverDate(day.date) }
       onMouseLeave={ unHoverDate }
       fontWeight={ day.today ? 'semibold' : 'normal' }
-      fontSize="16px"
+      fontSize="sm"
       { ...dayzedDateProps }
     >
       { day.date.getDate() }

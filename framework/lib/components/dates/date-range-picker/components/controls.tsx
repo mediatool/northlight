@@ -35,7 +35,7 @@ export const Controls = ({
         icon={ <ChevronLeftIcon /> }
         variant="ghost"
         size="sm"
-        fontSize="14px"
+        fontSize="sm"
         { ...prev }
         disabled={ year === 2012 && month === 0 }
       />
@@ -44,7 +44,7 @@ export const Controls = ({
         icon={ <ChevronRightIcon /> }
         variant="ghost"
         size="sm"
-        fontSize="14px"
+        fontSize="sm"
         { ...next }
       />
     </Flex>
