@@ -48,7 +48,7 @@
     "less-loader": "^7.3.0",
     "less-plugin-npm-import": "^2.1.0",
     "mocha": "^9.1.3",
-    "mt-ui": "^5.2.10",
+    "mt-ui": "^7.0.0",
     "postcss": "^8.3.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
