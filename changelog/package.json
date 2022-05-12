@@ -61,7 +61,7 @@
     "babel-plugin-root-import": "^6.6.0"
   },
   "peerDependencies": {
-    "mt-ui": "^5.2.1",
+    "mt-ui": "^7.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
