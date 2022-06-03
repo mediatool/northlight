@@ -12,7 +12,7 @@ export const DefaultPageSubtitle = ({
   linkText,
 }: Props) => (
   <Heading as="h2" size="sm">
-    Re-export of&nbsp;
+    Based on&nbsp;
     <ChakraDocsLink slug={ slug }>
       { linkText }
     </ChakraDocsLink>

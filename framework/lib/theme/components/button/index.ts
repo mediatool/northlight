@@ -1,33 +1,81 @@
 import {
   ComponentSingleStyleConfig,
 } from '@chakra-ui/react'
-import { whiten } from '@chakra-ui/theme-tools'
+import { colors } from '~/tokens'
 
 export const Button: ComponentSingleStyleConfig = {
-  baseStyle: ({ colorScheme }) => ({
-    color: 'white',
+  baseStyle: {
+    color: colors.text.primary,
     borderRadius: 6,
     _focusVisible: {
       ring: '2px',
-      ringColor: `${colorScheme}.100`,
+      ringColor: colors.border.wcag,
       ringOffset: '1px',
     },
-  }),
+  },
   variants: {
-    solid: ({ theme, colorScheme }) => ({
+    default: {
+      bgColor: colors.background.button.default,
       _hover: {
-        bgColor: whiten(`${colorScheme}.500`, 10)(theme),
+        bgColor: colors.background.button['default-hover'],
       },
-    }),
-    outline: {
-      borderWidth: 2,
+      _active: {
+        bgColor: colors.background.button['default-active'],
+      },
     },
-    ghost: {},
-    link: {},
+    danger: {
+      bgColor: colors.background.button.danger,
+      color: colors.text.button.danger,
+      _hover: {
+        bg: colors.background.button['danger-hover'],
+        _disabled: {
+          bgColor: colors.background.button.danger,
+        },
+      },
+      _active: {
+        bgColor: colors.background.button['danger-active'],
+      },
+    },
+    success: {
+      bgColor: colors.background.button.success,
+      _hover: {
+        bg: colors.background.button['success-hover'],
+        _disabled: {
+          bgColor: colors.background.button.success,
+        },
+      },
+      _active: {
+        bgColor: colors.background.button['success-active'],
+      },
+    },
+    brand: {
+      color: colors.text.secondary,
+      bgColor: colors.background.button.brand,
+      _hover: {
+        bg: colors.background.button['brand-hover'],
+        _disabled: {
+          bgColor: colors.background.button.brand,
+        },
+      },
+      _active: {
+        bgColor: colors.background.button['brand-active'],
+      },
+    },
+    link: {
+      textDecoration: 'underline',
+      color: colors.text.button.link,
+      bgColor: 'none',
+      _hover: {
+        color: colors.text.button['link-hover'],
+        bgColor: colors.background.button['link-hover'],
+      },
+      _active: {
+        color: colors.text.button['link-hover'],
+        bgColor: colors.background.button['link-active'],
+      },
+    },
   },
   defaultProps: {
-    colorScheme: 'mediatoolBlue',
-    variant: 'solid',
     size: 'md',
   },
 }

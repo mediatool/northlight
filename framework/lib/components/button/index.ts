@@ -1,4 +1,5 @@
 export {
-  Button,
   ButtonGroup,
 } from '@chakra-ui/react'
+
+export { Button } from './button'

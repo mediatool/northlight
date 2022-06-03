@@ -12,7 +12,13 @@ export const Page = ({
   subtitle = null,
   children,
 }: Props) => (
-  <Box w="100%" h="100%" p={ 5 }>
+  <Box
+    w="100%"
+    h="100%"
+    p={ 5 }
+    overflowY="auto"
+    overscrollBehavior="contain"
+  >
     <Stack spacing={ 2 } >
       <Heading as="h1" size="lg">{ title }</Heading>
       { typeof subtitle === 'string' ? (
