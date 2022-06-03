@@ -1,7 +1,6 @@
 import React from 'react'
-import { isAccessible } from '@chakra-ui/theme-tools'
 import { Box, Code, HStack, Heading, Text, VStack } from '~lib/components'
-import { palette } from '~lib/theme/palette'
+import { palette } from '~/tokens'
 import { Color, ColorGrade } from '~lib/types'
 import { getContrastColor } from '~lib/utilities'
 import { Page } from '../../components'

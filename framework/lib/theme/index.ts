@@ -2,10 +2,13 @@ import {
   ThemeOverride,
   extendTheme,
 } from '@chakra-ui/react'
-import { palette } from './palette'
+import { palette } from '~/tokens'
 import * as components from './components'
 
 const overrides: ThemeOverride = {
+  config: {
+    cssVarPrefix: '',
+  },
   styles: {
     global: {
       'html, body': {
@@ -30,4 +33,3 @@ const overrides: ThemeOverride = {
 }
 
 export const theme = extendTheme(overrides)
-export * from './palette'
