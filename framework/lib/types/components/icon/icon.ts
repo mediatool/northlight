@@ -16,6 +16,11 @@ export type IconType =
   | 'working'
   | 'pending'
   | 'messageFilled'
+  | 'caretDown'
+  | 'caretRight'
+  | 'caretUp'
+  | 'caretLeft'
+  | 'threeDots'
 
 export interface IconProps {
   color?: `${Color}.${ColorGrade}` | 'white' | 'black'

@@ -1,5 +1,9 @@
 import { IconType } from '~/lib/types'
 import {
+  CaretDownIcon,
+  CaretLeftIcon,
+  CaretRightIcon,
+  CaretUpIcon,
   CheckedIconFilled,
   FolderOpenIcon,
   HourGlassIcon,
@@ -15,6 +19,7 @@ import {
   SearchIcon,
   SettingsIcon,
   SwitchesIcon,
+  ThreeDotsIconFilled,
 } from '../icons'
 
 export const iconMap: Record<IconType, React.ComponentType<any>> = {
@@ -33,4 +38,9 @@ export const iconMap: Record<IconType, React.ComponentType<any>> = {
   working: RefreshIcon,
   pending: HourGlassIcon,
   messageFilled: MessageIconFilled,
+  caretDown: CaretDownIcon,
+  caretRight: CaretRightIcon,
+  caretUp: CaretUpIcon,
+  caretLeft: CaretLeftIcon,
+  threeDots: ThreeDotsIconFilled,
 }
