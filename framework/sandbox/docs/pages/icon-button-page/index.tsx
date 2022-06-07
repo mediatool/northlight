@@ -1,11 +1,21 @@
 import React from 'react'
-import { HStack, IconButton, SwitchesIcon } from '~lib/components'
-import { HubIcon } from '~lib/components/icons'
+import {
+  Code,
+  Divider,
+  HStack,
+  IconButton,
+  MessageIconFilled,
+  PlusIcon,
+  Stack,
+  Text,
+  ThreeDotsIconFilled,
+  Tooltip,
+} from '~lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const IconButtonPage = () => (
   <Page
-    title="IconButton"
+    title="Icon Button"
     subtitle={
       <DefaultPageSubtitle
         slug="/form/icon-button"
@@ -13,42 +23,76 @@ const IconButtonPage = () => (
       />
     }
   >
-    <HStack spacing={ 4 }>
-      <IconButton icon={ <SwitchesIcon /> } aria-label="Hub" />
-      <IconButton disabled={ true } variant="outline" icon={ <SwitchesIcon /> } aria-label="Hub" />
-      <IconButton variant="ghost" icon={ <SwitchesIcon /> } aria-label="Hub" />
-      <IconButton variant="link" icon={ <SwitchesIcon /> } aria-label="Hub" />
-    </HStack>
-    <HStack spacing={ 4 } mt={ 4 }>
-      <IconButton disabled={ true } icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton disabled={ true } variant="outline" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton disabled={ true } variant="ghost" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton disabled={ true } variant="link" icon={ <HubIcon /> } aria-label="Hub" />
-    </HStack>
-    <HStack spacing={ 4 } mt={ 4 }>
-      <IconButton colorScheme="gray" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton colorScheme="gray" variant="outline" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton colorScheme="gray" variant="ghost" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton colorScheme="gray" variant="link" icon={ <HubIcon /> } aria-label="Hub" />
-    </HStack>
-    <HStack spacing={ 4 } mt={ 4 }>
-      <IconButton size="xs" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton size="sm" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton size="md" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton size="lg" icon={ <HubIcon /> } aria-label="Hub" />
-    </HStack>
-    <HStack spacing={ 4 } mt={ 4 }>
-      <IconButton size="xs" isRound={ true } variant="outline" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton size="sm" isRound={ true } variant="outline" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton size="md" isRound={ true } variant="outline" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton size="lg" isRound={ true } variant="outline" icon={ <HubIcon /> } aria-label="Hub" />
-    </HStack>
-    <HStack spacing={ 4 } mt={ 4 }>
-      <IconButton size="xs" variant="ghost" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton size="sm" variant="ghost" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton size="md" variant="ghost" icon={ <HubIcon /> } aria-label="Hub" />
-      <IconButton size="lg" variant="ghost" icon={ <HubIcon /> } aria-label="Hub" />
-    </HStack>
+    <Stack spacing={ 4 }>
+      <Text>Mediatool uses 5 icon button <strong>variants</strong> (hover to display):</Text>
+      <HStack spacing={ 4 }>
+        <Tooltip label="Default" placement="top" >
+          <IconButton
+            aria-label="conversations"
+            icon={ <MessageIconFilled /> }
+          />
+        </Tooltip>
+        <Tooltip label="Brand" placement="top" >
+          <IconButton
+            variant="brand"
+            aria-label="conversations"
+            icon={ <MessageIconFilled /> }
+          />
+        </Tooltip>
+        <Tooltip label="Danger" placement="top" >
+          <IconButton
+            variant="danger"
+            aria-label="conversations"
+            icon={ <MessageIconFilled /> }
+          />
+        </Tooltip>
+        <Tooltip label="Success" placement="top" >
+          <IconButton
+            variant="success"
+            aria-label="conversations"
+            icon={ <MessageIconFilled /> }
+          />
+        </Tooltip>
+        <Tooltip label="Link" placement="top" >
+          <IconButton
+            variant="link"
+            aria-label="conversations"
+            icon={ <ThreeDotsIconFilled /> }
+          />
+        </Tooltip>
+      </HStack>
+      <Text>If you don't specify the variant, it will be <strong>default</strong></Text>
+      <Code w="max-content">{ '<IconButton variant="brand" aria-label="conversations" icon={ <MessageIconFilled /> } />' }</Code>
+      <Divider />
+      <Text>They can be used in 4 <strong>sizes</strong>: </Text>
+      <HStack spacing={ 4 }>
+        <Tooltip label="xs" placement="top">
+          <IconButton size="xs" aria-label="options" icon={ <ThreeDotsIconFilled /> } />
+        </Tooltip>
+        <Tooltip label="sm" placement="top">
+          <IconButton size="sm" aria-label="options" icon={ <ThreeDotsIconFilled /> } />
+        </Tooltip>
+        <Tooltip label="md" placement="top">
+          <IconButton size="md" aria-label="options" icon={ <ThreeDotsIconFilled /> } />
+        </Tooltip>
+        <Tooltip label="lg" placement="top">
+          <IconButton size="lg" aria-label="options" icon={ <ThreeDotsIconFilled /> } />
+        </Tooltip>
+      </HStack>
+      <Text>If you don't specify the size, it will be <strong>md</strong></Text>
+      <Code w="max-content">{ '<IconButton size="lg" aria-label="options" icon={ <ThreeDotsIconFilled /> } />' }</Code>
+      <Divider />
+      <Text>They can be shown as <strong>round</strong>: </Text>
+      <HStack spacing={ 4 }>
+        <IconButton
+          isRound={ true }
+          aria-label="create"
+          variant="success"
+          icon={ <PlusIcon boxSize={ 7 } /> }
+        />
+      </HStack>
+      <Code w="max-content">{ '<IconButton isRound={ true } aria-label="create" variant="success" icon={ <PlusIcon boxSize={ 7 } /> } />' }</Code>
+    </Stack>
   </Page>
 )
 

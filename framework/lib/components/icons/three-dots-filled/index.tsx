@@ -8,7 +8,7 @@ export const ThreeDotsIconFilled = (props: Props) => (
   <Icon viewBox="0 0 32 32" { ...props }>
     <g
       fill="currentColor"
-      stroke="none"
+      stroke="currentColor"
       strokeLinecap="square"
       strokeLinejoin="miter"
       strokeMiterlimit="10"

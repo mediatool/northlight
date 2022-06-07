@@ -1,3 +1,1 @@
-export {
-  IconButton,
-} from '@chakra-ui/react'
+export * from './icon-button'
