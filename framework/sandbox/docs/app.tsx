@@ -1,5 +1,4 @@
 import React from 'react'
-import 'focus-visible'
 import { Routing } from '../routing'
 import { DocsSidebar, DocsSkeleton } from './components'
 import { routes } from './routes'
