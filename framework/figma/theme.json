@@ -1,0 +1,276 @@
+{
+  "color": {
+    "background": {
+      "default": {
+        "value": "{color.white}",
+        "type": "color"
+      },
+      "button": {
+        "default": {
+          "value": "{color.blue.50}",
+          "type": "color"
+        },
+        "default-hover": {
+          "value": "{color.blue.100}",
+          "type": "color"
+        },
+        "default-active": {
+          "value": "{color.blue.200}",
+          "type": "color"
+        },
+        "danger": {
+          "value": "{color.red.100}",
+          "type": "color"
+        },
+        "danger-hover": {
+          "value": "{color.red.200}",
+          "type": "color"
+        },
+        "danger-active": {
+          "value": "{color.red.300}",
+          "type": "color"
+        },
+        "success": {
+          "value": "{color.green.100}",
+          "type": "color"
+        },
+        "success-hover": {
+          "value": "{color.green.200}",
+          "type": "color"
+        },
+        "success-active": {
+          "value": "{color.green.300}",
+          "type": "color"
+        },
+        "brand": {
+          "value": "{color.blue.500}",
+          "type": "color"
+        },
+        "brand-hover": {
+          "value": "{color.blue.600}",
+          "type": "color"
+        },
+        "brand-active": {
+          "value": "{color.blue.700}",
+          "type": "color"
+        },
+        "link": {
+          "value": "{color.transparent}",
+          "type": "color"
+        },
+        "link-hover": {
+          "value": "{color.transparent}",
+          "type": "color"
+        },
+        "link-active": {
+          "value": "{color.blue.50}",
+          "type": "color"
+        },
+        "ghost": {
+          "value": "{color.transparent}",
+          "type": "color"
+        },
+        "ghost-hover": {
+          "value": "{color.blue.50}",
+          "type": "color"
+        },
+        "ghost-active": {
+          "value": "{color.blue.100}",
+          "type": "color"
+        }
+      },
+      "switch": {
+        "thumb": {
+          "value": "{color.white}",
+          "type": "color"
+        },
+        "default": {
+          "value": "{color.gray.200}",
+          "type": "color"
+        },
+        "default-checked": {
+          "value": "{color.green.400}",
+          "type": "color"
+        }
+      },
+      "checkbox": {
+        "default": {
+          "value": "{color.white}",
+          "type": "color"
+        },
+        "checked": {
+          "value": "{color.blue.500}",
+          "type": "color"
+        },
+        "disabled": {
+          "value": "{color.gray.200}",
+          "type": "color"
+        },
+        "error": {
+          "value": "{color.white}",
+          "type": "color"
+        }
+      },
+      "radio": {
+        "default": {
+          "value": "{color.white}",
+          "type": "color"
+        },
+        "checked": {
+          "value": "{color.white}",
+          "type": "color"
+        },
+        "disabled": {
+          "value": "{color.gray.200}",
+          "type": "color"
+        },
+        "error": {
+          "value": "{color.white}",
+          "type": "color"
+        }
+      }
+    },
+    "text": {
+      "default": {
+        "value": "{color.mediatoolBlue.500}",
+        "type": "color"
+      },
+      "inverted": {
+        "value": "{color.white}",
+        "type": "color"
+      },
+      "button": {
+        "danger": {
+          "value": "{color.red.700}",
+          "type": "color"
+        },
+        "link": {
+          "value": "{color.blue.500}",
+          "type": "color"
+        },
+        "link-hover": {
+          "value": "{color.blue.600}",
+          "type": "color"
+        }
+      }
+    },
+    "border": {
+      "wcag": {
+        "value": "{color.pink.500}",
+        "type": "color"
+      },
+      "checkbox": {
+        "default": {
+          "value": "{color.gray.200}",
+          "type": "color"
+        },
+        "default-hover": {
+          "value": "{color.gray.300}",
+          "type": "color"
+        },
+        "checked": {
+          "value": "{color.blue.500}",
+          "type": "color"
+        },
+        "error": {
+          "value": "{color.red.500}",
+          "type": "color"
+        },
+        "disabled": {
+          "value": "{color.gray.200}",
+          "type": "color"
+        }
+      },
+      "radio": {
+        "default": {
+          "value": "{color.gray.200}",
+          "type": "color"
+        },
+        "default-hover": {
+          "value": "{color.gray.300}",
+          "type": "color"
+        },
+        "checked": {
+          "value": "{color.blue.500}",
+          "type": "color"
+        },
+        "error": {
+          "value": "{color.red.500}",
+          "type": "color"
+        },
+        "disabled": {
+          "value": "{color.gray.200}",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "opacity": {
+    "button": {
+      "disabled": {
+        "value": "{opacity.md}",
+        "type": "opacity"
+      }
+    },
+    "switch": {
+      "disabled": {
+        "value": "{opacity.md}",
+        "type": "opacity"
+      }
+    },
+    "checkbox": {
+      "disabled": {
+        "value": "{opacity.md}",
+        "type": "opacity"
+      }
+    },
+    "radio": {
+      "disabled": {
+        "value": "{opacity.md}",
+        "type": "opacity"
+      }
+    }
+  },
+  "borderRadius": {
+    "button": {
+      "default": {
+        "value": "{borderRadius.md}",
+        "type": "borderRadius"
+      },
+      "full": {
+        "value": "{borderRadius.full}",
+        "type": "borderRadius"
+      }
+    },
+    "checkbox": {
+      "default": {
+        "value": "{borderRadius.xs}",
+        "type": "borderRadius"
+      },
+      "full": {
+        "value": "{borderRadius.full}",
+        "type": "borderRadius"
+      }
+    }
+  },
+  "borderWidth": {
+    "radio": {
+      "default": {
+        "value": "{borderWidth.xs}",
+        "type": "borderWidth"
+      },
+      "checked-sm": {
+        "value": "{borderWidth.md}",
+        "type": "borderWidth"
+      },
+      "checked-md": {
+        "value": "{borderWidth.md}",
+        "type": "borderWidth"
+      },
+      "checked-lg": {
+        "value": "{borderWidth.lg}",
+        "type": "borderWidth"
+      }
+    }
+  }
+}

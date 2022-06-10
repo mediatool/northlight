@@ -6,13 +6,12 @@ module.exports = {
       buildPath: 'tokens/',
       files: [ {
         format: 'json/nested',
-        destination: 'colors.json',
-        filter: 'takeColors',
-      },
-      {
+        destination: 'global.json',
+        filter: 'takeGlobalTokens',
+      }, {
         format: 'json/nested',
-        destination: 'palette.json',
-        filter: 'takePalette',
+        destination: 'theme.json',
+        filter: 'takeTheme',
       } ],
     },
   },

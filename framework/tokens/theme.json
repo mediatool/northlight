@@ -1,0 +1,102 @@
+{
+  "borderRadius": {
+    "button": {
+      "default": "6",
+      "full": "999"
+    },
+    "checkbox": {
+      "default": "2",
+      "full": "999"
+    }
+  },
+  "borderWidth": {
+    "radio": {
+      "default": "1",
+      "checked-sm": "4",
+      "checked-md": "4",
+      "checked-lg": "6"
+    }
+  },
+  "color": {
+    "background": {
+      "default": "#ffffff",
+      "button": {
+        "default": "#eaf3ff",
+        "default-hover": "#d4e8fe",
+        "default-active": "#aad1fd",
+        "danger": "#fddcdb",
+        "danger-hover": "#fbb9b7",
+        "danger-active": "#fa9693",
+        "success": "#def3e9",
+        "success-hover": "#bde7d2",
+        "success-active": "#9bdabc",
+        "brand": "#2a8bfb",
+        "brand-hover": "#226fc9",
+        "brand-active": "#195397",
+        "link": "rgba(255, 255, 255, 0)",
+        "link-hover": "rgba(255, 255, 255, 0)",
+        "link-active": "#eaf3ff",
+        "ghost": "rgba(255, 255, 255, 0)",
+        "ghost-hover": "#eaf3ff",
+        "ghost-active": "#d4e8fe"
+      },
+      "switch": {
+        "thumb": "#ffffff",
+        "default": "#c9cbcd",
+        "default-checked": "#7acea5"
+      },
+      "checkbox": {
+        "default": "#ffffff",
+        "checked": "#2a8bfb",
+        "disabled": "#c9cbcd",
+        "error": "#ffffff"
+      },
+      "radio": {
+        "default": "#ffffff",
+        "checked": "#ffffff",
+        "disabled": "#c9cbcd",
+        "error": "#ffffff"
+      }
+    },
+    "text": {
+      "default": "#002e61",
+      "inverted": "#ffffff",
+      "button": {
+        "danger": "#94302d",
+        "link": "#2a8bfb",
+        "link-hover": "#226fc9"
+      }
+    },
+    "border": {
+      "wcag": "#e3679f",
+      "checkbox": {
+        "default": "#c9cbcd",
+        "default-hover": "#aeb1b4",
+        "checked": "#2a8bfb",
+        "error": "#f6504b",
+        "disabled": "#c9cbcd"
+      },
+      "radio": {
+        "default": "#c9cbcd",
+        "default-hover": "#aeb1b4",
+        "checked": "#2a8bfb",
+        "error": "#f6504b",
+        "disabled": "#c9cbcd"
+      }
+    }
+  },
+  "opacity": {
+    "button": {
+      "disabled": "40%"
+    },
+    "switch": {
+      "disabled": "40%"
+    },
+    "checkbox": {
+      "disabled": "40%"
+    },
+    "radio": {
+      "disabled": "40%"
+    }
+  }
+}

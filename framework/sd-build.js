@@ -1,21 +1,21 @@
 const StyleDictionary = require('style-dictionary').extend('config.js')
 
-function isColor (token) {
-  return token.type === 'color'
+function isGlobalToken (token) {
+  return token.filePath === 'figma/global.json'
 }
 
-function isPalette (token) {
-  return token.type === 'palette'
+function isTheme (token) {
+  return token.filePath === 'figma/theme.json'
 }
 
 StyleDictionary.registerFilter({
-  name: 'takeColors',
-  matcher: isColor,
+  name: 'takeGlobalTokens',
+  matcher: isGlobalToken,
 })
 
 StyleDictionary.registerFilter({
-  name: 'takePalette',
-  matcher: isPalette,
+  name: 'takeTheme',
+  matcher: isTheme,
 })
 
-StyleDictionary.buildAllPlatforms()
+StyleDictionary.buildPlatform('web')

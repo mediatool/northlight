@@ -1,2 +1,7 @@
-export { default as colors } from './colors.json'
-export { default as palette } from './palette.json'
+export { color as palette } from './global.json'
+export {
+  color,
+  borderRadius,
+  borderWidth,
+  opacity,
+} from './theme.json'
