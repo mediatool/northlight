@@ -24,13 +24,14 @@ const ButtonPage = () => (
     }
   >
     <Stack spacing={ 4 }>
-      <Text>Mediatool uses 5 different button <strong>variants</strong>:</Text>
+      <Text>Mediatool uses 6 different button <strong>variants</strong>:</Text>
       <HStack spacing={ 4 }>
         <Button>Default</Button>
         <Button variant="brand">Brand</Button>
         <Button variant="danger">Danger</Button>
         <Button variant="success">Success</Button>
         <Button variant="link">Link</Button>
+        <Button variant="ghost">Ghost</Button>
       </HStack>
       <Text>If you don't specify the variant, it will be <strong>default</strong></Text>
       <Code w="max-content">{ '<Button variant="success">Example</Button>' }</Code>

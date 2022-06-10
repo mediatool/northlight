@@ -1,5 +1,5 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { colors } from '~/tokens'
+import { color } from '~/tokens'
 
 export const Checkbox: ComponentMultiStyleConfig = {
   parts: [ 'control', 'label' ],
@@ -28,7 +28,7 @@ export const Checkbox: ComponentMultiStyleConfig = {
       },
       _focusVisible: {
         ring: '2px',
-        ringColor: colors.border.wcag,
+        ringColor: color.border.wcag,
         ringOffset: '1px',
       },
     },

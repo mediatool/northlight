@@ -1,77 +1,90 @@
 import {
   ComponentSingleStyleConfig,
 } from '@chakra-ui/react'
-import { colors } from '~/tokens'
+import { borderRadius, color } from '~/tokens'
 
 export const Button: ComponentSingleStyleConfig = {
   baseStyle: {
-    color: colors.text.primary,
-    borderRadius: 6,
+    color: color.text.default,
+    borderRadius: borderRadius.button.default,
     _focusVisible: {
       ring: '2px',
-      ringColor: colors.border.wcag,
+      ringColor: color.border.wcag,
       ringOffset: '1px',
     },
   },
   variants: {
     default: {
-      bgColor: colors.background.button.default,
+      bgColor: color.background.button.default,
       _hover: {
-        bgColor: colors.background.button['default-hover'],
+        bgColor: color.background.button['default-hover'],
       },
       _active: {
-        bgColor: colors.background.button['default-active'],
+        bgColor: color.background.button['default-active'],
       },
     },
     danger: {
-      bgColor: colors.background.button.danger,
-      color: colors.text.button.danger,
+      bgColor: color.background.button.danger,
+      color: color.text.button.danger,
       _hover: {
-        bg: colors.background.button['danger-hover'],
+        bg: color.background.button['danger-hover'],
         _disabled: {
-          bgColor: colors.background.button.danger,
+          bgColor: color.background.button.danger,
         },
       },
       _active: {
-        bgColor: colors.background.button['danger-active'],
+        bgColor: color.background.button['danger-active'],
       },
     },
     success: {
-      bgColor: colors.background.button.success,
+      bgColor: color.background.button.success,
       _hover: {
-        bg: colors.background.button['success-hover'],
+        bg: color.background.button['success-hover'],
         _disabled: {
-          bgColor: colors.background.button.success,
+          bgColor: color.background.button.success,
         },
       },
       _active: {
-        bgColor: colors.background.button['success-active'],
+        bgColor: color.background.button['success-active'],
       },
     },
     brand: {
-      color: colors.text.secondary,
-      bgColor: colors.background.button.brand,
+      color: color.text.inverted,
+      bgColor: color.background.button.brand,
       _hover: {
-        bg: colors.background.button['brand-hover'],
+        bg: color.background.button['brand-hover'],
         _disabled: {
-          bgColor: colors.background.button.brand,
+          bgColor: color.background.button.brand,
         },
       },
       _active: {
-        bgColor: colors.background.button['brand-active'],
+        bgColor: color.background.button['brand-active'],
       },
     },
     link: {
       textDecoration: 'underline',
-      color: colors.text.button.link,
-      bgColor: 'none',
+      color: color.text.button.link,
+      bgColor: color.background.button.link,
       _hover: {
-        color: colors.text.button['link-hover'],
-        bgColor: colors.background.button['link-hover'],
+        color: color.text.button['link-hover'],
+        bgColor: color.background.button['link-hover'],
       },
       _active: {
-        color: colors.text.button['link-hover'],
-        bgColor: colors.background.button['link-active'],
+        color: color.text.button['link-hover'],
+        bgColor: color.background.button['link-active'],
+      },
+    },
+    ghost: {
+      color: color.text.default,
+      bgColor: color.background.button.ghost,
+      _hover: {
+        bg: color.background.button['ghost-hover'],
+        _disabled: {
+          bgColor: color.background.button.ghost,
+        },
+      },
+      _active: {
+        bgColor: color.background.button['ghost-active'],
       },
     },
   },

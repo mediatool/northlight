@@ -3,6 +3,7 @@ import {
   Code,
   Divider,
   HStack,
+  HubIcon,
   IconButton,
   MessageIconFilled,
   PlusIcon,
@@ -24,7 +25,7 @@ const IconButtonPage = () => (
     }
   >
     <Stack spacing={ 4 }>
-      <Text>Mediatool uses 5 icon button <strong>variants</strong> (hover to display):</Text>
+      <Text>Mediatool uses 6 icon button <strong>variants</strong> (hover to display):</Text>
       <HStack spacing={ 4 }>
         <Tooltip label="Default" placement="top" >
           <IconButton
@@ -58,6 +59,13 @@ const IconButtonPage = () => (
             variant="link"
             aria-label="conversations"
             icon={ <ThreeDotsIconFilled /> }
+          />
+        </Tooltip>
+        <Tooltip label="Ghost" placement="top" >
+          <IconButton
+            variant="ghost"
+            aria-label="conversations"
+            icon={ <HubIcon /> }
           />
         </Tooltip>
       </HStack>
