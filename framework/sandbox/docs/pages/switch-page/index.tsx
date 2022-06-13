@@ -1,20 +1,13 @@
-import React, { ComponentProps } from 'react'
-import { FormLabel } from '@chakra-ui/react'
-import { FormControl, Switch as MediatoolSwitch, Stack } from '~lib/components'
+import React from 'react'
+import {
+  Code,
+  Divider,
+  HStack,
+  Stack,
+  Switch,
+  Text,
+} from '~lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
-
-type Props = ComponentProps<typeof MediatoolSwitch> & {
-  label: string
-}
-
-const Switch = ({ label, ...rest }: Props) => (
-  <FormControl display="flex" alignItems="center">
-    <FormLabel mb={ 0 }>
-      { label }
-    </FormLabel>
-    <MediatoolSwitch { ...rest } />
-  </FormControl>
-)
 
 const SwitchPage = () => (
   <Page
@@ -26,11 +19,37 @@ const SwitchPage = () => (
       />
     }
   >
-    <Stack spacing={ 4 } width="30%">
-      <Switch label="sm" size="sm" />
-      <Switch label="md" />
-      <Switch label="lg" size="lg" />
-      <Switch label="Purple color scheme" colorScheme="purple" />
+    <Stack spacing={ 4 }>
+      <Stack mb={ 4 } spacing={ 4 }>
+        <Text>Mediatool uses 1 switch:</Text>
+        <Switch />
+        <Code w="max-content">{ '<Switch />' }</Code>
+      </Stack>
+      <Text>There are 2 additional <strong>states</strong> of the switch component:</Text>
+      <HStack alignItems="flex-start" spacing={ 8 }>
+        <Stack spacing={ 4 }>
+          <Text><strong>isDisabled:</strong></Text>
+          <Switch isDisabled={ true } />
+          <Code w="max-content">{ '<Switch  isDisabled={ true } />' }</Code>
+        </Stack>
+        <Stack spacing={ 4 }>
+          <Text><strong>isChecked:</strong></Text>
+          <Switch isChecked={ true } />
+          <Code w="max-content">{ '<Switch isChecked={ true } />' }</Code>
+        </Stack>
+      </HStack>
+      <Divider />
+      <Text>They can be used in 3 different <strong>sizes</strong> (sm, md, lg)</Text>
+      <HStack spacing={ 4 } w="30%" >
+        <Switch size="sm" />
+        <Switch size="md" />
+        <Switch size="lg" />
+      </HStack>
+      <HStack>
+        <Text>Example: </Text>
+        <Code w="max-content">{ '<Switch size="md" />' }</Code>
+      </HStack>
+      <Text>If you don't specify a size, it will be <strong>md</strong></Text>
     </Stack>
   </Page>
 )
