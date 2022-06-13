@@ -1,32 +1,69 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { borderWidth, color } from '~/tokens'
 
 export const Radio: ComponentMultiStyleConfig = {
-  parts: [ 'control', 'label' ],
+  parts: [ 'control', 'label', 'container' ],
   sizes: {
+    sm: {
+      control: {
+        _checked: {
+          borderWidth: borderWidth.radio['checked-sm'],
+        },
+      },
+    },
+    md: {
+      control: {
+        _checked: {
+          borderWidth: borderWidth.radio['checked-md'],
+        },
+      },
+    },
+    lg: {
+      control: {
+        _checked: {
+          borderWidth: borderWidth.radio['checked-lg'],
+        },
+      },
+    },
   },
   baseStyle: {
     control: {
-      borderColor: 'gray.100',
-      bg: 'gray.100',
+      borderColor: color.border.radio.default,
+      bg: color.background.radio.default,
+      borderWidth: borderWidth.radio.default,
       _checked: {
-        borderColor: 'gray.100',
-        borderWidth: 3,
-        _before: {
-          boxShadow: 'none',
-          bg: 'inherit',
-        },
+        borderColor: color.border.radio.checked,
+        bg: color.background.radio.checked,
         _hover: {
-          borderColor: 'gray.100',
-          bg: 'blue.500',
+          borderColor: color.border.radio.checked,
+          bg: color.background.radio.checked,
         },
       },
       _hover: {
-        borderColor: 'gray.200',
-        bg: 'gray.200',
+        borderColor: color.border.radio['default-hover'],
+        bg: color.background.radio.default,
       },
-      _focus: {
-        boxShadow: 'none',
+      _disabled: {
+        borderColor: color.border.radio.disabled,
+        bg: color.background.radio.disabled,
+        _hover: {
+          borderColor: color.border.radio.disabled,
+          bg: color.background.radio.disabled,
+        },
       },
+      _invalid: {
+        borderColor: color.border.radio.error,
+        bg: color.background.radio.error,
+        borderWidth: borderWidth.radio.default,
+        _hover: {
+          borderColor: color.border.radio.error,
+          bg: color.background.radio.error,
+          borderWidth: borderWidth.radio.default,
+        },
+      },
+    },
+    defaultProps: {
+      size: 'md',
     },
   },
 }
