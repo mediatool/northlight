@@ -23,6 +23,10 @@
     "full": {
       "value": "999",
       "type": "borderRadius"
+    },
+    "none": {
+      "value": "0",
+      "type": "borderRadius"
     }
   },
   "borderWidth": {

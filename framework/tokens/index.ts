@@ -4,4 +4,5 @@ export {
   borderRadius,
   borderWidth,
   opacity,
+  spacing,
 } from './theme.json'

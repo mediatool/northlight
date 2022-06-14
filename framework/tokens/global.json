@@ -5,7 +5,8 @@
     "md": "6",
     "lg": "8",
     "xl": "16",
-    "full": "999"
+    "full": "999",
+    "none": "0"
   },
   "borderWidth": {
     "none": "0rem",

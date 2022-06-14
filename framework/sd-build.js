@@ -12,6 +12,15 @@ function isBorderWidth (token) {
   return token.attributes.category === 'borderWidth'
 }
 
+function isSpacing (token) {
+  return token.attributes.category === 'spacing'
+}
+
+function convertToRem (token) {
+  const val = parseFloat(token.original.value) / 16
+  return `${val}rem`
+}
+
 StyleDictionary.registerFilter({
   name: 'takeGlobalTokens',
   matcher: isGlobalToken,
@@ -26,15 +35,25 @@ StyleDictionary.registerTransform({
   name: 'borderWidth/rem',
   type: 'value',
   matcher: isBorderWidth,
-  transformer: (token) => {
-    const val = parseFloat(token.original.value) / 16
-    return `${val}rem`
-  },
+  transformer: convertToRem,
+})
+
+StyleDictionary.registerTransform({
+  name: 'spacing/rem',
+  type: 'value',
+  matcher: isSpacing,
+  transformer: convertToRem,
 })
 
 StyleDictionary.registerTransformGroup({
   name: 'mediatoolTokens',
-  transforms: [ 'attribute/cti', 'name/cti/kebab', 'color/css', 'borderWidth/rem', 'size/rem' ],
+  transforms: [
+    'attribute/cti',
+    'name/cti/kebab',
+    'color/css',
+    'borderWidth/rem',
+    'spacing/rem',
+  ],
 })
 
 StyleDictionary.buildPlatform('web')

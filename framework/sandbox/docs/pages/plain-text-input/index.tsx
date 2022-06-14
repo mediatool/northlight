@@ -1,10 +1,11 @@
 import React from 'react'
 import {
-  HStack,
-  InputGroup,
-  InputLeftAddon,
-  InputRightAddon,
+  Code,
+  Divider,
   PlainTextInput,
+  Stack,
+  Text,
+  VStack,
 } from '~lib/components'
 import { Page } from '../../components'
 
@@ -13,126 +14,76 @@ const InputPage = () => (
     title="Plain TextInput"
     subtitle="A plain and simple Chakra Input"
   >
-    <HStack spacing={ 4 }>
-      <InputGroup>
-        <InputLeftAddon>+234</InputLeftAddon>
+    <Stack spacing={ 4 }>
+      <Text>Mediatool uses 3 different input <strong>variants</strong>:</Text>
+      <VStack maxWidth="400px" spacing={ 4 }>
         <PlainTextInput
           variant="outline"
-          placeholder="Primary outline"
-          roundedLeft="0"
-          roundedRight="0"
-          borderLeft="0"
-          borderRight="0"
+          placeholder="Outline"
         />
-        <InputRightAddon>.com</InputRightAddon>
-      </InputGroup>
-      <PlainTextInput
-        variant="outline"
-        placeholder="Primary outline"
-        isReadOnly={ true }
-        defaultValue="Read only"
-      />
-      <PlainTextInput
-        variant="outline"
-        placeholder="Primary outline"
-        isInvalid={ true }
-        defaultValue="Invalid field"
-      />
-      <PlainTextInput
-        variant="outline"
-        placeholder="Primary outline"
-        isDisabled={ true }
-        defaultValue="Disabled field"
-      />
-    </HStack>
-    <HStack spacing={ 4 } mt={ 4 }>
-      <PlainTextInput
-        size="sm"
-        variant="outline"
-        placeholder="Primary outline"
-      />
-      <PlainTextInput
-        size="sm"
-        variant="outline"
-        placeholder="Primary outline"
-        isReadOnly={ true }
-        defaultValue="Read only"
-      />
-      <PlainTextInput
-        size="sm"
-        variant="outline"
-        placeholder="Primary outline"
-        isInvalid={ true }
-        defaultValue="Invalid field"
-      />
-      <PlainTextInput
-        size="sm"
-        variant="outline"
-        placeholder="Primary outline"
-        isDisabled={ true }
-        defaultValue="Disabled field"
-      />
-    </HStack>
-    <HStack spacing={ 4 } mt={ 4 }>
-      <PlainTextInput
-        size="lg"
-        variant="outline"
-        placeholder="Primary outline"
-      />
-      <PlainTextInput
-        size="lg"
-        variant="outline"
-        placeholder="Primary outline"
-        isReadOnly={ true }
-        defaultValue="Read only"
-      />
-      <PlainTextInput
-        size="lg"
-        variant="outline"
-        placeholder="Primary outline"
-        isInvalid={ true }
-        defaultValue="Invalid field"
-      />
-      <PlainTextInput
-        size="lg"
-        variant="outline"
-        placeholder="Primary outline"
-        isDisabled={ true }
-        defaultValue="Disabled field"
-      />
-    </HStack>
-    <HStack mt={ 4 }>
-      <PlainTextInput
-        variant="filled"
-        placeholder="Primary filled"
-      />
-      <PlainTextInput
-        variant="filled"
-        isDisabled={ true }
-        placeholder="Primary filled"
-      />
-      <PlainTextInput
-        variant="filled"
-        isInvalid={ true }
-        placeholder="Primary filled"
-      />
-    </HStack>
-    <HStack mt={ 4 }>
-      <PlainTextInput
-        variant="flushed"
-        placeholder="Primary flushed"
-      />
-      <PlainTextInput
-        variant="flushed"
-        isDisabled={ true }
-        placeholder="Primary flushed"
-      />
-      <PlainTextInput
-        variant="flushed"
-        isInvalid={ true }
-        placeholder="Primary flushed"
-      />
-    </HStack>
+        <PlainTextInput
+          variant="filled"
+          placeholder="Filled"
+        />
+        <PlainTextInput
+          variant="flushed"
+          placeholder="Flushed"
+        />
+      </VStack>
+      <Text>If you don't specify the variant, it will be <strong>outline</strong></Text>
+      <Code w="max-content">{ '<PlainTextInput variant="outline" placeholder="Outline" />' }</Code>
+      <Divider />
+      <Text>They can be used in 4 <strong>sizes</strong>: </Text>
+      <VStack maxWidth="400px" spacing={ 4 }>
+        <PlainTextInput
+          variant="filled"
+          size="xs"
+          placeholder="xs"
+        />
+        <PlainTextInput
+          variant="filled"
+          size="sm"
+          placeholder="sm"
+        />
+        <PlainTextInput
+          variant="filled"
+          size="md"
+          placeholder="md"
+        />
+        <PlainTextInput
+          variant="filled"
+          size="lg"
+          placeholder="lg"
+        />
+      </VStack>
+      <Text>If you don't specify the size, it will be <strong>md</strong></Text>
+      <Code w="max-content">{ '<PlainTextInput variant="filled" size="lg" placeholder="lg" />' }</Code>
+      <Divider />
+      <Text>The input states are: </Text>
+      <VStack maxWidth="400px" spacing={ 4 }>
+        <PlainTextInput
+          placeholder="default"
+        />
+        <PlainTextInput
+          variant="outline"
+          isReadOnly={ true }
+          placeholder="isReadOnly"
+          defaultValue="isReadOnly"
+        />
+        <PlainTextInput
+          variant="flushed"
+          isInvalid={ true }
+          placeholder="isInvalid"
+        />
+        <PlainTextInput
+          variant="filled"
+          isDisabled={ true }
+          placeholder="isDisabled"
+        />
+      </VStack>
+      <Code w="max-content">{ '<PlainTextInput variant="filled" isDisabled={true} placeholder="isDiabled" />' }</Code>
+      <Divider />
+    </Stack>
   </Page>
 )
 

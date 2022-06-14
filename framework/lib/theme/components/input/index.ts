@@ -1,146 +1,126 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { borderRadius, borderWidth, color, opacity, spacing } from '~/tokens'
 
 export const Input: ComponentMultiStyleConfig = {
-  parts: [ 'field', 'addon' ],
+  parts: [ 'field' ],
   baseStyle: {
-    addon: {
-      transitionProperty: 'common',
-      transitionDuration: 'normal',
-    },
-  },
-  sizes: {
-    lg: {
-      field: {
-        borderRadius: 'md',
-      },
-    },
-    sm: {
-      field: {
-        borderRadius: 'md',
+    field: {
+      color: color.text.default,
+      _placeholder: {
+        color: color.text.input.placeholder,
       },
     },
   },
   variants: {
     outline: {
       field: {
-        border: '2px solid',
-        borderColor: 'gray.200',
-        outline: 'none',
+        paddingInlineStart: spacing['padding-inline'].input.default,
+        paddingInlineEnd: spacing['padding-inline'].input.default,
+        bgColor: color.background.input['outline-default'],
+        borderRadius: borderRadius.input.outline,
+        borderWidth: borderWidth.input.default,
+        borderColor: color.border.input.default,
+        _readOnly: {
+          _focusVisible: {
+            borderColor: color.border.input.readonly,
+          },
+          _hover: {
+            borderColor: color.border.input.readonly,
+          },
+        },
+        _focusVisibles: {
+          bgColor: color.background.input['outline-focus'],
+          borderColor: color.border.input.focus,
+        },
         _hover: {
-          borderColor: 'mediatoolBlue.500',
-          color: 'mediatoolBlue.500',
-        },
-        _groupHover: {
-          borderColor: 'mediatoolBlue.500',
-          color: 'mediatoolBlue.500',
-        },
-        _focus: {
-          borderColor: 'mediatoolBlue.500',
-          color: 'mediatoolBlue.500',
-          boxShadow: 'none',
-          fontWeight: 'semibold',
+          bgColor: color.background.input['outline-hover'],
+          borderColor: color.border.input['default-hover'],
         },
         _invalid: {
-          bg: 'red.50',
-          color: 'red.500',
-          fontWeight: 'semibold',
-          boxShadow: 'none',
-        },
-        _readOnly: {
-          _hover: {
-            borderColor: 'gray.200',
-          },
-          _focus: {
-            borderColor: 'gray.200',
-            fontWeight: 'normal',
-            color: 'gray.700',
-          },
+          bgColor: color.background.input['outline-error'],
+          borderColor: color.border.input.error,
         },
         _disabled: {
-          _hover: {
-            borderColor: 'gray.100',
-          },
-        },
-      },
-      addon: {
-        bg: 'gray.50',
-        borderWidth: '2px',
-        _groupHover: {
-          bg: 'blue.50',
-          borderColor: 'mediatoolBlue.500',
+          bgColor: color.background.input['outline-disabled'],
+          borderColor: color.border.input.disabled,
+          opacity: opacity.input.disabled,
         },
       },
     },
     filled: {
       field: {
-        bg: 'gray.50',
-        outline: 'none',
-        _hover: {
-          bg: 'mediatoolBlue.50',
-          color: 'mediatoolBlue.500',
+        paddingInlineStart: spacing['padding-inline'].input.default,
+        paddingInlineEnd: spacing['padding-inline'].input.default,
+        borderRadius: borderRadius.input.filled,
+        borderWidth: borderWidth.input.default,
+        bgColor: color.background.input['filled-default'],
+        _readOnly: {
+          _focusVisible: {
+            borderColor: color.border.input.readonly,
+          },
+          _hover: {
+            bgColor: color.background.input['filled-default'],
+          },
         },
-        _focus: {
-          borderColor: 'mediatoolBlue.500',
-          color: 'mediatoolBlue.500',
-          bg: 'white',
-          boxShadow: 'none',
-          fontWeight: 'semibold',
+        _hover: {
+          bgColor: color.background.input['filled-hover'],
+        },
+        _focusVisible: {
+          boxShadow: `0 0 0 1px ${color.border.input.focus}`,
+          borderColor: color.border.input.focus,
+          bgColor: color.background.input['filled-focus'],
+          _readOnly: {
+            bgColor: color.background.input['filled-default'],
+          },
         },
         _invalid: {
-          bg: 'red.50',
-          color: 'red.500',
-          fontWeight: 'semibold',
+          bgColor: color.background.input['filled-error'],
+          borderColor: color.border.input.error,
         },
         _disabled: {
-          _hover: {
-            bg: 'gray.50',
-          },
-        },
-        _readOnly: {
-          _hover: {
-            bg: 'gray.50',
-          },
-          _focus: {
-            bg: 'gray.50',
-            fontWeight: 'normal',
-            color: 'gray.700',
-          },
+          bgColor: color.background.input['filled-disabled'],
+          borderColor: color.border.input.disabled,
+          opacity: opacity.input.disabled,
         },
       },
     },
     flushed: {
       field: {
-        borderBottom: '2px solid',
-        borderColor: 'gray.200',
-        _hover: {
-          color: 'mediatoolBlue.500',
+        paddingInlineStart: spacing['padding-inline'].input.flushed,
+        paddingInlineEnd: spacing['padding-inline'].input.flushed,
+        bgColor: color.background.input['flushed-default'],
+        borderRadius: borderRadius.input.flushed,
+        borderBottomWidth: borderWidth.input.default,
+        borderBottomColor: color.border.input.default,
+        _readOnly: {
+          _focusVisible: {
+            borderColor: color.border.input.readonly,
+          },
+          _hover: {
+            borderColor: color.border.input.readonly,
+          },
         },
-        _focus: {
-          boxShadow: 'none',
-          borderColor: 'mediatoolBlue.500',
-          color: 'mediatoolBlue.500',
-          fontWeight: 'semibold',
+        _hover: {
+          bgColor: color.background.input['flushed-hover'],
+          borderColor: color.border.input['default-hover'],
+        },
+        _focusVisible: {
+          _hover: {
+            boxShadow: `0 1px 0 0 ${color.border.input.focus}`,
+            borderColor: color.border.input.focus,
+          },
         },
         _invalid: {
-          bg: 'red.50',
-          color: 'red.500',
-          fontWeight: 'semibold',
+          _hover: {
+            boxShadow: `0 1px 0 0 ${color.border.input.error}`,
+            borderColor: color.border.input.error,
+          },
+          bgColor: color.background.input['flushed-error'],
         },
         _disabled: {
-          borderBottomColor: 'gray.50',
-          _hover: {
-            cursor: 'not-allowed',
-          },
-        },
-        _readOnly: {
-          _hover: {
-            bg: 'gray.50',
-          },
-          _focus: {
-            bg: 'gray.50',
-            fontWeight: 'normal',
-            color: 'gray.700',
-          },
+          bgColor: color.background.input['flushed-disabled'],
+          borderColor: color.border.input.disabled,
+          opacity: opacity.input.disabled,
         },
       },
     },
