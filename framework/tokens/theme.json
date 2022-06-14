@@ -11,10 +11,10 @@
   },
   "borderWidth": {
     "radio": {
-      "default": "1",
-      "checked-sm": "4",
-      "checked-md": "4",
-      "checked-lg": "6"
+      "default": "0.0625rem",
+      "checked-sm": "0.25rem",
+      "checked-md": "0.25rem",
+      "checked-lg": "0.375rem"
     }
   },
   "color": {

@@ -2,7 +2,7 @@ module.exports = {
   source: [ 'figma/**/*.json' ],
   platforms: {
     web: {
-      transformGroup: 'web',
+      transformGroup: 'mediatoolTokens',
       buildPath: 'tokens/',
       files: [ {
         format: 'json/nested',
