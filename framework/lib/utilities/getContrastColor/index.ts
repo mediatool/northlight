@@ -1,3 +1,5 @@
+import { color as colorToken } from '~/tokens'
+
 export function getContrastColor (hexcolor: string) {
   let color = hexcolor
 
@@ -15,5 +17,5 @@ export function getContrastColor (hexcolor: string) {
 
   const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000
 
-  return (yiq >= 128) ? 'black' : 'white'
+  return (yiq >= 128) ? colorToken.text.default : colorToken.text.inverted
 }
