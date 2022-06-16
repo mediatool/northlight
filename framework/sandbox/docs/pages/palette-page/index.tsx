@@ -5,8 +5,10 @@ import { Color, ColorGrade } from '~lib/types'
 import { getContrastColor } from '~lib/utilities'
 import { Page } from '../../components'
 
-const ButtonPage = () => {
-  const { black, white, ...rest } = palette
+const PalettePage = () => {
+  const {
+    black, white, transparent, ...rest
+  } = palette
   return (
     <Page
       title="Palette"
@@ -40,6 +42,17 @@ const ButtonPage = () => {
         </HStack>
       </VStack>
 
+      <VStack spacing={ 4 } mt={ 4 } alignItems="start">
+        <Heading as="h4" size="md" textTransform="capitalize">Transparent</Heading>
+        <Heading as="h5" size="xs">(key: transparent)</Heading>
+        <HStack>
+          <Box bg={ transparent } borderRadius="lg" p={ 4 }>
+            <Text color={ getContrastColor(white) } fontFamily="mono" textAlign="center">transparent</Text>
+            <Text color={ getContrastColor(white) } fontFamily="mono" textAlign="center">{ transparent }</Text>
+          </Box>
+        </HStack>
+      </VStack>
+
       { Object.keys(rest).map((colorKey) => (
         <VStack spacing={ 4 } mt={ 4 } alignItems="start" key={ colorKey }>
           <Heading as="h4" size="md" textTransform="capitalize">{ colorKey }</Heading>
@@ -62,4 +75,4 @@ const ButtonPage = () => {
   )
 }
 
-export default ButtonPage
+export default PalettePage
