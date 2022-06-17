@@ -1,122 +1,43 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
+import { borderRadius, borderWidth, color, spacing } from '~/tokens'
 
 export const Textarea: ComponentSingleStyleConfig = {
-  sizes: {
-    lg: {
-      borderRadius: 'md',
-    },
-    sm: {
-      borderRadius: 'md',
-    },
-  },
   variants: {
     outline: {
-      border: '2px solid',
-      borderColor: 'gray.200',
-      outline: 'none',
+      paddingInlineStart: spacing['padding-inline'].textarea.default,
+      paddingInlineEnd: spacing['padding-inline'].textarea.default,
+      paddingY: spacing.paddingY.textarea.default,
+      borderRadius: borderRadius.textarea.default,
+      borderWidth: borderWidth.textarea.default,
+      borderColor: color.border.textarea.default,
+      color: color.text.default,
       _hover: {
-        borderColor: 'mediatoolBlue.500',
-        color: 'mediatoolBlue.500',
+        borderColor: color.border.textarea['default-hover'],
       },
-      _groupHover: {
-        borderColor: 'mediatoolBlue.500',
-        color: 'mediatoolBlue.500',
-      },
-      _focus: {
-        borderColor: 'mediatoolBlue.500',
-        color: 'mediatoolBlue.500',
-        boxShadow: 'none',
-        fontWeight: 'semibold',
+      _focusVisible: {
+        borderColor: color.border.textarea.focus,
+        boxShadow: `0 0 0 1px ${color.border.textarea.focus}`,
       },
       _invalid: {
-        bg: 'red.50',
-        color: 'red.500',
-        fontWeight: 'semibold',
         boxShadow: 'none',
+        borderColor: color.border.textarea.error,
       },
       _readOnly: {
-        _hover: {
-          borderColor: 'gray.200',
+        _focusVisible: {
+          borderColor: color.border.textarea.readonly,
         },
-        _focus: {
-          borderColor: 'gray.200',
-          fontWeight: 'normal',
-          color: 'gray.700',
+        _hover: {
+          borderColor: color.border.textarea.readonly,
         },
       },
       _disabled: {
+        bgColor: color.background.textarea.disabled,
         _hover: {
-          borderColor: 'gray.100',
+          borderColor: color.border.textarea.default,
         },
       },
-    },
-    filled: {
-      bg: 'gray.50',
-      outline: 'none',
-      _hover: {
-        bg: 'mediatoolBlue.50',
-        color: 'mediatoolBlue.500',
-      },
-      _focus: {
-        borderColor: 'mediatoolBlue.500',
-        color: 'mediatoolBlue.500',
-        bg: 'white',
-        boxShadow: 'none',
-        fontWeight: 'semibold',
-      },
-      _invalid: {
-        bg: 'red.50',
-        color: 'red.500',
-        fontWeight: 'semibold',
-      },
-      _disabled: {
-        _hover: {
-          bg: 'gray.50',
-        },
-      },
-      _readOnly: {
-        _hover: {
-          bg: 'gray.50',
-        },
-        _focus: {
-          bg: 'gray.50',
-          fontWeight: 'normal',
-          color: 'gray.700',
-        },
-      },
-    },
-    flushed: {
-      borderBottom: '2px solid',
-      borderColor: 'gray.200',
-      _hover: {
-        color: 'mediatoolBlue.500',
-      },
-      _focus: {
-        boxShadow: 'none',
-        borderColor: 'mediatoolBlue.500',
-        color: 'mediatoolBlue.500',
-        fontWeight: 'semibold',
-      },
-      _invalid: {
-        bg: 'red.50',
-        color: 'red.500',
-        fontWeight: 'semibold',
-      },
-      _disabled: {
-        borderBottomColor: 'gray.50',
-        _hover: {
-          cursor: 'not-allowed',
-        },
-      },
-      _readOnly: {
-        _hover: {
-          bg: 'gray.50',
-        },
-        _focus: {
-          bg: 'gray.50',
-          fontWeight: 'normal',
-          color: 'gray.700',
-        },
+      _placeholder: {
+        color: color.text.textarea.placeholder,
       },
     },
   },
