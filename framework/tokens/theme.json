@@ -21,6 +21,12 @@
     },
     "tag": {
       "default": "999"
+    },
+    "toast": {
+      "default": "6"
+    },
+    "input-stepper": {
+      "default": "4"
     }
   },
   "borderWidth": {
@@ -105,6 +111,19 @@
       },
       "tag": {
         "default": "#002e61"
+      },
+      "toast": {
+        "success": "#def3e9",
+        "info": "#d4e8fe",
+        "error": "#fddcdb",
+        "warning": "#fef9e2"
+      },
+      "input-stepper": {
+        "default": "#ffffff",
+        "hover": "#eaf3ff",
+        "active": "#d4e8fe",
+        "disabled": "#ffffff",
+        "divider": "#f2f2f3"
       }
     },
     "text": {
@@ -123,6 +142,9 @@
       },
       "textarea": {
         "placeholder": "#aeb1b4"
+      },
+      "toast": {
+        "error": "#94302d"
       }
     },
     "border": {
@@ -164,6 +186,18 @@
         "error": "#f6504b",
         "disabled": "#c9cbcd",
         "readonly": "#c9cbcd"
+      }
+    },
+    "icon": {
+      "toast": {
+        "success": "#59c28f",
+        "error": "#f6504b",
+        "info": "#2a8bfb",
+        "warning": "#fae06c"
+      },
+      "input-stepper": {
+        "default": "#2a8bfb",
+        "disabled": "#c9cbcd"
       }
     }
   },

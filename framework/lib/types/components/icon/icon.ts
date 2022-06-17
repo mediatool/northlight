@@ -21,6 +21,9 @@ export type IconType =
   | 'caretUp'
   | 'caretLeft'
   | 'threeDots'
+  | 'alertFilled'
+  | 'infoFilled'
+  | 'warningFilled'
 
 export interface IconProps {
   color?: `${Color}.${ColorGrade}` | 'white' | 'black'

@@ -208,6 +208,46 @@
           "value": "{color.mediatoolBlue.500}",
           "type": "color"
         }
+      },
+      "toast": {
+        "success": {
+          "value": "{color.green.100}",
+          "type": "color"
+        },
+        "info": {
+          "value": "{color.blue.100}",
+          "type": "color"
+        },
+        "error": {
+          "value": "{color.red.100}",
+          "type": "color"
+        },
+        "warning": {
+          "value": "{color.yellow.100}",
+          "type": "color"
+        }
+      },
+      "input-stepper": {
+        "default": {
+          "value": "{color.white}",
+          "type": "color"
+        },
+        "hover": {
+          "value": "{color.blue.50}",
+          "type": "color"
+        },
+        "active": {
+          "value": "{color.blue.100}",
+          "type": "color"
+        },
+        "disabled": {
+          "value": "{color.white}",
+          "type": "color"
+        },
+        "divider": {
+          "value": "{color.gray.50}",
+          "type": "color"
+        }
       }
     },
     "text": {
@@ -248,6 +288,12 @@
       "textarea": {
         "placeholder": {
           "value": "{color.gray.300}",
+          "type": "color"
+        }
+      },
+      "toast": {
+        "error": {
+          "value": "{color.red.700}",
           "type": "color"
         }
       }
@@ -379,6 +425,36 @@
           "type": "color"
         }
       }
+    },
+    "icon": {
+      "toast": {
+        "success": {
+          "value": "{color.green.500}",
+          "type": "color"
+        },
+        "error": {
+          "value": "{color.red.500}",
+          "type": "color"
+        },
+        "info": {
+          "value": "{color.blue.500}",
+          "type": "color"
+        },
+        "warning": {
+          "value": "{color.yellow.500}",
+          "type": "color"
+        }
+      },
+      "input-stepper": {
+        "default": {
+          "value": "{color.blue.500}",
+          "type": "color"
+        },
+        "disabled": {
+          "value": "{color.gray.200}",
+          "type": "color"
+        }
+      }
     }
   },
   "opacity": {
@@ -475,6 +551,18 @@
     "tag": {
       "default": {
         "value": "{borderRadius.full}",
+        "type": "borderRadius"
+      }
+    },
+    "toast": {
+      "default": {
+        "value": "{borderRadius.md}",
+        "type": "borderRadius"
+      }
+    },
+    "input-stepper": {
+      "default": {
+        "value": "{borderRadius.sm}",
         "type": "borderRadius"
       }
     }

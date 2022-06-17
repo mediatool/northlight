@@ -8,6 +8,7 @@ import {
   FolderOpenIcon,
   HourGlassIcon,
   HubIcon,
+  InfoFilled,
   MediatoolLogoIcon,
   MessageIconFilled,
   MinusIconFilled,
@@ -18,8 +19,10 @@ import {
   ReportIcon,
   SearchIcon,
   SettingsIcon,
+  StatusPendingFilled,
   SwitchesIcon,
   ThreeDotsIconFilled,
+  WarningFilled,
 } from '../icons'
 
 export const iconMap: Record<IconType, React.ComponentType<any>> = {
@@ -43,4 +46,7 @@ export const iconMap: Record<IconType, React.ComponentType<any>> = {
   caretUp: CaretUpIcon,
   caretLeft: CaretLeftIcon,
   threeDots: ThreeDotsIconFilled,
+  alertFilled: StatusPendingFilled,
+  infoFilled: InfoFilled,
+  warningFilled: WarningFilled,
 }
