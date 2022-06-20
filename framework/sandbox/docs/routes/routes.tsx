@@ -97,6 +97,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/toast',
+    component: () => import('../pages/toast-page'),
+    exact: true,
+  },
+  {
     path: '/textarea',
     component: () => import('../pages/textarea-page'),
     exact: true,

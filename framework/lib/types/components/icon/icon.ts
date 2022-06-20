@@ -26,5 +26,5 @@ export type IconType =
   | 'warningFilled'
 
 export interface IconProps {
-  color?: `${Color}.${ColorGrade}` | 'white' | 'black'
+  color?: string
 }

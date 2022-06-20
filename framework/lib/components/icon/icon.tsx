@@ -12,9 +12,9 @@ type Props = ChakraIconProps & IconProps & {
 }
 
 export const Icon = ({
-  type, ...rest
+  type, color, ...rest
 }: Props) => {
-  const styles = useStyleConfig('Icon')
+  const styles = useStyleConfig('Icon', { color })
   const Component = iconMap[type]
 
   if (!Component) {
