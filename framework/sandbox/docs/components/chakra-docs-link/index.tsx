@@ -11,6 +11,6 @@ export const ChakraDocsLink = ({ slug, ...rest }: Props) => (
     { ...rest }
     target="_blank"
     color="blue.500"
-    href={ `https://chakra-ui.com/docs${slug}#props` }
+    href={ `https://chakra-ui.com/docs/components${slug}/props` }
   />
 )

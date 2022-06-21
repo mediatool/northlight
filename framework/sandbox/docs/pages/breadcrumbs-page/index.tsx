@@ -14,7 +14,7 @@ const BreadcrumbsPage = () => (
     title="Breadcrumbs"
     subtitle={
       <DefaultPageSubtitle
-        slug="/navigation/breadcrumb"
+        slug="/breadcrumb"
         linkText="Chakra breadcrumbs"
       />
     }

@@ -7,7 +7,7 @@ const CloseButtonPage = () => (
     title="Close Button"
     subtitle={
       <DefaultPageSubtitle
-        slug="/components/close-button"
+        slug="/close-button"
         linkText="Chakra Close Button"
       />
     }

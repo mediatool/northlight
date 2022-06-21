@@ -15,7 +15,7 @@ const InputPage = () => (
     title="Textarea"
     subtitle={
       <DefaultPageSubtitle
-        slug="/form/textarea"
+        slug="/textarea"
         linkText="Chakra Textarea"
       />
     }

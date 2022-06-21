@@ -15,7 +15,7 @@ const TagPage = () => (
     title="Select"
     subtitle={
       <DefaultPageSubtitle
-        slug="/form/select"
+        slug="/select"
         linkText="Chakra Select"
       />
     }

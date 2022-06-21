@@ -7,7 +7,7 @@ const PinInputPage = () => (
     title="Pin Input"
     subtitle={
       <DefaultPageSubtitle
-        slug="/form/pin-input"
+        slug="/pin-input"
         linkText="Chakra Pin Input"
       />
     }

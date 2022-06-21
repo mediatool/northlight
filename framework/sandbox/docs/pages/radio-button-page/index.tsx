@@ -1,12 +1,13 @@
 import React from 'react'
-import { Code,
+import {
+  Code,
   Divider,
   HStack,
   Radio,
   RadioGroup,
   Stack,
   Text,
-  VStack } from '~lib/components'
+} from '~lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const RadioButtonPage = () => (
@@ -14,7 +15,7 @@ const RadioButtonPage = () => (
     title="Radio button"
     subtitle={
       <DefaultPageSubtitle
-        slug="/form/radio"
+        slug="/radio"
         linkText="Chakra Radio Button"
       />
     }
@@ -54,13 +55,13 @@ const RadioButtonPage = () => (
           <Radio value="3" />
         </HStack>
       </RadioGroup>
-      <Code w="max-content">{ `<RadioGroup>
+      <Code w="max-content" display="block" whiteSpace="pre">{ `<RadioGroup>
   <HStack>
     <Radio value="1" />
     <Radio value="2" />
     <Radio value="3" />
   </HStack>
-      </RadioGroup>` }
+</RadioGroup>` }
       </Code>
       <Text>Apply a value prop to each radio button to work properly</Text>
       <Divider />

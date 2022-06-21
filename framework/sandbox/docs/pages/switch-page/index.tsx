@@ -14,7 +14,7 @@ const SwitchPage = () => (
     title="Switch"
     subtitle={
       <DefaultPageSubtitle
-        slug="/form/switch"
+        slug="/switch"
         linkText="Chakra Switch"
       />
     }

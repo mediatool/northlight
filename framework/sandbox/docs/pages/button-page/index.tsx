@@ -18,7 +18,7 @@ const ButtonPage = () => (
     title="Button"
     subtitle={
       <DefaultPageSubtitle
-        slug="/form/button"
+        slug="/button"
         linkText="Chakra Button"
       />
     }

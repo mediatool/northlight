@@ -7,12 +7,17 @@ import {
   Text,
   VStack,
 } from '~lib/components'
-import { Page } from '../../components'
+import { DefaultPageSubtitle, Page } from '../../components'
 
 const InputPage = () => (
   <Page
     title="Plain TextInput"
-    subtitle="A plain and simple Chakra Input"
+    subtitle={
+      <DefaultPageSubtitle
+        slug="/input"
+        linkText="Chakra Input"
+      />
+    }
   >
     <Stack spacing={ 4 }>
       <Text>Mediatool uses 3 different input <strong>variants</strong>:</Text>

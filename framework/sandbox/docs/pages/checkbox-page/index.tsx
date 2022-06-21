@@ -1,12 +1,13 @@
 import React from 'react'
-import { Checkbox,
+import {
+  Checkbox,
   CheckboxGroup,
   Code,
   Divider,
   HStack,
   Stack,
   Text,
-  VStack } from '~lib/components'
+} from '~lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const CheckboxPage = () => (
@@ -14,7 +15,7 @@ const CheckboxPage = () => (
     title="Checkbox"
     subtitle={
       <DefaultPageSubtitle
-        slug="/form/checkbox"
+        slug="/checkbox"
         linkText="Chakra Radio Button"
       />
     }

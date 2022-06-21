@@ -19,7 +19,7 @@ const TagPage = () => (
     title="Tag"
     subtitle={
       <DefaultPageSubtitle
-        slug="/data-display/tag"
+        slug="/tag"
         linkText="Chakra Tag"
       />
     }

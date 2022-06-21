@@ -7,7 +7,7 @@ const BadgePage = () => (
     title="Badge"
     subtitle={
       <DefaultPageSubtitle
-        slug="/data-display/badge"
+        slug="/badge"
         linkText="Chakra Badge"
       />
     }
