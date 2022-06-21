@@ -1,124 +1,44 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
+import { borderRadius, borderWidth, color, opacity, spacing } from '~/tokens'
 
 export const PinInput: ComponentSingleStyleConfig = {
-  sizes: {
-    lg: {
-      borderRadius: 'md',
-    },
-    sm: {
-      borderRadius: 'md',
-    },
-  },
   variants: {
     outline: {
-      border: '2px solid',
-      borderColor: 'gray.200',
-      outline: 'none',
+      borderColor: color.border.input.default,
+      borderRadius: borderRadius.input.outline,
+      borderWidth: borderWidth.input.default,
+      bg: color.background.input['outline-default'],
+      color: color.text.default,
+      paddingInline: spacing['padding-inline'].input.default,
       _hover: {
-        borderColor: 'mediatoolBlue.500',
-        color: 'mediatoolBlue.500',
-      },
-      _groupHover: {
-        borderColor: 'mediatoolBlue.500',
-        color: 'mediatoolBlue.500',
+        bg: color.background.input['outline-hover'],
+        borderColor: color.border.input['default-hover'],
       },
       _focus: {
-        borderColor: 'mediatoolBlue.500',
-        color: 'mediatoolBlue.500',
-        boxShadow: 'none',
-        fontWeight: 'semibold',
+        borderColor: color.border.input.focus,
+        bg: color.background.input['outline-focus'],
       },
       _invalid: {
-        bg: 'red.50',
-        color: 'red.500',
-        fontWeight: 'semibold',
-        boxShadow: 'none',
-      },
-      _readOnly: {
-        _hover: {
-          borderColor: 'gray.200',
-        },
-        _focus: {
-          borderColor: 'gray.200',
-          fontWeight: 'normal',
-          color: 'gray.700',
+        bg: color.background.input['outline-error'],
+        borderColor: color.border.input.error,
+        _placeholder: {
+          color: 'transparent',
         },
       },
       _disabled: {
+        bg: color.background.input['outline-disabled'],
+        borderColor: color.border.input.disabled,
+        opacity: opacity.input.disabled,
         _hover: {
-          borderColor: 'gray.100',
+          bg: color.background.input['outline-disabled'],
+          borderColor: color.border.input.disabled,
         },
       },
-    },
-    filled: {
-      bg: 'gray.50',
-      outline: 'none',
-      _hover: {
-        bg: 'mediatoolBlue.50',
-        color: 'mediatoolBlue.500',
+      _placeholder: {
+        color: color.text.input.placeholder,
       },
-      _focus: {
-        borderColor: 'mediatoolBlue.500',
-        color: 'mediatoolBlue.500',
-        bg: 'white',
-        boxShadow: 'none',
-        fontWeight: 'semibold',
-      },
-      _invalid: {
-        bg: 'red.50',
-        color: 'red.500',
-        fontWeight: 'semibold',
-      },
-      _disabled: {
-        _hover: {
-          bg: 'gray.50',
-        },
-      },
-      _readOnly: {
-        _hover: {
-          bg: 'gray.50',
-        },
-        _focus: {
-          bg: 'gray.50',
-          fontWeight: 'normal',
-          color: 'gray.700',
-        },
-      },
-    },
-    flushed: {
-      field: {
-        borderBottom: '2px solid',
-        borderColor: 'gray.200',
-        _hover: {
-          color: 'mediatoolBlue.500',
-        },
-        _focus: {
-          boxShadow: 'none',
-          borderColor: 'mediatoolBlue.500',
-          color: 'mediatoolBlue.500',
-          fontWeight: 'semibold',
-        },
-        _invalid: {
-          bg: 'red.50',
-          color: 'red.500',
-          fontWeight: 'semibold',
-        },
-        _disabled: {
-          borderBottomColor: 'gray.50',
-          _hover: {
-            cursor: 'not-allowed',
-          },
-        },
-        _readOnly: {
-          _hover: {
-            bg: 'gray.50',
-          },
-          _focus: {
-            bg: 'gray.50',
-            fontWeight: 'normal',
-            color: 'gray.700',
-          },
-        },
+      _readonly: {
+        borderColor: color.border.input.readonly,
       },
     },
   },
