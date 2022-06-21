@@ -1,132 +1,44 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { borderRadius, borderWidth, color, spacing } from '~/tokens'
 
 export const Select: ComponentMultiStyleConfig = {
   parts: [ 'field' ],
-  sizes: {
-    lg: {
-      field: {
-        borderRadius: 'md',
-      },
-    },
-    sm: {
-      field: {
-        borderRadius: 'md',
-      },
-    },
-  },
   variants: {
     outline: {
       field: {
-        border: '2px solid',
-        borderColor: 'gray.200',
-        outline: 'none',
+        paddingInlineStart: spacing['padding-inline'].select.default,
+        paddingInlineEnd: spacing['padding-inline'].select.default,
+        borderWidth: borderWidth.select,
+        color: color.text.default,
+        borderColor: color.border.select.default,
+        borderRadius: borderRadius.select.default,
         _hover: {
-          borderColor: 'mediatoolBlue.500',
-          color: 'mediatoolBlue.500',
+          borderColor: color.border.select['default-hover'],
         },
-        _groupHover: {
-          borderColor: 'mediatoolBlue.500',
-          color: 'mediatoolBlue.500',
-        },
-        _focus: {
-          borderColor: 'mediatoolBlue.500',
-          color: 'mediatoolBlue.500',
-          boxShadow: 'none',
-          fontWeight: 'semibold',
+        _focusVisible: {
+          borderColor: color.border.select.focus,
+          boxShadow: `0 0 0 1px ${color.border.select.focus}`,
         },
         _invalid: {
-          bg: 'red.50',
-          color: 'red.500',
-          fontWeight: 'semibold',
+          borderColor: color.border.select.error,
           boxShadow: 'none',
         },
         _readOnly: {
-          _hover: {
-            borderColor: 'gray.200',
-          },
-          _focus: {
-            borderColor: 'gray.200',
-            fontWeight: 'normal',
-            color: 'gray.700',
+          borderWidth: borderWidth.select,
+          borderColor: color.border.select.readonly,
+          _focusVisible: {
+            borderColor: color.border.select.readonly,
           },
         },
         _disabled: {
+          borderColor: color.border.select.disabled,
+          bg: color.background.select.disabled,
           _hover: {
-            borderColor: 'gray.100',
+            borderColor: color.border.select.disabled,
           },
         },
-      },
-    },
-    filled: {
-      field: {
-        bg: 'gray.50',
-        outline: 'none',
-        _hover: {
-          bg: 'mediatoolBlue.50',
-          color: 'mediatoolBlue.500',
-        },
-        _focus: {
-          borderColor: 'mediatoolBlue.500',
-          color: 'mediatoolBlue.500',
-          bg: 'white',
-          boxShadow: 'none',
-          fontWeight: 'semibold',
-        },
-        _invalid: {
-          bg: 'red.50',
-          color: 'red.500',
-          fontWeight: 'semibold',
-        },
-        _disabled: {
-          _hover: {
-            bg: 'gray.50',
-          },
-        },
-        _readOnly: {
-          _hover: {
-            bg: 'gray.50',
-          },
-          _focus: {
-            bg: 'gray.50',
-            fontWeight: 'normal',
-            color: 'gray.700',
-          },
-        },
-      },
-    },
-    flushed: {
-      field: {
-        borderBottom: '2px solid',
-        borderColor: 'gray.200',
-        _hover: {
-          color: 'mediatoolBlue.500',
-        },
-        _focus: {
-          boxShadow: 'none',
-          borderColor: 'mediatoolBlue.500',
-          color: 'mediatoolBlue.500',
-          fontWeight: 'semibold',
-        },
-        _invalid: {
-          bg: 'red.50',
-          color: 'red.500',
-          fontWeight: 'semibold',
-        },
-        _disabled: {
-          borderBottomColor: 'gray.50',
-          _hover: {
-            cursor: 'not-allowed',
-          },
-        },
-        _readOnly: {
-          _hover: {
-            bg: 'gray.50',
-          },
-          _focus: {
-            bg: 'gray.50',
-            fontWeight: 'normal',
-            color: 'gray.700',
-          },
+        _placeholder: {
+          color: color.text.select.placeholder,
         },
       },
     },
