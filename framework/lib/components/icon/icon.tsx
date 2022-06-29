@@ -18,7 +18,7 @@ export const Icon = ({
   const Component = iconMap[type]
 
   if (!Component) {
-    return <ChakraIcon title={ `No such icon ${type}` } />
+    return <ChakraIcon name={ `No such icon ${type}` } />
   }
 
   return (

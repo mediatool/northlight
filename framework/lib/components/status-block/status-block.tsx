@@ -22,7 +22,6 @@ export const StatusBlock = ({ variant }: Props) => {
     >
       <TagLeftIcon as={ iconMap[variant] } />
       <TagLabel
-        size="sm"
         lineHeight={ 5 }
         fontWeight="semibold"
         textTransform="capitalize"

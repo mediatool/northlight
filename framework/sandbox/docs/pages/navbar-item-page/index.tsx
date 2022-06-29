@@ -46,7 +46,7 @@ const NavbarItemPage = () => {
           icon,
           title,
         }) => (
-          <HStack spacing={ 6 }>
+          <HStack spacing={ 6 } key={ title }>
             <NavbarItem
               to={ path }
               key={ path }
