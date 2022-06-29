@@ -1,8 +1,19 @@
-import React, { forwardRef } from 'react'
-import { Switch as ChakraSwitch, SwitchProps } from '@chakra-ui/react'
+import React from 'react'
+import { Switch as ChakraSwitch } from '@chakra-ui/react'
+import { SwitchProps } from '~/lib/types'
 
-export const Switch = forwardRef(({
+export const Switch = ({
+  value,
+  onChange,
+  name,
+  size = 'md',
   ...rest
-}: SwitchProps, ref: any) => (
-  <ChakraSwitch { ...rest } ref={ ref } />
-))
+}: SwitchProps) => (
+  <ChakraSwitch
+    size={ size }
+    id={ name }
+    isChecked={ value }
+    onChange={ onChange }
+    { ...rest }
+  />
+)

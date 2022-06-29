@@ -2,9 +2,11 @@ import React from 'react'
 import {
   Code,
   Divider,
+  Form,
   HStack,
   Stack,
   Switch,
+  SwitchField,
   Text,
 } from '~lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
@@ -50,6 +52,19 @@ const SwitchPage = () => (
         <Code w="max-content">{ '<Switch size="md" />' }</Code>
       </HStack>
       <Text>If you don't specify a size, it will be <strong>md</strong></Text>
+      <Divider />
+      <Stack mb={ 4 } spacing={ 4 }>
+        <Text>
+          When we use it in forms, we do it with the <strong>SwitchField</strong> component
+        </Text>
+        <Form initialValues={ { toggle: false } } onSubmit={ () => {} }>
+          <SwitchField name="toggle" label="Toggle me" />
+        </Form>
+        <Text>
+          It must have a <strong>name</strong> and <strong>label</strong>
+        </Text>
+        <Code w="max-content">{ '<SwitchField name="toggle" label="Toggle me" />' }</Code>
+      </Stack>
     </Stack>
   </Page>
 )
