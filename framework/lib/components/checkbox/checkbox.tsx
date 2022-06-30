@@ -1,14 +1,21 @@
-import React, { forwardRef } from 'react'
-import { Checkbox as ChakraCheckbox, CheckboxProps } from '@chakra-ui/react'
-import { CheckboxVariants } from '~/lib/types'
+import React from 'react'
+import { Checkbox as ChakraCheckbox } from '@chakra-ui/react'
+import { CheckboxProps } from '~/lib/types'
 
-interface Props extends CheckboxProps {
-  variant?: CheckboxVariants
-}
-
-export const Switch = forwardRef(({
+export const Checkbox = ({
+  value,
+  onChange,
+  name,
+  size = 'md',
   variant = 'default',
   ...rest
-}: CheckboxProps, ref: any) => (
-  <ChakraCheckbox { ...rest } ref={ ref } variant={ variant } />
-))
+}: CheckboxProps) => (
+  <ChakraCheckbox
+    size={ size }
+    id={ name }
+    onChange={ onChange }
+    isChecked={ value }
+    variant={ variant }
+    { ...rest }
+  />
+)

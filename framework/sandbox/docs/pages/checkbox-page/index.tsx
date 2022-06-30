@@ -1,9 +1,11 @@
 import React from 'react'
 import {
   Checkbox,
+  CheckboxField,
   CheckboxGroup,
   Code,
   Divider,
+  Form,
   HStack,
   Stack,
   Text,
@@ -92,6 +94,22 @@ const CheckboxPage = () => (
         <Code w="max-content">{ '<Checkbox size="sm" />' }</Code>
       </HStack>
       <Text>If you don't specify a size it will be <strong>md</strong></Text>
+      <Divider />
+      <Stack spacing={ 4 }>
+        <Text>When using the checkbox in forms, use <strong>CheckboxField</strong></Text>
+        <Form initialValues={ { toggle: false } } onSubmit={ () => {} }>
+          <HStack maxW="200px" borderBottom="1px solid black">
+            <CheckboxField name="toggle" label="Click Me!" />
+          </HStack>
+        </Form>
+        <Text>
+          It must have a <strong>name</strong> and <strong>label</strong>
+        </Text>
+        <Code w="max-content">{ '<CheckboxField name="toggle" label="Click Me!" />' }</Code>
+        <Text>All the same props from above apply to both
+          <strong> Checkbox</strong> and <strong>CheckboxField</strong>
+        </Text>
+      </Stack>
     </Stack>
   </Page>
 )

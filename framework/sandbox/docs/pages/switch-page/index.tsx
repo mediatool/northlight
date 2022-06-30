@@ -58,7 +58,9 @@ const SwitchPage = () => (
           When we use it in forms, we do it with the <strong>SwitchField</strong> component
         </Text>
         <Form initialValues={ { toggle: false } } onSubmit={ () => {} }>
-          <SwitchField name="toggle" label="Toggle me" />
+          <HStack maxW="200px" borderBottom="1px solid black">
+            <SwitchField name="toggle" label="Toggle me" />
+          </HStack>
         </Form>
         <Text>
           It must have a <strong>name</strong> and <strong>label</strong>

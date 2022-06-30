@@ -1,11 +1,11 @@
 import { SwitchProps as ChakraSwitchProps } from '@chakra-ui/react'
 import { FieldValidator } from 'formik'
-import { BaseSyntheticEvent } from 'react'
+import { ChangeEvent } from 'react'
 
 export type SwitchProps =
   ChakraSwitchProps
   & {
-    onChange?: (e: BaseSyntheticEvent) => void
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void
     value?: boolean
   }
 
