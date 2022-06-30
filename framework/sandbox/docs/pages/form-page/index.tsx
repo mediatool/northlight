@@ -70,20 +70,24 @@ const FormPage = () => {
           { (form) => (
             <Stack spacing={ 3 }>
               <TextField
+                label="Firstname"
                 name="firstname"
-                placeholder="Firstname"
+                placeholder="John"
               />
               <TextField
+                label="Lastname"
                 name="lastname"
-                placeholder="Surname"
+                placeholder="Doe"
               />
               <TextField
+                label="Phone"
                 name="phone"
                 as={ MaskedTextInput }
                 mask="+46 99 999 99 99"
                 placeholder="Masked Phone number"
               />
               <TextField
+                label="Number"
                 name="formatted"
                 as={ FormattedNumberInput }
                 formatter={ formatter }
