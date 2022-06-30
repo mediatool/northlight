@@ -2,9 +2,12 @@ import React from 'react'
 import {
   Code,
   Divider,
+  Form,
   HStack,
   Radio,
+  RadioField,
   RadioGroup,
+  RadioGroupField,
   Stack,
   Text,
 } from '~lib/components'
@@ -77,6 +80,63 @@ const RadioButtonPage = () => (
         <Text>Example: </Text>
         <Code w="max-content">{ '<Radio size="md">md</Radio>' }</Code>
       </HStack>
+      <Divider />
+      <Stack mb={ 4 } spacing={ 4 }>
+        <Text>
+          When we use it in forms, we do it with the <strong>RadioGroupField</strong> component
+        </Text>
+        <Form initialValues={ { color: 'blue' } } onSubmit={ () => {} }>
+          <Stack>
+
+            <HStack maxW="400px" borderBottom="1px solid black">
+              <RadioGroupField name="placement" label="Choose Placement">
+                <RadioField value="1">First</RadioField>
+                <RadioField value="2">Second</RadioField>
+                <RadioField value="3">Third</RadioField>
+              </RadioGroupField>
+            </HStack>
+            <Code w="max-content" display="block" whiteSpace="pre">{
+`<RadioGroupField name="placement" label="Choose Placement">
+  <RadioField value="1">First</RadioField>
+  <RadioField value="2">Second</RadioField>
+  <RadioField value="3">Third</RadioField>
+</RadioGroupField>
+` }
+            </Code>
+            <Text>
+              It must have a <strong>name</strong> and <strong>label</strong>
+            </Text>
+            <Divider />
+            <Text>Change the <strong>direction</strong> between
+              <strong> row</strong> and <strong>column</strong>
+            </Text>
+            <HStack maxW="400px" borderBottom="1px solid black">
+              <RadioGroupField
+                name="Direction"
+                label="Select Vertical Alignment"
+                direction="column"
+              >
+                <RadioField value="1">Top</RadioField>
+                <RadioField value="2">Center</RadioField>
+                <RadioField value="3">Bottom</RadioField>
+              </RadioGroupField>
+            </HStack>
+            <Code w="max-content" display="block" whiteSpace="pre">{
+`<RadioGroupField
+name="Direction"
+label="Select Vertical Alignment"
+direction="column"
+>
+<RadioField value="1">Top</RadioField>
+<RadioField value="2">Center</RadioField>
+<RadioField value="3">Bottom</RadioField>
+</RadioGroupField>
+` }
+            </Code>
+          </Stack>
+        </Form>
+        <Divider />
+      </Stack>
     </Stack>
   </Page>
 )

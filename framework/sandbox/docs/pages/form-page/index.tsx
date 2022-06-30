@@ -11,6 +11,8 @@ import {
   List,
   ListItem,
   MaskedTextInput,
+  RadioField,
+  RadioGroupField,
   Stack,
   SwitchField,
   Text,
@@ -64,6 +66,7 @@ const FormPage = () => {
             formatted: '',
             newsletter: true,
             personalInfoAgree: false,
+            userRole: '',
           } }
           onSubmit={ () => {} }
         >
@@ -95,6 +98,15 @@ const FormPage = () => {
               />
               <SwitchField name="newsletter" label="Subscribe to the newsletter" />
               <CheckboxField name="personalInfoAgree" label="I hereby consent to Mediatool using my personal information for further processing" />
+              <RadioGroupField
+                name="userRole"
+                label="Choose your role"
+                direction="row"
+              >
+                <RadioField value="user">User</RadioField>
+                <RadioField value="editor">Editor</RadioField>
+                <RadioField value="admin">Admin</RadioField>
+              </RadioGroupField>
               <Button type="submit" variant="success">Submit</Button>
 
               <Code p={ 4 }>{ JSON.stringify(form.values, null, 2) }</Code>
@@ -103,7 +115,7 @@ const FormPage = () => {
         </Form>
       </Box>
       <Box mt={ 6 }>
-        <Text>This example composes { '<Form>' }, { '<TextField>' }, { '<SwitchField>' }, { '<CheckboxField />' }, and { '<Button>' }</Text>
+        <Text>This example composes { '<Form>' }, { '<TextField>' }, { '<SwitchField>' }, { '<CheckboxField />' }, { '<RadioGroupField>' } and { '<Button>' }</Text>
       </Box>
     </Page>
   )

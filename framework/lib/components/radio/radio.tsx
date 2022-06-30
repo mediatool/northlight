@@ -1,8 +1,19 @@
-import React, { forwardRef } from 'react'
-import { Radio as ChakraRadio, RadioProps } from '@chakra-ui/react'
+import React from 'react'
+import { Radio as ChakraRadio } from '@chakra-ui/react'
+import { RadioProps } from '~lib/types'
 
-export const Radio = forwardRef(({
+export const Radio = ({
+  size = 'md',
+  onChange,
+  name,
+  value,
   ...rest
-}: RadioProps, ref: any) => (
-  <ChakraRadio { ...rest } ref={ ref } />
-))
+}: RadioProps) => (
+  <ChakraRadio
+    size={ size }
+    id={ name }
+    onChange={ onChange }
+    value={ value }
+    { ...rest }
+  />
+)
