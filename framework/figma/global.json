@@ -460,5 +460,39 @@
       "value": "90%",
       "type": "opacity"
     }
+  },
+  "fontSize": {
+    "xs": {
+      "value": "12",
+      "type": "fontSizes"
+    },
+    "sm": {
+      "value": "14",
+      "type": "fontSizes"
+    },
+    "md": {
+      "value": "16",
+      "type": "fontSizes"
+    },
+    "lg": {
+      "value": "18",
+      "type": "fontSizes"
+    },
+    "xl": {
+      "value": "20",
+      "type": "fontSizes"
+    },
+    "2xl": {
+      "value": "24",
+      "type": "fontSizes"
+    },
+    "3xl": {
+      "value": "30",
+      "type": "fontSizes"
+    },
+    "4xl": {
+      "value": "36",
+      "type": "fontSizes"
+    }
   }
 }

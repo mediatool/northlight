@@ -638,5 +638,13 @@
         }
       }
     }
+  },
+  "fontSize": {
+    "form-label": {
+      "default": {
+        "value": "{fontSize.sm}",
+        "type": "fontSizes"
+      }
+    }
   }
 }

@@ -5,4 +5,5 @@ export {
   borderWidth,
   opacity,
   spacing,
+  fontSize,
 } from './theme.json'

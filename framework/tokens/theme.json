@@ -224,6 +224,11 @@
       "disabled": "40%"
     }
   },
+  "fontSize": {
+    "form-label": {
+      "default": "0.875rem"
+    }
+  },
   "spacing": {
     "padding-inline": {
       "input": {

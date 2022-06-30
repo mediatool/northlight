@@ -16,6 +16,10 @@ function isSpacing (token) {
   return token.attributes.category === 'spacing'
 }
 
+function isFontSize (token) {
+  return token.attributes.category === 'fontSize'
+}
+
 function convertToRem (token) {
   const val = parseFloat(token.original.value) / 16
   return `${val}rem`
@@ -45,6 +49,13 @@ StyleDictionary.registerTransform({
   transformer: convertToRem,
 })
 
+StyleDictionary.registerTransform({
+  name: 'fontSize/rem',
+  type: 'value',
+  matcher: isFontSize,
+  transformer: convertToRem,
+})
+
 StyleDictionary.registerTransformGroup({
   name: 'mediatoolTokens',
   transforms: [
@@ -53,6 +64,7 @@ StyleDictionary.registerTransformGroup({
     'color/css',
     'borderWidth/rem',
     'spacing/rem',
+    'fontSize/rem',
   ],
 })
 
