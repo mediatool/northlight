@@ -1,14 +1,19 @@
-import React, { forwardRef } from 'react'
-import { Textarea as ChakraTextarea, TextareaProps } from '@chakra-ui/react'
-import { TextSizeProps } from '~/lib/types'
+import React from 'react'
+import { Textarea as ChakraTextarea } from '@chakra-ui/react'
+import { TextareaProps } from '~/lib/types'
 
-interface Props extends TextareaProps {
-  size?: TextSizeProps
-}
-
-export const Textarea = forwardRef(({
+export const Textarea = ({
   size = 'md',
+  onChange,
+  name,
+  value,
   ...rest
-}: Props, ref: any) => (
-  <ChakraTextarea { ...rest } size={ size } ref={ ref } />
-))
+}: TextareaProps) => (
+  <ChakraTextarea
+    size={ size }
+    id={ name }
+    onChange={ onChange }
+    value={ value }
+    { ...rest }
+  />
+)

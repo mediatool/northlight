@@ -2,10 +2,12 @@ import React from 'react'
 import {
   Code,
   Divider,
+  Form,
   HStack,
   Stack,
   Text,
   Textarea,
+  TextareaField,
   VStack,
 } from '~lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
@@ -66,6 +68,25 @@ const InputPage = () => (
         instead it changes the <strong>font size</strong>
       </Text>
       <Text>If you don't specify a size it will be <strong>md</strong></Text>
+      <Divider />
+      <Text>When using the textarea in forms, use <strong>TextareaField</strong></Text>
+      <Form initialValues={ { toggle: false } } onSubmit={ () => {} }>
+        <Stack spacing={ 4 }>
+          <HStack maxW="400px">
+            <TextareaField
+              name="message"
+              label="Write you message"
+            />
+          </HStack>
+          <Text>It must have a <strong>name</strong> and a <strong>label</strong></Text>
+          <Code w="max-content" display="block" whiteSpace="pre">{
+`<TextareaField 
+  name="message
+  label="Write your message"
+/>` }
+          </Code>
+        </Stack>
+      </Form>
     </Stack>
   </Page>
 )

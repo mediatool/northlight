@@ -6,7 +6,6 @@ export const Textarea: ComponentSingleStyleConfig = {
     outline: {
       paddingInlineStart: spacing['padding-inline'].textarea.default,
       paddingInlineEnd: spacing['padding-inline'].textarea.default,
-      paddingY: spacing.paddingY.textarea.default,
       borderRadius: borderRadius.textarea.default,
       borderWidth: borderWidth.textarea.default,
       borderColor: color.border.textarea.default,

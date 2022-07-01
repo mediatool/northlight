@@ -17,6 +17,7 @@ import {
   SwitchField,
   Text,
   TextField,
+  TextareaField,
 } from '~lib/components'
 import * as CurrentPrimitives from '~lib/components/text-field'
 import { Page } from '../../components'
@@ -64,6 +65,7 @@ const FormPage = () => {
             firstname: '',
             lastname: '',
             formatted: '',
+            review: '',
             newsletter: true,
             personalInfoAgree: false,
             userRole: '',
@@ -107,6 +109,18 @@ const FormPage = () => {
                 <RadioField value="editor">Editor</RadioField>
                 <RadioField value="admin">Admin</RadioField>
               </RadioGroupField>
+              <TextareaField
+                name="review"
+                label="Please write a short description of your work experience"
+              />
+              <SwitchField
+                name="newsletter"
+                label="Subscribe to the newsletter"
+              />
+              <CheckboxField
+                name="personalInfoAgree"
+                label="I hereby consent to Mediatool using my personal information for further processing"
+              />
               <Button type="submit" variant="success">Submit</Button>
 
               <Code p={ 4 }>{ JSON.stringify(form.values, null, 2) }</Code>
@@ -115,7 +129,7 @@ const FormPage = () => {
         </Form>
       </Box>
       <Box mt={ 6 }>
-        <Text>This example composes { '<Form>' }, { '<TextField>' }, { '<SwitchField>' }, { '<CheckboxField />' }, { '<RadioGroupField>' } and { '<Button>' }</Text>
+        <Text>This example composes { '<Form>' }, { '<TextField>' }, { '<SwitchField>' }, { '<CheckboxField />' }, { '<RadioGroupField>' }, { '<TextareField>' }, and { '<Button>' }</Text>
       </Box>
     </Page>
   )
