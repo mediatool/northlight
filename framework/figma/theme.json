@@ -453,6 +453,10 @@
         "disabled": {
           "value": "{color.gray.200}",
           "type": "color"
+        },
+        "readOnly": {
+          "value": "{color.gray.200}",
+          "type": "color"
         }
       }
     }
@@ -634,6 +638,14 @@
       "textarea": {
         "default": {
           "value": "6",
+          "type": "spacing"
+        }
+      }
+    },
+    "paddingRight": {
+      "number-input": {
+        "default": {
+          "value": "8",
           "type": "spacing"
         }
       }
