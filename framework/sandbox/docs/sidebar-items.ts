@@ -2,7 +2,7 @@ import { SidebarItem } from '../types'
 
 export const sidebarItems: SidebarItem[] = [
   {
-    title: 'Plain TextInput',
+    title: 'Plain text input',
     path: '/docs/plain-text-input',
   },
   {
@@ -46,11 +46,11 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/icon',
   },
   {
-    title: 'Icon Button',
+    title: 'Icon button',
     path: '/docs/icon-button',
   },
   {
-    title: 'Formatted NumberInput',
+    title: 'Formatted number input',
     path: '/docs/formatted-number-input',
   },
   {

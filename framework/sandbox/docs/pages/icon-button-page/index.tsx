@@ -20,7 +20,7 @@ const IconButtonPage = () => (
     subtitle={
       <DefaultPageSubtitle
         slug="/icon-button"
-        linkText="Chakra IconButton"
+        linkText="Chakra Icon Button"
       />
     }
   >

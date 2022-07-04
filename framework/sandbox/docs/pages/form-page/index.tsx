@@ -18,7 +18,7 @@ import {
   Text,
   TextField,
 } from '~lib/components'
-import * as CurrentPrimitives from '~lib/components/textfield'
+import * as CurrentPrimitives from '~lib/components/text-field'
 import { Page } from '../../components'
 import { textfield } from '../../../assets/png'
 import { useLocalizedNumberFormatter } from '../formatted-number-input-page/use-localized-number-formatter'

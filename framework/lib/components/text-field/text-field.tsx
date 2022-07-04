@@ -20,7 +20,7 @@ export function TextField<TComponent extends ComponentType<any>> ({
   return (
     <ChakraFormControl isInvalid={ !!error && touched }>
       { label && (
-        <FormLabel htmlFor={ name }>{ label }</FormLabel>
+        <FormLabel htmlFor={ name } mb={ 1 }>{ label }</FormLabel>
       ) }
       <As
         field={ field }

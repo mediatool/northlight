@@ -1,5 +1,5 @@
 export * from './formatted-number-input'
 export * from './masked-text-input'
 export * from './plain-text-input'
-export * from './textfield'
+export * from './text-field'
 export * from './types'

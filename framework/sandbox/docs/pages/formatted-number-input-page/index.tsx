@@ -12,7 +12,7 @@ const FormattedNumberInputPage = () => {
 
   return (
     <Page
-      title="FormattedTextInput"
+      title="Formatted Number Input"
       subtitle="A simple text input with formatters applied to it"
     >
       <HStack spacing={ 4 } mb={ 10 }>

@@ -27,7 +27,7 @@ const TagPage = () => (
         <Code w="max-content">{ '<Select placeholder="1" />' }</Code>
       </Stack>
       <Text>There are 3 additional <strong>states</strong> of the select compoennt: </Text>
-      <HStack alignItems="flex-start" spacing={ 8 }>
+      <VStack alignItems="flex-start" spacing={ 8 }>
         <Stack spacing={ 4 }>
           <Text><strong>isDisabled:</strong></Text>
           <Select isDisabled={ true } placeholder="Disabled" />
@@ -43,7 +43,7 @@ const TagPage = () => (
           <Select isReadOnly={ true } placeholder="ReadOnly" />
           <Code w="max-content">{ '<Select isReadOnly={ true } placeholder="ReadOnly" />' }</Code>
         </Stack>
-      </HStack>
+      </VStack>
       <Divider />
       <Text>To use multiple options, add the <strong>option</strong> tag under the select: </Text>
       <VStack maxWidth="400px">

@@ -12,7 +12,7 @@ const hoverStyles = {
 export const DocsSidebar = () => (
   <Box
     p={ 2 }
-    w={ 250 }
+    minW={ 230 }
     h="100vh"
     bg="gray.50"
   >

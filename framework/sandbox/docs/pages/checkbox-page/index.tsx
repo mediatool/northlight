@@ -18,7 +18,7 @@ const CheckboxPage = () => (
     subtitle={
       <DefaultPageSubtitle
         slug="/checkbox"
-        linkText="Chakra Radio Button"
+        linkText="Chakra checkbox"
       />
     }
   >
