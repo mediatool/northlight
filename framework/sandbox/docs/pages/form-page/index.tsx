@@ -11,6 +11,7 @@ import {
   List,
   ListItem,
   MaskedTextInput,
+  NumberInputField,
   RadioField,
   RadioGroupField,
   Stack,
@@ -69,6 +70,7 @@ const FormPage = () => {
             newsletter: true,
             personalInfoAgree: false,
             userRole: '',
+            dogs: 0,
           } }
           onSubmit={ () => {} }
         >
@@ -122,7 +124,10 @@ const FormPage = () => {
                 label="I hereby consent to Mediatool using my personal information for further processing"
               />
               <Button type="submit" variant="success">Submit</Button>
-
+              <NumberInputField
+                name="dogs"
+                label="Enter how many dogs you own"
+              />
               <Code p={ 4 }>{ JSON.stringify(form.values, null, 2) }</Code>
             </Stack>
           ) }

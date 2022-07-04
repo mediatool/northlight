@@ -19,6 +19,7 @@ export const NumberInput: ComponentMultiStyleConfig = {
       borderRadius: borderRadius.input.outline,
       borderWidth: borderWidth.input.default,
       borderColor: color.border.input.default,
+      paddingRight: '80px',
       _hover: {
         bg: color.background.input['outline-hover'],
         borderColor: color.border.input['default-hover'],
@@ -49,7 +50,7 @@ export const NumberInput: ComponentMultiStyleConfig = {
       },
     },
     stepperGroup: {
-      width: 'min-content',
+      width: '72px',
       paddingRight: spacing.paddingRight['number-input'].default,
     },
     stepper: {

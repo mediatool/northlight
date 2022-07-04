@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Code,
   Divider,
+  Form,
   HStack,
   NumberInput,
+  NumberInputField,
   Stack,
   Text,
 } from '~lib/components'
@@ -70,6 +72,20 @@ const NumberInputPage = () => (
         <NumberInput size="lg" value="lg" />
       </HStack>
       <Text>If you don't specify a size it wil be <strong>md</strong></Text>
+      <Divider />
+      <Text>When using the number input in forms, use <strong>NumberInputField</strong></Text>
+      <Form initialValues={ { age: 0 } } onSubmit={ () => {} }>
+        <Stack spacing={ 4 }>
+          <HStack maxW="300px" >
+            <NumberInputField name="age" label="How old are you?" />
+          </HStack>
+          <Text>It must have <strong>name</strong> and a <strong>label</strong></Text>
+          <Code w="max-content">{ '<NumberInputField name="age" label="How old are you" />' }</Code>
+          <Text>All the same props from above apply to both
+            <strong> NumberInput</strong> and <strong>NumberInputField</strong>
+          </Text>
+        </Stack>
+      </Form>
     </Stack>
   </Page>
 )
