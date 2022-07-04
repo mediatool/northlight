@@ -14,6 +14,7 @@ import {
   NumberInputField,
   RadioField,
   RadioGroupField,
+  SelectField,
   Stack,
   SwitchField,
   Text,
@@ -71,6 +72,7 @@ const FormPage = () => {
             personalInfoAgree: false,
             userRole: '',
             dogs: 0,
+            experience: 'rank1',
           } }
           onSubmit={ () => {} }
         >
@@ -123,6 +125,15 @@ const FormPage = () => {
                 name="personalInfoAgree"
                 label="I hereby consent to Mediatool using my personal information for further processing"
               />
+              <SelectField name="experience" label="Years of Experience: " direction="row">
+                <option value="rank1">0-1: Youngling</option>
+                <option value="rank2">1-3: Padawan </option>
+                <option value="rank3">3-7: Knight </option>
+                <option value="rank4">7-12: Master</option>
+                <option value="rank5">12-20: Council Member</option>
+                <option value="rank6">20-30: Master of the order</option>
+                <option value="rank7">30+: Grand Master</option>
+              </SelectField>
               <Button type="submit" variant="success">Submit</Button>
               <NumberInputField
                 name="dogs"
@@ -134,7 +145,7 @@ const FormPage = () => {
         </Form>
       </Box>
       <Box mt={ 6 }>
-        <Text>This example composes { '<Form>' }, { '<TextField>' }, { '<SwitchField>' }, { '<CheckboxField />' }, { '<RadioGroupField>' }, { '<TextareField>' }, and { '<Button>' }</Text>
+        <Text>This example composes { '<Form>' }, { '<TextField>' }, { '<SwitchField>' }, { '<CheckboxField />' }, { '<RadioGroupField>' }, { '<TextareField>' }, { '<SelectField>' }, and { '<Button>' }</Text>
       </Box>
     </Page>
   )

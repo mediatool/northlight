@@ -2,8 +2,10 @@ import React from 'react'
 import {
   Code,
   Divider,
+  Form,
   HStack,
   Select,
+  SelectField,
   Stack,
   Text,
   VStack,
@@ -72,6 +74,29 @@ const TagPage = () => (
         <Code w="max-content">{ '<Select size="md" placeholder="md" />' }</Code>
       </HStack>
       <Text>If you don't specify a size it will be <strong>md</strong></Text>
+      <Divider />
+      <Text>When using the select in form use <strong>SelectField</strong></Text>
+      <Form initialValues={ { color: 'blue' } } onSubmit={ () => {} }>
+        <Stack spacing={ 4 } >
+          <HStack maxW="400px">
+            <SelectField name="color" label="Select Field">
+              <option value="blue">Blue</option>
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+            </SelectField>
+          </HStack>
+          <Text>
+            It works the same way but must have a <strong>name</strong> and <strong>label</strong>
+          </Text>
+          <Code w="max-content" display="block" whiteSpace="pre">{
+`<SelectField name="color" label="Select Field">
+  <option value="blue">Blue</option>
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+</SelectField>` }
+          </Code>
+        </Stack>
+      </Form>
     </Stack>
   </Page>
 )

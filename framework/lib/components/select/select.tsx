@@ -1,14 +1,13 @@
-import React, { forwardRef } from 'react'
-import { Select as ChakraSelect, SelectProps } from '@chakra-ui/react'
-import { SelectSizes } from '~/lib/types'
+import React from 'react'
+import { Select as ChakraSelect } from '@chakra-ui/react'
+import { SelectProps } from '~lib/types'
 
-interface Props extends SelectProps {
-  size?: SelectSizes
-}
-
-export const Select = forwardRef(({
+export const Select = ({
   size = 'md',
+  value,
+  onChange,
+  name,
   ...rest
-}: Props, ref: any) => (
-  <ChakraSelect size={ size } ref={ ref } { ...rest } />
-))
+}: SelectProps) => (
+  <ChakraSelect size={ size } value={ value } name={ name } onChange={ onChange } { ...rest } />
+)
