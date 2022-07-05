@@ -48,6 +48,7 @@
     "@emotion/styled": "^11.6.0",
     "@mantine/hooks": "^3.4.3",
     "@shopify/react-i18n": "^6.2.8",
+    "chakra-react-select": "^4.1.2",
     "dayzed": "^3.2.2",
     "formik": "^2.2.9",
     "framer-motion": "^4",
