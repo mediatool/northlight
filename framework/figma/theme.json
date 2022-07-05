@@ -207,6 +207,10 @@
         "default": {
           "value": "{color.mediatoolBlue.500}",
           "type": "color"
+        },
+        "subtle": {
+          "value": "{color.blue.50}",
+          "type": "color"
         }
       },
       "toast": {

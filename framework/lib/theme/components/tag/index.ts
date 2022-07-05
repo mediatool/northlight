@@ -7,7 +7,6 @@ import { borderRadius, color } from '~/tokens'
 export const Tag: ComponentSingleStyleConfig = {
   baseStyle: {
     container: {
-      bg: color.background.tag.default,
       fontWeight: 'semibold',
     },
   },
@@ -29,12 +28,18 @@ export const Tag: ComponentSingleStyleConfig = {
     },
   },
   variants: {
-    default: ({ bgColor }) => ({
+    default: ({ bgColor = color.background.tag.default }) => ({
       container: {
         bgColor: `${bgColor}`,
         color: getContrastColor(bgColor),
       },
     }),
+    subtle: {
+      container: {
+        bgColor: color.background.tag.subtle,
+        color: color.text.default,
+      },
+    },
   },
   defaultProps: {
     size: 'md',

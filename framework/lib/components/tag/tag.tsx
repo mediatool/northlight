@@ -1,16 +1,15 @@
 import React, { forwardRef } from 'react'
 import { Tag as ChakraTag, TagProps } from '@chakra-ui/react'
-import { color } from '~/tokens'
 
 interface Props extends TagProps {
   bgColor?: string
-  variant?: 'default'
+  variant?: 'default' | 'subtle'
 }
 
 export const Tag = forwardRef(({
   children,
   variant = 'default',
-  bgColor = color.text.default,
+  bgColor,
   ...rest
 }: Props, ref: any) => (
   <ChakraTag

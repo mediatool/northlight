@@ -110,7 +110,8 @@
         "disabled": "#f1f5f8"
       },
       "tag": {
-        "default": "#002e61"
+        "default": "#002e61",
+        "subtle": "#eaf3ff"
       },
       "toast": {
         "success": "#def3e9",

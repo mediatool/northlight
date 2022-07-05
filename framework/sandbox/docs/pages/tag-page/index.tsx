@@ -25,11 +25,13 @@ const TagPage = () => (
     }
   >
     <Stack spacing={ 4 }>
-      <Text>Media uses 1 tag component:</Text>
+      <Text>Mediatool uses 2 tag components:</Text>
       <HStack>
-        <Tag>MediatoolTag</Tag>
+        <Tag>Default</Tag>
+        <Tag variant="subtle">Subtle</Tag>
       </HStack>
-      <Code w="max-content">{ '<Tag>MediatoolTag</Tag>' }</Code>
+      <Text>If you don't specify the variant, it will be <strong>default</strong></Text>
+      <Code w="max-content">{ '<Tag variant="subtle">Subtle</Tag>' }</Code>
       <Divider />
       <HStack alignItems="flex-start" spacing={ 8 }>
         <Stack>
