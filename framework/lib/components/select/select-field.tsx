@@ -29,7 +29,6 @@ export const SelectField = ({
           name={ name }
           value={ value }
           { ...rest }
-          w="auto"
         />
       </Stack>
       <FormErrorMessage>{ error }</FormErrorMessage>

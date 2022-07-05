@@ -71,19 +71,19 @@
       },
       "switch": {
         "thumb": "#ffffff",
-        "default": "#c9cbcd",
+        "default": "#c5ccd3",
         "default-checked": "#7acea5"
       },
       "checkbox": {
         "default": "#ffffff",
         "checked": "#2a8bfb",
-        "disabled": "#c9cbcd",
+        "disabled": "#c5ccd3",
         "error": "#ffffff"
       },
       "radio": {
         "default": "#ffffff",
         "checked": "#ffffff",
-        "disabled": "#c9cbcd",
+        "disabled": "#c5ccd3",
         "error": "#ffffff"
       },
       "input": {
@@ -91,23 +91,23 @@
         "outline-hover": "#ffffff",
         "outline-focus": "#ffffff",
         "outline-error": "#ffffff",
-        "outline-disabled": "#f2f2f3",
-        "filled-default": "#f2f2f3",
-        "filled-hover": "#edf2f7",
+        "outline-disabled": "#f1f5f8",
+        "filled-default": "#f1f5f8",
+        "filled-hover": "#dae1e5",
         "filled-focus": "#ffffff",
         "filled-error": "#ffffff",
-        "filled-disabled": "#f2f2f3",
+        "filled-disabled": "#f1f5f8",
         "flushed-default": "#ffffff",
         "flushed-hover": "#ffffff",
         "flushed-focus": "#ffffff",
         "flushed-error": "#ffffff",
-        "flushed-disabled": "#f2f2f3"
+        "flushed-disabled": "#f1f5f8"
       },
       "select": {
-        "disabled": "#f2f2f3"
+        "disabled": "#f1f5f8"
       },
       "textarea": {
-        "disabled": "#f2f2f3"
+        "disabled": "#f1f5f8"
       },
       "tag": {
         "default": "#002e61"
@@ -123,7 +123,7 @@
         "hover": "#eaf3ff",
         "active": "#d4e8fe",
         "disabled": "#ffffff",
-        "divider": "#f2f2f3"
+        "divider": "#f1f5f8"
       }
     },
     "text": {
@@ -135,13 +135,13 @@
         "link-hover": "#226fc9"
       },
       "input": {
-        "placeholder": "#aeb1b4"
+        "placeholder": "#afb7bf"
       },
       "select": {
-        "placeholder": "#aeb1b4"
+        "placeholder": "#afb7bf"
       },
       "textarea": {
-        "placeholder": "#aeb1b4"
+        "placeholder": "#afb7bf"
       },
       "toast": {
         "error": "#94302d"
@@ -150,42 +150,42 @@
     "border": {
       "wcag": "#e3679f",
       "checkbox": {
-        "default": "#c9cbcd",
-        "default-hover": "#aeb1b4",
+        "default": "#c5ccd3",
+        "default-hover": "#afb7bf",
         "checked": "#2a8bfb",
         "error": "#f6504b",
-        "disabled": "#c9cbcd"
+        "disabled": "#c5ccd3"
       },
       "radio": {
-        "default": "#c9cbcd",
-        "default-hover": "#aeb1b4",
+        "default": "#c5ccd3",
+        "default-hover": "#afb7bf",
         "checked": "#2a8bfb",
         "error": "#f6504b",
-        "disabled": "#c9cbcd"
+        "disabled": "#c5ccd3"
       },
       "input": {
-        "default": "#c9cbcd",
-        "default-hover": "#aeb1b4",
+        "default": "#c5ccd3",
+        "default-hover": "#afb7bf",
         "focus": "#2a8bfb",
         "error": "#f6504b",
-        "disabled": "#c9cbcd",
-        "readonly": "#c9cbcd"
+        "disabled": "#c5ccd3",
+        "readonly": "#c5ccd3"
       },
       "select": {
-        "default": "#c9cbcd",
-        "default-hover": "#aeb1b4",
+        "default": "#c5ccd3",
+        "default-hover": "#afb7bf",
         "focus": "#2a8bfb",
         "error": "#f6504b",
-        "disabled": "#c9cbcd",
-        "readonly": "#c9cbcd"
+        "disabled": "#c5ccd3",
+        "readonly": "#c5ccd3"
       },
       "textarea": {
-        "default": "#c9cbcd",
-        "default-hover": "#aeb1b4",
+        "default": "#c5ccd3",
+        "default-hover": "#afb7bf",
         "focus": "#2a8bfb",
         "error": "#f6504b",
-        "disabled": "#c9cbcd",
-        "readonly": "#c9cbcd"
+        "disabled": "#c5ccd3",
+        "readonly": "#c5ccd3"
       }
     },
     "icon": {
@@ -197,8 +197,11 @@
       },
       "input-stepper": {
         "default": "#2a8bfb",
-        "disabled": "#c9cbcd",
-        "readOnly": "#c9cbcd"
+        "disabled": "#c5ccd3",
+        "readOnly": "#c5ccd3"
+      },
+      "select": {
+        "default": "#2a8bfb"
       }
     }
   },
@@ -250,7 +253,8 @@
     },
     "paddingRight": {
       "number-input": {
-        "default": "0.5rem"
+        "field": "5rem",
+        "stepper": "0.5rem"
       }
     }
   }

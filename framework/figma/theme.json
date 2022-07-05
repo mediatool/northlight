@@ -458,6 +458,12 @@
           "value": "{color.gray.200}",
           "type": "color"
         }
+      },
+      "select": {
+        "default": {
+          "value": "{color.blue.500}",
+          "type": "color"
+        }
       }
     }
   },
@@ -644,7 +650,11 @@
     },
     "paddingRight": {
       "number-input": {
-        "default": {
+        "field": {
+          "value": "80",
+          "type": "spacing"
+        },
+        "stepper": {
           "value": "8",
           "type": "spacing"
         }

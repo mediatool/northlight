@@ -8,8 +8,6 @@ import {
   FormattedNumberInput,
   Heading,
   Image,
-  List,
-  ListItem,
   MaskedTextInput,
   NumberInputField,
   RadioField,
@@ -21,7 +19,6 @@ import {
   TextField,
   TextareaField,
 } from '~lib/components'
-import * as CurrentPrimitives from '~lib/components/text-field'
 import { Page } from '../../components'
 import { textfield } from '../../../assets/png'
 import { useLocalizedNumberFormatter } from '../formatted-number-input-page/use-localized-number-formatter'
@@ -51,16 +48,6 @@ const FormPage = () => {
     }
     >
       <Box w="40%">
-        <Heading as="h4" size="md">Current primitives</Heading>
-        <List mb={ 10 }>
-          { Object.keys(CurrentPrimitives).map((primitive) => (
-            primitive !== 'TextField' && <ListItem key={ primitive }>{ primitive }</ListItem>
-          )) }
-        </List>
-        <Image
-          src={ textfield }
-          mb={ 10 }
-        />
         <Form
           initialValues={ {
             phone: '',
@@ -102,6 +89,19 @@ const FormPage = () => {
                 formatter={ formatter }
                 placeholder="I format according to your locale as you type numbers"
               />
+              <SelectField name="experience" label="Years of Experience" direction="column">
+                <option value="rank1">0-1: Youngling</option>
+                <option value="rank2">1-3: Padawan </option>
+                <option value="rank3">3-7: Knight </option>
+                <option value="rank4">7-12: Master</option>
+                <option value="rank5">12-20: Council Member</option>
+                <option value="rank6">20-30: Master of the order</option>
+                <option value="rank7">30+: Grand Master</option>
+              </SelectField>
+              <NumberInputField
+                name="dogs"
+                label="Enter how many dogs you own"
+              />
               <SwitchField name="newsletter" label="Subscribe to the newsletter" />
               <CheckboxField name="personalInfoAgree" label="I hereby consent to Mediatool using my personal information for further processing" />
               <RadioGroupField
@@ -117,36 +117,19 @@ const FormPage = () => {
                 name="review"
                 label="Please write a short description of your work experience"
               />
-              <SwitchField
-                name="newsletter"
-                label="Subscribe to the newsletter"
-              />
-              <CheckboxField
-                name="personalInfoAgree"
-                label="I hereby consent to Mediatool using my personal information for further processing"
-              />
-              <SelectField name="experience" label="Years of Experience: " direction="row">
-                <option value="rank1">0-1: Youngling</option>
-                <option value="rank2">1-3: Padawan </option>
-                <option value="rank3">3-7: Knight </option>
-                <option value="rank4">7-12: Master</option>
-                <option value="rank5">12-20: Council Member</option>
-                <option value="rank6">20-30: Master of the order</option>
-                <option value="rank7">30+: Grand Master</option>
-              </SelectField>
               <Button type="submit" variant="success">Submit</Button>
-              <NumberInputField
-                name="dogs"
-                label="Enter how many dogs you own"
-              />
               <Code p={ 4 }>{ JSON.stringify(form.values, null, 2) }</Code>
             </Stack>
           ) }
         </Form>
       </Box>
-      <Box mt={ 6 }>
+      <Box mt={ 6 } maxW="50%">
         <Text>This example composes { '<Form>' }, { '<TextField>' }, { '<SwitchField>' }, { '<CheckboxField />' }, { '<RadioGroupField>' }, { '<TextareField>' }, { '<SelectField>' }, and { '<Button>' }</Text>
       </Box>
+      <Image
+        src={ textfield }
+        mt={ 10 }
+      />
     </Page>
   )
 }

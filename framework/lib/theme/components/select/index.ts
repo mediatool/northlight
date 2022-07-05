@@ -2,7 +2,7 @@ import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 import { borderRadius, borderWidth, color, spacing } from '~/tokens'
 
 export const Select: ComponentMultiStyleConfig = {
-  parts: [ 'field' ],
+  parts: [ 'field', 'icon' ],
   variants: {
     outline: {
       field: {
@@ -40,6 +40,9 @@ export const Select: ComponentMultiStyleConfig = {
         _placeholder: {
           color: color.text.select.placeholder,
         },
+      },
+      icon: {
+        color: color.icon.select.default,
       },
     },
   },

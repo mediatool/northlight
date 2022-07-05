@@ -14,12 +14,14 @@ export const NumberInput: ComponentMultiStyleConfig = {
     field: {
       paddingInlineStart: spacing['padding-inline'].input.default,
       paddingInlineEnd: spacing['padding-inline'].input.default,
+      WebkitPaddingStart: spacing['padding-inline'].input.default,
+      WebkitPaddingEnd: spacing['padding-inline'].input.default,
       color: color.text.default,
       bg: color.background.input['outline-default'],
       borderRadius: borderRadius.input.outline,
       borderWidth: borderWidth.input.default,
       borderColor: color.border.input.default,
-      paddingRight: '80px',
+      paddingRight: spacing.paddingRight['number-input'].field,
       _hover: {
         bg: color.background.input['outline-hover'],
         borderColor: color.border.input['default-hover'],
@@ -50,8 +52,8 @@ export const NumberInput: ComponentMultiStyleConfig = {
       },
     },
     stepperGroup: {
-      width: '72px',
-      paddingRight: spacing.paddingRight['number-input'].default,
+      width: 'auto',
+      paddingRight: spacing.paddingRight['number-input'].stepper,
     },
     stepper: {
       _first: {
