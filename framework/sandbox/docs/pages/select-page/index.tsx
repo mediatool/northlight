@@ -4,68 +4,91 @@ import {
   Divider,
   Form,
   HStack,
+  Link,
   Select,
   SelectField,
   Stack,
   Text,
   VStack,
 } from '~lib/components'
-import { DefaultPageSubtitle, Page } from '../../components'
+import { Page } from '../../components'
 
-const TagPage = () => (
+interface Option {
+  value: string
+  label: string
+  id: string
+}
+
+export const options:Option[] = [
+  { value: 'blue', label: 'Blue', id: 'blue' },
+  { value: 'purple', label: 'Purple', id: 'purple' },
+  { value: 'red', label: 'Red', id: 'red' },
+  { value: 'orange', label: 'Orange', id: 'orange' },
+  { value: 'yellow', label: 'Yellow', id: 'yellow' },
+  { value: 'green', label: 'Green', id: 'green' },
+]
+
+const SelectPage = () => (
   <Page
     title="Select"
     subtitle={
-      <DefaultPageSubtitle
-        slug="/select"
-        linkText="Chakra Select"
-      />
+      <Text fontWeight="semibold">We use
+        <Link
+          target="_blank"
+          color="blue.500"
+          href="https://github.com/csandman/chakra-react-select"
+        >
+        &nbsp;Chakra React Select&nbsp;
+        </Link>
+        as core component.
+      </Text>
     }
   >
     <Stack spacing={ 4 }>
       <Stack mb={ 4 } spacing={ 4 } maxWidth="400px">
-        <Text>Mediatool uses 1 select: </Text>
-        <Select placeholder="1" />
-        <Code w="max-content">{ '<Select placeholder="1" />' }</Code>
+        <Text>Mediatool uses 2 selects components: </Text>
+        <HStack spacing={ 8 }>
+          <VStack spacing={ 4 }>
+            <Select
+              options={ options }
+              placeholder="Select here..."
+            />
+            <Code w="max-content">{ '<Select placeholder="Select a color..." />' }</Code>
+          </VStack>
+          <VStack spacing={ 4 }>
+            <Select
+              isMulti={ true }
+              options={ options }
+              placeholder="Multiselect here..."
+            />
+            <Code w="max-content">{ '<Select isMulti placeholder="Multiselect a color..." />' }</Code>
+          </VStack>
+        </HStack>
       </Stack>
-      <Text>There are 3 additional <strong>states</strong> of the select compoennt: </Text>
+      <Text>There are 2 additional <strong>states</strong> of the select compoennt: </Text>
       <VStack alignItems="flex-start" spacing={ 8 }>
         <Stack spacing={ 4 }>
           <Text><strong>isDisabled:</strong></Text>
-          <Select isDisabled={ true } placeholder="Disabled" />
+          <Select
+            placeholder="Disabled"
+            isDisabled={ true }
+          />
           <Code w="max-content">{ '<Select isDisabled={ true } placeholder="Disabled" />' }</Code>
         </Stack>
         <Stack spacing={ 4 }>
           <Text><strong>isInvalid:</strong></Text>
-          <Select isInvalid={ true } placeholder="Invalid" />
+          <Select
+            options={ options }
+            isInvalid={ true }
+            placeholder="Your selection is invalid"
+          />
           <Code w="max-content">{ '<Select isInvalid={ true } placeholder="Invalid" />' }</Code>
         </Stack>
-        <Stack spacing={ 4 }>
-          <Text><strong>isReadOnly:</strong></Text>
-          <Select isReadOnly={ true } placeholder="ReadOnly" />
-          <Code w="max-content">{ '<Select isReadOnly={ true } placeholder="ReadOnly" />' }</Code>
-        </Stack>
       </VStack>
-      <Divider />
-      <Text>To use multiple options, add the <strong>option</strong> tag under the select: </Text>
-      <VStack maxWidth="400px">
-        <Select >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </Select>
-      </VStack>
-      <Code w="max-content" display="block" whiteSpace="pre" p={ 2 }>{
-`<Select>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-</Select>` }
-      </Code>
       <Divider />
       <Text>They can be used in 3 different <strong>size</strong></Text>
       <VStack spacing={ 4 } maxWidth="400px">
-        <Select size="sm" placeholder="sm" />
+        <Select size="sm" placeholder="sm" options={ options } />
         <Select size="md" placeholder="md" />
         <Select size="lg" placeholder="lg" />
       </VStack>
@@ -79,11 +102,7 @@ const TagPage = () => (
       <Form initialValues={ { color: 'blue' } } onSubmit={ () => {} }>
         <Stack spacing={ 4 } >
           <HStack maxW="400px">
-            <SelectField name="color" label="Select Field">
-              <option value="blue">Blue</option>
-              <option value="red">Red</option>
-              <option value="green">Green</option>
-            </SelectField>
+            <SelectField name="color" label="Select Field" options={ options } />
           </HStack>
           <Text>
             It works the same way but must have a <strong>name</strong> and <strong>label</strong>
@@ -101,4 +120,4 @@ const TagPage = () => (
   </Page>
 )
 
-export default TagPage
+export default SelectPage

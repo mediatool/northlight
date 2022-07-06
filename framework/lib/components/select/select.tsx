@@ -1,13 +1,22 @@
 import React from 'react'
-import { Select as ChakraSelect } from '@chakra-ui/react'
+import { Select as ChakraReactSelect } from 'chakra-react-select'
 import { SelectProps } from '../../../lib/types'
+import { customSelectStyles } from '../../../lib/theme/components/select/custom-select'
 
 export const Select = ({
-  size = 'md',
-  value,
-  onChange,
-  name,
+  options,
+  isMulti = false,
   ...rest
-}: SelectProps) => (
-  <ChakraSelect size={ size } value={ value } name={ name } onChange={ onChange } { ...rest } />
+}:SelectProps) => (
+  <ChakraReactSelect
+    isMulti={ isMulti }
+    options={ options }
+    useBasicStyles={ true }
+    closeMenuOnSelect={ !isMulti }
+    hideSelectedOptions={ false }
+    isClearable={ true }
+    selectedOptionStyle="check"
+    chakraStyles={ customSelectStyles }
+    { ...rest }
+  />
 )
