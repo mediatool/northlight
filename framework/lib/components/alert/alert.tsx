@@ -8,9 +8,9 @@ import {
   HStack,
   Stack,
 } from '@chakra-ui/react'
-import { AlertVariants, toastIconMap } from '~/lib/types'
-import { Icon } from '~lib/components'
-import { color } from '~/tokens'
+import { AlertVariants, toastIconMap } from '../../../lib/types'
+import { Icon } from '../../../lib/components'
+import { color } from '../../../tokens'
 
 interface Props extends AlertProps {
   variant?: AlertVariants

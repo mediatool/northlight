@@ -1,6 +1,6 @@
 import React from 'react'
 import { RadioGroup as ChakraRadioGroup, Stack } from '@chakra-ui/react'
-import { RadioGroupProps } from '~lib/types'
+import { RadioGroupProps } from '../../../lib/types'
 
 export const RadioGroup = ({
   direction = 'row',

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Select as ChakraSelect } from '@chakra-ui/react'
-import { SelectProps } from '~lib/types'
+import { SelectProps } from '../../../lib/types'
 
 export const Select = ({
   size = 'md',

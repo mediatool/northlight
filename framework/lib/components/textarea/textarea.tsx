@@ -1,6 +1,6 @@
 import React from 'react'
 import { Textarea as ChakraTextarea } from '@chakra-ui/react'
-import { TextareaProps } from '~/lib/types'
+import { TextareaProps } from '../../../lib/types'
 
 export const Textarea = ({
   size = 'md',

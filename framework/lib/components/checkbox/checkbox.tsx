@@ -1,6 +1,6 @@
 import React from 'react'
 import { Checkbox as ChakraCheckbox } from '@chakra-ui/react'
-import { CheckboxProps } from '~/lib/types'
+import { CheckboxProps } from '../../../lib/types'
 
 export const Checkbox = ({
   value,

@@ -3,7 +3,7 @@ import {
   Props as DayzedProps,
   useDayzed,
 } from 'dayzed'
-import { useBoolean } from '~lib/hooks'
+import { useBoolean } from '../../../../../lib/hooks'
 import { Controls } from './controls'
 import { Day } from './day'
 import { DateTuple } from '../types'

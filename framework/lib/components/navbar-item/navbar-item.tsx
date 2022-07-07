@@ -1,7 +1,7 @@
 import React from 'react'
 import { LinkProps, NavLink, NavLinkProps } from 'react-router-dom'
-import { IconType } from '~/lib'
-import { Center, Icon, Link, Stack, Text } from '~lib/components'
+import { IconType } from '../../../lib'
+import { Center, Icon, Link, Stack, Text } from '../../../lib/components'
 
 type NavbarItemProps = LinkProps & NavLinkProps & {
   to: string

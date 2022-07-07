@@ -1,5 +1,5 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
-import { borderRadius, borderWidth, color, spacing } from '~/tokens'
+import { borderRadius, borderWidth, color, spacing } from '../../../../tokens'
 
 export const Textarea: ComponentSingleStyleConfig = {
   variants: {

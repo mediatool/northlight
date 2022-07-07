@@ -1,5 +1,5 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
-import { borderRadius, color } from '~/tokens'
+import { borderRadius, color } from '../../../../tokens'
 
 export const Alert: ComponentSingleStyleConfig = {
   baseStyle: {

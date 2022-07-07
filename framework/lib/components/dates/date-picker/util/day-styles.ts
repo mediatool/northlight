@@ -1,5 +1,5 @@
 import { CSSObject } from '@chakra-ui/react'
-import { palette } from '~/tokens'
+import { palette } from '../../../../../tokens'
 import { DayState } from '../types'
 
 export const dayStyles: Record<DayState, CSSObject> = {

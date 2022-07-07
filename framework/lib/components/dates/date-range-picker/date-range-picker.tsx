@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { useBoolean, useId, useOutsideClick } from '~lib/hooks'
+import { useBoolean, useId, useOutsideClick } from '../../../../lib/hooks'
 import { Calendar } from './components/calendar'
 import { Presets } from './components/presets'
 import { Trigger } from './components/trigger'

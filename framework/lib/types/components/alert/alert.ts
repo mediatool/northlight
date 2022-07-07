@@ -1,4 +1,4 @@
-import { IconType } from '~/lib/types'
+import { IconType } from '../../../../lib/types'
 
 export type AlertVariants = 'success' | 'warning' | 'error' | 'info'
 export const toastIconMap: Record<AlertVariants, IconType> = {

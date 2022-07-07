@@ -1,4 +1,4 @@
-import { IconType } from '~/lib/types'
+import { IconType } from '../../../lib/types'
 import {
   CaretDownIcon,
   CaretLeftIcon,

@@ -2,7 +2,7 @@ import {
   ThemeOverride,
   extendTheme,
 } from '@chakra-ui/react'
-import { palette } from '~/tokens'
+import { palette } from '../../tokens'
 import * as components from './components'
 
 const overrides: ThemeOverride = {

@@ -1,4 +1,4 @@
-import { Color, ColorGrade } from '~/lib/types'
+import { Color, ColorGrade } from '../../../lib/types'
 import { BlockVariant } from './types'
 
 type ColorTuple = [`${Color}.${ColorGrade}`, `${Color}.${ColorGrade}`]

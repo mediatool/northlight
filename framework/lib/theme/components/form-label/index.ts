@@ -1,5 +1,5 @@
 import { ComponentStyleConfig } from '@chakra-ui/react'
-import { color, fontSize } from '~/tokens'
+import { color, fontSize } from '../../../../tokens'
 
 export const FormLabel: ComponentStyleConfig = {
   baseStyle: {

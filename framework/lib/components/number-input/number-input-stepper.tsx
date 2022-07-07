@@ -6,8 +6,8 @@ import {
   NumberDecrementStepper,
   NumberIncrementStepper,
 } from '@chakra-ui/react'
-import { Icon } from '~lib/components'
-import { color } from '~/tokens'
+import { Icon } from '../../../lib/components'
+import { color } from '../../../tokens'
 
 export const NumberInputStepper = () => (
   <ChakraNumberInputStepper>

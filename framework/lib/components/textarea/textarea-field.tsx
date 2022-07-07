@@ -1,8 +1,8 @@
 import React from 'react'
 import { Field, useField } from 'formik'
 import { FormControl as ChakraFormControl, FormErrorMessage, Stack } from '@chakra-ui/react'
-import { FormLabel, Textarea } from '~lib/components'
-import { TextareaFieldProps } from '~/lib/types'
+import { FormLabel, Textarea } from '../../../lib/components'
+import { TextareaFieldProps } from '../../../lib/types'
 
 export const TextareaField = ({
   name,

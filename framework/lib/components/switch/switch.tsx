@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch as ChakraSwitch } from '@chakra-ui/react'
-import { SwitchProps } from '~/lib/types'
+import { SwitchProps } from '../../../lib/types'
 
 export const Switch = ({
   value,

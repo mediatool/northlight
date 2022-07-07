@@ -1,8 +1,8 @@
 import React from 'react'
-import { FormLabel } from '~lib/components'
+import { FormLabel } from '../../../lib/components'
 import { Field, useField } from 'formik'
 import { FormControl as ChakraFormControl, FormErrorMessage, Stack } from '@chakra-ui/react'
-import { SelectFieldProps } from '~lib/types'
+import { SelectFieldProps } from '../../../lib/types'
 import { Select } from './select'
 
 export const SelectField = ({

@@ -4,7 +4,7 @@ import {
   IconProps as ChakraIconProps,
   useStyleConfig,
 } from '@chakra-ui/react'
-import { IconProps, IconType } from '~lib/types'
+import { IconProps, IconType } from '../../../lib/types'
 import { iconMap } from './icon-map'
 
 type Props = ChakraIconProps & IconProps & {

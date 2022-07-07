@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tag, TagLabel, TagLeftIcon } from '../Tag'
+import { Tag, TagLabel, TagLeftIcon } from '../tag'
 import { blockVariantMap } from './block-variant-map'
 import { BlockVariant } from './types'
 import { iconMap } from '../icon/icon-map'

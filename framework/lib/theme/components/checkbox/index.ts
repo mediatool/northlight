@@ -1,5 +1,5 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderRadius, color, opacity } from '~/tokens'
+import { borderRadius, color, opacity } from '../../../../tokens'
 
 export const Checkbox: ComponentMultiStyleConfig = {
   parts: [ 'control', 'label' ],
