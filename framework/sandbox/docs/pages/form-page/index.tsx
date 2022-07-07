@@ -18,6 +18,7 @@ import {
   Text,
   TextField,
   TextareaField,
+  VStack,
 } from '~lib/components'
 import { Page } from '../../components'
 import { textfield } from '../../../assets/png'
@@ -47,7 +48,7 @@ const FormPage = () => {
         </>
     }
     >
-      <Box w="40%">
+      <VStack w="40%">
         <Form
           initialValues={ {
             phone: '',
@@ -59,7 +60,8 @@ const FormPage = () => {
             personalInfoAgree: false,
             userRole: '',
             dogs: 0,
-            experience: 'rank1',
+            experience: '',
+            sports: [],
           } }
           onSubmit={ () => {} }
         >
@@ -89,15 +91,55 @@ const FormPage = () => {
                 formatter={ formatter }
                 placeholder="I format according to your locale as you type numbers"
               />
-              <SelectField name="experience" label="Years of Experience" direction="column">
-                <option value="rank1">0-1: Youngling</option>
-                <option value="rank2">1-3: Padawan </option>
-                <option value="rank3">3-7: Knight </option>
-                <option value="rank4">7-12: Master</option>
-                <option value="rank5">12-20: Council Member</option>
-                <option value="rank6">20-30: Master of the order</option>
-                <option value="rank7">30+: Grand Master</option>
-              </SelectField>
+              <SelectField
+                name="experience"
+                label="Years of work experience"
+                options={ [
+                  { label: '0-1: Youngling', value: 'rank1' },
+                  { label: '1-3: Padawan ', value: 'rank2' },
+                  { label: '3-7: Knight ', value: 'rank3' },
+                  { label: '7-12: Master', value: 'rank4' },
+                  { label: '12-20: Council Member', value: 'rank5' },
+                  { label: '20-30: Master of the order', value: 'rank6' },
+                  { label: '30+: Grand Master', value: 'rank7' },
+                ] }
+                isMulti={ false }
+              />
+              <SelectField
+                name="sports"
+                label="What sports have you played the last month?"
+                options={ [
+                  { label: 'Soccer', value: 'soccer' },
+                  { label: 'Golf', value: 'golf' },
+                  { label: 'Basketball', value: 'basketball' },
+                  { label: 'Tennis', value: 'tennis' },
+                  { label: 'Cricket', value: 'cricket' },
+                  { label: 'Boxing', value: 'boxing' },
+                  { label: 'Hockey', value: 'hockey' },
+                  { label: 'Baseball', value: 'baseball' },
+                  { label: 'Chess', value: 'chess' },
+                  { label: 'Swimming', value: 'swimming' },
+                  { label: 'Volleyball', value: 'volleyball' },
+                  { label: 'Rugby', value: 'rugby' },
+                  { label: 'Bowling', value: 'bowling' },
+                  { label: 'Figure Skating', value: 'figure-skating' },
+                  { label: 'Table Tennis', value: 'table-tennis' },
+                  { label: 'Surfing', value: 'surfing' },
+                  { label: 'Running', value: 'running' },
+                  { label: 'Sailing', value: 'sailing' },
+                  { label: 'Archery', value: 'archery' },
+                  { label: 'Motorcycle Racing', value: 'motorcycle-racing' },
+                  { label: 'Horse Racing', value: 'horse-racing' },
+                  { label: 'Badminton', value: 'Badminton' },
+                  { label: 'Fencing', value: 'fencing' },
+                  { label: 'Bodybuilding', value: 'body-building' },
+                  { label: 'Rowing', value: 'rowing' },
+                  { label: 'Handball', value: 'handball' },
+                  { label: 'Scoop', value: 'Scoop' },
+                ] }
+                isMulti={ true }
+              />
+
               <NumberInputField
                 name="dogs"
                 label="Enter how many dogs you own"
@@ -122,7 +164,7 @@ const FormPage = () => {
             </Stack>
           ) }
         </Form>
-      </Box>
+      </VStack>
       <Box mt={ 6 } maxW="50%">
         <Text>This example composes { '<Form>' }, { '<TextField>' }, { '<SwitchField>' }, { '<CheckboxField />' }, { '<RadioGroupField>' }, { '<TextareField>' }, { '<SelectField>' }, and { '<Button>' }</Text>
       </Box>

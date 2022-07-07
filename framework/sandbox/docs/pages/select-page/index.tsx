@@ -89,8 +89,8 @@ const SelectPage = () => (
       <Text>They can be used in 3 different <strong>size</strong></Text>
       <VStack spacing={ 4 } maxWidth="400px">
         <Select size="sm" placeholder="sm" options={ options } />
-        <Select size="md" placeholder="md" />
-        <Select size="lg" placeholder="lg" />
+        <Select size="md" placeholder="md" options={ options } />
+        <Select size="lg" placeholder="lg" options={ options } />
       </VStack>
       <HStack>
         <Text>Example: </Text>
@@ -102,17 +102,29 @@ const SelectPage = () => (
       <Form initialValues={ { color: 'blue' } } onSubmit={ () => {} }>
         <Stack spacing={ 4 } >
           <HStack maxW="400px">
-            <SelectField name="color" label="Select Field" options={ options } />
+            <SelectField
+              name="color"
+              label="Select Field"
+              options={ [
+                { label: 'Red', value: 'red' },
+                { label: 'Green', value: 'green' },
+                { label: 'Blue', value: 'blue' },
+              ] }
+            />
           </HStack>
           <Text>
             It works the same way but must have a <strong>name</strong> and <strong>label</strong>
           </Text>
           <Code w="max-content" display="block" whiteSpace="pre">{
-`<SelectField name="color" label="Select Field">
-  <option value="blue">Blue</option>
-  <option value="red">Red</option>
-  <option value="green">Green</option>
-</SelectField>` }
+`<SelectField
+  name="color"
+  label="Select Field"
+  options={ [
+    { label: 'Red', value: 'red' },
+    { label: 'Green', value: 'green' },
+    { label: 'Blue', value: 'blue' },
+  ] }
+/>` }
           </Code>
         </Stack>
       </Form>

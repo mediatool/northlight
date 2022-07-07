@@ -6,6 +6,7 @@ import { customSelectStyles } from '../../../lib/theme/components/select/custom-
 export const Select = ({
   options,
   isMulti = false,
+  onChange,
   ...rest
 }:SelectProps) => (
   <ChakraReactSelect
@@ -15,6 +16,7 @@ export const Select = ({
     closeMenuOnSelect={ !isMulti }
     hideSelectedOptions={ false }
     isClearable={ true }
+    onChange={ onChange }
     selectedOptionStyle="check"
     chakraStyles={ customSelectStyles }
     { ...rest }

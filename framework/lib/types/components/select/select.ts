@@ -1,16 +1,23 @@
 import { Props as ChakraReactSelectProps } from 'chakra-react-select'
-import { FieldValidator } from 'formik'
-import { ChangeEvent } from 'react'
+import { FieldProps, FieldValidator } from 'formik'
 
-type StackingDirection = 'row' | 'column'
+export interface FormikSelectProps extends FieldProps {
+  options: any[]
+  isMulti?: boolean
+  className?: string
+  placeholder?: string
+  name?: string
+}
 
 export type SelectProps =
-  ChakraReactSelectProps
-  & {
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void
-    value?: boolean
-  }
+ChakraReactSelectProps
+& {
+  value?: string
+  onChange?: any
+  name?: string
+}
 
+type StackingDirection = 'row' | 'column'
 export type SelectFieldProps =
   SelectProps
   & {
@@ -19,4 +26,5 @@ export type SelectFieldProps =
     label: string
     validate?: FieldValidator
     isRequired?: boolean
+    isMulti?: boolean
   }
