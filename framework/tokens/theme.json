@@ -27,6 +27,9 @@
     },
     "input-stepper": {
       "default": "4"
+    },
+    "scrollbar": {
+      "thumb": "8"
     }
   },
   "borderWidth": {
@@ -104,7 +107,9 @@
         "flushed-disabled": "#f1f5f8"
       },
       "select": {
-        "disabled": "#f1f5f8"
+        "disabled": "#f1f5f8",
+        "option-focus": "#d4e8fe",
+        "option-active": "#aad1fd"
       },
       "textarea": {
         "disabled": "#f1f5f8"
@@ -125,6 +130,10 @@
         "active": "#d4e8fe",
         "disabled": "#ffffff",
         "divider": "#f1f5f8"
+      },
+      "scrollbar": {
+        "track": "rgba(255, 255, 255, 0)",
+        "thumb": "#afb7bf"
       }
     },
     "text": {
@@ -187,6 +196,9 @@
         "error": "#f6504b",
         "disabled": "#c5ccd3",
         "readonly": "#c5ccd3"
+      },
+      "scrollbar": {
+        "thumb": "rgba(255, 255, 255, 0)"
       }
     },
     "icon": {

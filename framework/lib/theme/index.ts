@@ -3,6 +3,7 @@ import {
   extendTheme,
 } from '@chakra-ui/react'
 import { palette } from '../../tokens'
+import { scrollbarStyles } from './global/scrollbar'
 import * as components from './components'
 
 const overrides: ThemeOverride = {
@@ -17,6 +18,7 @@ const overrides: ThemeOverride = {
       '#app': {
         height: '100%',
       },
+      ...scrollbarStyles,
     },
   },
   fonts: {

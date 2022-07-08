@@ -195,6 +195,14 @@
         "disabled": {
           "value": "{color.gray.50}",
           "type": "color"
+        },
+        "option-focus": {
+          "value": "{color.blue.100}",
+          "type": "color"
+        },
+        "option-active": {
+          "value": "{color.blue.200}",
+          "type": "color"
         }
       },
       "textarea": {
@@ -250,6 +258,16 @@
         },
         "divider": {
           "value": "{color.gray.50}",
+          "type": "color"
+        }
+      },
+      "scrollbar": {
+        "track": {
+          "value": "{color.transparent}",
+          "type": "color"
+        },
+        "thumb": {
+          "value": "{color.gray.300}",
           "type": "color"
         }
       }
@@ -428,6 +446,12 @@
           "value": "{color.gray.200}",
           "type": "color"
         }
+      },
+      "scrollbar": {
+        "thumb": {
+          "value": "{color.transparent}",
+          "type": "color"
+        }
       }
     },
     "icon": {
@@ -577,6 +601,12 @@
     "input-stepper": {
       "default": {
         "value": "{borderRadius.sm}",
+        "type": "borderRadius"
+      }
+    },
+    "scrollbar": {
+      "thumb": {
+        "value": "{borderRadius.lg}",
         "type": "borderRadius"
       }
     }
