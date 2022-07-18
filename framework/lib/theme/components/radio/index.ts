@@ -61,6 +61,11 @@ export const Radio: ComponentMultiStyleConfig = {
           borderWidth: borderWidth.radio.default,
         },
       },
+      _focusVisible: {
+        ring: '2px',
+        ringColor: color.border.wcag,
+        ringOffset: '1px',
+      },
     },
     defaultProps: {
       size: 'md',
