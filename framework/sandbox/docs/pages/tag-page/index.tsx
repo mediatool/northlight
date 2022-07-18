@@ -27,10 +27,10 @@ const TagPage = () => (
     <Stack spacing={ 4 }>
       <Text>Mediatool uses 2 tag components:</Text>
       <HStack>
-        <Tag>Default</Tag>
+        <Tag>Solid</Tag>
         <Tag variant="subtle">Subtle</Tag>
       </HStack>
-      <Text>If you don't specify the variant, it will be <strong>default</strong></Text>
+      <Text>If you don't specify the variant, it will be <strong>solid</strong></Text>
       <Code w="max-content">{ '<Tag variant="subtle">Subtle</Tag>' }</Code>
       <Divider />
       <HStack alignItems="flex-start" spacing={ 8 }>
@@ -96,6 +96,7 @@ const TagPage = () => (
         <Code w="max-content">{ '<Tag bgColor="#99ff99">Green</Tag>' }</Code>
       </HStack>
       <Text>Note: it only takes in a 6 figure hex value (#xxyyzz)</Text>
+      <Text>(colorScheme works as well the same way as bgColor)</Text>
       <Divider />
       <Text>They can be used in 3 different <strong>sizes</strong>:</Text>
       <HStack spacing={ 4 }>

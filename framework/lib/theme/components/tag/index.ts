@@ -28,10 +28,10 @@ export const Tag: ComponentSingleStyleConfig = {
     },
   },
   variants: {
-    default: ({ bgColor = color.background.tag.default }) => ({
+    solid: ({ bgColor, colorScheme }) => ({
       container: {
-        bgColor: `${bgColor}`,
-        color: getContrastColor(bgColor),
+        bgColor: bgColor ?? colorScheme,
+        color: getContrastColor(bgColor ?? colorScheme),
       },
     }),
     subtle: {
@@ -43,5 +43,6 @@ export const Tag: ComponentSingleStyleConfig = {
   },
   defaultProps: {
     size: 'md',
+    colorScheme: color.background.tag.default,
   },
 }
