@@ -1,5 +1,3 @@
-import { Color, ColorGrade } from '../../color'
-
 export type IconType =
   'hub'
   | 'plus'

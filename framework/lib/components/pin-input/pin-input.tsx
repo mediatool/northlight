@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import { PinInput as ChakraPinInput, PinInputProps } from '@chakra-ui/react'
 import { PinSizeProps } from '../../../lib/types'
 

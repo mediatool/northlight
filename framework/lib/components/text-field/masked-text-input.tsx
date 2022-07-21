@@ -13,7 +13,6 @@ export const MaskedTextInput = ({
   field,
   onChange,
   onBlur,
-  setValue,
   ...rest
 }: MaskedTextInputProps) => (
   <InputMask

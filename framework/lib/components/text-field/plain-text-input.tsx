@@ -5,7 +5,6 @@ import { PlainTextInputProps } from './types'
 export const PlainTextInput = ({
   onChange,
   field,
-  setValue,
   ...rest
 }: PlainTextInputProps) => (
   <Input

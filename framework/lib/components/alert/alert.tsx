@@ -28,6 +28,7 @@ export const Alert = ({
 }: Props) => (
   <ChakraAlert
     variant={ variant }
+    data-testid="alert-test"
     { ...rest }
   >
     <HStack alignItems="flex-start">

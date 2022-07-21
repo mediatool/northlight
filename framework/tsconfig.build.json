@@ -3,6 +3,7 @@
   "exclude": [
     "sandbox.tsx",
     "sandbox/**/*",
+    "test/**/*",
     "vite.config.ts"
   ],
   "compilerOptions": {

@@ -1,11 +1,9 @@
 import React from 'react'
-import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 
 import { ToggleYearsButton } from '../../components'
-import { months } from '../../util'
 
 import { Flex } from '../../../flex'
-import { Button } from '../../../button'
 import { IconButton } from '../../../icon-button'
 
 interface Props {

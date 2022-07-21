@@ -3,6 +3,7 @@
     "index.ts",
     "sandbox.tsx",
     "lib/**/*",
+    "test/**/*",
     "sandbox/**/*",
     "@types"
   ],
@@ -35,7 +36,8 @@
     "types": [
       "@chakra-ui/react",
       "vite/client",
-      "formik"
+      "formik",
+      "mocha"
     ],
     "typeRoots": ["@types"],
     "paths": {
