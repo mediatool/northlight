@@ -1,5 +1,5 @@
 import React, { ComponentProps, ComponentType } from 'react'
-import { useField } from 'formik'
+import { Field, useField } from 'formik'
 import {
   FormControl as ChakraFormControl,
   FormErrorMessage,
@@ -16,15 +16,18 @@ export function TextField<TComponent extends ComponentType<any>> ({
   ...rest
 }: TextFieldProps<TComponent> & ComponentProps<TComponent>) {
   const [ field, { error, touched }, { setValue } ] = useField({ name, validate })
+  const { value } = field
 
   return (
     <ChakraFormControl isInvalid={ !!error && touched }>
       { label && (
         <FormLabel htmlFor={ name } mb={ 1 }>{ label }</FormLabel>
       ) }
-      <As
-        field={ field }
-        setValue={ setValue }
+      <Field
+        component={ As }
+        onChange={ setValue }
+        value={ value }
+        name={ name }
         { ...rest }
       />
       <FormErrorMessage>{ error }</FormErrorMessage>
