@@ -28,7 +28,7 @@ export function Form<FormValues> ({
       { ...rest }
     >
       { (formik) => (
-        <FormikForm>
+        <FormikForm style={ { width: '100%' } }>
           { typeof children === 'function' ? children(formik) : children }
         </FormikForm>
       ) }
