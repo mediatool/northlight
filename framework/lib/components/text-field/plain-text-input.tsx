@@ -10,7 +10,7 @@ export const PlainTextInput = ({
   <Input
     onChange={ field?.onChange ?? onChange }
     value={ field?.value ?? rest.value }
-    name={ field?.name ?? rest.name }
+    id={ field?.name ?? rest.name }
     { ...rest }
   />
 )

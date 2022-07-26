@@ -28,6 +28,7 @@ export function TextField<TComponent extends ComponentType<any>> ({
         onChange={ setValue }
         value={ value }
         name={ name }
+        data-testid="text-field-test-id"
         { ...rest }
       />
       <FormErrorMessage>{ error }</FormErrorMessage>

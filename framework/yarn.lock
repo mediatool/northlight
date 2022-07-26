@@ -1760,10 +1760,10 @@
   resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-3.4.3.tgz#ac2b15c4fd23978fad72055ea6cf4d85e525488a"
   integrity sha512-ThhObzxsoDoV/C9zBmRaPutxxOgr2NgIkyj1HVh+oou9f1yUhTHXYurPCo91iseaOjzfyZd+h0CgumAYO1Tgow==
 
-"@mediatool/eslint-config-mediatool@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@mediatool/eslint-config-mediatool/-/eslint-config-mediatool-1.1.5.tgz#53b87708bd22f4b3fab774cb002cde11969c09d1"
-  integrity sha512-2FhsveGfKh8pXLBf0KTl+HikoW+KDtfNoM2YNb2/3aavcUsOqtdrQuX8YnWmvyYuTasR9UZvGIcEqqhoI+da5A==
+"@mediatool/eslint-config-mediatool@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.npmjs.org/@mediatool/eslint-config-mediatool/-/eslint-config-mediatool-1.1.6.tgz#2d4497ffbab2cecad45f1315d835a27c838b051d"
+  integrity sha512-lRsz8oUVFzqwFL7gPw4dxG7KXXrvk05YOfbdIhsHuEZseQSYWSZm/TQA1f7wSvFqBmQYx1S6euUYcz72t4hKFg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.14.0"
     "@typescript-eslint/parser" "^5.14.0"
@@ -1776,18 +1776,19 @@
     eslint-plugin-react "^7.29.4"
     typescript "^4.6.2"
 
-"@mediatool/frontend-tools@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@mediatool/frontend-tools/-/frontend-tools-0.0.2.tgz#544b0e84360eda78f91a15179e7b4737c2ca6e21"
-  integrity sha512-pfzNh7+4TlpiNz3XFVOZh25ExtPkPRgL+JP4m580pQA198kIBhchS//ADFkngDP8CRKw+1ivtXVCiDt2sG0zxQ==
+"@mediatool/frontend-tools@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.npmjs.org/@mediatool/frontend-tools/-/frontend-tools-0.0.4.tgz#d742d2799cb80df7293b45a9f42dd1b5c304736d"
+  integrity sha512-hRCXZv5bvLkDP32i+UP2jVQ5r4ojBjfexpOg5/yR+HBzxY/p5TQy/DE24rKAi5OsRWtYfFJhyvbVbTMQ6pL8Wg==
   dependencies:
     "@babel/core" "^7.18.9"
     "@babel/preset-env" "^7.18.9"
     "@babel/preset-react" "^7.18.6"
     "@babel/preset-typescript" "^7.18.6"
     "@babel/register" "^7.18.9"
-    "@mediatool/eslint-config-mediatool" "^1.1.5"
+    "@mediatool/eslint-config-mediatool" "^1.1.6"
     "@testing-library/react" "^13.3.0"
+    "@testing-library/user-event" "^14.3.0"
     "@types/chai" "^4.3.1"
     "@types/mocha" "^9.1.1"
     chai "^4.3.6"
@@ -1971,6 +1972,11 @@
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^8.5.0"
     "@types/react-dom" "^18.0.0"
+
+"@testing-library/user-event@^14.3.0":
+  version "14.3.0"
+  resolved "https://registry.npmjs.org/@testing-library/user-event/-/user-event-14.3.0.tgz#0a6750b94b40e4739706d41e8efc2ccf64d2aad9"
+  integrity sha512-P02xtBBa8yMaLhK8CzJCIns8rqwnF6FxhR9zs810flHOBXUYCFjLd8Io1rQrAkQRWEmW2PGdZIEdMxf/KLsqFA==
 
 "@tootallnate/once@2":
   version "2.0.0"
