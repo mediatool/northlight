@@ -1164,13 +1164,6 @@
     compute-scroll-into-view "1.0.14"
     copy-to-clipboard "3.3.1"
 
-"@chakra-ui/icon@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/icon/-/icon-1.2.1.tgz#b47c0016531da8bef81061d2b96a2d5282b07ff8"
-  integrity sha512-uZxFsiY4Tld+LvGIX7cky0H6oMRac8udPMQRzIk/UQeNZcsWisGetatbQsew3y1lWV/iH/8+TlDuW13GWGyGGQ==
-  dependencies:
-    "@chakra-ui/utils" "1.9.1"
-
 "@chakra-ui/icon@3.0.4":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@chakra-ui/icon/-/icon-3.0.4.tgz#a8f2209e6accbf607a46eecb95e1cbd6036774cb"
@@ -1178,13 +1171,13 @@
   dependencies:
     "@chakra-ui/utils" "2.0.4"
 
-"@chakra-ui/icons@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/icons/-/icons-1.1.1.tgz#e4b191fd38be999c4434ff2b1fb69a5eaf3cf226"
-  integrity sha512-/+u6euCOFw6J1DZW7NcVFtib4mygJBoqRdsKiU1Z3uiTC+zQTBzcCt54NQ+kK8rhuNzJ+odahnt/AbjBJgZ+5A==
+"@chakra-ui/icons@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/icons/-/icons-2.0.4.tgz#8510cc9dd3e49fad3f65b60ae6879a9c08367606"
+  integrity sha512-/Xh6UtIilFhSCxZ6pKmB3zaatvGMc+IAvPb0TvlegWfNaLI7XwHWkEoK+GxYXV02wT/yqmup2gd41/OL3S0YLg==
   dependencies:
-    "@chakra-ui/icon" "1.2.1"
-    "@types/react" "^17.0.15"
+    "@chakra-ui/icon" "3.0.4"
+    "@types/react" "^18.0.1"
 
 "@chakra-ui/image@2.0.5":
   version "2.0.5"
@@ -1508,20 +1501,12 @@
     "@chakra-ui/form-control" "2.0.4"
     "@chakra-ui/utils" "2.0.4"
 
-"@chakra-ui/theme-tools@2.0.5", "@chakra-ui/theme-tools@^2.0.2":
+"@chakra-ui/theme-tools@2.0.5", "@chakra-ui/theme-tools@^2.0.2", "@chakra-ui/theme-tools@^2.0.5":
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/@chakra-ui/theme-tools/-/theme-tools-2.0.5.tgz#16a77da55f9933542d74fa0a5fc7bf7dd4f362f7"
   integrity sha512-JuFKYWfVnZKnX95sM05a/0NpTzwciPTAZXfAJYwDOiy4EEqXUgEQpkHxOjC929wpzIVb3Q2Wa/HvS1v8C2f+mw==
   dependencies:
     "@chakra-ui/utils" "2.0.4"
-    "@ctrl/tinycolor" "^3.4.0"
-
-"@chakra-ui/theme-tools@^1.3.1":
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/theme-tools/-/theme-tools-1.3.6.tgz#2e5b5c192efd685c158e940a5cedcb0eb51f8602"
-  integrity sha512-Wxz3XSJhPCU6OwCHEyH44EegEDQHwvlsx+KDkUDGevOjUU88YuNqOVkKtgTpgMLNQcsrYZ93oPWZUJqqCVNRew==
-  dependencies:
-    "@chakra-ui/utils" "1.10.4"
     "@ctrl/tinycolor" "^3.4.0"
 
 "@chakra-ui/theme@2.1.3":
@@ -1565,26 +1550,6 @@
   integrity sha512-k9/01frV/Z6iEt68lfz8PLYiPoWC9N99Uo6XYQjw17kcguVxJoliq35sUharVcQJneVi5bmKTp9974/3drFDBw==
   dependencies:
     "@chakra-ui/utils" "2.0.4"
-
-"@chakra-ui/utils@1.10.4":
-  version "1.10.4"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/utils/-/utils-1.10.4.tgz#40a32d4efd8684b2e7432a40b285796383eacfd3"
-  integrity sha512-AM91VQQxw8F4F1WDA28mqKY6NFIOuzc2Ekkna88imy2OiqqmYH0xkq8J16L2qj4cLiLozpYqba3C79pWioy6FA==
-  dependencies:
-    "@types/lodash.mergewith" "4.6.6"
-    css-box-model "1.2.1"
-    framesync "5.3.0"
-    lodash.mergewith "4.6.2"
-
-"@chakra-ui/utils@1.9.1":
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/utils/-/utils-1.9.1.tgz#e34bf74f9f6048da1ec2a5728db4cc80d0158e0e"
-  integrity sha512-Tue8JfpzOqeHd8vSqAnX1l/Y3Gg456+BXFP/TH6mCIeqMAMbrvv25vDskds0wlXRjMYdmpqHxCEzkalFrscGHA==
-  dependencies:
-    "@types/lodash.mergewith" "4.6.6"
-    css-box-model "1.2.1"
-    framesync "5.3.0"
-    lodash.mergewith "4.6.2"
 
 "@chakra-ui/utils@2.0.4", "@chakra-ui/utils@^2.0.2":
   version "2.0.4"
@@ -2120,10 +2085,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.15":
-  version "17.0.36"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.36.tgz#0d81e0e2419e6a8e9ba6af5e3a0608e70835d7d1"
-  integrity sha512-CUFUp01OdfbpN/76v4koqgcpcRGT3sYOq3U3N6q0ZVGcyeP40NUdVU+EWe3hs34RNaTefiYyBzOpxBBidCc5zw==
+"@types/react@*", "@types/react@^18.0.1":
+  version "18.0.15"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.15.tgz#d355644c26832dc27f3e6cbf0c4f4603fc4ab7fe"
+  integrity sha512-iz3BtLuIYH1uWdsv6wXYdhozhqj20oD4/Hk2DNXIn1kFsmp9x8d9QB6FnPhfkbhd2PgEONt9Q1x/ebkwjfFLow==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
