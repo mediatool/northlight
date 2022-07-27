@@ -31,7 +31,7 @@ export const options:Option[] = [
 const SelectPage = () => (
   <Page
     title="Select"
-    subtitle={
+    subtitle={ (
       <Text fontWeight="semibold">We use
         <Link
           target="_blank"
@@ -42,7 +42,7 @@ const SelectPage = () => (
         </Link>
         as core component.
       </Text>
-    }
+    ) }
   >
     <Stack spacing={ 4 }>
       <Stack mb={ 4 } spacing={ 4 } maxWidth="400px">
@@ -100,7 +100,7 @@ const SelectPage = () => (
       <Divider />
       <Text>When using the select in form use <strong>SelectField</strong></Text>
       <Form initialValues={ { color: 'blue' } } onSubmit={ () => {} }>
-        <Stack spacing={ 4 } >
+        <Stack spacing={ 4 }>
           <HStack maxW="400px">
             <SelectField
               name="color"

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Select } from '../../../lib/components'
-import { FormikSelectProps } from '../../../lib/types'
+import { Select } from './select'
+import { FormikSelectProps } from '../../types'
 
 export const FormikSelect = ({
   placeholder,

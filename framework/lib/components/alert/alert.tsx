@@ -8,8 +8,8 @@ import {
   HStack,
   Stack,
 } from '@chakra-ui/react'
-import { AlertVariants, toastIconMap } from '../../../lib/types'
-import { Icon } from '../../../lib/components'
+import { AlertVariants, toastIconMap } from '../../types'
+import { Icon } from '../icon'
 import { color } from '../../../tokens'
 
 interface Props extends AlertProps {
@@ -36,7 +36,7 @@ export const Alert = ({
       <Stack spacing={ 0 } maxWidth="400px">
         { title && <AlertTitle>{ title }</AlertTitle> }
         { description && (
-          <AlertDescription >{ description }</AlertDescription>
+          <AlertDescription>{ description }</AlertDescription>
         ) }
       </Stack>
       <CloseButton

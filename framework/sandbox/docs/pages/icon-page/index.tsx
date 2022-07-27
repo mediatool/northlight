@@ -8,7 +8,7 @@ const IconPage = () => (
     title="Icon"
     subtitle="Using chakra Icon to render raw SVG exported from Figma"
   >
-    <Box w="100%" maxW={ 500 } >
+    <Box w="100%" maxW={ 500 }>
       <Text>
         Each icon is exported in 2 variants:&nbsp;
         <strong>outlined</strong> and <strong>filled</strong>.

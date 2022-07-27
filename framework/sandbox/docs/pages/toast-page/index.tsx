@@ -16,15 +16,15 @@ const ToastPage = () => {
   return (
     <Page
       title="Toast"
-      subtitle={
+      subtitle={ (
         <DefaultPageSubtitle
           slug="/form/toast"
           linkText="Chakra Toast"
         />
-    }
+      ) }
     >
 
-      <Stack spacing={ 4 } >
+      <Stack spacing={ 4 }>
         <Text>Mediatool uses 4 toast <strong>variants</strong></Text>
         <HStack spacing={ 4 }>
           <Alert variant="success" title="success" />

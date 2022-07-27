@@ -14,12 +14,12 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const SwitchPage = () => (
   <Page
     title="Switch"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/switch"
         linkText="Chakra Switch"
       />
-    }
+    ) }
   >
     <Stack spacing={ 4 }>
       <Stack mb={ 4 } spacing={ 4 }>
@@ -42,7 +42,7 @@ const SwitchPage = () => (
       </HStack>
       <Divider />
       <Text>They can be used in 3 different <strong>sizes</strong> (sm, md, lg)</Text>
-      <HStack spacing={ 4 } w="30%" >
+      <HStack spacing={ 4 } w="30%">
         <Switch size="sm" />
         <Switch size="md" />
         <Switch size="lg" />

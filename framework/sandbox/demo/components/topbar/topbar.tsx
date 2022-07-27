@@ -11,7 +11,7 @@ export const DemoTopbar = () => (
   >
     <BreadcrumbsDemo />
     <InputGroup maxW={ 96 } flex={ 2 }>
-      <InputLeftElement >
+      <InputLeftElement>
         <SearchIcon />
       </InputLeftElement>
       <PlainTextInput

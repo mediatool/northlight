@@ -1,4 +1,4 @@
-import { Month, WeekDay } from '../util'
+import { Month, WeekDay } from './types'
 
 export const WEEKDAY_ABBREVIATION = 2
 export const YEAR_THRESHOLD = 10

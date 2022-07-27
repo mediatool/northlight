@@ -1,8 +1,8 @@
 import React from 'react'
 import { Field, useField } from 'formik'
 import { FormControl as ChakraFormControl, FormErrorMessage, FormLabel, HStack } from '@chakra-ui/react'
-import { Checkbox } from '../../../lib/components'
-import { CheckboxFieldProps } from '../../../lib/types'
+import { Checkbox } from './checkbox'
+import { CheckboxFieldProps } from '../../types'
 
 export const CheckboxField = ({
   name,

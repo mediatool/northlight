@@ -1,8 +1,8 @@
 import React from 'react'
 import { useField } from 'formik'
 import { FormControl as ChakraFormControl, FormErrorMessage, Stack } from '@chakra-ui/react'
-import { FormLabel } from '../../../lib/components'
-import { RadioFieldGroupProps } from '../../../lib/types'
+import { FormLabel } from '../form-control'
+import { RadioFieldGroupProps } from '../../types'
 import { RadioGroup } from './radio-group'
 
 export const RadioGroupField = ({

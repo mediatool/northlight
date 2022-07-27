@@ -17,7 +17,7 @@ const StatusPinPage = () => (
         <Code>variant='green'</Code>
         <StatusPin variant="green" size="sm" />
         <StatusPin variant="green" />
-        <StatusPin variant="green"size="lg" />
+        <StatusPin variant="green" size="lg" />
       </HStack>
       <HStack spacing={ 4 }>
         <Code>variant='yellow'</Code>

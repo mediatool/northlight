@@ -19,7 +19,7 @@ export const Page = ({
     overflowY="auto"
     overscrollBehavior="contain"
   >
-    <Stack spacing={ 2 } >
+    <Stack spacing={ 2 }>
       <Heading as="h1" size="lg">{ title }</Heading>
       { typeof subtitle === 'string' ? (
         <Heading as="h2" size="sm">{ subtitle }</Heading>

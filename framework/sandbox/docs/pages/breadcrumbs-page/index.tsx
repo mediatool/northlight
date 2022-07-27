@@ -12,12 +12,12 @@ const crumbs = [
 const BreadcrumbsPage = () => (
   <Page
     title="Breadcrumbs"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/breadcrumb"
         linkText="Chakra breadcrumbs"
       />
-    }
+    ) }
   >
     <Text>
       <strong>Breadcrumb and BreadcrumbItem</strong>&nbsp;

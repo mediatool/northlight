@@ -1,5 +1,6 @@
 import React, {
   useCallback,
+  useMemo,
   useRef,
   useState,
 } from 'react'
@@ -35,12 +36,12 @@ export const DatePicker = (props: DatePickerProps) => {
     date.setMonth(todaysDate.getMonth())
     setInternalDate(date)
   }
-
-  const contextValue: ContextValue = {
+  const contextValue = useMemo<ContextValue>(() => ({
     dayzed,
     toggleDate,
     todaysDate,
-  }
+  }), [ dayzed, toggleDate, todaysDate ])
+
   const { calendars } = dayzed
   // This date picker is responsible for picking single or multiple dates, so we can safely
   // assume that only one month (one calendar) will be rendered at any given time

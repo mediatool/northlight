@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React, { useLayoutEffect, useState } from 'react'
 import {
   Props as DayzedProps,
   useDayzed,
 } from 'dayzed'
-import { useBoolean } from '../../../../../lib/hooks'
+import { useBoolean } from '../../../../hooks'
 import { Controls } from './controls'
 import { Day } from './day'
 import { DateTuple } from '../types'
@@ -86,7 +87,7 @@ export const Calendar = (props: Props) => {
   }
 
   return (
-    <Box >
+    <Box>
       <Controls
         prev={ getBackProps({ calendars }) }
         next={ getForwardProps({ calendars }) }

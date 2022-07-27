@@ -5,12 +5,12 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const BadgePage = () => (
   <Page
     title="Badge"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/badge"
         linkText="Chakra Badge"
       />
-    }
+    ) }
   >
     <HStack spacing={ 4 }>
       <Badge>Default badge</Badge>

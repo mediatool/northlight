@@ -1,4 +1,4 @@
-import { Color, ColorGrade } from '../../../lib/types'
+import { Color, ColorGrade } from '../../types'
 import { PinVariant } from './types'
 
 export const pinVariantMap: Record<PinVariant, `${Color}.${ColorGrade}`> = {

@@ -17,12 +17,12 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const TagPage = () => (
   <Page
     title="Tag"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/tag"
         linkText="Chakra Tag"
       />
-    }
+    ) }
   >
     <Stack spacing={ 4 }>
       <Text>Mediatool uses 2 tag components:</Text>
@@ -37,7 +37,7 @@ const TagPage = () => (
         <Stack>
           <Text>Add a label, either directly: </Text>
           <HStack>
-            <Tag >Label</Tag>
+            <Tag>Label</Tag>
           </HStack>
           <Code w="max-content">{ '<Tag>Label</Tag>' }</Code>
         </Stack>

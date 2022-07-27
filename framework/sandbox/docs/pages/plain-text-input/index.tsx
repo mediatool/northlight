@@ -12,12 +12,12 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const InputPage = () => (
   <Page
     title="Plain TextInput"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/input"
         linkText="Chakra Input"
       />
-    }
+    ) }
   >
     <Stack spacing={ 4 }>
       <Text>Mediatool uses 3 different input <strong>variants</strong>:</Text>

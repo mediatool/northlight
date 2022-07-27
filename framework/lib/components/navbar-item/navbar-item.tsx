@@ -1,7 +1,11 @@
 import React from 'react'
 import { LinkProps, NavLink, NavLinkProps } from 'react-router-dom'
-import { IconType } from '../../../lib'
-import { Center, Icon, Link, Stack, Text } from '../../../lib/components'
+import { IconType } from '../icon/icon'
+import { Center } from '../center'
+import { Icon } from '../icon'
+import { Link } from '../link'
+import { Stack } from '../stack'
+import { Text } from '../text'
 
 type NavbarItemProps = LinkProps & NavLinkProps & {
   to: string
@@ -24,7 +28,7 @@ export const NavbarItem = ({
       _hover={ { bgColor: 'blue.100' } }
       _activeLink={ { bgColor: 'blue.100' } }
     >
-      <Center boxSize={ 12 } >
+      <Center boxSize={ 12 }>
         <Icon boxSize={ 5 } type={ icon } />
       </Center>
     </Link>

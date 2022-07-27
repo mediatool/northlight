@@ -1,8 +1,8 @@
 import React from 'react'
 import { HStack } from '@chakra-ui/react'
 import { Field } from 'formik'
-import { Radio } from '../../../lib/components'
-import { RadioFieldProps } from '../../../lib/types'
+import { Radio } from './radio'
+import { RadioFieldProps } from '../../types'
 
 export const RadioField = ({
   value,

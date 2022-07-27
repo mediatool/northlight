@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconProps as ChakraIconProps, Icon } from '@chakra-ui/react'
-import { IconProps } from '../../../../lib/types'
+import { IconProps } from '../../../types'
 
 type Props = ChakraIconProps & IconProps
 

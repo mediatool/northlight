@@ -14,12 +14,12 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const NumberInputPage = () => (
   <Page
     title="Number Input"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/number-input/usage"
         linkText="Chakra Number Input"
       />
-    }
+    ) }
   >
     <Stack spacing={ 4 }>
       <Text>Mediatool uses 1 number input</Text>
@@ -76,7 +76,7 @@ const NumberInputPage = () => (
       <Text>When using the number input in forms, use <strong>NumberInputField</strong></Text>
       <Form initialValues={ { age: 0 } } onSubmit={ () => {} }>
         <Stack spacing={ 4 }>
-          <HStack maxW="300px" >
+          <HStack maxW="300px">
             <NumberInputField name="age" label="How old are you?" />
           </HStack>
           <Text>It must have <strong>name</strong> and a <strong>label</strong></Text>

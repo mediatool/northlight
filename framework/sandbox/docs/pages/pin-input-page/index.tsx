@@ -11,12 +11,12 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const PinInputPage = () => (
   <Page
     title="Pin Input"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/pin-input"
         linkText="Chakra Pin Input"
       />
-    }
+    ) }
   >
 
     <Stack spacing={ 4 }>

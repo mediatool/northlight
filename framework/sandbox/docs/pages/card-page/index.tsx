@@ -26,7 +26,7 @@ const CardPage = () => (
         title="Darth Vader"
         description={ desc }
         image={ darthVader }
-        actions={
+        actions={ (
           <HStack spacing={ 4 } justify="flex-end">
             <Button
               w="100%"
@@ -36,7 +36,7 @@ const CardPage = () => (
             </Button>
             <Button w="100%">Dark Side</Button>
           </HStack>
-        }
+        ) }
       />
     </HStack>
   </Page>

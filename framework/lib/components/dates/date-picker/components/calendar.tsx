@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React, { useState } from 'react'
 import { Calendar as DayzedCalendar } from 'dayzed'
 import { Controls } from './controls'

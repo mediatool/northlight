@@ -30,7 +30,7 @@ const FormPage = () => {
   return (
     <Page
       title="Form"
-      subtitle={
+      subtitle={ (
         <>
           <Heading as="h2" size="sm">
             The Form component is an abstraction of Formik.
@@ -46,7 +46,7 @@ const FormPage = () => {
             <br />
           </Text>
         </>
-    }
+      ) }
     >
       <VStack w="40%">
         <Form

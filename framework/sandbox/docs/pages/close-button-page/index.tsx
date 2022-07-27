@@ -5,12 +5,12 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const CloseButtonPage = () => (
   <Page
     title="Close Button"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/close-button"
         linkText="Chakra Close Button"
       />
-    }
+    ) }
   >
     <HStack spacing={ 4 }>
       <CloseButton size="sm" />

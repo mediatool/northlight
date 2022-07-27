@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react'
-import { useBoolean, useId, useOutsideClick } from '../../../../lib/hooks'
+import React, { useMemo, useRef, useState } from 'react'
+import { useBoolean, useId, useOutsideClick } from '../../../hooks'
 import { Calendar } from './components/calendar'
 import { Presets } from './components/presets'
 import { Trigger } from './components/trigger'
@@ -73,16 +73,20 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     setHoveredEndDate(undefined)
   }
 
-  const value: ContextValue = {
-    state: {
-      selected: dateRange,
-      hoveredEndDate,
-    },
-    actions: {
-      hoverDate,
-      unHoverDate,
-    },
+  const state = {
+    selected: dateRange,
+    hoveredEndDate,
   }
+
+  const actions = {
+    hoverDate,
+    unHoverDate,
+  }
+
+  const value = useMemo<ContextValue>(() => ({
+    state,
+    actions,
+  }), [ state, actions ])
 
   const [ from, to ] = dateRange
 

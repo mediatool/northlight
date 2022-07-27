@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routing } from '../routing'
+import { Routing } from '../routing/routing'
 import { DocsSidebar, DocsSkeleton } from './components'
 import { routes } from './routes'
 import {

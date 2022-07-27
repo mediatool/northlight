@@ -16,12 +16,12 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const ButtonPage = () => (
   <Page
     title="Button"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/button"
         linkText="Chakra Button"
       />
-    }
+    ) }
   >
     <Stack spacing={ 4 }>
       <Text>Mediatool uses 6 different button <strong>variants</strong>:</Text>

@@ -15,14 +15,14 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const CheckboxPage = () => (
   <Page
     title="Checkbox"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/checkbox"
         linkText="Chakra checkbox"
       />
-    }
+    ) }
   >
-    <Stack spacing={ 4 } >
+    <Stack spacing={ 4 }>
       <Text>Mediatool uses 2 checkbox <strong>variants</strong></Text>
       <HStack spacing={ 4 }>
         <Stack>

@@ -12,13 +12,13 @@ const PalettePage = () => {
   return (
     <Page
       title="Palette"
-      subtitle={
+      subtitle={ (
         <Text>
           The mediatool color palette. Use palette by specifying a
           color key and shade value together like <Code>blue.200</Code>.<br />
           Special case with black and white which are used with only the key.
         </Text>
-      }
+      ) }
     >
       <VStack spacing={ 4 } mt={ 4 } alignItems="start">
         <Heading as="h4" size="md" textTransform="capitalize">Black</Heading>

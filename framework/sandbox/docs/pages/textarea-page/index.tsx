@@ -15,15 +15,15 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const InputPage = () => (
   <Page
     title="Textarea"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/textarea"
         linkText="Chakra Textarea"
       />
-    }
+    ) }
   >
 
-    <Stack spacing={ 4 } >
+    <Stack spacing={ 4 }>
       <Stack mb={ 4 } spacing={ 4 }>
         <Text>Mediatool uses 1 textarea</Text>
         <VStack maxWidth="400px">

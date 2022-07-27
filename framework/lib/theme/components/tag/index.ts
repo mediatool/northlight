@@ -1,7 +1,7 @@
 import {
   ComponentSingleStyleConfig,
 } from '@chakra-ui/react'
-import { getContrastColor } from '../../../../lib/utilities'
+import { getContrastColor } from '../../../utilities'
 import { borderRadius, color } from '../../../../tokens'
 
 export const Tag: ComponentSingleStyleConfig = {

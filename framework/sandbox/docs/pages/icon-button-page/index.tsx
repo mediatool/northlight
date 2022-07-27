@@ -17,51 +17,51 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const IconButtonPage = () => (
   <Page
     title="Icon Button"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/icon-button"
         linkText="Chakra Icon Button"
       />
-    }
+    ) }
   >
     <Stack spacing={ 4 }>
       <Text>Mediatool uses 6 icon button <strong>variants</strong> (hover to display):</Text>
       <HStack spacing={ 4 }>
-        <Tooltip label="Default" placement="top" >
+        <Tooltip label="Default" placement="top">
           <IconButton
             aria-label="conversations"
             icon={ <MessageIconFilled /> }
           />
         </Tooltip>
-        <Tooltip label="Brand" placement="top" >
+        <Tooltip label="Brand" placement="top">
           <IconButton
             variant="brand"
             aria-label="conversations"
             icon={ <MessageIconFilled /> }
           />
         </Tooltip>
-        <Tooltip label="Danger" placement="top" >
+        <Tooltip label="Danger" placement="top">
           <IconButton
             variant="danger"
             aria-label="conversations"
             icon={ <MessageIconFilled /> }
           />
         </Tooltip>
-        <Tooltip label="Success" placement="top" >
+        <Tooltip label="Success" placement="top">
           <IconButton
             variant="success"
             aria-label="conversations"
             icon={ <MessageIconFilled /> }
           />
         </Tooltip>
-        <Tooltip label="Link" placement="top" >
+        <Tooltip label="Link" placement="top">
           <IconButton
             variant="link"
             aria-label="conversations"
             icon={ <ThreeDotsIconFilled /> }
           />
         </Tooltip>
-        <Tooltip label="Ghost" placement="top" >
+        <Tooltip label="Ghost" placement="top">
           <IconButton
             variant="ghost"
             aria-label="conversations"

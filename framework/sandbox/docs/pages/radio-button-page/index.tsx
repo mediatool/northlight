@@ -16,12 +16,12 @@ import { DefaultPageSubtitle, Page } from '../../components'
 const RadioButtonPage = () => (
   <Page
     title="Radio button"
-    subtitle={
+    subtitle={ (
       <DefaultPageSubtitle
         slug="/radio"
         linkText="Chakra Radio Button"
       />
-    }
+    ) }
   >
     <Stack spacing={ 4 }>
       <Stack spacing={ 4 } mb={ 4 }>
@@ -70,7 +70,7 @@ const RadioButtonPage = () => (
       <Divider />
       <Text pt={ 4 }>They can be used in 3 different <strong>sizes</strong></Text>
       <RadioGroup>
-        <HStack spacing={ 4 } w="30%" >
+        <HStack spacing={ 4 } w="30%">
           <Radio size="sm" value="1">sm</Radio>
           <Radio size="md" value="2">md</Radio>
           <Radio size="lg" value="3">lg</Radio>

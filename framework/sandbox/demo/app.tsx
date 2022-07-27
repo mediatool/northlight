@@ -1,7 +1,7 @@
 import React from 'react'
 import { DemoSidebar } from './components'
 import { AppSkeleton } from '../components'
-import { Routing } from '../routing'
+import { Routing } from '../routing/routing'
 import { routes } from './routes'
 import { DemoTopbar } from './components/topbar'
 

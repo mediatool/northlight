@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { ButtonProps, Button as ChakraButton } from '@chakra-ui/react'
-import { ButtonVariants } from '../../../lib/types'
+import { ButtonVariants } from '../../types'
 
 interface Props extends ButtonProps {
   variant?: ButtonVariants
