@@ -1760,10 +1760,10 @@
   resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-3.4.3.tgz#ac2b15c4fd23978fad72055ea6cf4d85e525488a"
   integrity sha512-ThhObzxsoDoV/C9zBmRaPutxxOgr2NgIkyj1HVh+oou9f1yUhTHXYurPCo91iseaOjzfyZd+h0CgumAYO1Tgow==
 
-"@mediatool/eslint-config-mediatool@^1.1.6":
-  version "1.1.6"
-  resolved "https://registry.npmjs.org/@mediatool/eslint-config-mediatool/-/eslint-config-mediatool-1.1.6.tgz#2d4497ffbab2cecad45f1315d835a27c838b051d"
-  integrity sha512-lRsz8oUVFzqwFL7gPw4dxG7KXXrvk05YOfbdIhsHuEZseQSYWSZm/TQA1f7wSvFqBmQYx1S6euUYcz72t4hKFg==
+"@mediatool/eslint-config-mediatool@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.npmjs.org/@mediatool/eslint-config-mediatool/-/eslint-config-mediatool-1.1.7.tgz#8db09d7e787f9f476325b31eae443bfcc469fc54"
+  integrity sha512-I11BNyTfbQnCUMisHWdEPntUPGYEnd9d4P3vPGRpKceCbTOWzdkU0X1d4flOd1YYoC/BEsZUIoelE3gweafc0A==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.14.0"
     "@typescript-eslint/parser" "^5.14.0"
@@ -1776,17 +1776,17 @@
     eslint-plugin-react "^7.29.4"
     typescript "^4.6.2"
 
-"@mediatool/frontend-tools@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/@mediatool/frontend-tools/-/frontend-tools-0.0.4.tgz#d742d2799cb80df7293b45a9f42dd1b5c304736d"
-  integrity sha512-hRCXZv5bvLkDP32i+UP2jVQ5r4ojBjfexpOg5/yR+HBzxY/p5TQy/DE24rKAi5OsRWtYfFJhyvbVbTMQ6pL8Wg==
+"@mediatool/frontend-tools@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.npmjs.org/@mediatool/frontend-tools/-/frontend-tools-0.0.5.tgz#1c8d20f0bad832d5a45ad5009cb9d4accb330f50"
+  integrity sha512-gmHq4P9OrgpDeOg3OYa3106pllQmcsDTz8TS8xxrp0KceuPH0Tv2O3OpG/l8rDmx3h9PDV4gRPZeFKI7h1SOMw==
   dependencies:
     "@babel/core" "^7.18.9"
     "@babel/preset-env" "^7.18.9"
     "@babel/preset-react" "^7.18.6"
     "@babel/preset-typescript" "^7.18.6"
     "@babel/register" "^7.18.9"
-    "@mediatool/eslint-config-mediatool" "^1.1.6"
+    "@mediatool/eslint-config-mediatool" "^1.1.7"
     "@testing-library/react" "^13.3.0"
     "@testing-library/user-event" "^14.3.0"
     "@types/chai" "^4.3.1"

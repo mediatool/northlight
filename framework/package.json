@@ -34,7 +34,7 @@
     "style-dictionary": "^3.7.1"
   },
   "devDependencies": {
-    "@mediatool/frontend-tools": "^0.0.4",
+    "@mediatool/frontend-tools": "^0.0.5",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-image": "^2.1.1",
     "@rollup/plugin-json": "^4.1.0",
