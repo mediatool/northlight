@@ -26,6 +26,7 @@ export const NumberInputField = ({
           name={ name }
           value={ value }
           onChange={ setValue }
+          data-testid="number-input-field-test-id"
           { ...rest }
         />
       </HStack>
