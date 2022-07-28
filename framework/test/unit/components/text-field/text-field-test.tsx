@@ -5,21 +5,20 @@ import userEvent from '@testing-library/user-event'
 import { Form, TextField } from '../../../../lib/components'
 
 const { isOk } = assert
-const userInput = "Ksi9ogHSPo8FHnpEaa6S"
 
-const getTextField = (customProps={ }) => {
+const getTextField = (customProps = { }) => {
   const props = {
     name: 'text-input',
     ...customProps,
   }
   return (
-        <Form
-            initialValues={ { 'text-input' : "" } }
-            onSubmit={ () => {} }
-        >
-          <TextField { ...props } />
-        </Form>
-    )
+    <Form
+      initialValues={ { 'text-input': '' } }
+      onSubmit={ () => {} }
+    >
+      <TextField { ...props } />
+    </Form>
+  )
 }
 
 describe('TextField', () => {
@@ -41,7 +40,7 @@ describe('TextField', () => {
     render(getTextField({
       label: 'Text Input',
     }))
-    const textField = screen.getByTestId("text-field-test-id")
+    const textField = screen.getByTestId('text-field-test-id')
     const label = screen.getByText('Text Input')
     expect(label).to.have.property('htmlFor', textField.id)
   })
@@ -71,9 +70,8 @@ describe('TextField', () => {
       isInvalid: true,
       isRequired: true,
       isReadOnly: true,
-      'data-testid': 'text-field-state-test',
     }))
-    const textField = screen.getByTestId('text-field-state-test')
+    const textField = screen.getByTestId('text-field-test-id')
     expect(textField).to.have.property('disabled', true)
     expect(textField).to.have.property('readOnly', true)
     expect(textField).to.have.property('required', true)
@@ -86,10 +84,10 @@ describe('TextField', () => {
     render(getTextField({ }))
     const user = userEvent.setup()
     const textField = screen.getByTestId('text-field-test-id')
-    await user.type(textField, userInput)
-    expect(screen.getByDisplayValue(userInput)).to.deep.equal(textField)
-  }) 
-  
+    await user.type(textField, 'Ksi9ogHSPo8FHnpEaa6S')
+    expect(screen.getByDisplayValue('Ksi9ogHSPo8FHnpEaa6S')).to.deep.equal(textField)
+  })
+
   it('Focuses on tab', () => {
     render(getTextField())
     const user = userEvent.setup()
