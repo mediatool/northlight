@@ -28,6 +28,7 @@ export const SwitchField = ({
           as={ Switch }
           name={ name }
           value={ value }
+          data-testid="switch-field-test-id"
           { ...rest }
         />
       </HStack>

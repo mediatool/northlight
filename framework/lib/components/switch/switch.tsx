@@ -14,6 +14,7 @@ export const Switch = ({
     id={ name }
     isChecked={ value }
     onChange={ onChange }
+    role="switch"
     { ...rest }
   />
 )
