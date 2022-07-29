@@ -27,6 +27,7 @@ export const CheckboxField = ({
           name={ name }
           value={ value }
           variant={ variant }
+          data-testid="checkbox-field-test-id"
           { ...rest }
         />
       </HStack>
