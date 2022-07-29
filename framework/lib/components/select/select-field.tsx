@@ -14,6 +14,9 @@ export const SelectField = ({
   direction = 'column',
   onChange,
   isMulti,
+  isDisabled,
+  isInvalid,
+  size,
   ...rest
 }: SelectFieldProps) => {
   const [ field, { error, touched } ] = useField({ name, validate })
@@ -26,7 +29,7 @@ export const SelectField = ({
       isRequired={ isRequired }
     >
       <Stack spacing="auto" direction={ direction } alignItems={ isColumn ? 'stretch' : 'center' }>
-        <FormLabel htmlFor={ name } mb={ isColumn ? 1 : 0 }>{ label }</FormLabel>
+        <FormLabel mb={ isColumn ? 1 : 0 }>{ label }</FormLabel>
         <Field
           component={ FormikSelect }
           name={ name }
@@ -34,6 +37,9 @@ export const SelectField = ({
           onChange={ onChange }
           value={ value }
           isMulti={ isMulti }
+          isDisabled={ isDisabled }
+          isInvalid={ isInvalid }
+          size={ size }
           { ...rest }
         />
       </Stack>

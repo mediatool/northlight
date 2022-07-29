@@ -8,6 +8,9 @@ export const FormikSelect = ({
   form,
   options,
   isMulti = false,
+  isInvalid,
+  isDisabled,
+  size,
 }: FormikSelectProps) => {
   const onChange = (selected: any) => {
     form.setFieldValue(
@@ -25,6 +28,9 @@ export const FormikSelect = ({
       placeholder={ placeholder }
       options={ options }
       isMulti={ isMulti }
+      isDisabled={ isDisabled }
+      isInvalid={ isInvalid }
+      size={ size }
     />
   )
 }
