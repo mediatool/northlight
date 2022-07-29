@@ -28,6 +28,7 @@ export const RadioGroupField = ({
           name={ name }
           value={ value }
           direction={ direction }
+          data-testid="radio-group-field-test-id"
           { ...rest }
         >
           { children }

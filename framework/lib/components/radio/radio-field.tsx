@@ -9,8 +9,12 @@ export const RadioField = ({
   children,
   ...rest
 }: RadioFieldProps) => (
-  <HStack spacing="auto">
-    <Field as={ Radio } value={ value } { ...rest }>
+  <HStack spacing="auto" data-testid="radio-field-test-id">
+    <Field
+      as={ Radio }
+      value={ value }
+      { ...rest }
+    >
       { children }
     </Field>
   </HStack>

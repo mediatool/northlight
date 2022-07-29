@@ -8,7 +8,7 @@ export const RadioGroup = ({
   name,
   ...rest
 }: RadioGroupProps) => (
-  <ChakraRadioGroup name={ name } { ...rest }>
+  <ChakraRadioGroup name={ name } id={ name } { ...rest }>
     <Stack direction={ direction }>
       { children }
     </Stack>
