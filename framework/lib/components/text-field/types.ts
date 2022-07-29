@@ -1,17 +1,20 @@
 import { Props as InputMaskProps } from 'react-input-mask'
 import { FieldHelperProps, FieldInputProps, FieldValidator } from 'formik'
 import { InputProps as ChakraInputProps } from '@chakra-ui/react'
+import { ElementType } from 'react'
 
 export interface TextInputFormatter {
   format: (value: string) => string
   unFormat: (value: string) => string
 }
 
-export type TextFieldProps<TComponent> = ChakraInputProps & {
+export type TextFieldProps = ChakraInputProps & {
   name: string
-  label?: string
+  label: string
   validate?: FieldValidator
-  as: TComponent
+  mask?: string
+  formatter?: TextInputFormatter
+  as?: ElementType
 }
 
 export type PlainTextInputProps =

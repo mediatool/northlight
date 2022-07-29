@@ -1,4 +1,4 @@
-import React, { ComponentProps, ComponentType } from 'react'
+import React from 'react'
 import { Field, useField } from 'formik'
 import {
   FormControl as ChakraFormControl,
@@ -8,13 +8,13 @@ import {
 import { TextFieldProps } from './types'
 import { PlainTextInput } from './plain-text-input'
 
-export function TextField<TComponent extends ComponentType<any>> ({
+export function TextField ({
   name,
   validate,
   label,
   as: As = PlainTextInput,
   ...rest
-}: TextFieldProps<TComponent> & ComponentProps<TComponent>) {
+}: TextFieldProps) {
   const [ field, { error, touched }, { setValue } ] = useField({ name, validate })
   const { value } = field
 

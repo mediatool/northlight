@@ -9,6 +9,7 @@ const { isOk } = assert
 const getTextField = (customProps = { }) => {
   const props = {
     name: 'text-input',
+    label: 'Text Input',
     ...customProps,
   }
   return (
@@ -29,17 +30,13 @@ describe('TextField', () => {
   })
 
   it('Can display label', () => {
-    render(getTextField({
-      label: 'Text Input',
-    }))
+    render(getTextField({}))
     const label = screen.getByLabelText('Text Input')
     isOk(label)
   })
 
   it('Pairs up with correct label', () => {
-    render(getTextField({
-      label: 'Text Input',
-    }))
+    render(getTextField({}))
     const textField = screen.getByTestId('text-field-test-id')
     const label = screen.getByText('Text Input')
     expect(label).to.have.property('htmlFor', textField.id)
