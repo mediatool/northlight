@@ -29,6 +29,7 @@ export const TextareaField = ({
           as={ Textarea }
           name={ name }
           value={ value }
+          data-testid="textarea-field-test-id"
           { ...rest }
         />
       </Stack>
