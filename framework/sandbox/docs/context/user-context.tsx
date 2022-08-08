@@ -7,6 +7,7 @@ export interface User {
   preferences: {
     locale: string
     currency: string
+    firstDayOfWeek: 'monday' | 'sunday'
   }
 }
 
@@ -20,6 +21,7 @@ export const users: Record<string, User> = {
     preferences: {
       locale: 'de-DE',
       currency: 'EUR',
+      firstDayOfWeek: 'monday',
     },
   },
   anakin: {
@@ -31,6 +33,7 @@ export const users: Record<string, User> = {
     preferences: {
       locale: 'en-US',
       currency: 'USD',
+      firstDayOfWeek: 'sunday',
     },
   },
   han: {
@@ -42,6 +45,7 @@ export const users: Record<string, User> = {
     preferences: {
       locale: 'sv-SE',
       currency: 'SEK',
+      firstDayOfWeek: 'sunday',
     },
   },
   yoda: {
@@ -53,6 +57,7 @@ export const users: Record<string, User> = {
     preferences: {
       locale: 'en-GB',
       currency: 'GBP',
+      firstDayOfWeek: 'monday',
     },
   },
 }
