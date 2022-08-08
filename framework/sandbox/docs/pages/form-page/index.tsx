@@ -4,6 +4,7 @@ import {
   Button,
   CheckboxField,
   Code,
+  DatePickerField,
   Form,
   FormattedNumberInput,
   Heading,
@@ -62,6 +63,7 @@ const FormPage = () => {
             dogs: 0,
             experience: '',
             sports: [],
+            date: '',
           } }
           onSubmit={ () => {} }
         >
@@ -139,7 +141,6 @@ const FormPage = () => {
                 ] }
                 isMulti={ true }
               />
-
               <NumberInputField
                 name="dogs"
                 label="Enter how many dogs you own"
@@ -159,6 +160,7 @@ const FormPage = () => {
                 name="review"
                 label="Please write a short description of your work experience"
               />
+              <DatePickerField name="date" label="Pick a date" direction="row" />
               <Button type="submit" variant="success">Submit</Button>
               <Code p={ 4 }>{ JSON.stringify(form.values, null, 2) }</Code>
             </Stack>

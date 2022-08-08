@@ -1,8 +1,7 @@
 import { RadioGroupProps as ChakraRadioGroupProps, RadioProps as ChakraRadioProps } from '@chakra-ui/react'
 import { FieldValidator } from 'formik'
 import { ChangeEvent } from 'react'
-
-type StackingDirection = 'row' | 'column'
+import { StackingDirection } from '../field'
 
 export type RadioProps =
   ChakraRadioProps

@@ -1,5 +1,6 @@
 import { Props as ChakraReactSelectProps } from 'chakra-react-select'
 import { FieldProps, FieldValidator } from 'formik'
+import { StackingDirection } from '../field'
 
 type size = 'sm' | 'md' | 'lg'
 
@@ -23,7 +24,6 @@ ChakraReactSelectProps
   size?: size
 }
 
-type StackingDirection = 'row' | 'column'
 export type SelectFieldProps =
   SelectProps
   & {

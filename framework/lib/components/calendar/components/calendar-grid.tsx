@@ -1,0 +1,44 @@
+import React, { memo } from 'react'
+import { Table, Tbody, Thead, Tr, chakra } from '@chakra-ui/react'
+import { useCalendarGrid } from '@react-aria/calendar'
+import { getWeeksInMonth } from '@internationalized/date'
+import { CalendarCell } from './calendar-cell'
+import { CalendarGridProps } from '../../../types'
+import { DayLabels } from './day-labels'
+
+export const CalendarGrid = memo(({ state, locale, ...rest }: CalendarGridProps) => {
+  const startDate = state.visibleRange.start
+  const { gridProps, headerProps, weekDays } = useCalendarGrid(rest, state)
+  const weeksInMonth = getWeeksInMonth(startDate, locale)
+
+  return (
+    <Table variant="unstyled" { ...gridProps }>
+      <Thead { ...headerProps }>
+        <DayLabels weekDays={ weekDays } />
+      </Thead>
+      <Tbody>
+        { [ ...new Array(weeksInMonth).keys() ]
+          .map((weekIndex) => (
+            <Tr key={ weekIndex }>
+              { state
+                .getDatesInWeek(weekIndex, startDate)
+                .map((date) =>
+                  (date
+                    ? (
+                      <CalendarCell
+                        key={ date.day }
+                        state={ state }
+                        date={ date }
+                        currentMonth={ startDate }
+                      />
+                    )
+                    : <chakra.td />
+                  )
+                )
+              }
+            </Tr>
+          )) }
+      </Tbody>
+    </Table>
+  )
+})

@@ -1,19 +1,15 @@
-import React from 'react'
 import {
-  InputGroup as ChakraInputGroup,
+  Input,
   InputAddon,
-  InputGroupProps,
+  InputGroup,
   InputLeftAddon,
   InputLeftElement,
   InputRightAddon,
   InputRightElement,
 } from '@chakra-ui/react'
 
-const InputGroup = (props: InputGroupProps) => (
-  <ChakraInputGroup role="group" { ...props } />
-)
-
 export {
+  Input,
   InputGroup,
   InputAddon,
   InputLeftAddon,
