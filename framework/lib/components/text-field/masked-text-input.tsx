@@ -3,6 +3,9 @@ import InputMask from 'react-input-mask'
 import { Input } from '@chakra-ui/react'
 import { MaskedTextInputProps } from './types'
 
+//! Overload error in @types/react-input-mask, overwriting faulty types as unknown as any
+const CustomInput = InputMask as unknown as any
+
 export const MaskedTextInput = ({
   mask,
   maskPlaceholder,
@@ -15,7 +18,7 @@ export const MaskedTextInput = ({
   onBlur,
   ...rest
 }: MaskedTextInputProps) => (
-  <InputMask
+  <CustomInput
     mask={ mask }
     maskPlaceholder={ maskPlaceholder }
     alwaysShowMask={ alwaysShowMask }
@@ -31,5 +34,5 @@ export const MaskedTextInput = ({
         { ...rest }
       />
     ) }
-  </InputMask>
+  </CustomInput>
 )

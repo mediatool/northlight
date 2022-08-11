@@ -30,6 +30,7 @@ export type MaskedTextInputProps =
   & Partial<FieldHelperProps<string>>
   & {
     field?: FieldInputProps<string>
+    maskPlaceholder?: string
   }
 
 export type FormattedNumberInputProps =

@@ -2060,10 +2060,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-input-mask@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@types/react-input-mask/-/react-input-mask-3.0.1.tgz#9cba08b3084fe1f9426274dff086e12b4696a3aa"
-  integrity sha512-rGOW8t2Ac558TAAnaq5ZZDGHu1siTblBeY30ggAQ9sX89y2MX0/FFVDLd2DT85QRpYIQOrb7QzkF9RCoV2+nZg==
+"@types/react-input-mask@2.0.4":
+  version "2.0.4"
+  resolved "https://registry.npmjs.org/@types/react-input-mask/-/react-input-mask-2.0.4.tgz#9ecfa90b0b32cb8e2039120486dffbef710d5e52"
+  integrity sha512-9VAsmcTsFe8MBQcIiQFhigiDLm5IhLuYwHJ9iN1179goCzowHscWRpdB0J+jgFJm5rldibu4dv9uFnfb6gVOsA==
   dependencies:
     "@types/react" "*"
 
@@ -5071,9 +5071,9 @@ react-focus-lock@^2.9.1:
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
 
-react-input-mask@^2.0.4:
+react-input-mask@2.0.4:
   version "2.0.4"
-  resolved "https://registry.yarnpkg.com/react-input-mask/-/react-input-mask-2.0.4.tgz#9ade5cf8196f4a856dbf010820fe75a795f3eb14"
+  resolved "https://registry.npmjs.org/react-input-mask/-/react-input-mask-2.0.4.tgz#9ade5cf8196f4a856dbf010820fe75a795f3eb14"
   integrity sha512-1hwzMr/aO9tXfiroiVCx5EtKohKwLk/NT8QlJXHQ4N+yJJFyUuMT+zfTpLBwX/lK3PkuMlievIffncpMZ3HGRQ==
   dependencies:
     invariant "^2.2.4"
@@ -5878,7 +5878,7 @@ w3c-xmlserializer@^3.0.0:
 
 warning@^4.0.2:
   version "4.0.3"
-  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  resolved "https://registry.npmjs.org/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   dependencies:
     loose-envify "^1.0.0"
