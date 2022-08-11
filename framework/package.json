@@ -10,8 +10,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist && rollup --config rollup.config.js",
+    "build": "rollup --config rollup.config.js",
+    "clean": "rm -rf dist",
     "lint": "eslint --ext ts,tsx lib/ sandbox/",
+    "prepublishOnly": "yarn clean && yarn build",
     "start": "vite",
     "tokens": "node sd-build.js",
     "test": "yarn lint && frontend-tools test"
