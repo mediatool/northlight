@@ -1,6 +1,6 @@
 import React from 'react'
 import { LinkProps, NavLink, NavLinkProps } from 'react-router-dom'
-import { IconType } from '../icon/icon'
+import { IconType } from '../../types'
 import { Center } from '../center'
 import { Icon } from '../icon'
 import { Link } from '../link'
