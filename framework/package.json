@@ -6,8 +6,11 @@
   "author": "Mediatool",
   "types": "./dist/ts/types.d.ts",
   "exports": {
-    "import": "./dist/es/mediatool-ui-framework.mjs",
-    "require": "./dist/umd/mediatool-ui-framework.js"
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/es/mediatool-ui-framework.mjs",
+      "require": "./dist/umd/mediatool-ui-framework.js"
+    }
   },
   "files": [
     "dist"
