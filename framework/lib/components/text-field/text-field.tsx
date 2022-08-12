@@ -7,6 +7,7 @@ import {
 } from '@chakra-ui/react'
 import { TextFieldProps } from './types'
 import { PlainTextInput } from './plain-text-input'
+import { FormattedNumberInput } from './formatted-number-input'
 
 export function TextField ({
   name,
@@ -24,8 +25,8 @@ export function TextField ({
         <FormLabel htmlFor={ name } mb={ 1 }>{ label }</FormLabel>
       ) }
       <Field
-        component={ As }
-        onChange={ setValue }
+        as={ As }
+        onChange={ As === FormattedNumberInput ? setValue : field.onChange }
         value={ value }
         name={ name }
         data-testid="text-field-test-id"
