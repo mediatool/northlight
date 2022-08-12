@@ -2,20 +2,16 @@ import { SidebarItem } from '../types'
 
 export const sidebarItems: SidebarItem[] = [
   {
-    title: 'Plain text input',
-    path: '/docs/plain-text-input',
-  },
-  {
     title: 'Badge',
     path: '/docs/badge',
   },
   {
-    title: 'Button',
-    path: '/docs/button',
-  },
-  {
     title: 'Breadcrumbs',
     path: '/docs/breadcrumbs',
+  },
+  {
+    title: 'Button',
+    path: '/docs/button',
   },
   {
     title: 'Card',
@@ -42,6 +38,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/form',
   },
   {
+    title: 'Formatted number input',
+    path: '/docs/formatted-number-input',
+  },
+  {
     title: 'Icon',
     path: '/docs/icon',
   },
@@ -50,8 +50,8 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/icon-button',
   },
   {
-    title: 'Formatted number input',
-    path: '/docs/formatted-number-input',
+    title: 'Navbar item',
+    path: '/docs/navbar-item',
   },
   {
     title: 'Number Input',
@@ -66,12 +66,24 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/pin-input',
   },
   {
+    title: 'Plain text input',
+    path: '/docs/plain-text-input',
+  },
+  {
     title: 'Radio button',
     path: '/docs/radio',
   },
   {
     title: 'Select',
     path: '/docs/select',
+  },
+  {
+    title: 'Status block',
+    path: '/docs/status-block',
+  },
+  {
+    title: 'Status pin',
+    path: '/docs/status-pin',
   },
   {
     title: 'Switch',
@@ -82,23 +94,11 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/tag',
   },
   {
-    title: 'Toast',
-    path: '/docs/Toast',
-  },
-  {
     title: 'Textarea',
     path: '/docs/textarea',
   },
   {
-    title: 'Status pin',
-    path: '/docs/status-pin',
-  },
-  {
-    title: 'Navbar item',
-    path: '/docs/navbar-item',
-  },
-  {
-    title: 'Status block',
-    path: '/docs/status-block',
+    title: 'Toast',
+    path: '/docs/Toast',
   },
 ]
