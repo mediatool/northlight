@@ -29,6 +29,7 @@ export function TextField ({
         onChange={ As === FormattedNumberInput ? setValue : field.onChange }
         value={ value }
         name={ name }
+        id={ name }
         data-testid="text-field-test-id"
         { ...rest }
       />
