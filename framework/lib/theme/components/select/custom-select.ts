@@ -1,7 +1,7 @@
 import { ChakraStylesConfig } from 'chakra-react-select'
 import { color, spacing } from '../../../../tokens'
 
-export const customSelectStyles:ChakraStylesConfig = {
+export const customSelectStyles: ChakraStylesConfig = {
   container: (provided) => ({
     ...provided,
     width: '100%',
@@ -21,5 +21,9 @@ export const customSelectStyles:ChakraStylesConfig = {
   downChevron: (provided) => ({
     ...provided,
     color: color.icon.select.default,
+  }),
+  placeholder: (provided) => ({
+    ...provided,
+    color: color.text.select.placeholder,
   }),
 }

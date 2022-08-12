@@ -8,6 +8,7 @@ export const Input: ComponentMultiStyleConfig = {
       color: color.text.default,
       _placeholder: {
         color: color.text.input.placeholder,
+        opacity: 1,
       },
     },
   },

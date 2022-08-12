@@ -16,7 +16,6 @@ export const Checkbox = ({
     onChange={ onChange }
     isChecked={ value }
     variant={ variant }
-    role="checkbox"
     { ...rest }
   />
 )
