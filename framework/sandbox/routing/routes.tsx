@@ -9,4 +9,8 @@ export const sandboxRoutes: Route[] = [
     path: '/demo',
     component: () => import('../demo/app'),
   },
+  {
+    path: '/test',
+    component: () => import('../test/app'),
+  },
 ]
