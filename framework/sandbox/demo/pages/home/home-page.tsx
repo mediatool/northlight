@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading } from '~lib/components'
+import { Heading } from '../../../../lib/components'
 
 const DemoHomePage = () => (
   <Heading>Demo Home</Heading>

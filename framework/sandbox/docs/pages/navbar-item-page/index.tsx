@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
-import { IconType } from '~/lib'
-import { Code, HStack, NavbarItem, Stack, Switch, Text } from '~lib/components'
+import { IconType } from '../../../../lib'
+import {
+  Code,
+  HStack,
+  NavbarItem,
+  Stack,
+  Switch,
+  Text,
+} from '../../../../lib/components'
 import { Page } from '../../components'
 
 const icons:IconType[] = [ 'hub', 'rejected' ]

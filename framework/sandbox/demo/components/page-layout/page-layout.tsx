@@ -1,6 +1,6 @@
 import { Heading, Stack } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
-import { Box } from '~lib/components/box'
+import { Box } from '../../../../lib/components/box'
 
 interface Props {
   title: ReactNode

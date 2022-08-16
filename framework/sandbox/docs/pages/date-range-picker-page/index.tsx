@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DateRangePicker, DateTuple } from '~lib/components'
+import { DateRangePicker, DateTuple } from '../../../../lib/components'
 import { Page } from '../../components'
 
 const DateRangePickerPage = () => {

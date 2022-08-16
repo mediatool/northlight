@@ -1,4 +1,4 @@
-import { IconType } from '~/lib'
+import { IconType } from '../../lib'
 import { SidebarItem } from '../types'
 
 type Item = SidebarItem & {

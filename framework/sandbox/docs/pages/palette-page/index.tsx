@@ -1,7 +1,14 @@
 import React from 'react'
-import { Box, Code, HStack, Heading, Text, VStack } from '~lib/components'
-import { Color, ColorGrade } from '~lib/types'
-import { getContrastColor } from '~lib/utilities'
+import {
+  Box,
+  Code,
+  HStack,
+  Heading,
+  Text,
+  VStack,
+} from '../../../../lib/components'
+import { Color, ColorGrade } from '../../../../lib/types'
+import { getContrastColor } from '../../../../lib/utilities'
 import { palette } from '../../../../tokens'
 import { Page } from '../../components'
 

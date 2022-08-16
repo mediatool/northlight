@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, HStack, Heading, Icon, Link, Stack, Text } from '~lib/components'
+import { Box, HStack, Heading, Icon, Link, Stack, Text } from '../../../../lib/components'
 import { SidebarItem } from '../sidebar-item'
 import { sidebarItems } from '../../sidebar-items'
 

@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
-import { Avatar, Code, FormattedNumberInput, HStack, Stack } from '~lib/components'
+import {
+  Avatar,
+  Code,
+  FormattedNumberInput,
+  HStack,
+  Stack,
+} from '../../../../lib/components'
 import { useLocalizedNumberFormatter } from './use-localized-number-formatter'
 import { Page } from '../../components'
 import { useUser, users } from '../../context'

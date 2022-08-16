@@ -1,6 +1,6 @@
 import React from 'react'
-import { mediatoolLogo } from '~/sandbox/assets/png'
-import { Center, Image, NavbarItem, Stack } from '~lib/components'
+import { mediatoolLogo } from '../../../assets/png'
+import { Center, Image, NavbarItem, Stack } from '../../../../lib/components'
 import { sidebarItems } from '../../sidebar-items'
 import { CreateTrigger } from './create-trigger'
 

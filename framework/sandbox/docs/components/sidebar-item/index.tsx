@@ -4,7 +4,7 @@ import {
   NavLinkProps,
 } from 'react-router-dom'
 import { LinkProps } from '@chakra-ui/react'
-import { Link } from '~lib/components'
+import { Link } from '../../../../lib/components'
 
 type Props = LinkProps & NavLinkProps & {
   to: string

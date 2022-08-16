@@ -1,6 +1,6 @@
 import React from 'react'
 import { CSSObject } from '@chakra-ui/system'
-import { IconButton } from '~lib/components'
+import { IconButton } from '../../../../lib/components'
 import { PlusIcon } from '../../../../lib/components/icons'
 
 const disabledStyle:CSSObject = {

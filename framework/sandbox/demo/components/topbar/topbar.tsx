@@ -1,6 +1,16 @@
 import React from 'react'
-import { user } from '~/sandbox/assets/png'
-import { Center, HStack, IconButton, Image, InputGroup, InputLeftElement, MessageIconFilled, PlainTextInput, SearchIcon } from '~lib/components'
+import { user } from '../../../assets/png'
+import {
+  Center,
+  HStack,
+  IconButton,
+  Image,
+  InputGroup,
+  InputLeftElement,
+  MessageIconFilled,
+  PlainTextInput,
+  SearchIcon,
+} from '../../../../lib/components'
 import { BreadcrumbsDemo } from './breadcrumbs'
 
 export const DemoTopbar = () => (

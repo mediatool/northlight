@@ -11,7 +11,7 @@ import {
   Text,
   ThreeDotsIconFilled,
   Tooltip,
-} from '~lib/components'
+} from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const IconButtonPage = () => (

@@ -1,5 +1,10 @@
 import React from 'react'
-import { Breadcrumb, BreadcrumbLink, Breadcrumbs, Text } from '~lib/components'
+import {
+  Breadcrumb,
+  BreadcrumbLink,
+  Breadcrumbs,
+  Text,
+} from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const crumbs = [

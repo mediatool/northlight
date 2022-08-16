@@ -5,7 +5,7 @@ import {
   InputLeftElement,
   PlainTextInput,
   SearchIcon,
-} from '~lib/components'
+} from '../../../lib/components'
 
 export const SearchField = () => (
   <Flex flex={ 1 }>

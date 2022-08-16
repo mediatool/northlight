@@ -1,5 +1,12 @@
 import React from 'react'
-import { Tab, TabKind, TabList, TabPanel, TabPanels, Tabs } from '~lib/components'
+import {
+  Tab,
+  TabKind,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+} from '../../../../../lib/components'
 import { tabs } from './tabs'
 
 export const SettingsTabs = () => (

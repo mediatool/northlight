@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Stack, Text } from '~lib/components'
+import { Box, Stack, Text } from '../../../../lib/components'
 import { SettingsTabs } from './tabs'
 
 const SettingsPage = () => (

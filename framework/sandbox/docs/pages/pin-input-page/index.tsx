@@ -5,7 +5,7 @@ import { Code,
   PinInput,
   PinInputField,
   Stack,
-  Text } from '~lib/components'
+  Text } from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const PinInputPage = () => (

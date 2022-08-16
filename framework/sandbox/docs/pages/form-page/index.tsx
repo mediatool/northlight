@@ -20,7 +20,7 @@ import {
   TextField,
   TextareaField,
   VStack,
-} from '~lib/components'
+} from '../../../../lib/components'
 import { Page } from '../../components'
 import { textfield } from '../../../assets/png'
 import { useLocalizedNumberFormatter } from '../formatted-number-input-page/use-localized-number-formatter'

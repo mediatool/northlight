@@ -1,5 +1,5 @@
 import { useI18n } from '@shopify/react-i18n'
-import { TextInputFormatter } from '~/lib/components/text-field'
+import { TextInputFormatter } from '../../../../lib/components/text-field'
 
 export const useLocalizedNumberFormatter = () => {
   const [ i18n ] = useI18n()

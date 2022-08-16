@@ -8,7 +8,7 @@ import {
   Stack,
   Text,
   useToast,
-} from '~lib/components'
+} from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const ToastPage = () => {

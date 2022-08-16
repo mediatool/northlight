@@ -1,5 +1,10 @@
 import React from 'react'
-import { Button, HStack, SimpleCard, Text } from '~lib/components'
+import {
+  Button,
+  HStack,
+  SimpleCard,
+  Text,
+} from '../../../../lib/components'
 import { Page } from '../../components'
 import { darthVader } from '../../../assets/png'
 

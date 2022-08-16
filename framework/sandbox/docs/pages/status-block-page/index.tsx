@@ -1,5 +1,12 @@
 import React from 'react'
-import { Code, HStack, Stack, StatusBlock, Text, VStack } from '~lib/components'
+import {
+  Code,
+  HStack,
+  Stack,
+  StatusBlock,
+  Text,
+  VStack,
+} from '../../../../lib/components'
 import { Page } from '../../components'
 
 const StatusBlockPage = () => (

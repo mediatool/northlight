@@ -1,5 +1,5 @@
 import React from 'react'
-import { Breadcrumb, BreadcrumbLink, Breadcrumbs } from '~lib/components'
+import { Breadcrumb, BreadcrumbLink, Breadcrumbs } from '../../../../../lib/components'
 
 const crumbs = [
   'Mediatool',

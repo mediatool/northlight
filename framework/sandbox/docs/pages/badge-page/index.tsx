@@ -1,5 +1,5 @@
 import React from 'react'
-import { Badge, HStack } from '~lib/components'
+import { Badge, HStack } from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const BadgePage = () => (

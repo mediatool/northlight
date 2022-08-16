@@ -8,7 +8,7 @@ import {
   Switch,
   SwitchField,
   Text,
-} from '~lib/components'
+} from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const SwitchPage = () => (

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Heading } from '~lib/components'
+import { Heading } from '../../../../lib/components'
 import { ChakraDocsLink } from '../chakra-docs-link'
 
 interface Props {

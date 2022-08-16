@@ -6,7 +6,7 @@ import {
   Stack,
   Text,
   VStack,
-} from '~lib/components'
+} from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const InputPage = () => (

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Grid, GridItem } from '~lib/components'
+import { Grid, GridItem } from '../../../lib/components'
 
 interface Props {
   sidebar: ReactNode

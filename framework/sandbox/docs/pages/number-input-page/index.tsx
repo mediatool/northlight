@@ -8,7 +8,7 @@ import {
   NumberInputField,
   Stack,
   Text,
-} from '~lib/components'
+} from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const NumberInputPage = () => (

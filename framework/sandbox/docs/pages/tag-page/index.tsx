@@ -10,8 +10,8 @@ import {
   TagLeftIcon,
   TagRightIcon,
   Text,
-} from '~lib/components'
-import { SwitchesIcon } from '~lib/components/icons'
+} from '../../../../lib/components'
+import { SwitchesIcon } from '../../../../lib/components/icons'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const TagPage = () => (

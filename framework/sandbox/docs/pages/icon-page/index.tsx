@@ -1,6 +1,14 @@
 import React from 'react'
-import { Box, Card, Code, Flex, Icon, SimpleGrid, Text } from '~lib/components'
-import { iconMap } from '~lib/components/icon/icon-map'
+import {
+  Box,
+  Card,
+  Code,
+  Flex,
+  Icon,
+  SimpleGrid,
+  Text,
+} from '../../../../lib/components'
+import { iconMap } from '../../../../lib/components/icon/icon-map'
 import { Page } from '../../components'
 
 const IconPage = () => (

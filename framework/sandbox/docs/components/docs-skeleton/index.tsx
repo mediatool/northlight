@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Box, Flex } from '~lib/components'
+import { Box, Flex } from '../../../../lib/components'
 
 interface Props {
   sidebar: ReactNode

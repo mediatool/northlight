@@ -1,5 +1,5 @@
 import React from 'react'
-import { CloseButton, HStack } from '~lib/components'
+import { CloseButton, HStack } from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const CloseButtonPage = () => (

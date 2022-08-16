@@ -9,7 +9,7 @@ import {
   Textarea,
   TextareaField,
   VStack,
-} from '~lib/components'
+} from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const InputPage = () => (
