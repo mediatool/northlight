@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import { chakra, useMultiStyleConfig } from '@chakra-ui/system'
-import { Tr } from '@chakra-ui/react'
+import { Tr } from '../../table'
 
 export const DayLabels = memo(({ weekDays }: { weekDays: string[] }) => {
   const { dayLabel } = useMultiStyleConfig('Calendar')
