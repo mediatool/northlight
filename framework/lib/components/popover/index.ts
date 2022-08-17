@@ -6,5 +6,6 @@ export {
   PopoverFooter,
   PopoverBody,
   PopoverArrow,
+  PopoverAnchor,
   PopoverCloseButton,
 } from '@chakra-ui/react'

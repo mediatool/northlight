@@ -2,7 +2,6 @@ import React, { useRef } from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { useDateSegment } from '@react-aria/datepicker'
 import { Box } from '../../box'
-
 import { color } from '../../../../tokens'
 import { DateSegmentProps } from '../../../types'
 

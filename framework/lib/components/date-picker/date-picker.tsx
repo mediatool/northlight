@@ -1,10 +1,5 @@
 import React, { useRef } from 'react'
-import {
-  Popover,
-  PopoverAnchor,
-  PopoverContent,
-  useMultiStyleConfig,
-} from '@chakra-ui/react'
+import { useMultiStyleConfig } from '@chakra-ui/react'
 import { useDatePicker } from '@react-aria/datepicker'
 import { useDatePickerState } from '@react-stately/datepicker'
 import { FocusScope } from '@react-aria/focus'
@@ -15,6 +10,7 @@ import { DatePickerProps } from '../../types'
 import { IconButton } from '../icon-button'
 import { HStack } from '../stack'
 import { InputGroup, InputRightElement } from '../input'
+import { Popover, PopoverAnchor, PopoverContent } from '../popover'
 
 export const DatePicker = (props: DatePickerProps) => {
   const { isDisabled, resetDate } = props
