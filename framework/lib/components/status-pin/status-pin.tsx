@@ -1,5 +1,5 @@
 import React from 'react'
-import { Circle } from '@chakra-ui/react'
+import { Circle } from '../circle'
 import { PinSize, PinVariant } from './types'
 import { pinVariantMap } from './pin-variant-map'
 import { pinSizeMap } from './pin-size-map'
