@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
-import { Box, Heading } from '@chakra-ui/react'
+import { Heading } from '@chakra-ui/react'
+import { Box } from '../box'
 import { Stack } from '../stack'
 
 export interface PageLayoutProps {

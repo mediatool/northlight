@@ -1,5 +1,6 @@
 import React, { HTMLAttributes, ReactNode, forwardRef } from 'react'
-import { Box, useMultiStyleConfig } from '@chakra-ui/react'
+import { useMultiStyleConfig } from '@chakra-ui/react'
+import { Box } from '../../box'
 
 interface Props extends HTMLAttributes<HTMLElement> {
   isInvalid?: boolean

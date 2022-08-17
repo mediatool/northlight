@@ -1,5 +1,6 @@
 import React, { MutableRefObject } from 'react'
-import { Box, BoxProps } from '@chakra-ui/react'
+import { BoxProps } from '@chakra-ui/react'
+import { Box } from '../box'
 import { CardSize } from './types'
 
 export interface CardProps extends BoxProps {
