@@ -1,13 +1,13 @@
 import React from 'react'
 import {
   NumberInputStepper as ChakraNumberInputStepper,
-  Divider,
   NumberDecrementStepper,
   NumberIncrementStepper,
 } from '@chakra-ui/react'
 import { Icon } from '../icon'
 import { color } from '../../../tokens'
 import { HStack } from '../stack'
+import { Divider } from '../divider'
 
 export const NumberInputStepper = () => (
   <ChakraNumberInputStepper>
