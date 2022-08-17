@@ -1,7 +1,5 @@
 import React, { useRef } from 'react'
 import {
-  InputGroup,
-  InputRightElement,
   Popover,
   PopoverAnchor,
   PopoverContent,
@@ -16,6 +14,7 @@ import { DateField, Trigger } from './components'
 import { DatePickerProps } from '../../types'
 import { IconButton } from '../icon-button'
 import { HStack } from '../stack'
+import { InputGroup, InputRightElement } from '../input'
 
 export const DatePicker = (props: DatePickerProps) => {
   const { isDisabled, resetDate } = props

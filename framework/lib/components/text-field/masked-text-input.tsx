@@ -1,6 +1,6 @@
 import React from 'react'
 import InputMask from 'react-input-mask'
-import { Input } from '@chakra-ui/react'
+import { Input } from '../input'
 import { MaskedTextInputProps } from './types'
 
 //! Overload error in @types/react-input-mask, overwriting faulty types as unknown as any
