@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
-import { Center, Flex } from '@chakra-ui/react'
+import { Center } from '@chakra-ui/react'
 import { Box } from '../box'
+import { Flex } from '../flex'
 import { HelpCenterLink } from '../help-center-link'
 
 export interface AppHeaderProps {
