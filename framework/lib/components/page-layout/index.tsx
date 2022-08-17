@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Heading } from '@chakra-ui/react'
+import { Heading } from '../heading'
 import { Box } from '../box'
 import { Stack } from '../stack'
 
