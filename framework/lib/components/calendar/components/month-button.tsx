@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { AriaButtonProps, useButton } from '@react-aria/button'
-import { Button } from '@chakra-ui/react'
+import { Button } from '../../button'
 
 export const MonthButton = ({ children, ...rest }: AriaButtonProps) => {
   const ref = useRef<HTMLButtonElement>(null)

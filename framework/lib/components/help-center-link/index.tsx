@@ -1,10 +1,11 @@
 import React from 'react'
 import { InfoIcon } from '@chakra-ui/icons'
-import { Button, Link } from '@chakra-ui/react'
+import { Link } from '@chakra-ui/react'
+import { Button } from '../button'
 
 export const HelpCenterLink = () => (
-  <Button
-    as={ Link }
+  <Link
+    as={ Button }
     href="https://intercom.help/mediatool/en/"
     bg="green.200"
     color="blue.800"
@@ -12,5 +13,5 @@ export const HelpCenterLink = () => (
     _hover={ { textDecoration: 'none', bg: 'green.400' } }
   >
     Help Center
-  </Button>
+  </Link>
 )
