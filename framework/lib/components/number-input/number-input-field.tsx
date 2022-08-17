@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, useField } from 'formik'
-import { FormControl as ChakraFormControl, FormErrorMessage, FormLabel } from '@chakra-ui/react'
+import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { NumberInput } from './number-input'
 import { NumberInputFieldProps } from '../../types'
 import { HStack } from '../stack'
@@ -16,7 +16,7 @@ export const NumberInputField = ({
   const { value } = field
 
   return (
-    <ChakraFormControl
+    <FormControl
       isInvalid={ !!error && touched }
       isRequired={ isRequired }
     >
@@ -32,6 +32,6 @@ export const NumberInputField = ({
         />
       </HStack>
       <FormErrorMessage>{ error }</FormErrorMessage>
-    </ChakraFormControl>
+    </FormControl>
   )
 }

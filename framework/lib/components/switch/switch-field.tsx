@@ -1,8 +1,7 @@
 import React from 'react'
 import { Field, useField } from 'formik'
-import { FormControl as ChakraFormControl, FormErrorMessage } from '@chakra-ui/react'
 import { Switch } from './switch'
-import { FormLabel } from '../form-control'
+import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { SwitchFieldProps } from '../../types'
 import { HStack } from '../stack'
 
@@ -17,7 +16,7 @@ export const SwitchField = ({
   const { value } = field
 
   return (
-    <ChakraFormControl
+    <FormControl
       isInvalid={ !!error && touched }
       isRequired={ isRequired }
     >
@@ -34,6 +33,6 @@ export const SwitchField = ({
         />
       </HStack>
       <FormErrorMessage>{ error }</FormErrorMessage>
-    </ChakraFormControl>
+    </FormControl>
   )
 }

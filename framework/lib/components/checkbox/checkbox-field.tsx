@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, useField } from 'formik'
-import { FormControl as ChakraFormControl, FormErrorMessage, FormLabel } from '@chakra-ui/react'
+import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { Checkbox } from './checkbox'
 import { CheckboxFieldProps } from '../../types'
 import { HStack } from '../stack'
@@ -17,7 +17,7 @@ export const CheckboxField = ({
   const { value } = field
 
   return (
-    <ChakraFormControl
+    <FormControl
       isInvalid={ !!error && touched }
       isRequired={ isRequired }
     >
@@ -33,6 +33,6 @@ export const CheckboxField = ({
         />
       </HStack>
       <FormErrorMessage>{ error }</FormErrorMessage>
-    </ChakraFormControl>
+    </FormControl>
   )
 }

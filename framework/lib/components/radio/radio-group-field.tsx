@@ -1,7 +1,6 @@
 import React from 'react'
 import { useField } from 'formik'
-import { FormControl as ChakraFormControl, FormErrorMessage } from '@chakra-ui/react'
-import { FormLabel } from '../form-control'
+import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { RadioFieldGroupProps } from '../../types'
 import { RadioGroup } from './radio-group'
 import { Stack } from '../stack'
@@ -19,7 +18,7 @@ export const RadioGroupField = ({
   const { value } = field
 
   return (
-    <ChakraFormControl
+    <FormControl
       isInvalid={ !!error && touched }
       isRequired={ isRequired }
     >
@@ -36,6 +35,6 @@ export const RadioGroupField = ({
         </RadioGroup>
       </Stack>
       <FormErrorMessage>{ error }</FormErrorMessage>
-    </ChakraFormControl>
+    </FormControl>
   )
 }

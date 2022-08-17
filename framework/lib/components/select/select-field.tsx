@@ -1,7 +1,6 @@
 import { Field, useField } from 'formik'
 import React from 'react'
-import { FormControl as ChakraFormControl, FormErrorMessage } from '@chakra-ui/react'
-import { FormLabel } from '../form-control'
+import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { SelectFieldProps } from '../../types'
 import { FormikSelect } from './formik-select'
 import { Stack } from '../stack'
@@ -25,7 +24,7 @@ export const SelectField = ({
   const isColumn = direction === 'column'
 
   return (
-    <ChakraFormControl
+    <FormControl
       isInvalid={ !!error && touched }
       isRequired={ isRequired }
     >
@@ -45,6 +44,6 @@ export const SelectField = ({
         />
       </Stack>
       <FormErrorMessage>{ error }</FormErrorMessage>
-    </ChakraFormControl>
+    </FormControl>
   )
 }

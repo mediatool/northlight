@@ -1,9 +1,7 @@
 import React from 'react'
 import { Field, useField } from 'formik'
-import { FormControl as ChakraFormControl, FormErrorMessage } from '@chakra-ui/react'
 import { Textarea } from './textarea'
-import { FormLabel } from '../form-control'
-
+import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { TextareaFieldProps } from '../../types'
 import { Stack } from '../stack'
 
@@ -18,7 +16,7 @@ export const TextareaField = ({
   const { value } = field
 
   return (
-    <ChakraFormControl
+    <FormControl
       isInvalid={ !!error && touched }
       isRequired={ isRequired }
     >
@@ -35,6 +33,6 @@ export const TextareaField = ({
         />
       </Stack>
       <FormErrorMessage>{ error }</FormErrorMessage>
-    </ChakraFormControl>
+    </FormControl>
   )
 }

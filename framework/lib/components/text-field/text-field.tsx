@@ -1,13 +1,9 @@
 import React from 'react'
 import { Field, useField } from 'formik'
-import {
-  FormControl as ChakraFormControl,
-  FormErrorMessage,
-  FormLabel,
-} from '@chakra-ui/react'
 import { TextFieldProps } from './types'
 import { PlainTextInput } from './plain-text-input'
 import { FormattedNumberInput } from './formatted-number-input'
+import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 
 export function TextField ({
   name,
@@ -20,7 +16,7 @@ export function TextField ({
   const { value } = field
 
   return (
-    <ChakraFormControl isInvalid={ !!error && touched }>
+    <FormControl isInvalid={ !!error && touched }>
       { label && (
         <FormLabel htmlFor={ name } mb={ 1 }>{ label }</FormLabel>
       ) }
@@ -34,6 +30,6 @@ export function TextField ({
         { ...rest }
       />
       <FormErrorMessage>{ error }</FormErrorMessage>
-    </ChakraFormControl>
+    </FormControl>
   )
 }
