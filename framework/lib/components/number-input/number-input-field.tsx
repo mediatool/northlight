@@ -1,8 +1,9 @@
 import React from 'react'
 import { Field, useField } from 'formik'
-import { FormControl as ChakraFormControl, FormErrorMessage, FormLabel, HStack } from '@chakra-ui/react'
+import { FormControl as ChakraFormControl, FormErrorMessage, FormLabel } from '@chakra-ui/react'
 import { NumberInput } from './number-input'
 import { NumberInputFieldProps } from '../../types'
+import { HStack } from '../stack'
 
 export const NumberInputField = ({
   name,

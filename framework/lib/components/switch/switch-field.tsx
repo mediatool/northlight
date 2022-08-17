@@ -1,9 +1,10 @@
 import React from 'react'
 import { Field, useField } from 'formik'
-import { FormControl as ChakraFormControl, FormErrorMessage, HStack } from '@chakra-ui/react'
+import { FormControl as ChakraFormControl, FormErrorMessage } from '@chakra-ui/react'
 import { Switch } from './switch'
 import { FormLabel } from '../form-control'
 import { SwitchFieldProps } from '../../types'
+import { HStack } from '../stack'
 
 export const SwitchField = ({
   name,

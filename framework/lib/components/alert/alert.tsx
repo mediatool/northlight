@@ -5,12 +5,11 @@ import {
   AlertTitle,
   Alert as ChakraAlert,
   CloseButton,
-  HStack,
-  Stack,
 } from '@chakra-ui/react'
 import { AlertVariants, toastIconMap } from '../../types'
 import { Icon } from '../icon'
 import { color } from '../../../tokens'
+import { HStack, Stack } from '../stack'
 
 interface Props extends AlertProps {
   variant?: AlertVariants

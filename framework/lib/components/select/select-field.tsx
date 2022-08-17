@@ -1,9 +1,10 @@
 import { Field, useField } from 'formik'
 import React from 'react'
-import { FormControl as ChakraFormControl, FormErrorMessage, Stack } from '@chakra-ui/react'
+import { FormControl as ChakraFormControl, FormErrorMessage } from '@chakra-ui/react'
 import { FormLabel } from '../form-control'
 import { SelectFieldProps } from '../../types'
 import { FormikSelect } from './formik-select'
+import { Stack } from '../stack'
 
 export const SelectField = ({
   name,

@@ -1,11 +1,12 @@
 import React from 'react'
 import { DateValue, GregorianCalendar } from '@internationalized/date'
-import { Box, Flex, HStack, Stack, useMultiStyleConfig } from '@chakra-ui/react'
+import { Box, Flex, useMultiStyleConfig } from '@chakra-ui/react'
 import { useLocale } from '@react-aria/i18n'
 import { useCalendarState } from '@react-stately/calendar'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import { CalendarProps, useCalendar } from '@react-aria/calendar'
 import { CalendarGrid, MonthButton, YearSelect } from './components'
+import { HStack, Stack } from '../stack'
 
 export const Calendar = (props:CalendarProps<DateValue>) => {
   const { locale } = useLocale()

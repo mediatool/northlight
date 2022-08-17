@@ -1,10 +1,11 @@
 import React from 'react'
-import { FormControl, FormErrorMessage, Stack } from '@chakra-ui/react'
+import { FormControl, FormErrorMessage } from '@chakra-ui/react'
 import { DateValue, parseDate } from '@internationalized/date'
 import { Field, useField } from 'formik'
 import { DatePicker } from './date-picker'
 import { FormLabel } from '../form-control'
 import { DatePickerFieldProps } from '../../types'
+import { Stack } from '../stack'
 
 export const DatePickerField = (props: DatePickerFieldProps) => {
   const {
