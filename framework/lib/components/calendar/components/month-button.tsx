@@ -1,11 +1,10 @@
 import React, { useRef } from 'react'
-import { useButton } from '@react-aria/button'
+import { AriaButtonProps, useButton } from '@react-aria/button'
 import { Button } from '@chakra-ui/react'
-import { AriaButtonProps } from '@react-types/button'
 
-export function MonthButton (props: AriaButtonProps) {
+export const MonthButton = ({ children, ...rest }: AriaButtonProps) => {
   const ref = useRef<HTMLButtonElement>(null)
-  const { buttonProps } = useButton(props, ref)
+  const { buttonProps } = useButton(rest, ref)
 
   return (
     <Button
@@ -15,7 +14,7 @@ export function MonthButton (props: AriaButtonProps) {
       variant="ghost"
       ref={ ref }
     >
-      { props.children }
+      { children }
     </Button>
   )
 }
