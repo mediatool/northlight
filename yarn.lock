@@ -2896,10 +2896,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
-"@mediatool/eslint-config-mediatool@^1.1.2", "@mediatool/eslint-config-mediatool@^1.1.8":
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/@mediatool/eslint-config-mediatool/-/eslint-config-mediatool-1.1.8.tgz#e4eb6b8ab15c410b2352b4f0fafce25f0c59e7f1"
-  integrity sha512-lX4l+ihK2koxVGXF1ojhK9E4EWAJh5wNkHpLm1eTGUYEkb/nAzK7+LhXRATexpDCzdlr9K8WX4Tf7vYgZsSHtg==
+"@mediatool/eslint-config-mediatool@^1.1.8", "@mediatool/eslint-config-mediatool@^1.1.9":
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/@mediatool/eslint-config-mediatool/-/eslint-config-mediatool-1.1.9.tgz#b3f7295bf241eecbe164d636489515dd93a212ef"
+  integrity sha512-fW+FeI3yeQFPuUcpE/6XsYW/1wAqDvEISm29WXJq6K59SvyyTbV93qsGuyPRfHy6ygeaBZth0f81GKVkUfIEgw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.14.0"
     "@typescript-eslint/parser" "^5.14.0"
@@ -14080,7 +14080,7 @@ rollup-plugin-dts@^4.2.2:
   optionalDependencies:
     "@babel/code-frame" "^7.16.7"
 
-rollup-plugin-esbuild@^4.9.1:
+rollup-plugin-esbuild@^4.9.1, rollup-plugin-esbuild@^4.9.3:
   version "4.9.3"
   resolved "https://registry.yarnpkg.com/rollup-plugin-esbuild/-/rollup-plugin-esbuild-4.9.3.tgz#8c62042bdda9f33d18b1c280914394e5a842dd53"
   integrity sha512-bxfUNYTa9Tw/4kdFfT9gtidDtqXyRdCW11ctZM7D8houCCVqp5qHzQF7hhIr31rqMA0APbG47fgVbbCGXgM49Q==
@@ -14117,10 +14117,17 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-"rollup@>=2.59.0 <2.78.0", rollup@^2.57.0, rollup@^2.59.0:
+"rollup@>=2.59.0 <2.78.0":
   version "2.77.3"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.77.3.tgz#8f00418d3a2740036e15deb653bed1a90ee0cc12"
   integrity sha512-/qxNTG7FbmefJWoeeYJFbHehJ2HNWnjkAFRKzWN/45eNBBF/r8lo992CwcJXEzyVxs5FmfId+vTSTQDb+bxA+g==
+  optionalDependencies:
+    fsevents "~2.3.2"
+
+rollup@^2.57.0, rollup@^2.59.0, rollup@^2.78.0:
+  version "2.78.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.78.0.tgz#00995deae70c0f712ea79ad904d5f6b033209d9e"
+  integrity sha512-4+YfbQC9QEVvKTanHhIAFVUFSRsezvQF8vFOJwtGfb9Bb+r014S+qryr9PSmw8x6sMnPkmFBGAvIFVQxvJxjtg==
   optionalDependencies:
     fsevents "~2.3.2"
 

@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": [
     "changelog",
-    "framework"
+    "framework",
+    "tokens"
   ],
   "devDependencies": {
     "lerna": "^5.1.6"

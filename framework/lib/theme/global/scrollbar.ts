@@ -1,4 +1,4 @@
-import { borderRadius, color } from '../../../tokens'
+import { borderRadius, color } from '@mediatool/tokens'
 
 export const scrollbarStyles = {
   '::-webkit-scrollbar': {

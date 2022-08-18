@@ -1,8 +1,8 @@
 import {
   ComponentSingleStyleConfig,
 } from '@chakra-ui/react'
+import { borderRadius, color } from '@mediatool/tokens'
 import { getContrastColor } from '../../../utilities'
-import { borderRadius, color } from '../../../../tokens'
 
 export const Tag: ComponentSingleStyleConfig = {
   baseStyle: {

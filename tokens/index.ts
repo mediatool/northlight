@@ -1,4 +1,4 @@
-export { color as palette } from './global.json'
+export { color as palette } from './dist/global.json'
 export {
   color,
   borderRadius,
@@ -6,4 +6,4 @@ export {
   opacity,
   spacing,
   fontSize,
-} from './theme.json'
+} from './dist/theme.json'

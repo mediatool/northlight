@@ -1,5 +1,5 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
-import { color } from '../../../../tokens'
+import { color } from '@mediatool/tokens'
 
 export const Icon: ComponentSingleStyleConfig = {
   baseStyle: ({ color: PropColor }) => ({

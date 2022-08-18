@@ -1,4 +1,4 @@
-import { color as colorToken } from '../../../tokens'
+import { color as colorToken } from '@mediatool/tokens'
 
 export function getContrastColor (hexcolor: string) {
   let color = hexcolor

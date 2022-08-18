@@ -1,4 +1,5 @@
 import React from 'react'
+import { palette } from '@mediatool/tokens'
 import {
   Box,
   Code,
@@ -9,7 +10,6 @@ import {
 } from '../../../../lib/components'
 import { Color, ColorGrade } from '../../../../lib/types'
 import { getContrastColor } from '../../../../lib/utilities'
-import { palette } from '../../../../tokens'
 import { Page } from '../../components'
 
 const PalettePage = () => {

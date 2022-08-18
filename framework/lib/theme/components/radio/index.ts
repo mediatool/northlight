@@ -1,5 +1,5 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderWidth, color } from '../../../../tokens'
+import { borderWidth, color } from '@mediatool/tokens'
 
 export const Radio: ComponentMultiStyleConfig = {
   parts: [ 'control', 'label', 'container' ],

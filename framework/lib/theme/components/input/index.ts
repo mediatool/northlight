@@ -1,5 +1,5 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderRadius, borderWidth, color, opacity, spacing } from '../../../../tokens'
+import { borderRadius, borderWidth, color, opacity, spacing } from '@mediatool/tokens'
 
 export const Input: ComponentMultiStyleConfig = {
   parts: [ 'field' ],

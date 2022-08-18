@@ -1,7 +1,8 @@
 {
   "packages": [
     "changelog",
-    "framework"
+    "framework",
+    "tokens"
   ],
   "version": "independent",
   "npmClient": "yarn",

@@ -1,11 +1,11 @@
 const StyleDictionary = require('style-dictionary').extend('config.js')
 
 function isGlobalToken (token) {
-  return token.filePath === 'figma/global.json'
+  return token.filePath === 'lib/global.json'
 }
 
 function isTheme (token) {
-  return token.filePath === 'figma/theme.json'
+  return token.filePath === 'lib/theme.json'
 }
 
 function isBorderWidth (token) {

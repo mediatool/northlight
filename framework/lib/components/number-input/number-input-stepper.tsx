@@ -4,8 +4,8 @@ import {
   NumberDecrementStepper,
   NumberIncrementStepper,
 } from '@chakra-ui/react'
+import { color } from '@mediatool/tokens'
 import { Icon } from '../icon'
-import { color } from '../../../tokens'
 import { HStack } from '../stack'
 import { Divider } from '../divider'
 

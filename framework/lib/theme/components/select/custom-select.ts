@@ -1,5 +1,5 @@
 import { ChakraStylesConfig } from 'chakra-react-select'
-import { color, spacing } from '../../../../tokens'
+import { color, spacing } from '@mediatool/tokens'
 
 export const customSelectStyles: ChakraStylesConfig = {
   container: (provided) => ({

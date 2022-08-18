@@ -1,0 +1,28 @@
+{
+  "name": "@mediatool/tokens",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "exports": {
+    "import": "./dist/es/tokens.mjs",
+    "require": "./dist/cjs/tokens.js"
+  },
+  "types": "./dist/ts/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/sd-build.js && yarn rollup -c",
+    "clean": "rm -rf dist",
+    "lint": "eslint --ext ts,js scripts/* *.ts *.js",
+    "prepublishOnly": "yarn clean && yarn build",
+    "test": "echo testless"
+  },
+  "devDependencies": {
+    "@mediatool/eslint-config-mediatool": "^1.1.9",
+    "@rollup/plugin-json": "^4.1.0",
+    "rollup": "^2.78.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-esbuild": "^4.9.3",
+    "style-dictionary": "^3.7.1"
+  }
+}

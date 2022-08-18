@@ -1,7 +1,7 @@
 import {
   ComponentSingleStyleConfig,
 } from '@chakra-ui/react'
-import { color, opacity } from '../../../../tokens'
+import { color, opacity } from '@mediatool/tokens'
 
 export const Switch: ComponentSingleStyleConfig = {
   baseStyle: {

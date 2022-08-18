@@ -27,7 +27,7 @@
     "@babel/preset-typescript": "^7.15.0",
     "@babel/register": "^7.15.3",
     "@material-ui/styles": "^4.11.4",
-    "@mediatool/eslint-config-mediatool": "^1.1.2",
+    "@mediatool/eslint-config-mediatool": "^1.1.9",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-image": "^2.1.1",
     "@rollup/plugin-node-resolve": "^13.0.6",

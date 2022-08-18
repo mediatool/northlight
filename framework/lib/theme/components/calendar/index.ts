@@ -1,5 +1,5 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { color } from '../../../../tokens'
+import { color } from '@mediatool/tokens'
 
 export const Calendar: ComponentMultiStyleConfig = {
   parts: [ 'container', 'yearSelect', 'dayLabel' ],
