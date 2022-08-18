@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "workspaces": [
+    "changelog",
+    "framework"
+  ],
+  "devDependencies": {
+    "lerna": "^5.1.6"
+  },
+  "scripts": {
+    "clean": "lerna run clean",
+    "test": "lerna run test",
+    "transpile": "lerna run build",
+    "lint": "lerna run lint"
+  },
+  "name": "ui"
+}
