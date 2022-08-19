@@ -76,11 +76,11 @@ describe('SelectField', () => {
     expect(selectField?.getAttribute('aria-invalid')).to.equal('true')
   })
 
-  it('Can focus', () => {
+  it('Can focus', async () => {
     render(getSelectField())
     const selectField = screen.getByRole('combobox')
     const user = userEvent.setup()
-    user.tab()
+    await user.tab()
     expect(selectField).to.deep.equal(document.activeElement)
   })
 })

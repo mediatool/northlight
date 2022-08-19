@@ -131,11 +131,11 @@ describe('NumberInputField', () => {
     expect(screen.getByDisplayValue('0123456789')).to.deep.equal(numberInputField)
   })
 
-  it('Focuses on tab', () => {
+  it('Focuses on tab', async () => {
     render(getNumberInputField())
     const user = userEvent.setup()
     const numberInputField = getInputField()
-    user.tab()
+    await user.tab()
     expect(numberInputField).to.deep.equal(document.activeElement)
   })
 })

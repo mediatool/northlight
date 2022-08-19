@@ -71,11 +71,11 @@ describe('SwitchField', () => {
     expect(switchField.getAttribute('aria-disabled')).to.equal('true')
   })
 
-  it('Focues on tab', () => {
+  it('Focues on tab', async () => {
     render(getSwitchField())
     const user = userEvent.setup()
     const switchField = getInputField()
-    user.tab()
+    await user.tab()
     expect(switchField).to.deep.equal(document.activeElement)
   })
 

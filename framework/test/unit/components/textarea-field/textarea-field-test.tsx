@@ -85,11 +85,11 @@ describe('TextareaField', () => {
     expect(screen.getByDisplayValue('abcdefghiklmnopqrstuvwxyzåäö0123456789?!.')).to.deep.equal(textField)
   })
 
-  it('Focuses on tab', () => {
+  it('Focuses on tab', async () => {
     render(getTextareaField())
     const user = userEvent.setup()
     const textField = screen.getByTestId('textarea-field-test-id')
-    user.tab()
+    await user.tab()
     expect(textField).to.deep.equal(document.activeElement)
   })
 })

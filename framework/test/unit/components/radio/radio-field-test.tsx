@@ -95,11 +95,11 @@ describe('Radio Group Field', () => {
     expect(radioField.getAttribute('aria-disabled')).to.equal('true')
   })
 
-  it('Focuses on tab', () => {
+  it('Focuses on tab', async () => {
     render(getRadioFieldGroup())
     const user = userEvent.setup()
     const radioField = getChildField(0)
-    user.tab()
+    await user.tab()
     expect(radioField).to.deep.equal(document.activeElement)
   })
 

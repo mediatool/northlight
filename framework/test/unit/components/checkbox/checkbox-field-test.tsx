@@ -70,11 +70,11 @@ describe('CheckboxField', () => {
     expect(checkboxField.getAttribute('aria-disabled')).to.equal('true')
   })
 
-  it('Focues on tab', () => {
+  it('Focues on tab', async () => {
     render(getCheckboxField())
     const user = userEvent.setup()
     const checkboxField = getInputField()
-    user.tab()
+    await user.tab()
     expect(checkboxField).to.deep.equal(document.activeElement)
   })
 

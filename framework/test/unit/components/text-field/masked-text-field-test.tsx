@@ -103,11 +103,11 @@ describe('MaskedTextInput', () => {
     expect(screen.getByDisplayValue('+46 01 234 56 78')).to.deep.equal(maskedTextField)
   })
 
-  it('Focuses on tab', () => {
+  it('Focuses on tab', async () => {
     render(getMaskedTextField())
     const user = userEvent.setup()
     const maskedTextField = screen.getByTestId('text-field-test-id')
-    user.tab()
+    await user.tab()
     expect(maskedTextField).to.deep.equal(document.activeElement)
   })
 })
