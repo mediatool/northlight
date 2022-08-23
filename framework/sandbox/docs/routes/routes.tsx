@@ -97,6 +97,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/spinner',
+    component: () => import('../pages/spinner-page'),
+    exact: true,
+  },
+  {
     path: '/tag',
     component: () => import('../pages/tag-page'),
     exact: true,

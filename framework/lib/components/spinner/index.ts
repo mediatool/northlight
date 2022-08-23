@@ -1,3 +1,1 @@
-export {
-  Spinner,
-} from '@chakra-ui/react'
+export * from './spinner'

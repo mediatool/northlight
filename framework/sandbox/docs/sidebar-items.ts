@@ -78,6 +78,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/select',
   },
   {
+    title: 'Spinner',
+    path: '/docs/spinner',
+  },
+  {
     title: 'Status block',
     path: '/docs/status-block',
   },
