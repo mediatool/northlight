@@ -7,6 +7,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/async-error',
+    component: () => import('../pages/async-error-page'),
+    exact: true,
+  },
+  {
     path: '/badge',
     component: () => import('../pages/badge-page'),
     exact: true,

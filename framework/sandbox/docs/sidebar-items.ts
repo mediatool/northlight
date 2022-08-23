@@ -2,6 +2,10 @@ import { SidebarItem } from '../types'
 
 export const sidebarItems: SidebarItem[] = [
   {
+    title: 'Async Error',
+    path: '/docs/async-error',
+  },
+  {
     title: 'Badge',
     path: '/docs/badge',
   },
