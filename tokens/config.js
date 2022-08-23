@@ -1,5 +1,5 @@
 module.exports = {
-  source: [ 'lib/**/*.json' ],
+  source: [ 'dist/sets/*.json' ],
   platforms: {
     web: {
       transformGroup: 'mediatoolTokens',
