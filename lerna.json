@@ -2,7 +2,8 @@
   "packages": [
     "changelog",
     "framework",
-    "tokens"
+    "tokens",
+    "icons"
   ],
   "version": "independent",
   "npmClient": "yarn",

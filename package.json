@@ -3,7 +3,8 @@
   "workspaces": [
     "changelog",
     "framework",
-    "tokens"
+    "tokens",
+    "icons"
   ],
   "devDependencies": {
     "lerna": "^5.1.6"

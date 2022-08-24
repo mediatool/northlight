@@ -1,0 +1,31 @@
+{
+  "name": "@mediatool/icons",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "exports": {
+    "import": "./dist/es/icons.mjs",
+    "require": "./dist/cjs/icons.js",
+    "main": "./dist/cjs/icons.js"
+  },
+  "types": "./dist/ts/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn svgo && yarn svgr && yarn rollup -c",
+    "clean": "rm -rf dist",
+    "lint": "eslint --ext ts,js scripts/* *.ts *.js",
+    "prepublishOnly": "yarn clean && yarn build",
+    "svgo": "svgo -f assets -o dist/svg",
+    "svgr": "svgr -d dist/lib dist/svg",
+    "test": "echo testless"
+  },
+  "devDependencies": {
+    "@mediatool/eslint-config-mediatool": "^1.1.9",
+    "@svgr/cli": "^6.3.1",
+    "rollup": "^2.78.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-esbuild": "^4.9.3",
+    "svgo": "^2.8.0"
+  }
+}
