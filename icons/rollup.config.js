@@ -16,7 +16,7 @@ export default [ {
     file: 'dist/cjs/icons.js',
   } ],
 }, {
-  input: './index.ts',
+  input: 'index.ts',
   plugins: [
     dts(),
   ],
