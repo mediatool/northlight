@@ -62,6 +62,7 @@ export const DatePicker = (props: DatePickerProps) => {
             fontSize="xs"
             onClick={ resetDate }
             hidden={ !state.dateValue }
+            isDisabled={ isDisabled }
             icon={ <CloseIcon /> }
           />
         </HStack>
