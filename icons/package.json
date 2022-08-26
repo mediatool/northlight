@@ -4,9 +4,9 @@
   "license": "UNLICENSED",
   "exports": {
     "import": "./dist/es/icons.mjs",
-    "require": "./dist/cjs/icons.js",
-    "main": "./dist/cjs/icons.js"
+    "require": "./dist/cjs/icons.js"
   },
+  "main": "./dist/cjs/icons.js",
   "types": "./dist/ts/types.d.ts",
   "files": [
     "dist"

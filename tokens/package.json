@@ -6,6 +6,7 @@
     "import": "./dist/es/tokens.mjs",
     "require": "./dist/cjs/tokens.js"
   },
+  "main": "./dist/cjs/tokens.js",
   "types": "./dist/ts/types.d.ts",
   "files": [
     "dist"
