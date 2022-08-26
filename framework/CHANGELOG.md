@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.2.1...@mediatool/ui@1.3.0) (2022-08-26)
+
+
+### Features
+
+* **framework:** spinner component ([edd9a5e](https://github.com/mediatool/mediatool/commit/edd9a5efaf8edb862b094e86f32016d56bffc725))
+* **ui/framework:** async-error component ([e5d98aa](https://github.com/mediatool/mediatool/commit/e5d98aa1e3e391ac55c9eb146131ba501148af39))
+
+
+
+
+
 ## [1.2.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.2.0...@mediatool/ui@1.2.1) (2022-08-25)
 
 **Note:** Version bump only for package @mediatool/ui
