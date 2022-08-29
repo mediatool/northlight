@@ -1,30 +1,25 @@
-import React from 'react'
+import React, { ComponentType } from 'react'
 import {
   Icon as ChakraIcon,
   IconProps as ChakraIconProps,
-  useStyleConfig,
 } from '@chakra-ui/react'
-import { IconProps, IconType } from '../../types'
-import { iconMap } from './icon-map'
 
-type Props = ChakraIconProps & IconProps & {
-  type: IconType
+type Props = ChakraIconProps & {
+  as?: ComponentType<any>
 }
 
 export const Icon = ({
-  type, color, ...rest
+  as: As, ...rest
 }: Props) => {
-  const styles = useStyleConfig('Icon', { color })
-  const Component = iconMap[type]
-
-  if (!Component) {
-    return <ChakraIcon name={ `No such icon ${type}` } />
-  }
+  const CustomIcon = As ?? (() => <ChakraIcon />)
 
   return (
-    <Component
-      __css={ styles }
+    <ChakraIcon
+      color={ rest.color ?? 'unset' }
+      boxSize={ 5 }
       { ...rest }
-    />
+    >
+      <CustomIcon />
+    </ChakraIcon>
   )
 }

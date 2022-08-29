@@ -1,7 +1,6 @@
 export * from './breadcrumb'
 export * from './button'
 export * from './checkbox'
-export * from './icon'
 export * from './input'
 export * from './pin-input'
 export * from './select'

@@ -34,6 +34,7 @@
     "@emotion/styled": "^11.6.0",
     "@internationalized/date": "^3.0.0",
     "@mantine/hooks": "^3.4.3",
+    "@mediatool/icons": "^1.1.0",
     "@mediatool/tokens": "^1.2.1",
     "@react-aria/button": "^3.6.0",
     "@react-aria/calendar": "^3.0.1",
