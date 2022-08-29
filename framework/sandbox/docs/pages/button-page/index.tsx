@@ -1,17 +1,16 @@
 import React from 'react'
+import { CDeleteSolid, FolderCheckDuo, PencilSolid, PlusDuo } from '@mediatool/icons'
 import {
   Button,
   Code,
   Divider,
-  FolderOpenIcon,
   HStack,
-  MediatoolLogoIcon,
-  MinusIconFilled,
-  PlusIcon,
+  Icon,
   Stack,
   Text,
 } from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
+import { } from '~/../icons'
 
 const ButtonPage = () => (
   <Page
@@ -50,20 +49,20 @@ const ButtonPage = () => (
       <HStack spacing={ 4 }>
         <Button
           variant="default"
-          leftIcon={ <MediatoolLogoIcon /> }
+          leftIcon={ <Icon as={ PencilSolid } /> }
         >
           Join now
         </Button>
         <Button
           variant="danger"
-          rightIcon={ <MinusIconFilled /> }
+          rightIcon={ <Icon as={ CDeleteSolid } /> }
         >
           Remove
         </Button>
         <Button
           variant="success"
-          leftIcon={ <FolderOpenIcon /> }
-          rightIcon={ <PlusIcon /> }
+          leftIcon={ <Icon as={ FolderCheckDuo } /> }
+          rightIcon={ <Icon as={ PlusDuo } /> }
         >
           Create folder
         </Button>

@@ -1,9 +1,9 @@
 import React from 'react'
-import { CSSObject } from '@chakra-ui/system'
-import { IconButton } from '../../../../lib/components'
-import { PlusIcon } from '../../../../lib/components/icons'
+import { PlusSolid } from '@mediatool/icons'
+import { SystemStyleObject } from '@chakra-ui/system'
+import { Icon, IconButton } from '../../../../lib/components'
 
-const disabledStyle:CSSObject = {
+const disabledStyle:SystemStyleObject = {
   bgColor: 'gray.100',
   cursor: 'not-allowed',
   color: 'white',
@@ -14,7 +14,7 @@ const disabledStyle:CSSObject = {
 
 export const CreateTrigger = () => (
   <IconButton
-    icon={ <PlusIcon boxSize={ 7 } /> }
+    icon={ <Icon as={ PlusSolid } boxSize={ 7 } /> }
     aria-label="Create"
     rounded="full"
     color="mediatool.500"

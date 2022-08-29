@@ -1,17 +1,17 @@
 import React from 'react'
 import {
   Flex,
+  Icon,
   InputGroup,
   InputLeftElement,
   PlainTextInput,
-  SearchIcon,
 } from '../../../lib/components'
 
 export const SearchField = () => (
   <Flex flex={ 1 }>
     <InputGroup>
       <InputLeftElement pointerEvents="none">
-        <SearchIcon color="mediatoolBlue.500" />
+        <Icon />
       </InputLeftElement>
       <PlainTextInput
         pl={ 10 }

@@ -1,8 +1,10 @@
 import React from 'react'
+import { StackSolid } from '@mediatool/icons'
 import {
   Code,
   Divider,
   HStack,
+  Icon,
   Stack,
   Tag,
   TagCloseButton,
@@ -11,7 +13,6 @@ import {
   TagRightIcon,
   Text,
 } from '../../../../lib/components'
-import { SwitchesIcon } from '../../../../lib/components/icons'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const TagPage = () => (
@@ -61,12 +62,16 @@ const TagPage = () => (
       </Text>
       <HStack spacing={ 4 }>
         <Tag>
-          <TagLeftIcon as={ SwitchesIcon } boxSize="12px" />
+          <TagLeftIcon>
+            <Icon as={ StackSolid } />
+          </TagLeftIcon>
           <TagLabel>Left Icon</TagLabel>
         </Tag>
         <Tag>
           <TagLabel>Right Icon</TagLabel>
-          <TagRightIcon as={ SwitchesIcon } boxSize="12px" />
+          <TagRightIcon>
+            <Icon as={ StackSolid } />
+          </TagRightIcon>
         </Tag>
         <Tag>
           <TagLabel>Close Button</TagLabel>
@@ -76,12 +81,16 @@ const TagPage = () => (
       <Code w="max-content" display="block" whiteSpace="pre">{
 `<HStack spacing={ 4 }>
   <Tag>
-    <TagLeftIcon as={ SwitchesIcon } boxSize="12px" />
+    <TagLeftIcon>
+      <Icon as={ StackSolid } />
+    </TagLeftIcon>
     <TagLabel>Left Icon</TagLabel>
   </Tag>
   <Tag>
     <TagLabel>Right Icon</TagLabel>
-    <TagRightIcon as={ SwitchesIcon } boxSize="12px" />
+    <TagRightIcon>
+      <Icon as={ StackSolid } />
+    </TagRightIcon>
   </Tag>
   <Tag>
     <TagLabel>Close Button</TagLabel>

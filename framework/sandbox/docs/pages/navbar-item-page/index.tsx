@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { IconType } from '../../../../lib'
+import { CDeleteDuo, HubDuo } from '@mediatool/icons'
 import {
   Code,
   HStack,
@@ -10,17 +10,15 @@ import {
 } from '../../../../lib/components'
 import { Page } from '../../components'
 
-const icons:IconType[] = [ 'hub', 'rejected' ]
-
 const mockNavbarItems = [ {
   title: 'Hub',
   path: '/docs/navbar-item',
-  icon: icons[0],
+  icon: HubDuo,
 },
 {
   title: 'Click?',
   path: '/docs/navbar-item/hello',
-  icon: icons[1],
+  icon: CDeleteDuo,
 } ]
 
 const NavbarItemPage = () => {
@@ -64,7 +62,6 @@ const NavbarItemPage = () => {
             <Code>
               <Text>title: { title }</Text>
               <Text>path:{ path }</Text>
-              <Text>icon: { icon }</Text>
               <Text>renderTitle: { showTitle.toString() }</Text>
             </Code>
           </HStack>

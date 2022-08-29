@@ -1,9 +1,15 @@
-import { IconType } from '../icon'
+import {
+  AlertCircleSolid,
+  AlertTriangleSolid,
+  BellSolid,
+  CheckCircleSolid,
+} from '@mediatool/icons'
 
 export type AlertVariants = 'success' | 'warning' | 'error' | 'info'
-export const toastIconMap: Record<AlertVariants, IconType> = {
-  success: 'approved',
-  warning: 'warningFilled',
-  error: 'alertFilled',
-  info: 'infoFilled',
+
+export const toastIconMap: Record<AlertVariants, any> = {
+  success: CheckCircleSolid,
+  warning: AlertTriangleSolid,
+  error: AlertCircleSolid,
+  info: BellSolid,
 }

@@ -31,7 +31,7 @@ export const Alert = ({
     { ...rest }
   >
     <HStack alignItems="flex-start">
-      <Icon type={ toastIconMap[variant] } color={ color.icon.toast[`${variant}`] } boxSize={ 5 } />
+      <Icon as={ toastIconMap[variant] } color={ color.icon.toast[`${variant}`] } boxSize={ 6 } />
       <Stack spacing={ 0 } maxWidth="400px">
         { title && <AlertTitle>{ title }</AlertTitle> }
         { description && (

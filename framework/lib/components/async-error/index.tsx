@@ -18,7 +18,7 @@ export const AsyncError = ({
 }: Props) => (
   <ChakraAlert backgroundColor={ color.background.default } color={ color.text.default } width="100%">
     <VStack w="full">
-      <Icon type={ toastIconMap.error } color={ color.icon.toast.error } boxSize={ 6 } />
+      <Icon as={ toastIconMap.error } color={ color.icon.toast.error } boxSize={ 6 } />
       <AlertTitle> Error </AlertTitle>
       { message && (
       <AlertDescription>{ message }</AlertDescription>

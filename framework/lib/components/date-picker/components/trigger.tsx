@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
-import { CalendarIcon } from '@chakra-ui/icons'
+import { CalendarDuo } from '@mediatool/icons'
 import { useButton } from '@react-aria/button'
 import { Button } from '../../button'
 import { TriggerProps } from '../../../types'
+import { Icon } from '../../icon'
 
 export const Trigger = (props:TriggerProps) => {
   const { isDisabled, handleClick } = props
@@ -19,7 +20,7 @@ export const Trigger = (props:TriggerProps) => {
       onPointerDown={ handleClick }
       pointerEvents={ isDisabled ? 'none' : 'auto' }
     >
-      <CalendarIcon />
+      <Icon as={ CalendarDuo } />
     </Button>
 
   )

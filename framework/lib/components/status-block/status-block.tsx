@@ -1,8 +1,8 @@
 import React from 'react'
+import { Icon } from '@chakra-ui/react'
 import { Tag, TagLabel, TagLeftIcon } from '../tag'
 import { blockVariantMap } from './block-variant-map'
-import { BlockVariant } from './types'
-import { iconMap } from '../icon/icon-map'
+import { BlockVariant, statusIconMap } from './types'
 
 interface Props {
   variant: BlockVariant
@@ -20,7 +20,9 @@ export const StatusBlock = ({ variant }: Props) => {
       color={ contentColor }
       borderRadius={ 4 }
     >
-      <TagLeftIcon as={ iconMap[variant] } />
+      <TagLeftIcon>
+        <Icon as={ statusIconMap[variant] } />
+      </TagLeftIcon>
       <TagLabel
         lineHeight={ 5 }
         fontWeight="semibold"

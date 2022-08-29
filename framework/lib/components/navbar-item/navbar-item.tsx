@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { ComponentType } from 'react'
 import { LinkProps, NavLink, NavLinkProps } from 'react-router-dom'
-import { IconType } from '../../types'
 import { Center } from '../center'
 import { Icon } from '../icon'
 import { Link } from '../link'
@@ -9,7 +8,7 @@ import { Text } from '../text'
 
 type NavbarItemProps = LinkProps & NavLinkProps & {
   to: string
-  icon: IconType
+  icon: ComponentType
   renderTitle?: boolean
 }
 
@@ -29,7 +28,7 @@ export const NavbarItem = ({
       _activeLink={ { bgColor: 'blue.100' } }
     >
       <Center boxSize={ 12 }>
-        <Icon boxSize={ 5 } type={ icon } />
+        <Icon boxSize={ 6 } as={ icon } />
       </Center>
     </Link>
     { renderTitle &&
