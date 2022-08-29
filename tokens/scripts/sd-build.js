@@ -16,6 +16,10 @@ function isSpacing (token) {
   return token.attributes.category === 'spacing'
 }
 
+function isSizing (token) {
+  return token.attributes.category === 'sizing'
+}
+
 function isFontSize (token) {
   return token.attributes.category === 'fontSize'
 }
@@ -50,6 +54,13 @@ StyleDictionary.registerTransform({
 })
 
 StyleDictionary.registerTransform({
+  name: 'sizing/rem',
+  type: 'value',
+  matcher: isSizing,
+  transformer: convertToRem,
+})
+
+StyleDictionary.registerTransform({
   name: 'fontSize/rem',
   type: 'value',
   matcher: isFontSize,
@@ -64,6 +75,7 @@ StyleDictionary.registerTransformGroup({
     'color/css',
     'borderWidth/rem',
     'spacing/rem',
+    'sizing/rem',
     'fontSize/rem',
   ],
 })

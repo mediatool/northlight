@@ -1,4 +1,8 @@
-export { color as palette } from './dist/global.json'
+export {
+  color as palette,
+  sizing as coreSizing,
+  spacing as coreSpacing,
+} from './dist/global.json'
 export {
   color,
   borderRadius,
