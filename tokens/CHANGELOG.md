@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.1.1...@mediatool/tokens@1.1.2) (2022-08-29)
+
+
+### Bug Fixes
+
+* **ui:** correctly export cjs from main ([13bef09](https://github.com/mediatool/mediatool/commit/13bef097f1cd9502b6268ccb599f7219271dacc7))
+
+
+
+
+
 ## [1.1.1](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.1.0...@mediatool/tokens@1.1.1) (2022-08-26)
 
 **Note:** Version bump only for package @mediatool/tokens

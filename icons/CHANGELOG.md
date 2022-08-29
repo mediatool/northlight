@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/mediatool/mediatool/compare/@mediatool/icons@1.1.0...@mediatool/icons@1.1.1) (2022-08-29)
+
+
+### Bug Fixes
+
+* **ui:** correctly export cjs from main ([13bef09](https://github.com/mediatool/mediatool/commit/13bef097f1cd9502b6268ccb599f7219271dacc7))
+
+
+
+
+
 # 1.1.0 (2022-08-25)
 
 
