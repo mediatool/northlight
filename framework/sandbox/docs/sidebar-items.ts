@@ -62,6 +62,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/number-input',
   },
   {
+    title: 'Org Logo',
+    path: '/docs/org-logo',
+  },
+  {
     title: 'Palette',
     path: '/docs/palette',
   },
