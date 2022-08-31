@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.1.2...@mediatool/tokens@1.2.0) (2022-08-31)
+
+
+### Features
+
+* **ui/tokens:** add new spacing and sizing tokens ([03234db](https://github.com/mediatool/mediatool/commit/03234dbd56414d9939c27a8c44f08655e2f9b4b9))
+
+
+
+
+
 ## [1.1.2](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.1.1...@mediatool/tokens@1.1.2) (2022-08-29)
 
 
