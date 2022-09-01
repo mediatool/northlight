@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/mediatool/mediatool/compare/@mediatool/icons@1.1.1...@mediatool/icons@1.1.2) (2022-09-01)
+
+
+### Bug Fixes
+
+* **ui/icons:** fix svgr config ([82f361f](https://github.com/mediatool/mediatool/commit/82f361f51caa80113363245b94efc4102823269a))
+
+
+
+
+
 ## [1.1.1](https://github.com/mediatool/mediatool/compare/@mediatool/icons@1.1.0...@mediatool/icons@1.1.1) (2022-08-29)
 
 

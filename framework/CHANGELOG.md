@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.4.1...@mediatool/ui@1.5.0) (2022-09-01)
+
+
+### Bug Fixes
+
+* **ui/framework:** replace old icons with the new once ([260e226](https://github.com/mediatool/mediatool/commit/260e226b1a11bbb8518d025cf79f9b8243c3b849))
+
+
+### Features
+
+* **ui/framework:** add wcag ring helper ([b602836](https://github.com/mediatool/mediatool/commit/b6028365436602a4788e9acb7ce776517fbe8c9f))
+* **ui/framework:** modify icon component and  display all icons in docs ([423cd96](https://github.com/mediatool/mediatool/commit/423cd96efd3bcfe38a8d0072dd3790c9656cefdd))
+
+
+
+
+
 ## [1.4.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.4.0...@mediatool/ui@1.4.1) (2022-09-01)
 
 
