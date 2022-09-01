@@ -10,4 +10,5 @@ export {
   opacity,
   spacing,
   fontSize,
+  sizing,
 } from './dist/theme.json'
