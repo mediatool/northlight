@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.4.0...@mediatool/ui@1.4.1) (2022-09-01)
+
+
+### Bug Fixes
+
+* **ui/framework:** fix sizing for avatar ([b45b2ab](https://github.com/mediatool/mediatool/commit/b45b2abebfb6b2e5f615b15b6713b3be3f27ee64))
+
+
+
+
+
 # [1.4.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.3.1...@mediatool/ui@1.4.0) (2022-08-31)
 
 
