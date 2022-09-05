@@ -54,6 +54,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/icon-button',
   },
   {
+    title: 'Modal',
+    path: '/docs/modal',
+  },
+  {
     title: 'Navbar item',
     path: '/docs/navbar-item',
   },

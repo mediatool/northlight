@@ -141,4 +141,9 @@ export const routes: Route[] = [
     component: () => import('../pages/status-block-page'),
     exact: true,
   },
+  {
+    path: '/modal',
+    component: () => import('../pages/modal-page'),
+    exact: true,
+  },
 ]
