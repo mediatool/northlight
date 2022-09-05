@@ -1,4 +1,5 @@
 import React from 'react'
+import { mediatoolLogo } from '~/sandbox/assets/png'
 import {
   Code,
   Divider,
@@ -34,21 +35,19 @@ const OrgLogoPage = () => (
             <Text>Square</Text>
           </VStack>
         </HStack>
-        <Text>If you don't specify the variant, it will be <strong>rounded</strong></Text>
-        <Code w="max-content">{ '<OrgLogo name="Anakin Skywalker variant="rounded" />' }</Code>
+        <Text>If you don't specify the variant, it will be <strong>square</strong></Text>
+        <Code w="max-content">{ '<OrgLogo name="Anakin Skywalker" variant="rounded" />' }</Code>
         <Divider />
         <Text>
           It takes in a <strong>name</strong>, and an <strong>image</strong> source.
           If no image source is provided, it will render the first letter of the company name
         </Text>
         <OrgLogo
-          name="Anakin Skywalker"
-          image="https://thenerdstash.com/wp-content/uploads/2021/10/Hayden-Christensen-Anakin-Skywalker.jpg"
+          name="Mediatool Logo"
+          image={ mediatoolLogo }
         />
-        <Code w="max-content">{ '<OrgLogo name="Anakin Skywalker image="anakin-image.png" />' }</Code>
-        <OrgLogo
-          name="Anakin Skywalker"
-        />
+        <Code w="max-content">{ '<OrgLogo name="Mediatool Logo" image={mediatoolLogo} />' }</Code>
+        <OrgLogo name="Anakin Skywalker" />
         <Code w="max-content">{ '<OrgLogo name="Anakin Skywalker />' }</Code>
         <Divider />
         <Text>It can be used in 7 <strong>sizes</strong></Text>

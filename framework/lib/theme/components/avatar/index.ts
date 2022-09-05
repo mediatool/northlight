@@ -1,5 +1,5 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderRadius, color, sizing } from '@mediatool/tokens'
+import { borderRadius, color, palette, sizing } from '@mediatool/tokens'
 
 export const Avatar: ComponentMultiStyleConfig = {
   parts: [ 'container' ],
@@ -41,21 +41,27 @@ export const Avatar: ComponentMultiStyleConfig = {
     },
 
   },
-  baseStyle: {
+  baseStyle: ({ src }) => ({
     container: {
-      bgColor: color.background.avatar.default,
+      bgColor: src ? palette.transparent : color.background.avatar.default,
       color: color.text.inverted,
     },
-  },
+  }),
   variants: {
     square: {
       container: {
         borderRadius: borderRadius.avatar.square,
+        '> .chakra-avatar__img': {
+          borderRadius: borderRadius.avatar.square,
+        },
       },
     },
     rounded: {
       container: {
         borderRadius: borderRadius.avatar.rounded,
+        '> .chakra-avatar__img': {
+          borderRadius: borderRadius.avatar.rounded,
+        },
       },
     },
   },
