@@ -1,5 +1,12 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderRadius, borderWidth, color, opacity, spacing } from '@mediatool/tokens'
+import {
+  borderRadius,
+  borderWidth,
+  color,
+  coreSizing,
+  opacity,
+  spacing,
+} from '@mediatool/tokens'
 
 export const NumberInput: ComponentMultiStyleConfig = {
   parts: [ 'field', 'stepper', 'stepperGroup' ],
@@ -8,10 +15,24 @@ export const NumberInput: ComponentMultiStyleConfig = {
       field: {
         borderRadius: borderRadius.input.outline,
       },
+      stepperGroup: {
+        height: coreSizing['8'],
+      },
+    },
+    md: {
+      stepperGroup: {
+        height: coreSizing['10'],
+      },
+    },
+    lg: {
+      stepperGroup: {
+        height: coreSizing['12'],
+      },
     },
   },
   baseStyle: ({ isReadOnly }) => ({
     field: {
+      minWidth: coreSizing['44'],
       paddingInlineStart: spacing['padding-inline'].input.default,
       paddingInlineEnd: spacing['padding-inline'].input.default,
       WebkitPaddingStart: spacing['padding-inline'].input.default,

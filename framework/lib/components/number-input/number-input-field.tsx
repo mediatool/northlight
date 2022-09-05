@@ -3,13 +3,14 @@ import { Field, useField } from 'formik'
 import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { NumberInput } from './number-input'
 import { NumberInputFieldProps } from '../../types'
-import { HStack } from '../stack'
+import { Stack } from '../stack'
 
 export const NumberInputField = ({
   name,
   label,
   validate,
   isRequired,
+  direction = 'column',
   ...rest
 }: NumberInputFieldProps) => {
   const [ field, { error, touched }, { setValue } ] = useField({ name, validate })
@@ -20,8 +21,18 @@ export const NumberInputField = ({
       isInvalid={ !!error && touched }
       isRequired={ isRequired }
     >
-      <HStack spacing="auto">
-        <FormLabel htmlFor={ name } mb={ 0 }>{ label }</FormLabel>
+      <Stack
+        spacing="auto"
+        direction={ direction }
+        alignItems={
+          direction === 'column'
+            ? 'stretch'
+            : 'center'
+          }
+      >
+        <FormLabel htmlFor={ name } mb={ direction === 'column' ? 1 : 0 }>
+          { label }
+        </FormLabel>
         <Field
           as={ NumberInput }
           name={ name }
@@ -30,7 +41,7 @@ export const NumberInputField = ({
           data-testid="number-input-field-test-id"
           { ...rest }
         />
-      </HStack>
+      </Stack>
       <FormErrorMessage>{ error }</FormErrorMessage>
     </FormControl>
   )

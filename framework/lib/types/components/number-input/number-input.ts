@@ -1,6 +1,7 @@
 import { NumberInputProps as ChakraNumberInputProps } from '@chakra-ui/react'
 import { FieldValidator } from 'formik'
 import { ChangeEvent } from 'react'
+import { StackingDirection } from '../field'
 
 export type NumberInputSizeProps = 'sm' | 'md' | 'lg'
 
@@ -20,4 +21,5 @@ export type NumberInputFieldProps =
     size?: NumberInputSizeProps
     isRequired?: boolean
     unit?: string
+    direction?: StackingDirection
   }

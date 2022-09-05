@@ -144,6 +144,7 @@ const FormPage = () => {
               <NumberInputField
                 name="dogs"
                 label="Enter how many dogs you own"
+                direction="row"
               />
               <SwitchField name="newsletter" label="Subscribe to the newsletter" />
               <CheckboxField name="personalInfoAgree" label="I hereby consent to Mediatool using my personal information for further processing" />
