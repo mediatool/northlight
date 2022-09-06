@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.5.0...@mediatool/ui@1.6.0) (2022-09-06)
+
+
+### Bug Fixes
+
+* **ui/framework:** fix square org logo border radius ([989bfbc](https://github.com/mediatool/mediatool/commit/989bfbcd02d78f228070d651a286746b96191b44))
+
+
+### Features
+
+* **ui/framework:** add modal ([d99f79a](https://github.com/mediatool/mediatool/commit/d99f79af5b431db920e60d11581ee1c3fb28fc19))
+* **ui/framework:** style close button ([31ff8fe](https://github.com/mediatool/mediatool/commit/31ff8fe67097432ee2015f3071360361492261f8))
+
+
+### Reverts
+
+* Revert "Publish" ([4decb6c](https://github.com/mediatool/mediatool/commit/4decb6cb7cd7d437615796ab8a6129e36f20487d))
+
+
+
+
+
 # [1.5.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.4.1...@mediatool/ui@1.5.0) (2022-09-01)
 
 
