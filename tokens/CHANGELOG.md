@@ -3,17 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.3.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.2.1...@mediatool/tokens@1.3.0) (2022-09-06)
-
-
-### Features
-
-* **ui/tokens:** add modal tokens ([8970f5f](https://github.com/mediatool/mediatool/commit/8970f5f6440cd1a46ed62e038d37a6b9404cf9b1))
-
-
-
-
-
 ## [1.2.1](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.2.0...@mediatool/tokens@1.2.1) (2022-09-01)
 
 **Note:** Version bump only for package @mediatool/tokens
