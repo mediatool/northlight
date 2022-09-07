@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.6.0...@mediatool/ui@1.6.1) (2022-09-07)
+
+
+### Bug Fixes
+
+* **ui/framework:** add min width to number input ([83d2741](https://github.com/mediatool/mediatool/commit/83d27417a6bbdb9c006d262009f17f4d9d18a930))
+
+
+
+
+
 # [1.6.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.5.0...@mediatool/ui@1.6.0) (2022-09-06)
 
 
