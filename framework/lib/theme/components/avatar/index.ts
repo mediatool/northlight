@@ -2,56 +2,87 @@ import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 import { borderRadius, color, palette, sizing } from '@mediatool/tokens'
 
 export const Avatar: ComponentMultiStyleConfig = {
-  parts: [ 'container' ],
+  parts: [ 'container', 'text' ],
   sizes: {
     '2xs': {
       container: {
-        boxSize: sizing.avatar['2xs'],
+        width: sizing.avatar['2xs'],
+        height: sizing.avatar['2xs'],
+      },
+      text: {
+        lineHeight: sizing.avatar['2xs'],
       },
     },
     xs: {
       container: {
-        boxSize: sizing.avatar.xs,
+        width: sizing.avatar.xs,
+        height: sizing.avatar.xs,
+      },
+      text: {
+        lineHeight: sizing.avatar.xs,
       },
     },
     sm: {
       container: {
-        boxSize: sizing.avatar.sm,
+        width: sizing.avatar.sm,
+        height: sizing.avatar.sm,
+      },
+      text: {
+        lineHeight: sizing.avatar.sm,
       },
     },
     md: {
       container: {
-        boxSize: sizing.avatar.md,
+        width: sizing.avatar.md,
+        height: sizing.avatar.md,
+      },
+      text: {
+        lineHeight: sizing.avatar.md,
       },
     },
     lg: {
       container: {
-        boxSize: sizing.avatar.lg,
+        width: sizing.avatar.lg,
+        height: sizing.avatar.lg,
+      },
+      text: {
+        lineHeight: sizing.avatar.lg,
       },
     },
     xl: {
       container: {
-        boxSize: sizing.avatar.xl,
+        width: sizing.avatar.xl,
+        height: sizing.avatar.xl,
+      },
+      text: {
+        lineHeight: sizing.avatar.xl,
       },
     },
     '2xl': {
       container: {
-        boxSize: sizing.avatar['2xl'],
+        width: sizing.avatar['2xl'],
+        height: sizing.avatar['2xl'],
+      },
+      text: {
+        lineHeight: sizing.avatar['2xl'],
       },
     },
 
   },
-  baseStyle: ({ src }) => ({
+  baseStyle: ({ image }) => ({
     container: {
-      bgColor: src ? palette.transparent : color.background.avatar.default,
+      bgColor: image ? palette.transparent : color.background.avatar.default,
       color: color.text.inverted,
+      display: 'grid',
+      placeItems: 'center',
     },
+
   }),
   variants: {
     square: {
       container: {
         borderRadius: borderRadius.avatar.square,
-        '> .chakra-avatar__img': {
+        '> img': {
           borderRadius: borderRadius.avatar.square,
         },
       },
@@ -59,7 +90,7 @@ export const Avatar: ComponentMultiStyleConfig = {
     rounded: {
       container: {
         borderRadius: borderRadius.avatar.rounded,
-        '> .chakra-avatar__img': {
+        '> img': {
           borderRadius: borderRadius.avatar.rounded,
         },
       },

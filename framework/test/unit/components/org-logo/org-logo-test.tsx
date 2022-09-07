@@ -29,4 +29,10 @@ describe('OrgLogo', () => {
     const orgLogo = screen.getByText('A')
     isOk(orgLogo)
   })
+
+  it('Capitalize the first letter', () => {
+    render(getOrgLogo({ name: 'mediatool' }))
+    const orgLogo = screen.getByText('M')
+    isOk(orgLogo)
+  })
 })

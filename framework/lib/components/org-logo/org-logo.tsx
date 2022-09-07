@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar } from '@chakra-ui/react'
+import { chakra, useMultiStyleConfig } from '@chakra-ui/react'
 import { OrgLogoProps } from '../../types'
 
 export const OrgLogo = ({
@@ -8,15 +8,29 @@ export const OrgLogo = ({
   variant = 'square',
   ...rest
 }: OrgLogoProps) => {
-  const getInitials = (orgName: string) => orgName[0]
+  const getInitials = (orgName: string) => orgName[0].toUpperCase()
+  const {
+    container,
+    text,
+  } = useMultiStyleConfig('Avatar', { variant, image, ...rest })
+
   return (
-    <Avatar
-      name={ name }
-      src={ image }
-      variant={ variant }
-      getInitials={ getInitials }
+    <chakra.div
+      __css={ container }
       data-testid="orglogo-test-id"
-      { ...rest }
-    />
+    >
+      { image ? (
+        <chakra.img
+          alt={ name }
+          src={ image }
+        />
+      )
+        : (
+          <chakra.span __css={ text }>
+            { getInitials(name) }
+          </chakra.span>
+        )
+      }
+    </chakra.div>
   )
 }

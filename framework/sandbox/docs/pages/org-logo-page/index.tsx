@@ -17,8 +17,8 @@ const OrgLogoPage = () => (
     title="Org Logo"
     subtitle={ (
       <DefaultPageSubtitle
-        slug="/avatar"
-        linkText="Chakra Avatar"
+        slug="/image"
+        linkText="Chakra Image"
       />
     ) }
   >
@@ -47,36 +47,36 @@ const OrgLogoPage = () => (
           image={ mediatoolLogo }
         />
         <Code w="max-content">{ '<OrgLogo name="Mediatool Logo" image={mediatoolLogo} />' }</Code>
-        <OrgLogo name="Anakin Skywalker" />
-        <Code w="max-content">{ '<OrgLogo name="Anakin Skywalker />' }</Code>
+        <OrgLogo name="mediatool" />
+        <Code w="max-content">{ '<OrgLogo name="mediatool" />' }</Code>
         <Divider />
         <Text>It can be used in 7 <strong>sizes</strong></Text>
         <HStack>
-          <OrgLogo name="A" size="2xs" />
+          <OrgLogo name="mediatool" size="2xs" />
           <Heading size="xs">2xs</Heading>
         </HStack>
         <HStack>
-          <OrgLogo name="A" size="xs" />
+          <OrgLogo name="mediatool" size="xs" />
           <Heading size="xs">xs</Heading>
         </HStack>
         <HStack>
-          <OrgLogo name="A" size="sm" />
+          <OrgLogo name="mediatool" size="sm" />
           <Heading size="sm">sm</Heading>
         </HStack>
         <HStack>
-          <OrgLogo name="A" size="md" />
+          <OrgLogo name="mediatool" size="md" />
           <Heading size="sm">md</Heading>
         </HStack>
         <HStack>
-          <OrgLogo name="A" size="lg" />
+          <OrgLogo name="mediatool" size="lg" />
           <Heading size="md">lg</Heading>
         </HStack>
         <HStack>
-          <OrgLogo name="A" size="xl" />
+          <OrgLogo name="mediatool" size="xl" />
           <Heading size="md">xl</Heading>
         </HStack>
         <HStack>
-          <OrgLogo name="A" size="2xl" />
+          <OrgLogo name="mediatool" size="2xl" />
           <Heading size="lg">2xl</Heading>
         </HStack>
         <Text>If you don't specify a size it will be <strong>md</strong></Text>
