@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.6.1...@mediatool/ui@1.6.2) (2022-09-07)
+
+
+### Bug Fixes
+
+* **ui/framework:** rewrite orglogo component ([b48360c](https://github.com/mediatool/mediatool/commit/b48360ca5edd4bd36f14ba60c17a6c8e5c688f05))
+
+
+
+
+
 ## [1.6.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.6.0...@mediatool/ui@1.6.1) (2022-09-07)
 
 
