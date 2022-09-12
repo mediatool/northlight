@@ -19,8 +19,8 @@ export const Modal = ({
     { ...rest }
   >
     <ModalOverlay />
-    <ModalContent>
-      <ModalCloseButton />
+    <ModalContent data-testid="modal-test-id">
+      <ModalCloseButton data-testid="modal-test-button-id" />
       { children }
     </ModalContent>
   </ChakraModal>
