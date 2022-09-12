@@ -1,7 +1,8 @@
 import { ChakraStylesConfig } from 'chakra-react-select'
 import { color, spacing } from '@mediatool/tokens'
+import { getContrastColor } from '../../../utilities'
 
-export const customSelectStyles: ChakraStylesConfig = {
+export const customSelectStyles: ChakraStylesConfig<any> = {
   container: (provided) => ({
     ...provided,
     width: '100%',
@@ -26,4 +27,14 @@ export const customSelectStyles: ChakraStylesConfig = {
     ...provided,
     color: color.text.select.placeholder,
   }),
+  multiValue: (provided, state) => {
+    const background = state.data.isFixed
+      ? color.background.select['option-disabled']
+      : state.data.color ?? provided.bgColor
+    return ({
+      ...provided,
+      bgColor: background,
+      color: getContrastColor(background),
+    })
+  },
 }

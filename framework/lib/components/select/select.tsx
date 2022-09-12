@@ -1,24 +1,30 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Select as ChakraReactSelect } from 'chakra-react-select'
 import { SelectProps } from '../../types'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 
-export const Select = ({
+export function Select<T> ({
   options,
   isMulti = false,
   onChange,
+  isLoading,
+  loadingList,
   ...rest
-}:SelectProps) => (
-  <ChakraReactSelect
-    isMulti={ isMulti }
-    options={ options }
-    useBasicStyles={ true }
-    closeMenuOnSelect={ !isMulti }
-    hideSelectedOptions={ false }
-    isClearable={ true }
-    onChange={ onChange }
-    selectedOptionStyle="check"
-    chakraStyles={ customSelectStyles }
-    { ...rest }
-  />
-)
+}:SelectProps<T>) {
+  const CustomSelect = ChakraReactSelect as FunctionComponent<SelectProps<T>>
+  return (
+    <CustomSelect
+      isMulti={ isMulti }
+      options={ options }
+      useBasicStyles={ true }
+      closeMenuOnSelect={ !isMulti }
+      hideSelectedOptions={ false }
+      isClearable={ true }
+      onChange={ onChange }
+      selectedOptionStyle="check"
+      chakraStyles={ customSelectStyles }
+      { ...(isLoading && { components: { MenuList: loadingList } }) }
+      { ...rest }
+    />
+  )
+}

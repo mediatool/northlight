@@ -5,7 +5,7 @@ import { SelectFieldProps } from '../../types'
 import { FormikSelect } from './formik-select'
 import { Stack } from '../stack'
 
-export const SelectField = ({
+export function SelectField<T> ({
   name,
   label,
   isRequired,
@@ -18,7 +18,7 @@ export const SelectField = ({
   isInvalid,
   size,
   ...rest
-}: SelectFieldProps) => {
+}: SelectFieldProps<T>) {
   const [ field, { error, touched } ] = useField({ name, validate })
   const { value } = field
   const isColumn = direction === 'column'

@@ -17,13 +17,14 @@ interface Option {
   value: string
   label: string
   id: string
+  color?:string
 }
 
 export const options:Option[] = [
-  { value: 'blue', label: 'Blue', id: 'blue' },
+  { value: 'blue', label: 'Blue', id: 'blue', color: '#0000FF' },
   { value: 'purple', label: 'Purple', id: 'purple' },
-  { value: 'red', label: 'Red', id: 'red' },
-  { value: 'orange', label: 'Orange', id: 'orange' },
+  { value: 'red', label: 'Red', id: 'red', color: '#FF0000' },
+  { value: 'orange', label: 'Orange', id: 'orange', color: '#FFA500' },
   { value: 'yellow', label: 'Yellow', id: 'yellow' },
   { value: 'green', label: 'Green', id: 'green' },
 ]
