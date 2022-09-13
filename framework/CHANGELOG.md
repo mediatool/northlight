@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.4](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.6.3...@mediatool/ui@1.6.4) (2022-09-13)
+
+
+### Bug Fixes
+
+* **ui/framework:** fix loading on select ([721abd4](https://github.com/mediatool/mediatool/commit/721abd404b8875f55d410d5fa548d4714db9bb0c))
+
+
+
+
+
 ## [1.6.3](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.6.2...@mediatool/ui@1.6.3) (2022-09-13)
 
 
