@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.6.5...@mediatool/ui@1.7.0) (2022-09-13)
+
+
+### Bug Fixes
+
+* **ui/framework:** forward ref to icon ([a72fb46](https://github.com/mediatool/mediatool/commit/a72fb461523457002365351edaddd90352939b12))
+
+
+### Features
+
+* **ui:** Unit test for modal ([359d4bb](https://github.com/mediatool/mediatool/commit/359d4bbc8e60cc1fff426b3b84a8710acfd90648))
+
+
+
+
+
 ## [1.6.5](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.6.4...@mediatool/ui@1.6.5) (2022-09-13)
 
 **Note:** Version bump only for package @mediatool/ui
