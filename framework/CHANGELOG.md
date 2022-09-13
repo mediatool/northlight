@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.3](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.6.2...@mediatool/ui@1.6.3) (2022-09-13)
+
+
+### Bug Fixes
+
+* **ui/framework:** add tag color support on select ([662c050](https://github.com/mediatool/mediatool/commit/662c050caee1ecd76dc0bdf7dda5c4b3da4c80cc))
+
+
+
+
+
 ## [1.6.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.6.1...@mediatool/ui@1.6.2) (2022-09-07)
 
 
