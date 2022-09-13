@@ -8,7 +8,7 @@ export function Select<T> ({
   isMulti = false,
   onChange,
   isLoading,
-  loadingList,
+  loadingList = () => null,
   ...rest
 }:SelectProps<T>) {
   const CustomSelect = ChakraReactSelect as FunctionComponent<SelectProps<T>>
@@ -23,6 +23,7 @@ export function Select<T> ({
       onChange={ onChange }
       selectedOptionStyle="check"
       chakraStyles={ customSelectStyles }
+      isLoading={ isLoading }
       { ...(isLoading && { components: { MenuList: loadingList } }) }
       { ...rest }
     />
