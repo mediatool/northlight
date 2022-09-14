@@ -2,7 +2,7 @@ import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 import { borderRadius, borderWidth, color, opacity, spacing } from '@mediatool/tokens'
 
 export const Input: ComponentMultiStyleConfig = {
-  parts: [ 'field' ],
+  parts: [ 'field', 'addon' ],
   baseStyle: {
     field: {
       color: color.text.default,
@@ -46,6 +46,11 @@ export const Input: ComponentMultiStyleConfig = {
           borderColor: color.border.input.disabled,
           opacity: opacity.input.disabled,
         },
+      },
+      addon: {
+        border: 'none',
+        background: 'none',
+        color: color.text.default,
       },
     },
     filled: {
