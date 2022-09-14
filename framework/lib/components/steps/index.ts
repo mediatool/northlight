@@ -5,3 +5,5 @@ export {
   TabPanel as StepPanel,
   TabPanels as StepPanels,
 } from '@chakra-ui/react'
+
+export * from './step'
