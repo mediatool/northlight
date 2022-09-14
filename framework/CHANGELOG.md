@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.7.0...@mediatool/ui@1.8.0) (2022-09-14)
+
+
+### Bug Fixes
+
+* **ui/framework:** export step ([7bb6f59](https://github.com/mediatool/mediatool/commit/7bb6f5904c4a122cde5207ba3f92f8e8a5c11e3b))
+
+
+### Features
+
+* **ui/framework:** export steps components ([c0a79eb](https://github.com/mediatool/mediatool/commit/c0a79eb6cae2c737404635c0ada8d40e95d40aab))
+* **ui/framework:** style addon on input ([393e109](https://github.com/mediatool/mediatool/commit/393e109079ae982c57c0caeaea8504b42368cede))
+* **ui/framework:** style sof-rounded tabs ([4f07a69](https://github.com/mediatool/mediatool/commit/4f07a69fd9c026deac1075ccc88a3039f399f52b))
+* **ui:** stress testing ([8465fef](https://github.com/mediatool/mediatool/commit/8465fef2432190824ec9b99f43b137d3745d48e4))
+
+
+
+
+
 # [1.7.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.6.5...@mediatool/ui@1.7.0) (2022-09-13)
 
 
