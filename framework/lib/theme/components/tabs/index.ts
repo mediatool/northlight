@@ -1,31 +1,22 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { color } from '@mediatool/tokens'
 
 export const Tabs: ComponentMultiStyleConfig = {
-  parts: [ 'root' ],
-  baseStyle: {
-    root: {
-      borderColor: 'transparent',
-    },
-  },
+  parts: [ 'tab' ],
   variants: {
-    line: {
+    'soft-rounded': {
       tab: {
-        fontWeight: 'normal',
+        color: color.text.subdued,
         _selected: {
-          fontWeight: 'semibold',
-          borderColor: 'currentColor',
+          bg: color.background.tabs['soft-rounded-active'],
+          color: color.text.tabs['soft-rounded-active'],
         },
-        _active: {
-          bg: 'transparent',
-        },
-        _focus: {
-          boxShadow: 'none',
+        _focusVisible: {
+          ring: '2px',
+          ringColor: color.border.wcag,
+          ringOffset: '1px',
         },
       },
     },
-  },
-  defaultProps: {
-    colorScheme: 'mediatoolBlue',
-    variant: 'line',
   },
 }

@@ -146,4 +146,9 @@ export const routes: Route[] = [
     component: () => import('../pages/modal-page'),
     exact: true,
   },
+  {
+    path: '/tabs',
+    component: () => import('../pages/tabs-page'),
+    exact: true,
+  },
 ]

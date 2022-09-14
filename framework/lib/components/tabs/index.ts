@@ -4,7 +4,8 @@ export {
   TabList,
   TabPanel,
   TabPanels,
-  Tabs,
   useTab,
   useTabs,
 } from '@chakra-ui/react'
+
+export * from './tabs'
