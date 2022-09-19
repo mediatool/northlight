@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.8.0...@mediatool/ui@1.8.1) (2022-09-19)
+
+
+### Bug Fixes
+
+* **ui/framework:** small changes in modal theme ([986971c](https://github.com/mediatool/mediatool/commit/986971cca8262ff36740972811736c34a646ac95))
+
+
+
+
+
 # [1.8.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.7.0...@mediatool/ui@1.8.0) (2022-09-14)
 
 
