@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tab as ChakraStep, TabProps } from '@chakra-ui/react'
 import { Text } from '../text'
-import { HStack } from '../stack'
+import { VStack } from '../stack'
 
 interface StepProps extends TabProps {
   label: string
@@ -14,9 +14,9 @@ export const Step = (({
   ...rest
 }: StepProps) => (
   <ChakraStep { ...rest }>
-    <HStack>
+    <VStack>
       <Text fontWeight="semibold">{ label }</Text>
       <Text>{ description }</Text>
-    </HStack>
+    </VStack>
   </ChakraStep>
 ))
