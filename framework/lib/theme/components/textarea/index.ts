@@ -10,20 +10,25 @@ export const Textarea: ComponentSingleStyleConfig = {
       borderWidth: borderWidth.textarea.default,
       borderColor: color.border.textarea.default,
       color: color.text.default,
+      bgColor: color.background.textarea.default,
       _hover: {
         borderColor: color.border.textarea['default-hover'],
+        bgColor: color.background.textarea.hover,
       },
       _focusVisible: {
         borderColor: color.border.textarea.focus,
         boxShadow: `0 0 0 1px ${color.border.textarea.focus}`,
+        bgColor: color.background.textarea.active,
       },
       _invalid: {
         boxShadow: 'none',
         borderColor: color.border.textarea.error,
+        bgColor: color.background.textarea.error,
       },
       _readOnly: {
         _focusVisible: {
           borderColor: color.border.textarea.readonly,
+          bgColor: color.background.textarea.default,
         },
         _hover: {
           borderColor: color.border.textarea.readonly,

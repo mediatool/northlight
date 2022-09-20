@@ -1,5 +1,5 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderRadius, color, palette, sizing } from '@mediatool/tokens'
+import { borderRadius, color, sizing } from '@mediatool/tokens'
 
 export const Avatar: ComponentMultiStyleConfig = {
   parts: [ 'container', 'text' ],
@@ -71,7 +71,7 @@ export const Avatar: ComponentMultiStyleConfig = {
   },
   baseStyle: ({ image }) => ({
     container: {
-      bgColor: image ? palette.transparent : color.background.avatar.default,
+      bgColor: image ? color.background.avatar.image : color.background.avatar.default,
       color: color.text.inverted,
       display: 'grid',
       placeItems: 'center',
