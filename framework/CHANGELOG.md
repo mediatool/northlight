@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.2](/compare/@mediatool/ui@1.8.2...@mediatool/ui@1.8.2) (2022-09-20)
+
+
+### Reverts
+
+* Revert "Publish" 55c85f5
+
+
+
+
+
 ## [1.8.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.8.0...@mediatool/ui@1.8.1) (2022-09-19)
 
 
