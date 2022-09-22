@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.3](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.8.2...@mediatool/ui@1.8.3) (2022-09-22)
+
+
+### Bug Fixes
+
+* **ui/framework:** align step component ([357de8d](https://github.com/mediatool/mediatool/commit/357de8d7686ca25d905ba705c0f28c4152a2620d))
+* **ui/framework:** changed avatar tokens ([a33d23d](https://github.com/mediatool/mediatool/commit/a33d23d3bcb9f3922b49faf502f7ec505ece92c8))
+* **ui/framework:** fix palette page ([c93611c](https://github.com/mediatool/mediatool/commit/c93611ca73a252b38b2f2af13fb508696b83c837))
+* **ui/framework:** separate alert from toast ([76e9aa0](https://github.com/mediatool/mediatool/commit/76e9aa036ef59332bab495e99a85dd40e4118e59))
+
+
+
+
+
 ## [1.8.2](/compare/@mediatool/ui@1.8.1...@mediatool/ui@1.8.2) (2022-09-20)
 
 
