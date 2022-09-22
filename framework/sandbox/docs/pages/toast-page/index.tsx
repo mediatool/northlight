@@ -1,12 +1,12 @@
 import React from 'react'
 import {
-  Alert,
   Button,
   Code,
   Divider,
   HStack,
   Stack,
   Text,
+  Toast,
   useToast,
 } from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
@@ -23,36 +23,35 @@ const ToastPage = () => {
         />
       ) }
     >
-
       <Stack spacing={ 4 }>
         <Text>Mediatool uses 4 toast <strong>variants</strong></Text>
         <HStack spacing={ 4 }>
-          <Alert variant="success" title="success" />
-          <Alert variant="warning" title="warning" />
-          <Alert variant="info" title="info" />
-          <Alert variant="error" title="error" />
+          <Toast variant="success" title="success" />
+          <Toast variant="warning" title="warning" />
+          <Toast variant="info" title="info" />
+          <Toast variant="error" title="error" />
         </HStack>
         <Text>If you don't specify a variant, it will be <strong>success</strong></Text>
         <HStack spacing={ 4 }>
           <Text>Example: </Text>
-          <Code w="max-content">{ '<Alert variant="success" title="success" />' }</Code>
-          <Text>(Notice it uses <strong>Alert</strong>)</Text>
+          <Code w="max-content">{ '<Toast variant="success" title="success" />' }</Code>
+          <Text>(Notice it uses <strong>Toast</strong>)</Text>
         </HStack>
         <Divider />
         <Text>It takes in a <strong>title </strong>
           and a <strong>description</strong>
         </Text>
         <HStack>
-          <Alert
+          <Toast
             title="title"
             description="description"
           />
         </HStack>
         <Code w="max-content">{
-          `<Alert
+          `<Toast
           title="title"
           description="description"
-          </Alert>` }
+          </Toast>` }
         </Code>
         <Divider />
         <Text>One can make the toast pop up (click the buttons): </Text>
@@ -62,7 +61,7 @@ const ToastPage = () => {
             onClick={ () => toast({
               position: 'top-right',
               render: ({ onClose }) => (
-                <Alert
+                <Toast
                   variant="success"
                   title="Saved"
                   description="Your setting have been saved, you will need to reload the page before the changes take effect."
@@ -79,7 +78,7 @@ const ToastPage = () => {
             onClick={ () => toast({
               position: 'top-right',
               render: ({ onClose }) => (
-                <Alert
+                <Toast
                   variant="error"
                   title="Error  "
                   description="Please save you changes before exiting"
@@ -98,7 +97,7 @@ const ToastPage = () => {
 toast({
   position: 'top-right',
   render: ({ onClose }) => (
-    <Alert
+    <Toast
       variant="error"
       title="Error  "
       description="Please save you changes before exiting"
@@ -113,7 +112,7 @@ toast({
 <Button onClick={ () => toast({
   position: 'top-right',
   render: ({ onClose }) => (
-    <Alert onClose={ onClose }/>
+    <Toast onClose={ onClose }/>
   ),
 })
 }` }

@@ -2,14 +2,14 @@
 import React from 'react'
 import { assert } from 'chai'
 import { render, screen } from '@testing-library/react'
-import { Alert } from '../../../../lib/components'
+import { Toast } from '../../../../lib/components'
 
 const { isOk } = assert
 
 describe('Alert Component', () => {
   it('Alert UI component should render properly', () => {
-    render(<Alert />)
-    const select = screen.getByTestId('alert-test')
+    render(<Toast />)
+    const select = screen.getByTestId('toast-test')
     isOk(select)
   })
 })
