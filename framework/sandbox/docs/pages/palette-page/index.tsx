@@ -14,7 +14,12 @@ import { Page } from '../../components'
 
 const PalettePage = () => {
   const {
-    black, white, transparent, ...rest
+    mono: {
+      black,
+      white,
+      transparent,
+    },
+    ...rest
   } = palette
   return (
     <Page
