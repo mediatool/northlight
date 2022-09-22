@@ -14,7 +14,7 @@ export const Step = (({
   ...rest
 }: StepProps) => (
   <ChakraStep { ...rest }>
-    <VStack>
+    <VStack alignItems="flex-start">
       <Text fontWeight="semibold">{ label }</Text>
       <Text>{ description }</Text>
     </VStack>
