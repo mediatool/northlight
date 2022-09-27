@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { cloneElement, forwardRef } from 'react'
 import { IconButton as ChakraIconButton, IconButtonProps } from '@chakra-ui/react'
 import { ButtonVariants } from '../../types'
 
@@ -10,13 +10,18 @@ export const IconButton = forwardRef(({
   variant = 'default',
   icon,
   'aria-label': ariaLabel,
+  children,
   ...rest
-}: Props, ref: any) => (
-  <ChakraIconButton
-    variant={ variant }
-    icon={ icon }
-    aria-label={ ariaLabel }
-    ref={ ref }
-    { ...rest }
-  />
-))
+}: Props, ref: any) => {
+  const IconComponent = icon ?? children as JSX.Element
+  const IconWithSize = cloneElement(IconComponent, { size: rest.size })
+  return (
+    <ChakraIconButton
+      variant={ variant }
+      icon={ IconWithSize }
+      aria-label={ ariaLabel }
+      ref={ ref }
+      { ...rest }
+    />
+  )
+})

@@ -1,9 +1,35 @@
 import {
   ComponentSingleStyleConfig,
 } from '@chakra-ui/react'
-import { borderRadius, color } from '@mediatool/tokens'
+import { borderRadius, color, sizing, spacing } from '@mediatool/tokens'
 
 export const Button: ComponentSingleStyleConfig = {
+  sizes: {
+    xs: {
+      height: sizing.button.xs,
+      minWidth: sizing.button.xs,
+      paddingInlineStart: spacing['padding-inline'].button.xs,
+      paddingInlineEnd: spacing['padding-inline'].button.xs,
+    },
+    sm: {
+      height: sizing.button.sm,
+      minWidth: sizing.button.sm,
+      paddingInlineStart: spacing['padding-inline'].button.md,
+      paddingInlineEnd: spacing['padding-inline'].button.md,
+    },
+    md: {
+      height: sizing.button.md,
+      minWidth: sizing.button.md,
+      paddingInlineStart: spacing['padding-inline'].button.md,
+      paddingInlineEnd: spacing['padding-inline'].button.md,
+    },
+    lg: {
+      height: sizing.button.lg,
+      minWidth: sizing.button.lg,
+      paddingInlineStart: spacing['padding-inline'].button.lg,
+      paddingInlineEnd: spacing['padding-inline'].button.lg,
+    },
+  },
   baseStyle: {
     color: color.text.default,
     borderRadius: borderRadius.button.default,

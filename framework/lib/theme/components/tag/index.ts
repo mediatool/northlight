@@ -1,10 +1,11 @@
 import {
-  ComponentSingleStyleConfig,
+  ComponentMultiStyleConfig,
 } from '@chakra-ui/react'
 import { borderRadius, color } from '@mediatool/tokens'
 import { getContrastColor } from '../../../utilities'
 
-export const Tag: ComponentSingleStyleConfig = {
+export const Tag: ComponentMultiStyleConfig = {
+  parts: [ 'container' ],
   baseStyle: {
     container: {
       fontWeight: 'semibold',
