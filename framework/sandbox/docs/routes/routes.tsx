@@ -151,4 +151,9 @@ export const routes: Route[] = [
     component: () => import('../pages/tabs-page'),
     exact: true,
   },
+  {
+    path: '/clipboard-input',
+    component: () => import('../pages/clipboard-input-page'),
+    exact: true,
+  },
 ]
