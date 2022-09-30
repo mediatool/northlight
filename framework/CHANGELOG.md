@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.8.3...@mediatool/ui@1.9.0) (2022-09-30)
+
+
+### Features
+
+* **ui/framework:** add clipboard input ([8dc6bd1](https://github.com/mediatool/mediatool/commit/8dc6bd1a1bf61912a2288c62fae43192139e8802))
+* **ui/framework:** add theme for icon ([36aed6f](https://github.com/mediatool/mediatool/commit/36aed6f3841f2e90fa2f6f137aa3e78c7a8a91c5))
+* **ui/framework:** icons in icon button scale on button size ([5d55669](https://github.com/mediatool/mediatool/commit/5d556690a71f6c78e532623ea617873e8dcba1ae))
+* **ui/framework:** theme tooltip ([a7f787c](https://github.com/mediatool/mediatool/commit/a7f787c8d4d99b45abdc067a0d26c13fb50726bb))
+
+
+
+
+
 ## [1.8.3](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.8.2...@mediatool/ui@1.8.3) (2022-09-22)
 
 
