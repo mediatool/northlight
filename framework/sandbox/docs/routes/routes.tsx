@@ -22,6 +22,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/color-picker',
+    component: () => import('../pages/color-picker-page'),
+    exact: true,
+  },
+  {
     path: '/breadcrumbs',
     component: () => import('../pages/breadcrumbs-page'),
     exact: true,

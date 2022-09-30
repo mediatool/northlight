@@ -34,6 +34,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/close-button',
   },
   {
+    title: 'Color Picker',
+    path: '/docs/color-picker',
+  },
+  {
     title: 'Date picker',
     path: '/docs/date-picker',
   },
