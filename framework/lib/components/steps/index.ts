@@ -1,9 +1,9 @@
 export {
-  Tabs as Steps,
   TabIndicator as StepIndicator,
-  TabList as StepList,
-  TabPanel as StepPanel,
   TabPanels as StepPanels,
 } from '@chakra-ui/react'
 
+export * from './step-panel'
+export * from './steps'
 export * from './step'
+export * from './step-list'

@@ -1,22 +1,38 @@
 import React from 'react'
-import { Tab as ChakraStep, TabProps } from '@chakra-ui/react'
+import { Tab as ChakraStep, TabProps, useMultiStyleConfig } from '@chakra-ui/react'
 import { Text } from '../text'
-import { VStack } from '../stack'
+import { Flex } from '../flex'
+import { ring } from '../../utilities'
 
 interface StepProps extends TabProps {
   label: string
   description?: string
 }
 
-export const Step = (({
+export const Step = ({
   label,
   description,
   ...rest
-}: StepProps) => (
-  <ChakraStep { ...rest }>
-    <VStack alignItems="flex-start">
-      <Text fontWeight="semibold">{ label }</Text>
-      <Text>{ description }</Text>
-    </VStack>
-  </ChakraStep>
-))
+}: StepProps) => {
+  const {
+    step,
+    label: labelStyle,
+    description: descriptionStyle,
+  } = useMultiStyleConfig('Step')
+  return (
+    <ChakraStep { ...rest } sx={ step }>
+      <Flex
+        flexDirection="column"
+        alignItems="flex-start"
+        _groupFocusVisible={ ring }
+      >
+        <Text fontSize="xs" sx={ labelStyle }>
+          { label }
+        </Text>
+        <Text fontSize="sm" sx={ descriptionStyle }>
+          { description }
+        </Text>
+      </Flex>
+    </ChakraStep>
+  )
+}

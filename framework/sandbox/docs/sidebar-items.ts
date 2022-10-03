@@ -114,6 +114,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/switch',
   },
   {
+    title: 'Steps',
+    path: '/docs/steps',
+  },
+  {
     title: 'Tabs',
     path: '/docs/tabs',
   },
