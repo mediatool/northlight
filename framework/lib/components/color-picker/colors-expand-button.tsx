@@ -25,7 +25,7 @@ export const ColorsExpandButton = ({
         break
       case 'PageUp':
         e.preventDefault()
-        focusPrevious({ wrap: true, repeat: columns * 5 })
+        focusPrevious({ wrap: false, repeat: columns * 5 })
         break
       default:
         defaultArrows(e)
