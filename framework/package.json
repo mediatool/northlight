@@ -1,6 +1,6 @@
 {
   "name": "@mediatool/ui",
-  "version": "1.9.1",
+  "version": "1.10.0",
   "description": "Mediatool UI library, based on Chakra-ui",
   "license": "MIT",
   "author": "Mediatool",
@@ -35,7 +35,7 @@
     "@internationalized/date": "^3.0.0",
     "@mantine/hooks": "^3.4.3",
     "@mediatool/icons": "^1.2.0",
-    "@mediatool/tokens": "^1.4.0",
+    "@mediatool/tokens": "^1.5.0",
     "@react-aria/button": "^3.6.0",
     "@react-aria/calendar": "^3.0.1",
     "@react-aria/datepicker": "^3.1.0",

@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.9.1...@mediatool/ui@1.10.0) (2022-10-05)
+
+
+### Bug Fixes
+
+* **ui/framework:** style steps and add docs ([cff333d](https://github.com/mediatool/mediatool/commit/cff333d3db958d501a382e52a18cd65f65f877f7))
+
+
+### Features
+
+* **ui:** Color Picker UI Component ([302101c](https://github.com/mediatool/mediatool/commit/302101c3b61974d93f60d2f287add9f6aab753fd))
+* **ui:** Improved utility getContrastColor ([b07754c](https://github.com/mediatool/mediatool/commit/b07754c083706cb47d07deafdc8153a9177a0743))
+* **ui:** unit test color picker ([e5965ad](https://github.com/mediatool/mediatool/commit/e5965adbabb786895b3996c27b88b5e866b5a314))
+* **ui:** unit test getShades ([d5d6f73](https://github.com/mediatool/mediatool/commit/d5d6f73033292b00c60cfe3dd0ab3c26059413d6))
+
+
+
+
+
 ## [1.9.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.9.0...@mediatool/ui@1.9.1) (2022-10-05)
 
 **Note:** Version bump only for package @mediatool/ui
