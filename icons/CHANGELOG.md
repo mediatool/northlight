@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mediatool/mediatool/compare/@mediatool/icons@1.1.3...@mediatool/icons@1.2.0) (2022-10-05)
+
+
+### Features
+
+* **ui/icons:** add alpha order icons ([1176383](https://github.com/mediatool/mediatool/commit/1176383b627e38f37fdd4d7d77bc63e2aa1013c5))
+
+
+
+
+
 ## [1.1.3](https://github.com/mediatool/mediatool/compare/@mediatool/icons@1.1.2...@mediatool/icons@1.1.3) (2022-09-07)
 
 **Note:** Version bump only for package @mediatool/icons
