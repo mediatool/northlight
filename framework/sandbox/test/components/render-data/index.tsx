@@ -20,7 +20,7 @@ export const RenderData = ({ averageRenderTime, rerenderTimes }: Props) => (
       <GetRating renderingTime={ averageRenderTime } />
     </Stat>
     <Stat>
-      <StatLabel>Rerendered Tooltips</StatLabel>
+      <StatLabel>Rerendered</StatLabel>
       <StatNumber>{ rerenderTimes } times</StatNumber>
     </Stat>
   </HStack>

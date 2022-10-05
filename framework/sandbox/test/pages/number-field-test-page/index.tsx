@@ -1,9 +1,22 @@
 import React from 'react'
-import { NumberInputField } from '../../../../lib/components'
+import { HStack, NumberInputField } from '../../../../lib/components'
 import { TestFieldPage } from '../../components'
+import { Page } from '../../components/page'
 
 const NumberFieldTestPage = () => (
-  <TestFieldPage name="number-input" as={ NumberInputField } />
+  <Page title="Number Input Field Test">
+    <HStack spacing={ 8 } maxW="1200px" alignItems="start">
+      <TestFieldPage
+        name="number-input"
+        as={ NumberInputField }
+      />
+      <TestFieldPage
+        name="number-input"
+        as={ NumberInputField }
+        virtualized={ true }
+      />
+    </HStack>
+  </Page>
 )
 
 export default NumberFieldTestPage

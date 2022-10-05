@@ -1,9 +1,23 @@
 import React from 'react'
-import { TextField } from '../../../../lib/components'
+import { HStack, TextField } from '../../../../lib/components'
 import { TestFieldPage } from '../../components'
+import { Page } from '../../components/page'
 
 const TextFieldTestPage = () => (
-  <TestFieldPage name="textfield" as={ TextField } />
+  <Page title="Text Field Test">
+    <HStack spacing={ 8 } maxW="1200px" alignItems="start">
+      <TestFieldPage
+        name="textfield"
+        as={ TextField }
+      />
+      <TestFieldPage
+        name="textfield"
+        virtualized={ true }
+        as={ TextField }
+      />
+    </HStack>
+  </Page>
+
 )
 
 export default TextFieldTestPage

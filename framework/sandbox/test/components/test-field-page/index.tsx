@@ -1,23 +1,29 @@
 import React, { ElementType, Profiler, useState } from 'react'
-import { Field } from 'formik'
 import {
+  Box,
   Button,
+  FastList,
   Form,
+  Heading,
   NumberInputField,
   Stack,
   Text,
   TextField,
 } from '../../../../lib/components'
 import { RenderData } from '../render-data'
-import { Page } from '../page'
 import { arrayWithLength, initialValuesWithLength } from '../../utilities'
 
 type Props = {
   name: string
   as?: ElementType
+  virtualized?: boolean
 }
 
-export const TestFieldPage = ({ name, as: As = TextField }: Props) => {
+export const TestFieldPage = ({
+  name,
+  as: As = TextField,
+  virtualized = false,
+}: Props) => {
   const [ fields, setFields ] = useState<number[]>([])
   const [ averageRenderTime, setAverageRenderTime ] = useState(0)
   const [ rerenderTimes, setRerenderTimes ] = useState(0)
@@ -43,55 +49,65 @@ export const TestFieldPage = ({ name, as: As = TextField }: Props) => {
   }
 
   return (
-    <Page
-      title={ `${name} field test` }
-      subtitle={ (
-        <Text>Measure performance by stress testing how many fields our form can handle </Text>
-      ) }
-    >
-      <Stack w="40%">
-        <Form
-          initialValues={ { fields: 0 } }
-          onSubmit={ (values) => {
-            setFields(arrayWithLength(values.fields))
-          } }
-        >
-          { (form) => (
-            <Stack>
-              <NumberInputField
-                name="fields"
-                label={ `Generate ${form.values.fields} ${name} fields` }
-              />
-              <Button type="submit">Generate</Button>
-            </Stack>
-          ) }
-        </Form>
-        <Form
-          initialValues={ initialValuesWithLength(10000, `${name}`) }
-          onSubmit={ (_values, { resetForm }) => {
-            setFields([])
-            resetForm()
-          } }
-        >
-          <Stack spacing={ 3 }>
-            <Text>Testing { fields.length } { name } Field</Text>
-            <Stack maxH="350px" overflow="scroll" pr={ 4 } pl={ 2 }>
-              <Profiler id={ `${name}-field-profiler` } onRender={ updateRenderData }>
-                { fields.map((number) => (
-                  <Field
-                    as={ As }
+    <Stack w="40%">
+      <Heading size="md">{ name } { virtualized ? 'Virtualized' : '' }</Heading>
+      <Form
+        initialValues={ { fields: 0 } }
+        onSubmit={ (values) => {
+          setFields(arrayWithLength(values.fields))
+        } }
+      >
+        { ({ watch }) => (
+          <Stack>
+            <NumberInputField
+              name="fields"
+              label={ `Generate ${watch().fields} ${name} fields` }
+            />
+            <Button type="submit">Generate</Button>
+          </Stack>
+        ) }
+      </Form>
+      <Form
+        initialValues={ initialValuesWithLength(10000, `${name}`) }
+        onSubmit={ (_values) => {
+          setFields([])
+        } }
+      >
+        <Stack spacing={ 3 }>
+          <Text>Testing { fields.length } { name } Field</Text>
+          <Stack maxH="350px" overflow="scroll" pr={ 4 } pl={ 2 }>
+            <Profiler id={ `${name}-field-profiler` } onRender={ updateRenderData }>
+              { virtualized
+                ? (
+                  <Box h="350px">
+                    <FastList
+                      itemCount={ fields.length }
+                      itemSize={ 80 }
+                      overscanCount={ 50 }
+                    >
+                      { (index) => (
+                        <As
+                          name={ `${name}-${index}` }
+                          label={ `${name}-${index}` }
+                        />
+                      ) }
+                    </FastList>
+                  </Box>
+                )
+                : fields.map((number) => (
+                  <As
                     name={ `${name}-${number}` }
                     label={ `${name}-${number}` }
                     key={ number }
                   />
-                )) }
-              </Profiler>
-            </Stack>
-            <Button type="submit" variant="success" onClick={ getRenderData }>Reset</Button>
+                ))
+              }
+            </Profiler>
           </Stack>
-        </Form>
-        <RenderData averageRenderTime={ averageRenderTime } rerenderTimes={ rerenderTimes } />
-      </Stack>
-    </Page>
+          <Button type="submit" variant="success" onClick={ getRenderData }>Reset</Button>
+        </Stack>
+      </Form>
+      <RenderData averageRenderTime={ averageRenderTime } rerenderTimes={ rerenderTimes } />
+    </Stack>
   )
 }

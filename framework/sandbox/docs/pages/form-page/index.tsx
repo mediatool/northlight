@@ -1,182 +1,156 @@
 import React from 'react'
 import {
-  Box,
   Button,
-  CheckboxField,
   Code,
-  DatePickerField,
   Form,
-  FormattedNumberInput,
   Heading,
-  Image,
-  MaskedTextInput,
-  NumberInputField,
-  RadioField,
-  RadioGroupField,
-  SelectField,
+  Link,
   Stack,
-  SwitchField,
   Text,
   TextField,
-  TextareaField,
-  VStack,
+  createValidator,
 } from '../../../../lib/components'
 import { Page } from '../../components'
-import { textfield } from '../../../assets/png'
-import { useLocalizedNumberFormatter } from '../formatted-number-input-page/use-localized-number-formatter'
 
-const FormPage = () => {
-  const formatter = useLocalizedNumberFormatter()
+const validation = [
+  {
+    prop: 'firstName',
+    predicate: (value: string) => value === 'admin',
+    error: 'Nice try',
+  },
+]
 
-  return (
-    <Page
-      title="Form"
-      subtitle={ (
-        <>
-          <Heading as="h2" size="sm">
-            The Form component is an abstraction of Formik.
-          </Heading>
-          <Text fontSize="sm">
-            Form delegates the complexity of managing forms to Formik.
-          </Text>
-          <Text fontSize="sm">
-            We have composed our own primitives, that are hooked up to Formik via TextField.
-            <br />
-            If you desire to use these in a formik context, they should be passed to TextField
-            via the <strong>component</strong> prop.
-            <br />
-          </Text>
-        </>
-      ) }
-    >
-      <VStack w="40%">
-        <Form
-          initialValues={ {
-            phone: '',
-            firstname: '',
-            lastname: '',
-            formatted: '',
-            review: '',
-            newsletter: true,
-            personalInfoAgree: false,
-            userRole: '',
-            dogs: 0,
-            experience: '',
-            sports: [],
-            date: '',
-          } }
-          onSubmit={ () => {} }
+const FormPage = () => (
+  <Page
+    title="Form"
+    subtitle={ (
+      <>
+        <Heading as="h2" size="sm">
+          The Form Component is an abstraction of react-hook-form,
+        </Heading>
+        <Text fontSize="sm" w="40%" lineHeight="3ch">
+          It's main purpose is to initialize a form with the right state, and
+          pass down the context to it's children to be used with our field
+          components.
+        </Text>
+      </>
+    ) }
+  >
+    <Stack spacing={ 4 }>
+      <Heading size="md">
+        Our forms are built on{ ' ' }
+        <Link
+          color="blue.600"
+          _hover={ { textDecoration: 'underline' } }
+          href="https://react-hook-form.com/api"
+          isExternal={ true }
         >
-          { (form) => (
-            <Stack spacing={ 3 }>
-              <TextField
-                label="Firstname"
-                name="firstname"
-                placeholder="John"
-              />
-              <TextField
-                label="Lastname"
-                name="lastname"
-                placeholder="Doe"
-              />
-              <TextField
-                label="Phone"
-                name="phone"
-                as={ MaskedTextInput }
-                mask="+46 99 999 99 99"
-                placeholder="Masked Phone number"
-              />
-              <TextField
-                label="Number"
-                name="formatted"
-                as={ FormattedNumberInput }
-                formatter={ formatter }
-                placeholder="I format according to your locale as you type numbers"
-              />
-              <SelectField
-                name="experience"
-                label="Years of work experience"
-                options={ [
-                  { label: '0-1: Youngling', value: 'rank1' },
-                  { label: '1-3: Padawan ', value: 'rank2' },
-                  { label: '3-7: Knight ', value: 'rank3' },
-                  { label: '7-12: Master', value: 'rank4' },
-                  { label: '12-20: Council Member', value: 'rank5' },
-                  { label: '20-30: Master of the order', value: 'rank6' },
-                  { label: '30+: Grand Master', value: 'rank7' },
-                ] }
-                isMulti={ false }
-              />
-              <SelectField
-                name="sports"
-                label="What sports have you played the last month?"
-                options={ [
-                  { label: 'Soccer', value: 'soccer' },
-                  { label: 'Golf', value: 'golf' },
-                  { label: 'Basketball', value: 'basketball' },
-                  { label: 'Tennis', value: 'tennis' },
-                  { label: 'Cricket', value: 'cricket' },
-                  { label: 'Boxing', value: 'boxing' },
-                  { label: 'Hockey', value: 'hockey' },
-                  { label: 'Baseball', value: 'baseball' },
-                  { label: 'Chess', value: 'chess' },
-                  { label: 'Swimming', value: 'swimming' },
-                  { label: 'Volleyball', value: 'volleyball' },
-                  { label: 'Rugby', value: 'rugby' },
-                  { label: 'Bowling', value: 'bowling' },
-                  { label: 'Figure Skating', value: 'figure-skating' },
-                  { label: 'Table Tennis', value: 'table-tennis' },
-                  { label: 'Surfing', value: 'surfing' },
-                  { label: 'Running', value: 'running' },
-                  { label: 'Sailing', value: 'sailing' },
-                  { label: 'Archery', value: 'archery' },
-                  { label: 'Motorcycle Racing', value: 'motorcycle-racing' },
-                  { label: 'Horse Racing', value: 'horse-racing' },
-                  { label: 'Badminton', value: 'Badminton' },
-                  { label: 'Fencing', value: 'fencing' },
-                  { label: 'Bodybuilding', value: 'body-building' },
-                  { label: 'Rowing', value: 'rowing' },
-                  { label: 'Handball', value: 'handball' },
-                  { label: 'Scoop', value: 'Scoop' },
-                ] }
-                isMulti={ true }
-              />
-              <NumberInputField
-                name="dogs"
-                label="Enter how many dogs you own"
-                direction="row"
-              />
-              <SwitchField name="newsletter" label="Subscribe to the newsletter" />
-              <CheckboxField name="personalInfoAgree" label="I hereby consent to Mediatool using my personal information for further processing" />
-              <RadioGroupField
-                name="userRole"
-                label="Choose your role"
-                direction="row"
-              >
-                <RadioField value="user">User</RadioField>
-                <RadioField value="editor">Editor</RadioField>
-                <RadioField value="admin">Admin</RadioField>
-              </RadioGroupField>
-              <TextareaField
-                name="review"
-                label="Please write a short description of your work experience"
-              />
-              <DatePickerField name="date" label="Pick a date" direction="row" />
-              <Button type="submit" variant="success">Submit</Button>
-              <Code p={ 4 }>{ JSON.stringify(form.values, null, 2) }</Code>
-            </Stack>
-          ) }
-        </Form>
-      </VStack>
-      <Box mt={ 6 } maxW="50%">
-        <Text>This example composes { '<Form>' }, { '<TextField>' }, { '<SwitchField>' }, { '<CheckboxField />' }, { '<RadioGroupField>' }, { '<TextareField>' }, { '<SelectField>' }, and { '<Button>' }</Text>
-      </Box>
-      <Image
-        src={ textfield }
-        mt={ 10 }
-      />
-    </Page>
-  )
-}
+          React Hook Form
+        </Link>
+      </Heading>
+      <Text>
+        Mediatool uses one <strong>{ '<Form />' }</strong> Component{ ' ' }
+      </Text>
+      <Code w="max-content" display="block" whiteSpace="pre">
+        { `<Form
+    initialValues={ {} }
+    onSubmit={ () => {} }
+  >
+    {(methods) => {
+      //FORM_FIELDS
+    }}
+</Form>
+` }
+      </Code>
+      <Text>It takes the following props</Text>
+      <Text>
+        <strong>initialValues </strong>- this should contain an object with the
+        name of the fields and their default values.
+      </Text>
+      <Text>
+        <strong>onSubmit </strong>- This is a function on the form ( formValues
+        ) { '=>' } void
+      </Text>
+      <Text>
+        <strong>validate </strong>- This should be used together with
+        createValidator to pass down validation, look at form demo example 2
+        code to see how used
+      </Text>
+      <Text>
+        <strong>formSettings </strong>
+        - This can be used to customize the form, look at <br />
+        <Link
+          href="https://react-hook-form.com/api/useform"
+          color="blue.600"
+          _hover={ { textDecoration: 'underline' } }
+          isExternal={ true }
+        >
+          React Hook Form useForm Docs
+        </Link>
+        , all the options you can pass down to useForm, you can pass down to
+        formSettings,
+      </Text>
+      <Text>
+        <strong>children </strong>
+        - Any valid JSX, can also be types as a function on the form <br />
+        (methods) { '=>' } (JSX), where methods contain the form context,
+        and is equivalent to the return value of useForm
+      </Text>
+      <Text>
+        <strong>methods </strong>
+        - In the edge case that you need to initialize the form with the useForm
+        hook outside of the Form component, <br />
+        you can initalize the form as usual and pass down your custom methods as
+        a prop.
+      </Text>
+      <Text>
+        <strong>Example</strong>
+      </Text>
+      <Code w="max-content" display="block" whiteSpace="pre">
+        { `import { createValidator } from '@mediatool/ui'
+
+const validation = [{
+  prop: 'firstName',
+  predicate: (value) => value === 'admin',
+  error: 'Nice try'
+}]
+
+<Form
+  initialValues={ { firstName: '' } }
+  onSubmit={ (values) => { console.log(values) } }
+  formSettings={ {
+    mode: 'onSubmit',
+  } }
+  validate={ createValidator(validation) }
+>
+  <HStack alignItems="end" w="300px">
+    <TextField
+      name="firstName"
+      label="First Name"
+      isRequired={ true }
+    />
+    <Button type="submit" variant="success">Validate</Button>
+  </HStack>
+</Form>
+` }
+      </Code>
+      <Form
+        initialValues={ { firstName: '' } }
+        onSubmit={ () => {} }
+        formSettings={ {
+          mode: 'onSubmit',
+        } }
+        validate={ createValidator(validation) }
+      >
+        <Stack w="300px">
+          <TextField name="firstName" label="First Name" isRequired={ true } />
+          <Button type="submit" variant="success">
+            Validate
+          </Button>
+        </Stack>
+      </Form>
+    </Stack>
+  </Page>
+)
 
 export default FormPage

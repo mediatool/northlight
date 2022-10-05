@@ -43,18 +43,18 @@ const TextFieldTestPage = () => {
         <Text>Measure the performance of Chakra tooltips</Text>
       ) }
     >
-      <Stack w="40%">
+      <Stack w="20%">
         <Form
           initialValues={ { amountOfTooltips: 0 } }
           onSubmit={ (values) => {
             setAmountOfTooltips(arrayWithLength(values.amountOfTooltips))
           } }
         >
-          { (form) => (
+          { ({ watch }) => (
             <Stack>
               <NumberInputField
                 name="amountOfTooltips"
-                label={ `Generate ${form.values.amountOfTooltips} Tooltips` }
+                label={ `Generate ${watch().amountOfTooltips} Tooltips` }
               />
               <Button type="submit">Generate</Button>
             </Stack>
