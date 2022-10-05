@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.4.0...@mediatool/tokens@1.5.0) (2022-10-05)
+
+
+### Features
+
+* **ui/tokens:** added steps tokens ([986b4f1](https://github.com/mediatool/mediatool/commit/986b4f1bc1f48e11e3d1b89f8f32905cfa6d15ce))
+
+
+### Reverts
+
+* Revert "Publish" ([37b584b](https://github.com/mediatool/mediatool/commit/37b584b61dccc22d472f5c0a2539fca498433c1e))
+
+
+
+
+
 # [1.4.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.3.3...@mediatool/tokens@1.4.0) (2022-09-30)
 
 
