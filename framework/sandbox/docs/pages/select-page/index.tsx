@@ -17,10 +17,10 @@ interface Option {
   value: string
   label: string
   id: string
-  color?:string
+  color?: string
 }
 
-export const options:Option[] = [
+export const options: Option[] = [
   { value: 'blue', label: 'Blue', id: 'blue', color: '#0000FF' },
   { value: 'purple', label: 'Purple', id: 'purple' },
   { value: 'red', label: 'Red', id: 'red', color: '#FF0000' },
@@ -33,13 +33,15 @@ const SelectPage = () => (
   <Page
     title="Select"
     subtitle={ (
-      <Text fontWeight="semibold">We use
+      <Text fontWeight="semibold">
+        We use
         <Link
           target="_blank"
           color="blue.500"
           href="https://github.com/csandman/chakra-react-select"
+          isExternal={ true }
         >
-        &nbsp;Chakra React Select&nbsp;
+          &nbsp;Chakra React Select&nbsp;
         </Link>
         as core component.
       </Text>
@@ -50,11 +52,10 @@ const SelectPage = () => (
         <Text>Mediatool uses 2 selects components: </Text>
         <HStack spacing={ 8 }>
           <VStack spacing={ 4 }>
-            <Select
-              options={ options }
-              placeholder="Select here..."
-            />
-            <Code w="max-content">{ '<Select placeholder="Select a color..." />' }</Code>
+            <Select options={ options } placeholder="Select here..." />
+            <Code w="max-content">
+              { '<Select placeholder="Select a color..." />' }
+            </Code>
           </VStack>
           <VStack spacing={ 4 }>
             <Select
@@ -62,32 +63,43 @@ const SelectPage = () => (
               options={ options }
               placeholder="Multiselect here..."
             />
-            <Code w="max-content">{ '<Select isMulti placeholder="Multiselect a color..." />' }</Code>
+            <Code w="max-content">
+              { '<Select isMulti placeholder="Multiselect a color..." />' }
+            </Code>
           </VStack>
         </HStack>
       </Stack>
-      <Text>There are 2 additional <strong>states</strong> of the select compoennt: </Text>
+      <Text>
+        There are 2 additional <strong>states</strong> of the select compoennt:{ ' ' }
+      </Text>
       <VStack alignItems="flex-start" spacing={ 8 }>
         <Stack spacing={ 4 }>
-          <Text><strong>isDisabled:</strong></Text>
-          <Select
-            placeholder="Disabled"
-            isDisabled={ true }
-          />
-          <Code w="max-content">{ '<Select isDisabled={ true } placeholder="Disabled" />' }</Code>
+          <Text>
+            <strong>isDisabled:</strong>
+          </Text>
+          <Select placeholder="Disabled" isDisabled={ true } />
+          <Code w="max-content">
+            { '<Select isDisabled={ true } placeholder="Disabled" />' }
+          </Code>
         </Stack>
         <Stack spacing={ 4 }>
-          <Text><strong>isInvalid:</strong></Text>
+          <Text>
+            <strong>isInvalid:</strong>
+          </Text>
           <Select
             options={ options }
             isInvalid={ true }
             placeholder="Your selection is invalid"
           />
-          <Code w="max-content">{ '<Select isInvalid={ true } placeholder="Invalid" />' }</Code>
+          <Code w="max-content">
+            { '<Select isInvalid={ true } placeholder="Invalid" />' }
+          </Code>
         </Stack>
       </VStack>
       <Divider />
-      <Text>They can be used in 3 different <strong>size</strong></Text>
+      <Text>
+        They can be used in 3 different <strong>size</strong>
+      </Text>
       <VStack spacing={ 4 } maxWidth="400px">
         <Select size="sm" placeholder="sm" options={ options } />
         <Select size="md" placeholder="md" options={ options } />
@@ -97,9 +109,13 @@ const SelectPage = () => (
         <Text>Example: </Text>
         <Code w="max-content">{ '<Select size="md" placeholder="md" />' }</Code>
       </HStack>
-      <Text>If you don't specify a size it will be <strong>md</strong></Text>
+      <Text>
+        If you don't specify a size it will be <strong>md</strong>
+      </Text>
       <Divider />
-      <Text>When using the select in form use <strong>SelectField</strong></Text>
+      <Text>
+        When using the select in form use <strong>SelectField</strong>
+      </Text>
       <Form initialValues={ { color: 'blue' } } onSubmit={ () => {} }>
         <Stack spacing={ 4 }>
           <HStack maxW="400px">
@@ -114,10 +130,11 @@ const SelectPage = () => (
             />
           </HStack>
           <Text>
-            It works the same way but must have a <strong>name</strong> and <strong>label</strong>
+            It works the same way but must have a <strong>name</strong> and{ ' ' }
+            <strong>label</strong>
           </Text>
-          <Code w="max-content" display="block" whiteSpace="pre">{
-`<SelectField
+          <Code w="max-content" display="block" whiteSpace="pre">
+            { `<SelectField
   name="color"
   label="Select Field"
   options={ [
@@ -129,6 +146,23 @@ const SelectPage = () => (
           </Code>
         </Stack>
       </Form>
+      <Divider />
+      <Text>You can pass down a custom test id to { '<Select />' }</Text>
+      <Code w="max-content" display="block" whiteSpace="pre">
+        { `<SelectField
+  data-testid="custom-test-id"
+  ...
+/>` }
+      </Code>
+      <Text>
+        To grab the combobox component(the part of the select with all the juicy
+        stuff),
+        <br />grab <strong>child[0].child[2].child[0].child[1].child[0]</strong>. Example:
+      </Text>
+      <Code w="max-content" display="block" whiteSpace="pre">
+        { ` const select = screen.getByTestId('custom-testid).children[0].children[2].children[0].children[1].children[0]
+` }
+      </Code>
     </Stack>
   </Page>
 )

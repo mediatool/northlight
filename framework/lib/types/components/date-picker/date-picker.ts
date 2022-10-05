@@ -4,7 +4,7 @@ import { AriaDateFieldProps, AriaDatePickerProps } from '@react-aria/datepicker'
 import { AriaButtonProps } from '@react-types/button'
 import { CalendarState } from '@react-stately/calendar'
 import { DateFieldState, DateSegment } from '@react-stately/datepicker'
-import { FieldValidator } from 'formik'
+import { RegisterOptions } from 'react-hook-form'
 
 export interface YearValue {
   value: CalendarDate
@@ -37,6 +37,7 @@ export interface CalendarGridProps {
 export interface DatePickerProps extends AriaDatePickerProps<DateValue> {
   firstDayOfWeek: 'sunday' | 'monday'
   resetDate: ()=> void
+  isInvalid?: boolean
 }
 
 export interface DatePickerFieldProps extends ChakraInputProps {
@@ -44,6 +45,7 @@ export interface DatePickerFieldProps extends ChakraInputProps {
   label: string
   minValue?: string
   maxValue?: string
-  validate?: FieldValidator
+  validate?: RegisterOptions
+  firstDayOfWeek?: 'sunday' | 'monday'
   direction?: StackDirection
 }

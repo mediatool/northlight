@@ -1,16 +1,11 @@
-import React, { ComponentType } from 'react'
-import { LinkProps, NavLink, NavLinkProps } from 'react-router-dom'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { Center } from '../center'
 import { Icon } from '../icon'
 import { Link } from '../link'
 import { Stack } from '../stack'
 import { Text } from '../text'
-
-type NavbarItemProps = LinkProps & NavLinkProps & {
-  to: string
-  icon: ComponentType
-  renderTitle?: boolean
-}
+import { NavbarItemProps } from '../../types'
 
 export const NavbarItem = ({
   to,

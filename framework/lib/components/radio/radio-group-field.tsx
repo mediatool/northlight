@@ -1,40 +1,35 @@
 import React from 'react'
-import { useField } from 'formik'
-import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { RadioFieldGroupProps } from '../../types'
+import { Field } from '../form'
 import { RadioGroup } from './radio-group'
-import { Stack } from '../stack'
 
 export const RadioGroupField = ({
   name,
   label,
+  children,
+  direction,
   isRequired,
   validate,
-  direction = 'row',
-  children,
   ...rest
-}: RadioFieldGroupProps) => {
-  const [ field, { error, touched } ] = useField({ name, validate })
-  const { value } = field
-
-  return (
-    <FormControl
-      isInvalid={ !!error && touched }
-      isRequired={ isRequired }
-    >
-      <Stack spacing="auto" direction={ direction }>
-        <FormLabel htmlFor={ name } mb={ direction === 'row' ? 0 : 1 }>{ label }</FormLabel>
-        <RadioGroup
-          name={ name }
-          value={ value }
-          direction={ direction }
-          data-testid="radio-group-field-test-id"
-          { ...rest }
-        >
-          { children }
-        </RadioGroup>
-      </Stack>
-      <FormErrorMessage>{ error }</FormErrorMessage>
-    </FormControl>
-  )
-}
+}: RadioFieldGroupProps) => (
+  <Field
+    name={ name }
+    label={ label }
+    direction={ direction }
+    isRequired={ isRequired }
+    validate={ validate }
+  >
+    { (field) => (
+      <RadioGroup
+        name={ name }
+        onChange={ field.onChange }
+        direction={ direction }
+        value={ field.value }
+        data-testid="radio-group-field-test-id"
+        { ...rest }
+      >
+        { children }
+      </RadioGroup>
+    ) }
+  </Field>
+)

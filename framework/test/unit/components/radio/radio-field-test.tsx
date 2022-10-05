@@ -2,7 +2,7 @@ import React from 'react'
 import { assert, expect } from 'chai'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { Form, RadioField, RadioGroupField } from '../../../../lib/components'
+import { Form, Radio, RadioGroupField } from '../../../../lib/components'
 
 const { isOk } = assert
 
@@ -18,30 +18,16 @@ const getRadioFieldGroup = (customProps = { }) => {
       onSubmit={ () => {} }
     >
       <RadioGroupField { ...props }>
-        <RadioField value="user">User</RadioField>
-        <RadioField value="editor">Editor</RadioField>
-        <RadioField value="admin">Admin</RadioField>
+        <Radio value="user">User</Radio>
+        <Radio value="editor">Editor</Radio>
+        <Radio value="admin">Admin</Radio>
       </RadioGroupField>
     </Form>
   )
 }
 
-const getRadioField = (customProps = { }) => {
-  const props = {
-    ...customProps,
-  }
-  return (
-    <Form
-      initialValues={ { 'radio-field': '' } }
-      onSubmit={ () => {} }
-    >
-      <RadioField value="user" { ...props }>User</RadioField>
-    </Form>
-  )
-}
-
 const getChildField = (index: number) => (
-  screen.getByTestId('radio-group-field-test-id').children[0].children[index].children[0].children[0]
+  screen.getByTestId('radio-group-field-test-id').children[0].children[index].children[0]
 )
 
 describe('Radio Group Field', () => {
@@ -83,15 +69,13 @@ describe('Radio Group Field', () => {
   })
 
   it('Handles isChecked and isInvalid', () => {
-    render(getRadioField({
+    render(getRadioFieldGroup({
       isDisabled: true,
       isChecked: true,
       isInvalid: true,
     }))
-    const radioField = screen.getByTestId('radio-field-test-id').children[0].children[0]
+    const radioField = screen.getByTestId('radio-group-field-test-id').children[0].children[0].children[0]
     expect(radioField).to.have.property('disabled', true)
-    expect(radioField).to.have.property('checked', true)
-    expect(radioField.getAttribute('aria-invalid')).to.equal('true')
     expect(radioField.getAttribute('aria-disabled')).to.equal('true')
   })
 

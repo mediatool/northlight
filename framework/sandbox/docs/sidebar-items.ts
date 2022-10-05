@@ -46,8 +46,24 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/date-range-picker',
   },
   {
+    title: 'Fast List',
+    path: '/docs/fast-list',
+  },
+  {
+    title: 'Fast Grid',
+    path: '/docs/fast-grid',
+  },
+  {
+    title: 'Field',
+    path: '/docs/form-field',
+  },
+  {
     title: 'Form',
     path: '/docs/form',
+  },
+  {
+    title: 'Form Demo',
+    path: '/docs/form-example',
   },
   {
     title: 'Formatted number input',

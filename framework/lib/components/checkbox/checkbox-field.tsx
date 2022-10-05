@@ -1,38 +1,32 @@
 import React from 'react'
-import { Field, useField } from 'formik'
-import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
-import { Checkbox } from './checkbox'
 import { CheckboxFieldProps } from '../../types'
-import { HStack } from '../stack'
+import { Field } from '../form'
+import { Checkbox } from './checkbox'
 
 export const CheckboxField = ({
   name,
   label,
-  validate,
-  isRequired,
   variant,
+  isRequired,
+  validate,
   ...rest
-}: CheckboxFieldProps) => {
-  const [ field, { error, touched } ] = useField({ name, validate })
-  const { value } = field
-
-  return (
-    <FormControl
-      isInvalid={ !!error && touched }
-      isRequired={ isRequired }
-    >
-      <HStack spacing="auto">
-        <FormLabel htmlFor={ name } mb={ 0 }>{ label }</FormLabel>
-        <Field
-          as={ Checkbox }
-          name={ name }
-          value={ value }
-          variant={ variant }
-          data-testid="checkbox-field-test-id"
-          { ...rest }
-        />
-      </HStack>
-      <FormErrorMessage>{ error }</FormErrorMessage>
-    </FormControl>
-  )
-}
+}: CheckboxFieldProps) => (
+  <Field
+    name={ name }
+    label={ label }
+    direction="row"
+    isRequired={ isRequired }
+    validate={ validate }
+  >
+    { (field) => (
+      <Checkbox
+        name={ name }
+        data-testid="checkbox-field-test-id"
+        onChange={ field.onChange }
+        value={ field.value }
+        variant={ variant }
+        { ...rest }
+      />
+    ) }
+  </Field>
+)

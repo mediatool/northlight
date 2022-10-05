@@ -32,6 +32,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/multi-select-field-test-page',
+    component: () => import('../pages/multi-select-field-test-page'),
+    exact: true,
+  },
+  {
     path: '/tooltip-test-page',
     component: () => import('../pages/tooltip-test-page'),
     exact: true,

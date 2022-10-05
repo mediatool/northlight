@@ -5,7 +5,6 @@ import {
   Form,
   HStack,
   Radio,
-  RadioField,
   RadioGroup,
   RadioGroupField,
   Stack,
@@ -90,9 +89,9 @@ const RadioButtonPage = () => (
 
             <HStack maxW="400px" borderBottom="1px solid black">
               <RadioGroupField name="placement" label="Choose Placement">
-                <RadioField value="1">First</RadioField>
-                <RadioField value="2">Second</RadioField>
-                <RadioField value="3">Third</RadioField>
+                <Radio value="1">First</Radio>
+                <Radio value="2">Second</Radio>
+                <Radio value="3">Third</Radio>
               </RadioGroupField>
             </HStack>
             <Code w="max-content" display="block" whiteSpace="pre">{
@@ -116,9 +115,9 @@ const RadioButtonPage = () => (
                 label="Select Vertical Alignment"
                 direction="column"
               >
-                <RadioField value="1">Top</RadioField>
-                <RadioField value="2">Center</RadioField>
-                <RadioField value="3">Bottom</RadioField>
+                <Radio value="1">Top</Radio>
+                <Radio value="2">Center</Radio>
+                <Radio value="3">Bottom</Radio>
               </RadioGroupField>
             </HStack>
             <Code w="max-content" display="block" whiteSpace="pre">{

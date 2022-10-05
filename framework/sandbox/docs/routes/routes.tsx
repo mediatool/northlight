@@ -32,6 +32,16 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/fast-list',
+    component: () => import('../pages/fast-list-page'),
+    exact: true,
+  },
+  {
+    path: '/fast-grid',
+    component: () => import('../pages/fast-grid-page'),
+    exact: true,
+  },
+  {
     path: '/button',
     component: () => import('../pages/button-page'),
     exact: true,
@@ -64,6 +74,16 @@ export const routes: Route[] = [
   {
     path: '/form',
     component: () => import('../pages/form-page'),
+    exact: true,
+  },
+  {
+    path: '/form-example',
+    component: () => import('../pages/form-demo-page'),
+    exact: true,
+  },
+  {
+    path: '/form-field',
+    component: () => import('../pages/field-page'),
     exact: true,
   },
   {

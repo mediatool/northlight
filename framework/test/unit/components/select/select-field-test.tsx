@@ -83,4 +83,13 @@ describe('SelectField', () => {
     await user.tab()
     expect(selectField).to.deep.equal(document.activeElement)
   })
+
+  it('Can pass down data-testid', () => {
+    render(getSelectField({
+      'data-testid': 'react-select-test-id',
+    }))
+    const byComboBox = screen.getByRole('combobox')
+    const byTestId = screen.getByTestId('react-select-test-id').children[0].children[2].children[0].children[1].children[0]
+    expect(byComboBox).to.deep.equal(byTestId)
+  })
 })

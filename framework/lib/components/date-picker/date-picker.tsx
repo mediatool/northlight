@@ -13,7 +13,7 @@ import { InputGroup, InputRightElement } from '../input'
 import { Popover, PopoverAnchor, PopoverContent } from '../popover'
 
 export const DatePicker = (props: DatePickerProps) => {
-  const { isDisabled, resetDate } = props
+  const { isDisabled, resetDate, isInvalid = false } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
 
@@ -45,7 +45,7 @@ export const DatePicker = (props: DatePickerProps) => {
             <DateField
               { ...fieldProps }
               isDisabled={ !!isDisabled }
-              isInvalid={ state.validationState === 'invalid' }
+              isInvalid={ isInvalid }
             />
             <InputRightElement>
               <Trigger

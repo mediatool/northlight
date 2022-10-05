@@ -1,35 +1,35 @@
 import React from 'react'
-import { Field, useField } from 'formik'
-import { TextFieldProps } from './types'
+import { TextFieldProps } from '../../types'
 import { PlainTextInput } from './plain-text-input'
-import { FormattedNumberInput } from './formatted-number-input'
-import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
+import { Field } from '../form'
 
 export function TextField ({
   name,
-  validate,
   label,
   as: As = PlainTextInput,
+  isRequired,
+  validate,
+  direction = 'column',
   ...rest
 }: TextFieldProps) {
-  const [ field, { error, touched }, { setValue } ] = useField({ name, validate })
-  const { value } = field
-
   return (
-    <FormControl isInvalid={ !!error && touched }>
-      { label && (
-        <FormLabel htmlFor={ name } mb={ 1 }>{ label }</FormLabel>
+    <Field
+      name={ name }
+      label={ label }
+      isRequired={ isRequired }
+      validate={ validate }
+      direction={ direction }
+    >
+      { ({ onChange, value }) => (
+        <As
+          id={ name }
+          name={ name }
+          onChange={ onChange }
+          value={ value?.replace(/\s+/g, ' ').trimStart() || '' }
+          data-testid="text-field-test-id"
+          { ...rest }
+        />
       ) }
-      <Field
-        as={ As }
-        onChange={ As === FormattedNumberInput ? setValue : field.onChange }
-        value={ value }
-        name={ name }
-        id={ name }
-        data-testid="text-field-test-id"
-        { ...rest }
-      />
-      <FormErrorMessage>{ error }</FormErrorMessage>
-    </FormControl>
+    </Field>
   )
 }

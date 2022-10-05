@@ -6,6 +6,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/test/checkbox-field-test-page',
   },
   {
+    title: 'Multi Select Field',
+    path: '/test/multi-select-field-test-page',
+  },
+  {
     title: 'Number Input Field',
     path: '/test/number-field-test-page',
   },

@@ -1,49 +1,60 @@
-import { Field, useField } from 'formik'
 import React from 'react'
-import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
+import { FieldValues } from 'react-hook-form'
+import { CloseIcon } from '@chakra-ui/icons'
 import { SelectFieldProps } from '../../types'
-import { FormikSelect } from './formik-select'
-import { Stack } from '../stack'
+import { Field } from '../form'
+import { Select } from './select'
+import { HStack } from '../stack'
+import { IconButton } from '../icon-button'
 
 export function SelectField<T> ({
   name,
   label,
-  isRequired,
-  validate,
   options,
   direction = 'column',
-  onChange,
   isMulti,
-  isDisabled,
-  isInvalid,
-  size,
+  isRequired,
+  validate,
   ...rest
 }: SelectFieldProps<T>) {
-  const [ field, { error, touched } ] = useField({ name, validate })
-  const { value } = field
-  const isColumn = direction === 'column'
-
   return (
-    <FormControl
-      isInvalid={ !!error && touched }
+    <Field
+      name={ name }
+      label={ label }
+      direction={ direction }
       isRequired={ isRequired }
+      isSelect={ true }
+      validate={ validate }
     >
-      <Stack spacing="auto" direction={ direction } alignItems={ isColumn ? 'stretch' : 'center' }>
-        <FormLabel mb={ isColumn ? 1 : 0 }>{ label }</FormLabel>
-        <Field
-          component={ FormikSelect }
-          name={ name }
-          options={ options }
-          onChange={ onChange }
-          value={ value }
-          isMulti={ isMulti }
-          isDisabled={ isDisabled }
-          isInvalid={ isInvalid }
-          size={ size }
-          { ...rest }
-        />
-      </Stack>
-      <FormErrorMessage>{ error }</FormErrorMessage>
-    </FormControl>
+      { ({ value, onChange }) => (
+        <HStack w="full">
+          <Select
+            name={ name }
+            options={ options }
+            isMulti={ isMulti }
+            onChange={ (values: FieldValues) => onChange(
+              isMulti
+                ? values.map((item: any) => item.value)
+                : values.value
+            ) }
+            value={
+              value
+                ? options?.filter((option: any) => value.includes(option.value)) as any
+                : null
+            }
+            { ...rest }
+          />
+          <IconButton
+            aria-label={ `${name}-close-button` }
+            variant="danger"
+            size="sm"
+            fontSize="xs"
+            hidden={ value === '' }
+            onClick={ onChange }
+            icon={ <CloseIcon /> }
+          />
+        </HStack>
+      ) }
+    </Field>
   )
 }

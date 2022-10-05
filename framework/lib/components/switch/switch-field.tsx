@@ -1,38 +1,30 @@
 import React from 'react'
-import { Field, useField } from 'formik'
-import { Switch } from './switch'
-import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { SwitchFieldProps } from '../../types'
-import { HStack } from '../stack'
+import { Field } from '../form'
+import { Switch } from './switch'
 
 export const SwitchField = ({
   name,
   label,
-  validate,
   isRequired,
+  validate,
   ...rest
-}: SwitchFieldProps) => {
-  const [ field, { error, touched } ] = useField({ name, validate })
-  const { value } = field
-
-  return (
-    <FormControl
-      isInvalid={ !!error && touched }
-      isRequired={ isRequired }
-    >
-      <HStack spacing="auto">
-        <FormLabel htmlFor={ name } mb={ 0 }>
-          { label }
-        </FormLabel>
-        <Field
-          as={ Switch }
-          name={ name }
-          value={ value }
-          data-testid="switch-field-test-id"
-          { ...rest }
-        />
-      </HStack>
-      <FormErrorMessage>{ error }</FormErrorMessage>
-    </FormControl>
-  )
-}
+}: SwitchFieldProps) => (
+  <Field
+    name={ name }
+    label={ label }
+    isRequired={ isRequired }
+    direction="row"
+    validate={ validate }
+  >
+    { (field) => (
+      <Switch
+        name={ name }
+        onChange={ field.onChange }
+        value={ field.value }
+        data-testid="switch-field-test-id"
+        { ...rest }
+      />
+    ) }
+  </Field>
+)

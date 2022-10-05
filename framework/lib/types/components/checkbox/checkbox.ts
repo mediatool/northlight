@@ -1,6 +1,6 @@
 import { CheckboxProps as ChakraCheckboxProps } from '@chakra-ui/react'
-import { FieldValidator } from 'formik'
 import { ChangeEvent } from 'react'
+import { RegisterOptions } from 'react-hook-form'
 
 export type CheckboxVariants = 'default' | 'rounded'
 
@@ -17,7 +17,7 @@ export type CheckboxFieldProps =
   & {
     name: string
     label: string
-    validate?: FieldValidator
+    validate?: RegisterOptions
     isRequired?: boolean
     variant?: CheckboxVariants
   }

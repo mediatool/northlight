@@ -1,12 +1,10 @@
 import React from 'react'
 import { Input } from '../input'
-import { FormattedNumberInputProps } from './types'
+import { FormattedNumberInputProps } from '../../types'
 
 export const FormattedNumberInput = ({
   onChange,
-  setValue,
   formatter,
-  field,
   ...rest
 }: FormattedNumberInputProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -15,15 +13,10 @@ export const FormattedNumberInput = ({
       ? value
       : formatter.unFormat(value)
 
-    if (setValue !== undefined) {
-      setValue(unFormattedValue)
-      return
-    }
-
     onChange?.(unFormattedValue)
   }
 
-  const value = (field?.value ?? rest.value) ?? ''
+  const value = rest.value ?? ''
 
   const formattedValue = value === ''
     ? value

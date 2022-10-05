@@ -1,6 +1,4 @@
-import { PinSize } from './types'
-
-type PinSizeTuple = [ number, number ]
+import { PinSize, PinSizeTuple } from '../../types'
 
 export const pinSizeMap: Record<PinSize, PinSizeTuple > = {
   sm: [ 4, 2 ],

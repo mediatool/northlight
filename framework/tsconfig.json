@@ -36,7 +36,6 @@
     "types": [
       "@chakra-ui/react",
       "vite/client",
-      "formik",
       "mocha"
     ],
     "typeRoots": ["@types"],

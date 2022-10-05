@@ -1,58 +1,39 @@
 import React from 'react'
 import { DateValue, parseDate } from '@internationalized/date'
-import { Field, useField } from 'formik'
-import { DatePicker } from './date-picker'
-import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { DatePickerFieldProps } from '../../types'
-import { Stack } from '../stack'
+import { Field } from '../form'
+import { DatePicker } from './date-picker'
 
-export const DatePickerField = (props: DatePickerFieldProps) => {
-  const {
-    name,
-    validate,
-    minValue,
-    maxValue,
-    isRequired,
-    direction = 'column',
-    ...rest
-  } = props
-  const [ { value }, { error }, { setValue } ] = useField({ name, validate })
-  const isColumn = direction === 'column'
+export const DatePickerField = ({
+  name,
+  minValue,
+  maxValue,
+  isRequired,
+  direction = 'column',
+  label,
+  validate,
+  firstDayOfWeek = 'monday',
+}: DatePickerFieldProps) => (
+  <Field
+    name={ name }
+    label={ label }
+    direction={ direction }
+    isRequired={ isRequired }
+    validate={ validate }
+  >
+    { ({ value, onChange }, { formState: { errors } }) => (
+      <DatePicker
+        firstDayOfWeek={ firstDayOfWeek }
+        aria-label={ label }
+        isInvalid={ Boolean(errors[name]) }
+        onChange={ (date: DateValue) => onChange(date?.toString()) }
+        resetDate={ onChange }
+        value={ value ? parseDate(value) as any : null }
+        minValue={ minValue ? parseDate(minValue) as DateValue : undefined }
+        maxValue={ maxValue ? parseDate(maxValue) as DateValue : undefined }
+        validationState={ errors.name ? 'invalid' : 'valid' }
+      />
+    ) }
+  </Field>
 
-  const setDate = (date: DateValue) => {
-    const formatted = date?.toString() || null
-    setValue(formatted)
-  }
-
-  const resetDate = () => setValue(null)
-
-  const handleChange = (date: DateValue | null) => (
-    date
-      ? setDate(date)
-      : resetDate()
-  )
-
-  return (
-    <FormControl
-      isInvalid={ !!error }
-      isRequired={ isRequired }
-    >
-      <Stack spacing="auto" direction={ direction } alignItems={ isColumn ? 'stretch' : 'center' }>
-        <FormLabel mb={ isColumn ? 1 : 0 }>{ props.label }</FormLabel>
-        <Field
-          name={ name }
-          component={ DatePicker }
-          value={ value ? parseDate(value) : null }
-          onChange={ handleChange }
-          minValue={ minValue ? parseDate(minValue) : null }
-          maxValue={ maxValue ? parseDate(maxValue) : null }
-          validationState={ error ? 'invalid' : 'valid' }
-          isColumn={ isColumn }
-          resetDate={ resetDate }
-          { ...rest }
-        />
-      </Stack>
-      <FormErrorMessage>{ error }</FormErrorMessage>
-    </FormControl>
-  )
-}
+)

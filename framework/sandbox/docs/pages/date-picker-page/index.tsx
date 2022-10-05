@@ -29,10 +29,10 @@ const DatePickerPage = () => {
           FirstDayOfWeek: { JSON.stringify(user.preferences.firstDayOfWeek, null, 2) }
         </Code>
         <Form initialValues={ { date: null } } onSubmit={ () => {} }>
-          { (form) => (
+          { ({ watch }) => (
             <Stack w={ 64 } spacing={ 20 }>
               <DatePickerField name="date" label="Pick a date" />
-              <Code p={ 4 }>{ JSON.stringify(form.values, null, 2) }</Code>
+              <Code p={ 4 }>{ JSON.stringify(watch(), null, 2) }</Code>
             </Stack>
           ) }
         </Form>

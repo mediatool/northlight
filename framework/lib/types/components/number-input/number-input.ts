@@ -1,6 +1,5 @@
 import { NumberInputProps as ChakraNumberInputProps } from '@chakra-ui/react'
-import { FieldValidator } from 'formik'
-import { ChangeEvent } from 'react'
+import { RegisterOptions } from 'react-hook-form'
 import { StackingDirection } from '../field'
 
 export type NumberInputSizeProps = 'sm' | 'md' | 'lg'
@@ -9,7 +8,7 @@ export type NumberInputProps =
   ChakraNumberInputProps
   & {
     size?: NumberInputSizeProps
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+    onChange?: (...event: any[]) => void
   }
 
 export type NumberInputFieldProps =
@@ -17,7 +16,7 @@ export type NumberInputFieldProps =
   & {
     name: string
     label: string
-    validate?: FieldValidator
+    validate?: RegisterOptions
     size?: NumberInputSizeProps
     isRequired?: boolean
     unit?: string

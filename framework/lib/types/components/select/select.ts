@@ -1,20 +1,9 @@
 import { Props as ChakraReactSelectProps, GroupBase, MenuListProps } from 'chakra-react-select'
-import { FieldProps, FieldValidator } from 'formik'
 import { ComponentType } from 'react'
+import { RegisterOptions } from 'react-hook-form'
 import { StackingDirection } from '../field'
 
 type size = 'sm' | 'md' | 'lg'
-
-export interface FormikSelectProps extends FieldProps {
-  options: any[]
-  isMulti?: boolean
-  className?: string
-  placeholder?: string
-  name?: string
-  isDisabled?: boolean
-  isInvalid?: boolean
-  size?: size
-}
 
 export type SelectProps<T> =
 ChakraReactSelectProps<T, boolean, GroupBase<T>>
@@ -23,6 +12,7 @@ ChakraReactSelectProps<T, boolean, GroupBase<T>>
   onChange?: any
   name?: string
   size?: size
+  'data-testid'?: string
   loadingList?: ComponentType<MenuListProps<T, boolean, GroupBase<T>>> | undefined
 }
 
@@ -32,7 +22,7 @@ export type SelectFieldProps<T> =
     direction?: StackingDirection
     name: string
     label: string
-    validate?: FieldValidator
+    validate?: RegisterOptions
     isRequired?: boolean
     isMulti?: boolean
   }
