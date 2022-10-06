@@ -29,9 +29,14 @@ export const Input: ComponentMultiStyleConfig = {
             borderColor: color.border.input.readonly,
           },
         },
-        _focusVisibles: {
+        _focusVisible: {
           bgColor: color.background.input['outline-focus'],
           borderColor: color.border.input.focus,
+          _invalid: {
+            boxShadow: `0 0 0 1px ${color.border.input.error}`,
+            bgColor: color.background.input['outline-error'],
+            borderColor: color.border.input.error,
+          },
         },
         _hover: {
           bgColor: color.background.input['outline-hover'],
@@ -78,8 +83,14 @@ export const Input: ComponentMultiStyleConfig = {
           _readOnly: {
             bgColor: color.background.input['filled-default'],
           },
+          _invalid: {
+            boxShadow: `0 0 0 1px ${color.border.input.error}`,
+            bgColor: color.background.input['outline-error'],
+            borderColor: color.border.input.error,
+          },
         },
         _invalid: {
+          boxShadow: `0 0 0 1px ${color.border.input.error}`,
           bgColor: color.background.input['filled-error'],
           borderColor: color.border.input.error,
         },
@@ -114,6 +125,11 @@ export const Input: ComponentMultiStyleConfig = {
           _hover: {
             boxShadow: `0 1px 0 0 ${color.border.input.focus}`,
             borderColor: color.border.input.focus,
+          },
+          _invalid: {
+            boxShadow: `0 1px 0 0 ${color.border.input.error}`,
+            borderColor: color.border.input.error,
+            bgColor: color.background.input['flushed-error'],
           },
         },
         _invalid: {
