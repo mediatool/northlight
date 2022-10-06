@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.10.0...@mediatool/ui@1.10.1) (2022-10-06)
+
+
+### Bug Fixes
+
+* **ui/framework:** display isInvalid while input is focused ([75529ed](https://github.com/mediatool/mediatool/commit/75529ed0840a89bafc128aff4c36aa8771f99115))
+
+
+
+
+
 # [1.10.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.9.1...@mediatool/ui@1.10.0) (2022-10-05)
 
 
