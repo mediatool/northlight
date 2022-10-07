@@ -12,8 +12,9 @@ const DatePickerPage = () => {
           .slice(0, 2)
           .map(([ key, usr ]) => (
             <Avatar
+              name={ usr.name }
               key={ usr.name }
-              src={ usr.image }
+              image={ usr.image }
               onClick={ () => setUser(users[key]) }
               transition="all .2s"
               size="lg"

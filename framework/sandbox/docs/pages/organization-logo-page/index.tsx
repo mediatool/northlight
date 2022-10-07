@@ -1,5 +1,5 @@
 import React from 'react'
-import { mediatoolLogo } from '~/sandbox/assets/png'
+import { mediatoolLogo } from '../../../assets/png'
 import {
   Code,
   Divider,

@@ -1,8 +1,8 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderRadius, color, sizing } from '@mediatool/tokens'
+import { borderRadius, color, coreSizing, palette, sizing } from '@mediatool/tokens'
 
 export const Avatar: ComponentMultiStyleConfig = {
-  parts: [ 'container', 'text' ],
+  parts: [ 'container', 'text', 'badge', 'icon' ],
   sizes: {
     '2xs': {
       container: {
@@ -30,6 +30,9 @@ export const Avatar: ComponentMultiStyleConfig = {
       text: {
         lineHeight: sizing.avatar.sm,
       },
+      icon: {
+        boxSize: sizing.avatar.sm,
+      },
     },
     md: {
       container: {
@@ -39,6 +42,9 @@ export const Avatar: ComponentMultiStyleConfig = {
       text: {
         lineHeight: sizing.avatar.md,
       },
+      icon: {
+        boxSize: sizing.avatar.md,
+      },
     },
     lg: {
       container: {
@@ -47,6 +53,9 @@ export const Avatar: ComponentMultiStyleConfig = {
       },
       text: {
         lineHeight: sizing.avatar.lg,
+      },
+      icon: {
+        boxSize: sizing.avatar.lg,
       },
     },
     xl: {
@@ -75,6 +84,30 @@ export const Avatar: ComponentMultiStyleConfig = {
       color: color.text.inverted,
       display: 'grid',
       placeItems: 'center',
+      objectFit: 'cover',
+      position: 'relative',
+    },
+    userImage: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+    },
+    badge: {
+      position: 'absolute',
+      bottom: `-${coreSizing['1']}`,
+      right: `-${coreSizing['1']}`,
+      minWidth: coreSizing['5'],
+      height: coreSizing['5'],
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      fontSize: 'xs',
+      fontWeight: 'semibold',
+      padding: coreSizing['0a'],
+      bgColor: palette.red['500'],
+      color: color.text.inverted,
+      borderRadius: borderRadius.avatar.square,
+      border: 'none',
     },
 
   }),
@@ -86,6 +119,9 @@ export const Avatar: ComponentMultiStyleConfig = {
           borderRadius: borderRadius.avatar.square,
         },
       },
+      badge: {
+        borderRadius: borderRadius.avatar.square,
+      },
     },
     rounded: {
       container: {
@@ -93,6 +129,9 @@ export const Avatar: ComponentMultiStyleConfig = {
         '> img': {
           borderRadius: borderRadius.avatar.rounded,
         },
+      },
+      badge: {
+        borderRadius: borderRadius.avatar.rounded,
       },
     },
   },

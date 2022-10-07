@@ -25,12 +25,14 @@ const FormattedNumberInputPage = () => {
         { Object.entries(users).map(([ key, usr ]) => (
           <Avatar
             key={ usr.name }
-            src={ usr.image }
+            name={ usr.name }
+            image={ usr.image }
             onClick={ () => setUser(users[key]) }
             transition="all .2s"
             size="lg"
             borderWidth={ usr.name === user.name ? '3px' : 'none' }
             borderColor="green.600"
+            notificationCount={ 2 }
             _hover={ { transform: 'scale(1.2)', cursor: 'pointer' } }
           />
         )) }
