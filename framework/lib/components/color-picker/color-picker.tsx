@@ -39,17 +39,21 @@ export const ColorPicker = ({
     trigger,
     heading,
   } = useMultiStyleConfig('ColorPicker', { selectedColor, size })
+
   const baseColors = [ ...colors ]
   for (let i = 0; i < baseColors.length % columns; i += 1) {
     baseColors.push('')
   }
 
   useEffect(() => {
+    setSelectedColor(value)
+  }, [ value ])
+
+  useEffect(() => {
     if (expanded) {
       setVisibleColors((prev) => prev.concat(expandedColors))
     } else {
       setVisibleColors(baseColors)
-      setSelectedColor(value)
     }
   }, [ expanded ])
 

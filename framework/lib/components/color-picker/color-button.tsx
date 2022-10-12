@@ -16,7 +16,6 @@ export const ColorButton = forwardRef(({
   selected = false,
 }: ColorButtonProps, ref: any) => {
   if (!color) return <Box />
-
   const { defaultArrows, focusPrevious, focusNext } = useArrowFocus(columns)
 
   const onKeyDown = (e: any) => {
