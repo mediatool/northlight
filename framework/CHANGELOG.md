@@ -3,17 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.10.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.10.1...@mediatool/ui@1.10.2) (2022-10-12)
-
-
-### Bug Fixes
-
-* **ui/framework:** update value of color picker from the outside ([cb0ffb7](https://github.com/mediatool/mediatool/commit/cb0ffb740b554240ff5be8a66f52e91649dbee7b))
-
-
-
-
-
 ## [1.10.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.10.0...@mediatool/ui@1.10.1) (2022-10-06)
 
 
