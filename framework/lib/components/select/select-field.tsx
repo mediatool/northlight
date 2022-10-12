@@ -15,6 +15,7 @@ export function SelectField<T> ({
   isMulti,
   isRequired,
   validate,
+  isClearable = true,
   ...rest
 }: SelectFieldProps<T>) {
   return (
@@ -49,7 +50,7 @@ export function SelectField<T> ({
             variant="danger"
             size="sm"
             fontSize="xs"
-            hidden={ value === '' }
+            hidden={ value === '' || !isClearable }
             onClick={ onChange }
             icon={ <CloseIcon /> }
           />

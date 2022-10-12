@@ -24,6 +24,7 @@ export type FieldProps = {
 
 export type FormProps<FormValues extends FieldValues> = {
   initialValues: FormValues
+  enableReInitialize?: boolean
   onSubmit: SubmitHandler<FormValues>
   methods?: UseFormReturn<FormValues>
   formSettings?: UseFormProps<FormValues>

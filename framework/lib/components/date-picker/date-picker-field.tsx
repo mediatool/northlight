@@ -13,6 +13,7 @@ export const DatePickerField = ({
   label,
   validate,
   firstDayOfWeek = 'monday',
+  ...rest
 }: DatePickerFieldProps) => (
   <Field
     name={ name }
@@ -32,6 +33,7 @@ export const DatePickerField = ({
         minValue={ minValue ? parseDate(minValue) as DateValue : undefined }
         maxValue={ maxValue ? parseDate(maxValue) as DateValue : undefined }
         validationState={ errors.name ? 'invalid' : 'valid' }
+        { ...rest as any }
       />
     ) }
   </Field>

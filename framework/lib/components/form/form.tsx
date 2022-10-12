@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import {
   DeepPartial,
   FieldValues,
@@ -6,6 +6,7 @@ import {
   Resolver,
   useForm,
 } from 'react-hook-form'
+import { equals } from 'ramda'
 import { FormProps } from '../../types'
 
 export const createValidator = (validationSpecs: any) => (values: any) => {
@@ -21,7 +22,7 @@ export const createValidator = (validationSpecs: any) => (values: any) => {
   return errors
 }
 
-function convert<FormValues> (validation: Record<keyof FormValues, string>) {
+export function convertValidation<FormValues> (validation: Record<keyof FormValues, string>) {
   const reactHookFormValidation: any = {}
   Object.keys(validation).forEach((key) => {
     reactHookFormValidation[key] = {
@@ -38,6 +39,7 @@ export function Form<FormValues extends FieldValues> ({
   validate,
   formSettings = { mode: 'onChange' },
   methods = undefined,
+  enableReInitialize = false,
   ...rest
 }: FormProps<FormValues>) {
   const customResolver: Resolver<FormValues, any> = (
@@ -46,7 +48,7 @@ export function Form<FormValues extends FieldValues> ({
     _options
   ) => ({
     values,
-    errors: convert<FormValues>(validate(values)),
+    errors: convertValidation<FormValues>(validate(values)),
   })
 
   const newMethods =
@@ -56,6 +58,16 @@ export function Form<FormValues extends FieldValues> ({
       resolver: validate ? customResolver : undefined,
       ...formSettings,
     })
+
+  if (enableReInitialize) {
+    const initalValuesImage = useRef({})
+    useEffect(() => {
+      if (!equals(initalValuesImage.current, initialValues)) {
+        newMethods?.reset(initialValues)
+        initalValuesImage.current = initialValues
+      }
+    }, [ initialValues ])
+  }
 
   return (
     <FormProvider { ...newMethods } { ...rest }>
