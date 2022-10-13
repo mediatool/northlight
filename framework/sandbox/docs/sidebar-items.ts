@@ -14,6 +14,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/breadcrumbs',
   },
   {
+    title: 'Blinker',
+    path: '/docs/blinker',
+  },
+  {
     title: 'Button',
     path: '/docs/button',
   },
