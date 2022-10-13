@@ -17,7 +17,7 @@ Below you'll find an overview of each part of the library.
   Sandbox is built like a mini micro frontend, meaning that `docs` and `demo` are 2 separate mini apps. `Docs` is the default fallback when navigating to localhost:3008/.
 
   `Docs` works similarly to how Storybook works, without the need to write explicit stories. Simply follow existing structure and create a component under `docs/pages`, and write code just how you normally would.
-  `Demo` is the actual sandbox, in which you can battle test components and try out new ideas and concepts.
+  `Test` was created by Sebastian. However he was not aware that other main pages were documented here, thus he didn't write any explanation.
 
 ## Contribute
 Want to contribute? Awesome! Find what suits your use-case below and follow the steps.

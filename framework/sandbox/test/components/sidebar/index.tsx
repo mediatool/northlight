@@ -1,5 +1,5 @@
 import React from 'react'
-import { FileBlankDuo, PlugDuo, SmileyDuo } from '@mediatool/icons'
+import { FileBlankDuo, SmileyDuo } from '@mediatool/icons'
 import { Box, HStack, Heading, Icon, Link, Stack, Text } from '../../../../lib/components'
 import { SidebarItem } from '../sidebar-item'
 import { sidebarItems } from '../../sidebar-items'
@@ -34,19 +34,6 @@ export const TestSidebar = () => (
           >
             <Icon as={ FileBlankDuo } boxSize={ 6 } />
             <Text>Docs</Text>
-          </HStack>
-        </Link>
-        <Link
-          href="/demo"
-          borderRadius={ 2 }
-          _hover={ hoverStyles }
-        >
-          <HStack
-            p={ 2 }
-            spacing={ 2 }
-          >
-            <Icon as={ PlugDuo } boxSize={ 6 } />
-            <Text>Demo</Text>
           </HStack>
         </Link>
         <Link

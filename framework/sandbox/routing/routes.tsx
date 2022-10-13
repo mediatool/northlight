@@ -6,10 +6,6 @@ export const sandboxRoutes: Route[] = [
     component: () => import('../docs/app'),
   },
   {
-    path: '/demo',
-    component: () => import('../demo/app'),
-  },
-  {
     path: '/test',
     component: () => import('../test/app'),
   },
