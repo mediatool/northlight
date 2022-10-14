@@ -2,16 +2,17 @@ import React from 'react'
 import { chakra, useMultiStyleConfig } from '@chakra-ui/react'
 import { BusinessContactDuo, UserSquareDuo } from '@mediatool/icons'
 import { Icon } from '../icon'
-import { Box } from '../box'
-import { getInitials } from '../../utilities'
-import { AvatarProps } from './types'
+import { AvatarBadge } from './avatar-badge'
+import { getInitials, ring } from '../../utilities'
+import { AvatarButtonProps } from './types'
 
-export const Avatar = ({
+export const AvatarButton = ({
   variant = 'square',
   name,
   image,
+  notificationCount = 0,
   ...rest
-}: AvatarProps) => {
+}: AvatarButtonProps) => {
   const { container, text, userImage, icon } = useMultiStyleConfig('Avatar', {
     variant,
     image,
@@ -19,7 +20,12 @@ export const Avatar = ({
   })
 
   return (
-    <Box __css={ container } data-testid="avatar-test-id">
+    <chakra.button
+      __css={ container }
+      _focusVisible={ ring }
+      data-testid="avatar-button-test-id"
+      { ...rest }
+    >
       { image
         ? (
           <chakra.img
@@ -40,7 +46,9 @@ export const Avatar = ({
               aria-label="user-avatar"
             />
           ) }
-
-    </Box>
+      { notificationCount > 0 && (
+        <AvatarBadge notificationCount={ notificationCount } />
+      ) }
+    </chakra.button>
   )
 }

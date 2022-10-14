@@ -1,8 +1,9 @@
 import React from 'react'
 import { assert, expect } from 'chai'
 import { render, screen } from '@testing-library/react'
-import { Avatar } from '../../../../lib/components'
-import { users } from '../../../../sandbox/app/context'
+import userEvent from '@testing-library/user-event'
+import { AvatarButton } from '../../../../lib/components'
+import { users } from '../../../../sandbox/docs/context'
 
 const { isOk } = assert
 
@@ -11,13 +12,13 @@ const getAvatar = (customProps = { }) => {
     ...customProps,
   }
   return (
-    <Avatar { ...props } />
+    <AvatarButton { ...props } />
   )
 }
 
-const getComponent = () => screen.getByTestId('avatar-test-id').children[0]
+const getComponent = () => screen.getByTestId('avatar-button-test-id').children[0]
 
-describe('Avatar', () => {
+describe('AvatarButton', () => {
   it('Renders properly', () => {
     render(getAvatar())
     const avatar = getComponent()
@@ -38,5 +39,22 @@ describe('Avatar', () => {
     render(getAvatar())
     const avatar = getComponent()
     expect(avatar.getAttribute('aria-label')).to.equal('user-avatar')
+  })
+  it('Renders a notification button', () => {
+    render(getAvatar({ notificationCount: 5 }))
+    const notification = screen.getByText('5')
+    isOk(notification)
+  })
+  it('Does not render negative notification counts', () => {
+    render(getAvatar({ notificationCount: -5 }))
+    const notification = screen.queryByText('-5')
+    isOk(!notification)
+  })
+  it('Can focus', async () => {
+    render(getAvatar())
+    const avatar = screen.getByTestId('avatar-button-test-id')
+    const user = userEvent.setup()
+    await user.tab()
+    expect(avatar).to.deep.equal(document.activeElement)
   })
 })
