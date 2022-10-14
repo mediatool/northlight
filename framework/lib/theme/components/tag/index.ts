@@ -2,7 +2,7 @@ import {
   ComponentMultiStyleConfig,
 } from '@chakra-ui/react'
 import { borderRadius, color } from '@mediatool/tokens'
-import { getContrastColor } from '../../../utilities'
+import { getContrastColor } from '../../../utils'
 
 export const Tag: ComponentMultiStyleConfig = {
   parts: [ 'container' ],

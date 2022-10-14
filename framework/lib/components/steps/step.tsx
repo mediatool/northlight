@@ -2,7 +2,7 @@ import React from 'react'
 import { Tab as ChakraStep, TabProps, useMultiStyleConfig } from '@chakra-ui/react'
 import { Text } from '../text'
 import { Flex } from '../flex'
-import { ring } from '../../utilities'
+import { ring } from '../../utils'
 
 interface StepProps extends TabProps {
   label: string

@@ -8,29 +8,7 @@ import {
 } from 'react-hook-form'
 import { equals } from 'ramda'
 import { FormProps } from './types'
-
-export const createValidator = (validationSpecs: any) => (values: any) => {
-  const errors: any = {}
-
-  validationSpecs.forEach((validationSpec: any) => {
-    const { prop, predicate, error, allValues = false } = validationSpec
-    if (predicate(allValues ? values : values[prop])) {
-      errors[prop] = error
-    }
-  })
-
-  return errors
-}
-
-export function convertValidation<FormValues> (validation: Record<keyof FormValues, string>) {
-  const reactHookFormValidation: any = {}
-  Object.keys(validation).forEach((key) => {
-    reactHookFormValidation[key] = {
-      message: validation[key as keyof FormValues],
-    }
-  })
-  return reactHookFormValidation
-}
+import { convertValidation } from '../../utils'
 
 export function Form<FormValues extends FieldValues> ({
   initialValues,

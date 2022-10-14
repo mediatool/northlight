@@ -11,7 +11,7 @@ import {
   Text,
   TextField,
   createValidator,
-} from '../../../../lib/components'
+} from '../../../../lib'
 import { Page } from '../../components'
 
 const validation = [

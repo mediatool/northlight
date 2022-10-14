@@ -9,7 +9,7 @@ import {
   VStack,
 } from '../../../../lib/components'
 import { Color, ColorGrade } from '../../../../lib/types'
-import { getContrastColor } from '../../../../lib/utilities'
+import { getContrastColor } from '../../../../lib/utils'
 import { Page } from '../../components'
 
 const PalettePage = () => {

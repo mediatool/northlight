@@ -1,6 +1,6 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 import { color, coreSizing, sizing } from '@mediatool/tokens'
-import { getContrastColor } from '../../../utilities'
+import { getContrastColor } from '../../../utils'
 
 export const ColorPicker: ComponentMultiStyleConfig = {
   parts: [ 'colorButton', 'trigger', 'heading' ],

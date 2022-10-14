@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { CheckDuo } from '@mediatool/icons'
-import { getContrastColor } from '../../utilities'
+import { getContrastColor } from '../../utils'
 import { Icon } from '../icon'
 import { IconButton } from '../icon-button'
 import { Box } from '../box'
