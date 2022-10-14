@@ -1,6 +1,8 @@
 import React from 'react'
 import {
+  Blinker,
   Box,
+  ColorPickerField,
   DatePickerField,
   HStack,
   Heading,
@@ -58,32 +60,41 @@ const PageOneFields = () => (
       direction="row"
       isRequired={ true }
     />
+    <ColorPickerField
+      name="color"
+      label="Select Color"
+      direction="row"
+    />
   </Stack>
 )
 
 export const PageOneSubscription = () => {
   const formValues = useWatch()
+  const color = useWatch({ name: 'color' })
 
   const { formState: { errors } } = useFormContext()
   return (
-    <HStack alignItems="start" overflow="hidden">
-      <Stack>
-        <Heading size="sm">Values</Heading>
-        <Box fontSize="xs">
-          <pre style={ { fontSize: 'xs' } }>
-            { JSON.stringify(formValues, null, 2) }
-          </pre>
-        </Box>
-      </Stack>
-      <Stack>
-        <Heading size="sm">Errors</Heading>
-        <Box fontSize="xs">
-          <pre style={ { fontSize: 'xs' } }>
-            { JSON.stringify(errors, null, 2) }
-          </pre>
-        </Box>
-      </Stack>
-    </HStack>
+    <Stack spacing={ 4 }>
+      <HStack alignItems="start" overflow="hidden">
+        <Stack>
+          <Heading size="sm">Values</Heading>
+          <Box fontSize="xs">
+            <pre style={ { fontSize: 'xs' } }>
+              { JSON.stringify(formValues, null, 2) }
+            </pre>
+          </Box>
+        </Stack>
+        <Stack>
+          <Heading size="sm">Errors</Heading>
+          <Box fontSize="xs">
+            <pre style={ { fontSize: 'xs' } }>
+              { JSON.stringify(errors, null, 2) }
+            </pre>
+          </Box>
+        </Stack>
+      </HStack>
+      <Blinker size="lg" color={ color } />
+    </Stack>
   )
 }
 

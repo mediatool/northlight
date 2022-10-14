@@ -1,4 +1,5 @@
-import { IconButtonProps } from '@chakra-ui/react'
+import { IconButtonProps, StackDirection } from '@chakra-ui/react'
+import { RegisterOptions } from 'react-hook-form'
 
 type ColorPickerSize = 'sm' | 'md' | 'lg'
 
@@ -26,4 +27,13 @@ export type ColorsExpandButtonProps = {
   onClick: () => void
   size: ColorPickerSize
   expanded: boolean
+}
+
+export type ColorPickerFieldProps = ColorPickerProps & {
+  name: string
+  label: string
+  validate?: RegisterOptions
+  size?: ColorPickerSize
+  isRequired?: boolean
+  direction?: StackDirection
 }

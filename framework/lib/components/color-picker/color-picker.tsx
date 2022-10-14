@@ -46,7 +46,11 @@ export const ColorPicker = ({
   }
 
   useEffect(() => {
-    setSelectedColor(value)
+    if (value === '') {
+      setSelectedColor(null)
+    } else {
+      setSelectedColor(value)
+    }
   }, [ value ])
 
   useEffect(() => {

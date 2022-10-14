@@ -32,7 +32,7 @@ export const FormTwo = ({ isOpen, onClose }: FormOneProps) => {
     dogs: 0,
     newsletter: false,
     date: '',
-
+    color: '',
   }
   const [ values, setValues ] = useState(initialValues)
 
