@@ -16,9 +16,6 @@ export type TextFieldProps = ChakraInputProps & {
   direction?: StackDirection
 }
 
-export type PlainTextInputProps =
-  ChakraInputProps
-
 export type MaskedTextInputProps =
   ChakraInputProps
   & InputMaskProps

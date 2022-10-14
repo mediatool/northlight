@@ -2,8 +2,8 @@ import { Route } from '../../types'
 
 export const routes: Route[] = [
   {
-    path: '/plain-text-input',
-    component: () => import('../pages/plain-text-input'),
+    path: '/input',
+    component: () => import('../pages/input-page'),
     exact: true,
   },
   {

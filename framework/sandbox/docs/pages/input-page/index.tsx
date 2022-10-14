@@ -2,9 +2,9 @@ import React from 'react'
 import {
   Code,
   Divider,
+  Input,
   InputGroup,
   InputLeftAddon,
-  PlainTextInput,
   Stack,
   Text,
   VStack,
@@ -13,7 +13,7 @@ import { DefaultPageSubtitle, Page } from '../../components'
 
 const InputPage = () => (
   <Page
-    title="Plain TextInput"
+    title="Input"
     subtitle={ (
       <DefaultPageSubtitle
         slug="/input"
@@ -24,76 +24,76 @@ const InputPage = () => (
     <Stack spacing={ 4 }>
       <Text>Mediatool uses 3 different input <strong>variants</strong>:</Text>
       <VStack maxWidth="400px" spacing={ 4 }>
-        <PlainTextInput
+        <Input
           variant="outline"
           placeholder="Outline"
         />
-        <PlainTextInput
+        <Input
           variant="filled"
           placeholder="Filled"
         />
-        <PlainTextInput
+        <Input
           variant="flushed"
           placeholder="Flushed"
         />
       </VStack>
       <Text>If you don't specify the variant, it will be <strong>outline</strong></Text>
-      <Code w="max-content">{ '<PlainTextInput variant="outline" placeholder="Outline" />' }</Code>
+      <Code w="max-content">{ '<Input variant="outline" placeholder="Outline" />' }</Code>
       <Divider />
       <Text>They can be used in 4 <strong>sizes</strong>: </Text>
       <VStack maxWidth="400px" spacing={ 4 }>
-        <PlainTextInput
+        <Input
           variant="filled"
           size="xs"
           placeholder="xs"
         />
-        <PlainTextInput
+        <Input
           variant="filled"
           size="sm"
           placeholder="sm"
         />
-        <PlainTextInput
+        <Input
           variant="filled"
           size="md"
           placeholder="md"
         />
-        <PlainTextInput
+        <Input
           variant="filled"
           size="lg"
           placeholder="lg"
         />
       </VStack>
       <Text>If you don't specify the size, it will be <strong>md</strong></Text>
-      <Code w="max-content">{ '<PlainTextInput variant="filled" size="lg" placeholder="lg" />' }</Code>
+      <Code w="max-content">{ '<Input variant="filled" size="lg" placeholder="lg" />' }</Code>
       <Divider />
       <Text>The input states are: </Text>
       <VStack maxWidth="400px" spacing={ 4 }>
-        <PlainTextInput
+        <Input
           placeholder="default"
         />
-        <PlainTextInput
+        <Input
           variant="outline"
           isReadOnly={ true }
           placeholder="isReadOnly"
           defaultValue="isReadOnly"
         />
-        <PlainTextInput
+        <Input
           variant="flushed"
           isInvalid={ true }
           placeholder="isInvalid"
         />
-        <PlainTextInput
+        <Input
           variant="filled"
           isDisabled={ true }
           placeholder="isDisabled"
         />
       </VStack>
-      <Code w="max-content">{ '<PlainTextInput variant="filled" isDisabled={true} placeholder="isDiabled" />' }</Code>
+      <Code w="max-content">{ '<Input variant="filled" isDisabled={true} placeholder="isDiabled" />' }</Code>
       <Divider />
       <Text>It is possible to add an addon to the input </Text>
       <VStack maxWidth="400px" spacing={ 4 }>
         <InputGroup>
-          <PlainTextInput
+          <Input
             placeholder="Enter value"
           />
           <InputLeftAddon>
@@ -103,7 +103,7 @@ const InputPage = () => (
       </VStack>
       <Code w="max-content" display="block" whiteSpace="pre">{
 `<InputGroup>
-  <PlainTextInput
+  <Input
     placeholder="Enter value"
   />
   <InputLeftAddon>

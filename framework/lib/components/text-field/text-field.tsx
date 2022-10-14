@@ -1,12 +1,12 @@
 import React from 'react'
 import { TextFieldProps } from '../../types'
-import { PlainTextInput } from './plain-text-input'
+import { Input } from '../input'
 import { Field } from '../form'
 
 export function TextField ({
   name,
   label,
-  as: As = PlainTextInput,
+  as: As = Input,
   isRequired,
   validate,
   direction = 'column',

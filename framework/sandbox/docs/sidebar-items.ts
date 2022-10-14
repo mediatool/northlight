@@ -82,6 +82,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/icon-button',
   },
   {
+    title: 'Input',
+    path: '/docs/input',
+  },
+  {
     title: 'Modal',
     path: '/docs/modal',
   },
@@ -104,10 +108,6 @@ export const sidebarItems: SidebarItem[] = [
   {
     title: 'Pin input',
     path: '/docs/pin-input',
-  },
-  {
-    title: 'Plain text input',
-    path: '/docs/plain-text-input',
   },
   {
     title: 'Radio button',
