@@ -1,13 +1,13 @@
 import React from 'react'
 import { chakra, useMultiStyleConfig } from '@chakra-ui/react'
-import { OrgLogoProps } from './types'
+import { OrganizationLogoProps } from './types'
 
-export const OrgLogo = ({
+export const OrganizationLogo = ({
   name,
   image,
   variant = 'square',
   ...rest
-}: OrgLogoProps) => {
+}: OrganizationLogoProps) => {
   const getInitials = (orgName: string) => orgName[0].toUpperCase()
   const {
     container,
@@ -17,7 +17,7 @@ export const OrgLogo = ({
   return (
     <chakra.div
       __css={ container }
-      data-testid="orglogo-test-id"
+      data-testid="organization-logo-test-id"
     >
       { image ? (
         <chakra.img

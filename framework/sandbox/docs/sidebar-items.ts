@@ -98,8 +98,8 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/number-input',
   },
   {
-    title: 'Org Logo',
-    path: '/docs/org-logo',
+    title: 'Organization Logo',
+    path: '/docs/organization-logo',
   },
   {
     title: 'Palette',

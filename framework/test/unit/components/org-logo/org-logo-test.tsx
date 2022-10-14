@@ -1,38 +1,38 @@
 import React from 'react'
 import { assert } from 'chai'
 import { render, screen } from '@testing-library/react'
-import { OrgLogo } from '../../../../lib/components'
+import { OrganizationLogo } from '../../../../lib/components'
 
 const { isOk } = assert
 
-const getOrgLogo = (customProps = { }) => {
+const getOrganizationLogo = (customProps = { }) => {
   const props = {
     name: 'Anakin Skywalker',
     ...customProps,
   }
   return (
-    <OrgLogo { ...props } />
+    <OrganizationLogo { ...props } />
   )
 }
 
-const getComponent = () => screen.getByTestId('orglogo-test-id').children[0]
+const getComponent = () => screen.getByTestId('organization-logo-test-id').children[0]
 
-describe('OrgLogo', () => {
+describe('OrganizationLogo', () => {
   it('Renders properly', () => {
-    render(getOrgLogo())
-    const orgLogo = getComponent()
-    isOk(orgLogo)
+    render(getOrganizationLogo())
+    const organizationLogo = getComponent()
+    isOk(organizationLogo)
   })
 
   it('Display Acronym if no image', () => {
-    render(getOrgLogo())
-    const orgLogo = screen.getByText('A')
-    isOk(orgLogo)
+    render(getOrganizationLogo())
+    const organizationLogo = screen.getByText('A')
+    isOk(organizationLogo)
   })
 
   it('Capitalize the first letter', () => {
-    render(getOrgLogo({ name: 'mediatool' }))
-    const orgLogo = screen.getByText('M')
-    isOk(orgLogo)
+    render(getOrganizationLogo({ name: 'mediatool' }))
+    const organizationLogo = screen.getByText('M')
+    isOk(organizationLogo)
   })
 })

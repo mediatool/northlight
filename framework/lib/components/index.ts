@@ -1,5 +1,5 @@
 export * from './accordion'
-export * from './org-logo'
+export * from './organization-logo'
 export * from './alert'
 export * from './alert-dialog'
 export * from './app-header'

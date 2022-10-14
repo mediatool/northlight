@@ -7,8 +7,8 @@ export const routes: Route[] = [
     exact: true,
   },
   {
-    path: '/org-logo',
-    component: () => import('../pages/org-logo-page'),
+    path: '/organization-logo',
+    component: () => import('../pages/organization-logo-page'),
     exact: true,
   },
   {
