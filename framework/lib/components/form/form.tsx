@@ -7,7 +7,7 @@ import {
   useForm,
 } from 'react-hook-form'
 import { equals } from 'ramda'
-import { FormProps } from '../../types'
+import { FormProps } from './types'
 
 export const createValidator = (validationSpecs: any) => (values: any) => {
   const errors: any = {}

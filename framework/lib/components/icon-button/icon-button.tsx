@@ -1,6 +1,6 @@
 import React, { cloneElement, forwardRef } from 'react'
 import { IconButton as ChakraIconButton, IconButtonProps } from '@chakra-ui/react'
-import { ButtonVariants } from '../../types'
+import { ButtonVariants } from '../button/types'
 
 interface Props extends IconButtonProps {
   variant?: ButtonVariants

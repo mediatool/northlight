@@ -2,7 +2,7 @@ import React from 'react'
 import { Controller } from 'react-hook-form'
 import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { Stack } from '../stack'
-import { FieldProps } from '../../types'
+import { FieldProps } from './types'
 import { useFormContext } from '../../hooks'
 
 export function Field ({

@@ -1,7 +1,7 @@
 import React from 'react'
 import { VariableSizeGrid } from 'react-window'
 import AutoSizer from 'react-virtualized-auto-sizer'
-import { FastGridProps } from '../../types'
+import { FastGridProps } from './types'
 
 export const FastGrid = ({
   columns,

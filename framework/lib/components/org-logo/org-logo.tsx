@@ -1,6 +1,6 @@
 import React from 'react'
 import { chakra, useMultiStyleConfig } from '@chakra-ui/react'
-import { OrgLogoProps } from '../../types'
+import { OrgLogoProps } from './types'
 
 export const OrgLogo = ({
   name,

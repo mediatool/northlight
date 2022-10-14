@@ -4,8 +4,7 @@ import {
   BellSolid,
   CheckCircleSolid,
 } from '@mediatool/icons'
-
-export type AlertVariants = 'success' | 'warning' | 'error' | 'info'
+import { AlertVariants } from '../../alert/types'
 
 export const toastIconMap: Record<AlertVariants, any> = {
   success: CheckCircleSolid,

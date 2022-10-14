@@ -1,6 +1,5 @@
-import { NumberInputProps as ChakraNumberInputProps } from '@chakra-ui/react'
+import { NumberInputProps as ChakraNumberInputProps, StackDirection } from '@chakra-ui/react'
 import { RegisterOptions } from 'react-hook-form'
-import { StackingDirection } from '../field'
 
 export type NumberInputSizeProps = 'sm' | 'md' | 'lg'
 
@@ -20,5 +19,5 @@ export type NumberInputFieldProps =
     size?: NumberInputSizeProps
     isRequired?: boolean
     unit?: string
-    direction?: StackingDirection
+    direction?: StackDirection
   }

@@ -7,7 +7,7 @@ import { useMultiStyleConfig } from '@chakra-ui/react'
 import { Box } from '../../box'
 import { DateSegment } from './date-segment'
 import { StyledField } from './styled-field'
-import { DateFieldProps } from '../../../types'
+import { DateFieldProps } from '../types'
 
 export const DateField = (props: DateFieldProps) => {
   const ref = useRef<HTMLInputElement>(null)

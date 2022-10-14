@@ -1,6 +1,6 @@
 import { useDateFormatter } from '@react-aria/i18n'
 import { CalendarState, RangeCalendarState } from '@react-stately/calendar'
-import { YearValue } from '../../../types'
+import { YearValue } from '../../date-picker/types'
 
 export const useYearsRange = ({
   state,

@@ -1,7 +1,6 @@
-import { RadioGroupProps as ChakraRadioGroupProps, RadioProps as ChakraRadioProps } from '@chakra-ui/react'
+import { RadioGroupProps as ChakraRadioGroupProps, RadioProps as ChakraRadioProps, StackDirection } from '@chakra-ui/react'
 import { ChangeEvent } from 'react'
 import { RegisterOptions } from 'react-hook-form'
-import { StackingDirection } from '../field'
 
 export type RadioProps =
   ChakraRadioProps
@@ -19,13 +18,13 @@ export type RadioFieldProps =
 export type RadioGroupProps =
     ChakraRadioGroupProps
     & {
-      direction?: StackingDirection
+      direction?: StackDirection
     }
 
 export type RadioFieldGroupProps =
     ChakraRadioGroupProps
     & {
-      direction?: StackingDirection
+      direction?: StackDirection
       name: string
       label: string
       validate?: RegisterOptions

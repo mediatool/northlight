@@ -5,7 +5,7 @@ import { CardContent } from './card-content'
 import { CardDescription } from './card-description'
 import { CardImage } from './card-image'
 import { CardTitle } from './card-title'
-import { CardSize } from '../../types'
+import { CardSize } from './types'
 
 export interface SimpleCardProps {
   title: string

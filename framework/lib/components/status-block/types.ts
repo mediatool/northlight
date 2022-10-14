@@ -1,5 +1,5 @@
 import { CDeleteSolid, CheckCircleSolid, HourglassSolid, StatusWorkingSolid } from '@mediatool/icons'
-import { Color, ColorGrade } from '../../color'
+import { Color, ColorGrade } from '../../types'
 
 export type BlockVariant = 'working' | 'pending' | 'approved' | 'rejected'
 

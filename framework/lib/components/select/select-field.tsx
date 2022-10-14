@@ -1,7 +1,7 @@
 import React from 'react'
 import { FieldValues } from 'react-hook-form'
 import { CloseIcon } from '@chakra-ui/icons'
-import { SelectFieldProps } from '../../types'
+import { SelectFieldProps } from './types'
 import { Field } from '../form'
 import { Select } from './select'
 import { HStack } from '../stack'

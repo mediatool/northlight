@@ -1,4 +1,4 @@
-import { BlockVariant, BlockVariantColorTuple } from '../../types'
+import { BlockVariant, BlockVariantColorTuple } from './types'
 
 export const blockVariantMap: Record<BlockVariant, BlockVariantColorTuple> = {
   approved: [ 'green.100', 'green.500' ],

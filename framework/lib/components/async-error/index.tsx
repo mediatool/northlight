@@ -5,7 +5,7 @@ import {
   Alert as ChakraAlert,
 } from '@chakra-ui/react'
 import { color } from '@mediatool/tokens'
-import { toastIconMap } from '../../types'
+import { toastIconMap } from '../types'
 import { Icon } from '../icon'
 import { VStack } from '../stack'
 

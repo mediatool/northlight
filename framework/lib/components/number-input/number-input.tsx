@@ -4,7 +4,7 @@ import {
   NumberInputField,
 } from '@chakra-ui/react'
 import { NumberInputStepper } from './number-input-stepper'
-import { NumberInputProps } from '../../types'
+import { NumberInputProps } from './types'
 
 export const NumberInput = ({
   variant = 'default',

@@ -1,5 +1,5 @@
 import React from 'react'
-import { CheckboxFieldProps } from '../../types'
+import { CheckboxFieldProps } from './types'
 import { Field } from '../form'
 import { Checkbox } from './checkbox'
 

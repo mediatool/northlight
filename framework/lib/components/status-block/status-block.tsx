@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon } from '@chakra-ui/react'
 import { Tag, TagLabel, TagLeftIcon } from '../tag'
 import { blockVariantMap } from './block-variant-map'
-import { StatusBlockProps, statusIconMap } from '../../types'
+import { StatusBlockProps, statusIconMap } from './types'
 
 export const StatusBlock = ({ variant }: StatusBlockProps) => {
   const [ bgColor, contentColor ] = blockVariantMap[variant]

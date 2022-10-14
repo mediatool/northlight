@@ -1,5 +1,5 @@
 import React from 'react'
-import { RadioFieldGroupProps } from '../../types'
+import { RadioFieldGroupProps } from './types'
 import { Field } from '../form'
 import { RadioGroup } from './radio-group'
 

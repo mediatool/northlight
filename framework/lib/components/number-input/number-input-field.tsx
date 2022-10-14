@@ -1,5 +1,5 @@
 import React from 'react'
-import { NumberInputFieldProps } from '../../types'
+import { NumberInputFieldProps } from './types'
 import { Field } from '../form'
 import { NumberInput } from './number-input'
 

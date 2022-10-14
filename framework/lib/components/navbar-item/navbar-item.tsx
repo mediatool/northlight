@@ -5,7 +5,7 @@ import { Icon } from '../icon'
 import { Link } from '../link'
 import { Stack } from '../stack'
 import { Text } from '../text'
-import { NavbarItemProps } from '../../types'
+import { NavbarItemProps } from './types'
 
 export const NavbarItem = ({
   to,

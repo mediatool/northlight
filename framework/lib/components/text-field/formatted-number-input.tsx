@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input } from '../input'
-import { FormattedNumberInputProps } from '../../types'
+import { FormattedNumberInputProps } from './types'
 
 export const FormattedNumberInput = ({
   onChange,

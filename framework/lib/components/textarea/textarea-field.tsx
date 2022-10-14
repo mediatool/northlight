@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextareaFieldProps } from '../../types'
+import { TextareaFieldProps } from './types'
 import { Field } from '../form'
 import { Textarea } from './textarea'
 

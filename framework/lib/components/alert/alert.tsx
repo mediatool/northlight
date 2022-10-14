@@ -3,7 +3,7 @@ import {
   AlertProps,
   Alert as ChakraAlert,
 } from '@chakra-ui/react'
-import { AlertVariants } from '../../types'
+import { AlertVariants } from './types'
 
 interface Props extends AlertProps {
   variant?: AlertVariants

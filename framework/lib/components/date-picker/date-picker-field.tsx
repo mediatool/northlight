@@ -1,6 +1,6 @@
 import React from 'react'
 import { DateValue, parseDate } from '@internationalized/date'
-import { DatePickerFieldProps } from '../../types'
+import { DatePickerFieldProps } from './types'
 import { Field } from '../form'
 import { DatePicker } from './date-picker'
 

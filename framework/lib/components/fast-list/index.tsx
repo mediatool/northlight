@@ -1,7 +1,7 @@
 import React from 'react'
 import { VariableSizeList } from 'react-window'
 import AutoSizer from 'react-virtualized-auto-sizer'
-import { FastListProps } from '../../types'
+import { FastListProps } from './types'
 
 export const FastList = ({
   itemCount,

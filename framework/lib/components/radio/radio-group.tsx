@@ -1,6 +1,6 @@
 import React from 'react'
 import { RadioGroup as ChakraRadioGroup } from '@chakra-ui/react'
-import { RadioGroupProps } from '../../types'
+import { RadioGroupProps } from './types'
 import { Stack } from '../stack'
 
 export const RadioGroup = ({

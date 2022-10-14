@@ -3,7 +3,7 @@ import { useMultiStyleConfig } from '@chakra-ui/react'
 import { useDateSegment } from '@react-aria/datepicker'
 import { color } from '@mediatool/tokens'
 import { Box } from '../../box'
-import { DateSegmentProps } from '../../../types'
+import { DateSegmentProps } from '../types'
 
 export const DateSegment = ({ segment, state }: DateSegmentProps) => {
   const ref = useRef<HTMLInputElement>(null)

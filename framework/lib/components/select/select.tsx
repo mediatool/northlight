@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { Select as ChakraReactSelect } from 'chakra-react-select'
 import { Box } from '@chakra-ui/react'
-import { SelectProps } from '../../types'
+import { SelectProps } from './types'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 
 export function Select<T> ({

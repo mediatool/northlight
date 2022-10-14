@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextFieldProps } from '../../types'
+import { TextFieldProps } from './types'
 import { Input } from '../input'
 import { Field } from '../form'
 

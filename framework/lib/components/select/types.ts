@@ -1,7 +1,7 @@
 import { Props as ChakraReactSelectProps, GroupBase, MenuListProps } from 'chakra-react-select'
+import { StackDirection } from '@chakra-ui/react'
 import { ComponentType } from 'react'
 import { RegisterOptions } from 'react-hook-form'
-import { StackingDirection } from '../field'
 
 type size = 'sm' | 'md' | 'lg'
 
@@ -19,7 +19,7 @@ ChakraReactSelectProps<T, boolean, GroupBase<T>>
 export type SelectFieldProps<T> =
   SelectProps<T>
   & {
-    direction?: StackingDirection
+    direction?: StackDirection
     name: string
     label: string
     validate?: RegisterOptions

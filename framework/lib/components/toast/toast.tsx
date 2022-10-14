@@ -6,7 +6,8 @@ import {
   Alert as ChakraAlert,
 } from '@chakra-ui/react'
 import { color } from '@mediatool/tokens'
-import { AlertVariants, toastIconMap } from '../../types'
+import { AlertVariants } from '../alert/types'
+import { toastIconMap } from '../types'
 import { Icon } from '../icon'
 import { HStack, Stack } from '../stack'
 import { CloseButton } from '../close-button'

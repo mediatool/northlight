@@ -1,5 +1,5 @@
 import React from 'react'
-import { SwitchFieldProps } from '../../types'
+import { SwitchFieldProps } from './types'
 import { Field } from '../form'
 import { Switch } from './switch'
 
