@@ -12,7 +12,7 @@
     "dist"
   ],
   "scripts": {
-    "transform": "yarn token-transformer lib/tokens.json dist/sets/global.json global && yarn token-transformer lib/tokens.json dist/sets/theme.json global,theme global",
+    "transform": "yarn token-transformer lib/tokens.json dist/sets/global.json global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/theme.json global,theme global --resolveReferences=false",
     "build": "yarn transform && node scripts/sd-build.js && yarn rollup -c",
     "clean": "rm -rf dist",
     "lint": "eslint --ext ts,js scripts/* *.ts *.js",

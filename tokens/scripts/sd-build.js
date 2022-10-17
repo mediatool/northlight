@@ -1,70 +1,56 @@
 const StyleDictionary = require('style-dictionary').extend('config.js')
 
-function isGlobalToken (token) {
-  return token.filePath === 'dist/sets/global.json'
-}
+const isPath = (token, path) => token.filePath === path
 
-function isTheme (token) {
-  return token.filePath === 'dist/sets/theme.json'
-}
-
-function isBorderWidth (token) {
-  return token.attributes.category === 'borderWidth'
-}
-
-function isSpacing (token) {
-  return token.attributes.category === 'spacing'
-}
-
-function isSizing (token) {
-  return token.attributes.category === 'sizing'
-}
-
-function isFontSize (token) {
-  return token.attributes.category === 'fontSize'
-}
-
-function convertToRem (token) {
-  const val = parseFloat(token.original.value) / 16
-  return `${val}rem`
-}
+const convertToRem = (value) => `${parseFloat(value) / 16}rem`
 
 StyleDictionary.registerFilter({
   name: 'takeGlobalTokens',
-  matcher: isGlobalToken,
+  matcher: (token) => isPath(token, 'dist/sets/global.json'),
 })
 
 StyleDictionary.registerFilter({
   name: 'takeTheme',
-  matcher: isTheme,
+  matcher: (token) => isPath(token, 'dist/sets/theme.json'),
 })
 
 StyleDictionary.registerTransform({
   name: 'borderWidth/rem',
   type: 'value',
-  matcher: isBorderWidth,
-  transformer: convertToRem,
+  matcher: (token) => token.attributes.category === 'borderWidth',
+  transformer: (token) => convertToRem(token.original.value),
 })
 
 StyleDictionary.registerTransform({
   name: 'spacing/rem',
   type: 'value',
-  matcher: isSpacing,
-  transformer: convertToRem,
+  matcher: (token) => token.attributes.category === 'spacing',
+  transformer: (token) => convertToRem(token.original.value),
 })
 
 StyleDictionary.registerTransform({
   name: 'sizing/rem',
   type: 'value',
-  matcher: isSizing,
-  transformer: convertToRem,
+  matcher: (token) => token.attributes.category === 'sizing',
+  transformer: (token) => convertToRem(token.original.value),
 })
 
 StyleDictionary.registerTransform({
   name: 'fontSize/rem',
   type: 'value',
-  matcher: isFontSize,
-  transformer: convertToRem,
+  transitive: true,
+  matcher: (token) => token.attributes.category === 'fontSize',
+  transformer: (token) => convertToRem(token.value),
+})
+
+StyleDictionary.registerTransform({
+  name: 'lineHeight/rem',
+  type: 'value',
+  matcher: (token) => token.attributes.category === 'lineHeights',
+  transformer: ({ value }) => (typeof value === 'string'
+    ? value
+    : convertToRem(value)
+  ),
 })
 
 StyleDictionary.registerTransformGroup({
@@ -72,11 +58,12 @@ StyleDictionary.registerTransformGroup({
   transforms: [
     'attribute/cti',
     'name/cti/kebab',
+    'lineHeight/rem',
+    'fontSize/rem',
     'color/css',
     'borderWidth/rem',
     'spacing/rem',
     'sizing/rem',
-    'fontSize/rem',
   ],
 })
 

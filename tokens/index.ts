@@ -2,6 +2,8 @@ export {
   color as palette,
   sizing as coreSizing,
   spacing as coreSpacing,
+  fontWeights as coreFontWeight,
+  typography,
 } from './dist/global.json'
 export {
   color,
