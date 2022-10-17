@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.5.0...@mediatool/tokens@1.6.0) (2022-10-17)
+
+
+### Bug Fixes
+
+* **ui/tokens:** changed mono black value ([ef2f85a](https://github.com/mediatool/mediatool/commit/ef2f85ade7411194fd9fe4f812b0066d248ee4b0))
+
+
+### Features
+
+* **ui/tokens:** add size tokens for blinker ([0abe7ef](https://github.com/mediatool/mediatool/commit/0abe7ef6f1699192baba373cdc98e632c6883ec1))
+* **ui/tokens:** add typography tokens ([94b1461](https://github.com/mediatool/mediatool/commit/94b14612609336b09a7d01b78cc326c420db0f18))
+
+
+
+
+
 # [1.5.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.4.0...@mediatool/tokens@1.5.0) (2022-10-05)
 
 

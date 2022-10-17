@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.10.2...@mediatool/ui@2.0.0) (2022-10-17)
+
+
+### Bug Fixes
+
+* **ui:** manually set ui version ([95fe72c](https://github.com/mediatool/mediatool/commit/95fe72c5a1413cab17ec2ec79ac7448cad9c870b))
+* **ui:** renamed org logo to organization logo ([33ed0e7](https://github.com/mediatool/mediatool/commit/33ed0e71d635a766ec36ae621d602e1f0801b78c))
+
+
+* feat(ui)!: Migrate Formik to React Hook Form ([1378b0c](https://github.com/mediatool/mediatool/commit/1378b0cb671eebed4221524b53d58a19d6f2cfbd))
+
+
+### Features
+
+* **ui:** Blinker UI Component ([5afe9d3](https://github.com/mediatool/mediatool/commit/5afe9d3f9e189a7ac632dc8a5a583cba86b0a117))
+* **ui:** fast-grid, test-pages, docs-pages, extra stuff ([6f8b4db](https://github.com/mediatool/mediatool/commit/6f8b4db64d0b813492ef4f0bc9a3e2b46302d46b))
+
+
+### BREAKING CHANGES
+
+* This breaks compatibility with previous formik formsj
+
+
+
+
+
 ## [1.10.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.10.1...@mediatool/ui@1.10.2) (2022-10-12)
 
 
