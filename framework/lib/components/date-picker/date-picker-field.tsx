@@ -22,7 +22,12 @@ export const DatePickerField = ({
     if ((minValue && date < parseDate(minValue)) || (maxValue && date > parseDate(maxValue))) {
       setError(name, {
         type: 'custom',
-        message: `Date must be between ${minValue}-${maxValue}`,
+        message: minValue && maxValue
+          ? `Date must be between ${minValue}-${maxValue}`
+          : minValue
+            ? `Select date earliest at ${minValue}`
+            : `Select date latest at ${maxValue}`
+        ,
       })
     } else {
       trigger()
