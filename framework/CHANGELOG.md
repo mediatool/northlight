@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.0.2...@mediatool/ui@2.0.3) (2022-10-18)
+
+
+### Bug Fixes
+
+* **ui:** don't trigger validation for entire form onChange ([bd1f67a](https://github.com/mediatool/mediatool/commit/bd1f67a1997a38d0177b52c8d5394f3fac2102de))
+
+
+
+
+
 ## [2.0.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.0.1...@mediatool/ui@2.0.2) (2022-10-18)
 
 
