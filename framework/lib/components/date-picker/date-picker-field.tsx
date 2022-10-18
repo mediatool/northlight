@@ -30,7 +30,7 @@ export const DatePickerField = ({
         ,
       })
     } else {
-      trigger()
+      trigger(name)
     }
     setValue(name, date?.toString())
   }
