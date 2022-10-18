@@ -72,7 +72,6 @@ export const TestFieldPage = ({
         onSubmit={ (_values) => {
           setFields([])
         } }
-        enableReInitialize={ true }
       >
         <Stack spacing={ 3 }>
           <Text>Testing { fields.length } { name } Field</Text>

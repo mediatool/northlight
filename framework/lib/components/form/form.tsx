@@ -17,7 +17,7 @@ export function Form<FormValues extends FieldValues> ({
   validate,
   formSettings = { mode: 'onChange' },
   methods = undefined,
-  enableReInitialize = false,
+  enableReinitialize = false,
   ...rest
 }: FormProps<FormValues>) {
   const customResolver: Resolver<FormValues, any> = (
@@ -37,7 +37,7 @@ export function Form<FormValues extends FieldValues> ({
       ...formSettings,
     })
 
-  if (enableReInitialize) {
+  if (enableReinitialize) {
     const initalValuesImage = useRef({})
     useEffect(() => {
       if (!equals(initalValuesImage.current, initialValues)) {

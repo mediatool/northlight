@@ -99,7 +99,7 @@ const FormPage = () => (
         and is equivalent to the return value of useForm
       </Text>
       <Text>
-        <strong>enableReInitialize </strong>
+        <strong>enableReinitialize </strong>
         Just as in formik, this uses a useEffect hook to
         reinitalize the form every time the initialValues change using a deep compare
       </Text>
