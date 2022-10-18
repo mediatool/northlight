@@ -1,6 +1,6 @@
 import React from 'react'
 import { Blinker, Code, Divider, HStack, Stack, Text } from '../../../../lib/components'
-import { Page } from '../../components'
+import { Page } from '../../../app/components'
 
 const BlinkerPage = () => (
   <Page

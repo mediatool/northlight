@@ -1,13 +1,7 @@
 import React from 'react'
-import { Routing } from '../routing/routing'
-import { TestSidebar, TestSkeleton } from './components'
-import { routes } from './routes'
 
 const TestApp = () => (
-  <TestSkeleton
-    sidebar={ <TestSidebar /> }
-    main={ <Routing basename="/test" routes={ routes } /> }
-  />
+  <p>Check out all the tests in the menu to the left</p>
 )
 
 export default TestApp

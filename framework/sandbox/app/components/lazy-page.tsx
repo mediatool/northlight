@@ -1,8 +1,8 @@
 import React, { ComponentType, ReactNode, Suspense, useMemo } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
-import { DefaultComponent } from '../../types'
+import { DefaultComponent } from '../types'
 
-type Props = {
+export type LazyPageProps = {
   loader: () => Promise<DefaultComponent>
   children?: (
     component: ComponentType<any>,
@@ -10,7 +10,7 @@ type Props = {
   ) => ReactNode
 } & RouteComponentProps
 
-export const LazyPage = ({ loader, children, ...rest }: Props) => {
+export const LazyPage = ({ loader, children, ...rest }: LazyPageProps) => {
   const Component = useMemo(() => React.lazy(loader), [])
 
   return (

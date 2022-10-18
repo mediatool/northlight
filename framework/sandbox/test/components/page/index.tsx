@@ -1,1 +1,1 @@
-export { Page } from '../../../docs/components/page'
+export { Page } from '../../../app/components/index'

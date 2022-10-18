@@ -2,8 +2,13 @@ import { ComponentType } from 'react'
 
 export type DefaultComponent = { default: ComponentType<any> }
 
-export interface Route {
+export interface Page {
   path: string
+  title: string
   component: () => Promise<DefaultComponent>
-  exact?: boolean
+}
+
+export interface MainPage extends Page {
+  Icon: any
+  subItems?: Page[]
 }

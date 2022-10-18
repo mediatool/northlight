@@ -1,6 +1,3 @@
 export * from './chakra-docs-link'
 export * from './default-page-subtitle'
-export * from './page'
-export * from './sidebar'
-export * from './sidebar-item'
-export * from './docs-skeleton'
+export * from '../../app/components/page'
