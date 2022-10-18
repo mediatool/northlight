@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.0.1...@mediatool/ui@2.0.2) (2022-10-18)
+
+
+### Bug Fixes
+
+* **ui:** date picker range validation message if max or min undefined ([77bc3cc](https://github.com/mediatool/mediatool/commit/77bc3ccf815d455b58ac0d9fb2c012cbea2ca110))
+
+
+
+
+
 ## [2.0.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.0.0...@mediatool/ui@2.0.1) (2022-10-18)
 
 
