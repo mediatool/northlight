@@ -3,6 +3,7 @@ import { DateValue, parseDate } from '@internationalized/date'
 import { DatePickerFieldProps } from './types'
 import { Field } from '../form'
 import { DatePicker } from './date-picker'
+import { useFormContext } from '../../hooks'
 
 export const DatePickerField = ({
   name,
@@ -14,28 +15,44 @@ export const DatePickerField = ({
   validate,
   firstDayOfWeek = 'monday',
   ...rest
-}: DatePickerFieldProps) => (
-  <Field
-    name={ name }
-    label={ label }
-    direction={ direction }
-    isRequired={ isRequired }
-    validate={ validate }
-  >
-    { ({ value, onChange }, { formState: { errors } }) => (
-      <DatePicker
-        firstDayOfWeek={ firstDayOfWeek }
-        aria-label={ label }
-        isInvalid={ Boolean(errors[name]) }
-        onChange={ (date: DateValue) => onChange(date?.toString()) }
-        resetDate={ onChange }
-        value={ value ? parseDate(value) as any : null }
-        minValue={ minValue ? parseDate(minValue) as DateValue : undefined }
-        maxValue={ maxValue ? parseDate(maxValue) as DateValue : undefined }
-        validationState={ errors.name ? 'invalid' : 'valid' }
-        { ...rest as any }
-      />
-    ) }
-  </Field>
+}: DatePickerFieldProps) => {
+  const { setValue, setError, trigger } = useFormContext()
 
-)
+  const handleChange = (date: DateValue) => {
+    if ((minValue && date < parseDate(minValue)) || (maxValue && date > parseDate(maxValue))) {
+      setError(name, {
+        type: 'custom',
+        message: `Date must be between ${minValue}-${maxValue}`,
+      })
+    } else {
+      trigger()
+    }
+    setValue(name, date?.toString())
+  }
+
+  return (
+    <Field
+      name={ name }
+      label={ label }
+      direction={ direction }
+      isRequired={ isRequired }
+      validate={ validate }
+    >
+      { ({ value, onChange }, { formState: { errors } }) => (
+        <DatePicker
+          firstDayOfWeek={ firstDayOfWeek }
+          aria-label={ label }
+          isInvalid={ Boolean(errors[name]) }
+          onChange={ handleChange }
+          resetDate={ () => onChange(null) }
+          value={ value ? parseDate(value) as any : null }
+          minValue={ minValue ? parseDate(minValue) as DateValue : undefined }
+          maxValue={ maxValue ? parseDate(maxValue) as DateValue : undefined }
+          validationState={ errors.name ? 'invalid' : 'valid' }
+          { ...rest as any }
+        />
+      ) }
+    </Field>
+
+  )
+}

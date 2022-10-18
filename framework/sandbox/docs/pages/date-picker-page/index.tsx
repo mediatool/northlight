@@ -31,7 +31,7 @@ const DatePickerPage = () => {
         <Form initialValues={ { date: null } } onSubmit={ () => {} }>
           { ({ watch }) => (
             <Stack w={ 64 } spacing={ 20 }>
-              <DatePickerField name="date" label="Pick a date" />
+              <DatePickerField name="date" label="Pick a date" minValue="2022-10-17" maxValue="2022-10-19" />
               <Code p={ 4 }>{ JSON.stringify(watch(), null, 2) }</Code>
             </Stack>
           ) }
