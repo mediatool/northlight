@@ -1,5 +1,5 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderWidth, color, spacing } from '@mediatool/tokens'
+import { borderWidth, color, coreFontWeight, spacing } from '@mediatool/tokens'
 
 export const Step: ComponentMultiStyleConfig = {
   parts: [ 'step', 'label', 'description' ],
@@ -31,15 +31,14 @@ export const Step: ComponentMultiStyleConfig = {
       },
     },
     label: {
+      color: 'inherit',
       pt: spacing.paddingTop.step.label,
-      textTransform: 'uppercase',
       textAlign: 'start',
-      fontWeight: 'bold',
-
+      fontWeight: coreFontWeight.bold,
     },
     description: {
-      fontWeight: 'semibold',
       textAlign: 'start',
+      fontWeight: coreFontWeight.semiBold,
       color: color.text.default,
     },
   },

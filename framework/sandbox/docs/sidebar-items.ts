@@ -150,6 +150,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/textarea',
   },
   {
+    title: 'Typography',
+    path: '/docs/typography',
+  },
+  {
     title: 'Toast',
     path: '/docs/Toast',
   },

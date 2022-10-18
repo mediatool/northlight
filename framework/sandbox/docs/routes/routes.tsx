@@ -191,4 +191,9 @@ export const routes: Route[] = [
     component: () => import('../pages/steps-page'),
     exact: true,
   },
+  {
+    path: '/typography',
+    component: () => import('../pages/typography-page'),
+    exact: true,
+  },
 ]

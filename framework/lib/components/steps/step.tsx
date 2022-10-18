@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tab as ChakraStep, TabProps, useMultiStyleConfig } from '@chakra-ui/react'
-import { Text } from '../text'
+import { Capitalized, Lead } from '../typography'
 import { Flex } from '../flex'
 import { ring } from '../../utils'
 
@@ -26,12 +26,12 @@ export const Step = ({
         alignItems="flex-start"
         _groupFocusVisible={ ring }
       >
-        <Text fontSize="xs" sx={ labelStyle }>
+        <Capitalized sx={ labelStyle }>
           { label }
-        </Text>
-        <Text fontSize="sm" sx={ descriptionStyle }>
+        </Capitalized>
+        <Lead sx={ descriptionStyle }>
           { description }
-        </Text>
+        </Lead>
       </Flex>
     </ChakraStep>
   )
