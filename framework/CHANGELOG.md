@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.0.0...@mediatool/ui@2.0.1) (2022-10-18)
+
+
+### Bug Fixes
+
+* **ui:** Added date picker validation for when user inputs value outside valid interval ([3bd22bb](https://github.com/mediatool/mediatool/commit/3bd22bb670a848d3e5ce6be3cdab374b163eab17))
+* **ui:** rename enableReInitialize to enableReinitialize ([122069f](https://github.com/mediatool/mediatool/commit/122069f200ada99176ea6417f50a2a9568eb1827))
+
+
+
+
+
 # [2.0.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@1.10.2...@mediatool/ui@2.0.0) (2022-10-17)
 
 
