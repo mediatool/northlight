@@ -19,6 +19,7 @@ export const DatePickerField = ({
   const { setValue, setError, trigger } = useFormContext()
 
   const handleChange = (date: DateValue) => {
+    setValue(name, date?.toString())
     if ((minValue && date < parseDate(minValue)) || (maxValue && date > parseDate(maxValue))) {
       setError(name, {
         type: 'custom',
@@ -32,7 +33,6 @@ export const DatePickerField = ({
     } else {
       trigger(name)
     }
-    setValue(name, date?.toString())
   }
 
   return (
@@ -47,7 +47,7 @@ export const DatePickerField = ({
         <DatePicker
           firstDayOfWeek={ firstDayOfWeek }
           aria-label={ label }
-          isInvalid={ Boolean(errors[name]) }
+          isInvalid={ !!errors[name] }
           onChange={ handleChange }
           resetDate={ () => onChange(null) }
           value={ value ? parseDate(value) as any : null }

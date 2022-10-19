@@ -51,7 +51,11 @@ export function Form<FormValues extends FieldValues> ({
     <FormProvider { ...newMethods } { ...rest }>
       <form
         style={ { width: '100%' } }
-        onSubmit={ newMethods.handleSubmit(onSubmit) }
+        onSubmit={
+          newMethods.formState.isValid
+            ? newMethods.handleSubmit(onSubmit)
+            : (e) => e.preventDefault()
+         }
       >
         { typeof children === 'function' ? children(newMethods) : children }
       </form>
