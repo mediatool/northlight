@@ -3,7 +3,7 @@ import { useMultiStyleConfig } from '@chakra-ui/react'
 import { useDatePicker } from '@react-aria/datepicker'
 import { useDatePickerState } from '@react-stately/datepicker'
 import { FocusScope } from '@react-aria/focus'
-import { CloseIcon } from '@chakra-ui/icons'
+import { XCloseSolid } from '@mediatool/icons'
 import { Calendar } from '../calendar'
 import { DateField, Trigger } from './components'
 import { DatePickerProps } from './types'
@@ -11,6 +11,7 @@ import { IconButton } from '../icon-button'
 import { HStack } from '../stack'
 import { InputGroup, InputRightElement } from '../input'
 import { Popover, PopoverAnchor, PopoverContent } from '../popover'
+import { Icon } from '../icon'
 
 export const DatePicker = (props: DatePickerProps) => {
   const { isDisabled, resetDate, isInvalid = false } = props
@@ -63,7 +64,7 @@ export const DatePicker = (props: DatePickerProps) => {
             onClick={ resetDate }
             hidden={ !state.dateValue }
             isDisabled={ isDisabled }
-            icon={ <CloseIcon /> }
+            icon={ <Icon as={ XCloseSolid } /> }
           />
         </HStack>
       </PopoverAnchor>

@@ -3,12 +3,13 @@ import { DateValue, GregorianCalendar } from '@internationalized/date'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { useLocale } from '@react-aria/i18n'
 import { useCalendarState } from '@react-stately/calendar'
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import { CalendarProps, useCalendar } from '@react-aria/calendar'
+import { ChevronLeftSolid, ChevronRightSolid } from '@mediatool/icons'
 import { Flex } from '../flex'
 import { Box } from '../box'
 import { CalendarGrid, MonthButton, YearSelect } from './components'
 import { HStack, Stack } from '../stack'
+import { Icon } from '../icon'
 
 export const Calendar = (props:CalendarProps<DateValue>) => {
   const { locale } = useLocale()
@@ -33,10 +34,10 @@ export const Calendar = (props:CalendarProps<DateValue>) => {
           <YearSelect state={ state } />
           <HStack spacing={ 2 }>
             <MonthButton { ...prevButtonProps }>
-              <ChevronLeftIcon />
+              <Icon as={ ChevronLeftSolid } boxSize={ 4 } />
             </MonthButton>
             <MonthButton { ...nextButtonProps }>
-              <ChevronRightIcon />
+              <Icon as={ ChevronRightSolid } boxSize={ 4 } />
             </MonthButton>
           </HStack>
         </Flex>

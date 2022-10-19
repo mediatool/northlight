@@ -1,11 +1,12 @@
 import React from 'react'
 import { FieldValues } from 'react-hook-form'
-import { CloseIcon } from '@chakra-ui/icons'
+import { XCloseSolid } from '@mediatool/icons'
 import { SelectFieldProps } from './types'
 import { Field } from '../form'
 import { Select } from './select'
 import { HStack } from '../stack'
 import { IconButton } from '../icon-button'
+import { Icon } from '../icon'
 
 export function SelectField<T> ({
   name,
@@ -52,7 +53,7 @@ export function SelectField<T> ({
             fontSize="xs"
             hidden={ value === '' || !isClearable }
             onClick={ onChange }
-            icon={ <CloseIcon /> }
+            icon={ <Icon as={ XCloseSolid } /> }
           />
         </HStack>
       ) }

@@ -1337,20 +1337,6 @@
   dependencies:
     "@chakra-ui/shared-utils" "2.0.2"
 
-"@chakra-ui/icon@3.0.8":
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/icon/-/icon-3.0.8.tgz#728476d657f1fc80c2ee0f39859703a0f3314b68"
-  integrity sha512-avd6mthBoG9R8cLLAROi/FItgk7wHy1YpeAXOrGdK/U/ECVWZev64RmI1UduKuVOLlSZldXWzFJmLdw6dAMG7A==
-  dependencies:
-    "@chakra-ui/utils" "2.0.8"
-
-"@chakra-ui/icons@^2.0.4":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/icons/-/icons-2.0.8.tgz#38659b322165566806a8e7a9f1e0d38fa15128f1"
-  integrity sha512-otX85/laLd9rC26EsaRK/QufXxclfK/JGw3vdxh+sEULFgwuC56tUzmXTwIt8GcDIx/LvZBkDgkXN0sn6Cqmog==
-  dependencies:
-    "@chakra-ui/icon" "3.0.8"
-
 "@chakra-ui/image@2.0.11":
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/@chakra-ui/image/-/image-2.0.11.tgz#eb880ecd2fce47f22ef50bbbba66cbb027c0304c"
@@ -1840,21 +1826,12 @@
   dependencies:
     "@chakra-ui/form-control" "2.0.11"
 
-"@chakra-ui/theme-tools@2.0.12":
+"@chakra-ui/theme-tools@2.0.12", "@chakra-ui/theme-tools@^2.0.5":
   version "2.0.12"
   resolved "https://registry.yarnpkg.com/@chakra-ui/theme-tools/-/theme-tools-2.0.12.tgz#b29d9fb626d35e3b00f532c64f95ea261d8f6997"
   integrity sha512-mnMlKSmXkCjHUJsKWmJbgBTGF2vnLaMLv1ihkBn5eQcCubMQrBLTiMAEFl5pZdzuHItU6QdnLGA10smcXbNl0g==
   dependencies:
     "@chakra-ui/anatomy" "2.0.7"
-    "@ctrl/tinycolor" "^3.4.0"
-
-"@chakra-ui/theme-tools@^2.0.5":
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/theme-tools/-/theme-tools-2.0.9.tgz#6e997899774595c8e425cd8e7d1e52253116b5d6"
-  integrity sha512-mdLONajdFWaXzEKvuod7ikioWTrAIAlZnXt55XfBOU3htJgRls49y/DltirN8+EUz6RlZ7oZfCYNf6aRMJH+rg==
-  dependencies:
-    "@chakra-ui/anatomy" "2.0.4"
-    "@chakra-ui/utils" "2.0.8"
     "@ctrl/tinycolor" "^3.4.0"
 
 "@chakra-ui/theme-utils@2.0.1":
