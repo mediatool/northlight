@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.0.3...@mediatool/ui@2.1.0) (2022-10-19)
+
+
+### Bug Fixes
+
+* **ui:** added default check if color is empty string ([539340a](https://github.com/mediatool/mediatool/commit/539340a144353ff0ca1d5c4cb9a1912b91f9a34d))
+* **ui:** date-picker-fix-final-final ([2d714a6](https://github.com/mediatool/mediatool/commit/2d714a6471ec1d57edf17e247d63897adf58e6f0))
+
+
+### Features
+
+* **ui:** color picker field ([4b5ac70](https://github.com/mediatool/mediatool/commit/4b5ac70cafca1eafc226762e863f89188268582d))
+
+
+
+
+
 ## [2.0.3](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.0.2...@mediatool/ui@2.0.3) (2022-10-18)
 
 
