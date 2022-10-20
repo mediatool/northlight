@@ -1225,9 +1225,9 @@
     "@chakra-ui/visually-hidden" "2.0.11"
     "@zag-js/focus-visible" "0.1.0"
 
-"@chakra-ui/clickable@2.0.10":
+"@chakra-ui/clickable@2.0.10", "@chakra-ui/clickable@^2.0.10":
   version "2.0.10"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/clickable/-/clickable-2.0.10.tgz#e89b7b3eaf9364753f6205e36fd5128b26a617d8"
+  resolved "https://registry.npmjs.org/@chakra-ui/clickable/-/clickable-2.0.10.tgz#e89b7b3eaf9364753f6205e36fd5128b26a617d8"
   integrity sha512-G6JdR6yAMlXpfjOJ70W2FL7aUwNuomiMFtkneeTpk7Q42bJ5iGHfYlbZEx5nJd8iB+UluXVM4xlhMv2MyytjGw==
   dependencies:
     "@chakra-ui/react-use-merge-refs" "2.0.4"

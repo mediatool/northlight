@@ -30,6 +30,10 @@ export const sidebarItems: SidebarItem[] = [
     path: '/docs/checkbox',
   },
   {
+    title: 'Clickable',
+    path: '/docs/clickable',
+  },
+  {
     title: 'Clipboard Input',
     path: '/docs/clipboard-input',
   },

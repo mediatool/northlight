@@ -12,6 +12,11 @@ export const routes: Route[] = [
     exact: true,
   },
   {
+    path: '/clickable',
+    component: () => import('../pages/clickable-page'),
+    exact: true,
+  },
+  {
     path: '/async-error',
     component: () => import('../pages/async-error-page'),
     exact: true,
