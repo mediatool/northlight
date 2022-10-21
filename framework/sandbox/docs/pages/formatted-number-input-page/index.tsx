@@ -8,7 +8,7 @@ import {
 } from '../../../../lib/components'
 import { useLocalizedNumberFormatter } from './use-localized-number-formatter'
 import { Page } from '../../components'
-import { useUser, users } from '../../context'
+import { useUser, users } from '../../../app/context'
 
 const FormattedNumberInputPage = () => {
   const { user, setUser } = useUser()

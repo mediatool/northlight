@@ -11,7 +11,8 @@
     ".": {
       "import": "./dist/es/mediatool-ui-framework.mjs",
       "require": "./dist/umd/mediatool-ui-framework.js"
-    }
+    },
+    "./sandbox": "./dist/es/sandbox.mjs"
   },
   "files": [
     "dist"

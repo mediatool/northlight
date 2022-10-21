@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar, Code, DatePickerField, Form, HStack, Stack } from '../../../../lib/components'
 import { Page } from '../../components'
-import { useUser, users } from '../../context'
+import { useUser, users } from '../../../app/context'
 
 const DatePickerPage = () => {
   const { user, setUser } = useUser()

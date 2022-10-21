@@ -19,12 +19,14 @@ export const Sandbox = ({ routes }: SandboxProps) => (
       <CalendarProvider>
         <I18nProvider>
           <BrowserRouter>
-            <Flex>
+            <Flex
+              height="100vh"
+            >
               <Box
                 p={ 2 }
                 minW={ 230 }
                 maxWidth={ 250 }
-                h="100vh"
+                h="100%"
                 bg="gray.50"
                 overflow="auto"
               >

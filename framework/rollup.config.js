@@ -56,4 +56,25 @@ export default [ {
     format: 'es',
     file: 'dist/ts/types.d.ts',
   } ],
+}, {
+  input: './sandbox/app/sandbox.tsx',
+  external,
+  plugins: [
+    esbuild(),
+  ],
+  output: [ {
+    format: 'es',
+    sourcemap: true,
+    file: 'dist/es/sandbox.mjs',
+  } ],
+}, {
+  input: './sandbox/app/sandbox.tsx',
+  external,
+  plugins: [
+    dts(),
+  ],
+  output: [ {
+    format: 'es',
+    file: 'dist/es/sandbox.d.ts',
+  } ],
 } ]
