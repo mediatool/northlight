@@ -26,6 +26,23 @@ const getRadioFieldGroup = (customProps = { }) => {
   )
 }
 
+const getRadioField = (customProps = {}) => {
+  const props = {
+    name: 'radio-field-group',
+    label: 'Radio Field Group',
+  }
+  return (
+    <Form
+      initialValues={ { 'radio-field-group': 'user' } }
+      onSubmit={ () => {} }
+    >
+      <RadioGroupField { ...props }>
+        <Radio value="user" { ...customProps }>User</Radio>
+      </RadioGroupField>
+    </Form>
+  )
+}
+
 const getChildField = (index: number) => (
   screen.getByTestId('radio-group-field-test-id').children[0].children[index].children[0]
 )
@@ -69,14 +86,15 @@ describe('Radio Group Field', () => {
   })
 
   it('Handles isChecked and isInvalid', () => {
-    render(getRadioFieldGroup({
+    render(getRadioField({
       isDisabled: true,
-      isChecked: true,
       isInvalid: true,
     }))
-    const radioField = screen.getByTestId('radio-group-field-test-id').children[0].children[0].children[0]
+    const radioField = getChildField(0)
     expect(radioField).to.have.property('disabled', true)
+    expect(radioField).to.have.property('checked', true)
     expect(radioField.getAttribute('aria-disabled')).to.equal('true')
+    expect(radioField.getAttribute('aria-invalid')).to.equal('true')
   })
 
   it('Focuses on tab', async () => {
