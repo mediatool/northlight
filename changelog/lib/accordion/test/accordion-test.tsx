@@ -21,14 +21,14 @@ describe('Accordion', () => {
     isOk(screen.getByTestId('test-summary'))
   })
 
-  it('should render content when expanded', () => {
+  it('should render content when expanded', async () => {
     render(
       <Accordion summary="Content test">
         <p data-testid="mock-content">Mock</p>
       </Accordion>
     )
 
-    screen.getByTestId('changelog-accordion-caret-icon').click()
+    await screen.getByTestId('changelog-accordion-caret-icon').click()
 
     isOk(screen.getByTestId('changelog-accordion-content'))
     equal(screen.getByTestId('mock-content').textContent, 'Mock')
