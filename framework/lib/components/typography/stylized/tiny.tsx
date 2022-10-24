@@ -3,7 +3,7 @@ import { Text as ChakraText, TextProps, useMultiStyleConfig } from '@chakra-ui/r
 
 export const Tiny = ({
   children,
-  sx,
+  sx = {},
   ...rest
 }: TextProps) => {
   const styles = useMultiStyleConfig('Tiny', { sx })

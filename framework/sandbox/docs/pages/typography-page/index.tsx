@@ -1,51 +1,132 @@
 import React from 'react'
+import { BanSolid, CheckSolid } from '@mediatool/icons'
+import { highlight } from '../../../../lib'
+
 import {
-  Blockquote,
-  Capitalized,
-  H1,
-  H2,
-  H3,
-  H4,
-  H5,
-  H6,
-  Lead,
-  P,
-  Small,
+  Code,
+  Divider,
+  HStack,
+  Highlight,
+  Icon,
   Stack,
-  Tiny,
+  Table,
+  Tag,
+  TagLeftIcon,
+  Tbody,
+  Td,
+  Text,
+  Thead,
+  Tr,
 } from '../../../../lib/components'
 import { Page } from '../../components'
+import { Body, Headings, Stylized, TableHead } from './data'
+
+const TableHeadings = () => (
+  <Thead>
+    <Tr>
+      { TableHead.map((item) => (
+        <Td fontWeight="bold" key={ item }>{ item }</Td>
+      )) }
+    </Tr>
+  </Thead>
+)
 
 const TypographyPage = () => (
-  <Page
-    title="Typography"
-  >
+  <Page title="Typography">
     <Stack spacing={ 8 }>
-      <Stack>
-        <H1>I am a very beautiful h1</H1>
-        <H2>I am a very beautiful h2</H2>
-        <H3>I am a very beautiful h3</H3>
-        <H4>I am a very beautiful h4</H4>
-        <H5>I am a very beautiful h5</H5>
-        <H6>I am a very beautiful h6</H6>
-      </Stack>
-      <Stack spacing={ 4 }>
-        <P>
-          Looking down into the dark gulf below,
-          I could see a ruddy light streaming through a rift in the clouds.
-        </P>
-        <P variant="14">
-          Looking down into the dark gulf below,
-          I could see a ruddy light streaming through a rift in the clouds.
-        </P>
-      </Stack>
-      <Stack spacing={ 4 }>
-        <Blockquote>I am a blockquote</Blockquote>
-        <Tiny>I am tiny</Tiny>
-        <Capitalized>I am capitalized</Capitalized>
-        <Small>I am small</Small>
-        <Lead>I am a lead</Lead>
-      </Stack>
+      <Text>
+        <Highlight query={ [ 'Headings', 'Body', 'Stylized' ] } styles={ highlight }>
+          Mediatool divides typography in 3 different categories
+          based on the use: Headings, Body, and Stylized text.
+        </Highlight>
+      </Text>
+      <Divider />
+      <HStack spacing={ 8 }>
+        <Text fontSize={ 24 } fontWeight="bold" textDecoration="underline">Headings</Text>
+        <Tag bgColor="red.600">
+          <TagLeftIcon>
+            <Icon as={ BanSolid } />
+          </TagLeftIcon>
+          Not customizable
+        </Tag>
+      </HStack>
+
+      <Table>
+        <TableHeadings />
+        <Tbody>
+          { Headings.map(({ element, component: Component, code }) => (
+            <Tr key={ code }>
+              <Td>{ element }</Td>
+              <Td>
+                <Component>
+                  This is great Typography man
+                </Component>
+              </Td>
+              <Td>
+                <Code>{ code }</Code>
+              </Td>
+            </Tr>
+          )) }
+        </Tbody>
+      </Table>
+      <HStack spacing={ 8 }>
+        <Text fontSize={ 24 } fontWeight="bold" textDecoration="underline">Body</Text>
+        <Tag bgColor="red.600">
+          <TagLeftIcon>
+            <Icon as={ BanSolid } />
+          </TagLeftIcon>
+          Not customizable
+        </Tag>
+      </HStack>
+      <Table>
+        <TableHeadings />
+        <Tbody>
+          { Body.map(({ element, component: Component, code, variant }) => (
+            <Tr key={ code }>
+              <Td>{ element }</Td>
+              <Td>
+                <Component variant={ variant }>
+                  This is great Typography man
+                </Component>
+              </Td>
+              <Td>
+                <Code>{ code }</Code>
+              </Td>
+            </Tr>
+          )) }
+        </Tbody>
+      </Table>
+      <HStack spacing={ 8 }>
+        <Text fontSize={ 24 } fontWeight="bold" textDecoration="underline">Stylized</Text>
+        <Tag bgColor="green.600">
+          <TagLeftIcon>
+            <Icon as={ CheckSolid } />
+          </TagLeftIcon>
+          Customizable
+        </Tag>
+      </HStack>
+      <Text>To customize, pass the styles with the{ ' ' }
+        <Code>sx</Code>{ ' ' }
+        prop. The component will merge the two objects.
+      </Text>
+      <Table>
+        <TableHeadings />
+        <Tbody>
+          { Stylized.map(({ element, component: Component, code }) => (
+            <Tr key={ code }>
+              <Td>{ element }</Td>
+              <Td>
+                <Component>
+                  This is great Typography man
+                </Component>
+              </Td>
+              <Td>
+                <Code>{ code }</Code>
+              </Td>
+            </Tr>
+          )) }
+        </Tbody>
+      </Table>
     </Stack>
   </Page>
 )
