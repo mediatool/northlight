@@ -1,6 +1,7 @@
 export * from './getContrastColor'
 export * from './luminosity'
 export * from './ring'
+export * from './highlight'
 export * from './getShades'
 export * from './convertValidation'
 export * from './createValidator'
