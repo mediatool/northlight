@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.1.0...@mediatool/ui@2.2.0) (2022-10-26)
+
+
+### Bug Fixes
+
+* **ui:** fix radio field unit test isChecked and isInvalid ([4260a2e](https://github.com/mediatool/mediatool/commit/4260a2e93b45114b51a2b388095cb23615fd7469))
+
+
+### Features
+
+* **ui/framework:** add typography components ([f6797d4](https://github.com/mediatool/mediatool/commit/f6797d45d4e86315c96e70df1eca683d2bdff48b))
+* **ui/framework:** export highlight ([9936960](https://github.com/mediatool/mediatool/commit/9936960099d8a9facf9cf5ad0e3ef85e5a8de204))
+* **ui:** ClickableWrapper component ([bf517af](https://github.com/mediatool/mediatool/commit/bf517af3d4874d0c2ebecc2674ded43c38e17ea5))
+
+
+
+
+
 # [2.1.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.0.3...@mediatool/ui@2.1.0) (2022-10-19)
 
 

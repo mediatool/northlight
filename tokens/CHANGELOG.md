@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.6.0...@mediatool/tokens@1.7.0) (2022-10-26)
+
+
+### Bug Fixes
+
+* **ui/tokens:** changed text from dark blue to black ([d233b8a](https://github.com/mediatool/mediatool/commit/d233b8a890a11957ad5290948dc2de33bc7e031f))
+
+
+### Features
+
+* **ui/tokens:** add transform for typography ([b0dbd0d](https://github.com/mediatool/mediatool/commit/b0dbd0dc0b1b573777b16f8b49316b24bf6ae5df))
+
+
+
+
+
 # [1.6.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.5.0...@mediatool/tokens@1.6.0) (2022-10-17)
 
 
