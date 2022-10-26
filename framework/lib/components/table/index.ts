@@ -7,4 +7,5 @@ export {
   Th,
   Td,
   TableCaption,
+  TableContainer,
 } from '@chakra-ui/react'
