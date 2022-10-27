@@ -1,17 +1,17 @@
-const StyleDictionary = require('style-dictionary').extend('config.js')
+const { equals, isArrayLike, map, join } = require('ramda')
 
-const isPath = (token, path) => token.filePath === path
+const StyleDictionary = require('style-dictionary').extend('config.js')
 
 const convertToRem = (value) => `${parseFloat(value) / 16}rem`
 
 StyleDictionary.registerFilter({
   name: 'takeGlobalTokens',
-  matcher: (token) => isPath(token, 'dist/sets/global.json'),
+  matcher: ({ filePath }) => equals('dist/sets/global.json', filePath),
 })
 
 StyleDictionary.registerFilter({
   name: 'takeTheme',
-  matcher: (token) => isPath(token, 'dist/sets/theme.json'),
+  matcher: ({ filePath }) => equals('dist/sets/theme.json', filePath),
 })
 
 StyleDictionary.registerTransform({
@@ -38,7 +38,6 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'fontSize/rem',
   type: 'value',
-  transitive: true,
   matcher: (token) => token.attributes.category === 'fontSize',
   transformer: (token) => convertToRem(token.value),
 })
@@ -53,6 +52,21 @@ StyleDictionary.registerTransform({
   ),
 })
 
+StyleDictionary.registerTransform({
+  name: 'boxShadow/px',
+  type: 'value',
+  matcher: (token) => token.attributes.category === 'boxShadow',
+  transformer: (token) => {
+    const shadow = isArrayLike(token.value) ? token.value : [ token.value ]
+    const value = map((s) => {
+      const { x, y, blur, color, spread, type } = s
+      return `${type === 'innerShadow' ? 'inset ' : ''}${x}px ${y}px ${blur}px ${spread}px ${color}`
+    }, shadow)
+
+    return join(', ', value)
+  },
+})
+
 StyleDictionary.registerTransformGroup({
   name: 'mediatoolTokens',
   transforms: [
@@ -64,6 +78,7 @@ StyleDictionary.registerTransformGroup({
     'borderWidth/rem',
     'spacing/rem',
     'sizing/rem',
+    'boxShadow/px',
   ],
 })
 

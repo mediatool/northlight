@@ -13596,7 +13596,7 @@ ramda-fantasy@^0.4.0:
   dependencies:
     ramda ">=0.15.0 <0.18.0"
 
-"ramda@>=0.15.0 <0.18.0", ramda@^0.15.1:
+ramda@0.15.1, "ramda@>=0.15.0 <0.18.0", ramda@^0.15.1:
   version "0.15.1"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.15.1.tgz#b227f79e9ff0acee1955d582f18681eb02c4dc2a"
   integrity sha512-gwtSKevocsvUOq5X64V5Ev6HxfxsEctI8H9WJnnBNMUsIKcA1b2j+WJ5eAXTdx5etKnuDVa2x6WYJzvwATMLlw==

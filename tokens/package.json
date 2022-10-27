@@ -26,6 +26,7 @@
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-esbuild": "^4.9.3",
     "style-dictionary": "^3.7.1",
-    "token-transformer": "^0.0.25"
+    "token-transformer": "^0.0.25",
+    "ramda": "0.15.1"
   }
 }
