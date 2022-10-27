@@ -18,4 +18,7 @@ export default defineConfig({
     }
   },
   plugins: [ reactRefresh() ],
+  build: {
+    outDir: 'dist',
+  }
 })
