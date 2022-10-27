@@ -1,11 +1,11 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
-import { palette } from '@mediatool/tokens'
+import { color, coreSizing } from '@mediatool/tokens'
 
 export const SplitPane: ComponentSingleStyleConfig = {
-  baseStyle: ({ minL, minR, initialSplit, isOpen }) => ({
+  baseStyle: ({ minLeftWidth, minRightWidth, initialSplit, isOpen }) => ({
     display: 'grid',
     overflow: 'hidden',
-    gridTemplateColumns: !isOpen ? '1fr' : `minmax(${minR}%, var(--split-pos, ${initialSplit}%)) auto minmax(${minL}%, 1fr)`,
+    gridTemplateColumns: !isOpen ? '1fr' : `minmax(${minLeftWidth}%, var(--split-pos, ${initialSplit}%)) auto minmax(${minRightWidth}%, 1fr)`,
     alignItems: 'stretch',
     justifyItems: 'stretch',
     height: '100%',
@@ -15,19 +15,19 @@ export const SplitPane: ComponentSingleStyleConfig = {
 
 export const PaneDivider: ComponentSingleStyleConfig = {
   baseStyle: {
-    bgColor: palette.mono.black,
-    zIndex: 999,
+    bgColor: color.background['pane-divider'].default,
+    zIndex: 300,
     cursor: 'col-resize',
     height: '100%',
-    width: 1,
+    width: coreSizing[1],
     _hover: {
-      outlineColor: palette.blue[500],
-      outlineWidth: 4,
+      outlineColor: color.border['pane-divider'].hover,
+      outlineWidth: coreSizing['0a'],
       outlineStyle: 'solid',
     },
     _active: {
-      outlineColor: palette.blue[500],
-      outlineWidth: 4,
+      outlineColor: color.border['pane-divider'].hover,
+      outlineWidth: coreSizing['0a'],
       outlineStyle: 'solid',
     },
   },

@@ -6,8 +6,8 @@ export const SplitPane = ({
   children,
   initialSplit = 50,
   isOpen,
-  minL = 25,
-  minR = 50,
+  minLeftWidth = 25,
+  minRightWidth = 50,
 }: SplitPaneProps) => {
   const dividerRef = useRef<HTMLDivElement | null>(null)
 
@@ -51,7 +51,7 @@ export const SplitPane = ({
     []
   )
 
-  const containerStyle = useMultiStyleConfig('SplitPane', { minL, minR, initialSplit, isOpen })
+  const containerStyle = useMultiStyleConfig('SplitPane', { minLeftWidth, minRightWidth, initialSplit, isOpen })
 
   return (
     <Grid

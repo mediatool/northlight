@@ -5,6 +5,6 @@ export interface SplitPaneProps extends GridProps {
   isOpen: boolean
   children: ReactElement[]
   initialSplit?: number
-  minL?: number
-  minR?: number
+  minLeftWidth?: number
+  minRightWidth?: number
 }

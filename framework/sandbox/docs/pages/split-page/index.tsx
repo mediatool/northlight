@@ -1,12 +1,12 @@
 import { FormLabel, Grid } from '@chakra-ui/react'
 import React, { ChangeEvent, useState } from 'react'
-import { PaneDivider } from '~/lib/components/split-pane/pane-divider'
 import {
   Button,
   Capitalized,
   FormControl,
   HStack,
   Input,
+  PaneDivider,
   PaneItem,
   SplitPane,
   Stack,
@@ -15,14 +15,14 @@ import {
 import { Page } from '../../components'
 
 const SplitPage = () => {
-  const [ split, setSplit ] = useState(false)
+  const [ isSplitted, setIsSplitted ] = useState(false)
   const [ paneSize, setPaneSize ] = useState({
-    minL: 25,
-    minR: 50,
+    minRightWidth: 25,
+    minLeftWidth: 50,
     initialSplit: 50,
   })
 
-  const { minL, minR, initialSplit } = paneSize
+  const { minRightWidth, minLeftWidth, initialSplit } = paneSize
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target
@@ -34,8 +34,8 @@ const SplitPage = () => {
 
   const onReset = () => {
     setPaneSize({
-      minL: 25,
-      minR: 50,
+      minRightWidth: 25,
+      minLeftWidth: 50,
       initialSplit: 50,
     })
   }
@@ -50,33 +50,33 @@ const SplitPage = () => {
 
   return (
     <Page title="Split">
-      <Stack direction="column">
-        <VStack alignItems="flex-start">
+      <Stack direction="column" spacing={ 4 }>
+        <VStack alignItems="flex-start" spacing={ 4 }>
           <HStack>
             <FormControl>
-              <FormLabel htmlFor="minL">Min pink width</FormLabel>
-              <Input value={ minL } name="minL" onChange={ handleChange } />
+              <FormLabel htmlFor="minLeftWidth">Minimum left width</FormLabel>
+              <Input value={ minLeftWidth } name="minLeftWidth" onChange={ handleChange } />
             </FormControl>
             <FormControl>
-              <FormLabel htmlFor="minR">Min purple width</FormLabel>
-              <Input value={ minR } name="minR" onChange={ handleChange } />
+              <FormLabel htmlFor="minRightWidth">Minimum right width</FormLabel>
+              <Input value={ minRightWidth } name="minRightWidth" onChange={ handleChange } />
             </FormControl>
             <FormControl>
-              <FormLabel htmlFor="initialSplit">Initial purple width</FormLabel>
+              <FormLabel htmlFor="initialSplit">Initial split left width</FormLabel>
               <Input value={ initialSplit } name="initialSplit" onChange={ handleChange } />
             </FormControl>
           </HStack>
           <HStack>
-            <Button variant="success" onClick={ () => setSplit(!split) }>
-              { !split ? 'Split me' : 'Un-split me' }
+            <Button variant="success" onClick={ () => setIsSplitted(!isSplitted) }>
+              { !isSplitted ? 'Split me' : 'Un-split me' }
             </Button>
             <Button variant="danger" onClick={ onReset }>Reset values</Button>
           </HStack>
         </VStack>
         <SplitPane
-          isOpen={ split }
-          minL={ minL }
-          minR={ minR }
+          isOpen={ isSplitted }
+          minRightWidth={ minRightWidth }
+          minLeftWidth={ minLeftWidth }
           initialSplit={ initialSplit }
         >
           <PaneItem>
@@ -89,9 +89,9 @@ const SplitPage = () => {
               color="purple.500"
             >
               <Capitalized sx={ textStyle }>{
-                !split
+                !isSplitted
                   ? `I always take 100%. If you split me I will start at ${initialSplit}%`
-                  : `Now my min width is ${minR}%`
+                  : `Now my min width is ${minLeftWidth}%`
               }
               </Capitalized>
             </Grid>
@@ -107,7 +107,7 @@ const SplitPage = () => {
               color="pink.500"
             >
               <Capitalized sx={ textStyle }>
-                { `And my min width is ${minL}%` }
+                { `And my min width is ${minRightWidth}%` }
               </Capitalized>
             </Grid>
           </PaneItem>
