@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.2.0...@mediatool/ui@2.2.1) (2022-10-28)
+
+
+### Bug Fixes
+
+* **ui/framework:** update form labels ([4d6055d](https://github.com/mediatool/mediatool/commit/4d6055da3313c6775071f2c73754ed2b8f46ad3b))
+
+
+
+
+
 # [2.2.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.1.0...@mediatool/ui@2.2.0) (2022-10-26)
 
 

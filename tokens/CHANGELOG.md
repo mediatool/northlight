@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.1](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.7.0...@mediatool/tokens@1.7.1) (2022-10-28)
+
+
+### Bug Fixes
+
+* **ui/tokens:**  Labels and input labels updated ([94de1a0](https://github.com/mediatool/mediatool/commit/94de1a0946a4b39f9e36e0f1099cf73cbc04f6ab))
+
+
+
+
+
 # [1.7.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.6.0...@mediatool/tokens@1.7.0) (2022-10-26)
 
 
