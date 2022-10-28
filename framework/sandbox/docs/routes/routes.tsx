@@ -13,6 +13,21 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/organization-logo-page'),
   },
   {
+    title: 'Drag and Drop',
+    path: '/drag-and-drop',
+    component: () => import('../pages/drag-and-drop-page'),
+  },
+  {
+    title: 'Sortable List',
+    path: '/sortable-list',
+    component: () => import('../pages/sortable-list-page'),
+  },
+  {
+    title: 'Multi Sort',
+    path: '/multi-sort',
+    component: () => import('../pages/multi-sort-page'),
+  },
+  {
     title: 'Clickable',
     path: '/clickable',
     component: () => import('../pages/clickable-page'),
