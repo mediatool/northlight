@@ -38,6 +38,11 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/clickable-page'),
   },
   {
+    title: 'Avatar',
+    path: '/avatar',
+    component: () => import('../pages/avatar-page'),
+  },
+  {
     title: 'Async Error',
     path: '/async-error',
     component: () => import('../pages/async-error-page'),

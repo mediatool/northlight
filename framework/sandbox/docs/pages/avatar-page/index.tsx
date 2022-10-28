@@ -10,7 +10,7 @@ import {
   VStack,
 } from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
-import { users } from '../../context'
+import { users } from '../../../app/context'
 
 const AvatarPage = () => (
   <Page

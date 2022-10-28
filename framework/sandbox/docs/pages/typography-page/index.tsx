@@ -1,7 +1,6 @@
 import React from 'react'
 import { BanSolid, CheckSolid } from '@mediatool/icons'
 import { highlight } from '../../../../lib'
-
 import {
   Code,
   Divider,

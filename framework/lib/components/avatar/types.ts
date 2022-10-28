@@ -3,11 +3,6 @@ import { AvatarProps as ChakraAvatarProps } from '@chakra-ui/react'
 export interface AvatarProps extends ChakraAvatarProps {
   name?: string
   image?: string
-  size?: 'sm' | 'md' | 'lg'
-}
-export interface AvatarButtonProps extends ChakraAvatarProps {
-  name?: string
-  image?: string
   notificationCount?: number
   size?: 'sm' | 'md' | 'lg'
 }

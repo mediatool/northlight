@@ -3,11 +3,13 @@ import { chakra, useMultiStyleConfig } from '@chakra-ui/react'
 import { BusinessContactDuo, UserSquareDuo } from '@mediatool/icons'
 import { Icon } from '../icon'
 import { Box } from '../box'
-import { getInitials } from '../../utilities'
+import { getInitials } from '../../utils'
 import { AvatarProps } from './types'
+import { AvatarBadge } from './avatar-badge'
 
 export const Avatar = ({
   variant = 'square',
+  notificationCount = 0,
   name,
   image,
   ...rest
@@ -40,6 +42,9 @@ export const Avatar = ({
               aria-label="user-avatar"
             />
           ) }
+      { notificationCount > 0 && (
+        <AvatarBadge notificationCount={ notificationCount } />
+      ) }
 
     </Box>
   )
