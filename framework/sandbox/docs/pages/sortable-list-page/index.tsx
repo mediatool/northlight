@@ -28,7 +28,7 @@ const SortableListPage = () => {
     >
       <Stack w="50%" spacing={ 12 }>
         <Stack spacing={ 4 }>
-          <Stack direction={ direction }>
+          <Stack direction={ direction } alignItems="start">
             <SortableList
               items={ itemsOne }
               onChange={ (items) => setItemsOne(items) }
@@ -114,7 +114,7 @@ Click me!
               _hover={ { textDecoration: 'underline' } }
               isExternal={ true }
             >
-              Dnd-kit collision detection docs
+              { ' ' }Dnd-kit collision detection docs
             </Link>
           </Text>
           <Text>
@@ -126,7 +126,7 @@ Click me!
               _hover={ { textDecoration: 'underline' } }
               isExternal={ true }
             >
-              Docs: Sorting strategies
+              { ' ' }Docs: Sorting strategies
             </Link>
           </Text>
           <Text>
@@ -138,7 +138,7 @@ Click me!
               _hover={ { textDecoration: 'underline' } }
               isExternal={ true }
             >
-              Docs: Sensors
+              { ' ' } Docs: Sensors
             </Link>
           </Text>
           <Text>

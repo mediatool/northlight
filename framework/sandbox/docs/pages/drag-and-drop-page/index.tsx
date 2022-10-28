@@ -58,7 +58,7 @@ const DragAndDropPage = () => (
         </Code>
         <Text>
           Draggable is a wrapper that turns it's child into a{ ' ' }
-          <strong>draggable</strong>
+          <strong>draggable </strong>
           element, should be placed under a { '<DragAndDrop />' }
         </Text>
       </Stack>
@@ -95,7 +95,7 @@ const DragAndDropPage = () => (
         </Code>
         <Text>
           Similiar to { '<DragAndDrop />' }, sortable passes down context for{ ' ' }
-          <strong>sortable</strong>elements, it will still be needed to wrap it
+          <strong>sortable </strong>elements, it will still be needed to wrap it
           a DragAndDrop though
         </Text>
       </Stack>
@@ -119,7 +119,7 @@ const DragAndDropPage = () => (
         </Text>
       </Stack>
       <Text>
-        This component should give all the building blocks for building modern
+        This components should give all the building blocks for building modern
         drag and drop user interfaces. Check out the components{ ' ' }
         { '<MultiSort />' } and { '<SortableList />' } which are built on top of
         this components
