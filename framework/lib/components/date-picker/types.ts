@@ -21,6 +21,7 @@ export interface DateSegmentProps {
 export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   isInvalid: boolean
   isDisabled:boolean
+  dateFormat?: string
 }
 
 export interface CalendarCellProps {
@@ -38,6 +39,7 @@ export interface DatePickerProps extends AriaDatePickerProps<DateValue> {
   firstDayOfWeek: 'sunday' | 'monday'
   resetDate: ()=> void
   isInvalid?: boolean
+  dateFormat?: string
 }
 
 export interface DatePickerFieldProps extends ChakraInputProps {
@@ -48,4 +50,5 @@ export interface DatePickerFieldProps extends ChakraInputProps {
   validate?: RegisterOptions
   firstDayOfWeek?: 'sunday' | 'monday'
   direction?: StackDirection
+  dateFormat?: string
 }

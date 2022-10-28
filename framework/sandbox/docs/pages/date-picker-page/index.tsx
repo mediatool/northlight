@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Code, DatePickerField, Form, HStack, Stack } from '../../../../lib/components'
+import { Avatar, Code, DatePickerField, Form, HStack, Stack, Text } from '../../../../lib/components'
 import { Page } from '../../components'
 import { useUser, users } from '../../../app/context'
 
@@ -30,8 +30,14 @@ const DatePickerPage = () => {
         </Code>
         <Form initialValues={ { date: null } } onSubmit={ () => {} }>
           { ({ watch }) => (
-            <Stack w={ 64 } spacing={ 20 }>
+            <Stack spacing={ 4 }>
               <DatePickerField name="date" label="Pick a date" minValue="2022-10-17" maxValue="2022-10-19" />
+              <Text>
+                You can pass on custom formatting to date-picker via <strong>dateFormat</strong>
+              </Text>
+              <DatePickerField name="formattedDate" label="Formatted date" dateFormat="dd/yyyy/mm" />
+              <Code w="max-content">{ '<DatePickerField dateFormat="yyyy|mm-dd" name="formattedDate" label"Formatted date"/>' }</Code>
+
               <Code p={ 4 }>{ JSON.stringify(watch(), null, 2) }</Code>
             </Stack>
           ) }

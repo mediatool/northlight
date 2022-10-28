@@ -4,6 +4,7 @@ import { useDatePicker } from '@react-aria/datepicker'
 import { useDatePickerState } from '@react-stately/datepicker'
 import { FocusScope } from '@react-aria/focus'
 import { XCloseSolid } from '@mediatool/icons'
+import { parseDate } from '@internationalized/date'
 import { Calendar } from '../calendar'
 import { DateField, Trigger } from './components'
 import { DatePickerProps } from './types'
@@ -14,7 +15,13 @@ import { Popover, PopoverAnchor, PopoverContent } from '../popover'
 import { Icon } from '../icon'
 
 export const DatePicker = (props: DatePickerProps) => {
-  const { isDisabled, resetDate, isInvalid = false } = props
+  const {
+    isDisabled,
+    resetDate,
+    isInvalid = false,
+    dateFormat,
+    minValue,
+  } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
 
@@ -24,13 +31,12 @@ export const DatePicker = (props: DatePickerProps) => {
     hideTimeZone: true,
   })
 
-  const {
-    buttonProps,
-    fieldProps,
-    calendarProps,
-    groupProps,
-    dialogProps,
-  } = useDatePicker(props, state, ref)
+  const { buttonProps, fieldProps, calendarProps, groupProps, dialogProps } =
+    useDatePicker(
+      { ...props, minValue: minValue || parseDate('1994-03-08') },
+      state,
+      ref
+    )
 
   const togglePopup = () => state.setOpen(!state.isOpen)
 
@@ -45,6 +51,7 @@ export const DatePicker = (props: DatePickerProps) => {
           <InputGroup { ...groupProps } ref={ ref } __css={ group }>
             <DateField
               { ...fieldProps }
+              dateFormat={ dateFormat }
               isDisabled={ !!isDisabled }
               isInvalid={ isInvalid }
             />
