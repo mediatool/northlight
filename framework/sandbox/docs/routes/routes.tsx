@@ -1,6 +1,7 @@
+import { prop, sortBy } from 'ramda'
 import { Page } from '../../app'
 
-export const routes: Page[] = [
+export const routes: Page[] = sortBy(prop('title'), [
   {
     title: 'Input',
     path: '/input',
@@ -201,4 +202,4 @@ export const routes: Page[] = [
     path: '/typography',
     component: () => import('../pages/typography-page'),
   },
-]
+])
