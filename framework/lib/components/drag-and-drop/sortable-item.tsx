@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { cloneElement, isValidElement } from 'react'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import { borderRadius } from '@mediatool/tokens'
@@ -27,6 +27,12 @@ export const SortableItem = ({
     transition,
   }
 
+  const childrenWithDragCursor = isValidElement(children)
+    ? cloneElement(children as JSX.Element, {
+      cursor: isDragging ? 'grabbing' : 'grab',
+    })
+    : children
+
   return (
     <Box
       ref={ setNodeRef }
@@ -36,9 +42,9 @@ export const SortableItem = ({
       _focusVisible={ ring }
       borderRadius={ borderRadius.tag.default }
     >
-      { typeof children === 'function'
-        ? children(props)
-        : children || (
+      { typeof childrenWithDragCursor === 'function'
+        ? childrenWithDragCursor(props)
+        : childrenWithDragCursor || (
         <DragItem isDragging={ isDragging } itemLabel={ itemLabel } />
         ) }
     </Box>

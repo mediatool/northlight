@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { color as colorToken } from '@mediatool/tokens'
 import {
   Code,
   DragItem,
@@ -60,7 +61,13 @@ const MultiSortPage = () => {
                   </DropZone>
                 </VStack>
                 <DragOverlay>
-                  { activeId ? <DragItem itemLabel={ activeId } /> : null }
+                  { activeId ? (
+                    <DragItem
+                      itemLabel={ activeId }
+                      isDragging={ true }
+                      bgColor={ colorToken.background.tag.default }
+                    />
+                  ) : null }
                 </DragOverlay>
               </HStack>
             ) }

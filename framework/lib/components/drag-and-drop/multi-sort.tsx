@@ -24,23 +24,15 @@ export function MultiSort<itemKeys extends string | number | symbol> ({
   const [ activeItem, setActiveItem ] = useState<UniqueIdentifier | null>(null)
 
   const moveBetweenContainers = (
-    activeContainer: itemKeys,
+    activeContainerName: itemKeys,
     activeIndex: number,
-    overContainer: itemKeys,
+    overContainerName: itemKeys,
     overIndex: number,
     item: string
   ) => ({
     ...items,
-    [activeContainer]: remove(
-      activeIndex,
-      1,
-      items[activeContainer]
-    ),
-    [overContainer]: insert(
-      overIndex,
-      item,
-      items[overContainer]
-    ),
+    [activeContainerName]: remove(activeIndex, 1, items[activeContainerName]),
+    [overContainerName]: insert(overIndex, item, items[overContainerName]),
   })
 
   useEffect(() => {
@@ -57,13 +49,8 @@ export function MultiSort<itemKeys extends string | number | symbol> ({
     })
   )
 
-  const findContainer = (id: string) => {
-    if (id in items) {
-      return id
-    }
-
-    return keys(items).find((key) => items[key].includes(id))
-  }
+  const findContainer = (id: string) =>
+    (id in items ? id : keys(items).find((key) => items[key].includes(id)))
 
   const getContainers = (e: DragOverEvent) => {
     const { active, over } = e
@@ -71,9 +58,9 @@ export function MultiSort<itemKeys extends string | number | symbol> ({
     const { id } = active
     const { id: overId } = over
 
-    const activeContainer = findContainer(id as string) as itemKeys
-    const overContainer = findContainer(overId as string) as itemKeys
-    return { activeContainer, overContainer, id, overId, active }
+    const activeContainerName = findContainer(id as string) as itemKeys
+    const overContainerName = findContainer(overId as string) as itemKeys
+    return { activeContainerName, overContainerName, id, overId, active }
   }
 
   const handleDragStart = (e: DragOverEvent) => {
@@ -84,21 +71,22 @@ export function MultiSort<itemKeys extends string | number | symbol> ({
   }
 
   const handleDragOver = (e: DragOverEvent) => {
-    const { activeContainer, overContainer, id, overId } = getContainers(e)
-    if (!overContainer) {
-      return
-    }
+    const { activeContainerName, overContainerName, id, overId } = getContainers(e)
 
     if (
-      !(!activeContainer || !overContainer || activeContainer === overContainer)
+      !(
+        !activeContainerName ||
+        !overContainerName ||
+        activeContainerName === overContainerName
+      )
     ) {
       setItems((prev: MultiItemType<itemKeys>) => {
-        const activeIndex = indexOf(id, prev[activeContainer])
-        const overIndex = indexOf(overId, prev[overContainer])
+        const activeIndex = indexOf(id, prev[activeContainerName])
+        const overIndex = indexOf(overId, prev[overContainerName])
         return moveBetweenContainers(
-          activeContainer,
+          activeContainerName,
           activeIndex,
-          overContainer,
+          overContainerName,
           overIndex,
           id as string
         )
@@ -107,30 +95,27 @@ export function MultiSort<itemKeys extends string | number | symbol> ({
   }
 
   const handleDragEnd = (e: DragOverEvent) => {
-    const { activeContainer, overContainer, id, overId, active } = getContainers(e)
-    if (!overContainer) {
-      return
-    }
+    const { activeContainerName, overContainerName, id, overId, active } = getContainers(e)
 
     setItems((prev: MultiItemType<itemKeys>) => {
-      if (!activeContainer || !overContainer) return prev
-      const activeIndex = indexOf(id, prev[activeContainer])
-      const overIndex = indexOf(overId, prev[overContainer])
+      if (!activeContainerName || !overContainerName) return prev
+      const activeIndex = indexOf(id, prev[activeContainerName])
+      const overIndex = indexOf(overId, prev[overContainerName])
       let newItems
-      if (activeContainer === overContainer) {
+      if (activeContainerName === overContainerName) {
         newItems = {
           ...prev,
-          [overContainer]: arrayMove(
-            prev[overContainer],
+          [overContainerName]: arrayMove(
+            prev[overContainerName],
             activeIndex,
             overIndex
           ),
         }
       } else {
         newItems = moveBetweenContainers(
-          activeContainer,
+          activeContainerName,
           activeIndex,
-          overContainer,
+          overContainerName,
           overIndex,
           active?.id as string
         )

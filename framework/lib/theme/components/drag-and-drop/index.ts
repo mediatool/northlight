@@ -1,12 +1,12 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { color as colorToken, coreSizing } from '@mediatool/tokens'
+import { coreSizing, palette } from '@mediatool/tokens'
 import { merge } from 'ramda'
 
 export const DragAndDrop: ComponentMultiStyleConfig = {
   parts: [ 'dropZone' ],
   baseStyle: ({ sx }) => ({
     dropZone: merge({
-      border: `2px dashed ${colorToken.text.default}`,
+      border: `2px dashed ${palette.mono.black}`,
       padding: coreSizing['4'],
       display: 'flex',
       flexDirection: 'column',
@@ -16,9 +16,9 @@ export const DragAndDrop: ComponentMultiStyleConfig = {
       textAlign: 'center',
       minH: coreSizing['56'],
       minW: coreSizing['56'],
-      bgColor: colorToken.background.button.default,
+      bgColor: palette.blue['50'],
       _hover: {
-        bgColor: colorToken.background.button['default-hover'],
+        bgColor: palette.blue['100'],
       },
     }, sx),
   }),

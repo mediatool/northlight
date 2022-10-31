@@ -57,7 +57,7 @@ export interface DropZoneProps {
   children?: JSX.Element
 }
 export interface SortableContainerProps {
-  items: string[]
+  items: UniqueIdentifier[]
   strategy?: SortingStrategy
   children?: (id: UniqueIdentifier) => JSX.Element
 }

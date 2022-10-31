@@ -1,15 +1,21 @@
 import React, { forwardRef } from 'react'
 import { DotsMatrixSolid } from '@mediatool/icons'
-import { color } from '@mediatool/tokens'
+import { palette } from '@mediatool/tokens'
 import { Tag, TagLabel, TagRightIcon } from '../tag'
 import { Icon } from '../icon'
 import { DragItemProps } from './types'
 
-export const DragItem = forwardRef(({ size = 'md', isDragging, itemLabel = 'Drag Me', ...rest }: DragItemProps, ref) => (
+export const DragItem = forwardRef(({
+  size = 'md',
+  isDragging,
+  itemLabel = 'Drag Me',
+  bgColor,
+  ...rest
+}: DragItemProps, ref) => (
   <Tag
     ref={ ref }
-    cursor="-webkit-grab"
-    bgColor={ isDragging ? color.background.button['default-active'] : undefined }
+    cursor={ isDragging ? 'grabbing' : 'grab' }
+    bgColor={ bgColor || (isDragging ? palette.blue['200'] : undefined) }
     size={ size }
     minW="max-content"
     { ...rest }
@@ -19,4 +25,5 @@ export const DragItem = forwardRef(({ size = 'md', isDragging, itemLabel = 'Drag
       <Icon as={ DotsMatrixSolid } />
     </TagRightIcon>
   </Tag>
-))
+)
+)

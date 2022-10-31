@@ -30,7 +30,7 @@ export const SortableList = ({
   displayOverlay = false,
   sensors,
 }: SortableListProps) => {
-  const [ items, setItems ] = useState<string[]>(sortableItems)
+  const [ items, setItems ] = useState(sortableItems)
   const [ activeItem, setActiveItem ] = useState<UniqueIdentifier | null>(null)
 
   useEffect(() => {
