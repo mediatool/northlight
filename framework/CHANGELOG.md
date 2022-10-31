@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.2.1...@mediatool/ui@2.2.2) (2022-10-31)
+
+
+### Bug Fixes
+
+* **ui:** sorted side-menu ([ac7a49d](https://github.com/mediatool/mediatool/commit/ac7a49d16b143330b83ee1cec2a74df92be07f2f))
+
+
+
+
+
 ## [2.2.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.2.0...@mediatool/ui@2.2.1) (2022-10-28)
 
 
