@@ -6,6 +6,7 @@ import {
   BusinessContactDuo,
   ClockDuo,
   ColorsDuo,
+  MediatoolLogoDuo,
   UsersDuo,
 } from '@mediatool/icons'
 import {
@@ -32,6 +33,7 @@ import {
   StatNumber,
   Tiny,
   VStack,
+  Wrap,
   highlight,
 } from '../../lib'
 
@@ -67,6 +69,7 @@ const DocsApp = () => {
           <Lead sx={ { fontSize: '18px' } }>Welcome to</Lead>
           <SlideFade in={ fadeOne }>
             <HStack pt={ 10 } spacing={ 2 }>
+              <Icon as={ MediatoolLogoDuo } boxSize={ 32 } />
               <Capitalized sx={ { fontSize: '64px' } }>Mediatool</Capitalized>
               <Highlight
                 query="UI"
@@ -78,6 +81,7 @@ const DocsApp = () => {
               >
                 UI
               </Highlight>
+
             </HStack>
           </SlideFade>
           <Fade in={ fadeTwo }>
@@ -94,11 +98,9 @@ const DocsApp = () => {
         <SlideFade in={ fadeThree }>
           <VStack spacing={ 32 }>
             <HStack spacing={ 8 }>
-              <Stack alignItems="start">
-                <HStack>
-                  <H1>Built by Giants</H1>
-                </HStack>
-                <HStack>
+              <Stack alignItems="center">
+                <H1>Built by Giants</H1>
+                <Wrap maxW="400px" justify="center">
                   <OrganizationLogo
                     name="Iliya"
                     image="https://media.cdn.teamtailor.com/images/s3/teamtailor-production/employee_picture-v3/image_uploads/9e0881de-b804-4bb7-9ab0-e8a11d33654e/original.jpeg?outputFormat=webp"
@@ -107,6 +109,11 @@ const DocsApp = () => {
                   <OrganizationLogo
                     name="Paolo"
                     image="https://media.cdn.teamtailor.com/images/s3/teamtailor-production/employee_picture-v3/image_uploads/082ba0e8-ca4b-40c4-af69-f4d35d76d1e4/original.jpeg?outputFormat=webp"
+                    size="2xl"
+                  />
+                  <OrganizationLogo
+                    name="Hanna"
+                    image="https://media.cdn.teamtailor.com/images/s3/teamtailor-production/employee_picture-v3/image_uploads/64d037c7-9eb5-4c42-a2f9-1a1bc31878b9/original.png?outputFormat=webp"
                     size="2xl"
                   />
                   <OrganizationLogo
@@ -119,7 +126,7 @@ const DocsApp = () => {
                     image="https://lh3.google.com/u/0/d/1uXOfIc8d8qrQ4KSp2Z0Wub6wQgG-kf33=w300-k-nu-iv1"
                     size="2xl"
                   />
-                </HStack>
+                </Wrap>
               </Stack>
               <Box maxW="500px" textAlign="right" pt={ 8 }>
                 <P>
