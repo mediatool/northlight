@@ -27,12 +27,13 @@ export interface SortableItemProps extends UseSortableArguments {
   itemLabel?: UniqueIdentifier
 }
 
-export interface SortableListProps {
-  children?: ChildrenType<UniqueIdentifier>
-  items: string[]
+export interface SortableListProps<T> {
+  children?: ChildrenType<T>
+  items: T[]
   collisionDetection?: CollisionDetection
   strategy?: SortingStrategy
-  onChange?: (items: string[]) => void
+  onChange?: (items: T[]) => void
+  createKey?: (item: T) => UniqueIdentifier
   displayOverlay?: boolean
   sensors?: SensorDescriptor<SensorOptions>[]
 }

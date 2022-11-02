@@ -89,12 +89,15 @@ Click me!
         </Stack>
         <Stack>
           <Text>You can render a custom sortable element</Text>
-          <SortableList items={ [ 'item1', 'item2', 'item3' ] }>
-            { (id) => <Box w="50px" h="50px" bgColor="gray.200">{ id }</Box> }
+          <SortableList
+            items={ [ { name: 'item1' }, { name: 'item2' }, { name: 'item3' } ] }
+            createKey={ (item) => item.name }
+          >
+            { ({ name }) => <Box w="50px" h="50px" bgColor="gray.200">{ name }</Box> }
           </SortableList>
           <Code w="max-content" display="block" whiteSpace="pre">
-            { `<SortableList items={ [ 'item1', 'item2', 'item3' ] }>
-{ (id) => <Box w="50px" h="50px" bgColor="gray.200">{ id }</Box> }
+            { `<SortableList items={ [ { name: 'item1' }, { name: 'item2' }, { name: 'item3' } ] }>
+{ ({ name }) => <Box w="50px" h="50px" bgColor="gray.200">{ name }</Box> }
 </SortableList>` }
           </Code>
         </Stack>

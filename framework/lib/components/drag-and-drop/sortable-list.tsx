@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import {
   DragOverEvent,
   DragOverlay,
@@ -14,24 +14,27 @@ import {
   rectSortingStrategy,
   sortableKeyboardCoordinates,
 } from '@dnd-kit/sortable'
-import { indexOf } from 'ramda'
+import { identity, indexOf, map } from 'ramda'
 import { DragAndDrop } from './drag-and-drop'
 import { Sortable } from './sortable'
 import { SortableItem } from './sortable-item'
 import { DragItem } from './drag-item'
 import { SortableListProps } from './types'
 
-export const SortableList = ({
+export function SortableList<T> ({
   children,
   items: sortableItems,
   collisionDetection,
+  createKey = identity as (t: T) => UniqueIdentifier,
   strategy,
   onChange = () => {},
   displayOverlay = false,
   sensors,
-}: SortableListProps) => {
+}: SortableListProps<T>) {
   const [ items, setItems ] = useState(sortableItems)
   const [ activeItem, setActiveItem ] = useState<UniqueIdentifier | null>(null)
+
+  const identifierItems = useMemo(() => map(createKey, items), [ items ])
 
   useEffect(() => {
     onChange(items)
@@ -58,9 +61,10 @@ export const SortableList = ({
   const handleDragEnd = (event: DragOverEvent) => {
     const { active, over } = event
     if (active && over && active.id !== over.id) {
-      setItems((prev: string[]) => {
-        const oldIndex = indexOf(active.id, prev)
-        const newIndex = indexOf(over.id, prev)
+      setItems((prev: T[]) => {
+        const prevIds = map(createKey, prev)
+        const oldIndex = indexOf(active.id, prevIds)
+        const newIndex = indexOf(over.id, prevIds)
 
         return arrayMove(prev, oldIndex, newIndex)
       })
@@ -75,14 +79,17 @@ export const SortableList = ({
       onDragEnd={ handleDragEnd }
     >
       <Sortable
-        items={ items }
+        items={ identifierItems }
         strategy={ strategy || rectSortingStrategy }
       >
-        { items.map((id: UniqueIdentifier) => (
-          <SortableItem key={ id } id={ id } itemLabel={ id }>
-            { typeof children === 'function' ? children(id) : children }
-          </SortableItem>
-        )) }
+        { items.map((item) => {
+          const id = createKey(item)
+          return (
+            <SortableItem key={ id } id={ id } itemLabel={ id }>
+              { typeof children === 'function' ? children(item) : children }
+            </SortableItem>
+          )
+        }) }
       </Sortable>
       { displayOverlay && (
         <DragOverlay>
