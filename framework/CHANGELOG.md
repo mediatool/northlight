@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.2.3...@mediatool/ui@2.3.0) (2022-11-02)
+
+
+### Bug Fixes
+
+* **ui:** PR review changes ([44c6ae4](https://github.com/mediatool/mediatool/commit/44c6ae4f5fed7f3a94b743a44f3ba717305ddfd3))
+
+
+### Features
+
+* **ui:** added formatting to date-picker ([30aa082](https://github.com/mediatool/mediatool/commit/30aa082e32f8a148fec8794fac844cb7c39428f5))
+* **ui:** Drag n' drop components ([1fe2183](https://github.com/mediatool/mediatool/commit/1fe21830f1b7ffc973436a237b99064e42acfc5c))
+* **ui:** multi sort ([4189d7b](https://github.com/mediatool/mediatool/commit/4189d7b443fd60d408e57eced8409cedc5d6f3d0))
+* **ui:** sortable list ([6f0f415](https://github.com/mediatool/mediatool/commit/6f0f415e700e1c01e291fbd14515b719f19063f5))
+
+
+
+
+
 ## [2.2.3](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.2.2...@mediatool/ui@2.2.3) (2022-11-01)
 
 **Note:** Version bump only for package @mediatool/ui

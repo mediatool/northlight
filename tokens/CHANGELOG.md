@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.7.1...@mediatool/tokens@1.8.0) (2022-11-02)
+
+
+### Features
+
+* **ui/tokens:** add box shadow, z index, transition and animation ([e74bfdb](https://github.com/mediatool/mediatool/commit/e74bfdbb351a698283314f5a457e2c484a446ab2))
+
+
+
+
+
 ## [1.7.1](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.7.0...@mediatool/tokens@1.7.1) (2022-10-28)
 
 
