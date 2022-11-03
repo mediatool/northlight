@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.3.0...@mediatool/ui@2.4.0) (2022-11-03)
+
+
+### Bug Fixes
+
+* **ui:** sortable item dbl click prevent onPointerDown event ([4d577cc](https://github.com/mediatool/mediatool/commit/4d577cc81b7c953351adeae170dcaed5daeeed60))
+
+
+### Features
+
+* **ui/framework:** make sortable list generic ([edcf28d](https://github.com/mediatool/mediatool/commit/edcf28d922d76b3faa86a3390da77457175ab78c))
+* **ui:** onAdd, onRemove callbacks ([e893a3e](https://github.com/mediatool/mediatool/commit/e893a3e2a8f226fe203719feb3ac55462abbc16d))
+
+
+
+
+
 # [2.3.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.2.3...@mediatool/ui@2.3.0) (2022-11-02)
 
 
