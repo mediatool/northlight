@@ -92,14 +92,25 @@ Click me!
           <SortableList
             items={ [ { name: 'item1' }, { name: 'item2' }, { name: 'item3' } ] }
             createKey={ (item) => item.name }
+            dblClickThreshold={ 500 }
           >
-            { ({ name }) => <Box w="50px" h="50px" bgColor="gray.200">{ name }</Box> }
+            { ({ name }) => <Box w="50px" h="50px" bgColor="gray.200" contentEditable={ true }>{ name }</Box> }
           </SortableList>
           <Code w="max-content" display="block" whiteSpace="pre">
-            { `<SortableList items={ [ { name: 'item1' }, { name: 'item2' }, { name: 'item3' } ] }>
-{ ({ name }) => <Box w="50px" h="50px" bgColor="gray.200">{ name }</Box> }
+            { `<SortableList 
+  items={ [ { name: 'item1' }, { name: 'item2' }, { name: 'item3' } ] }
+  createKey={ (item) => item.name }
+  dblClickThreshold={ 500 }
+>
+{ ({ name }) => <Box w="50px" h="50px" bgColor="gray.200" contentEditable={ true }>{ name }</Box> }
 </SortableList>` }
           </Code>
+          <Text>
+            When the user double clicks it will trigger the default behaviour of
+            the rendered component instead of the dragging,
+            you can adjust the threshold with <strong>dblClickThreshold</strong>,
+            default is <strong>300ms</strong>
+          </Text>
         </Stack>
         <Stack>
           <Text>It takes the following props</Text>

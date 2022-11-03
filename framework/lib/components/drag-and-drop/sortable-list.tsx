@@ -30,6 +30,7 @@ export function SortableList<T> ({
   onChange = () => {},
   displayOverlay = false,
   sensors,
+  dblClickThreshold = 300,
 }: SortableListProps<T>) {
   const [ items, setItems ] = useState(sortableItems)
   const [ activeItem, setActiveItem ] = useState<UniqueIdentifier | null>(null)
@@ -85,7 +86,12 @@ export function SortableList<T> ({
         { items.map((item) => {
           const id = createKey(item)
           return (
-            <SortableItem key={ id } id={ id } itemLabel={ id }>
+            <SortableItem
+              key={ id }
+              id={ id }
+              itemLabel={ id }
+              dblClickThreshold={ dblClickThreshold }
+            >
               { typeof children === 'function' ? children(item) : children }
             </SortableItem>
           )

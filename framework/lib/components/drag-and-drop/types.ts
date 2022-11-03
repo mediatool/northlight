@@ -25,6 +25,7 @@ export interface DraggableProps extends UseDraggableArguments {
 export interface SortableItemProps extends UseSortableArguments {
   children?: ChildrenType
   itemLabel?: UniqueIdentifier
+  dblClickThreshold?: number
 }
 
 export interface SortableListProps<T> {
@@ -36,6 +37,7 @@ export interface SortableListProps<T> {
   createKey?: (item: T) => UniqueIdentifier
   displayOverlay?: boolean
   sensors?: SensorDescriptor<SensorOptions>[]
+  dblClickThreshold?: number
 }
 
 export interface MultiSortProps<itemKeys extends string | number | symbol> {
