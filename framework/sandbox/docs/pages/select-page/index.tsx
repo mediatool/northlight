@@ -98,6 +98,19 @@ const SelectPage = () => (
       </VStack>
       <Divider />
       <Text>
+        The Select has a custom <strong>onAdd </strong>
+        and <strong>onRemove</strong> as callbacks where the recently removed or added
+        item is the argument
+      </Text>
+      <Code w="max-content" display="block" whiteSpace="pre">
+        { `<Select
+  onAdd={(addedItem) => console.log('added', addedItem)}
+  onRemove={(removedItem) => console.log('removed', removedItem)}
+/>` }
+      </Code>
+      <Text>They also work for <strong>{ '<SelectField>' }</strong></Text>
+      <Divider />
+      <Text>
         They can be used in 3 different <strong>size</strong>
       </Text>
       <VStack spacing={ 4 } maxWidth="400px">

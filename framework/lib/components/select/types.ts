@@ -9,7 +9,9 @@ export type SelectProps<T> =
 ChakraReactSelectProps<T, boolean, GroupBase<T>>
 & {
   value?: string
-  onChange?: any
+  onChange?: (val: any) => void
+  onAdd?: (val: string) => void
+  onRemove?: (val: string) => void
   name?: string
   size?: size
   'data-testid'?: string
