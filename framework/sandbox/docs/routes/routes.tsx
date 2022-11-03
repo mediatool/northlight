@@ -8,6 +8,11 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/input-page'),
   },
   {
+    title: 'Flip Button',
+    path: '/flip-button',
+    component: () => import('../pages/flip-button-page'),
+  },
+  {
     title: 'Organization Logo',
     path: '/organization-logo',
     component: () => import('../pages/organization-logo-page'),

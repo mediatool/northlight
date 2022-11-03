@@ -1,9 +1,12 @@
 import React from 'react'
+import { TextSolid } from '@mediatool/icons'
 import {
   Button,
   CheckboxField,
   Code,
   DatePickerField,
+  FlipButton,
+  FlipButtonGroupField,
   Form,
   FormattedNumberInput,
   MaskedTextInput,
@@ -29,6 +32,8 @@ export const FormOne = () => {
         formatted: '',
         experience: '',
         sports: '',
+        foods: [],
+        fontSize: 'sm',
         dogs: 0,
         newsletter: true,
         personalInfoAgree: false,
@@ -137,6 +142,17 @@ export const FormOne = () => {
             <Radio value="editor">Editor</Radio>
             <Radio value="admin">Admin</Radio>
           </RadioGroupField>
+          <FlipButtonGroupField name="foods" label="Select the foods you enjoy" isMulti={ true } variant="brand">
+            <FlipButton value="pizza">Pizza</FlipButton>
+            <FlipButton value="hamburger">Button</FlipButton>
+            <FlipButton value="steak">Steak</FlipButton>
+          </FlipButtonGroupField>
+          <FlipButtonGroupField name="fontSize" label="Choose your font size in app" icon={ TextSolid } size="sm">
+            <FlipButton value="sm">xs</FlipButton>
+            <FlipButton value="md">sm</FlipButton>
+            <FlipButton value="lg">md</FlipButton>
+            <FlipButton value="xl">lg</FlipButton>
+          </FlipButtonGroupField>
           <TextareaField
             name="review"
             label="Please write a short description of your work experience"
