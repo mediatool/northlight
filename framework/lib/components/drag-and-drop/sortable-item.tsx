@@ -25,13 +25,23 @@ export const SortableItem = ({
   } = useSortable({ ...rest })
 
   const timeStampSnapchot = useRef(0)
-  const { onPointerDown } = listeners as SyntheticListenerMap
+  const inEditMode = useRef(false)
+  const { onPointerDown, onKeyDown } = listeners as SyntheticListenerMap
   const handlePointerDown = (e: PointerEvent<Element>) => {
     const elapsedTime = e.timeStamp - timeStampSnapchot.current
     if (elapsedTime > dblClickThreshold) {
+      inEditMode.current = true
       onPointerDown(e)
+    } else {
+      inEditMode.current = false
     }
     timeStampSnapchot.current = e.timeStamp
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent<Element>) => {
+    if (inEditMode.current) {
+      onKeyDown(e)
+    }
   }
 
   const style = {
@@ -50,10 +60,10 @@ export const SortableItem = ({
       ref={ setNodeRef }
       sx={ style }
       { ...attributes }
-      { ...listeners }
       _focusVisible={ ring }
       borderRadius={ borderRadius.tag.default }
       onPointerDown={ handlePointerDown }
+      onKeyDown={ handleKeyDown }
     >
       { typeof childrenWithDragCursor === 'function'
         ? childrenWithDragCursor(props)
