@@ -1,7 +1,10 @@
 import { ReactNode } from 'react'
 import {
   ControllerRenderProps,
+  FieldError,
+  FieldErrorsImpl,
   FieldValues,
+  Merge,
   RegisterOptions,
   SubmitHandler,
   UseFormProps,
@@ -35,3 +38,5 @@ export type FormProps<FormValues extends FieldValues> = {
   ) => ReactNode)
   | ReactNode
 }
+
+export type FieldErrorType = FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined

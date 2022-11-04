@@ -4,6 +4,7 @@ import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { Stack } from '../stack'
 import { FieldProps } from './types'
 import { useFormContext } from '../../hooks'
+import { getFieldError } from '../../utils'
 
 export function Field ({
   name,
@@ -15,7 +16,9 @@ export function Field ({
   validate,
 }: FieldProps) {
   const methods = useFormContext()
-  const fieldError = methods.formState.errors[name]
+  const { control, formState: { errors } } = methods
+  const fieldError = getFieldError(name, errors)
+
   return (
     <FormControl isInvalid={ !!fieldError } isRequired={ isRequired }>
       <Stack
@@ -30,7 +33,7 @@ export function Field ({
         ) }
         <Controller
           name={ name }
-          control={ methods.control }
+          control={ control }
           rules={ validate }
           render={ ({ field }) => children(field, methods) }
         />
