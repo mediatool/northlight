@@ -18,6 +18,7 @@ export function Form<FormValues extends FieldValues> ({
   formSettings = { mode: 'onChange' },
   methods = undefined,
   enableReinitialize = false,
+  shouldConvert = true,
   ...rest
 }: FormProps<FormValues>) {
   const customResolver: Resolver<FormValues, any> = (
@@ -26,7 +27,7 @@ export function Form<FormValues extends FieldValues> ({
     _options
   ) => ({
     values,
-    errors: convertValidation<FormValues>(validate(values)),
+    errors: shouldConvert ? convertValidation<FormValues>(validate(values)) : validate(values),
   })
 
   const newMethods =
