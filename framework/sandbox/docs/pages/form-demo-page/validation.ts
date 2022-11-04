@@ -9,26 +9,26 @@ const isCurrentDate = (date: string) => {
   return date === `${year}-${month}-${day}`
 }
 
-export const validation = [
-  {
-    prop: 'firstName',
-    predicate: (v: any) => v === 'error',
-    error: 'That is an error',
-  },
-  {
-    prop: 'date',
-    predicate: isCurrentDate,
-    error: 'Cant select current date',
-  },
-  {
-    prop: 'sports',
-    predicate: (v: any) => v.includes('basketball'),
-    error: 'Nobody likes basketball!',
-  },
-  { prop: 'dogs', predicate: (v: any) => v > 10, error: 'Too many dogs' },
-  {
-    prop: 'newsletter',
-    predicate: (v: any) => v,
-    error: 'Our newsletter sucks',
-  },
-]
+export const validation = (values: any) => {
+  const errors: any = {}
+  if (values.firstName.nested === 'error') {
+    errors.firstName = {
+      nested: {
+        message: 'That is an error',
+      },
+    }
+  }
+  if (isCurrentDate(values.date)) {
+    errors.date = { message: "Can't select current date" }
+  }
+  if (values.sports.includes('basketball')) {
+    errors.sports = { message: 'Nobody likes basketball' }
+  }
+  if (values.dogs > 10) {
+    errors.dogs = { message: 'Too many dogs' }
+  }
+  if (values.newsletter) {
+    errors.newsletter = { message: 'Our newsletter sucks' }
+  }
+  return errors
+}

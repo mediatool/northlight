@@ -13,7 +13,6 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
-  createValidator,
 } from '../../../../lib'
 import { PageOne } from './page-one'
 import { PageTwo } from './page-two'
@@ -27,7 +26,9 @@ type FormOneProps = {
 
 export const FormTwo = ({ isOpen, onClose }: FormOneProps) => {
   const initialValues = {
-    firstName: '',
+    firstName: {
+      nested: '',
+    },
     sports: '',
     dogs: 0,
     newsletter: false,
@@ -40,7 +41,7 @@ export const FormTwo = ({ isOpen, onClose }: FormOneProps) => {
     <Form
       initialValues={ initialValues }
       onSubmit={ () => {} }
-      validate={ createValidator(validation) }
+      validate={ validation }
     >
       { (methods) => (
         <>

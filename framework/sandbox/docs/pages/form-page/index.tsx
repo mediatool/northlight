@@ -75,8 +75,8 @@ const FormPage = () => (
       </Text>
       <Text>
         <strong>validate </strong>- This should be a function that
-        returns an object with the form errors, look at form demo example 2
-        code to see how used
+        returns an object with the form errors, look at the file validation
+        in form-demo-page/validation to see how to write validation
       </Text>
       <Text>
         <strong>formSettings </strong>

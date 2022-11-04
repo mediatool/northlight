@@ -19,7 +19,7 @@ import {
 const PageOneFields = () => (
   <Stack spacing={ 8 }>
     <TextField
-      name="firstName"
+      name="firstName.nested"
       label="First Name"
       placeholder="John"
     />
