@@ -4,11 +4,15 @@ import { ComponentType } from 'react'
 import { RegisterOptions } from 'react-hook-form'
 
 type size = 'sm' | 'md' | 'lg'
+interface Option {
+  label: string
+  value: string
+}
 
 export type SelectProps<T> =
 ChakraReactSelectProps<T, boolean, GroupBase<T>>
 & {
-  value?: string
+  value?: Option | Option[]
   onChange?: (val: any) => void
   onAdd?: (val: string) => void
   onRemove?: (val: string) => void
