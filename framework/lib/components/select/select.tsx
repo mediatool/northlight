@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useRef } from 'react'
-import { Select as ChakraReactSelect } from 'chakra-react-select'
+import { ActionMeta, Select as ChakraReactSelect } from 'chakra-react-select'
 import { Box } from '@chakra-ui/react'
 import { difference, identity, length } from 'ramda'
 import { SelectProps } from './types'
@@ -20,8 +20,8 @@ export function Select<T> ({
 
   const itemsArr = useRef<any[]>([])
 
-  const handleChange = (val: any) => {
-    onChange(val)
+  const handleChange = (val: any, event: ActionMeta<T>) => {
+    onChange(val, event)
     if (!isMulti) {
       onAdd((val).value)
     } else if (val.length > itemsArr.current.length) {
