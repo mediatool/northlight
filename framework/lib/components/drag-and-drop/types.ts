@@ -1,3 +1,4 @@
+import { ComponentType } from 'react'
 import {
   CollisionDetection,
   SensorDescriptor,
@@ -7,29 +8,36 @@ import {
   UseDroppableArguments,
 } from '@dnd-kit/core'
 import { SortingStrategy, UseSortableArguments } from '@dnd-kit/sortable'
-import { SystemStyleObject, TagProps } from '@chakra-ui/react'
+import { IconProps, SystemStyleObject, TagProps } from '@chakra-ui/react'
+import { SyntheticListenerMap } from '@dnd-kit/core/dist/hooks/utilities'
 
-type ChildrenType<PropType=any> =
-  | ((props: PropType, secondProp?: any) => JSX.Element | JSX.Element[])
+type ChildrenType<PropType=any, PropTypeTwo=any> =
+  | ((
+    props: PropType,
+    secondProp: PropTypeTwo,
+    thirdProp?: any
+  ) => JSX.Element | JSX.Element[] | undefined)
   | (JSX.Element | JSX.Element[])
 
 export type MultiItemType<itemKeys extends string | number | symbol> = Record<itemKeys, string[]>
 export interface DroppableProps extends UseDroppableArguments {
-  children?: ChildrenType
+  children?: ((props: any) => JSX.Element | JSX.Element[]) | (JSX.Element | JSX.Element[])
 }
 export interface DraggableProps extends UseDraggableArguments {
   itemLabel?: string
-  children?: ChildrenType
+  children?: ChildrenType<SyntheticListenerMap>
+  disableDrag?: boolean
 }
 
 export interface SortableItemProps extends UseSortableArguments {
-  children?: ChildrenType
+  children?: ChildrenType<SyntheticListenerMap>
   itemLabel?: UniqueIdentifier
   dblClickThreshold?: number
+  disableDrag?: boolean
 }
 
 export interface SortableListProps<T> {
-  children?: ChildrenType<T>
+  children?: ChildrenType<T, SyntheticListenerMap>
   items: T[]
   collisionDetection?: CollisionDetection
   strategy?: SortingStrategy
@@ -38,6 +46,7 @@ export interface SortableListProps<T> {
   displayOverlay?: boolean
   sensors?: SensorDescriptor<SensorOptions>[]
   dblClickThreshold?: number
+  disableDrag?: boolean
 }
 
 export interface MultiSortProps<itemKeys extends string | number | symbol> {
@@ -52,6 +61,11 @@ export interface DragItemProps extends Omit<TagProps, 'variant'> {
   isDragging?: boolean
   itemLabel?: UniqueIdentifier
   bgColor?: string
+}
+
+export interface DragHandleProps extends IconProps {
+  isDragging?: boolean
+  icon?: ComponentType<any>
 }
 
 export interface DropZoneProps {

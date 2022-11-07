@@ -31,6 +31,7 @@ export function SortableList<T> ({
   displayOverlay = false,
   sensors,
   dblClickThreshold = 300,
+  disableDrag = false,
 }: SortableListProps<T>) {
   const [ items, setItems ] = useState(sortableItems)
   const [ activeItem, setActiveItem ] = useState<UniqueIdentifier | null>(null)
@@ -91,8 +92,11 @@ export function SortableList<T> ({
               id={ id }
               itemLabel={ id }
               dblClickThreshold={ dblClickThreshold }
+              disableDrag={ disableDrag }
             >
-              { typeof children === 'function' ? children(item) : children }
+              { (listeners, props) => (
+                typeof children === 'function' ? children(item, listeners, props) : children
+              ) }
             </SortableItem>
           )
         }) }

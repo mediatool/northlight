@@ -2,7 +2,6 @@ import React, { PointerEvent, cloneElement, isValidElement, useRef } from 'react
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import { borderRadius } from '@mediatool/tokens'
-import { SyntheticListenerMap } from '@dnd-kit/core/dist/hooks/utilities'
 import { Box } from '../box'
 import { DragItem } from './drag-item'
 import { ring } from '../../utils'
@@ -12,6 +11,7 @@ export const SortableItem = ({
   itemLabel = 'Drag me',
   dblClickThreshold = 300,
   children,
+  disableDrag = false,
   ...rest
 }: SortableItemProps) => {
   const {
@@ -23,10 +23,15 @@ export const SortableItem = ({
     isDragging,
     ...props
   } = useSortable({ ...rest })
+  if (!listeners) {
+    return (
+      <DragItem itemLabel={ itemLabel } />
+    )
+  }
 
   const timeStampSnapchot = useRef(0)
   const inEditMode = useRef(false)
-  const { onPointerDown, onKeyDown } = listeners as SyntheticListenerMap
+  const { onPointerDown, onKeyDown } = listeners
   const handlePointerDown = (e: PointerEvent<Element>) => {
     const elapsedTime = e.timeStamp - timeStampSnapchot.current
     if (elapsedTime > dblClickThreshold) {
@@ -55,21 +60,27 @@ export const SortableItem = ({
     })
     : children
 
+  const dragEventListeners = !disableDrag && {
+    onPointerDown: handlePointerDown,
+    onKeyDown: handleKeyDown,
+  }
+
   return (
     <Box
       ref={ setNodeRef }
       sx={ style }
       { ...attributes }
       _focusVisible={ ring }
+      tabIndex={ disableDrag ? -1 : 0 }
       borderRadius={ borderRadius.tag.default }
-      onPointerDown={ handlePointerDown }
-      onKeyDown={ handleKeyDown }
+      { ...dragEventListeners }
     >
-      { typeof childrenWithDragCursor === 'function'
-        ? childrenWithDragCursor(props)
-        : childrenWithDragCursor || (
-        <DragItem isDragging={ isDragging } itemLabel={ itemLabel } />
-        ) }
+      { (
+        typeof childrenWithDragCursor === 'function'
+          ? childrenWithDragCursor(listeners, props)
+          : childrenWithDragCursor
+      ) || <DragItem isDragging={ isDragging } itemLabel={ itemLabel } />
+         }
     </Box>
   )
 }

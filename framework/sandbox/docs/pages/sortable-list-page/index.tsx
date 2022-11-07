@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { StackDirection } from '@chakra-ui/react'
 import {
-  Box,
   Button,
   Code,
+  DragHandle,
   HStack,
+  Input,
   Link,
   SimpleGrid,
   SortableList,
@@ -92,22 +93,33 @@ Click me!
           <SortableList
             items={ [ { name: 'item1' }, { name: 'item2' }, { name: 'item3' } ] }
             createKey={ (item) => item.name }
-            dblClickThreshold={ 500 }
+            disableDrag={ true }
           >
-            { ({ name }) => <Box w="50px" h="50px" bgColor="gray.200" contentEditable={ true }>{ name }</Box> }
+            { ({ name }, listeners, { isOver }) => (
+              <HStack>
+                <DragHandle { ...listeners } isDragging={ isOver } />
+                <Input defaultValue={ name } />
+              </HStack>
+            ) }
           </SortableList>
           <Code w="max-content" display="block" whiteSpace="pre">
             { `<SortableList 
   items={ [ { name: 'item1' }, { name: 'item2' }, { name: 'item3' } ] }
   createKey={ (item) => item.name }
-  dblClickThreshold={ 500 }
+  disableDrag={ true }
 >
-{ ({ name }) => <Box w="50px" h="50px" bgColor="gray.200" contentEditable={ true }>{ name }</Box> }
+  { ({ name }, listeners, { isOver }) => (
+    <HStack>
+      <DragHandle { ...listeners } isDragging={ isOver } />
+      <Input defaultValue={ name } />
+    </HStack>
+  ) }
 </SortableList>` }
           </Code>
           <Text>
-            When the user double clicks it will trigger the default behaviour of
-            the rendered component instead of the dragging,
+            If <strong>disableDrag=false</strong>,
+            then when the user double clicks it will trigger the default
+            behaviour of the rendered component instead of the dragging,
             you can adjust the threshold with <strong>dblClickThreshold</strong>,
             default is <strong>300ms</strong>
           </Text>
