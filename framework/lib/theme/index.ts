@@ -2,7 +2,7 @@ import {
   ThemeOverride,
   extendTheme,
 } from '@chakra-ui/react'
-import { palette } from '@mediatool/tokens'
+import { coreZIndex, palette } from '@mediatool/tokens'
 import { scrollbarStyles } from './global/scrollbar'
 import * as components from './components'
 
@@ -31,6 +31,9 @@ const overrides: ThemeOverride = {
   },
   components: {
     ...components,
+  },
+  zIndices: {
+    ...coreZIndex,
   },
 }
 
