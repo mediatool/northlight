@@ -8,3 +8,4 @@ export {
 } from '@chakra-ui/react'
 
 export * from './modal'
+export * from './types'

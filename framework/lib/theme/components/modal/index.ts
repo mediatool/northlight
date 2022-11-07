@@ -9,6 +9,15 @@ import {
 
 export const Modal: ComponentMultiStyleConfig = {
   parts: [ 'overlay', 'closeButton', 'dialog' ],
+  sizes: {
+    huge: {
+      dialog: {
+        width: '90%',
+        maxW: '96rem',
+        aspectRatio: '16/9',
+      },
+    },
+  },
   baseStyle: {
     overlay: {
       bgColor: `${color.background.modal.overlay}50`,

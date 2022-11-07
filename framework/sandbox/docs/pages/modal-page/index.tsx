@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FormControl, FormLabel } from '@chakra-ui/react'
 import {
   useDisclosure,
 } from '../../../../lib/hooks'
@@ -6,11 +7,14 @@ import {
   Box,
   Button,
   Divider,
+  FlipButton,
+  FlipButtonGroup,
   ListItem,
   Modal,
   ModalBody,
   ModalFooter,
   ModalHeader,
+  ModalSizes,
   Stack,
   Text,
   UnorderedList,
@@ -19,6 +23,12 @@ import { DefaultPageSubtitle, Page } from '../../components'
 
 const ModalPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [ size, setSize ] = useState<string | string[]>('md')
+
+  const handleChange = (val: string | string[]) => {
+    setSize(val)
+  }
+
   return (
     <Page
       title="Modal"
@@ -47,10 +57,27 @@ const ModalPage = () => {
           <Text as="b"> ModalFooter.</Text>
         </Text>
         <Divider />
+        <FormControl>
+          <FormLabel>Picka size</FormLabel>
+          <FlipButtonGroup onChange={ handleChange } value={ size }>
+            <FlipButton value="xs">Xs</FlipButton>
+            <FlipButton value="sm">Sm</FlipButton>
+            <FlipButton value="md">Md</FlipButton>
+            <FlipButton value="lg">Lg</FlipButton>
+            <FlipButton value="xl">Xl</FlipButton>
+            <FlipButton value="2xl">2xl</FlipButton>
+            <FlipButton value="3xl">3xl</FlipButton>
+            <FlipButton value="4xl">4xl</FlipButton>
+            <FlipButton value="5xl">5xl</FlipButton>
+            <FlipButton value="6xl">6xl</FlipButton>
+            <FlipButton value="huge">Huge</FlipButton>
+            <FlipButton value="full">Full</FlipButton>
+          </FlipButtonGroup>
+        </FormControl>
         <Text>This is an expamble of a simple modal</Text>
         <Box w={ 200 }>
           <Button onClick={ onOpen }>Open</Button>
-          <Modal isOpen={ isOpen } onClose={ onClose }>
+          <Modal isOpen={ isOpen } onClose={ onClose } size={ size as ModalSizes }>
             <ModalHeader>Title goes here</ModalHeader>
             <ModalBody>
               Lorem ipsum dolor sit amet consectetur,

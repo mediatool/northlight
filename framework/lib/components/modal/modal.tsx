@@ -4,8 +4,8 @@ import {
   ModalCloseButton,
   ModalContent,
   ModalOverlay,
-  ModalProps,
 } from '@chakra-ui/react'
+import { ModalProps } from './types'
 
 export const Modal = ({
   isCentered = true,
