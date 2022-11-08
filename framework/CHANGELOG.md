@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.4.0...@mediatool/ui@2.5.0) (2022-11-08)
+
+
+### Bug Fixes
+
+* **ui/framework:** use our tokens in chakra theme ([17694d9](https://github.com/mediatool/mediatool/commit/17694d914998a3bc6241a2d07bb73bc7d65b7f57))
+* **ui:** broken select onChange ([782b4f2](https://github.com/mediatool/mediatool/commit/782b4f23cb115a1a72a324fd3b5857e680b9f50d))
+* **ui:** Field component now supports nested validation ([728bab1](https://github.com/mediatool/mediatool/commit/728bab1b7ea52ec4869ee1d6969292144835ae4c))
+* **ui:** setup after rebase ([36aa693](https://github.com/mediatool/mediatool/commit/36aa693e02719798af4f52a89ec0ce2b7ca713f0))
+* **ui:** shouldConvert prop ([323d377](https://github.com/mediatool/mediatool/commit/323d377af586454f8cb408c4f6299d09cf6d0e2e))
+* **ui:** type value ([9415f00](https://github.com/mediatool/mediatool/commit/9415f009ef661cbbceb575e72d5962adda8deb66))
+
+
+### Features
+
+* **ui:** add huge modal ([75a9026](https://github.com/mediatool/mediatool/commit/75a9026fa9e3ca99fd8ec0dfc9d7341de355dd59))
+* **ui:** Avatar component ([dcbe443](https://github.com/mediatool/mediatool/commit/dcbe443bce285883ea0d34cc1431f1fbbc16f528))
+* **ui:** flip button component ([db96c1c](https://github.com/mediatool/mediatool/commit/db96c1cf595fca7d818f4f3e69ed9f035fef85c6))
+* **ui:** flip button tokens ([5c5c03b](https://github.com/mediatool/mediatool/commit/5c5c03bce1b021de4128963d55e4ea1126308532))
+* **ui:** Split up avatar into avatar button ([41acde8](https://github.com/mediatool/mediatool/commit/41acde861a26e9c1e9ab6807e31bbdd471b3262b))
+* **ui:** unit test for avatar ([11a0cb6](https://github.com/mediatool/mediatool/commit/11a0cb681eacd9ca00dfd941b3bc6b32110d24ac))
+* **ui:** unit test getFieldError ([9542fb8](https://github.com/mediatool/mediatool/commit/9542fb8f88f1d1e08ec346d6dace641aba29ce3a))
+
+
+
+
+
 # [2.4.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.3.0...@mediatool/ui@2.4.0) (2022-11-03)
 
 

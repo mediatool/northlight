@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.8.0...@mediatool/tokens@1.9.0) (2022-11-08)
+
+
+### Bug Fixes
+
+* **ui/tokens:** fix z-index tokens naming ([c3365be](https://github.com/mediatool/mediatool/commit/c3365be067efaab159cbfbefa0e2a9c854312a47))
+
+
+### Features
+
+* **ui:** flip button tokens ([5c5c03b](https://github.com/mediatool/mediatool/commit/5c5c03bce1b021de4128963d55e4ea1126308532))
+
+
+
+
+
 # [1.8.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.7.1...@mediatool/tokens@1.8.0) (2022-11-02)
 
 
