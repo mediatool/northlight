@@ -1,7 +1,7 @@
-import React, { FunctionComponent, useRef } from 'react'
-import { ActionMeta, Select as ChakraReactSelect } from 'chakra-react-select'
+import React, { FunctionComponent, useMemo, useRef } from 'react'
+import { ActionMeta, Select as ChakraReactSelect, GroupBase, OptionsOrGroups } from 'chakra-react-select'
 import { Box } from '@chakra-ui/react'
-import { difference, identity, length } from 'ramda'
+import { difference, equals, identity, length } from 'ramda'
 import { SelectProps } from './types'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 
@@ -17,8 +17,15 @@ export function Select<T> ({
   ...rest
 }: SelectProps<T>) {
   const CustomSelect = ChakraReactSelect as FunctionComponent<SelectProps<T>>
-
   const itemsArr = useRef<any[]>([])
+
+  const prevOptions = useRef<OptionsOrGroups<T, GroupBase<T>> | undefined>(options)
+  const renderedOptions = useMemo(() => {
+    if (!equals(prevOptions.current, options)) {
+      prevOptions.current = options
+    }
+    return prevOptions.current
+  }, [ options ])
 
   const handleChange = (val: any, event: ActionMeta<T>) => {
     onChange(val, event)
@@ -37,7 +44,7 @@ export function Select<T> ({
     <Box w="full" data-testid={ testId }>
       <CustomSelect
         isMulti={ isMulti }
-        options={ options }
+        options={ renderedOptions }
         useBasicStyles={ true }
         closeMenuOnSelect={ !isMulti }
         hideSelectedOptions={ false }
