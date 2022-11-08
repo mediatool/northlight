@@ -20,7 +20,7 @@ export const Modal: ComponentMultiStyleConfig = {
   },
   baseStyle: {
     overlay: {
-      bgColor: `${color.background.modal.overlay}50`,
+      bgColor: `${color.background.modal.overlay}`,
       backdropFilter: 'blur(8px)',
     },
     closeButton: {
