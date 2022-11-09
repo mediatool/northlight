@@ -9,6 +9,8 @@ import {
   H5,
   H6,
   HeadingType,
+  Label,
+  LabelType,
   Lead,
   P,
   Small,
@@ -21,6 +23,7 @@ interface Typography<T> {
   component: T
   code: string
   variant?: '14' | '16'
+  size?: '2xs' | 'xs' | 'sm' | 'md' | 'lg'
 }
 
 export const TableHead = [ 'Html tag', 'Demo', 'Code' ]
@@ -45,4 +48,12 @@ export const Stylized: Typography<StylizedType>[] = [
   { element: 'span', component: Capitalized, code: '<Capitalized>Your text</Capitalized>' },
   { element: 'small', component: Small, code: '<small>Your text</small>' },
   { element: 'span', component: Lead, code: '<Lead>Your text</Lead>' },
+]
+
+export const Labels: Typography<LabelType>[] = [
+  { element: 'label', component: Label, code: '<Label size="2xs">Your text</Label>', size: '2xs' },
+  { element: 'label', component: Label, code: '<Label size="xs">Your text</Label>', size: 'xs' },
+  { element: 'label', component: Label, code: '<Label>Your text</Label>', size: 'sm' },
+  { element: 'label', component: Label, code: '<Label size="md">Your text</Label>', size: 'md' },
+  { element: 'label', component: Label, code: '<Label size="lg">Your text</Label>', size: 'lg' },
 ]

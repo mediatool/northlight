@@ -18,7 +18,7 @@ import {
   Tr,
 } from '../../../../lib/components'
 import { Page } from '../../components'
-import { Body, Headings, Stylized, TableHead } from './data'
+import { Body, Headings, Labels, Stylized, TableHead } from './data'
 
 const TableHeadings = () => (
   <Thead>
@@ -49,7 +49,6 @@ const TypographyPage = () => (
           Not customizable
         </Tag>
       </HStack>
-
       <Table>
         <TableHeadings />
         <Tbody>
@@ -116,6 +115,37 @@ const TypographyPage = () => (
               <Td>{ element }</Td>
               <Td>
                 <Component>
+                  This is great Typography man
+                </Component>
+              </Td>
+              <Td>
+                <Code>{ code }</Code>
+              </Td>
+            </Tr>
+          )) }
+        </Tbody>
+      </Table>
+      <HStack spacing={ 8 }>
+        <Text fontSize={ 24 } fontWeight="bold" textDecoration="underline">Labels</Text>
+        <Tag bgColor="green.600">
+          <TagLeftIcon>
+            <Icon as={ CheckSolid } />
+          </TagLeftIcon>
+          Customizable
+        </Tag>
+      </HStack>
+      <Text>To customize, pass the styles with the{ ' ' }
+        <Code>sx</Code>{ ' ' }
+        prop. The component will merge the two objects.
+      </Text>
+      <Table>
+        <TableHeadings />
+        <Tbody>
+          { Labels.map(({ element, component: Component, code, size }) => (
+            <Tr key={ code }>
+              <Td>{ element }</Td>
+              <Td>
+                <Component size={ size }>
                   This is great Typography man
                 </Component>
               </Td>
