@@ -1,6 +1,6 @@
 {
   "name": "@mediatool/tokens",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "license": "UNLICENSED",
   "exports": {
     "import": "./dist/es/tokens.mjs",

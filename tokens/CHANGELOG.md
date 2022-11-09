@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.1](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.9.0...@mediatool/tokens@1.9.1) (2022-11-09)
+
+**Note:** Version bump only for package @mediatool/tokens
+
+
+
+
+
 # [1.9.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.8.0...@mediatool/tokens@1.9.0) (2022-11-08)
 
 

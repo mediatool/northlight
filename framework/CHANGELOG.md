@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.5.0...@mediatool/ui@2.6.0) (2022-11-09)
+
+
+### Bug Fixes
+
+* **ui/framework:** remove old validation ([64cf9a2](https://github.com/mediatool/mediatool/commit/64cf9a2a338de50e8b101fbd7fdb28b49883bf2f))
+
+
+### Features
+
+* **ui/framework:** add split pane component ([ea8470b](https://github.com/mediatool/mediatool/commit/ea8470b34bafef61419496c46ced4c563b1dc32d))
+
+
+
+
+
 # [2.5.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.4.0...@mediatool/ui@2.5.0) (2022-11-08)
 
 
