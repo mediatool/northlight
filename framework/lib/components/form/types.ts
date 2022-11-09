@@ -12,6 +12,12 @@ import {
 } from 'react-hook-form'
 import { StackDirection } from '@chakra-ui/react'
 
+export type SetValueOptionsType = Partial<{
+  shouldValidate: boolean
+  shouldDirty: boolean
+  shouldTouch: boolean
+}> | undefined
+
 export type FieldProps = {
   name: string
   label: string
