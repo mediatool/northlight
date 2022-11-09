@@ -1,5 +1,5 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
-import { color, typography } from '@mediatool/tokens'
+import { color, coreSizing, typography } from '@mediatool/tokens'
 import { merge } from 'ramda'
 
 const {
@@ -13,6 +13,12 @@ const {
 export const Label: ComponentSingleStyleConfig = {
   baseStyle: ({ sx }) => merge({
     color: color.text.default,
+    width: '100%',
+    maxWidth: '100%',
+    marginBottom: coreSizing[0],
+    marginInlineStart: coreSizing[0],
+    marginEnd: coreSizing[0],
+    marginInlineEnd: coreSizing[0],
   }, sx),
   sizes: {
     '2xs': ({ sx }) => merge({
