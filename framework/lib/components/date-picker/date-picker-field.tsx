@@ -1,5 +1,6 @@
 import React from 'react'
 import { DateValue, parseDate } from '@internationalized/date'
+import { identity } from 'ramda'
 import { DatePickerFieldProps } from './types'
 import { Field } from '../form'
 import { DatePicker } from './date-picker'
@@ -14,6 +15,7 @@ export const DatePickerField = ({
   label,
   validate,
   firstDayOfWeek = 'monday',
+  onChange: onChangeCallback = identity,
   ...rest
 }: DatePickerFieldProps) => {
   const { setValue, setError, trigger } = useFormContext()
@@ -33,6 +35,7 @@ export const DatePickerField = ({
     } else {
       trigger(name)
     }
+    onChangeCallback(date)
   }
 
   return (

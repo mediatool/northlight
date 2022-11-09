@@ -7,13 +7,14 @@ export interface TextInputFormatter {
   unFormat: (value: string) => string
 }
 
-export type TextFieldProps = ChakraInputProps & {
+export type TextFieldProps = Omit<ChakraInputProps, 'onChange'> & {
   name: string
   label: string
   mask?: string
   formatter?: TextInputFormatter
   validate?: RegisterOptions
   direction?: StackDirection
+  onChange?: (e: React.ChangeEvent<HTMLInputElement> | string) => void
 }
 
 export type MaskedTextInputProps =

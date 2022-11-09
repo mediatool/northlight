@@ -1,4 +1,5 @@
 import React from 'react'
+import { identity } from 'ramda'
 import { TextFieldProps } from './types'
 import { Input } from '../input'
 import { Field } from '../form'
@@ -10,6 +11,7 @@ export function TextField ({
   isRequired,
   validate,
   direction = 'column',
+  onChange: onChangeCallback = identity,
   ...rest
 }: TextFieldProps) {
   return (
@@ -24,7 +26,10 @@ export function TextField ({
         <As
           id={ name }
           name={ name }
-          onChange={ onChange }
+          onChange={ (e: React.ChangeEvent<HTMLInputElement> | string) => {
+            onChange(e)
+            onChangeCallback(e)
+          } }
           value={ value?.replace(/\s+/g, ' ').trimStart() || '' }
           data-testid="text-field-test-id"
           { ...rest }

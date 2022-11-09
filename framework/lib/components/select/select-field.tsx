@@ -1,6 +1,7 @@
 import React from 'react'
 import { FieldValues } from 'react-hook-form'
 import { XCloseSolid } from '@mediatool/icons'
+import { identity } from 'ramda'
 import { SelectFieldProps } from './types'
 import { Field } from '../form'
 import { Select } from './select'
@@ -17,6 +18,7 @@ export function SelectField<T> ({
   isRequired,
   validate,
   isClearable = true,
+  onChange: onChangeCallback = identity,
   ...rest
 }: SelectFieldProps<T>) {
   return (
@@ -34,11 +36,14 @@ export function SelectField<T> ({
             name={ name }
             options={ options }
             isMulti={ isMulti }
-            onChange={ (values: FieldValues) => onChange(
-              isMulti
-                ? values.map((item: any) => item.value)
-                : values.value
-            ) }
+            onChange={ (values: FieldValues) => {
+              onChange(
+                isMulti
+                  ? values.map((item: any) => item.value)
+                  : values.value
+              )
+              onChangeCallback(values as T | T[])
+            } }
             value={
               value
                 ? options?.filter((option: any) => value.includes(option.value)) as any

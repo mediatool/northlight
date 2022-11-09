@@ -42,7 +42,7 @@ export interface DatePickerProps extends AriaDatePickerProps<DateValue> {
   dateFormat?: string
 }
 
-export interface DatePickerFieldProps extends ChakraInputProps {
+export interface DatePickerFieldProps extends Omit<ChakraInputProps, 'onChange'> {
   name: string
   label: string
   minValue?: string
@@ -51,4 +51,5 @@ export interface DatePickerFieldProps extends ChakraInputProps {
   firstDayOfWeek?: 'sunday' | 'monday'
   direction?: StackDirection
   dateFormat?: string
+  onChange?: (date: DateValue) => void
 }

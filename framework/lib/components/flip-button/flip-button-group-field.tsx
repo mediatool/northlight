@@ -1,4 +1,5 @@
 import React from 'react'
+import { identity } from 'ramda'
 import { Field } from '../form'
 import { FlipButtonGroup } from './flip-button-group'
 import { FlipButtonGroupFieldProps } from './types'
@@ -9,6 +10,7 @@ export const FlipButtonGroupField = ({
   children,
   direction,
   isRequired,
+  onChange: onChangeCallback = identity,
   validate,
   ...rest
 }: FlipButtonGroupFieldProps) => (
@@ -19,12 +21,12 @@ export const FlipButtonGroupField = ({
     isRequired={ isRequired }
     validate={ validate }
   >
-    { (field) => (
+    { ({ onChange, value }) => (
       <FlipButtonGroup
         name={ name }
-        onChange={ field.onChange }
+        onChange={ (e) => { onChange(e); onChangeCallback(e) } }
         direction={ direction }
-        value={ field.value }
+        value={ value }
         { ...rest }
       >
         { children }

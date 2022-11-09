@@ -1,4 +1,5 @@
 import React from 'react'
+import { identity } from 'ramda'
 import { NumberInputFieldProps } from './types'
 import { Field } from '../form'
 import { NumberInput } from './number-input'
@@ -9,6 +10,7 @@ export const NumberInputField = ({
   direction,
   isRequired,
   validate,
+  onChange: onChangeCallback = identity,
   ...rest
 }: NumberInputFieldProps) => (
   <Field
@@ -18,12 +20,15 @@ export const NumberInputField = ({
     isRequired={ isRequired }
     validate={ validate }
   >
-    { (field) => (
+    { ({ onChange, value }) => (
       <NumberInput
         name={ name }
         data-testid="number-input-field-test-id"
-        onChange={ field.onChange }
-        value={ field.value }
+        onChange={ (e: React.ChangeEvent<HTMLInputElement> | string) => {
+          onChange(e)
+          onChangeCallback(e)
+        } }
+        value={ value }
         { ...rest }
       />
     ) }

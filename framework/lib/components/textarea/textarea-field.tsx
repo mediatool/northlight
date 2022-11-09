@@ -1,4 +1,5 @@
 import React from 'react'
+import { identity } from 'ramda'
 import { TextareaFieldProps } from './types'
 import { Field } from '../form'
 import { Textarea } from './textarea'
@@ -9,6 +10,7 @@ export const TextareaField = ({
   isRequired,
   validate,
   direction,
+  onChange: onChangeCallback = identity,
   ...rest
 }: TextareaFieldProps) => (
   <Field
@@ -18,12 +20,12 @@ export const TextareaField = ({
     validate={ validate }
     direction={ direction }
   >
-    { (field) => (
+    { ({ onChange, value }) => (
       <Textarea
         name={ name }
         data-testid="textarea-field-test-id"
-        onChange={ field.onChange }
-        value={ field.value }
+        onChange={ (e) => { onChange(e); onChangeCallback(e) } }
+        value={ value }
         { ...rest }
       />
     ) }

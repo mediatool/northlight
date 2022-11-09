@@ -1,4 +1,5 @@
 import React from 'react'
+import { identity } from 'ramda'
 import { RadioFieldGroupProps } from './types'
 import { Field } from '../form'
 import { RadioGroup } from './radio-group'
@@ -10,6 +11,7 @@ export const RadioGroupField = ({
   direction,
   isRequired,
   validate,
+  onChange: onChangeCallback = identity,
   ...rest
 }: RadioFieldGroupProps) => (
   <Field
@@ -19,12 +21,12 @@ export const RadioGroupField = ({
     isRequired={ isRequired }
     validate={ validate }
   >
-    { (field) => (
+    { ({ onChange, value }) => (
       <RadioGroup
         name={ name }
-        onChange={ field.onChange }
+        onChange={ (e) => { onChange(e); onChangeCallback(e) } }
         direction={ direction }
-        value={ field.value }
+        value={ value }
         data-testid="radio-group-field-test-id"
         { ...rest }
       >

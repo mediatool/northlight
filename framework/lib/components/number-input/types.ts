@@ -11,7 +11,7 @@ export type NumberInputProps =
   }
 
 export type NumberInputFieldProps =
-  ChakraNumberInputProps
+  Omit<ChakraNumberInputProps, 'onChange'>
   & {
     name: string
     label: string
@@ -20,4 +20,5 @@ export type NumberInputFieldProps =
     isRequired?: boolean
     unit?: string
     direction?: StackDirection
+    onChange?: (e: React.ChangeEvent<HTMLInputElement> | string) => void
   }

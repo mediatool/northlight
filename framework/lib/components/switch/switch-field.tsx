@@ -1,4 +1,5 @@
 import React from 'react'
+import { identity } from 'ramda'
 import { SwitchFieldProps } from './types'
 import { Field } from '../form'
 import { Switch } from './switch'
@@ -8,6 +9,7 @@ export const SwitchField = ({
   label,
   isRequired,
   validate,
+  onChange: onChangeCallback = identity,
   ...rest
 }: SwitchFieldProps) => (
   <Field
@@ -17,11 +19,11 @@ export const SwitchField = ({
     direction="row"
     validate={ validate }
   >
-    { (field) => (
+    { ({ onChange, value }) => (
       <Switch
         name={ name }
-        onChange={ field.onChange }
-        value={ field.value }
+        onChange={ (e) => { onChange(e); onChangeCallback(e) } }
+        value={ value }
         data-testid="switch-field-test-id"
         { ...rest }
       />
