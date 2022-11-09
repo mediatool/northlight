@@ -8,7 +8,6 @@ import {
 } from 'react-hook-form'
 import { equals } from 'ramda'
 import { FormProps } from './types'
-import { convertValidation } from '../../utils'
 
 export function Form<FormValues extends FieldValues> ({
   initialValues,
@@ -18,7 +17,6 @@ export function Form<FormValues extends FieldValues> ({
   formSettings = { mode: 'onChange' },
   methods = undefined,
   enableReinitialize = false,
-  shouldConvert = true,
   ...rest
 }: FormProps<FormValues>) {
   const customResolver: Resolver<FormValues, any> = (
@@ -27,7 +25,7 @@ export function Form<FormValues extends FieldValues> ({
     _options
   ) => ({
     values,
-    errors: shouldConvert ? convertValidation<FormValues>(validate(values)) : validate(values),
+    errors: validate(values),
   })
 
   const newMethods =
@@ -56,7 +54,7 @@ export function Form<FormValues extends FieldValues> ({
           newMethods.formState.isValid
             ? newMethods.handleSubmit(onSubmit)
             : (e) => e.preventDefault()
-         }
+        }
       >
         { typeof children === 'function' ? children(newMethods) : children }
       </form>

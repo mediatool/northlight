@@ -1,45 +1,48 @@
 import React from 'react'
 import {
-  Box,
+  Blockquote,
   Button,
   Code,
+  Divider,
   Form,
+  H2,
   HStack,
-  Heading,
   Link,
+  P,
   Stack,
-  Text,
   TextField,
-  createValidator,
+  VStack,
 } from '../../../../lib'
 import { Page } from '../../components'
 
-const validation = [
-  {
-    prop: 'firstName',
-    predicate: (value: string) => value === 'admin',
-    error: 'Nice try',
-  },
-]
+const validation = (values: any) => {
+  const errors: any = {}
+  if (values.firstName === 'admin') {
+    errors.firstName = {
+      message: 'Nice try',
+    }
+  }
+  return errors
+}
 
 const FormPage = () => (
   <Page
     title="Form"
     subtitle={ (
       <>
-        <Heading as="h2" size="sm">
+        <Blockquote>
           The Form Component is an abstraction of react-hook-form,
-        </Heading>
-        <Text fontSize="sm" w="40%" lineHeight="3ch">
+        </Blockquote>
+        <P>
           It's main purpose is to initialize a form with the right state, and
           pass down the context to it's children to be used with our field
           components.
-        </Text>
+        </P>
       </>
     ) }
   >
     <Stack spacing={ 4 }>
-      <Heading size="md">
+      <H2>
         Our forms are built on{ ' ' }
         <Link
           color="blue.600"
@@ -49,10 +52,10 @@ const FormPage = () => (
         >
           React Hook Form
         </Link>
-      </Heading>
-      <Text>
+      </H2>
+      <P>
         Mediatool uses one <strong>{ '<Form />' }</strong> Component{ ' ' }
-      </Text>
+      </P>
       <Code w="max-content" display="block" whiteSpace="pre">
         { `<Form
     initialValues={ {} }
@@ -64,21 +67,22 @@ const FormPage = () => (
 </Form>
 ` }
       </Code>
-      <Text>It takes the following props</Text>
-      <Text>
+      <Divider />
+      <P>It takes the following props</P>
+      <P>
         <strong>initialValues </strong>- this should contain an object with the
         name of the fields and their default values.
-      </Text>
-      <Text>
+      </P>
+      <P>
         <strong>onSubmit </strong>- This is a function on the form ( formValues
         ) { '=>' } void
-      </Text>
-      <Text>
+      </P>
+      <P>
         <strong>validate </strong>- This should be a function that
         returns an object with the form errors, look at the file validation
         in form-demo-page/validation to see how to write validation
-      </Text>
-      <Text>
+      </P>
+      <P>
         <strong>formSettings </strong>
         - This can be used to customize the form, look at <br />
         <Link
@@ -91,40 +95,40 @@ const FormPage = () => (
         </Link>
         , all the options you can pass down to useForm, you can pass down to
         formSettings,
-      </Text>
-      <Text>
+      </P>
+      <P>
         <strong>children </strong>
         - Any valid JSX, can also be types as a function on the form <br />
         (methods) { '=>' } (JSX), where methods contain the form context,
         and is equivalent to the return value of useForm
-      </Text>
-      <Text>
+      </P>
+      <P>
         <strong>enableReinitialize </strong>
         Just as in formik, this uses a useEffect hook to
         reinitalize the form every time the initialValues change using a deep compare
-      </Text>
-      <Text>
+      </P>
+      <P>
         <strong>methods </strong>
         - In the edge case that you need to initialize the form with the useForm
         hook outside of the Form component, <br />
         you can initalize the form as usual and pass down your custom methods as
         a prop.
-      </Text>
-
+      </P>
+      <Divider />
       <HStack spacing={ 8 } alignItems="start">
         <Stack>
-          <Text>
-            <strong>Example 1</strong>
-          </Text>
-          <Text>This is recommended</Text>
+          <Blockquote>Example 1</Blockquote>
+          <P>This is recommended</P>
           <Code w="max-content" display="block" whiteSpace="pre">
-            { `import { createValidator } from '@mediatool/ui'
-
-const validation = [{
-  prop: 'firstName',
-  predicate: (value) => value === 'admin',
-  error: 'Nice try'
-}]
+            { `const validation = (values: any) => {
+  const errors: any = {}
+  if (values.firstName === 'admin') {
+    errors.firstName = {
+      message: 'Nice try',
+    }
+  }
+  return errors
+}
 
 <Form
   initialValues={ { firstName: '' } }
@@ -132,7 +136,7 @@ const validation = [{
   formSettings={ {
     mode: 'onSubmit',
   } }
-  validate={ createValidator(validation) }
+  validate={ validation }
 >
   <HStack alignItems="end" w="300px">
     <TextField
@@ -145,28 +149,28 @@ const validation = [{
 </Form>
 ` }
           </Code>
-
         </Stack>
         <Stack>
-          <Text>
-            <strong>Example 2</strong>
-          </Text>
-          <Text>This accomplishes the same thing but with methods prop</Text>
+          <Blockquote>Example 2</Blockquote>
+          <P>This accomplishes the same thing but with methods prop</P>
           <Code w="max-content" display="block" whiteSpace="pre">
-            { `import { createValidator, convertValidation, useForm } from '@mediatool/ui'
-
-const validation = [{
-  prop: 'firstName',
-  predicate: (value) => value === 'admin',
-  error: 'Nice try'
-}]
+            { `import { useForm } from '@mediatool/ui'
+const validation = (values: any) => {
+  const errors: any = {}
+  if (values.firstName === 'admin') {
+    errors.firstName = {
+      message: 'Nice try',
+    }
+  }
+  return errors
+}
 
 const methods = useForm({
   defaultValues: {firstName: ''},
   mode: 'onSubmit',
   resolver: (values) => {
     values,
-    errors: convertValidation(createValidator(validation))
+    errors: validation
   }
 })
 
@@ -185,17 +189,16 @@ const methods = useForm({
 </Form>
 ` }
           </Code>
-
         </Stack>
-
       </HStack>
+      <Divider />
       <Form
         initialValues={ { firstName: '' } }
         onSubmit={ () => {} }
         formSettings={ {
           mode: 'onSubmit',
         } }
-        validate={ createValidator(validation) }
+        validate={ validation }
       >
         <Stack w="300px">
           <TextField name="firstName" label="First Name" isRequired={ true } />
@@ -204,11 +207,18 @@ const methods = useForm({
           </Button>
         </Stack>
       </Form>
-      <Box maxW="50%">
-        <Text lineHeight="1.6">
-          Both example 1 and example 2 yield the same above field, but the difference being in the scope of the state, in example 2 the form state can be accessed throughtout the entire component, and not just as a child within the { '<Form> tag' }. <br /> <br />Example 1 is still recommended however because it abstracts more away which makes it easier for future changes, example 2 should be used just when needed.
-        </Text>
-      </Box>
+      <VStack w="50%" spacing={ 4 }>
+        <P>
+          Both example 1 and example 2 yield the same above field,
+          but the difference being in the scope of the state,
+          in example 2 the form state can be accessed throughtout the entire component,
+          and not just as a child within the { '<Form> tag' }.
+        </P>
+        <P>
+          Example 1 is still recommended however because it abstracts more away
+          which makes it easier for future changes, example 2 should be used just when needed.
+        </P>
+      </VStack>
     </Stack>
   </Page>
 )

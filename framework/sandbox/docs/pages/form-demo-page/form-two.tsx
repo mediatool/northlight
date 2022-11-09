@@ -42,7 +42,6 @@ export const FormTwo = ({ isOpen, onClose }: FormOneProps) => {
       initialValues={ initialValues }
       onSubmit={ () => {} }
       validate={ validation }
-      shouldConvert={ false }
     >
       { (methods) => (
         <>

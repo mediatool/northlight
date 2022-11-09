@@ -31,7 +31,6 @@ export type FormProps<FormValues extends FieldValues> = {
   onSubmit: SubmitHandler<FormValues>
   methods?: UseFormReturn<FormValues>
   formSettings?: UseFormProps<FormValues>
-  shouldConvert?: boolean
   validate?: any
   children:
   | ((
