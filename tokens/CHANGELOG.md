@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.2](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.9.1...@mediatool/tokens@1.9.2) (2022-11-09)
+
+
+### Bug Fixes
+
+* **ui/tokens:** add alpha part to tokens directly ([5fd653f](https://github.com/mediatool/mediatool/commit/5fd653f41a4024a77923fba5622402d3d79dbac7))
+
+
+
+
+
 ## [1.9.1](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.9.0...@mediatool/tokens@1.9.1) (2022-11-09)
 
 **Note:** Version bump only for package @mediatool/tokens

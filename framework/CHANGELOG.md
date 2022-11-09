@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.6.0...@mediatool/ui@2.6.1) (2022-11-09)
+
+
+### Bug Fixes
+
+* **ui/framework:** make ghost button actually ghost ([337bd94](https://github.com/mediatool/mediatool/commit/337bd94409f4b3d1a4839cb2f09e82ecfa82b47b))
+* **ui:** select option focus ([b17a9b0](https://github.com/mediatool/mediatool/commit/b17a9b034d6eb3229e02f2745f94b8c44b900c0e))
+
+
+
+
+
 # [2.6.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.5.0...@mediatool/ui@2.6.0) (2022-11-09)
 
 
