@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text as ChakraText, useMultiStyleConfig } from '@chakra-ui/react'
+import { Text as ChakraText, useStyleConfig } from '@chakra-ui/react'
 import { PProps } from './types'
 
 export const P = ({
@@ -7,7 +7,7 @@ export const P = ({
   variant = '16',
   ...rest
 }: PProps) => {
-  const styles = useMultiStyleConfig('P', { variant })
+  const styles = useStyleConfig('P', { variant })
 
   return (
     <ChakraText

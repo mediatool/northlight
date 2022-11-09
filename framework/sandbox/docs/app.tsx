@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useMultiStyleConfig } from '@chakra-ui/react'
+import { useStyleConfig } from '@chakra-ui/react'
 import { mergeAll } from 'ramda'
 import {
   BrandDuo,
@@ -38,7 +38,7 @@ import {
 } from '../../lib'
 
 const DocsApp = () => {
-  const capitalizedStyles = useMultiStyleConfig('Capitalized')
+  const capitalizedStyles = useStyleConfig('Capitalized')
   const [ fadeOne, setFadeOne ] = useState(false)
   const [ fadeTwo, setFadeTwo ] = useState(false)
   const [ fadeThree, setFadeThree ] = useState(false)

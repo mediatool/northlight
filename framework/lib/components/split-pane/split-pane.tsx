@@ -1,5 +1,5 @@
 import React, { cloneElement, useCallback, useRef } from 'react'
-import { Grid, useMultiStyleConfig } from '@chakra-ui/react'
+import { Grid, useStyleConfig } from '@chakra-ui/react'
 import { SplitPaneProps } from './types'
 
 export const SplitPane = ({
@@ -51,7 +51,7 @@ export const SplitPane = ({
     []
   )
 
-  const containerStyle = useMultiStyleConfig('SplitPane', { minLeftWidth, minRightWidth, initialSplit, isOpen })
+  const containerStyle = useStyleConfig('SplitPane', { minLeftWidth, minRightWidth, initialSplit, isOpen })
 
   return (
     <Grid

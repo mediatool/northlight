@@ -1,12 +1,12 @@
 import React from 'react'
-import { Text as ChakraText, TextProps, useMultiStyleConfig } from '@chakra-ui/react'
+import { Text as ChakraText, TextProps, useStyleConfig } from '@chakra-ui/react'
 
 export const Tiny = ({
   children,
   sx = {},
   ...rest
 }: TextProps) => {
-  const styles = useMultiStyleConfig('Tiny', { sx })
+  const styles = useStyleConfig('Tiny', { sx })
 
   return (
     <ChakraText
