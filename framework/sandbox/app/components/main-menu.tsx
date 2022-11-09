@@ -1,29 +1,11 @@
 import React from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import {
-  Box,
   HStack,
   Icon,
-  Link,
+  Label,
   Stack,
-  Text,
 } from '../../../index'
-
-const hoverStyles = {
-  bg: 'mediatoolBlue.100',
-  cursor: 'pointer',
-  textDecoration: 'none',
-}
-
-const activeStyles = {
-  bg: 'mediatoolBlue.600',
-  color: 'mediatoolBlue.50',
-  textDecoration: 'none',
-  _hover: {
-    bg: '',
-    textDecoration: 'none',
-  },
-}
 
 export interface MenuItemProps {
   path: string
@@ -31,38 +13,28 @@ export interface MenuItemProps {
   Icon: any
 }
 
-const MenuItem = ({ path, Icon: IconComponent, title }: MenuItemProps) => {
-  const { pathname } = useLocation()
-  return (
-    <Link
-      to={ path }
-      as={ NavLink }
-      borderRadius={ 2 }
-      sx={ pathname.startsWith(path) ? activeStyles : {} }
-      _hover={ hoverStyles }
-    >
-      <HStack
-        p={ 2 }
-        spacing={ 2 }
-      >
-        <Icon as={ IconComponent } boxSize={ 6 } />
-        <Text>{ title }</Text>
-      </HStack>
-    </Link>
-  )
-}
+const MenuItem = ({ path, Icon: IconComponent, title }: MenuItemProps) => (
+  <HStack
+    p={ 2 }
+    to={ path }
+    as={ NavLink }
+    borderRadius={ 6 }
+    _hover={ { bg: 'mediatoolBlue.100' } }
+    _activeLink={ { bg: 'mediatoolBlue.100', color: 'mediatoolBlue.500' } }
+  >
+    <Icon as={ IconComponent } boxSize={ 6 } />
+    <Label size="md" sx={ { color: 'inherit', cursor: 'pointer' } }>
+      { title }
+    </Label>
+  </HStack>
+)
 
 export interface MainMenuProps {
   menuItems: MenuItemProps[]
 }
 
 export const MainMenu = ({ menuItems }: MainMenuProps) => (
-  <Box
-    p={ 2 }
-    bg="gray.50"
-  >
-    <Stack spacing={ 2 } mb={ 4 }>
-      { menuItems.map((item) => <MenuItem key={ item.path } { ...item } />) }
-    </Stack>
-  </Box>
+  <Stack spacing={ 2 } mb={ 6 }>
+    { menuItems.map((item) => <MenuItem key={ item.path } { ...item } />) }
+  </Stack>
 )

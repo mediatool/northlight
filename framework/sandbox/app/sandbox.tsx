@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import { Box, Flex, MediatoolThemeProvider } from '../../lib'
+import { Flex, Grid, MediatoolThemeProvider } from '../../lib'
 import { CalendarProvider, I18nProvider, UserProvider } from './context'
 import {
   MainMenu,
@@ -19,22 +19,20 @@ export const Sandbox = ({ routes }: SandboxProps) => (
       <CalendarProvider>
         <I18nProvider>
           <BrowserRouter>
-            <Flex
+            <Grid
               height="100vh"
+              gridTemplateColumns="280px auto"
             >
-              <Box
-                p={ 2 }
-                minW={ 230 }
-                maxWidth={ 250 }
-                h="100%"
-                bg="gray.50"
+              <Flex
+                direction="column"
                 overflow="auto"
+                p={ 2 }
               >
                 <MainMenu menuItems={ routes } />
                 <SubMenu mainRoutes={ routes } />
-              </Box>
+              </Flex>
               <Routing fallback={ routes[0].path } routes={ routes } />
-            </Flex>
+            </Grid>
           </BrowserRouter>
         </I18nProvider>
       </CalendarProvider>

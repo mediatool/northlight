@@ -3,58 +3,36 @@ import {
   NavLink,
   Route as RouterRoute,
   Switch,
-  useLocation,
 } from 'react-router-dom'
-import { HStack, Link, Stack, Text } from '../../../index'
+import { HStack, Label, Stack } from '../../../index'
 import { MainPage } from '../types'
-
-const hoverStyles = {
-  bg: 'mediatoolBlue.100',
-  cursor: 'pointer',
-  textDecoration: 'none',
-}
-
-const activeStyles = {
-  bg: 'mediatoolBlue.600',
-  color: 'mediatoolBlue.50',
-  textDecoration: 'none',
-  _hover: {
-    bg: '',
-    textDecoration: 'none',
-  },
-}
 
 export interface SubMenuItemProps {
   path: string
   title: string
 }
 
-const SubMenuItem = ({ path, title }: SubMenuItemProps) => {
-  const { pathname } = useLocation()
-  return (
-    <Link
-      to={ path }
-      as={ NavLink }
-      borderRadius={ 2 }
-      sx={ path === pathname ? activeStyles : {} }
-      _hover={ hoverStyles }
-    >
-      <HStack
-        p={ 2 }
-        spacing={ 2 }
-      >
-        <Text>{ title }</Text>
-      </HStack>
-    </Link>
-  )
-}
+const SubMenuItem = ({ path, title }: SubMenuItemProps) => (
+  <HStack
+    as={ NavLink }
+    to={ path }
+    borderRadius={ 6 }
+    p={ 2 }
+    _hover={ { bg: 'blue.50' } }
+    _activeLink={ { bg: 'blue.50', color: 'blue.500' } }
+  >
+    <Label size="md" sx={ { color: 'inherit', cursor: 'pointer' } }>
+      { title }
+    </Label>
+  </HStack>
+)
 
 interface SubMenuProps {
   mainRoutes: MainPage[]
 }
 
 export const SubMenu = ({ mainRoutes }: SubMenuProps) => (
-  <Stack>
+  <Stack overflow="auto" pr={ 2 }>
     <Switch>
       { mainRoutes.map(({ path: mainPath, subItems = [] }) => (
         <RouterRoute
