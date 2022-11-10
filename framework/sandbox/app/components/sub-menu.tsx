@@ -19,7 +19,7 @@ const SubMenuItem = ({ path, title }: SubMenuItemProps) => (
     borderRadius={ 6 }
     p={ 2 }
     _hover={ { bg: 'blue.50' } }
-    _activeLink={ { bg: 'blue.50', color: 'blue.500' } }
+    _activeLink={ { bg: 'blue.50', color: 'blue.600' } }
   >
     <Label size="md" sx={ { color: 'inherit', cursor: 'pointer' } }>
       { title }
