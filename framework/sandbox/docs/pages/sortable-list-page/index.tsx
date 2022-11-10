@@ -178,6 +178,12 @@ Click me!
             list controllable with your own state, should be of type (items:
             string[]) { '=>' } void
           </Text>
+          <Text>
+            <strong>onMovedItem </strong>a callback, passes the dragged item and it's old
+            / new index after a drag,
+            <br />
+            { '(item) => void' } where item is an object { '{item, oldIndex, newIndex}' }
+          </Text>
         </Stack>
       </Stack>
     </Page>

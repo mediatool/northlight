@@ -36,6 +36,11 @@ export interface SortableItemProps extends UseSortableArguments {
   disableDrag?: boolean
 }
 
+type MovedItemType<T> = {
+  item: T
+  oldIndex: number
+  newIndex: number
+}
 export interface SortableListProps<T> {
   children?: ChildrenType<T, SyntheticListenerMap>
   items: T[]
@@ -47,6 +52,7 @@ export interface SortableListProps<T> {
   sensors?: SensorDescriptor<SensorOptions>[]
   dblClickThreshold?: number
   disableDrag?: boolean
+  onMovedItem?: ({ item, oldIndex, newIndex }: MovedItemType<T>) => void
 }
 
 export interface MultiSortProps<itemKeys extends string | number | symbol> {

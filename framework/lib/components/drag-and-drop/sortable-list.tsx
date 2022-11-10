@@ -28,6 +28,7 @@ export function SortableList<T> ({
   createKey = identity as (t: T) => UniqueIdentifier,
   strategy,
   onChange = () => {},
+  onMovedItem = identity,
   displayOverlay = false,
   sensors,
   dblClickThreshold = 300,
@@ -67,6 +68,7 @@ export function SortableList<T> ({
         const prevIds = map(createKey, prev)
         const oldIndex = indexOf(active.id, prevIds)
         const newIndex = indexOf(over.id, prevIds)
+        onMovedItem({ item: prev[oldIndex], oldIndex, newIndex })
 
         return arrayMove(prev, oldIndex, newIndex)
       })
