@@ -114,9 +114,11 @@ export const Avatar: ComponentMultiStyleConfig = {
   variants: {
     square: {
       container: {
+        aspectRatio: '1 / 1',
         borderRadius: borderRadius.avatar.square,
         '> img': {
           borderRadius: borderRadius.avatar.square,
+          aspectRatio: '1 / 1',
         },
       },
       badge: {
@@ -125,9 +127,11 @@ export const Avatar: ComponentMultiStyleConfig = {
     },
     rounded: {
       container: {
+        aspectRatio: '1 / 1',
         borderRadius: borderRadius.avatar.rounded,
         '> img': {
           borderRadius: borderRadius.avatar.rounded,
+          aspectRatio: '1 / 1',
         },
       },
       badge: {

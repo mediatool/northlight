@@ -12,16 +12,17 @@ export const Avatar = ({
   notificationCount = 0,
   name,
   image,
+  size,
   ...rest
 }: AvatarProps) => {
   const { container, text, userImage, icon } = useMultiStyleConfig('Avatar', {
     variant,
     image,
-    ...rest,
+    size,
   })
 
   return (
-    <Box __css={ container } data-testid="avatar-test-id">
+    <Box __css={ container } data-testid="avatar-test-id" { ...rest }>
       { image
         ? (
           <chakra.img
@@ -45,7 +46,6 @@ export const Avatar = ({
       { notificationCount > 0 && (
         <AvatarBadge notificationCount={ notificationCount } />
       ) }
-
     </Box>
   )
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {
   Avatar,
+  Clickable,
   Code,
   FormattedNumberInput,
   HStack,
@@ -23,27 +24,30 @@ const FormattedNumberInputPage = () => {
     >
       <HStack spacing={ 4 } mb={ 10 }>
         { Object.entries(users).map(([ key, usr ]) => (
-          <Avatar
+          <Clickable
             key={ usr.name }
-            name={ usr.name }
-            image={ usr.image }
             onClick={ () => setUser(users[key]) }
-            transition="all .2s"
-            size="lg"
-            borderWidth={ usr.name === user.name ? '3px' : 'none' }
-            borderColor="green.600"
-            notificationCount={ 2 }
-            _hover={ { transform: 'scale(1.2)', cursor: 'pointer' } }
-          />
+          >
+            <Avatar
+              name={ usr.name }
+              image={ usr.image }
+              transition="all .2s"
+              notificationCount={ 2 }
+              size="lg"
+              variant="rounded"
+              sx={ usr.name === user.name
+                ? { border: '3px solid', color: 'blue.500' }
+                : {}
+              }
+            />
+          </Clickable>
         )) }
       </HStack>
-
       <Code mb={ 2 }>
         Name: { user.name }<br />
         Country: { user.country }<br />
         Preferences: { JSON.stringify(user.preferences, null, 2) }
       </Code>
-
       <Stack spacing={ 2 }>
         <FormattedNumberInput
           formatter={ formatter }

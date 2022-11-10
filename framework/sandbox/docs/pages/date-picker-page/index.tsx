@@ -1,27 +1,29 @@
 import React from 'react'
-import { Avatar, Code, DatePickerField, Form, HStack, Stack, Text } from '../../../../lib/components'
+import { Avatar, Clickable, Code, DatePickerField, Form, HStack, Stack, Text } from '../../../../lib/components'
 import { Page } from '../../components'
 import { useUser, users } from '../../../app/context'
 
 const DatePickerPage = () => {
   const { user, setUser } = useUser()
+
   return (
     <Page title="Date picker">
       <HStack spacing={ 4 } mb={ 10 }>
         { Object.entries(users)
           .slice(0, 2)
           .map(([ key, usr ]) => (
-            <Avatar
-              name={ usr.name }
-              key={ usr.name }
-              image={ usr.image }
-              onClick={ () => setUser(users[key]) }
-              transition="all .2s"
-              size="lg"
-              borderWidth={ usr.name === user.name ? '3px' : 'none' }
-              borderColor="green.600"
-              _hover={ { transform: 'scale(1.2)', cursor: 'pointer' } }
-            />
+            <Clickable onClick={ () => setUser(users[key]) } key={ usr.name }>
+              <Avatar
+                name={ usr.name }
+                image={ usr.image }
+                size="lg"
+                variant="rounded"
+                sx={ usr.name === user.name
+                  ? { border: '3px solid', color: 'blue.500' }
+                  : {}
+                }
+              />
+            </Clickable>
           )) }
       </HStack>
       <Stack w={ 64 }>
@@ -38,7 +40,6 @@ const DatePickerPage = () => {
               </Text>
               <DatePickerField name="formattedDate" label="Formatted date" dateFormat="dd/yyyy/mm" />
               <Code w="max-content">{ '<DatePickerField dateFormat="yyyy|mm-dd" name="formattedDate" label"Formatted date"/>' }</Code>
-
               <Code p={ 4 }>{ JSON.stringify(watch(), null, 2) }</Code>
             </Stack>
           ) }
