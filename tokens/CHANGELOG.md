@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.3](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.9.2...@mediatool/tokens@1.9.3) (2022-11-10)
+
+
+### Bug Fixes
+
+* **ui/tokens:** scale zindexes up ([79598e7](https://github.com/mediatool/mediatool/commit/79598e79aa2954904099a5d96e0c523d689efbc8))
+
+
+
+
+
 ## [1.9.2](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.9.1...@mediatool/tokens@1.9.2) (2022-11-09)
 
 

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.6.1...@mediatool/ui@2.7.0) (2022-11-10)
+
+
+### Bug Fixes
+
+* **ui:** disable onKeyDown in case inEditMode ([57c2875](https://github.com/mediatool/mediatool/commit/57c2875377d768523d400b97765b8d0f4430731d))
+* **ui:** remove default margin on labels ([25107bd](https://github.com/mediatool/mediatool/commit/25107bdfdd299f59ce65e62f4195b0b6235548d4))
+
+
+### Features
+
+* **ui/framework:** added labels ([e8ddd8a](https://github.com/mediatool/mediatool/commit/e8ddd8a9ccf743b4f0cd08bf070069f41c10ec19))
+* **ui:** dragHandle ([6975bc9](https://github.com/mediatool/mediatool/commit/6975bc9205fe5ac8a9d99217edaca8d62d40d013))
+
+
+
+
+
 ## [2.6.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.6.0...@mediatool/ui@2.6.1) (2022-11-09)
 
 
