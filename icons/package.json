@@ -3,6 +3,7 @@
   "version": "1.2.1",
   "license": "UNLICENSED",
   "exports": {
+    "types": "./dist/ts/types.d.ts",
     "import": "./dist/es/icons.mjs",
     "require": "./dist/cjs/icons.js"
   },
