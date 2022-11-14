@@ -54,6 +54,9 @@ export default [ {
   ],
   output: [ {
     format: 'es',
+    file: 'dist/es/mediatool-ui-framework.d.mts',
+  }, {
+    format: 'cjs',
     file: 'dist/ts/types.d.ts',
   } ],
 }, {

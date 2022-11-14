@@ -9,6 +9,7 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
+      "types": "./dist/es/mediatool-ui-framework.d.mts",
       "import": "./dist/es/mediatool-ui-framework.mjs",
       "require": "./dist/umd/mediatool-ui-framework.js"
     },
