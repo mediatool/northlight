@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.7.0...@mediatool/ui@2.8.0) (2022-11-14)
+
+
+### Bug Fixes
+
+* **ui:** styling ([b09a8c1](https://github.com/mediatool/mediatool/commit/b09a8c152e374f95fd2315e4d0eac34c2ff23430))
+
+
+### Features
+
+* **ui:** onMovedItem callback ([4388c7d](https://github.com/mediatool/mediatool/commit/4388c7d7c619573449124300e879d636036315dc))
+* **ui:** useSetValueRefreshed ([d68ccf4](https://github.com/mediatool/mediatool/commit/d68ccf4aa88d92c577f80cc2ed9bd6a1df0637b4))
+
+
+
+
+
 # [2.7.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.6.1...@mediatool/ui@2.7.0) (2022-11-10)
 
 
