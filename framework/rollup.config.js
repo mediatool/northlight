@@ -75,6 +75,6 @@ export default [ {
   ],
   output: [ {
     format: 'es',
-    file: 'dist/es/sandbox.d.ts',
+    file: 'dist/es/sandbox.d.mts',
   } ],
 } ]

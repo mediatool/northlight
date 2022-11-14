@@ -20,7 +20,7 @@
     "test": "echo testless"
   },
   "devDependencies": {
-    "@mediatool/eslint-config-mediatool": "^1.1.9",
+    "@mediatool/eslint-config-mediatool": "^1.1.12",
     "@rollup/plugin-json": "^4.1.0",
     "ramda": "0.15.1",
     "rollup": "^2.78.0",
