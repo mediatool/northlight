@@ -1,6 +1,6 @@
 {
   "name": "@mediatool/icons",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "UNLICENSED",
   "exports": {
     "import": "./dist/es/icons.mjs",
