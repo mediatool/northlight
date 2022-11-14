@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.3](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.8.2...@mediatool/ui@2.8.3) (2022-11-14)
+
+
+### Bug Fixes
+
+* **ui/framework:** add proper exported types ([f9663f9](https://github.com/mediatool/mediatool/commit/f9663f981ddd8721e7ed578a12da214d19dac6e1))
+
+
+
+
+
 ## [2.8.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.8.1...@mediatool/ui@2.8.2) (2022-11-14)
 
 **Note:** Version bump only for package @mediatool/ui
