@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/mediatool/mediatool/compare/@mediatool/icons@1.2.1...@mediatool/icons@1.2.2) (2022-11-14)
+
+
+### Bug Fixes
+
+* **ui:** add proper type paths to all packages ([e1ab392](https://github.com/mediatool/mediatool/commit/e1ab392dc33bdc2f60678185267e717a28c31778))
+
+
+
+
+
 ## [1.2.1](https://github.com/mediatool/mediatool/compare/@mediatool/icons@1.2.0...@mediatool/icons@1.2.1) (2022-11-14)
 
 **Note:** Version bump only for package @mediatool/icons

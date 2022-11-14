@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.5](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.9.4...@mediatool/tokens@1.9.5) (2022-11-14)
+
+
+### Bug Fixes
+
+* **ui:** add proper type paths to all packages ([e1ab392](https://github.com/mediatool/mediatool/commit/e1ab392dc33bdc2f60678185267e717a28c31778))
+
+
+
+
+
 ## [1.9.4](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.9.3...@mediatool/tokens@1.9.4) (2022-11-14)
 
 **Note:** Version bump only for package @mediatool/tokens
