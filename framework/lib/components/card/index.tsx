@@ -1,7 +1,6 @@
-export * from './card'
-export * from './card-actions'
-export * from './card-content'
-export * from './card-description'
-export * from './card-image'
-export * from './card-title'
-export * from './simple-card'
+export {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+} from '@chakra-ui/react'
