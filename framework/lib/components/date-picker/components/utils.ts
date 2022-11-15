@@ -11,4 +11,4 @@ const mapFormat: Record<FormatMapKey, FormatMapValue> = {
 
 export const formatQuery = (query: string) => mapFormat[toLower(query)[0] as FormatMapKey]
 
-export const delimeterIncluded = /(?=[.,:;|\-/\\])|(?<=[.,:;|\-/\\])/g
+export const delimeterIncluded = /([.,:;|\-/\\])/
