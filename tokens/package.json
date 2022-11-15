@@ -13,7 +13,7 @@
     "dist"
   ],
   "scripts": {
-    "transform": "yarn token-transformer lib/tokens.json dist/sets/global.json global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/theme.json global,theme global --resolveReferences=false",
+    "transform": "yarn token-transformer lib/tokens.json dist/sets/global.json global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/webapp.json global,webapp global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/webapp-components.json global,webapp,webapp-components global,webapp --resolveReferences=false",
     "build": "yarn transform && node scripts/sd-build.js && yarn rollup -c",
     "clean": "rm -rf dist",
     "lint": "eslint --ext ts,js scripts/* *.ts *.js",

@@ -10,8 +10,12 @@ module.exports = {
         filter: 'takeGlobalTokens',
       }, {
         format: 'json/nested',
-        destination: 'theme.json',
-        filter: 'takeTheme',
+        destination: 'webapp-components.json',
+        filter: 'takeWebappComponents',
+      }, {
+        format: 'json/nested',
+        destination: 'webapp.json',
+        filter: 'takeWebapp',
       } ],
     },
   },

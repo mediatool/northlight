@@ -10,8 +10,13 @@ StyleDictionary.registerFilter({
 })
 
 StyleDictionary.registerFilter({
-  name: 'takeTheme',
-  matcher: ({ filePath }) => equals('dist/sets/theme.json', filePath),
+  name: 'takeWebappComponents',
+  matcher: ({ filePath }) => equals('dist/sets/webapp-components.json', filePath),
+})
+
+StyleDictionary.registerFilter({
+  name: 'takeWebapp',
+  matcher: ({ filePath }) => equals('dist/sets/webapp.json', filePath),
 })
 
 StyleDictionary.registerTransform({
@@ -19,6 +24,13 @@ StyleDictionary.registerTransform({
   type: 'value',
   matcher: (token) => token.attributes.category === 'borderWidth',
   transformer: (token) => convertToRem(token.original.value),
+})
+
+StyleDictionary.registerTransform({
+  name: 'borderRadius/rem',
+  type: 'value',
+  matcher: (token) => token.attributes.category === 'borderRadius',
+  transformer: ({ value }) => (value === 999 ? '999px' : convertToRem(value)),
 })
 
 StyleDictionary.registerTransform({
@@ -72,6 +84,7 @@ StyleDictionary.registerTransformGroup({
   transforms: [
     'attribute/cti',
     'name/cti/kebab',
+    'borderRadius/rem',
     'lineHeight/rem',
     'fontSize/rem',
     'color/css',

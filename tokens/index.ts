@@ -5,6 +5,10 @@ export {
   fontWeights as coreFontWeight,
   typography,
   zIndex as coreZIndex,
+  boxShadow as coreBoxShadow,
+  fontSize as coreFontSize,
+  lineHeights as coreLineHeight,
+  borderRadius as coreBorderRadius,
 } from './dist/global.json'
 export {
   color,
@@ -14,4 +18,4 @@ export {
   spacing,
   fontSize,
   sizing,
-} from './dist/theme.json'
+} from './dist/webapp-components.json'
