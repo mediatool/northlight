@@ -1,36 +1,33 @@
-import {
-  ComponentSingleStyleConfig,
-} from '@chakra-ui/react'
-import { borderRadius, color, sizing, spacing } from '@mediatool/tokens'
+import { ComponentSingleStyleConfig } from '@chakra-ui/react'
 
 export const Button: ComponentSingleStyleConfig = {
   sizes: {
-    xs: {
+    xs: ({ theme: { sizes: sizing, space: spacing } }) => ({
       height: sizing.button.xs,
       minWidth: sizing.button.xs,
       paddingInlineStart: spacing['padding-inline'].button.xs,
       paddingInlineEnd: spacing['padding-inline'].button.xs,
-    },
-    sm: {
+    }),
+    sm: ({ theme: { sizes: sizing, space: spacing } }) => ({
       height: sizing.button.sm,
       minWidth: sizing.button.sm,
       paddingInlineStart: spacing['padding-inline'].button.md,
       paddingInlineEnd: spacing['padding-inline'].button.md,
-    },
-    md: {
+    }),
+    md: ({ theme: { sizes: sizing, space: spacing } }) => ({
       height: sizing.button.md,
       minWidth: sizing.button.md,
       paddingInlineStart: spacing['padding-inline'].button.md,
       paddingInlineEnd: spacing['padding-inline'].button.md,
-    },
-    lg: {
+    }),
+    lg: ({ theme: { sizes: sizing, space: spacing } }) => ({
       height: sizing.button.lg,
       minWidth: sizing.button.lg,
       paddingInlineStart: spacing['padding-inline'].button.lg,
       paddingInlineEnd: spacing['padding-inline'].button.lg,
-    },
+    }),
   },
-  baseStyle: {
+  baseStyle: ({ theme: { colors: color, radii: borderRadius } }) => ({
     color: color.text.default,
     borderRadius: borderRadius.button.default,
     _focusVisible: {
@@ -38,9 +35,9 @@ export const Button: ComponentSingleStyleConfig = {
       ringColor: color.border.wcag,
       ringOffset: '1px',
     },
-  },
+  }),
   variants: {
-    default: {
+    default: ({ theme: { colors: color } }) => ({
       bgColor: color.background.button.default,
       _hover: {
         bgColor: color.background.button['default-hover'],
@@ -48,8 +45,8 @@ export const Button: ComponentSingleStyleConfig = {
       _active: {
         bgColor: color.background.button['default-active'],
       },
-    },
-    danger: {
+    }),
+    danger: ({ theme: { colors: color } }) => ({
       bgColor: color.background.button.danger,
       color: color.text.button.danger,
       _hover: {
@@ -61,8 +58,8 @@ export const Button: ComponentSingleStyleConfig = {
       _active: {
         bgColor: color.background.button['danger-active'],
       },
-    },
-    success: {
+    }),
+    success: ({ theme: { colors: color } }) => ({
       bgColor: color.background.button.success,
       _hover: {
         bg: color.background.button['success-hover'],
@@ -73,8 +70,8 @@ export const Button: ComponentSingleStyleConfig = {
       _active: {
         bgColor: color.background.button['success-active'],
       },
-    },
-    brand: {
+    }),
+    brand: ({ theme: { colors: color } }) => ({
       color: color.text.inverted,
       bgColor: color.background.button.brand,
       _hover: {
@@ -86,8 +83,8 @@ export const Button: ComponentSingleStyleConfig = {
       _active: {
         bgColor: color.background.button['brand-active'],
       },
-    },
-    link: {
+    }),
+    link: ({ theme: { colors: color } }) => ({
       textDecoration: 'underline',
       color: color.text.button.link,
       bgColor: color.background.button.link,
@@ -99,8 +96,8 @@ export const Button: ComponentSingleStyleConfig = {
         color: color.text.button['link-hover'],
         bgColor: color.background.button['link-active'],
       },
-    },
-    ghost: {
+    }),
+    ghost: ({ theme: { colors: color } }) => ({
       color: color.text.default,
       bgColor: color.background.button.ghost,
       _hover: {
@@ -112,7 +109,7 @@ export const Button: ComponentSingleStyleConfig = {
       _active: {
         bgColor: color.background.button['ghost-active'],
       },
-    },
+    }),
   },
   defaultProps: {
     size: 'md',

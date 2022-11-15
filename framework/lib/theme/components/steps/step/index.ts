@@ -1,9 +1,13 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderWidth, color, coreFontWeight, spacing } from '@mediatool/tokens'
 
 export const Step: ComponentMultiStyleConfig = {
   parts: [ 'step', 'label', 'description' ],
-  baseStyle: {
+  baseStyle: ({ theme: {
+    colors: color,
+    fontWeights,
+    space: spacing,
+    borders: borderWidth,
+  } }) => ({
     step: {
       justifyContent: 'start',
       alignItems: 'start',
@@ -34,12 +38,12 @@ export const Step: ComponentMultiStyleConfig = {
       color: 'inherit',
       pt: spacing.paddingTop.step.label,
       textAlign: 'start',
-      fontWeight: coreFontWeight.bold,
+      fontWeight: fontWeights.bold,
     },
     description: {
       textAlign: 'start',
-      fontWeight: coreFontWeight.semiBold,
+      fontWeight: fontWeights.semiBold,
       color: color.text.default,
     },
-  },
+  }),
 }

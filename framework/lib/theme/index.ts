@@ -20,7 +20,6 @@ import { WebappSkin } from './skins'
 const overrides: ThemeOverride = {
   config: {
     cssVarPrefix: '',
-    initialColorMode: 'light',
   },
   styles: {
     global: {

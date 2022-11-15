@@ -1,5 +1,4 @@
 import { ComponentSingleStyleConfig, keyframes } from '@chakra-ui/react'
-import { palette, sizing } from '@mediatool/tokens'
 
 const pulseRing = keyframes`
 0% {
@@ -18,7 +17,7 @@ const pulseRing = keyframes`
 `
 
 export const Blinker: ComponentSingleStyleConfig = {
-  baseStyle: ({ color }) => ({
+  baseStyle: ({ theme: { colors: palette }, color }) => ({
     position: 'relative',
     borderRadius: '50%',
     bgColor: color === '' ? palette.blue['500'] : color,
@@ -36,29 +35,29 @@ export const Blinker: ComponentSingleStyleConfig = {
     },
   }),
   sizes: {
-    '2xs': {
+    '2xs': ({ theme: { sizes: sizing } }) => ({
       height: sizing.blinker['2xs'],
       width: sizing.blinker['2xs'],
-    },
-    xs: {
+    }),
+    xs: ({ theme: { sizes: sizing } }) => ({
       height: sizing.blinker.xs,
       width: sizing.blinker.xs,
-    },
-    sm: {
+    }),
+    sm: ({ theme: { sizes: sizing } }) => ({
       height: sizing.blinker.sm,
       width: sizing.blinker.sm,
-    },
-    md: {
+    }),
+    md: ({ theme: { sizes: sizing } }) => ({
       height: sizing.blinker.md,
       width: sizing.blinker.md,
-    },
-    lg: {
+    }),
+    lg: ({ theme: { sizes: sizing } }) => ({
       height: sizing.blinker.lg,
       width: sizing.blinker.lg,
-    },
+    }),
   },
   defaultProps: {
     size: 'md',
-    color: palette.blue['500'],
+    color: 'blue.500',
   },
 }

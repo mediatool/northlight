@@ -1,5 +1,4 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderRadius, color, opacity } from '@mediatool/tokens'
 
 export const Checkbox: ComponentMultiStyleConfig = {
   parts: [ 'control', 'label' ],
@@ -20,7 +19,7 @@ export const Checkbox: ComponentMultiStyleConfig = {
       },
     },
   },
-  baseStyle: {
+  baseStyle: ({ theme: { colors: color, opacity } }) => ({
     control: {
       borderColor: color.border.checkbox.default,
       bg: color.background.checkbox.default,
@@ -75,17 +74,17 @@ export const Checkbox: ComponentMultiStyleConfig = {
         },
       },
     },
-  },
+  }),
   variants: {
-    default: {
+    default: ({ theme: { radii: borderRadius } }) => ({
       control: {
         borderRadius: borderRadius.checkbox.default,
       },
-    },
-    rounded: {
+    }),
+    rounded: ({ theme: { radii: borderRadius } }) => ({
       control: {
         borderRadius: borderRadius.checkbox.full,
       },
-    },
+    }),
   },
 }

@@ -1,12 +1,15 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { color } from '@mediatool/tokens'
 
 export const Calendar: ComponentMultiStyleConfig = {
   parts: [ 'container', 'yearSelect', 'dayLabel' ],
-  baseStyle: {
+  baseStyle: ({ theme: {
+    space: spacing,
+    sizes: sizing,
+    colors: color,
+  } }) => ({
     container: {
-      p: 2,
-      w: 64,
+      p: spacing[2],
+      w: sizing[64],
     },
     yearSelect: {
       fontWeight: 'semibold',
@@ -28,9 +31,9 @@ export const Calendar: ComponentMultiStyleConfig = {
       },
     },
     dayLabel: {
-      color: 'gray.600',
+      color: color.gray[600],
       fontSize: 'xs',
-      padding: 2,
+      p: spacing[2],
     },
-  },
+  }),
 }

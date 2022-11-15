@@ -1,5 +1,4 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
-import { color, coreSizing } from '@mediatool/tokens'
 
 export const SplitPane: ComponentSingleStyleConfig = {
   baseStyle: ({ minLeftWidth, minRightWidth, initialSplit, isOpen }) => ({
@@ -14,21 +13,21 @@ export const SplitPane: ComponentSingleStyleConfig = {
 }
 
 export const PaneDivider: ComponentSingleStyleConfig = {
-  baseStyle: {
+  baseStyle: ({ theme: { colors: color, sizes: sizing } }) => ({
     bgColor: color.background['pane-divider'].default,
     zIndex: 300,
     cursor: 'col-resize',
     height: '100%',
-    width: coreSizing[1],
+    width: sizing[1],
     _hover: {
       outlineColor: color.border['pane-divider'].hover,
-      outlineWidth: coreSizing['0a'],
+      outlineWidth: sizing['0a'],
       outlineStyle: 'solid',
     },
     _active: {
       outlineColor: color.border['pane-divider'].hover,
-      outlineWidth: coreSizing['0a'],
+      outlineWidth: sizing['0a'],
       outlineStyle: 'solid',
     },
-  },
+  }),
 }

@@ -1,9 +1,13 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderRadius, borderWidth, color, opacity } from '@mediatool/tokens'
 
 export const DatePicker: ComponentMultiStyleConfig = {
   parts: [ 'group', 'styledField', 'dateField', 'dateSegment' ],
-  baseStyle: {
+  baseStyle: ({ theme: {
+    colors: color,
+    borders: borderWidth,
+    radii: borderRadius,
+    opacity,
+  } }) => ({
     group: {
       position: 'relative',
       alignItems: 'center',
@@ -52,5 +56,5 @@ export const DatePicker: ComponentMultiStyleConfig = {
         color: 'red.500',
       },
     },
-  },
+  }),
 }

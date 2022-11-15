@@ -1,12 +1,9 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import {
-  sizing, spacing,
-} from '@mediatool/tokens'
 
 export const ClipboardInput: ComponentMultiStyleConfig = {
   parts: [ 'button', 'icon', 'tooltip' ],
   sizes: {
-    sm: {
+    sm: ({ theme: { sizes: sizing, space: spacing } }) => ({
       button: {
         height: sizing.button.xs,
         minWidth: sizing.button.xs,
@@ -18,8 +15,8 @@ export const ClipboardInput: ComponentMultiStyleConfig = {
         paddingInline: spacing['padding-inline'].tooltip.sm,
         paddingY: spacing.paddingY.tooltip.sm,
       },
-    },
-    md: {
+    }),
+    md: ({ theme: { sizes: sizing } }) => ({
       button: {
         height: sizing.button.sm,
         minWidth: sizing.button.sm,
@@ -27,8 +24,8 @@ export const ClipboardInput: ComponentMultiStyleConfig = {
       icon: {
         boxSize: sizing.icon.sm,
       },
-    },
-    lg: {
+    }),
+    lg: ({ theme: { sizes: sizing } }) => ({
       button: {
         height: sizing.button.md,
         minWidth: sizing.button.md,
@@ -36,6 +33,6 @@ export const ClipboardInput: ComponentMultiStyleConfig = {
       icon: {
         boxSize: sizing.icon.md,
       },
-    },
+    }),
   },
 }

@@ -1,16 +1,12 @@
 import React from 'react'
-import {
-  AlertDescription,
-  AlertProps,
-  AlertTitle,
-  Alert as ChakraAlert,
-} from '@chakra-ui/react'
+import { AlertProps, Alert as ChakraAlert } from '@chakra-ui/react'
 import { color } from '@mediatool/tokens'
 import { AlertVariants } from '../alert/types'
 import { toastIconMap } from '../types'
 import { Icon } from '../icon'
 import { HStack, Stack } from '../stack'
 import { CloseButton } from '../close-button'
+import { Label, P } from '../typography'
 
 interface Props extends AlertProps {
   variant?: AlertVariants
@@ -33,10 +29,10 @@ export const Toast = ({
   >
     <HStack alignItems="flex-start">
       <Icon as={ toastIconMap[variant] } color={ color.icon.toast[`${variant}`] } boxSize={ 6 } />
-      <Stack spacing={ 0 }>
-        { title && <AlertTitle>{ title }</AlertTitle> }
+      <Stack spacing={ 0 } alignItems="flex-start">
+        { title && <Label size="md">{ title }</Label> }
         { description && (
-          <AlertDescription>{ description }</AlertDescription>
+          <P>{ description }</P>
         ) }
       </Stack>
       <CloseButton

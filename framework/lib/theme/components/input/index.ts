@@ -1,9 +1,8 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderRadius, borderWidth, color, opacity, spacing } from '@mediatool/tokens'
 
 export const Input: ComponentMultiStyleConfig = {
   parts: [ 'field', 'addon' ],
-  baseStyle: {
+  baseStyle: ({ theme: { colors: color } }) => ({
     field: {
       color: color.text.default,
       _placeholder: {
@@ -11,9 +10,15 @@ export const Input: ComponentMultiStyleConfig = {
         opacity: 1,
       },
     },
-  },
+  }),
   variants: {
-    outline: {
+    outline: ({ theme: {
+      colors: color,
+      space: spacing,
+      radii: borderRadius,
+      borders: borderWidth,
+      opacity,
+    } }) => ({
       field: {
         paddingInlineStart: spacing['padding-inline'].input.default,
         paddingInlineEnd: spacing['padding-inline'].input.default,
@@ -57,8 +62,14 @@ export const Input: ComponentMultiStyleConfig = {
         background: 'none',
         color: color.text.default,
       },
-    },
-    filled: {
+    }),
+    filled: ({ theme: {
+      colors: color,
+      space: spacing,
+      radii: borderRadius,
+      borders: borderWidth,
+      opacity,
+    } }) => ({
       field: {
         paddingInlineStart: spacing['padding-inline'].input.default,
         paddingInlineEnd: spacing['padding-inline'].input.default,
@@ -100,8 +111,14 @@ export const Input: ComponentMultiStyleConfig = {
           opacity: opacity.input.disabled,
         },
       },
-    },
-    flushed: {
+    }),
+    flushed: ({ theme: {
+      colors: color,
+      space: spacing,
+      radii: borderRadius,
+      borders: borderWidth,
+      opacity,
+    } }) => ({
       field: {
         paddingInlineStart: spacing['padding-inline'].input.flushed,
         paddingInlineEnd: spacing['padding-inline'].input.flushed,
@@ -145,6 +162,6 @@ export const Input: ComponentMultiStyleConfig = {
           opacity: opacity.input.disabled,
         },
       },
-    },
+    }),
   },
 }

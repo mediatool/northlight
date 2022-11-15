@@ -1,32 +1,31 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderWidth, color } from '@mediatool/tokens'
 
 export const Radio: ComponentMultiStyleConfig = {
   parts: [ 'control', 'label', 'container' ],
   sizes: {
-    sm: {
+    sm: ({ theme: { borders: borderWidth } }) => ({
       control: {
         _checked: {
           borderWidth: borderWidth.radio['checked-sm'],
         },
       },
-    },
-    md: {
+    }),
+    md: ({ theme: { borders: borderWidth } }) => ({
       control: {
         _checked: {
           borderWidth: borderWidth.radio['checked-md'],
         },
       },
-    },
-    lg: {
+    }),
+    lg: ({ theme: { borders: borderWidth } }) => ({
       control: {
         _checked: {
           borderWidth: borderWidth.radio['checked-lg'],
         },
       },
-    },
+    }),
   },
-  baseStyle: {
+  baseStyle: ({ theme: { borders: borderWidth, colors: color } }) => ({
     control: {
       borderColor: color.border.radio.default,
       bg: color.background.radio.default,
@@ -70,5 +69,5 @@ export const Radio: ComponentMultiStyleConfig = {
     defaultProps: {
       size: 'md',
     },
-  },
+  }),
 }

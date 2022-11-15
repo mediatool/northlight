@@ -1,36 +1,40 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
-import { borderRadius, color } from '@mediatool/tokens'
 
 export const Alert: ComponentSingleStyleConfig = {
-  baseStyle: {
+  baseStyle: ({ theme: {
+    radii: borderRadius,
+    colors: color,
+    space: coreSpacing,
+  } }) => ({
     container: {
       borderRadius: borderRadius.toast.default,
       color: color.text.default,
-      paddingEnd: 8,
+      paddingEnd: coreSpacing[8],
       width: 'auto',
+      display: 'flex',
     },
-  },
+  }),
   variants: {
-    success: {
+    success: ({ theme: { colors: color } }) => ({
       container: {
         bgColor: color.background.toast.success,
       },
-    },
-    warning: {
+    }),
+    warning: ({ theme: { colors: color } }) => ({
       container: {
         bgColor: color.background.toast.warning,
       },
-    },
-    info: {
+    }),
+    info: ({ theme: { colors: color } }) => ({
       container: {
         bgColor: color.background.toast.info,
       },
-    },
-    error: {
+    }),
+    error: ({ theme: { colors: color } }) => ({
       container: {
         bgColor: color.background.toast.error,
         color: color.text.toast.error,
       },
-    },
+    }),
   },
 }

@@ -1,10 +1,9 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderRadius, color, coreSizing, palette, sizing } from '@mediatool/tokens'
 
 export const Avatar: ComponentMultiStyleConfig = {
   parts: [ 'container', 'text', 'badge', 'icon' ],
   sizes: {
-    '2xs': {
+    '2xs': ({ theme: { sizes: sizing } }) => ({
       container: {
         width: sizing.avatar['2xs'],
         height: sizing.avatar['2xs'],
@@ -12,8 +11,8 @@ export const Avatar: ComponentMultiStyleConfig = {
       text: {
         lineHeight: sizing.avatar['2xs'],
       },
-    },
-    xs: {
+    }),
+    xs: ({ theme: { sizes: sizing } }) => ({
       container: {
         width: sizing.avatar.xs,
         height: sizing.avatar.xs,
@@ -21,8 +20,8 @@ export const Avatar: ComponentMultiStyleConfig = {
       text: {
         lineHeight: sizing.avatar.xs,
       },
-    },
-    sm: {
+    }),
+    sm: ({ theme: { sizes: sizing } }) => ({
       container: {
         width: sizing.avatar.sm,
         height: sizing.avatar.sm,
@@ -33,8 +32,8 @@ export const Avatar: ComponentMultiStyleConfig = {
       icon: {
         boxSize: sizing.avatar.sm,
       },
-    },
-    md: {
+    }),
+    md: ({ theme: { sizes: sizing } }) => ({
       container: {
         width: sizing.avatar.md,
         height: sizing.avatar.md,
@@ -45,8 +44,8 @@ export const Avatar: ComponentMultiStyleConfig = {
       icon: {
         boxSize: sizing.avatar.md,
       },
-    },
-    lg: {
+    }),
+    lg: ({ theme: { sizes: sizing } }) => ({
       container: {
         width: sizing.avatar.lg,
         height: sizing.avatar.lg,
@@ -57,8 +56,8 @@ export const Avatar: ComponentMultiStyleConfig = {
       icon: {
         boxSize: sizing.avatar.lg,
       },
-    },
-    xl: {
+    }),
+    xl: ({ theme: { sizes: sizing } }) => ({
       container: {
         width: sizing.avatar.xl,
         height: sizing.avatar.xl,
@@ -66,8 +65,8 @@ export const Avatar: ComponentMultiStyleConfig = {
       text: {
         lineHeight: sizing.avatar.xl,
       },
-    },
-    '2xl': {
+    }),
+    '2xl': ({ theme: { sizes: sizing } }) => ({
       container: {
         width: sizing.avatar['2xl'],
         height: sizing.avatar['2xl'],
@@ -75,10 +74,14 @@ export const Avatar: ComponentMultiStyleConfig = {
       text: {
         lineHeight: sizing.avatar['2xl'],
       },
-    },
+    }),
 
   },
-  baseStyle: ({ image }) => ({
+  baseStyle: ({ theme: {
+    colors: color,
+    sizes: sizing,
+    radii: borderRadius,
+  }, image }) => ({
     container: {
       bgColor: image ? color.background.avatar.image : color.background.avatar.default,
       color: color.text.inverted,
@@ -94,17 +97,17 @@ export const Avatar: ComponentMultiStyleConfig = {
     },
     badge: {
       position: 'absolute',
-      bottom: `-${coreSizing['1']}`,
-      right: `-${coreSizing['1']}`,
-      minWidth: coreSizing['5'],
-      height: coreSizing['5'],
+      bottom: `-${sizing['1']}`,
+      right: `-${sizing['1']}`,
+      minWidth: sizing['5'],
+      height: sizing['5'],
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       fontSize: 'xs',
       fontWeight: 'semibold',
-      padding: coreSizing['0a'],
-      bgColor: palette.red['500'],
+      padding: sizing['0a'],
+      bgColor: color.red['500'],
       color: color.text.inverted,
       borderRadius: borderRadius.avatar.square,
       border: 'none',
@@ -112,7 +115,7 @@ export const Avatar: ComponentMultiStyleConfig = {
 
   }),
   variants: {
-    square: {
+    square: ({ theme: { radii: borderRadius } }) => ({
       container: {
         aspectRatio: '1 / 1',
         borderRadius: borderRadius.avatar.square,
@@ -124,8 +127,8 @@ export const Avatar: ComponentMultiStyleConfig = {
       badge: {
         borderRadius: borderRadius.avatar.square,
       },
-    },
-    rounded: {
+    }),
+    rounded: ({ theme: { radii: borderRadius } }) => ({
       container: {
         aspectRatio: '1 / 1',
         borderRadius: borderRadius.avatar.rounded,
@@ -137,6 +140,6 @@ export const Avatar: ComponentMultiStyleConfig = {
       badge: {
         borderRadius: borderRadius.avatar.rounded,
       },
-    },
+    }),
   },
 }

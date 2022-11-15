@@ -1,10 +1,14 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { borderRadius, borderWidth, color, spacing } from '@mediatool/tokens'
 
 export const Select: ComponentMultiStyleConfig = {
   parts: [ 'field', 'icon' ],
   variants: {
-    outline: {
+    outline: ({ theme: {
+      radii: borderRadius,
+      borders: borderWidth,
+      colors: color,
+      space: spacing,
+    } }) => ({
       field: {
         paddingInlineStart: spacing['padding-inline'].select.default,
         paddingInlineEnd: spacing['padding-inline'].select.default,
@@ -44,6 +48,6 @@ export const Select: ComponentMultiStyleConfig = {
       icon: {
         color: color.icon.select.default,
       },
-    },
+    }),
   },
 }

@@ -1,7 +1,6 @@
 import {
   ComponentMultiStyleConfig,
 } from '@chakra-ui/react'
-import { borderRadius, color } from '@mediatool/tokens'
 import { getContrastColor } from '../../../utils'
 
 export const Tag: ComponentMultiStyleConfig = {
@@ -12,21 +11,21 @@ export const Tag: ComponentMultiStyleConfig = {
     },
   },
   sizes: {
-    sm: {
+    sm: ({ theme: { radii: borderRadius } }) => ({
       container: {
         borderRadius: borderRadius.tag.default,
       },
-    },
-    md: {
+    }),
+    md: ({ theme: { radii: borderRadius } }) => ({
       container: {
         borderRadius: borderRadius.tag.default,
       },
-    },
-    lg: {
+    }),
+    lg: ({ theme: { radii: borderRadius } }) => ({
       container: {
         borderRadius: borderRadius.tag.default,
       },
-    },
+    }),
   },
   variants: {
     solid: ({ bgColor, colorScheme }) => ({
@@ -35,15 +34,15 @@ export const Tag: ComponentMultiStyleConfig = {
         color: getContrastColor(bgColor ?? colorScheme),
       },
     }),
-    subtle: {
+    subtle: ({ theme: { colors: color } }) => ({
       container: {
         bgColor: color.background.tag.subtle,
         color: color.text.default,
       },
-    },
+    }),
   },
   defaultProps: {
     size: 'md',
-    colorScheme: color.background.tag.default,
+    colorScheme: 'background.tag.default',
   },
 }

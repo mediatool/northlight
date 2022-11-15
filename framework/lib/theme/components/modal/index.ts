@@ -1,11 +1,4 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import {
-  borderRadius,
-  borderWidth,
-  color,
-  coreSpacing,
-  spacing,
-} from '@mediatool/tokens'
 
 export const Modal: ComponentMultiStyleConfig = {
   parts: [ 'overlay', 'closeButton', 'dialog' ],
@@ -18,14 +11,19 @@ export const Modal: ComponentMultiStyleConfig = {
       },
     },
   },
-  baseStyle: {
+  baseStyle: ({ theme: {
+    colors: color,
+    space: spacing,
+    radii: borderRadius,
+    borders: borderWidth,
+  } }) => ({
     overlay: {
       bgColor: `${color.background.modal.overlay}`,
       backdropFilter: 'blur(8px)',
     },
     closeButton: {
-      top: coreSpacing[4],
-      right: coreSpacing[4],
+      top: spacing[4],
+      right: spacing[4],
     },
     dialog: {
       borderRadius: borderRadius.modal.dialog,
@@ -45,5 +43,5 @@ export const Modal: ComponentMultiStyleConfig = {
       paddingTop: spacing.paddingTop.modal.footer,
       paddingBottom: spacing.paddingBottom.modal.footer,
     },
-  },
+  }),
 }

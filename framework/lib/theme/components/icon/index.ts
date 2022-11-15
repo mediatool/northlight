@@ -1,22 +1,21 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
-import { sizing } from '@mediatool/tokens'
 
 export const Icon: ComponentSingleStyleConfig = {
   sizes: {
-    xs: {
+    xs: ({ theme: { sizes: sizing } }) => ({
       boxSize: sizing.icon.xs,
-    },
-    sm: {
+    }),
+    sm: ({ theme: { sizes: sizing } }) => ({
       boxSize: sizing.icon.sm,
-    },
-    md: {
+    }),
+    md: ({ theme: { sizes: sizing } }) => ({
       boxSize: sizing.icon.md,
-    },
-    lg: {
+    }),
+    lg: ({ theme: { sizes: sizing } }) => ({
       boxSize: sizing.icon.lg,
-    },
+    }),
   },
-  baseStyle: ({ boxSize, color }) => ({
+  baseStyle: ({ theme: { sizes: sizing }, boxSize, color }) => ({
     boxSize: boxSize || sizing.icon.default,
     color: color || 'unset',
   }),

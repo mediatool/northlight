@@ -20,7 +20,7 @@ const MenuItem = ({ path, Icon: IconComponent, title }: MenuItemProps) => (
     as={ NavLink }
     borderRadius={ 6 }
     _hover={ { bg: 'mediatoolBlue.100' } }
-    _activeLink={ { bg: 'mediatoolBlue.100', color: 'mediatoolBlue.500' } }
+    _activeLink={ { backgroundColor: 'mediatoolBlue.100', color: 'mediatoolBlue.500' } }
   >
     <Icon as={ IconComponent } boxSize={ 6 } />
     <Label size="md" sx={ { color: 'inherit', cursor: 'pointer' } }>

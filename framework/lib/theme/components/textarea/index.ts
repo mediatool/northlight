@@ -1,9 +1,13 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
-import { borderRadius, borderWidth, color, spacing } from '@mediatool/tokens'
 
 export const Textarea: ComponentSingleStyleConfig = {
   variants: {
-    outline: {
+    outline: ({ theme: {
+      space: spacing,
+      colors: color,
+      borders: borderWidth,
+      radii: borderRadius,
+    } }) => ({
       paddingInlineStart: spacing['padding-inline'].textarea.default,
       paddingInlineEnd: spacing['padding-inline'].textarea.default,
       borderRadius: borderRadius.textarea.default,
@@ -43,6 +47,6 @@ export const Textarea: ComponentSingleStyleConfig = {
       _placeholder: {
         color: color.text.textarea.placeholder,
       },
-    },
+    }),
   },
 }

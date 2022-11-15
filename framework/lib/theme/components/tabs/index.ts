@@ -1,11 +1,11 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import { color } from '@mediatool/tokens'
 
 export const Tabs: ComponentMultiStyleConfig = {
   parts: [ 'tab' ],
   variants: {
-    'soft-rounded': {
+    'soft-rounded': ({ theme: { colors: color } }) => ({
       tab: {
+        borderRadius: 999,
         color: color.text.subdued,
         _selected: {
           bg: color.background.tabs['soft-rounded-active'],
@@ -17,6 +17,6 @@ export const Tabs: ComponentMultiStyleConfig = {
           ringOffset: '1px',
         },
       },
-    },
+    }),
   },
 }

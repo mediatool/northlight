@@ -1,10 +1,9 @@
 import {
   ComponentSingleStyleConfig,
 } from '@chakra-ui/react'
-import { borderWidth, color } from '@mediatool/tokens'
 
 export const Spinner: ComponentSingleStyleConfig = {
-  baseStyle: () => ({
+  baseStyle: ({ theme: { colors: color, borders: borderWidth } }) => ({
     borderWidth: borderWidth.spinner.default,
     color: color.background.spinner.thumb,
     borderBottomColor: color.background.spinner.track,

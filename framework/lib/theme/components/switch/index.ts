@@ -1,10 +1,7 @@
-import {
-  ComponentSingleStyleConfig,
-} from '@chakra-ui/react'
-import { color, opacity } from '@mediatool/tokens'
+import { ComponentSingleStyleConfig } from '@chakra-ui/react'
 
 export const Switch: ComponentSingleStyleConfig = {
-  baseStyle: {
+  baseStyle: ({ theme: { colors: color, opacity } }) => ({
     _disabled: {
       opacity: opacity.switch.disabled,
     },
@@ -22,5 +19,5 @@ export const Switch: ComponentSingleStyleConfig = {
     thumb: {
       bgColor: color.background.switch.thumb,
     },
-  },
+  }),
 }

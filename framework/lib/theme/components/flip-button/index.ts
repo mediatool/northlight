@@ -1,18 +1,9 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import {
-  borderRadius,
-  color,
-  coreFontWeight,
-  coreSizing,
-  opacity,
-  sizing,
-  spacing,
-} from '@mediatool/tokens'
 
 export const FlipButton: ComponentMultiStyleConfig = {
   parts: [ 'container', 'button', 'buttonIcon' ],
   sizes: {
-    xs: {
+    xs: ({ theme: { sizes: sizing, space: spacing } }) => ({
       button: {
         height: sizing['flip-button'].xs,
         minWidth: sizing['flip-button'].xs,
@@ -23,8 +14,8 @@ export const FlipButton: ComponentMultiStyleConfig = {
       buttonIcon: {
         boxSize: sizing.icon.xs,
       },
-    },
-    sm: {
+    }),
+    sm: ({ theme: { sizes: sizing, space: spacing } }) => ({
       button: {
         height: sizing['flip-button'].sm,
         minWidth: sizing['flip-button'].sm,
@@ -35,8 +26,8 @@ export const FlipButton: ComponentMultiStyleConfig = {
           boxSize: sizing.icon.sm,
         },
       },
-    },
-    md: {
+    }),
+    md: ({ theme: { sizes: sizing, space: spacing } }) => ({
       button: {
         height: sizing['flip-button'].md,
         minWidth: sizing['flip-button'].md,
@@ -47,8 +38,8 @@ export const FlipButton: ComponentMultiStyleConfig = {
           boxSize: sizing.icon.md,
         },
       },
-    },
-    lg: {
+    }),
+    lg: ({ theme: { sizes: sizing, space: spacing } }) => ({
       button: {
         height: sizing['flip-button'].lg,
         minWidth: sizing['flip-button'].lg,
@@ -59,9 +50,16 @@ export const FlipButton: ComponentMultiStyleConfig = {
           boxSize: sizing.icon.lg,
         },
       },
-    },
+    }),
   },
-  baseStyle: ({ numberOfButtons }) => ({
+  baseStyle: ({ theme: {
+    space: spacing,
+    sizes: sizing,
+    colors: color,
+    opacity,
+    radii: borderRadius,
+    fontWeights: coreFontWeight,
+  }, numberOfButtons }) => ({
     container: {
       borderRadius: borderRadius['flip-button'].default,
       paddingInlineStart: spacing['padding-inline']['flip-button-group'].default,
@@ -70,7 +68,7 @@ export const FlipButton: ComponentMultiStyleConfig = {
       disply: 'grid',
       width: '100%',
       gap: spacing['padding-inline']['flip-button'].gap,
-      gridTemplateColumns: `repeat(${numberOfButtons}, minmax(${coreSizing[32]}, 1fr))`,
+      gridTemplateColumns: `repeat(${numberOfButtons}, minmax(${sizing[32]}, 1fr))`,
       gridTemplateRows: '1fr',
       overflowX: 'auto',
     },
@@ -91,7 +89,7 @@ export const FlipButton: ComponentMultiStyleConfig = {
     },
   }),
   variants: {
-    default: {
+    default: ({ theme: { colors: color } }) => ({
       container: {
         bgColor: color.background['flip-button']['default-deselected-blue'],
       },
@@ -107,8 +105,8 @@ export const FlipButton: ComponentMultiStyleConfig = {
           },
         },
       },
-    },
-    brand: {
+    }),
+    brand: ({ theme: { colors: color } }) => ({
       container: {
         bgColor: color.background['flip-button']['default-deselected-brand'],
       },
@@ -124,7 +122,7 @@ export const FlipButton: ComponentMultiStyleConfig = {
           },
         },
       },
-    },
+    }),
   },
   defaultProps: {
     size: 'md',

@@ -1,45 +1,47 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
-import {
-  borderRadius,
-  borderWidth,
-  color,
-  coreSizing,
-  opacity,
-  spacing,
-} from '@mediatool/tokens'
 
 export const NumberInput: ComponentMultiStyleConfig = {
-  parts: [ 'field', 'stepper', 'stepperGroup' ],
+  parts: [ 'root', 'field', 'stepper', 'stepperGroup' ],
   sizes: {
-    sm: {
+    sm: ({ theme: { radii: borderRadius, sizes: sizing } }) => ({
       field: {
         borderRadius: borderRadius.input.outline,
       },
       stepperGroup: {
-        height: coreSizing['8'],
+        height: sizing['8'],
       },
-    },
-    md: {
+    }),
+    md: ({ theme: { sizes: sizing } }) => ({
       stepperGroup: {
-        height: coreSizing['10'],
+        height: sizing['10'],
       },
-    },
-    lg: {
+    }),
+    lg: ({ theme: { sizes: sizing } }) => ({
       stepperGroup: {
-        height: coreSizing['12'],
+        height: sizing['12'],
       },
-    },
+    }),
   },
-  baseStyle: ({ isReadOnly }) => ({
+  baseStyle: ({ theme: {
+    sizes: sizing,
+    space: spacing,
+    colors: color,
+    radii: borderRadius,
+    borders: borderWidth,
+    opacity,
+  }, isReadOnly }) => ({
+    root: {
+      borderRadius: borderRadius.input.outline,
+    },
     field: {
-      minWidth: coreSizing['44'],
+      minWidth: sizing['44'],
       paddingInlineStart: spacing['padding-inline'].input.default,
       paddingInlineEnd: spacing['padding-inline'].input.default,
       WebkitPaddingStart: spacing['padding-inline'].input.default,
       WebkitPaddingEnd: spacing['padding-inline'].input.default,
       color: color.text.default,
       bg: color.background.input['outline-default'],
-      borderRadius: borderRadius.input.outline,
+
       borderWidth: borderWidth.input.default,
       borderColor: color.border.input.default,
       paddingRight: spacing.paddingRight['number-input'].field,

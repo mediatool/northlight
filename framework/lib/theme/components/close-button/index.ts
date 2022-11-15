@@ -1,10 +1,7 @@
-import {
-  ComponentSingleStyleConfig,
-} from '@chakra-ui/react'
-import { color } from '@mediatool/tokens'
+import { ComponentSingleStyleConfig } from '@chakra-ui/react'
 
 export const CloseButton: ComponentSingleStyleConfig = {
-  baseStyle: {
+  baseStyle: ({ theme: { colors: color } }) => ({
     color: color.text.default,
     bgColor: color.background.button.ghost,
     _hover: {
@@ -21,7 +18,7 @@ export const CloseButton: ComponentSingleStyleConfig = {
       ringColor: color.border.wcag,
       ringOffset: '1px',
     },
-  },
+  }),
   defaultProps: {
     size: 'md',
   },

@@ -1,9 +1,14 @@
 import { ComponentSingleStyleConfig } from '@chakra-ui/react'
-import { borderRadius, borderWidth, color, opacity, spacing } from '@mediatool/tokens'
 
 export const PinInput: ComponentSingleStyleConfig = {
   variants: {
-    outline: {
+    outline: ({ theme: {
+      radii: borderRadius,
+      borders: borderWidth,
+      colors: color,
+      space: spacing,
+      opacity,
+    } }) => ({
       borderColor: color.border.input.default,
       borderRadius: borderRadius.input.outline,
       borderWidth: borderWidth.input.default,
@@ -40,6 +45,6 @@ export const PinInput: ComponentSingleStyleConfig = {
       _readonly: {
         borderColor: color.border.input.readonly,
       },
-    },
+    }),
   },
 }
