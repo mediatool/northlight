@@ -2,13 +2,25 @@ import {
   ThemeOverride,
   extendTheme,
 } from '@chakra-ui/react'
-import { coreZIndex, palette } from '@mediatool/tokens'
+import {
+  coreBorderRadius,
+  coreBoxShadow,
+  coreFontSize,
+  coreFontWeight,
+  coreLineHeight,
+  coreSizing,
+  coreSpacing,
+  coreZIndex,
+  palette,
+} from '@mediatool/tokens'
 import { scrollbarStyles } from './global/scrollbar'
 import * as components from './components'
+import { WebappSkin } from './skins'
 
 const overrides: ThemeOverride = {
   config: {
     cssVarPrefix: '',
+    initialColorMode: 'light',
   },
   styles: {
     global: {
@@ -25,16 +37,16 @@ const overrides: ThemeOverride = {
     heading: 'Inter, sans-serif',
     body: 'Inter, sans-serif',
   },
-  colors: {
-    ...palette,
-    primary: palette.mediatoolBlue[500],
-  },
-  components: {
-    ...components,
-  },
-  zIndices: {
-    ...coreZIndex,
-  },
+  components: { ...components },
+  colors: palette,
+  zIndices: coreZIndex,
+  sizes: coreSizing,
+  space: coreSpacing,
+  fontWeights: coreFontWeight,
+  shadows: coreBoxShadow,
+  fontSizes: coreFontSize,
+  lineHeights: coreLineHeight,
+  radii: coreBorderRadius,
 }
 
-export const theme = extendTheme(overrides)
+export const theme = extendTheme(overrides, WebappSkin)
