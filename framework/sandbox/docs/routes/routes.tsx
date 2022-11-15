@@ -232,4 +232,9 @@ export const routes: Page[] = sortBy(prop('title'), [
     path: '/typography',
     component: () => import('../pages/typography-page'),
   },
+  {
+    title: 'Editable text',
+    path: '/editable-text',
+    component: () => import('../pages/editable-text-page'),
+  },
 ])
