@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.4](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.8.3...@mediatool/ui@2.8.4) (2022-11-15)
+
+
+### Bug Fixes
+
+* **ui/framework:** clean up lowlife code ([a76a274](https://github.com/mediatool/mediatool/commit/a76a27412090a9803816515e03a4cc1ea2883bde))
+* **ui:** date-picker formatting reggex ([d2d0fed](https://github.com/mediatool/mediatool/commit/d2d0fedd2662774d7dfbc2044840f39ee3fca632))
+* **ui:** fixed ratio and clickable avatar ([fe35ba5](https://github.com/mediatool/mediatool/commit/fe35ba5f9f7b03f3ee62b926e612acf24bcef6a2))
+* **ui:** onChange callback ([43c2f40](https://github.com/mediatool/mediatool/commit/43c2f4049a68297f2aa7d9ff4872887512a11668))
+
+
+
+
+
 ## [2.8.3](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.8.2...@mediatool/ui@2.8.3) (2022-11-14)
 
 
