@@ -22,7 +22,7 @@ export interface SelectProps<T> extends Omit<ChakraReactSelectProps<T, boolean, 
 export type SelectFieldProps<T> =
   Omit<SelectProps<T>, 'onChange'>
   & {
-    onChange?: (val: T | T[]) => void
+    onChange?: (val: T | T[], event:ActionMeta<T>) => void
     direction?: StackDirection
     name: string
     label: string

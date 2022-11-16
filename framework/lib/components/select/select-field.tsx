@@ -36,13 +36,13 @@ export function SelectField<T> ({
             name={ name }
             options={ options }
             isMulti={ isMulti }
-            onChange={ (values: FieldValues) => {
+            onChange={ (values: FieldValues, event) => {
               onChange(
                 isMulti
                   ? values.map((item: any) => item.value)
                   : values.value
               )
-              onChangeCallback(values as T | T[])
+              onChangeCallback(values as T | T[], event)
             } }
             value={
               value
