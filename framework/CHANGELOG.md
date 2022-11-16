@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.5](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.8.4...@mediatool/ui@2.8.5) (2022-11-16)
+
+
+### Bug Fixes
+
+* **ui:** event not passed down to callback ([8882c87](https://github.com/mediatool/mediatool/commit/8882c87f4ff6fe15e8d9e46454d30c9641a1839a))
+
+
+
+
+
 ## [2.8.4](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.8.3...@mediatool/ui@2.8.4) (2022-11-15)
 
 
