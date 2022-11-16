@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.8.5...@mediatool/ui@2.9.0) (2022-11-16)
+
+
+### Bug Fixes
+
+* **ui:** fix date-picker doc page ([060dad9](https://github.com/mediatool/mediatool/commit/060dad9b4d02d1e142f61c4b049ee338c78f108d))
+
+
+### Features
+
+* **ui:** added webapp skin to theme overrides ([294cbed](https://github.com/mediatool/mediatool/commit/294cbed9eceb06c450d6ecc260ff7c3310ef06a3))
+
+
+
+
+
 ## [2.8.5](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.8.4...@mediatool/ui@2.8.5) (2022-11-16)
 
 

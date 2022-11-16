@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.9.5...@mediatool/tokens@1.10.0) (2022-11-16)
+
+
+### Features
+
+* **tokens:** add webapp theme and export components ([e4e766d](https://github.com/mediatool/mediatool/commit/e4e766d2f66d76a0878b3db7cca75847227942f9))
+
+
+
+
+
 ## [1.9.5](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.9.4...@mediatool/tokens@1.9.5) (2022-11-14)
 
 

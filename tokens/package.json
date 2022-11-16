@@ -1,6 +1,6 @@
 {
   "name": "@mediatool/tokens",
-  "version": "1.9.5",
+  "version": "1.10.0",
   "license": "UNLICENSED",
   "exports": {
     "types": "./dist/ts/types.d.ts",
