@@ -38,8 +38,8 @@ const DatePickerPage = () => {
               <Text>
                 You can pass on custom formatting to date-picker via <strong>dateFormat</strong>
               </Text>
-              <DatePickerField name="formattedDate" label="Formatted date" dateFormat="dd/yyyy/mm" />
-              <Code w="max-content">{ '<DatePickerField dateFormat="yyyy|mm-dd" name="formattedDate" label"Formatted date"/>' }</Code>
+              <DatePickerField name="formattedDate" label="Formatted date" dateFormat="dd-yyyy-mm" />
+              <Code w="max-content">{ '<DatePickerField dateFormat="dd-yyyy-mm" name="formattedDate" label"Formatted date"/>' }</Code>
               <Code p={ 4 }>{ JSON.stringify(watch(), null, 2) }</Code>
             </Stack>
           ) }
