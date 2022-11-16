@@ -40,6 +40,7 @@ export interface DatePickerProps extends AriaDatePickerProps<DateValue> {
   resetDate: ()=> void
   isInvalid?: boolean
   dateFormat?: string
+  isClearable?: boolean
 }
 
 export interface DatePickerFieldProps extends Omit<ChakraInputProps, 'onChange'> {
@@ -52,4 +53,5 @@ export interface DatePickerFieldProps extends Omit<ChakraInputProps, 'onChange'>
   direction?: StackDirection
   dateFormat?: string
   onChange?: (date: DateValue) => void
+  isClearable?: boolean
 }

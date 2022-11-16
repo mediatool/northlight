@@ -17,6 +17,7 @@ import { Icon } from '../icon'
 export const DatePicker = (props: DatePickerProps) => {
   const {
     isDisabled,
+    isClearable = true,
     resetDate,
     isInvalid = false,
     dateFormat,
@@ -69,7 +70,7 @@ export const DatePicker = (props: DatePickerProps) => {
             size="sm"
             fontSize="xs"
             onClick={ resetDate }
-            hidden={ !state.dateValue }
+            hidden={ !state.dateValue || !isClearable }
             isDisabled={ isDisabled }
             icon={ <Icon as={ XCloseSolid } /> }
           />
