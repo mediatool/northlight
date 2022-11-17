@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.9.0...@mediatool/ui@2.9.1) (2022-11-17)
+
+
+### Bug Fixes
+
+* **ui:** Added is clearable prop for the DatePicker component ([dfedaaf](https://github.com/mediatool/mediatool/commit/dfedaaf094e93b2a12c25bfedbd582fff247838f))
+
+
+
+
+
 # [2.9.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.8.5...@mediatool/ui@2.9.0) (2022-11-16)
 
 
