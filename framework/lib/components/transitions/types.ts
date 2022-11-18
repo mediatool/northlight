@@ -17,7 +17,6 @@ export interface FadeProps extends ChakraFadeProps {
   exitDuration?: DurationType
   disableFocus?: boolean
   hideDisplay?: boolean
-  delay?: number
   enterDelay?: number
   exitDelay?: number
 }
