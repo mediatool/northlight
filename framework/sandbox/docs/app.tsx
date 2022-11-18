@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useStyleConfig } from '@chakra-ui/react'
 import { mergeAll } from 'ramda'
 import {
@@ -39,13 +39,6 @@ import {
 
 const DocsApp = () => {
   const capitalizedStyles = useStyleConfig('Capitalized')
-  const [ fadeSection, setFadesection ] = useState(0)
-
-  useEffect(() => {
-    const nextDelay = fadeSection === 0 ? 200 : 600
-    const ref = setTimeout(() => setFadesection((x) => x + 1), nextDelay)
-    return () => clearTimeout(ref)
-  }, [ fadeSection ])
 
   return (
     <Box
@@ -59,7 +52,7 @@ const DocsApp = () => {
       <VStack spacing={ 32 }>
         <VStack>
           <Lead sx={ { fontSize: '18px' } }>Welcome to</Lead>
-          <SlideFade in={ fadeSection > 0 }>
+          <SlideFade in={ true } enterDelay={ 200 }>
             <HStack pt={ 10 } spacing={ 2 }>
               <Icon as={ MediatoolLogoDuo } boxSize={ 32 } />
               <Capitalized sx={ { fontSize: '64px' } }>Mediatool</Capitalized>
@@ -76,7 +69,7 @@ const DocsApp = () => {
 
             </HStack>
           </SlideFade>
-          <Fade in={ fadeSection > 1 }>
+          <Fade in={ true } enterDelay={ 800 }>
             <Box maxW="500px" textAlign="center" pt={ 5 }>
               <P>
                 Mediatool UI is the result of what is possible when an amazing
@@ -87,7 +80,7 @@ const DocsApp = () => {
             </Box>
           </Fade>
         </VStack>
-        <SlideFade in={ fadeSection > 2 }>
+        <SlideFade in={ true } enterDelay={ 1200 }>
           <VStack spacing={ 32 }>
             <HStack spacing={ 8 }>
               <Stack alignItems="center">
