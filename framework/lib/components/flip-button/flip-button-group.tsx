@@ -21,9 +21,8 @@ export const FlipButtonGroup = (props: FlipButtonGroupProps) => {
   const { state, flipButtonGroupProps } = useFlipButton(props, isMulti)
 
   const numberOfButtons = Children.count(children)
-  const childrenAsArray = numberOfButtons > 1 ? children : [ children ]
 
-  const childrenWithProps = (childrenAsArray as React.ReactNode[]).map((child: React.ReactNode) =>
+  const childrenWithProps = (Children.toArray(children)).map((child: React.ReactNode) =>
     (isValidElement(child)
       ? cloneElement(child, {
         key: child.props.value,
