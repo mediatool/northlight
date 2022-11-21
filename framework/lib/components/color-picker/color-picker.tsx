@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { ColorsDuo } from '@mediatool/icons'
 import { FocusScope } from '@react-aria/focus'
-import { color as colorToken } from '@mediatool/tokens'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { useBoolean, useDisclosure } from '../../hooks'
 import { SimpleGrid } from '../simple-grid'
@@ -109,7 +108,7 @@ export const ColorPicker = ({
         <PopoverContent w="auto" boxShadow="md" p={ 2 }>
           <Stack>
             <PopoverHeader
-              color={ colorToken.text.default }
+              color="text.default"
               sx={ heading }
             >
               Pick a color

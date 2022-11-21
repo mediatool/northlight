@@ -64,7 +64,6 @@ const PalettePage = () => {
           </Box>
         </HStack>
       </VStack>
-
       { Object.keys(rest).map((colorKey) => (
         <VStack spacing={ 4 } mt={ 4 } alignItems="start" key={ colorKey }>
           <Heading as="h4" size="md" textTransform="capitalize">{ colorKey }</Heading>

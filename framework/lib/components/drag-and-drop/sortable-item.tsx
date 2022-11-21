@@ -1,7 +1,6 @@
 import React, { PointerEvent, cloneElement, isValidElement, useRef } from 'react'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import { borderRadius } from '@mediatool/tokens'
 import { Box } from '../box'
 import { DragItem } from './drag-item'
 import { ring } from '../../utils'
@@ -72,7 +71,7 @@ export const SortableItem = ({
       { ...attributes }
       _focusVisible={ ring }
       tabIndex={ disableDrag ? -1 : 0 }
-      borderRadius={ borderRadius.tag.default }
+      borderRadius="tag.default"
       { ...dragEventListeners }
     >
       { (
@@ -80,7 +79,7 @@ export const SortableItem = ({
           ? childrenWithDragCursor(listeners, props)
           : childrenWithDragCursor
       ) || <DragItem isDragging={ isDragging } itemLabel={ itemLabel } />
-         }
+      }
     </Box>
   )
 }

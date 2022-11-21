@@ -6,7 +6,6 @@ import {
   useMultiStyleConfig,
 } from '@chakra-ui/react'
 import { useRadio } from '@react-aria/radio'
-import { color } from '@mediatool/tokens'
 import { useFocusRing } from '@react-aria/focus'
 import { merge } from 'ramda'
 import { CheckboxGroupState } from '@react-stately/checkbox'
@@ -38,7 +37,7 @@ export const FlipButton = (props: FlipButtonProps) => {
   const focusStyles = {
     outline: 'none',
     ring: '2px',
-    ringColor: color.border.wcag,
+    ringColor: 'border.wcag',
     ringOffset: '1px',
   }
 

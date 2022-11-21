@@ -4,7 +4,6 @@ import {
   NumberDecrementStepper,
   NumberIncrementStepper,
 } from '@chakra-ui/react'
-import { color } from '@mediatool/tokens'
 import { ChevronDownSolid, ChevronUpSolid } from '@mediatool/icons'
 import { Icon } from '../icon'
 import { HStack } from '../stack'
@@ -17,14 +16,14 @@ export const NumberInputStepper = () => (
       <NumberIncrementStepper>
         <Icon
           as={ ChevronUpSolid }
-          color={ color.icon['input-stepper'].default }
+          color="icon.input-stepper.default"
           boxSize={ 4 }
         />
       </NumberIncrementStepper>
       <NumberDecrementStepper>
         <Icon
           as={ ChevronDownSolid }
-          color={ color.icon['input-stepper'].default }
+          color="icon.input-stepper.default"
           boxSize={ 4 }
         />
       </NumberDecrementStepper>

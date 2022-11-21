@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { color as colorToken } from '@mediatool/tokens'
 import {
   Code,
   DragItem,
@@ -65,7 +64,7 @@ const MultiSortPage = () => {
                     <DragItem
                       itemLabel={ activeId }
                       isDragging={ true }
-                      bgColor={ colorToken.background.tag.default }
+                      bgColor="background.tag.default"
                     />
                   ) : null }
                 </DragOverlay>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { AlertProps, Alert as ChakraAlert } from '@chakra-ui/react'
-import { color } from '@mediatool/tokens'
 import { AlertVariants } from '../alert/types'
 import { toastIconMap } from '../types'
 import { Icon } from '../icon'
@@ -28,7 +27,7 @@ export const Toast = ({
     { ...rest }
   >
     <HStack alignItems="flex-start">
-      <Icon as={ toastIconMap[variant] } color={ color.icon.toast[`${variant}`] } boxSize={ 6 } />
+      <Icon as={ toastIconMap[variant] } color={ `icon.toast.${variant}` } boxSize={ 6 } />
       <Stack spacing={ 0 } alignItems="flex-start">
         { title && <Label size="md">{ title }</Label> }
         { description && (

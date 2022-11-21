@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react'
 import { DotsMatrixSolid } from '@mediatool/icons'
-import { palette } from '@mediatool/tokens'
 import { Tag, TagLabel, TagRightIcon } from '../tag'
 import { Icon } from '../icon'
 import { DragItemProps } from './types'
@@ -15,7 +14,7 @@ export const DragItem = forwardRef(({
   <Tag
     ref={ ref }
     cursor={ isDragging ? 'grabbing' : 'grab' }
-    bgColor={ bgColor || (isDragging ? palette.blue['200'] : undefined) }
+    bgColor={ bgColor || (isDragging ? 'blue.200' : undefined) }
     size={ size }
     minW="max-content"
     { ...rest }
