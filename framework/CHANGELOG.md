@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.9.1...@mediatool/ui@2.10.0) (2022-11-21)
+
+
+### Features
+
+* **ui:** add card component from chakra ([5ecbb40](https://github.com/mediatool/mediatool/commit/5ecbb40612c8522d6bbf96f7fe0b83bf6b0b092a))
+* **ui:** added EditableText component ([36d42a6](https://github.com/mediatool/mediatool/commit/36d42a690dc90983c0dd91cf9ead6157e4f41a4c))
+
+
+
+
+
 ## [2.9.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.9.0...@mediatool/ui@2.9.1) (2022-11-17)
 
 
