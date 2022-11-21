@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.10.0...@mediatool/ui@2.10.1) (2022-11-21)
+
+
+### Bug Fixes
+
+* **ui:** ellipsis text in editable ([4c9da83](https://github.com/mediatool/mediatool/commit/4c9da8391ad09c0545d564fadc0d827a0aee63b1))
+
+
+
+
+
 # [2.10.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.9.1...@mediatool/ui@2.10.0) (2022-11-21)
 
 
