@@ -128,6 +128,11 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/field-page'),
   },
   {
+    title: 'Progress Bar',
+    path: '/progress-bar',
+    component: () => import('../pages/progress-bar-page'),
+  },
+  {
     title: 'Formatted Number Input',
     path: '/formatted-number-input',
     component: () => import('../pages/formatted-number-input-page'),
