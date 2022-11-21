@@ -14,6 +14,9 @@ export const EditableText: ComponentMultiStyleConfig = {
       controls: {
         width: !isEditing ? 6 : '3.25rem',
       },
+      preview: {
+        pt: 1,
+      },
       input: {
         paddingInlineEnd: 16,
         paddingRight: 16,
@@ -30,6 +33,9 @@ export const EditableText: ComponentMultiStyleConfig = {
       controls: {
         width: !isEditing ? 8 : '4.25rem',
       },
+      preview: {
+        pt: '7px',
+      },
       input: {
         paddingInlineEnd: 20,
         paddingRight: 20,
@@ -45,6 +51,9 @@ export const EditableText: ComponentMultiStyleConfig = {
       },
       controls: {
         width: !isEditing ? 10 : '5.25rem',
+      },
+      preview: {
+        pt: '8px',
       },
       input: {
         paddingInlineEnd: 24,
@@ -63,10 +72,7 @@ export const EditableText: ComponentMultiStyleConfig = {
       overflow: 'hidden',
       paddingTop: 0,
       paddingBottom: 0,
-      display: 'inline-flex',
-      alignItems: 'center',
     },
-
     input: {
       fontWeight: 'semibold',
     },
