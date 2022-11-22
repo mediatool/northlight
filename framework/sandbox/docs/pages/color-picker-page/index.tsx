@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { palette as colorToken } from '@mediatool/tokens'
 import {
   ClipboardInput,
   Code,
@@ -30,17 +29,9 @@ const ColorPickerPage = () => {
             You can pick what colors the user can choose with{ ' ' }
             <strong>colors</strong> prop{ ' ' }
           </Text>
-          <ColorPicker
-            colors={ [ `${colorToken.red['500']}`, `${colorToken.green['500']}`, `${colorToken.blue['500']}` ] }
-          />
+          <ColorPicker colors={ [ 'red.500', 'blue.500', 'green.500' ] } />
           <Code w="max-content" display="block" whiteSpace="pre">{
-`<ColorPicker 
-  colors={[
-    \`\${colorToken.red['500']}\`
-    \`\${colorToken.green['500']}\`
-    \`\${colorToken.blue['500']}\`
-    />
-  ]}` }
+'<ColorPicker colors={[\'red.500\', \'blue.500\', \'green.500\']} />' }
           </Code>
           <Divider />
         </Stack>
@@ -71,9 +62,8 @@ const ColorPickerPage = () => {
         </Stack>
         <Stack spacing={ 2 }>
           <Text>By default there is no selected color, however you can set a default color</Text>
-          <ColorPicker value="#2a8bfb" />
-          <Code w="max-content">{ '<ColorPicker value="#2a8bfb" />' }</Code>
-          <Text>(Note: value must be a hex value) </Text>
+          <ColorPicker value="blue.500" />
+          <Code w="max-content">{ '<ColorPicker value="blue.500" />' }</Code>
           <Divider />
         </Stack>
         <Stack spacing={ 2 }>

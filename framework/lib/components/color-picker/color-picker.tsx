@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { ColorsDuo } from '@mediatool/icons'
 import { FocusScope } from '@react-aria/focus'
-import { useMultiStyleConfig } from '@chakra-ui/react'
+import { useMultiStyleConfig, useToken } from '@chakra-ui/react'
 import { useBoolean, useDisclosure } from '../../hooks'
 import { SimpleGrid } from '../simple-grid'
 import { Stack } from '../stack'
@@ -38,6 +38,7 @@ export const ColorPicker = ({
     trigger,
     heading,
   } = useMultiStyleConfig('ColorPicker', { selectedColor, size })
+  const parsedValue = value && useToken('colors', value)
 
   const baseColors = [ ...colors ]
   for (let i = 0; i < baseColors.length % columns; i += 1) {
@@ -48,7 +49,7 @@ export const ColorPicker = ({
     if (value === '') {
       setSelectedColor(null)
     } else {
-      setSelectedColor(value)
+      setSelectedColor(parsedValue)
     }
   }, [ value ])
 
