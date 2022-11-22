@@ -46,7 +46,8 @@ export function SelectField<T> ({
             } }
             value={
               value
-                ? options?.filter((option: any) => value.includes(option.value)) as any
+                ? options?.flatMap((inner : any) => (inner.options ? inner.options : inner))
+                  .filter((option: any) => value.includes(option.value)) as any
                 : null
             }
             { ...rest }
