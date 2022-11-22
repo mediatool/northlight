@@ -1,6 +1,6 @@
 import React from 'react'
 import { SlideFade as ChakraSlideFade } from '@chakra-ui/react'
-import { getChildrenWithFocus, getDuration, getOffsets, useDelay } from './utils'
+import { getChildrenWithFocus, getDuration, getOffsets, useDelay, useHiddenDisplay } from './utils'
 import { Box } from '../box'
 import { SlideFadeProps } from './types'
 import { defaultOffset } from './constants'
@@ -21,13 +21,14 @@ export const SlideFade = ({
   exitDelay = 0,
   ...rest
 }: SlideFadeProps) => {
-  const childrenWithProps = getChildrenWithFocus(children, disableFocus, show)
   const transition = getDuration(enterDuration, exitDuration, duration)
   const { offsetX, offsetY } = getOffsets(direction, delta, deltaX, deltaY)
   const showWithDelay = useDelay(show, enterDelay, exitDelay)
+  const isHidden = useHiddenDisplay(show, exitDelay, exitDuration, duration)
+  const childrenWithProps = getChildrenWithFocus(children, disableFocus, isHidden)
 
   return (
-    <Box display={ hideDisplay && !show ? 'none' : 'initial' }>
+    <Box display={ hideDisplay && !isHidden ? 'none' : 'initial' }>
       <ChakraSlideFade
         in={ showWithDelay }
         transition={ transition }

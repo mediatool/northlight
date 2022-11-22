@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react'
 import { getChildrenWithProps } from '../../utils'
-import { ChildrenType, DurationType, OffsetType, TransitionDirection } from './types'
+import {
+  ChildrenType,
+  DurationType,
+  OffsetType,
+  TransitionDirection,
+} from './types'
 import { defaultFadeDelay, defaultOffset } from './constants'
 
 const unFocusStyles = { tabIndex: '-1' }
@@ -8,7 +13,12 @@ export const getChildrenWithFocus = (
   children: ChildrenType,
   disableFocus: boolean,
   show: boolean
-) => (show ? children : disableFocus ? getChildrenWithProps(children, unFocusStyles) : children)
+) =>
+  (show
+    ? children
+    : disableFocus
+      ? getChildrenWithProps(children, unFocusStyles)
+      : children)
 
 export const getDuration = (
   enterDuration: DurationType,
@@ -62,8 +72,29 @@ export const useDelay = (
 ) => {
   const [ showWithDelay, setShowWithDelay ] = useState(false)
   useEffect(() => {
-    const ref = setTimeout(() => setShowWithDelay(show), show ? enterDelay : exitDelay)
+    const ref = setTimeout(
+      () => setShowWithDelay(show),
+      show ? enterDelay : exitDelay
+    )
     return () => clearTimeout(ref)
   }, [ show ])
   return showWithDelay
+}
+
+export const useHiddenDisplay = (
+  anchor: boolean = false,
+  exitDelay: number = 0,
+  exitDuration: DurationType = 0,
+  duration: DurationType = 0
+) => {
+  const [ hidden, setHidden ] = useState(anchor)
+
+  useEffect(() => {
+    const ref = setTimeout(() => {
+      setHidden(anchor)
+    }, exitDelay + (exitDuration || duration || 0))
+    return () => clearTimeout(ref)
+  }, [ anchor ])
+
+  return hidden
 }

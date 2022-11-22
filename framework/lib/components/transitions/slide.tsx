@@ -1,6 +1,6 @@
 import React from 'react'
 import { Slide as ChakraSlide } from '@chakra-ui/react'
-import { getChildrenWithFocus, getDuration, useDelay } from './utils'
+import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils'
 import { Box } from '../box'
 import { SlideProps } from './types'
 
@@ -17,12 +17,13 @@ export const Slide = ({
   direction = 'bottom',
   ...rest
 }: SlideProps) => {
-  const childrenWithProps = getChildrenWithFocus(children, disableFocus, show)
   const transition = getDuration(enterDuration, exitDuration, duration)
   const showWithDelay = useDelay(show, enterDelay, exitDelay)
+  const isHidden = useHiddenDisplay(show, exitDelay, exitDuration, duration)
+  const childrenWithProps = getChildrenWithFocus(children, disableFocus, isHidden)
 
   return (
-    <Box display={ hideDisplay && !show ? 'none' : 'initial' }>
+    <Box display={ hideDisplay && !isHidden ? 'none' : 'initial' }>
       <ChakraSlide
         in={ showWithDelay }
         transition={ transition }
