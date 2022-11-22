@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.10.1...@mediatool/ui@2.11.0) (2022-11-22)
+
+
+### Bug Fixes
+
+* **ui/framework:** showing where to put the locket ([334ffd5](https://github.com/mediatool/mediatool/commit/334ffd55087ccc969e63505ba92cd9d3c49b8c79))
+* **ui:** Fix select field for group input ([7592247](https://github.com/mediatool/mediatool/commit/75922472afb5b4f680ea12ab12042cc1ac52946c))
+* **ui:** update childrenAsArray to Children.toArray in flip-button-group ([f473803](https://github.com/mediatool/mediatool/commit/f473803f13571f2b1b026ea069d223752567c0ed))
+
+
+### Features
+
+* **ui:** components ([e8ca6a8](https://github.com/mediatool/mediatool/commit/e8ca6a8632c0159d2b7311e5cb722336e0326671))
+* **ui:** utils ([1d99cbf](https://github.com/mediatool/mediatool/commit/1d99cbf2a24268f6eb449969b458505f261fba72))
+
+
+
+
+
 ## [2.10.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.10.0...@mediatool/ui@2.10.1) (2022-11-21)
 
 
