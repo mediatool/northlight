@@ -1,15 +1,10 @@
 import React from 'react'
 import { Circle } from '../circle'
-import { PinSize, PinVariant } from '../pin-input/types'
 import { pinVariantMap } from './pin-variant-map'
 import { pinSizeMap } from './pin-size-map'
+import { StatusPinProps } from './types'
 
-interface Props {
-  size?: PinSize
-  variant: PinVariant
-}
-
-export const StatusPin = ({ size = 'md', variant } : Props) => {
+export const StatusPin = ({ size = 'md', variant } : StatusPinProps) => {
   const pinColor = pinVariantMap[variant]
   const pinSizeTuple = pinSizeMap[size]
   const [ outerSize, innerSize ] = pinSizeTuple

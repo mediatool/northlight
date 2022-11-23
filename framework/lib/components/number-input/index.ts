@@ -6,3 +6,4 @@ export {
 export * from './number-input'
 export * from './number-input-stepper'
 export * from './number-input-field'
+export * from './types'

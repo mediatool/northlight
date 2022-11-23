@@ -1,15 +1,10 @@
-import React, { ComponentType } from 'react'
+import React from 'react'
 import {
   Icon as ChakraIcon,
-  IconProps as ChakraIconProps,
   forwardRef,
   useStyleConfig,
 } from '@chakra-ui/react'
-
-type Props = ChakraIconProps & {
-  as?: ComponentType<any>
-  size?: 'xs' | 'sm' | 'md' | 'lg'
-}
+import { IconProps } from './types'
 
 export const Icon = forwardRef(({
   as: As,
@@ -17,7 +12,7 @@ export const Icon = forwardRef(({
   color,
   boxSize,
   ...rest
-}: Props, ref: any) => {
+}: IconProps, ref: any) => {
   const CustomIcon = As ?? (() => <ChakraIcon />)
   const styles = useStyleConfig('Icon', { size, color, boxSize })
 

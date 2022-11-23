@@ -53,7 +53,13 @@ export const FlipButton = (props: FlipButtonProps) => {
       aria-disabled={ isDisabled }
       as="label"
     >
-      <input { ...inputProps } ref={ ref } { ...focusProps } aria-label={ isMulti ? 'Checkbox-input' : 'Radio-input' } style={ { opacity: '0', width: '0' } } />
+      <input
+        { ...inputProps }
+        ref={ ref }
+        { ...focusProps }
+        aria-label={ isMulti ? 'Checkbox-input' : 'Radio-input' }
+        style={ { opacity: '0', width: '0' } }
+      />
       { icon
         ? (
           <Icon as={ icon || CheckSolid } sx={ buttonIcon } />

@@ -1,12 +1,9 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from '../../theme'
+import { MediatoolThemeProviderProps } from './types'
 
-interface Props {
-  children: ReactNode
-}
-
-export const MediatoolThemeProvider = ({ children }: Props) => (
+export const MediatoolThemeProvider = ({ children }: MediatoolThemeProviderProps) => (
   <ChakraProvider resetCSS={ true } theme={ theme }>
     { children }
   </ChakraProvider>

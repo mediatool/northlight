@@ -1,18 +1,11 @@
 import React from 'react'
-import { AlertProps, Alert as ChakraAlert } from '@chakra-ui/react'
-import { AlertVariants } from '../alert/types'
+import { Alert as ChakraAlert } from '@chakra-ui/react'
 import { toastIconMap } from '../types'
+import { ToastProps } from './types'
 import { Icon } from '../icon'
 import { HStack, Stack } from '../stack'
 import { CloseButton } from '../close-button'
 import { Label, P } from '../typography'
-
-interface Props extends AlertProps {
-  variant?: AlertVariants
-  title?: string
-  description?: string
-  onClose?: () => void
-}
 
 export const Toast = ({
   variant = 'success',
@@ -20,7 +13,7 @@ export const Toast = ({
   description = '',
   onClose,
   ...rest
-}: Props) => (
+}: ToastProps) => (
   <ChakraAlert
     variant={ variant }
     data-testid="toast-test"

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Spinner as ChakraSpinner, SpinnerProps } from '@chakra-ui/react'
+import { Spinner as ChakraSpinner } from '@chakra-ui/react'
+import { SpinnerProps } from './types'
 
 export const Spinner = (({
   ...rest

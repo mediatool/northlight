@@ -1,18 +1,13 @@
 import React from 'react'
-import { PinInput as ChakraPinInput, PinInputProps } from '@chakra-ui/react'
-import { PinSizeProps } from './types'
-
-interface Props extends PinInputProps {
-  size?: PinSizeProps
-  hidden?: boolean
-}
+import { PinInput as ChakraPinInput } from '@chakra-ui/react'
+import { PinInputProps } from './types'
 
 export const PinInput = ({
   variant = 'outline',
   hidden,
   children,
   ...rest
-}: Props) => (
+}: PinInputProps) => (
   <ChakraPinInput { ...rest } variant={ variant } placeholder="●" mask={ hidden }>
     { children }
   </ChakraPinInput>

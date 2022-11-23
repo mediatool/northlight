@@ -1,23 +1,13 @@
 import React from 'react'
-import {
-  AlertProps,
-  Alert as ChakraAlert,
-} from '@chakra-ui/react'
-import { AlertVariants } from './types'
-
-interface Props extends AlertProps {
-  variant?: AlertVariants
-}
+import { Alert as ChakraAlert } from '@chakra-ui/react'
+import { AlertProps } from './types'
 
 export const Alert = ({
   variant = 'success',
   children,
   ...rest
-}: Props) => (
-  <ChakraAlert
-    variant={ variant }
-    { ...rest }
-  >
+}: AlertProps) => (
+  <ChakraAlert variant={ variant } { ...rest }>
     { children }
   </ChakraAlert>
 )

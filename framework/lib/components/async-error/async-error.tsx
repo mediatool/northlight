@@ -7,15 +7,13 @@ import {
 import { toastIconMap } from '../types'
 import { Icon } from '../icon'
 import { VStack } from '../stack'
-
-interface Props {
-  message?: string
-}
+import { AsyncErrorProps } from './types'
 
 export const AsyncError = ({
   message = '',
-}: Props) => (
-  <ChakraAlert backgroundColor="background.default" color="text.default" width="100%">
+  ...rest
+}: AsyncErrorProps) => (
+  <ChakraAlert backgroundColor="background.default" color="text.default" width="100%" { ...rest }>
     <VStack w="full">
       <Icon as={ toastIconMap.error } color="icon.toast.error" boxSize={ 6 } />
       <AlertTitle> Error </AlertTitle>
