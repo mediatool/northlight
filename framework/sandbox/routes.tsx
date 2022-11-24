@@ -1,7 +1,8 @@
-import { ClockDuo, SquareSetSolid } from '@mediatool/icons'
+import { ClockDuo, Dataflow01Duo, SquareSetSolid } from '@mediatool/icons'
 import { MainPage } from './app'
 import { routes as docRoutes } from './docs/routes'
 import { routes as testRoutes } from './test/routes'
+import { routes as tokensRoutes } from './tokens/routes'
 
 export const sandboxRoutes: MainPage[] = [
   {
@@ -17,5 +18,12 @@ export const sandboxRoutes: MainPage[] = [
     path: '/test',
     component: () => import('./test/app'),
     subItems: testRoutes,
+  },
+  {
+    title: 'Tokens',
+    Icon: Dataflow01Duo,
+    path: '/tokens',
+    component: () => import('./tokens/app'),
+    subItems: tokensRoutes,
   },
 ]
