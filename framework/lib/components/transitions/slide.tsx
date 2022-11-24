@@ -23,7 +23,7 @@ export const Slide = ({
   const childrenWithProps = getChildrenWithFocus(children, disableFocus, isHidden)
 
   return (
-    <Box display={ hideDisplay && !isHidden ? 'none' : 'initial' }>
+    <Box display={ hideDisplay && !isHidden ? 'none' : 'initial' } w="full">
       <ChakraSlide
         in={ showWithDelay }
         transition={ transition }

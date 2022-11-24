@@ -22,7 +22,7 @@ export const Fade = ({
   const childrenWithProps = getChildrenWithFocus(children, disableFocus, isHidden)
 
   return (
-    <Box display={ hideDisplay && !isHidden ? 'none' : 'initial' }>
+    <Box display={ hideDisplay && !isHidden ? 'none' : 'initial' } w="full">
       <ChakraFade
         in={ showWithDelay }
         transition={ transition }

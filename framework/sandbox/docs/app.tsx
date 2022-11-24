@@ -69,16 +69,18 @@ const DocsApp = () => {
 
             </HStack>
           </SlideFade>
-          <Fade in={ true } enterDelay={ 800 }>
-            <Box maxW="500px" textAlign="center" pt={ 5 }>
-              <P>
-                Mediatool UI is the result of what is possible when an amazing
-                and dedicated team of bright minds are put together towards a
-                common goal of achieving excellence in the pursuit of building
-                the best user experiences to date.
-              </P>
-            </Box>
-          </Fade>
+          <Box>
+            <Fade in={ true } enterDelay={ 800 }>
+              <Box maxW="500px" textAlign="center" pt={ 5 }>
+                <P>
+                  Mediatool UI is the result of what is possible when an amazing
+                  and dedicated team of bright minds are put together towards a
+                  common goal of achieving excellence in the pursuit of building
+                  the best user experiences to date.
+                </P>
+              </Box>
+            </Fade>
+          </Box>
         </VStack>
         <SlideFade in={ true } enterDelay={ 1200 }>
           <VStack spacing={ 32 }>
