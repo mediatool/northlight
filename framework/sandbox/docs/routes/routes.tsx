@@ -153,6 +153,11 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/icon-button-page'),
   },
   {
+    title: 'Notification Icon Button',
+    path: '/notification-icon-button',
+    component: () => import('../pages/notification-icon-button-page'),
+  },
+  {
     title: 'Palette',
     path: '/palette',
     component: () => import('../pages/palette-page'),

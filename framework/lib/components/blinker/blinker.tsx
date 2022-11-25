@@ -4,11 +4,13 @@ import { Box } from '../box'
 import { BlinkerProps } from './types'
 
 export const Blinker = ({
-  color,
+  color = '',
   size,
+  isBlinking = true,
   ...rest
 }: BlinkerProps) => {
-  const styles = useStyleConfig('Blinker', { color, size })
+  const styles = useStyleConfig('Blinker', { color, size, isBlinking })
+
   return (
     <Box sx={ styles } data-testid="blinker-test-id" { ...rest } />
   )

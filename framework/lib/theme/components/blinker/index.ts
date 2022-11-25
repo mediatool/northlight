@@ -17,22 +17,25 @@ const pulseRing = keyframes`
 `
 
 export const Blinker: ComponentSingleStyleConfig = {
-  baseStyle: ({ theme: { colors: palette }, color }) => ({
+  baseStyle: ({ theme: { colors: palette }, color, isBlinking }) => ({
     position: 'relative',
     borderRadius: '50%',
     bgColor: color === '' ? palette.blue['500'] : color,
-    _before: {
-      content: "''",
-      position: 'absolute',
-      display: 'block',
-      width: '300%',
-      height: '300%',
-      marginLeft: '-100%',
-      marginTop: '-100%',
-      borderRadius: '50%',
-      bgColor: color,
-      animation: `2.25s ${pulseRing} cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite`,
-    },
+    _before: isBlinking
+      ? {
+        content: "''",
+        position: 'absolute',
+        display: 'block',
+        width: '300%',
+        height: '300%',
+        marginLeft: '-100%',
+        marginTop: '-100%',
+        borderRadius: '50%',
+        bgColor: color === '' ? 'blue.500' : color,
+        animation: `2.25s ${pulseRing} cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite`,
+        zIndex: 'base',
+      }
+      : {},
   }),
   sizes: {
     '2xs': ({ theme: { sizes: sizing } }) => ({
