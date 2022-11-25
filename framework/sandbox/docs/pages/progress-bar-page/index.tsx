@@ -54,6 +54,10 @@ const ProgressBarPage = () => {
             By default, the progress bar will completely disappear from the DOM
             after loading has finnished, you can adjust this with <b>hideDisplay</b>
           </Text>
+          <Text>
+            <b>onLoadEnd</b> is a callback that runs after the
+            progress bar has loaded to 100% and faded out
+          </Text>
         </Stack>
       </Stack>
     </Page>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { identity } from 'ramda'
 import { getChildrenWithProps } from '../../utils'
 import {
   ChildrenType,
@@ -85,13 +86,15 @@ export const useHiddenDisplay = (
   anchor: boolean = false,
   exitDelay: number = 0,
   exitDuration: DurationType = 0,
-  duration: DurationType = 0
+  duration: DurationType = 0,
+  onTransitionComplete: (hidden: boolean) => void = identity
 ) => {
   const [ hidden, setHidden ] = useState(anchor)
 
   useEffect(() => {
     const ref = setTimeout(() => {
       setHidden(anchor)
+      onTransitionComplete(anchor)
     }, exitDelay + (exitDuration || duration || 0))
     return () => clearTimeout(ref)
   }, [ anchor ])

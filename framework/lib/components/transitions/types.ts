@@ -19,6 +19,7 @@ export interface FadeProps extends ChakraFadeProps {
   hideDisplay?: boolean
   enterDelay?: number
   exitDelay?: number
+  onTransitionComplete?: (isHidden: boolean) => void
 }
 
 export interface ScaleFadeProps extends FadeProps, Omit<ChakraScaleFadeProps, 'delay'> {}

@@ -9,6 +9,7 @@ import { animationSlideTime, updateTimeThreshold } from './constants'
 
 export const ProgressBar = ({
   loaded,
+  onLoadEnd = () => {},
   hideDisplay = true,
   ...rest
 }: ProgressBarProps) => {
@@ -42,6 +43,11 @@ export const ProgressBar = ({
       exitDelay={ 250 }
       exitDuration={ 1000 }
       hideDisplay={ hideDisplay }
+      onTransitionComplete={ () => {
+        if (progress >= 1) {
+          onLoadEnd()
+        }
+      } }
     >
       <VStack { ...rest }>
         <Small>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { SlideFade as ChakraSlideFade } from '@chakra-ui/react'
+import { identity } from 'ramda'
 import { getChildrenWithFocus, getDuration, getOffsets, useDelay, useHiddenDisplay } from './utils'
-import { Box } from '../box'
 import { SlideFadeProps } from './types'
 import { defaultOffset } from './constants'
 
@@ -19,25 +19,25 @@ export const SlideFade = ({
   offsetY: deltaY = 0,
   enterDelay = 0,
   exitDelay = 0,
+  onTransitionComplete = identity,
   ...rest
 }: SlideFadeProps) => {
   const transition = getDuration(enterDuration, exitDuration, duration)
   const { offsetX, offsetY } = getOffsets(direction, delta, deltaX, deltaY)
   const showWithDelay = useDelay(show, enterDelay, exitDelay)
-  const isHidden = useHiddenDisplay(show, exitDelay, exitDuration, duration)
+  const isHidden = useHiddenDisplay(show, exitDelay, exitDuration, duration, onTransitionComplete)
   const childrenWithProps = getChildrenWithFocus(children, disableFocus, isHidden)
 
   return (
-    <Box display={ hideDisplay && !isHidden ? 'none' : 'initial' } w="full">
-      <ChakraSlideFade
-        in={ showWithDelay }
-        transition={ transition }
-        offsetX={ offsetX }
-        offsetY={ offsetY }
-        { ...rest }
-      >
-        { childrenWithProps }
-      </ChakraSlideFade>
-    </Box>
+    <ChakraSlideFade
+      in={ showWithDelay }
+      transition={ transition }
+      offsetX={ offsetX }
+      offsetY={ offsetY }
+      unmountOnExit={ hideDisplay }
+      { ...rest }
+    >
+      { childrenWithProps }
+    </ChakraSlideFade>
   )
 }

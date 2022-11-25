@@ -1,7 +1,7 @@
 import React from 'react'
 import { Slide as ChakraSlide } from '@chakra-ui/react'
+import { identity } from 'ramda'
 import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils'
-import { Box } from '../box'
 import { SlideProps } from './types'
 
 export const Slide = ({
@@ -15,23 +15,23 @@ export const Slide = ({
   enterDelay = 0,
   exitDelay = 0,
   direction = 'bottom',
+  onTransitionComplete = identity,
   ...rest
 }: SlideProps) => {
   const transition = getDuration(enterDuration, exitDuration, duration)
   const showWithDelay = useDelay(show, enterDelay, exitDelay)
-  const isHidden = useHiddenDisplay(show, exitDelay, exitDuration, duration)
+  const isHidden = useHiddenDisplay(show, exitDelay, exitDuration, duration, onTransitionComplete)
   const childrenWithProps = getChildrenWithFocus(children, disableFocus, isHidden)
 
   return (
-    <Box display={ hideDisplay && !isHidden ? 'none' : 'initial' } w="full">
-      <ChakraSlide
-        in={ showWithDelay }
-        transition={ transition }
-        direction={ direction }
-        { ...rest }
-      >
-        { childrenWithProps }
-      </ChakraSlide>
-    </Box>
+    <ChakraSlide
+      in={ showWithDelay }
+      transition={ transition }
+      direction={ direction }
+      unmountOnExit={ hideDisplay }
+      { ...rest }
+    >
+      { childrenWithProps }
+    </ChakraSlide>
   )
 }

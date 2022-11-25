@@ -1,7 +1,7 @@
 import React from 'react'
 import { ScaleFade as ChakraScaleFade } from '@chakra-ui/react'
+import { identity } from 'ramda'
 import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils'
-import { Box } from '../box'
 import { ScaleFadeProps } from './types'
 
 export const ScaleFade = ({
@@ -14,22 +14,22 @@ export const ScaleFade = ({
   hideDisplay = false,
   enterDelay = 0,
   exitDelay = 0,
+  onTransitionComplete = identity,
   ...rest
 }: ScaleFadeProps) => {
   const transition = getDuration(enterDuration, exitDuration, duration)
   const showWithDelay = useDelay(show, enterDelay, exitDelay)
-  const isHidden = useHiddenDisplay(show, exitDelay, exitDuration, duration)
+  const isHidden = useHiddenDisplay(show, exitDelay, exitDuration, duration, onTransitionComplete)
   const childrenWithProps = getChildrenWithFocus(children, disableFocus, isHidden)
 
   return (
-    <Box display={ hideDisplay && !isHidden ? 'none' : 'initial' } w="full">
-      <ChakraScaleFade
-        in={ showWithDelay }
-        transition={ transition }
-        { ...rest }
-      >
-        { childrenWithProps }
-      </ChakraScaleFade>
-    </Box>
+    <ChakraScaleFade
+      in={ showWithDelay }
+      transition={ transition }
+      unmountOnExit={ hideDisplay }
+      { ...rest }
+    >
+      { childrenWithProps }
+    </ChakraScaleFade>
   )
 }
