@@ -27,7 +27,7 @@ export const Carousel = ({
   const x = useMotionValue(0)
   const { radio, container } = useMultiStyleConfig('Carousel', {})
 
-  const childrenAsArray = Children.toArray(children)
+  const childrenAsArray = Children.toArray(children) as JSX.Element[]
   const numberOfChildren = Children.count(children)
   const carouselTotalWidth = itemWidth + spacing
   const totalWidth = carouselTotalWidth * numberOfChildren
@@ -82,7 +82,7 @@ export const Carousel = ({
         onDragEnd={ updateActiveIndex }
       >
         <HStack spacing={ `${spacing}px` } width={ `${totalWidth}px` }>
-          { childrenAsArray.map((child: any, index) => (
+          { childrenAsArray.map((child, index) => (
             <CarouselItem
               isActive={ index === activeIndex }
               itemWidth={ itemWidth }

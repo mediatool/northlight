@@ -2,7 +2,7 @@ import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 
 export const Carousel: ComponentMultiStyleConfig = {
   parts: [ 'container', 'arrow', 'radio' ],
-  baseStyle: () => ({
+  baseStyle: {
     container: {
       display: 'grid',
       placeItems: 'center',
@@ -26,5 +26,5 @@ export const Carousel: ComponentMultiStyleConfig = {
       height: '100%',
       cursor: 'pointer',
     },
-  }),
+  },
 }
