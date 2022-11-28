@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.11.0...@mediatool/ui@2.12.0) (2022-11-28)
+
+
+### Bug Fixes
+
+* **ui/framework:** transitions exit time event handling ([ad4025f](https://github.com/mediatool/mediatool/commit/ad4025fa18c7e99b617149f6164bfd6c44e9e361))
+* **ui:** adjust parent box of fade animation to always take up 100% ([cde6398](https://github.com/mediatool/mediatool/commit/cde6398b5af8e739154a9b6c8ea0ed74cfb742bb))
+* **ui:** parse theme into hex ([dc2c988](https://github.com/mediatool/mediatool/commit/dc2c98814c90c6ad87010d148feafe1015d54388))
+* **ui:** refactor and export all component types ([6eb224e](https://github.com/mediatool/mediatool/commit/6eb224ed723de8caafc36b3b6b69ae132febc76e))
+
+
+### Features
+
+* **ui/framework:** add tokens visualizer ([2330f33](https://github.com/mediatool/mediatool/commit/2330f3371d26d9f9e237ba639b02cce56c657b16))
+* **ui:** progress bar ([9a4517a](https://github.com/mediatool/mediatool/commit/9a4517a838d014b3f8ed1892bddbdf7429fb5926))
+
+
+
+
+
 # [2.11.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.10.1...@mediatool/ui@2.11.0) (2022-11-22)
 
 
