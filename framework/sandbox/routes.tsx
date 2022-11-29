@@ -1,7 +1,8 @@
-import { Dataflow01Duo, SquareSetSolid } from '@mediatool/icons'
+import { Dataflow01Duo, SmileyDuo, SquareSetSolid } from '@mediatool/icons'
 import { MainPage } from './app'
 import { routes as docRoutes } from './docs/routes'
 import { routes as tokensRoutes } from './tokens/routes'
+import { routes as iconsRoutes } from './icons/routes'
 
 export const sandboxRoutes: MainPage[] = [
   {
@@ -17,5 +18,12 @@ export const sandboxRoutes: MainPage[] = [
     path: '/tokens',
     component: () => import('./tokens/app'),
     subItems: tokensRoutes,
+  },
+  {
+    title: 'Icons',
+    Icon: SmileyDuo,
+    path: '/icons',
+    component: () => import('./icons/app'),
+    subItems: iconsRoutes,
   },
 ]
