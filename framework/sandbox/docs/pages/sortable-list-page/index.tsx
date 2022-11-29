@@ -13,7 +13,7 @@ import {
   Text,
 } from '../../../../lib'
 import { Page } from '../../components'
-import { arrayWithLength } from '../../../test/utilities'
+import { arrayWithLength } from '../../utils'
 
 const SortableListPage = () => {
   const [ itemsOne, setItemsOne ] = useState([ 'Files', 'Documents', 'Messages' ])
