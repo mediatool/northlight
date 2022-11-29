@@ -17,6 +17,6 @@ export const Icon: ComponentSingleStyleConfig = {
   },
   baseStyle: ({ theme: { sizes: sizing }, boxSize, color }) => ({
     boxSize: boxSize || sizing.icon.default,
-    color: color || 'unset',
+    color: color || 'text.default',
   }),
 }

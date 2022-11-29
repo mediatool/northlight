@@ -3,12 +3,12 @@ import { Page } from '../../app'
 export const routes: Page[] = [
   {
     title: 'Duo color',
-    path: '/core-tokens',
+    path: '/duo',
     component: () => import('../pages/duo-color-page'),
   },
   {
     title: 'Solid',
-    path: '/component-tokens',
+    path: '/solid',
     component: () => import('../pages/solid-page'),
   },
 ]

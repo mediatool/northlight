@@ -143,11 +143,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/number-input-page'),
   },
   {
-    title: 'Icon',
-    path: '/icon',
-    component: () => import('../pages/icon-page'),
-  },
-  {
     title: 'Icon Button',
     path: '/icon-button',
     component: () => import('../pages/icon-button-page'),
