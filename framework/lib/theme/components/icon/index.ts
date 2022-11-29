@@ -2,21 +2,21 @@ import { ComponentSingleStyleConfig } from '@chakra-ui/react'
 
 export const Icon: ComponentSingleStyleConfig = {
   sizes: {
-    xs: ({ theme: { sizes: sizing } }) => ({
-      boxSize: sizing.icon.xs,
-    }),
-    sm: ({ theme: { sizes: sizing } }) => ({
-      boxSize: sizing.icon.sm,
-    }),
-    md: ({ theme: { sizes: sizing } }) => ({
-      boxSize: sizing.icon.md,
-    }),
-    lg: ({ theme: { sizes: sizing } }) => ({
-      boxSize: sizing.icon.lg,
-    }),
+    xs: {
+      boxSize: 'icon.xs',
+    },
+    sm: {
+      boxSize: 'icon.sm',
+    },
+    md: {
+      boxSize: 'icon.md',
+    },
+    lg: {
+      boxSize: 'icon.lg',
+    },
   },
-  baseStyle: ({ theme: { sizes: sizing }, boxSize, color }) => ({
-    boxSize: boxSize || sizing.icon.default,
-    color: color || 'text.default',
+  baseStyle: ({ boxSize, color }) => ({
+    boxSize: boxSize || 'icon.default',
+    color: color || 'inherit',
   }),
 }

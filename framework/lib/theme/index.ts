@@ -21,9 +21,17 @@ const overrides: ThemeOverride = {
   config: {
     cssVarPrefix: '',
   },
+  semanticTokens: {
+    colors: {
+      'chakra-body-text': {
+        _light: 'text.default',
+        _dark: 'text.inverted',
+      },
+    },
+  },
   styles: {
     global: {
-      'html, body': {
+      body: {
         height: '100%',
       },
       '#app': {
