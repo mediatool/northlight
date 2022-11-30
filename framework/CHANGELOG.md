@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.13.0...@mediatool/ui@2.13.1) (2022-11-30)
+
+
+### Reverts
+
+* Revert "Publish" ([b7d859a](https://github.com/mediatool/mediatool/commit/b7d859a5b483812e24cf42770632cd47292e92d0))
+
+
+
+
+
 # [2.12.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.11.0...@mediatool/ui@2.12.0) (2022-11-28)
 
 
