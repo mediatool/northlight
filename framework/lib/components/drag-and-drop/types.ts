@@ -11,6 +11,8 @@ import { SortingStrategy, UseSortableArguments } from '@dnd-kit/sortable'
 import { IconProps, SystemStyleObject, TagProps } from '@chakra-ui/react'
 import { SyntheticListenerMap } from '@dnd-kit/core/dist/hooks/utilities'
 
+export type ListenersType = SyntheticListenerMap
+
 type ChildrenType<PropType=any, PropTypeTwo=any> =
   | ((
     props: PropType,
@@ -25,12 +27,12 @@ export interface DroppableProps extends UseDroppableArguments {
 }
 export interface DraggableProps extends UseDraggableArguments {
   itemLabel?: string
-  children?: ChildrenType<SyntheticListenerMap>
+  children?: ChildrenType<ListenersType>
   disableDrag?: boolean
 }
 
 export interface SortableItemProps extends UseSortableArguments {
-  children?: ChildrenType<SyntheticListenerMap>
+  children?: ChildrenType<ListenersType>
   itemLabel?: UniqueIdentifier
   dblClickThreshold?: number
   disableDrag?: boolean
@@ -42,7 +44,7 @@ type MovedItemType<T> = {
   newIndex: number
 }
 export interface SortableListProps<T> {
-  children?: ChildrenType<T, SyntheticListenerMap>
+  children?: ChildrenType<T, ListenersType>
   items: T[]
   collisionDetection?: CollisionDetection
   strategy?: SortingStrategy
