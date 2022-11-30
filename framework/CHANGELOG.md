@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.12.0...@mediatool/ui@2.13.0) (2022-11-30)
+
+
+### Bug Fixes
+
+* **ui:** default text is now black ([9083532](https://github.com/mediatool/mediatool/commit/908353249bb11f870a56206442aa68c92c70738d))
+* **ui:** export ListenersType ([d5479b4](https://github.com/mediatool/mediatool/commit/d5479b4861a25c546c56b5a2a8714bb1c7129799))
+
+
+### Features
+
+* **ui/framework:** add icons route ([5b2d9ff](https://github.com/mediatool/mediatool/commit/5b2d9ff0916d4ef9595a71141eb881a8f9ad09fb))
+* **ui:** Carousel Component ([77fc9d8](https://github.com/mediatool/mediatool/commit/77fc9d88c86dffa3214460d468d61aa1bc30372c))
+* **ui:** Carousel theme ([6e410b4](https://github.com/mediatool/mediatool/commit/6e410b4694ff345108364592929415ec71fd3ac3))
+
+
+
+
+
 # [2.12.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.11.0...@mediatool/ui@2.12.0) (2022-11-28)
 
 
