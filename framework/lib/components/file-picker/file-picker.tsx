@@ -193,161 +193,162 @@ export const FilePicker = ({
   return (
     <Stack maxW={ filePicker.width as number }>
       <Clickable
-        as="div"
         onClick={ handleOnClick }
         onDrop={ handleDrop }
         onDragOver={ (e: DragEvent) => e.preventDefault() }
         onMouseEnter={ () => setEditable(true) }
         onMouseLeave={ () => setEditable(false) }
-        sx={ filePicker }
       >
-        <Fade
-          in={ updatedImage }
-          style={ { display: updatedImage ? 'initial' : 'none' } }
-        >
-          <IconButton
-            aria-label="has-loaded"
-            icon={ <Icon as={ CheckSolid } /> }
-            position="absolute"
-            top="50%"
-            left="50%"
-            transform="translate(-50%, -50%)"
-            variant="success"
+        <Box sx={ filePicker }>
+          <Fade
+            in={ updatedImage }
+            style={ { display: updatedImage ? 'initial' : 'none' } }
+          >
+            <IconButton
+              aria-label="has-loaded"
+              icon={ <Icon as={ CheckSolid } /> }
+              position="absolute"
+              top="50%"
+              left="50%"
+              transform="translate(-50%, -50%)"
+              variant="success"
+            />
+          </Fade>
+          <SlideFade
+            in={ hasLoaded }
+            style={ {
+              width: '100%',
+              height: '100%',
+              display: hasLoaded && isImage ? 'initial' : 'none',
+            } }
+          >
+            <Image
+              src={ file
+                ? isFile(file)
+                  ? URL.createObjectURL(file as File)
+                  : file as string
+                : '' }
+              alt="preview-image"
+              objectFit="cover"
+              borderRadius={ 8 }
+              display={ hasLoaded && isImage ? 'inherit' : 'none' }
+              h="full"
+              w="full"
+            />
+          </SlideFade>
+          <Input
+            type="file"
+            display="none"
+            accept={ acceptFormat }
+            ref={ fileInputRef }
+            onChange={ handleChange }
           />
-        </Fade>
-        <SlideFade
-          in={ hasLoaded }
-          style={ {
-            width: '100%',
-            height: '100%',
-            display: hasLoaded && isImage ? 'initial' : 'none',
-          } }
-        >
-          <Image
-            src={ file
-              ? isFile(file)
-                ? URL.createObjectURL(file as File)
-                : file as string
-              : '' }
-            alt="preview-image"
-            objectFit="cover"
-            borderRadius={ 8 }
-            display={ hasLoaded && isImage ? 'inherit' : 'none' }
-            h="full"
-            w="full"
-          />
-        </SlideFade>
-        <Input
-          type="file"
-          display="none"
-          accept={ acceptFormat }
-          ref={ fileInputRef }
-          onChange={ handleChange }
-        />
-        <Stack
-          display={ hasLoaded && isImage ? 'none' : 'default' }
-          alignItems="center"
-          w="85%"
-          spacing="0a"
-        >
-          <Icon
-            as={ onlyImageAccepted ? Image03Solid : UploadCloudSolid }
-            boxSize="32px"
-            color={
+          <Stack
+            display={ hasLoaded && isImage ? 'none' : 'default' }
+            alignItems="center"
+            w="85%"
+            spacing="0a"
+          >
+            <Icon
+              as={ onlyImageAccepted ? Image03Solid : UploadCloudSolid }
+              boxSize="32px"
+              color={
               isInvalid
                 ? 'red.500'
                 : editable
                   ? 'blue.500'
                   : 'gray.300'
             }
-            display={ isImage && !hasLoaded ? 'inline-block' : 'none' }
-            aria-label="file-icon-upload"
-          />
-          <Icon
-            as={ FileBlankDuo }
-            boxSize="32px"
-            color="gray.300"
-            display={ hasLoaded && !isImage ? 'inline-block' : 'none' }
-          />
-          <P
-            variant={ isInvalid ? '16' : '14' }
-            whiteSpace="nowrap"
-            textOverflow="ellipsis"
-            overflow="hidden"
-            maxWidth={ filePicker.width as number }
-            textAlign="center"
-            alignSelf="center"
-          >
-            { isInvalid
-              ? 'File not supported'
-              : file && isFile(file)
-                ? (file as File).name
-                : `Drag & drop ${onlyImageAccepted ? 'image' : 'file'} or` }
-          </P>
-          <Lead
-            sx={ {
-              textDecoration: 'underline',
-              color: isInvalid ? 'red.500' : 'blue.500',
-            } }
-            display={ isLoading || hasLoaded ? 'none' : 'default' }
-          >
-            Click to upload
-          </Lead>
-          <Box display={ isLoading ? 'block' : 'none' } pt={ 1 }>
-            { loadWithSpinner
-              ? <Spinner />
-              : <ProgressBar loaded={ uploaded } />
+              display={ isImage && !hasLoaded ? 'inline-block' : 'none' }
+              aria-label="file-icon-upload"
+            />
+            <Icon
+              as={ FileBlankDuo }
+              boxSize="32px"
+              color="gray.300"
+              display={ hasLoaded && !isImage ? 'inline-block' : 'none' }
+            />
+            <P
+              variant={ isInvalid ? '16' : '14' }
+              whiteSpace="nowrap"
+              textOverflow="ellipsis"
+              overflow="hidden"
+              maxWidth={ filePicker.width as number }
+              textAlign="center"
+              alignSelf="center"
+            >
+              { isInvalid
+                ? 'File not supported'
+                : file && isFile(file)
+                  ? (file as File).name
+                  : `Drag & drop ${onlyImageAccepted ? 'image' : 'file'} or` }
+            </P>
+            <Lead
+              sx={ {
+                textDecoration: 'underline',
+                color: isInvalid ? 'red.500' : 'blue.500',
+              } }
+              display={ isLoading || hasLoaded ? 'none' : 'default' }
+            >
+              Click to upload
+            </Lead>
+            <Box display={ isLoading ? 'block' : 'none' } pt={ 1 }>
+              { loadWithSpinner
+                ? <Spinner />
+                : <ProgressBar loaded={ uploaded } />
           }
-          </Box>
-        </Stack>
-        <Fade
-          in={ hasLoaded && editable }
-          style={ {
-            display: hasLoaded && editable ? 'flex' : 'none',
-            justifyContent: 'center',
-          } }
-        >
-          <HStack
-            spacing={ 2 }
-            position="absolute"
-            bottom="3"
-            justifyContent="center"
-            bgColor="mono.white"
-            borderRadius={ 6 }
-            width="90%"
-            py={ 2 }
+            </Box>
+          </Stack>
+          <Fade
+            in={ hasLoaded && editable }
+            style={ {
+              display: hasLoaded && editable ? 'flex' : 'none',
+              justifyContent: 'center',
+            } }
           >
-            { editFileOptions.canEdit && (
+            <HStack
+              spacing={ 2 }
+              position="absolute"
+              bottom="3"
+              justifyContent="center"
+              bgColor="mono.white"
+              borderRadius={ 6 }
+              width="90%"
+              py={ 2 }
+            >
+              { editFileOptions.canEdit && (
               <FileIconButton
                 aria-label="edit-file"
                 onClick={ editModal.onOpen }
                 icon={ EditBoxDuo }
               />
-            ) }
-            <FileIconButton
-              aria-label="download-file"
-              onClick={ handleDownload(file) }
-              icon={ DownloadDuo }
-            />
-            <FileIconButton
-              aria-label="delete-file"
-              onClick={ confirmDelete ? deleteModal.onOpen : clearImage }
-              icon={ TrashFullDuo }
-              color="red.500"
-            />
-          </HStack>
-        </Fade>
-        <P
-          variant="14"
-          sx={ { color: 'gray.400' } }
-          display={
+              ) }
+              <FileIconButton
+                aria-label="download-file"
+                onClick={ handleDownload(file) }
+                icon={ DownloadDuo }
+              />
+              <FileIconButton
+                aria-label="delete-file"
+                onClick={ confirmDelete ? deleteModal.onOpen : clearImage }
+                icon={ TrashFullDuo }
+                color="red.500"
+              />
+            </HStack>
+          </Fade>
+          <P
+            variant="14"
+            sx={ { color: 'gray.400' } }
+            display={
             hasLoaded && !isImage && !isLoading
               ? 'inline-block'
               : 'none'
           }
-        >
-          { isFile(file) && readableFileSize((file as File)?.size as number) }
-        </P>
+          >
+            { isFile(file) && readableFileSize((file as File)?.size as number) }
+          </P>
+
+        </Box>
       </Clickable>
       <FileEditorModal
         { ...editModal }
