@@ -5,11 +5,13 @@ import {
   CheckboxField,
   Code,
   DatePickerField,
+  FilePickerField,
   FlipButton,
   FlipButtonGroupField,
   Form,
   FormattedNumberInput,
   MaskedTextInput,
+  MultiFilePickerField,
   NumberInputField,
   Radio,
   RadioGroupField,
@@ -39,7 +41,8 @@ export const FormOne = () => {
         personalInfoAgree: false,
         date: '',
         review: '',
-        teste: '',
+        image: '',
+        multiImage: '',
       } }
       onSubmit={ () => {} }
     >
@@ -162,6 +165,16 @@ export const FormOne = () => {
             label="Date"
             direction="row"
           />
+          <FilePickerField
+            name="image"
+            label="Select Image"
+            confirmDelete={ true }
+          />
+          <MultiFilePickerField
+            name="multiImage"
+            label="Select multiple images"
+          />
+
           <Button type="submit" variant="success">Submit</Button>
           <pre>
             <Code p={ 4 }>{ JSON.stringify(watch(), null, 2) }</Code>

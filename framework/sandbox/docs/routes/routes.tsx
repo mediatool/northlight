@@ -18,6 +18,11 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/transitions-page'),
   },
   {
+    title: 'File Picker',
+    path: '/file picker',
+    component: () => import('../pages/file-picker-page'),
+  },
+  {
     title: 'Organization Logo',
     path: '/organization-logo',
     component: () => import('../pages/organization-logo-page'),
