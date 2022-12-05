@@ -1,10 +1,17 @@
-import { color as colorToken } from '@mediatool/tokens'
+import { useToken } from '@chakra-ui/system'
 import { luminosity } from '../luminosity'
 
 export const getContrastColor = (color: string) => {
-  const brightColor = colorToken.text.inverted
-  const darkColor = colorToken.text.default
-  const threshold = (luminosity(darkColor) + luminosity(brightColor)) / 2
+  const colorTwo = useToken('colors', 'text.default')
+  const colorOne = useToken('colors', 'text.inverted')
+
+  const l1 = luminosity(colorOne)
+  const l2 = luminosity(colorTwo)
+
+  const threshold = (l1 + l2) / 2
+
+  const brightColor = l1 > l2 ? colorOne : colorTwo
+  const darkColor = l1 > l2 ? colorTwo : colorOne
 
   return luminosity(color) >= threshold ? darkColor : brightColor
 }
