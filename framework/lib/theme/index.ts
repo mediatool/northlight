@@ -56,4 +56,4 @@ const overrides: ThemeOverride = {
   radii: coreBorderRadius,
 }
 
-export const theme = extendTheme(overrides, WebappSkin)
+export const webappTheme = extendTheme(overrides, WebappSkin)

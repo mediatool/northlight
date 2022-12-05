@@ -1,20 +1,15 @@
 import { ThemeOverride } from '@chakra-ui/react'
 import {
-  borderRadius,
-  borderWidth,
-  color,
-  opacity,
-  sizing,
-  spacing,
+  WebappSkin as WebappSkinTokens,
   typography,
 } from '@mediatool/tokens'
 
 export const WebappSkin:ThemeOverride = {
-  colors: color,
-  sizes: sizing,
-  space: spacing,
-  radii: borderRadius,
-  borders: borderWidth,
-  opacity,
+  colors: WebappSkinTokens.color,
+  sizes: WebappSkinTokens.sizing,
+  space: WebappSkinTokens.spacing,
+  radii: WebappSkinTokens.borderRadius,
+  borders: WebappSkinTokens.borderWidth,
+  opacity: WebappSkinTokens.opacity,
   typography,
 }

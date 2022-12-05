@@ -1,13 +1,10 @@
 import {
-  borderRadius,
-  borderWidth,
-  color,
-  opacity,
-  sizing,
-  spacing,
+  WebappSkin,
   typography,
 } from '@mediatool/tokens'
 import { TokensSet } from './types'
+
+const { color, sizing, spacing, opacity, borderRadius, borderWidth } = WebappSkin
 
 export const ComponentTokens: TokensSet[] = [
   { name: 'Colors', title: 'components-colors', data: color },
