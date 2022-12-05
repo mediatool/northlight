@@ -1,60 +1,47 @@
-const { equals, isArrayLike, map, join } = require('ramda')
+const { isArrayLike, map, join } = require('ramda')
 
-const StyleDictionary = require('style-dictionary').extend('config.js')
+const SD = require('style-dictionary')
+
+const skins = [ 'webapp', 'tott' ]
 
 const convertToRem = (value) => `${parseFloat(value) / 16}rem`
 
-StyleDictionary.registerFilter({
-  name: 'takeGlobalTokens',
-  matcher: ({ filePath }) => equals('dist/sets/global.json', filePath),
-})
-
-StyleDictionary.registerFilter({
-  name: 'takeWebappComponents',
-  matcher: ({ filePath }) => equals('dist/sets/webapp-components.json', filePath),
-})
-
-StyleDictionary.registerFilter({
-  name: 'takeWebapp',
-  matcher: ({ filePath }) => equals('dist/sets/webapp.json', filePath),
-})
-
-StyleDictionary.registerTransform({
+SD.registerTransform({
   name: 'borderWidth/rem',
   type: 'value',
   matcher: (token) => token.attributes.category === 'borderWidth',
   transformer: (token) => convertToRem(token.original.value),
 })
 
-StyleDictionary.registerTransform({
+SD.registerTransform({
   name: 'borderRadius/rem',
   type: 'value',
   matcher: (token) => token.attributes.category === 'borderRadius',
   transformer: ({ value }) => (value === 999 ? '999px' : convertToRem(value)),
 })
 
-StyleDictionary.registerTransform({
+SD.registerTransform({
   name: 'spacing/rem',
   type: 'value',
   matcher: (token) => token.attributes.category === 'spacing',
   transformer: (token) => convertToRem(token.original.value),
 })
 
-StyleDictionary.registerTransform({
+SD.registerTransform({
   name: 'sizing/rem',
   type: 'value',
   matcher: (token) => token.attributes.category === 'sizing',
   transformer: (token) => convertToRem(token.original.value),
 })
 
-StyleDictionary.registerTransform({
+SD.registerTransform({
   name: 'fontSize/rem',
   type: 'value',
   matcher: (token) => token.attributes.category === 'fontSize',
   transformer: (token) => convertToRem(token.value),
 })
 
-StyleDictionary.registerTransform({
+SD.registerTransform({
   name: 'lineHeight/rem',
   type: 'value',
   matcher: (token) => token.attributes.category === 'lineHeights',
@@ -64,7 +51,7 @@ StyleDictionary.registerTransform({
   ),
 })
 
-StyleDictionary.registerTransform({
+SD.registerTransform({
   name: 'boxShadow/px',
   type: 'value',
   matcher: (token) => token.attributes.category === 'boxShadow',
@@ -79,7 +66,7 @@ StyleDictionary.registerTransform({
   },
 })
 
-StyleDictionary.registerTransformGroup({
+SD.registerTransformGroup({
   name: 'mediatoolTokens',
   transforms: [
     'attribute/cti',
@@ -95,4 +82,38 @@ StyleDictionary.registerTransformGroup({
   ],
 })
 
-StyleDictionary.buildPlatform('web')
+const getStyleDictionaryConfig = (skin) => ({
+  source: [
+    `dist/sets/${skin}/*.json`,
+  ],
+  platforms: {
+    web: {
+      transformGroup: 'mediatoolTokens',
+      buildPath: `dist/${skin}/`,
+      files: [ {
+        format: 'json/nested',
+        destination: 'global.json',
+        filter: {
+          filePath: `dist/sets/${skin}/global.json`,
+        },
+      }, {
+        format: 'json/nested',
+        destination: `${skin}.json`,
+        filter: {
+          filePath: `dist/sets/${skin}/${skin}.json`,
+        },
+      }, {
+        format: 'json/nested',
+        destination: `${skin}-components.json`,
+        filter: {
+          filePath: `dist/sets/${skin}/${skin}-components.json`,
+        },
+      } ],
+    },
+  },
+})
+
+skins.forEach((skin) => {
+  const StyleDictionary = SD.extend(getStyleDictionaryConfig(skin))
+  StyleDictionary.buildPlatform('web')
+})

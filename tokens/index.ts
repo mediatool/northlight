@@ -1,3 +1,6 @@
+import WebappSkin from './dist/webapp/webapp-components.json'
+import TottSkin from './dist/tott/tott-components.json'
+
 export {
   color as palette,
   sizing as coreSizing,
@@ -9,13 +12,9 @@ export {
   fontSize as coreFontSize,
   lineHeights as coreLineHeight,
   borderRadius as coreBorderRadius,
-} from './dist/global.json'
+} from './dist/webapp/global.json'
+
 export {
-  color,
-  borderRadius,
-  borderWidth,
-  opacity,
-  spacing,
-  fontSize,
-  sizing,
-} from './dist/webapp-components.json'
+  WebappSkin,
+  TottSkin,
+}
