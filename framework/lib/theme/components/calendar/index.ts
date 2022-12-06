@@ -10,6 +10,10 @@ export const Calendar: ComponentMultiStyleConfig = {
     container: {
       p: spacing[2],
       w: sizing[64],
+      bgColor: 'background.default',
+      border: '1px solid',
+      borderColor: 'border.input.default',
+      borderRadius: 'input.outline',
     },
     yearSelect: {
       fontWeight: 'semibold',

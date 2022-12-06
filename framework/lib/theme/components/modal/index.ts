@@ -11,37 +11,33 @@ export const Modal: ComponentMultiStyleConfig = {
       },
     },
   },
-  baseStyle: ({ theme: {
-    colors: color,
-    space: spacing,
-    radii: borderRadius,
-    borders: borderWidth,
-  } }) => ({
+  baseStyle: {
     overlay: {
-      bgColor: `${color.background.modal.overlay}`,
+      bgColor: 'background.modal.overlay',
       backdropFilter: 'blur(8px)',
     },
     closeButton: {
-      top: spacing[4],
-      right: spacing[4],
+      top: 4,
+      right: 4,
     },
     dialog: {
-      borderRadius: borderRadius.modal.dialog,
+      bgColor: 'background.default',
+      borderRadius: 'modal.dialog',
     },
     header: {
-      paddingTop: spacing.paddingTop.modal.header,
-      paddingBottom: spacing.paddingBottom.modal.header,
-      borderBottomColor: color.border.modal.header,
-      borderBottomWidth: borderWidth.modal.header,
+      paddingTop: 'paddingTop.modal.header',
+      paddingBottom: 'paddingBottom.modal.header',
+      border: 'modal.header',
+      borderBottomColor: 'border.modal.header',
       borderBottomStyle: 'solid',
     },
     body: {
-      paddingTop: spacing.paddingTop.modal.body,
-      paddingBottom: spacing.paddingBottom.modal.body,
+      paddingTop: 'paddingTop.modal.body',
+      paddingBottom: 'paddingBottom.modal.body',
     },
     footer: {
-      paddingTop: spacing.paddingTop.modal.footer,
-      paddingBottom: spacing.paddingBottom.modal.footer,
+      paddingTop: 'paddingTop.modal.footer',
+      paddingBottom: 'paddingBottom.modal.footer',
     },
-  }),
+  },
 }

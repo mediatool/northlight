@@ -18,8 +18,8 @@ const SubMenuItem = ({ path, title }: SubMenuItemProps) => (
     to={ path }
     borderRadius={ 6 }
     p={ 2 }
-    _hover={ { bg: 'blue.50' } }
-    _activeLink={ { bg: 'blue.50', color: 'blue.600' } }
+    _hover={ { bgColor: 'background.button.default-hover' } }
+    _activeLink={ { bgColor: 'background.button.default-hover' } }
   >
     <Label size="md" sx={ { color: 'inherit', cursor: 'pointer' } }>
       { title }
@@ -32,7 +32,7 @@ interface SubMenuProps {
 }
 
 export const SubMenu = ({ mainRoutes }: SubMenuProps) => (
-  <Stack overflow="auto" pr={ 2 }>
+  <Stack color="text.default" overflow="auto" pr={ 2 } bgColor="background.default">
     <Switch>
       { mainRoutes.map(({ path: mainPath, subItems = [] }) => (
         <RouterRoute

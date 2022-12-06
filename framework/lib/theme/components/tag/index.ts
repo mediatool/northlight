@@ -1,5 +1,5 @@
 import {
-  ComponentMultiStyleConfig,
+  ComponentMultiStyleConfig, useToken,
 } from '@chakra-ui/react'
 import { getContrastColor } from '../../../utils'
 
@@ -11,35 +11,35 @@ export const Tag: ComponentMultiStyleConfig = {
     },
   },
   sizes: {
-    sm: ({ theme: { radii: borderRadius } }) => ({
+    sm: {
       container: {
-        borderRadius: borderRadius.tag.default,
+        borderRadius: 'tag.default',
       },
-    }),
-    md: ({ theme: { radii: borderRadius } }) => ({
+    },
+    md: {
       container: {
-        borderRadius: borderRadius.tag.default,
+        borderRadius: 'tag.default',
       },
-    }),
-    lg: ({ theme: { radii: borderRadius } }) => ({
+    },
+    lg: {
       container: {
-        borderRadius: borderRadius.tag.default,
+        borderRadius: 'tag.default',
       },
-    }),
+    },
   },
   variants: {
     solid: ({ bgColor, colorScheme }) => ({
       container: {
         bgColor: bgColor ?? colorScheme,
-        color: getContrastColor(bgColor ?? colorScheme),
+        color: getContrastColor(bgColor ?? useToken('colors', colorScheme)),
       },
     }),
-    subtle: ({ theme: { colors: color } }) => ({
+    subtle: {
       container: {
-        bgColor: color.background.tag.subtle,
-        color: color.text.default,
+        bgColor: 'background.tag.subtle',
+        color: 'text.default',
       },
-    }),
+    },
   },
   defaultProps: {
     size: 'md',

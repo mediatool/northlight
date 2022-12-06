@@ -36,4 +36,8 @@ export const customSelectStyles: ChakraStylesConfig<any> = {
       color: getContrastColor(background),
     })
   },
+  menuList: (provided) => ({
+    ...provided,
+    bgColor: 'background.default',
+  }),
 }

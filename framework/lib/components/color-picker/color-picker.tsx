@@ -106,7 +106,7 @@ export const ColorPicker = ({
             { ...rest }
           />
         </PopoverTrigger>
-        <PopoverContent w="auto" boxShadow="md" p={ 2 }>
+        <PopoverContent w="auto" boxShadow="md" p={ 2 } bgColor="background.default">
           <Stack>
             <PopoverHeader
               color="text.default"

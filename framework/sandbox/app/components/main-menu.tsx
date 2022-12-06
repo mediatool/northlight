@@ -19,8 +19,8 @@ const MenuItem = ({ path, Icon: IconComponent, title }: MenuItemProps) => (
     to={ path }
     as={ NavLink }
     borderRadius={ 6 }
-    _hover={ { bg: 'mediatoolBlue.100' } }
-    _activeLink={ { backgroundColor: 'mediatoolBlue.100', color: 'mediatoolBlue.500' } }
+    _hover={ { bgColor: 'background.button.default-hover' } }
+    _activeLink={ { bgColor: 'background.button.brand', color: 'text.inverted' } }
   >
     <Icon as={ IconComponent } boxSize={ 6 } />
     <Label size="md" sx={ { color: 'inherit', cursor: 'pointer' } }>
@@ -34,7 +34,7 @@ export interface MainMenuProps {
 }
 
 export const MainMenu = ({ menuItems }: MainMenuProps) => (
-  <Stack spacing={ 2 } mb={ 6 }>
+  <Stack spacing={ 2 } mb={ 6 } color="text.default" bgColor="background.default">
     { menuItems.map((item) => <MenuItem key={ item.path } { ...item } />) }
   </Stack>
 )

@@ -1,6 +1,7 @@
-import { ComponentSingleStyleConfig } from '@chakra-ui/react'
+import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 
-export const Alert: ComponentSingleStyleConfig = {
+export const Alert: ComponentMultiStyleConfig = {
+  parts: [ 'container', 'title', 'description' ],
   baseStyle: ({ theme: {
     radii: borderRadius,
     colors: color,

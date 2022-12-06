@@ -77,7 +77,7 @@ export const DatePicker = (props: DatePickerProps) => {
         </HStack>
       </PopoverAnchor>
       { state.isOpen && (
-        <PopoverContent { ...dialogProps } ref={ ref } w={ 64 }>
+        <PopoverContent { ...dialogProps } ref={ ref } w={ 64 } border="none">
           <FocusScope contain={ true } restoreFocus={ true }>
             <Calendar { ...calendarProps } />
           </FocusScope>

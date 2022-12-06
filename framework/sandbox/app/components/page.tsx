@@ -18,6 +18,8 @@ export const Page = ({
     p={ 5 }
     overflowY="auto"
     overscrollBehavior="contain"
+    bgColor="background.default"
+    color="text.default"
   >
     <Stack spacing={ 2 }>
       <Heading as="h1" size="lg">{ title }</Heading>

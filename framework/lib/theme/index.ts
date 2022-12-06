@@ -15,7 +15,7 @@ import {
 } from '@mediatool/tokens'
 import { scrollbarStyles } from './global/scrollbar'
 import * as components from './components'
-import { WebappSkin } from './skins'
+import { TottSkin, WebappSkin } from './skins'
 
 const overrides: ThemeOverride = {
   config: {
@@ -57,3 +57,4 @@ const overrides: ThemeOverride = {
 }
 
 export const webappTheme = extendTheme(overrides, WebappSkin)
+export const tottTheme = extendTheme(overrides, TottSkin)
