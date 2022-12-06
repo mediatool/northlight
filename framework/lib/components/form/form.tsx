@@ -8,6 +8,7 @@ import {
 } from 'react-hook-form'
 import { equals } from 'ramda'
 import { FormProps } from './types'
+import { trimFormValues } from './trim-form-values'
 
 export function Form<FormValues extends FieldValues> ({
   initialValues,
@@ -52,7 +53,7 @@ export function Form<FormValues extends FieldValues> ({
         style={ { width: '100%' } }
         onSubmit={
           newMethods.formState.isValid
-            ? newMethods.handleSubmit(onSubmit)
+            ? newMethods.handleSubmit((values) => onSubmit(trimFormValues<FormValues>(values)))
             : (e) => e.preventDefault()
         }
       >

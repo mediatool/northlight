@@ -30,7 +30,7 @@ export function TextField ({
             onChange(e)
             onChangeCallback(e)
           } }
-          value={ value?.replace(/\s+/g, ' ').trimStart() || '' }
+          value={ value }
           data-testid="text-field-test-id"
           { ...rest }
         />
