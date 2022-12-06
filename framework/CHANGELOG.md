@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.13.1...@mediatool/ui@2.13.2) (2022-12-06)
+
+
+### Bug Fixes
+
+* **ui:** adapt getContrastColor for multiple themes ([491a2db](https://github.com/mediatool/mediatool/commit/491a2db371fb1082ffa962e53fab8d6b2bb410b9))
+
+
+
+
+
 ## [2.13.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.13.0...@mediatool/ui@2.13.1) (2022-11-30)
 
 

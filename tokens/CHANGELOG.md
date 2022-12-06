@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.10.0...@mediatool/tokens@2.0.0) (2022-12-06)
+
+
+* feat(tokens)!: add multi-theme support ([301952f](https://github.com/mediatool/mediatool/commit/301952f8ad26d6d0bd2f3fa8ec712a2c5412649e))
+
+
+### BREAKING CHANGES
+
+* modified export of component tokens
+
+
+
+
+
 # [1.10.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.9.5...@mediatool/tokens@1.10.0) (2022-11-16)
 
 
