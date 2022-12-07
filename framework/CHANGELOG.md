@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.14.0...@mediatool/ui@2.14.1) (2022-12-07)
+
+
+### Bug Fixes
+
+* **ui:** select tag right color ([7a01f3e](https://github.com/mediatool/mediatool/commit/7a01f3e545719a2aa8a6d7eb483ecae7bab2cf26))
+
+
+
+
+
 # [2.14.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.13.2...@mediatool/ui@2.14.0) (2022-12-07)
 
 
