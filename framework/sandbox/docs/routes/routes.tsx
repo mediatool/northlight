@@ -38,6 +38,11 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/multi-sort-page'),
   },
   {
+    title: 'Toolbox',
+    path: '/toolbox',
+    component: () => import('../pages/toolbox-page'),
+  },
+  {
     title: 'Clickable',
     path: '/clickable',
     component: () => import('../pages/clickable-page'),
