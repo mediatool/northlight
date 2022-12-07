@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@2.0.0...@mediatool/tokens@2.0.1) (2022-12-07)
+
+
+### Bug Fixes
+
+* **tokens:** modify gray palette and tott tokens ([87b809e](https://github.com/mediatool/mediatool/commit/87b809e6f657f9ac3389bce17e25f07a6078c94f))
+
+
+
+
+
 # [2.0.0](https://github.com/mediatool/mediatool/compare/@mediatool/tokens@1.10.0...@mediatool/tokens@2.0.0) (2022-12-06)
 
 

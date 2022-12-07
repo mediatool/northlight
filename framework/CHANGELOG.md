@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.14.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.13.2...@mediatool/ui@2.14.0) (2022-12-07)
+
+
+### Features
+
+* **ui:** add theme switcher and fix broken components ([80eefdc](https://github.com/mediatool/mediatool/commit/80eefdccf92577e7cd25552e3c7dbe71e8014c6a))
+
+
+
+
+
 ## [2.13.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.13.1...@mediatool/ui@2.13.2) (2022-12-06)
 
 
