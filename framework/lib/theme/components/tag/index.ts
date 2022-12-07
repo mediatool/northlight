@@ -34,12 +34,12 @@ export const Tag: ComponentMultiStyleConfig = {
         color: getContrastColor(bgColor ?? useToken('colors', colorScheme)),
       },
     }),
-    subtle: {
+    subtle: () => ({
       container: {
-        bgColor: 'background.tag.subtle',
+        bgColor: useToken('colors', 'background.tag.subtle'),
         color: 'text.default',
       },
-    },
+    }),
   },
   defaultProps: {
     size: 'md',
