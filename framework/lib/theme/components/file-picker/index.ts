@@ -1,6 +1,5 @@
 import { ComponentMultiStyleConfig, keyframes } from '@chakra-ui/react'
 import { CSSObject } from '@emotion/react'
-import { color } from '@mediatool/tokens'
 
 const shakeAnimation = keyframes`
   0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -20,7 +19,7 @@ const thickRing: CSSObject = {
   _focusVisible: {
     outline: 'none',
     ring: '3px',
-    ringColor: color.border.wcag,
+    ringColor: 'border.wcag',
     ringOffset: '1px',
   },
 }
