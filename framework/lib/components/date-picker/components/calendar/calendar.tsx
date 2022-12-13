@@ -1,17 +1,19 @@
 import React from 'react'
-import { DateValue, GregorianCalendar } from '@internationalized/date'
+import { GregorianCalendar } from '@internationalized/date'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { useLocale } from '@react-aria/i18n'
 import { useCalendarState } from '@react-stately/calendar'
-import { CalendarProps, useCalendar } from '@react-aria/calendar'
+import { useCalendar } from '@react-aria/calendar'
 import { ChevronLeftSolid, ChevronRightSolid } from '@mediatool/icons'
-import { Flex } from '../flex'
-import { Box } from '../box'
-import { CalendarGrid, MonthButton, YearSelect } from './components'
-import { HStack, Stack } from '../stack'
-import { Icon } from '../icon'
+import { Flex } from '../../../flex'
+import { Box } from '../../../box'
+import { CalendarGrid, MonthButton } from './components'
+import { HStack, Stack } from '../../../stack'
+import { Icon } from '../../../icon'
+import { YearSelectCalendar } from './date-select'
+import { CalendarProps } from './types'
 
-export const Calendar = (props:CalendarProps<DateValue>) => {
+export const Calendar = (props: CalendarProps) => {
   const { locale } = useLocale()
   const { container } = useMultiStyleConfig('Calendar')
 
@@ -21,17 +23,18 @@ export const Calendar = (props:CalendarProps<DateValue>) => {
     createCalendar: () => new GregorianCalendar(),
   })
 
-  const {
-    calendarProps,
-    prevButtonProps,
-    nextButtonProps,
-  } = useCalendar(props, state)
+  const { calendarProps, prevButtonProps, nextButtonProps } = useCalendar(
+    props,
+    state
+  )
 
   return (
     <Box { ...calendarProps } __css={ container }>
       <Stack>
         <Flex justifyContent="space-between">
-          <YearSelect state={ state } />
+          <Box paddingInlineStart="2">
+            <YearSelectCalendar state={ state } />
+          </Box>
           <HStack spacing={ 2 }>
             <MonthButton { ...prevButtonProps }>
               <Icon as={ ChevronLeftSolid } boxSize={ 4 } />

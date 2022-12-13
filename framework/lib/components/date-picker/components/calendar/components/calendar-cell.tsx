@@ -2,17 +2,20 @@ import React, { useRef } from 'react'
 import { chakra } from '@chakra-ui/react'
 import { useCalendarCell } from '@react-aria/calendar'
 import { isSameMonth, today } from '@internationalized/date'
-import { CalendarCellProps } from '../../date-picker/types'
-import { Button } from '../../button'
+import { CalendarCellProps } from './types'
+import { Button } from '../../../../button'
 
-export const CalendarCell = ({ state, date, currentMonth }: CalendarCellProps) => {
+export const CalendarCell = ({
+  state,
+  date,
+  currentMonth,
+}: CalendarCellProps) => {
   const ref = useRef<HTMLButtonElement>(null)
-  const {
-    cellProps,
-    buttonProps,
-    isSelected,
-    formattedDate,
-  } = useCalendarCell({ date }, state, ref)
+  const { cellProps, buttonProps, isSelected, formattedDate } = useCalendarCell(
+    { date },
+    state,
+    ref
+  )
   const isToday = date.compare(today(state.timeZone)) === 0
 
   const isOutsideMonth = !isSameMonth(currentMonth, date)

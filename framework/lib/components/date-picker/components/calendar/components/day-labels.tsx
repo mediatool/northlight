@@ -1,8 +1,11 @@
 import React, { memo } from 'react'
 import { chakra, useMultiStyleConfig } from '@chakra-ui/system'
-import { Tr } from '../../table'
+import { Tr } from '../../../../table'
+import { DayLabelsProps } from './types'
 
-export const DayLabels = memo(({ weekDays }: { weekDays: string[] }) => {
+export const DayLabels = memo(({
+  weekDays,
+}: DayLabelsProps) => {
   const { dayLabel } = useMultiStyleConfig('Calendar')
   const weekDaysWithIds = weekDays.map((day, i) => ({ label: day, _id: i }))
 

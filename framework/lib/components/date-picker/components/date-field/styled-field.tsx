@@ -1,19 +1,12 @@
-import React, { HTMLAttributes, ReactNode, forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/react'
-import { Box } from '../../box'
+import { Box } from '../../../box'
+import { StyledFieldProps } from './types'
 
-interface Props extends HTMLAttributes<HTMLElement> {
-  isInvalid?: boolean
-  isDisabled?: boolean
-  children: ReactNode
-}
-
-export const StyledField = forwardRef(({
-  isInvalid,
-  isDisabled,
-  children,
-  ...rest
-}: Props, ref: any) => {
+export const StyledField = forwardRef((
+  { isInvalid, isDisabled, children, ...rest }: StyledFieldProps,
+  ref: any
+) => {
   const { styledField } = useMultiStyleConfig('DatePicker')
 
   return (
@@ -30,4 +23,5 @@ export const StyledField = forwardRef(({
       { children }
     </Box>
   )
-})
+}
+)

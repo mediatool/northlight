@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
-import { AriaButtonProps, useButton } from '@react-aria/button'
-import { Button } from '../../button'
+import { useButton } from '@react-aria/button'
+import { Button } from '../../../../button'
+import { MonthButtonProps } from './types'
 
-export const MonthButton = ({ children, ...rest }: AriaButtonProps) => {
+export const MonthButton = ({ children, ...rest }: MonthButtonProps) => {
   const ref = useRef<HTMLButtonElement>(null)
   const { buttonProps } = useButton(rest, ref)
 
@@ -10,7 +11,7 @@ export const MonthButton = ({ children, ...rest }: AriaButtonProps) => {
     <Button
       { ...buttonProps }
       boxSize={ 8 }
-      size="sm"
+      size="xs"
       variant="ghost"
       ref={ ref }
     >

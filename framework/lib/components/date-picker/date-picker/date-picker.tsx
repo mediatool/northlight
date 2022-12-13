@@ -5,14 +5,14 @@ import { useDatePickerState } from '@react-stately/datepicker'
 import { FocusScope } from '@react-aria/focus'
 import { XCloseSolid } from '@mediatool/icons'
 import { parseDate } from '@internationalized/date'
-import { Calendar } from '../calendar'
-import { DateField, Trigger } from './components'
-import { DatePickerProps } from './types'
-import { IconButton } from '../icon-button'
-import { HStack } from '../stack'
-import { InputGroup, InputRightElement } from '../input'
-import { Popover, PopoverAnchor, PopoverContent } from '../popover'
-import { Icon } from '../icon'
+import { DateField, StyledField, Trigger } from '../components/date-field'
+import { Calendar } from '../components/calendar'
+import { DatePickerProps } from '../types'
+import { IconButton } from '../../icon-button'
+import { HStack } from '../../stack'
+import { InputGroup, InputRightElement } from '../../input'
+import { Popover, PopoverAnchor, PopoverContent } from '../../popover'
+import { Icon } from '../../icon'
 
 export const DatePicker = (props: DatePickerProps) => {
   const {
@@ -50,12 +50,12 @@ export const DatePicker = (props: DatePickerProps) => {
       <PopoverAnchor>
         <HStack minW={ 56 }>
           <InputGroup { ...groupProps } ref={ ref } __css={ group }>
-            <DateField
-              { ...fieldProps }
-              dateFormat={ dateFormat }
-              isDisabled={ !!isDisabled }
-              isInvalid={ isInvalid }
-            />
+            <StyledField isDisabled={ isDisabled } isInvalid={ isInvalid }>
+              <DateField
+                { ...fieldProps }
+                dateFormat={ dateFormat }
+              />
+            </StyledField>
             <InputRightElement>
               <Trigger
                 { ...buttonProps }

@@ -1,10 +1,10 @@
 import React from 'react'
 import { DateValue, parseDate } from '@internationalized/date'
 import { identity } from 'ramda'
-import { DatePickerFieldProps } from './types'
-import { Field } from '../form'
-import { DatePicker } from './date-picker'
-import { useFormContext } from '../../hooks'
+import { DatePickerFieldProps } from '../types'
+import { Field } from '../../form'
+import { DatePicker } from '../date-picker/date-picker'
+import { useFormContext } from '../../../hooks'
 
 export const DatePickerField = ({
   name,
