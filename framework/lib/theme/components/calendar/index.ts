@@ -1,7 +1,8 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { ring } from '../../../utils'
 
 export const Calendar: ComponentMultiStyleConfig = {
-  parts: [ 'container', 'yearSelect', 'dayLabel' ],
+  parts: [ 'container', 'dateSelect', 'dayLabel', 'rangeCalendarContainer' ],
   baseStyle: ({ theme: {
     space: spacing,
     sizes: sizing,
@@ -15,10 +16,18 @@ export const Calendar: ComponentMultiStyleConfig = {
       borderColor: 'border.input.default',
       borderRadius: 'input.outline',
     },
-    yearSelect: {
+    rangeCalendarContainer: {
+      p: '3',
+      w: '128',
+      bgColor: 'background.default',
+      borderRadius: 'input.outline',
+    },
+    dateSelect: {
       fontWeight: 'semibold',
       width: 'max-content',
       border: 'none',
+      padding: '0',
+      borderRadius: 'md',
       color: color.text.default,
       bgColor: color.background.button.ghost,
       _hover: {
@@ -28,11 +37,7 @@ export const Calendar: ComponentMultiStyleConfig = {
       _active: {
         bgColor: color.background.button['ghost-active'],
       },
-      _focusVisible: {
-        ring: '2px',
-        ringColor: color.border.wcag,
-        ringOffset: '1px',
-      },
+      ...ring,
     },
     dayLabel: {
       color: color.gray[600],

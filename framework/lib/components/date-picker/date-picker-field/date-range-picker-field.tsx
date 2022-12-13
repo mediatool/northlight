@@ -1,0 +1,75 @@
+import React from 'react'
+import { DateValue, parseDate } from '@internationalized/date'
+import { identity } from 'ramda'
+import { DatePickerFieldProps } from '../types'
+import { Field } from '../../form'
+import { DateRangePicker } from '../date-picker/date-range-picker'
+import { useFormContext } from '../../../hooks'
+
+export const DateRangePickerField = ({
+  name,
+  minValue,
+  maxValue,
+  isRequired,
+  direction = 'column',
+  label,
+  validate,
+  firstDayOfWeek = 'monday',
+  onChange: onChangeCallback = identity,
+  ...rest
+}: DatePickerFieldProps) => {
+  const { setValue, setError, trigger } = useFormContext()
+
+  const handleChange = (date: any) => {
+    setValue(name, {
+      start: date?.start.toString(),
+      end: date?.end.toString(),
+    })
+    if (
+      (minValue && date?.start < parseDate(minValue)) ||
+      (maxValue && date?.end > parseDate(maxValue))
+    ) {
+      setError(name, {
+        type: 'custom',
+        message:
+          minValue && maxValue
+            ? `Date must be between ${minValue}-${maxValue}`
+            : minValue
+              ? `Select date earliest at ${minValue}`
+              : `Select date latest at ${maxValue}`,
+      })
+    } else {
+      trigger(name)
+    }
+    onChangeCallback(date)
+  }
+
+  return (
+    <Field
+      name={ name }
+      label={ label }
+      direction={ direction }
+      isRequired={ isRequired }
+      validate={ validate }
+    >
+      { ({ value, onChange }, { formState: { errors } }) => (
+        <DateRangePicker
+          firstDayOfWeek={ firstDayOfWeek }
+          aria-label={ label }
+          isInvalid={ !!errors[name] }
+          onChange={ handleChange }
+          resetDate={ () => onChange(null) }
+          value={
+            value
+              ? { start: parseDate(value.start), end: parseDate(value.end) }
+              : null
+          }
+          minValue={ minValue ? (parseDate(minValue) as DateValue) : undefined }
+          maxValue={ maxValue ? (parseDate(maxValue) as DateValue) : undefined }
+          validationState={ errors.name ? 'invalid' : 'valid' }
+          { ...(rest as any) }
+        />
+      ) }
+    </Field>
+  )
+}
