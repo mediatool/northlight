@@ -5,6 +5,7 @@ import {
   CheckboxField,
   Code,
   DatePickerField,
+  DateRangePickerField,
   FilePickerField,
   FlipButton,
   FlipButtonGroupField,
@@ -43,6 +44,8 @@ export const FormOne = () => {
         review: '',
         image: '',
         multiImage: '',
+        teste: '',
+        dateRange: '',
       } }
       onSubmit={ () => {} }
     >
@@ -165,6 +168,10 @@ export const FormOne = () => {
             label="Date"
             direction="row"
           />
+          <DateRangePickerField
+            name="date-range"
+            label="Select start and end date"
+          />
           <FilePickerField
             name="image"
             label="Select Image"
@@ -174,7 +181,6 @@ export const FormOne = () => {
             name="multiImage"
             label="Select multiple images"
           />
-
           <Button type="submit" variant="success">Submit</Button>
           <pre>
             <Code p={ 4 }>{ JSON.stringify(watch(), null, 2) }</Code>
