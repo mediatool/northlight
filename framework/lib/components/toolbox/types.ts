@@ -4,7 +4,7 @@ export interface ToolboxProps extends Omit<FlexProps, 'direction'> {
   isOpen: boolean
   direction?: 'right' | 'left'
   shouldPush?: boolean
-  children: JSX.Element[]
+  children: JSX.Element[] | JSX.Element
   size?: 'sm' | 'md' | 'lg'
   onClose: () => void
   autoFocus?: boolean
