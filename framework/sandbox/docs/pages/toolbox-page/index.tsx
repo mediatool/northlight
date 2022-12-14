@@ -10,6 +10,7 @@ import {
   Stack,
   Toolbox,
   ToolboxContent,
+  ToolboxFooter,
   ToolboxHeader,
   ToolboxProps,
   useDisclosure,
@@ -46,6 +47,10 @@ const ToolboxPage = () => {
                   <Input />
                 </Stack>
               </ToolboxContent>
+              <ToolboxFooter justifyContent="end" gap="2">
+                <Button variant="ghost">Cancel</Button>
+                <Button variant="brand">Save</Button>
+              </ToolboxFooter>
             </Toolbox>
           </Flex>
           <Code w="max-content" display="block" whiteSpace="pre">
@@ -61,10 +66,16 @@ const ToolboxPage = () => {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
             praesentium possimus saepe perspiciatis veritatis! Accusamus
         </ToolboxContent>
+        </ToolboxContent>
+        <ToolboxFooter justifyContent="end" gap="2">
+          <Button variant="ghost">Cancel</Button>
+          <Button variant="brand">Save</Button>
+        </ToolboxFooter>
     </Toolbox>
 </Flex>` }
           </Code>
         </Stack>
+        <P><b>{ '<ToolboxFooter />' }</b> is flexed, meaning one can adjust it's layout by directly putting inline styles such as gap, justifyContent</P>
         <P>
           <b>isOpen, onClose</b>, booleans, required, can get simply from
           useDisclosure hook,
