@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.16.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.14.2...@mediatool/ui@2.16.0) (2022-12-14)
+
+
+### Bug Fixes
+
+* **ui:** bump and remove unit test ([fee0106](https://github.com/mediatool/mediatool/commit/fee0106d532d1d63bef6fe4a9c1d0ce0fff3f8d0))
+* **ui:** fix inaccurate type ([a66d6e1](https://github.com/mediatool/mediatool/commit/a66d6e1ba7b871a6df73d3bd7ec3eed9182862ab))
+
+
+### Features
+
+* **ui:** toolbox ([fe05d33](https://github.com/mediatool/mediatool/commit/fe05d33af785e43b74661de69f54336c4618900c))
+* **ui:** toolbox-footer ([d7634b5](https://github.com/mediatool/mediatool/commit/d7634b5b74463b1a5bede48be85aa6c80c0a29f9))
+
+
+
+
+
 # [2.15.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.14.2...@mediatool/ui@2.15.0) (2022-12-14)
 
 
