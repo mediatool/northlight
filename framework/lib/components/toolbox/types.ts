@@ -18,3 +18,7 @@ export interface ToolboxHeaderProps extends FlexProps {
 export interface ToolboxContentProps extends FlexProps {
   children: JSX.Element | string
 }
+
+export interface ToolboxFooterProps extends FlexProps {
+  children: JSX.Element | JSX.Element[] | string
+}
