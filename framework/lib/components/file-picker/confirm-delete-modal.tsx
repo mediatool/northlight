@@ -29,7 +29,7 @@ export const ConfirmDeleteModal = ({
         textOverflow="ellipsis"
         pr={ 16 }
       >
-        Delete { fileName }{ ' ' }
+        Delete { fileName }
       </ModalHeader>
       <ModalBody>
         Deleting this file is a permanent action. You will not be able to
