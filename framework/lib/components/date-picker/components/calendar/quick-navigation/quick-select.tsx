@@ -222,7 +222,7 @@ export const QuickSelect = ({
     <Stack
       alignItems="start"
       borderRight={ seperator }
-      pt="10"
+      pt="2"
     >
       <Stack
         h="xs"
@@ -232,6 +232,7 @@ export const QuickSelect = ({
         _hover={ { overflowY: 'scroll' } }
         w="36"
         display={ shouldShow(quickDates) ? 'initial' : 'none' }
+        mb="4"
       >
         { map(
           (quickDate) =>
