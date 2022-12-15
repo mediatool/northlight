@@ -25,7 +25,8 @@ export const Modal: ComponentMultiStyleConfig = {
       borderRadius: 'modal.dialog',
     },
     header: {
-      paddingTop: 'paddingTop.modal.header',
+      fontSize: 'headings.h3',
+      paddingTop: 5,
       paddingBottom: 'paddingBottom.modal.header',
       border: 'modal.header',
       borderBottomColor: 'border.modal.header',
