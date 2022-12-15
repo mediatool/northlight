@@ -11,34 +11,39 @@ export const Modal: ComponentMultiStyleConfig = {
       },
     },
   },
-  baseStyle: {
-    overlay: {
-      bgColor: 'background.modal.overlay',
-      backdropFilter: 'blur(8px)',
-    },
-    closeButton: {
-      top: 4,
-      right: 4,
-    },
-    dialog: {
-      bgColor: 'background.default',
-      borderRadius: 'modal.dialog',
-    },
-    header: {
-      fontSize: 'headings.h3',
-      paddingTop: 5,
-      paddingBottom: 'paddingBottom.modal.header',
-      border: 'modal.header',
-      borderBottomColor: 'border.modal.header',
-      borderBottomStyle: 'solid',
-    },
-    body: {
-      paddingTop: 'paddingTop.modal.body',
-      paddingBottom: 'paddingBottom.modal.body',
-    },
-    footer: {
-      paddingTop: 'paddingTop.modal.footer',
-      paddingBottom: 'paddingBottom.modal.footer',
-    },
+  baseStyle: ({ theme }) => {
+    const {
+      typography: { headings: { h3 } },
+    } = theme
+    return ({
+      overlay: {
+        bgColor: 'background.modal.overlay',
+        backdropFilter: 'blur(8px)',
+      },
+      closeButton: {
+        top: 4,
+        right: 4,
+      },
+      dialog: {
+        bgColor: 'background.default',
+        borderRadius: 'modal.dialog',
+      },
+      header: {
+        fontSize: h3.fontSize,
+        paddingTop: 'paddingTop.modal.header',
+        paddingBottom: 'paddingBottom.modal.header',
+        border: 'modal.header',
+        borderBottomColor: 'border.modal.header',
+        borderBottomStyle: 'solid',
+      },
+      body: {
+        paddingTop: 'paddingTop.modal.body',
+        paddingBottom: 'paddingBottom.modal.body',
+      },
+      footer: {
+        paddingTop: 'paddingTop.modal.footer',
+        paddingBottom: 'paddingBottom.modal.footer',
+      },
+    })
   },
 }
