@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import { chakra } from '@chakra-ui/react'
 import { useCalendarGrid } from '@react-aria/calendar'
 import { getWeeksInMonth } from '@internationalized/date'
+import { times } from 'ramda'
 import { Table, Tbody, Thead, Tr } from '../../../../table'
 import { CalendarCell } from './calendar-cell'
 import { CalendarGridProps } from './types'
@@ -19,7 +20,7 @@ export const CalendarGrid = memo(
           <DayLabels weekDays={ weekDays } />
         </Thead>
         <Tbody>
-          { [ ...new Array(weeksInMonth).keys() ].map((weekIndex) => (
+          { times((weekIndex) => (
             <Tr key={ weekIndex }>
               { state
                 .getDatesInWeek(weekIndex, startDate)
@@ -36,7 +37,7 @@ export const CalendarGrid = memo(
                   ))
                 ) }
             </Tr>
-          )) }
+          ), weeksInMonth) }
         </Tbody>
       </Table>
     )

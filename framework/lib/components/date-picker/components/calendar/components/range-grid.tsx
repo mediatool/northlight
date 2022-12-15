@@ -2,12 +2,12 @@ import React from 'react'
 import { chakra } from '@chakra-ui/react'
 import { useCalendarGrid } from '@react-aria/calendar'
 import { endOfMonth, getWeeksInMonth } from '@internationalized/date'
+import { times } from 'ramda'
 import { Table, Tbody, Thead, Tr } from '../../../../table'
 import { Box } from '../../../../box'
 import { DayLabels } from './day-labels'
 import { RangeCell } from './range-cell'
 import { RangeCalendarGridProps } from './types'
-import { arrayWithLength } from '../../../../../utils'
 
 export const RangeCalendarGrid = ({ state, locale, offset = {} }: RangeCalendarGridProps) => {
   const startDate = state.visibleRange.start.add(offset)
@@ -23,7 +23,7 @@ export const RangeCalendarGrid = ({ state, locale, offset = {} }: RangeCalendarG
           <DayLabels weekDays={ weekDays } />
         </Thead>
         <Tbody>
-          { arrayWithLength(weeksInMonth + 1).map((weekIndex) => (
+          { times((weekIndex) => (
             <Tr key={ weekIndex }>
               { state
                 .getDatesInWeek(weekIndex, startDate)
@@ -41,7 +41,7 @@ export const RangeCalendarGrid = ({ state, locale, offset = {} }: RangeCalendarG
                   ))
                 ) }
             </Tr>
-          )) }
+          ), weeksInMonth + 1) }
         </Tbody>
       </Table>
 
