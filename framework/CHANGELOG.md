@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.16.0...@mediatool/ui@2.16.1) (2022-12-15)
+
+
+### Bug Fixes
+
+* **ui/framework:** Align modal header font styles ([062bdfd](https://github.com/mediatool/mediatool/commit/062bdfd4d56a10871e3e590fac15429beab573a7))
+
+
+
+
+
 # [2.16.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.14.2...@mediatool/ui@2.16.0) (2022-12-14)
 
 
