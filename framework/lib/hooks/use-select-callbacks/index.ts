@@ -3,13 +3,18 @@ import { difference, length } from 'ramda'
 import { useRef } from 'react'
 import { UseSelectCallbacksProps } from './types'
 
-export const useSelectCallbacks = <T>({
+interface BasicOption {
+  label: string
+  value: any
+}
+
+export const useSelectCallbacks = <T extends BasicOption>({
   onChange,
   onAdd,
   onRemove,
   isMulti,
 }: UseSelectCallbacksProps<T>) => {
-  const items = useRef<any[]>([])
+  const items = useRef<T[]>([])
 
   const handleChange = (val: any, event: ActionMeta<T>) => {
     onChange(val, event)

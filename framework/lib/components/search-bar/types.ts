@@ -5,7 +5,7 @@ import {
   GroupBase,
 } from 'chakra-react-select'
 
-type size = 'sm' | 'md' | 'lg'
+type Size = 'sm' | 'md' | 'lg'
 export interface SearchBarOptionType {
   label: string
   value: any
@@ -23,20 +23,20 @@ export interface SearchBarProps<T>
   ChakraReactSelectProps<T, boolean, GroupBase<T>>,
   'onChange' | 'value'
   > {
-  value?: SearchBarOptionType | SearchBarOptionType[]
+  value?: T | T[]
   onChange?: (val: any, event: ActionMeta<T>) => void
   onAdd?: (val: string) => void
   onRemove?: (val: string) => void
-  size?: size
+  size?: Size
   'data-testid'?: string
   debouncedWaitTime?: number
   debouncedOptions?: DebounceOptionsType
   clearInputOnSelect?: boolean
   closeMenuonSelect?: boolean
-  defaultOptions?: SearchBarOptionType[]
+  defaultOptions?: T[]
   sx?: ChakraStylesConfig<any>
   isMulti?: boolean
   customOption?: CustomElement
   customTag?: CustomElement
-  loadOptions?: ((query: string) => Promise<SearchBarOptionType[]>) | null
+  loadOptions?: ((query: string) => Promise<T[]>) | null
 }

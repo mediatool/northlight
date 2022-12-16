@@ -2,14 +2,14 @@ import React from 'react'
 import { FieldValues } from 'react-hook-form'
 import { XCloseSolid } from '@mediatool/icons'
 import { identity } from 'ramda'
-import { SelectFieldProps } from './types'
+import { Option, SelectFieldProps } from './types'
 import { Field } from '../form'
 import { Select } from './select'
 import { HStack } from '../stack'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
 
-export function SelectField<T> ({
+export function SelectField<T extends Option> ({
   name,
   label,
   options,
@@ -32,7 +32,7 @@ export function SelectField<T> ({
     >
       { ({ value, onChange }) => (
         <HStack w="full">
-          <Select
+          <Select<T>
             name={ name }
             options={ options }
             isMulti={ isMulti }

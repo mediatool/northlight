@@ -4,7 +4,7 @@ import { ComponentType } from 'react'
 import { RegisterOptions } from 'react-hook-form'
 
 type size = 'sm' | 'md' | 'lg'
-interface Option {
+export interface Option {
   label: string
   value: string
 }

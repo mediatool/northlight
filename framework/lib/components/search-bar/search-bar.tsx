@@ -1,65 +1,14 @@
 import React, { useState } from 'react'
-import {
-  AsyncSelect,
-  DropdownIndicatorProps,
-  GroupBase,
-  InputActionMeta,
-  MultiValueProps,
-  OptionProps,
-  chakraComponents,
-} from 'chakra-react-select'
+import { AsyncSelect, InputActionMeta } from 'chakra-react-select'
 import { filter, identity, test, toLower } from 'ramda'
-import { SearchDuo } from '@mediatool/icons'
 import debounce from 'lodash.debounce'
-import { searchBarStyles } from '../../theme/components'
-import { Icon } from '../icon'
-import { Label, P } from '../typography'
+import { searchBarStyles } from './styles'
 import { useSelectCallbacks } from '../../hooks'
 import { Box } from '../box'
-import { CustomElement, SearchBarOptionType, SearchBarProps } from './types'
+import { SearchBarOptionType, SearchBarProps } from './types'
+import { getComponents } from './get-components'
 
-declare module 'react-select/dist/declarations/src/Select' {
-
-  // @ts-ignore
-  export interface Props<
-    Option,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    _IsMulti extends boolean,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    _Group extends GroupBase<Option>
-  > {
-    customOption: CustomElement
-    customTag: CustomElement
-  }
-}
-
-const components = {
-  DropdownIndicator: (props: DropdownIndicatorProps) => (
-    <chakraComponents.DropdownIndicator { ...props }>
-      <Icon as={ SearchDuo } />
-    </chakraComponents.DropdownIndicator>
-  ),
-  Option: (props: OptionProps<any>) => (
-    <chakraComponents.Option { ...props }>
-      { props.selectProps.customOption ? (
-        props.selectProps.customOption(props.data)
-      ) : (
-        <P>{ props.data.label }</P>
-      ) }
-    </chakraComponents.Option>
-  ),
-  MultiValueContainer: (props: MultiValueProps<any>) => (
-    <chakraComponents.MultiValueContainer { ...props }>
-      { props.selectProps.customTag ? (
-        props.selectProps.customTag(props.data)
-      ) : (
-        <Label>{ props.data.label }</Label>
-      ) }
-    </chakraComponents.MultiValueContainer>
-  ),
-}
-
-export function SearchBar<T> ({
+export function SearchBar<T extends SearchBarOptionType> ({
   defaultOptions = [],
   isMulti = false,
   customOption = null,
@@ -84,10 +33,11 @@ export function SearchBar<T> ({
     onRemove,
     isMulti,
   })
+  const customComponents = getComponents<T>()
 
   const simpleFilter = (query: string) =>
     filter(
-      (option: SearchBarOptionType) =>
+      (option: T) =>
         test(new RegExp(toLower(query), 'g'), toLower(option.label)),
       defaultOptions
     )
@@ -103,10 +53,11 @@ export function SearchBar<T> ({
 
   const loadOptions = async (
     query: string,
-    callback: (options: SearchBarOptionType[]) => void
+    callback: (options: T[]) => void
   ) => {
     const newOptions = await getOptions(query)
     callback(newOptions)
+    return []
   }
 
   const debouncedLoadOptions = debounce(
@@ -143,7 +94,7 @@ export function SearchBar<T> ({
         inputValue={ filterInput }
         customOption={ customOption }
         customTag={ customTag }
-        components={ components }
+        components={ customComponents }
         { ...rest }
       />
     </Box>

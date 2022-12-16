@@ -9,13 +9,17 @@ import {
   Link,
   P,
   SearchBar,
-  SearchBarOptionType,
   Stack,
   Tag,
 } from '../../../../lib'
 import { Page } from '../../components'
 
-const options = [
+type Option = {
+  label: string
+  value: number | string
+}
+
+const options: Option[] = [
   { label: 'Soccer', value: 4 },
   { label: 'Golf', value: 'golf' },
   { label: 'Basketball', value: 'basketball' },
@@ -46,8 +50,8 @@ const options = [
 ]
 
 const getOptions = async (query: string) =>
-  new Promise<SearchBarOptionType[]>((resolve) => {
-    const newOptions: SearchBarOptionType[] = options.filter((option) =>
+  new Promise<Option[]>((resolve) => {
+    const newOptions = options.filter((option) =>
       option.label.includes(query)
     )
     resolve(newOptions)
@@ -58,14 +62,14 @@ const loadOptions = async (query: string) => {
   return newOptions
 }
 
-const customOption = ({ label }: SearchBarOptionType) => (
+const customOption = ({ label }: Option) => (
   <HStack>
     <Avatar name={ label } />
     <P>{ label }</P>
   </HStack>
 )
 
-const customTag = ({ label }: SearchBarOptionType) => {
+const customTag = ({ label }: Option) => {
   const [ isIncluded, setIsIncluded ] = useState(true)
   const toggle = () => setIsIncluded((prev) => !prev)
 
@@ -124,14 +128,14 @@ const SearchBarPage = () => (
           closeMenuOnSelect={ true }
         />
         <Code w="max-content" display="block" whiteSpace="pre">
-          { `const customOption = ({ label }: SearchBarOptionType) => (
+          { `const customOption = ({ label }: ExampleOptionsType) => (
   <HStack>
     <Avatar name={ label } />
     <P>{ label }</P>
   </HStack>
 )
 
-const customTag = ({ label }: SearchBarOptionType) => {
+const customTag = ({ label }: ExampleOptionsType) => {
   const [ isIncluded, setIsIncluded ] = useState(true)
   const toggle = () => setIsIncluded((prev) => !prev)
 

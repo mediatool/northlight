@@ -6,11 +6,11 @@ import {
 } from 'chakra-react-select'
 import { Box } from '@chakra-ui/react'
 import { equals, identity } from 'ramda'
-import { SelectProps } from './types'
+import { Option, SelectProps } from './types'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 import { useSelectCallbacks } from '../../hooks'
 
-export function Select<T> ({
+export function Select<T extends Option> ({
   options,
   isMulti = false,
   onChange = identity,

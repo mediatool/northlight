@@ -1,6 +1,6 @@
 import { ChakraStylesConfig } from 'chakra-react-select'
 import { merge } from 'ramda'
-import { getContrastColor } from '../../../utils'
+import { getContrastColor } from '../../utils'
 
 export const searchBarStyles = (
   sx: ChakraStylesConfig<any>
