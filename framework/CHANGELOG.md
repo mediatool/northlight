@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.17.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.16.1...@mediatool/ui@2.17.0) (2022-12-16)
+
+
+### Bug Fixes
+
+* **ui/framework:** Fix modal header styling ([f9fe780](https://github.com/mediatool/mediatool/commit/f9fe78087bb4cb8c739d85612e621b5a9e25a066))
+* **ui/framework:** Trimming all form inputs on submit ([ce261be](https://github.com/mediatool/mediatool/commit/ce261be23b57697dadfbdc16e6c04d5235d81868))
+* **ui:** PR review comments ([31d805a](https://github.com/mediatool/mediatool/commit/31d805a62f695b660cf77e99f93c22427ad0cefb))
+* **ui:** rebase, update packages ([ea019e9](https://github.com/mediatool/mediatool/commit/ea019e9d2fade6322e80773075b44cf19436f303))
+
+
+### Features
+
+* **ui:** file picker field components ([a5e7d7f](https://github.com/mediatool/mediatool/commit/a5e7d7fb1a5807d8f6f861e90454d92df26f6382))
+* **ui:** file-picker types ([5d05fe7](https://github.com/mediatool/mediatool/commit/5d05fe7bb144777dab7d22e7da3fc8363c0d6a00))
+* **ui:** file-picker utils ([2f63edb](https://github.com/mediatool/mediatool/commit/2f63edbda34f75163b14c21a5e606814bfd68fc9))
+* **ui:** FilePicker ([b016cdf](https://github.com/mediatool/mediatool/commit/b016cdf32467dd4157fe2bbb2ecf6ba1edaddd8a))
+* **ui:** helper components ([3387e55](https://github.com/mediatool/mediatool/commit/3387e55b127fbd238cd7e199972c30d152fe2ca5))
+* **ui:** multiFilePicker ([901ed8e](https://github.com/mediatool/mediatool/commit/901ed8e399bd5530cce18e50121ddb6432c6b0b3))
+* **ui:** styling ([8debad3](https://github.com/mediatool/mediatool/commit/8debad3035b9bee97222331bbb56120e938b4773))
+* **ui:** unit test utils ([72b762b](https://github.com/mediatool/mediatool/commit/72b762b0a42fe00d942a129abd9f30225fa2125a))
+
+
+
+
+
 ## [2.16.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.16.0...@mediatool/ui@2.16.1) (2022-12-15)
 
 
