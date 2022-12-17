@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { not } from 'ramda'
 import {
   Avatar,
   Button,
@@ -49,18 +50,11 @@ const options: Option[] = [
   { label: 'Scoop', value: 'Scoop' },
 ]
 
-const getOptions = async (query: string) =>
-  new Promise<Option[]>((resolve) => {
-    const newOptions = options.filter((option) =>
-      option.label.includes(query)
-    )
-    resolve(newOptions)
-  })
-
-const loadOptions = async (query: string) => {
-  const newOptions = await getOptions(query)
-  return newOptions
-}
+const loadOptions = async (query: string) => (
+  options.filter((option) =>
+    option.label.includes(query)
+  )
+)
 
 const customOption = ({ label }: Option) => (
   <HStack>
@@ -71,7 +65,7 @@ const customOption = ({ label }: Option) => (
 
 const customTag = ({ label }: Option) => {
   const [ isIncluded, setIsIncluded ] = useState(true)
-  const toggle = () => setIsIncluded((prev) => !prev)
+  const toggle = () => setIsIncluded(not)
 
   return (
     <Flex>

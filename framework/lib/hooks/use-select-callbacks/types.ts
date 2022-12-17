@@ -9,8 +9,8 @@ export interface UseSelectCallbacksProps<T>
   ChakraReactSelectProps<T, boolean, GroupBase<T>>,
   'onChange' | 'value'
   > {
-  onChange: (val: any, event: ActionMeta<T>) => void
-  onAdd: (val: string) => void
-  onRemove: (val: string) => void
+  onChange: (val: unknown, event: ActionMeta<T>) => void
+  onAdd: (val: unknown) => void
+  onRemove: (val: unknown) => void
   isMulti: boolean
 }

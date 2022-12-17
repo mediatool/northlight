@@ -52,7 +52,7 @@ const SelectPage = () => (
         <Text>Mediatool uses 2 selects components: </Text>
         <HStack spacing={ 8 }>
           <VStack spacing={ 4 }>
-            <Select options={ options } placeholder="Select here..." />
+            <Select options={ options } placeholder="Select here..." onChange={ (i) => console.log(i) } />
             <Code w="max-content">
               { '<Select placeholder="Select a color..." />' }
             </Code>

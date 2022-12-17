@@ -4,7 +4,6 @@ import {
 import { CustomElement } from './components'
 
 declare module 'react-select/dist/declarations/src/Select' {
-
   export interface Props<
       Option,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -43,12 +43,13 @@ export const SearchBar = forwardRef(
     })
     const customComponents = getComponents<T>()
 
-    const simpleFilter = (query: string) =>
+    const simpleFilter = (query: string) => (
       filter(
         (option: T) =>
           test(new RegExp(toLower(query), 'g'), toLower(option.label)),
         defaultOptions
       )
+    )
 
     const getOptions = async (query: string) => {
       const newOptions = getCustomOptions
