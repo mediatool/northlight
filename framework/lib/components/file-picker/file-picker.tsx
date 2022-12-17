@@ -1,7 +1,6 @@
 import React, { DragEvent, useEffect, useRef, useState } from 'react'
 import { Fade, SlideFade, useMultiStyleConfig } from '@chakra-ui/react'
 import {
-  CheckSolid,
   DownloadDuo,
   EditBoxDuo,
   FileBlankDuo,
@@ -17,7 +16,6 @@ import { Icon } from '../icon'
 import { Lead, P } from '../typography'
 import { HStack, Stack } from '../stack'
 import { FilePickerProps } from './types'
-import { IconButton } from '../icon-button'
 import { Input } from '../input'
 import { Box } from '../box'
 import { ProgressBar } from '../progress'
@@ -62,17 +60,9 @@ export const FilePicker = ({
   const [ hasLoaded, setHasLoaded ] = useState(false)
   const [ isLoading, setIsLoading ] = useState(false)
   const [ isImage, setIsImage ] = useState(true)
-  const [ updatedImage, setUpdatedImage ] = useState(false)
   const [ uploaded, setUploaded ] = useState(uploadedInitial)
 
   const onlyImageAccepted = onlyAcceptsImages(acceptFormat)
-
-  const updateImageCheckmark = () => {
-    setUpdatedImage(true)
-    setTimeout(() => {
-      setUpdatedImage(false)
-    }, 500)
-  }
 
   const isUploading = uploaded < 1
 
@@ -84,7 +74,6 @@ export const FilePicker = ({
     if (!isUploading) {
       setIsLoading(false)
       setHasLoaded(true)
-      updateImageCheckmark()
     }
   }, [ isUploading ])
 
@@ -125,7 +114,6 @@ export const FilePicker = ({
           const newFile = convertBlobToFile(blob, fileName, fileType)
           setFile(newFile)
           setHasLoaded(true)
-          updateImageCheckmark()
           onChange(newFile)
         }
       })
@@ -200,20 +188,6 @@ export const FilePicker = ({
         onMouseLeave={ () => setEditable(false) }
       >
         <Box sx={ filePicker }>
-          <Fade
-            in={ updatedImage }
-            style={ { display: updatedImage ? 'initial' : 'none' } }
-          >
-            <IconButton
-              aria-label="has-loaded"
-              icon={ <Icon as={ CheckSolid } /> }
-              position="absolute"
-              top="50%"
-              left="50%"
-              transform="translate(-50%, -50%)"
-              variant="success"
-            />
-          </Fade>
           <SlideFade
             in={ hasLoaded }
             style={ {
