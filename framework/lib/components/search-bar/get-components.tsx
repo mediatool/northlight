@@ -8,7 +8,6 @@ import {
 } from 'chakra-react-select'
 import { SearchDuo } from '@mediatool/icons'
 import { Icon } from '../icon'
-import { Label, P } from '../typography'
 import { SearchBarOptionType } from './types'
 
 export function getComponents<T extends SearchBarOptionType> () {
@@ -18,25 +17,25 @@ export function getComponents<T extends SearchBarOptionType> () {
         <Icon as={ SearchDuo } />
       </chakraComponents.DropdownIndicator>
     ),
-    Option: (props: OptionProps<T>) => (
-      <chakraComponents.Option { ...props }>
-        { props.selectProps.customOption ? (
-          props.selectProps.customOption(props.data)
-        ) : (
-          <P>{ props.data.label }</P>
-        ) }
-      </chakraComponents.Option>
-    ),
+    Option: (props: OptionProps<T>) =>
+      (props.selectProps.customOption
+        ? (
+          <chakraComponents.Option { ...props }>
+            { props.selectProps.customOption(props.data) }
+          </chakraComponents.Option>
+        )
+        : <chakraComponents.Option { ...props } />
+      ),
     MultiValueContainer: (
       props: MultiValueGenericProps<T, boolean, GroupBase<T>>
-    ) => (
-      <chakraComponents.MultiValueContainer { ...props }>
-        { props.selectProps.customTag ? (
-          props.selectProps.customTag(props.data)
-        ) : (
-          <Label>{ props.data.label }</Label>
-        ) }
-      </chakraComponents.MultiValueContainer>
-    ),
+    ) =>
+      (props.selectProps.customTag
+        ? (
+          <chakraComponents.MultiValueContainer { ...props }>
+            { props.selectProps.customTag(props.data) }
+          </chakraComponents.MultiValueContainer>
+        )
+        : <chakraComponents.MultiValueContainer { ...props } />
+      ),
   }
 }
