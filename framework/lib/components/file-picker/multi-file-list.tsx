@@ -56,7 +56,7 @@ export function MultiFileList<T extends FileFormat> ({
         <FileItem
           onChangeCallback={ onChange }
           file={ file }
-          key={ `file-${file.name}-${file.lastModified}` }
+          key={ file._id }
           deleteFile={ deleteFile }
           confirmDelete={ confirmDelete }
           isLazy={ isLazy }
@@ -68,7 +68,7 @@ export function MultiFileList<T extends FileFormat> ({
           onChangeCallback={ onChange }
           addFile={ addFile }
           file={ file }
-          key={ `file-${file.name}-${file.lastModified}` }
+          key={ file._id }
           deleteFile={ deleteFile }
           confirmDelete={ confirmDelete }
           editFileOptions={ editFileOptions }
