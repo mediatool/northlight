@@ -35,14 +35,12 @@ export const searchComponentsBarStyles: ChakraStylesConfig = {
     bgColor: 'text.inverted',
   }),
   option: (styles, { isFocused }) => {
-    const focusRing = isFocused
-      ? {
-        outline: 'none',
-        ring: '2px',
-        ringColor: 'border.wcag',
-        ringOffset: '1px',
-      }
-      : {}
+    const focusRing = isFocused && {
+      outline: 'none',
+      ring: '2px',
+      ringColor: 'border.wcag',
+      ringOffset: '1px',
+    }
 
     return {
       ...styles,

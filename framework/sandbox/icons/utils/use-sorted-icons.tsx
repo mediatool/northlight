@@ -1,17 +1,18 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useMemo, useState } from 'react'
 import Fuse from 'fuse.js'
 import { map, prop } from 'ramda'
 import debounce from 'lodash.debounce'
 import { useIcons } from './use-icons'
+import { IconVariantType } from './types'
 
-export const useSortedIcons = (iconVariant: 'duo' | 'solid') => {
+export const useSortedIcons = (iconVariant: IconVariantType) => {
   const icons = useIcons(iconVariant)
   const [ query, setQuery ] = useState('')
 
-  const fuse = new Fuse(icons, {
+  const fuse = useMemo(() => new Fuse(icons, {
     threshold: 0.2,
     keys: [ 'label' ],
-  })
+  }), [ icons ])
 
   const sortedIcons = query.length > 1
     ? map(prop('item'), fuse.search(query))
@@ -23,6 +24,6 @@ export const useSortedIcons = (iconVariant: 'duo' | 'solid') => {
     }
   }
 
-  const debouncedHandleChange = debounce(handleChange, 200, {})
+  const debouncedHandleChange = debounce(handleChange, 100, {})
   return { sortedIcons, debouncedHandleChange }
 }

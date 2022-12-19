@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
+import { head } from 'ramda'
 import {
   Flex,
   FormControl,
@@ -48,8 +49,8 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   <SubMenu mainRoutes={ routes } />
                 </Flex>
                 <Stack spacing="4" pt="4">
-                  <SearchComponentsBar routes={ routes[0].subItems || [] } />
-                  <Routing fallback={ routes[0].path } routes={ routes } />
+                  <SearchComponentsBar routes={ head(routes)?.subItems || [] } />
+                  <Routing fallback={ head(routes)?.path } routes={ routes } />
                 </Stack>
               </Grid>
             </BrowserRouter>
