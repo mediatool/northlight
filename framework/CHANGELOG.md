@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.18.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.17.0...@mediatool/ui@2.18.0) (2022-12-19)
+
+
+### Bug Fixes
+
+* **ui:** getContrastColor ([e283c53](https://github.com/mediatool/mediatool/commit/e283c53bc3ac1fc0c33b4c86da0336aa82b4ca84))
+* **ui:** Illya PR comments ([969543a](https://github.com/mediatool/mediatool/commit/969543a8ce4ec65c37e3c2d45274b35d9fd14a04))
+* **ui:** isolated logic into hook ([785a4e7](https://github.com/mediatool/mediatool/commit/785a4e7961f00d1f3cd0cb0b1b6128b1cd223334))
+* **ui:** moving files ([ab8c85f](https://github.com/mediatool/mediatool/commit/ab8c85f71cc27d30221ff9b209b5cf92e1ae7764))
+* **ui:** PR comments ([37f2231](https://github.com/mediatool/mediatool/commit/37f2231f4f142cb5e3df60b571c2623884366658))
+* **ui:** PR comments types ([c2e41ee](https://github.com/mediatool/mediatool/commit/c2e41ee85314abf4c884f5367cf25138fb027aae))
+* **ui:** ref and default tag ([5d25ac4](https://github.com/mediatool/mediatool/commit/5d25ac4a4c55cc6da3745a63ff52266bf7928d02))
+* **ui:** types ([b513df7](https://github.com/mediatool/mediatool/commit/b513df7fb1bfe42aa15c4f42b72ec8ba68e28898))
+
+
+### Features
+
+* **ui:** added util arrayWithLength ([1dbb683](https://github.com/mediatool/mediatool/commit/1dbb68311a8ac6c6ff515e2ed2adda84747a9ac4))
+* **ui:** Date Range picker ([7d6f5fd](https://github.com/mediatool/mediatool/commit/7d6f5fd66021610ad1aa158907c8a866c2a9a251))
+* **ui:** quick navigational date picker buttons ([b6c4e67](https://github.com/mediatool/mediatool/commit/b6c4e67876fb3fd100292273d0066904f11cdef0))
+* **ui:** search bar component ([f781cb2](https://github.com/mediatool/mediatool/commit/f781cb2665b22fc685a97d043bb66011c0e3dd11))
+* **ui:** types and theming ([c42dc1a](https://github.com/mediatool/mediatool/commit/c42dc1a17b6267d8f6a4385dde857c4c4267b0bb))
+
+
+
+
+
 # [2.17.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.16.1...@mediatool/ui@2.17.0) (2022-12-16)
 
 
