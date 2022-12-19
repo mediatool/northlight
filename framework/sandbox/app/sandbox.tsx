@@ -6,16 +6,13 @@ import {
   FormLabel,
   Grid,
   MediatoolThemeProvider,
+  Stack,
   Switch,
   tottTheme,
 } from '../../lib'
 import { CalendarProvider, I18nProvider, UserProvider } from './context'
-import {
-  MainMenu,
-  MainPage,
-  Routing,
-  SubMenu,
-} from '.'
+import { MainMenu, MainPage, Routing, SubMenu } from '.'
+import { SearchComponentsBar } from './components'
 
 interface SandboxProps {
   routes: MainPage[]
@@ -50,7 +47,10 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   <MainMenu menuItems={ routes } />
                   <SubMenu mainRoutes={ routes } />
                 </Flex>
-                <Routing fallback={ routes[0].path } routes={ routes } />
+                <Stack spacing="4" pt="4">
+                  <SearchComponentsBar routes={ routes[0].subItems || [] } />
+                  <Routing fallback={ routes[0].path } routes={ routes } />
+                </Stack>
               </Grid>
             </BrowserRouter>
           </I18nProvider>

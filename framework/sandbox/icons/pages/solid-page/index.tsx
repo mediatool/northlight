@@ -1,17 +1,6 @@
 import React from 'react'
-import { IconCard, IconsGrid } from '../../components'
-import { useIcons } from '../../utils'
+import { IconPage } from '../../utils'
 
-const SolidPage = () => {
-  const icons = useIcons('solid')
-
-  return (
-    <IconsGrid>
-      { icons.map((icon) => (
-        <IconCard key={ icon.label } { ...icon } />
-      )) }
-    </IconsGrid>
-  )
-}
+const SolidPage = () => <IconPage iconVariant="solid" />
 
 export default SolidPage

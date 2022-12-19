@@ -12,3 +12,12 @@ export interface MainPage extends Page {
   Icon: any
   subItems?: Page[]
 }
+
+export interface SearchBarComponentsBarProps {
+  routes: Page[]
+}
+
+export interface RouteOption {
+  label: string
+  value: string
+}

@@ -1,1 +1,1 @@
-export * from './use-icons'
+export * from './icons-page'
