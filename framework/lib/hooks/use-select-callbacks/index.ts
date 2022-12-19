@@ -1,5 +1,5 @@
 import { ActionMeta, MultiValue, SingleValue } from 'chakra-react-select'
-import { difference, last } from 'ramda'
+import { difference, last, map, prop } from 'ramda'
 import { useRef } from 'react'
 import { UseSelectCallbacksProps } from './types'
 
@@ -13,8 +13,9 @@ export const useSelectCallbacks = <T extends BasicOption>({
   onAdd,
   onRemove,
   isMulti,
+  value,
 }: UseSelectCallbacksProps<T>) => {
-  const items = useRef<MultiValue<T> | SingleValue<T>>([])
+  const items = useRef<MultiValue<T> | SingleValue<T>>(value)
 
   const handleChange = (val: MultiValue<T> | SingleValue<T>, event: ActionMeta<T>) => {
     onChange(val, event)
@@ -23,8 +24,11 @@ export const useSelectCallbacks = <T extends BasicOption>({
     } else if ((val as T[]).length > (items.current as T[]).length) {
       onAdd(last(val as T[])?.value)
     } else {
-      const removedItem = difference((items.current as T[]), val as T[])[0].value
-      onRemove(removedItem)
+      const removedItems = map(
+        prop('value'),
+        difference((items.current as T[]), val as T[])
+      )
+      onRemove(removedItems.length === 1 ? removedItems[0] : removedItems)
     }
     items.current = val
   }

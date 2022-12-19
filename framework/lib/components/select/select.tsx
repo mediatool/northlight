@@ -5,7 +5,7 @@ import {
   OptionsOrGroups,
 } from 'chakra-react-select'
 import { Box } from '@chakra-ui/react'
-import { equals, identity } from 'ramda'
+import { equals, identity, is } from 'ramda'
 import { Option, SelectProps } from './types'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 import { useSelectCallbacks } from '../../hooks'
@@ -19,6 +19,7 @@ export function Select<T extends Option> ({
   isLoading,
   loadingList = () => null,
   'data-testid': testId,
+  value,
   ...rest
 }: SelectProps<T>) {
   const CustomSelect = ChakraReactSelect as FunctionComponent<SelectProps<T>>
@@ -27,6 +28,7 @@ export function Select<T extends Option> ({
     onAdd,
     onRemove,
     isMulti,
+    value: is(Array, value) ? value as T[] : [],
   })
 
   const prevOptions =
@@ -52,6 +54,7 @@ export function Select<T extends Option> ({
         chakraStyles={ customSelectStyles }
         isLoading={ isLoading }
         { ...(isLoading && { components: { MenuList: loadingList } }) }
+        value={ value }
         { ...rest }
       />
     </Box>

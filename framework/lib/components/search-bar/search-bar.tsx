@@ -5,7 +5,7 @@ import {
   InputActionMeta,
   SelectInstance,
 } from 'chakra-react-select'
-import { filter, identity, test, toLower } from 'ramda'
+import { filter, identity, is, test, toLower } from 'ramda'
 import debounce from 'lodash.debounce'
 import { searchBarStyles } from './styles'
 import { useSelectCallbacks } from '../../hooks'
@@ -29,6 +29,7 @@ export const SearchBar = forwardRef(
     onAdd = identity,
     onRemove = identity,
     'data-testid': testId,
+    value,
     ...rest
   }: SearchBarProps<T>,
     ref: React.Ref<SelectInstance<T, boolean, GroupBase<T>>>
@@ -40,6 +41,7 @@ export const SearchBar = forwardRef(
       onAdd,
       onRemove,
       isMulti,
+      value: is(Array, value) ? value as T[] : [],
     })
     const customComponents = getComponents<T>()
 

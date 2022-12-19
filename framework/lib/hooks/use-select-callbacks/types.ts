@@ -13,4 +13,5 @@ export interface UseSelectCallbacksProps<T>
   onAdd: (val: unknown) => void
   onRemove: (val: unknown) => void
   isMulti: boolean
+  value: T | T[]
 }

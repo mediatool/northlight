@@ -100,7 +100,10 @@ const SelectPage = () => (
       <Text>
         The Select has a custom <strong>onAdd </strong>
         and <strong>onRemove</strong> as callbacks where the recently removed or added
-        item is the argument
+        item is the argument.
+        If multiple items were removed at once,
+        the onRemove will return an array of all removed items as opposed
+        to only returning a single value if one item was removed, so check the type!
       </Text>
       <Code w="max-content" display="block" whiteSpace="pre">
         { `<Select
