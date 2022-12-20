@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.19.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.19.0...@mediatool/ui@2.19.1) (2022-12-20)
+
+
+### Bug Fixes
+
+* **ui:** Multi file picker fix react key ([f969b87](https://github.com/mediatool/mediatool/commit/f969b87fa55332e97f38876aa54c48cd3ba8c0f7))
+* **ui:** remove checkmark icon ([946d03b](https://github.com/mediatool/mediatool/commit/946d03b139acaddd8d5ffeed541ec2eaf8c099dd))
+* **ui:** trimFormValues unrelated types ([bef5b1a](https://github.com/mediatool/mediatool/commit/bef5b1a86b05d0be5fea7c7686cc96d5040024af))
+
+
+
+
+
 # [2.19.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.18.0...@mediatool/ui@2.19.0) (2022-12-20)
 
 
