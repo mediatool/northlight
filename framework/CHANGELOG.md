@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.19.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.18.0...@mediatool/ui@2.19.0) (2022-12-20)
+
+
+### Bug Fixes
+
+* **ui:** PR comments ([d224ddb](https://github.com/mediatool/mediatool/commit/d224ddbe4f5d5da1f4b722fb76932a353d8dc0e7))
+* **ui:** split up file ([d32ce48](https://github.com/mediatool/mediatool/commit/d32ce480e7462f884dafa5ca03896cd6c2f72ec9))
+* **ui:** use-select-callbacks onRemove callback ([c534799](https://github.com/mediatool/mediatool/commit/c5347997f7bce96c68dda6305bae4af89cae59c8))
+
+
+### Features
+
+* **ui:** cott search bar ([39e6b36](https://github.com/mediatool/mediatool/commit/39e6b364b90989f93a1a0a621226b51270b65b8a))
+
+
+
+
+
 # [2.18.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.17.0...@mediatool/ui@2.18.0) (2022-12-19)
 
 
