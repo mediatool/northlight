@@ -103,4 +103,48 @@ describe('trim-form-values', () => {
     const formatted = trimFormValues(testObj)
     expect(formatted).to.deep.equal(formattedObj)
   })
+
+  it('Ignores unrelated types', () => {
+    const testObj = {
+      dogs: 2,
+      isAdmin: true,
+      files: null,
+      name: ' Sebastian ',
+    }
+    const formattedObj = {
+      dogs: 2,
+      isAdmin: true,
+      files: null,
+      name: 'Sebastian',
+    }
+
+    const formatted = trimFormValues(testObj)
+    expect(formatted).to.deep.equal(formattedObj)
+  })
+
+  it('Is functional and does not change the original input variable', () => {
+    const testObj = {
+      name: ' Sebastian ',
+      deep: {
+        lastName: ' Delgado ',
+      },
+    }
+    const formattedObj = {
+      name: 'Sebastian',
+      deep: {
+        lastName: 'Delgado',
+      },
+    }
+
+    const formatted = trimFormValues(testObj)
+    expect(formatted).to.deep.equal(formattedObj)
+
+    const testObjReference = {
+      name: ' Sebastian ',
+      deep: {
+        lastName: ' Delgado ',
+      },
+    }
+    expect(testObj).to.deep.equal(testObjReference)
+  })
 })
