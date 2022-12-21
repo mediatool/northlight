@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.21.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.19.1...@mediatool/ui@2.21.0) (2022-12-21)
+
+
+### Bug Fixes
+
+* **ui:** Date Range Picker Field value type ([696ba4a](https://github.com/mediatool/mediatool/commit/696ba4a7cb1371d3e0da2be39329ff847569d9ca))
+* **ui:** PR comments ([24d409a](https://github.com/mediatool/mediatool/commit/24d409a091db802210ce18a526ada42cdc5cd4f6))
+
+
+### Features
+
+* **ui:** generalize flip button ([9805904](https://github.com/mediatool/mediatool/commit/9805904d7c658db6808b7683eb2672ad8f50ae52))
+* **ui:** SearchBarField ([2e876ef](https://github.com/mediatool/mediatool/commit/2e876ef29e2191879d21ef703865edb66fd4766e))
+
+
+
+
+
 # [2.20.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.19.1...@mediatool/ui@2.20.0) (2022-12-21)
 
 
