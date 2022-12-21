@@ -1,6 +1,7 @@
 import React from 'react'
 import { TextSolid } from '@mediatool/icons'
 import {
+  Avatar,
   Button,
   CheckboxField,
   Code,
@@ -11,11 +12,14 @@ import {
   FlipButtonGroupField,
   Form,
   FormattedNumberInput,
+  HStack,
   MaskedTextInput,
   MultiFilePickerField,
   NumberInputField,
+  P,
   Radio,
   RadioGroupField,
+  SearchBarField,
   SelectField,
   Stack,
   SwitchField,
@@ -23,6 +27,55 @@ import {
   TextareaField,
 } from '../../../../lib'
 import { useLocalizedNumberFormatter } from '../formatted-number-input-page/use-localized-number-formatter'
+
+const options = [
+  { label: 'Soccer', value: 'soccer' },
+  { label: 'Golf', value: 'golf' },
+  { label: 'Basketball', value: 'basketball' },
+  { label: 'Tennis', value: 'tennis' },
+  { label: 'Cricket', value: 'cricket' },
+  { label: 'Boxing', value: 'boxing' },
+  { label: 'Hockey', value: 'hockey' },
+  { label: 'Baseball', value: 'baseball' },
+  { label: 'Chess', value: 'chess' },
+  { label: 'Swimming', value: 'swimming' },
+  { label: 'Volleyball', value: 'volleyball' },
+  { label: 'Rugby', value: 'rugby' },
+  { label: 'Bowling', value: 'bowling' },
+  { label: 'Figure Skating', value: 'figure-skating' },
+  { label: 'Table Tennis', value: 'table-tennis' },
+  { label: 'Surfing', value: 'surfing' },
+  { label: 'Running', value: 'running' },
+  { label: 'Sailing', value: 'sailing' },
+  { label: 'Archery', value: 'archery' },
+  { label: 'Motorcycle Racing', value: 'motorcycle-racing' },
+  { label: 'Horse Racing', value: 'horse-racing' },
+  { label: 'Badminton', value: 'Badminton' },
+  { label: 'Fencing', value: 'fencing' },
+  { label: 'Bodybuilding', value: 'body-building' },
+  { label: 'Rowing', value: 'rowing' },
+  { label: 'Handball', value: 'handball' },
+  { label: 'Scoop', value: 'Scoop' },
+]
+
+type UserType = {
+  label: string
+  value: string
+  image: string
+}
+
+const users: UserType[] = [
+  { label: 'Magnus Ohlin', value: 'magnus', image: '...' },
+  { label: 'Magnus Nilsson', value: 'magnus 2', image: '...' },
+]
+
+const loadOptions = async () => users
+const customOption = ({ label }: UserType) => (
+  <HStack spacing="2">
+    <Avatar name={ label } variant="rounded" />
+    <P>{ label }</P>
+  </HStack>
+)
 
 export const FormOne = () => {
   const formatter = useLocalizedNumberFormatter()
@@ -79,15 +132,7 @@ export const FormOne = () => {
           <SelectField
             name="experience"
             label="Years of work experience"
-            options={ [
-              { label: '0-1: Youngling', value: 'rank1' },
-              { label: '1-3: Padawan ', value: 'rank2' },
-              { label: '3-7: Knight ', value: 'rank3' },
-              { label: '7-12: Master', value: 'rank4' },
-              { label: '12-20: Council Member', value: 'rank5' },
-              { label: '20-30: Master of the order', value: 'rank6' },
-              { label: '30+: Grand Master', value: 'rank7' },
-            ] }
+            options={ options }
             isMulti={ false }
             direction="row"
           />
@@ -180,6 +225,13 @@ export const FormOne = () => {
           <MultiFilePickerField
             name="multiImage"
             label="Select multiple images"
+          />
+          <SearchBarField
+            name="users"
+            label="Search users"
+            isMulti={ true }
+            loadOptions={ loadOptions }
+            customOption={ customOption }
           />
           <Button type="submit" variant="success">Submit</Button>
           <pre>
