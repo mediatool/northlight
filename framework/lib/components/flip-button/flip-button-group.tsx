@@ -15,6 +15,7 @@ export const FlipButtonGroup = (props: FlipButtonGroupProps) => {
     size,
     variant,
     icon,
+    sx = {},
     ...rest
   } = props
 
@@ -40,6 +41,7 @@ export const FlipButtonGroup = (props: FlipButtonGroupProps) => {
     size,
     variant,
     numberOfButtons,
+    sx,
   })
 
   const restWithoutOnChange = omit([ 'onChange' ], rest)

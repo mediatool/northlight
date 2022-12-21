@@ -1,4 +1,5 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { merge } from 'ramda'
 
 export const FlipButton: ComponentMultiStyleConfig = {
   parts: [ 'container', 'button', 'buttonIcon' ],
@@ -89,10 +90,10 @@ export const FlipButton: ComponentMultiStyleConfig = {
     },
   }),
   variants: {
-    default: ({ theme: { colors: color } }) => ({
-      container: {
+    default: ({ theme: { colors: color }, sx }) => ({
+      container: merge({
         bgColor: color.background['flip-button']['default-deselected-blue'],
-      },
+      }, sx),
       button: {
         bgColor: color.background['flip-button']['default-deselected-blue'],
         _hover: {
@@ -106,10 +107,10 @@ export const FlipButton: ComponentMultiStyleConfig = {
         },
       },
     }),
-    brand: ({ theme: { colors: color } }) => ({
-      container: {
+    brand: ({ theme: { colors: color }, sx }) => ({
+      container: merge({
         bgColor: color.background['flip-button']['default-deselected-brand'],
-      },
+      }, sx),
       button: {
         bgColor: color.background['flip-button']['default-deselected-brand'],
         _hover: {
