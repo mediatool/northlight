@@ -18,8 +18,8 @@ interface DebounceOptionsType {
   trailing?: boolean
 }
 
-export type CustomElementType<GenericType extends SearchBarOptionType> = ((
-  props: GenericType
+export type CustomElementType<T extends SearchBarOptionType> = ((
+  props: T
 ) => JSX.Element)
 | null
 export interface SearchBarProps<T extends SearchBarOptionType>
@@ -45,7 +45,7 @@ export interface SearchBarProps<T extends SearchBarOptionType>
   loadOptions?: ((query: string) => Promise<T[]>) | null
 }
 
-export type SearchBarFieldProps<T extends SearchBarOptionType> = Omit<SearchBarProps<T>, 'onChange'> & {
+export interface SearchBarFieldProps<T extends SearchBarOptionType> extends Omit<SearchBarProps<T>, 'onChange'> {
   onChange?: (val: T | T[], event: ActionMeta<T>) => void
   direction?: StackDirection
   name: string

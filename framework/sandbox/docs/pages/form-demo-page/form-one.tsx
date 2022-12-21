@@ -28,7 +28,12 @@ import {
 } from '../../../../lib'
 import { useLocalizedNumberFormatter } from '../formatted-number-input-page/use-localized-number-formatter'
 
-const options = [
+interface Option {
+  label: string
+  value: string
+}
+
+const options: Option[] = [
   { label: 'Soccer', value: 'soccer' },
   { label: 'Golf', value: 'golf' },
   { label: 'Basketball', value: 'basketball' },
@@ -58,7 +63,7 @@ const options = [
   { label: 'Scoop', value: 'Scoop' },
 ]
 
-type UserType = {
+interface UserType {
   label: string
   value: string
   image: string
