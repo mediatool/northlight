@@ -7,6 +7,7 @@ import {
   AriaDatePickerProps,
   AriaDateRangePickerProps,
 } from '@react-aria/datepicker'
+import { DateRange } from '@react-types/calendar'
 import { RegisterOptions } from 'react-hook-form'
 
 export * from './components/date-field'
@@ -45,3 +46,13 @@ export interface DatePickerFieldProps
   isClearable?: boolean
   fiscalStartMonth?: number
 }
+
+export interface DateRangePickerFieldProps extends Omit<DatePickerFieldProps, 'onChange'> {
+  onChange?: (date: DateRange) => void
+}
+interface DateRangeFormatted {
+  startDate: string
+  endDate: string
+}
+
+export type FormBody = Record<string, DateRangeFormatted>

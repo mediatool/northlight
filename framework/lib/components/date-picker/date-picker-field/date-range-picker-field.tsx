@@ -1,7 +1,8 @@
 import React from 'react'
 import { DateValue, parseDate } from '@internationalized/date'
 import { identity } from 'ramda'
-import { DatePickerFieldProps } from '../types'
+import { DateRange } from '@react-types/datepicker'
+import { DateRangePickerFieldProps, FormBody } from '../types'
 import { Field } from '../../form'
 import { DateRangePicker } from '../date-picker/date-range-picker'
 import { useFormContext } from '../../../hooks'
@@ -17,13 +18,13 @@ export const DateRangePickerField = ({
   firstDayOfWeek = 'monday',
   onChange: onChangeCallback = identity,
   ...rest
-}: DatePickerFieldProps) => {
-  const { setValue, setError, trigger } = useFormContext()
+}: DateRangePickerFieldProps) => {
+  const { setValue, setError, trigger } = useFormContext<FormBody>()
 
-  const handleChange = (date: any) => {
+  const handleChange = (date: DateRange) => {
     setValue(name, {
-      start: date?.start.toString(),
-      end: date?.end.toString(),
+      startDate: date?.start.toString(),
+      endDate: date?.end.toString(),
     })
     if (
       (minValue && date?.start < parseDate(minValue)) ||
