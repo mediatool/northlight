@@ -107,6 +107,7 @@ export const SearchBar = forwardRef(
           customTag={ customTag }
           components={ customComponents }
           ref={ ref }
+          value={ value }
           { ...rest }
         />
       </Box>

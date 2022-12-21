@@ -1,17 +1,23 @@
 import {
   GroupBase,
 } from 'chakra-react-select'
-import { CustomElement } from './components'
+import { CustomElementType, SearchBarOptionType } from './components/search-bar'
 
 declare module 'react-select/dist/declarations/src/Select' {
   export interface Props<
-      Option,
+      Option extends SearchBarOptionType,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       IsMulti extends boolean,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       Group extends GroupBase<Option>
     > {
-    customOption?: CustomElement
-    customTag?: CustomElement
+    customOption?: CustomElementType<Option>
+    customTag?: CustomElementType<Option>
   }
+}
+
+declare module 'react' {
+  function forwardRef<T, P = {}> (
+    render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+  ): (props: P & React.RefAttributes<T>) => React.ReactElement | null
 }

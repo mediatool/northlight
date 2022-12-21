@@ -1,9 +1,11 @@
+import { StackDirection } from '@chakra-ui/react'
 import {
   ActionMeta,
   Props as ChakraReactSelectProps,
   ChakraStylesConfig,
   GroupBase,
 } from 'chakra-react-select'
+import { RegisterOptions } from 'react-hook-form'
 
 type Size = 'sm' | 'md' | 'lg'
 export interface SearchBarOptionType {
@@ -16,9 +18,11 @@ interface DebounceOptionsType {
   trailing?: boolean
 }
 
-export type CustomElement = (({ value, label }: SearchBarOptionType) => JSX.Element) | null
-
-export interface SearchBarProps<T>
+export type CustomElementType<GenericType extends SearchBarOptionType> = ((
+  props: GenericType
+) => JSX.Element)
+| null
+export interface SearchBarProps<T extends SearchBarOptionType>
   extends Omit<
   ChakraReactSelectProps<T, boolean, GroupBase<T>>,
   'onChange' | 'value'
@@ -36,7 +40,16 @@ export interface SearchBarProps<T>
   defaultOptions?: T[]
   sx?: ChakraStylesConfig<any>
   isMulti?: boolean
-  customOption?: CustomElement
-  customTag?: CustomElement
+  customOption?: CustomElementType<T>
+  customTag?: CustomElementType<T>
   loadOptions?: ((query: string) => Promise<T[]>) | null
+}
+
+export type SearchBarFieldProps<T extends SearchBarOptionType> = Omit<SearchBarProps<T>, 'onChange'> & {
+  onChange?: (val: T | T[], event: ActionMeta<T>) => void
+  direction?: StackDirection
+  name: string
+  label: string
+  validate?: RegisterOptions
+  isRequired?: boolean
 }
