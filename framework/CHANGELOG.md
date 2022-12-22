@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.0...@mediatool/ui@2.21.1) (2022-12-22)
+
+
+### Bug Fixes
+
+* **ui:** Added react keys to date range picker quick select ([88d5557](https://github.com/mediatool/mediatool/commit/88d55573d6270710bfd9a2736d40ca6577024b9e))
+* **ui:** consistent font size for date picker ([858727b](https://github.com/mediatool/mediatool/commit/858727bc1edafcd63ef7d1ab0aa83e05f86d531e))
+* **ui:** Date Range Picker Field value string validation ([3b1aa16](https://github.com/mediatool/mediatool/commit/3b1aa164a24424ba20e3ed6645d1ac1ca4c7f894))
+* **ui:** RequiredIndicator only on form lables ([9794126](https://github.com/mediatool/mediatool/commit/97941269e03ee585bee23b8cee2850054db37e75))
+
+
+
+
+
 # [2.21.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.19.1...@mediatool/ui@2.21.0) (2022-12-21)
 
 
