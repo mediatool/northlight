@@ -237,7 +237,7 @@ export const QuickSelect = ({
         { map(
           (quickDate) =>
             validRange(quickDate.value, state) && (
-              <Box minH="20px">
+              <Box minH="20px" key={ `quick-select-${quickDate.label}` }>
                 <DateButton
                   { ...getMethods(quickDate) }
                   isActive={ getIsActive(quickDate) }
@@ -262,6 +262,7 @@ export const QuickSelect = ({
             <DateButton
               { ...getMethods(quarter) }
               isActive={ getIsActive(quarter) }
+              key={ `quick-select-${quarter.label}` }
             >
               { quarter.label }
             </DateButton>
