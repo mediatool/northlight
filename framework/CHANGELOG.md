@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.1...@mediatool/ui@2.21.2) (2022-12-22)
+
+
+### Bug Fixes
+
+* **ui:** date picker value validation ([ac53176](https://github.com/mediatool/mediatool/commit/ac53176641596426ee773c420535ecad19706bdc))
+
+
+
+
+
 ## [2.21.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.0...@mediatool/ui@2.21.1) (2022-12-22)
 
 
