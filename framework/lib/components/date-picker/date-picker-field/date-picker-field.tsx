@@ -5,6 +5,7 @@ import { DatePickerFieldProps } from '../types'
 import { Field } from '../../form'
 import { DatePicker } from '../date-picker/date-picker'
 import { useFormContext } from '../../../hooks'
+import { isValidDateString } from './utils'
 
 export const DatePickerField = ({
   name,
@@ -53,7 +54,7 @@ export const DatePickerField = ({
           isInvalid={ !!errors[name] }
           onChange={ handleChange }
           resetDate={ () => onChange(null) }
-          value={ value ? parseDate(value) as any : null }
+          value={ value && isValidDateString(value) ? parseDate(value) as any : null }
           minValue={ minValue ? parseDate(minValue) as DateValue : undefined }
           maxValue={ maxValue ? parseDate(maxValue) as DateValue : undefined }
           validationState={ errors.name ? 'invalid' : 'valid' }

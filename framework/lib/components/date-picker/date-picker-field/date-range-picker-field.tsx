@@ -6,6 +6,7 @@ import { DateRangePickerFieldProps, FormBody } from '../types'
 import { Field } from '../../form'
 import { DateRangePicker } from '../date-picker/date-range-picker'
 import { useFormContext } from '../../../hooks'
+import { isValidDateRange } from './utils'
 
 export const DateRangePickerField = ({
   name,
@@ -61,8 +62,8 @@ export const DateRangePickerField = ({
           onChange={ handleChange }
           resetDate={ () => onChange(null) }
           value={
-            value
-              ? { start: parseDate(value.start), end: parseDate(value.end) }
+            isValidDateRange(value)
+              ? { start: parseDate(value.startDate), end: parseDate(value.endDate) }
               : null
           }
           minValue={ minValue ? (parseDate(minValue) as DateValue) : undefined }

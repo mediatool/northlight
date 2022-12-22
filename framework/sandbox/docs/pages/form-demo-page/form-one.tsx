@@ -219,7 +219,7 @@ export const FormOne = () => {
             direction="row"
           />
           <DateRangePickerField
-            name="date-range"
+            name="dateRange"
             label="Select start and end date"
           />
           <FilePickerField
