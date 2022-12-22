@@ -14,6 +14,7 @@ export const FormLabel = ({
       marginBottom: 1,
       marginInlineEnd: 3,
     } }
+    requiredIndicator={ undefined }
     { ...rest }
   >
     { label }

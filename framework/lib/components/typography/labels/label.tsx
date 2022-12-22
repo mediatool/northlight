@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormLabel, useStyleConfig } from '@chakra-ui/react'
+import { FormLabel, VisuallyHidden, useStyleConfig } from '@chakra-ui/react'
 import { LabelProps } from './types'
 
 export const Label = ({
@@ -13,6 +13,7 @@ export const Label = ({
   return (
     <FormLabel
       sx={ styles }
+      requiredIndicator={ <VisuallyHidden /> }
       { ...rest }
     >
       { children }
