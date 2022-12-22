@@ -26,6 +26,7 @@ export const DateSegment = ({ segment, state }: DateSegmentProps) => {
             ? 'text.subduded'
             : 'text.default'
       }
+      fontSize="md"
     >
       { segment.text }
     </Box>
