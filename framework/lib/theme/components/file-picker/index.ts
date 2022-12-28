@@ -53,7 +53,8 @@ export const FilePicker: ComponentMultiStyleConfig = {
       ...thickRing,
     },
     multiFilePicker: {
-      maxWidth: 'xl',
+      width: 'full',
+      maxWidth: 'inherit',
       height: '32',
       position: 'relative',
       borderWidth: sizes['0a'],

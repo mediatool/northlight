@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useMultiStyleConfig } from '@chakra-ui/react'
 import { findIndex, identity, insert, isEmpty, isNil, remove } from 'ramda'
 import { MultiFileList } from './multi-file-list'
 import { createPreviewFileObject } from './utils'
@@ -21,7 +20,6 @@ export function MultiFilePicker<T extends FileFormat> ({
   enableSmartLoad = true,
   editFileOptions = defaultEditOptions,
 }: MultiFilePickerProps<T>) {
-  const { multiFilePicker } = useMultiStyleConfig('FilePicker')
   const [ bufferFiles, setBufferFiles ] = useState<T[]>([])
   const [ previewFiles, setPreviewFiles ] = useState<T[]>([])
 
@@ -50,7 +48,7 @@ export function MultiFilePicker<T extends FileFormat> ({
   return (
     <Stack
       spacing={ 4 }
-      maxW={ multiFilePicker.maxWidth as number }
+      maxW="inherit"
       maxH="inherit"
     >
       <MultiFileUploader
