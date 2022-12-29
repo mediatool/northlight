@@ -38,6 +38,7 @@ export type FormProps<FormValues extends FieldValues> = {
   methods?: UseFormReturn<FormValues>
   formSettings?: UseFormProps<FormValues>
   validate?: any
+  shouldTrim?: boolean
   children:
   | ((
     methods: UseFormReturn<FormValues>

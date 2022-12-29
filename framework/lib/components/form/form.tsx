@@ -18,6 +18,7 @@ export function Form<FormValues extends FieldValues> ({
   formSettings = { mode: 'onChange' },
   methods = undefined,
   enableReinitialize = false,
+  shouldTrim = true,
   ...rest
 }: FormProps<FormValues>) {
   const customResolver: Resolver<FormValues, any> = (
@@ -53,7 +54,9 @@ export function Form<FormValues extends FieldValues> ({
         style={ { width: '100%' } }
         onSubmit={
           newMethods.formState.isValid
-            ? newMethods.handleSubmit((values) => onSubmit(trimFormValues<FormValues>(values)))
+            ? shouldTrim
+              ? newMethods.handleSubmit((values) => onSubmit(trimFormValues<FormValues>(values)))
+              : newMethods.handleSubmit(onSubmit)
             : (e) => e.preventDefault()
         }
       >

@@ -114,6 +114,12 @@ const FormPage = () => (
         you can initalize the form as usual and pass down your custom methods as
         a prop.
       </P>
+      <P>
+        <b>shouldTrim </b>
+        - boolean, if true then all form values,
+        no matter how nested will be trimmed if they are a string.
+        Default is true
+      </P>
       <Divider />
       <HStack spacing={ 8 } alignItems="start">
         <Stack>

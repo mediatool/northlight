@@ -121,30 +121,4 @@ describe('trim-form-values', () => {
     const formatted = trimFormValues(testObj)
     expect(formatted).to.deep.equal(formattedObj)
   })
-
-  it('Is functional and does not change the original input variable', () => {
-    const testObj = {
-      name: ' Sebastian ',
-      deep: {
-        lastName: ' Delgado ',
-      },
-    }
-    const formattedObj = {
-      name: 'Sebastian',
-      deep: {
-        lastName: 'Delgado',
-      },
-    }
-
-    const formatted = trimFormValues(testObj)
-    expect(formatted).to.deep.equal(formattedObj)
-
-    const testObjReference = {
-      name: ' Sebastian ',
-      deep: {
-        lastName: ' Delgado ',
-      },
-    }
-    expect(testObj).to.deep.equal(testObjReference)
-  })
 })

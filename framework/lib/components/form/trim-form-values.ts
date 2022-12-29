@@ -5,7 +5,7 @@ const shouldTrim = (value: any): ((object: FieldValues) => FieldValues) =>
   (is(Array, value) ? values : identity)
 
 export const trimFormValues = <T extends FieldValues>(obj: FieldValues) => {
-  const newObj: FieldValues = JSON.parse(JSON.stringify(obj))
+  const newObj: FieldValues = obj
   forEach((property) => {
     const value = obj[property]
     if (is(Object, value)) {
