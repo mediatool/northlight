@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.4](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.3...@mediatool/ui@2.21.4) (2022-12-29)
+
+
+### Bug Fixes
+
+* **ui:** trimFormValues reference ([34f2e25](https://github.com/mediatool/mediatool/commit/34f2e259145cdef558ea08e62a5c38c87155910a))
+
+
+
+
+
 ## [2.21.3](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.2...@mediatool/ui@2.21.3) (2022-12-29)
 
 
