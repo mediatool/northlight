@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.3](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.2...@mediatool/ui@2.21.3) (2022-12-29)
+
+
+### Bug Fixes
+
+* **ui:** inherit max width instead of hardcode ([afd7d12](https://github.com/mediatool/mediatool/commit/afd7d12c37f7228bd8f881774d41e324f4e224ba))
+
+
+
+
+
 ## [2.21.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.1...@mediatool/ui@2.21.2) (2022-12-22)
 
 
