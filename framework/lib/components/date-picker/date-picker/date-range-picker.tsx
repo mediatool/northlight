@@ -61,7 +61,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       placement="bottom-start"
     >
       <PopoverAnchor>
-        <HStack maxW={ 56 }>
+        <HStack>
           <InputGroup { ...groupProps } ref={ ref } __css={ group }>
             <StyledField isDisabled={ isDisabled } isInvalid={ isInvalid }>
               <HStack paddingInlineEnd={ 10 }>

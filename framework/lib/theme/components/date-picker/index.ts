@@ -14,6 +14,7 @@ export const DatePicker: ComponentMultiStyleConfig = {
       flex: 1,
     },
     styledField: {
+      bgColor: 'text.inverted',
       borderWidth: borderWidth.input.default,
       borderColor: color.border.input.default,
       borderRadius: borderRadius.input.outline,

@@ -23,6 +23,7 @@ export const DateButton = ({
         _active={ {
           fontWeight: 'semibold',
         } }
+        h="8"
       >
         { children }
       </Label>

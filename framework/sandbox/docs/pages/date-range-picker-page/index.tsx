@@ -71,6 +71,12 @@ const DateRangePickerPage = () => (
               There is also a prop <b>firstDayOfWeek</b>, that adjusts the
               week day labels, can be either monday or sunday
             </P>
+            <P>
+              <b>isClearable</b>
+              - A prop that when true shows a cross button
+              to the right of the date field
+              that resets the date range
+            </P>
           </Stack>
         ) }
       </Form>

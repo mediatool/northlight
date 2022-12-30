@@ -227,7 +227,6 @@ export const QuickSelect = ({
       <Stack
         h="xs"
         overflowY="hidden"
-        spacing={ 4 }
         pr="4"
         _hover={ { overflowY: 'scroll' } }
         w="36"
