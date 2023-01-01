@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.5](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.4...@mediatool/ui@2.21.5) (2023-01-01)
+
+
+### Bug Fixes
+
+* **ui:** Date range picker field adjustments ([61e9d3e](https://github.com/mediatool/mediatool/commit/61e9d3e32a1d0eb8e109fe2b0be6f620153af459))
+
+
+
+
+
 ## [2.21.4](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.3...@mediatool/ui@2.21.4) (2022-12-29)
 
 
