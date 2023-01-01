@@ -19,6 +19,7 @@ export const Carousel = ({
   itemWidth = carouselItemWidth,
   itemHeight = carouselItemWidth,
   spacing = carouselItemSpacing,
+  carouselStyles = {},
   ...rest
 }: CarouselProps) => {
   const [ dragging, setDragging ] = useState(false)
@@ -77,11 +78,20 @@ export const Carousel = ({
     >
       <motion.div
         drag="x"
-        style={ { width: `${totalWidth}px`, x } }
+        style={ {
+          width: `${totalWidth}px`,
+          height: '100%',
+          x,
+        } }
         dragConstraints={ { right: 0, left: -(totalWidth - itemWidth) } }
         onDragEnd={ updateActiveIndex }
       >
-        <HStack spacing={ `${spacing}px` } width={ `${totalWidth}px` }>
+        <HStack
+          spacing={ `${spacing}px` }
+          width={ `${totalWidth}px` }
+          h="full"
+          { ...carouselStyles }
+        >
           { childrenAsArray.map((child, index) => (
             <CarouselItem
               isActive={ index === activeIndex }

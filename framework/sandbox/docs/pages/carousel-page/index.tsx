@@ -150,6 +150,11 @@ const CarouselPage = () => {
           <b>onChange</b> (v: number) { '=>' } void, a callback function that
           passes the current centered item in the carousel
         </P>
+        <P>
+          <b>carouselStyles</b>
+          a style object that overrides the default of the wrapper around the carousel,
+          can be used to change the alignment of the carousel items
+        </P>
       </Stack>
     </Page>
   )

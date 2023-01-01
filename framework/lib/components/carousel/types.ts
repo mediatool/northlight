@@ -1,4 +1,4 @@
-import { BoxProps, CenterProps } from '@chakra-ui/react'
+import { BoxProps, CenterProps, StackProps } from '@chakra-ui/react'
 
 export interface CarouselArrowProps extends CenterProps {
   direction: 'right' | 'left'
@@ -20,5 +20,5 @@ export interface CarouselProps extends Omit<BoxProps, 'onChange'> {
   spacing?: number
   value?: number
   onChange?: (value: number) => void
-
+  carouselStyles?: StackProps
 }
