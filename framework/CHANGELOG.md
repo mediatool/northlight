@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.7](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.6...@mediatool/ui@2.21.7) (2023-01-10)
+
+
+### Bug Fixes
+
+* **ui:** date picker yyyy stuck fix ([ec1f650](https://github.com/mediatool/mediatool/commit/ec1f650137d714a05bccdcf3f22ff4fcf48f6eac))
+
+
+
+
+
 ## [2.21.6](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.5...@mediatool/ui@2.21.6) (2023-01-03)
 
 
