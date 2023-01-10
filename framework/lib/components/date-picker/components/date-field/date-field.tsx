@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import { useLocale } from '@react-aria/i18n'
 import { useDateFieldState } from '@react-stately/datepicker'
 import { useDateField } from '@react-aria/datepicker'
 import { createCalendar } from '@internationalized/date'
@@ -12,10 +11,12 @@ import { delimeterIncluded, formatQuery } from './utils'
 
 export const DateField = (props: DateFieldProps) => {
   const ref = useRef<HTMLInputElement>(null)
-  const { locale } = useLocale()
   const state = useDateFieldState({
     ...props,
-    locale,
+    /* Hard coding the United Kingdom locale,
+     this enforces using english characters e.g.
+      yyyy and not other such as åååå or chinese, which prevents hard to predict bugs */
+    locale: 'en-GB',
     createCalendar,
   })
 
