@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { LegacyRef, forwardRef } from 'react'
 import { VariableSizeList } from 'react-window'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import { FastListProps } from './types'
 
-export const FastList = ({
+export const FastList = forwardRef(({
   itemCount,
   itemSize,
   direction = 'column',
@@ -13,7 +13,7 @@ export const FastList = ({
   overscanCount = 0,
   initialScrollOffset,
   ...rest
-}: FastListProps) => (
+}: FastListProps, ref: LegacyRef<VariableSizeList<any>>) => (
   <AutoSizer>
     { ({ width: autoWidth, height: autoHeight }) => (
       <VariableSizeList
@@ -24,6 +24,7 @@ export const FastList = ({
         layout={ direction === 'column' ? 'vertical' : 'horizontal' }
         initialScrollOffset={ initialScrollOffset }
         overscanCount={ overscanCount }
+        ref={ ref }
         { ...rest }
       >
         { ({ style, index }) => (
@@ -33,7 +34,5 @@ export const FastList = ({
         ) }
       </VariableSizeList>
     ) }
-
   </AutoSizer>
-
-)
+))

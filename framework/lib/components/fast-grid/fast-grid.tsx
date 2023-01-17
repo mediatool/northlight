@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { LegacyRef, forwardRef } from 'react'
 import { VariableSizeGrid } from 'react-window'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import { FastGridProps } from './types'
 
-export const FastGrid = ({
+export const FastGrid = forwardRef(({
   columns,
   rows,
   columnSize,
@@ -14,7 +14,7 @@ export const FastGrid = ({
   overscanRowCount = 0,
   overscanColumnCount = 0,
   ...rest
-}: FastGridProps) => (
+}: FastGridProps, ref: LegacyRef<VariableSizeGrid<any>>) => (
   <AutoSizer>
     { ({ width: autoWidth, height: autoHeight }) => (
       <VariableSizeGrid
@@ -26,6 +26,7 @@ export const FastGrid = ({
         width={ width ?? autoWidth }
         overscanRowCount={ overscanRowCount }
         overscanColumnCount={ overscanColumnCount }
+        ref={ ref }
         { ...rest }
       >
         { ({ style, rowIndex, columnIndex }) => (
@@ -35,7 +36,5 @@ export const FastGrid = ({
         ) }
       </VariableSizeGrid>
     ) }
-
   </AutoSizer>
-
-)
+))
