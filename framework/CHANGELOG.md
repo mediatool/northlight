@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.9](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.8...@mediatool/ui@2.21.9) (2023-01-17)
+
+
+### Bug Fixes
+
+* **ui:** forwar ref on fast grid ([5f14c4c](https://github.com/mediatool/mediatool/commit/5f14c4cba14abbe784927c7327de0e5e4dbf9908))
+
+
+
+
+
 ## [2.21.8](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.7...@mediatool/ui@2.21.8) (2023-01-17)
 
 
