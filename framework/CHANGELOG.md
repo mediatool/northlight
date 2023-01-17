@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.8](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.7...@mediatool/ui@2.21.8) (2023-01-17)
+
+
+### Bug Fixes
+
+* **ui:** generalize fast grid with rest ([09ff145](https://github.com/mediatool/mediatool/commit/09ff1451fe607c47fbf0ea96bcdb7086396b1435))
+
+
+
+
+
 ## [2.21.7](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.6...@mediatool/ui@2.21.7) (2023-01-10)
 
 
