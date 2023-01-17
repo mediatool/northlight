@@ -13,6 +13,7 @@ export const FastGrid = ({
   height,
   overscanRowCount = 0,
   overscanColumnCount = 0,
+  ...rest
 }: FastGridProps) => (
   <AutoSizer>
     { ({ width: autoWidth, height: autoHeight }) => (
@@ -25,6 +26,7 @@ export const FastGrid = ({
         width={ width ?? autoWidth }
         overscanRowCount={ overscanRowCount }
         overscanColumnCount={ overscanColumnCount }
+        { ...rest }
       >
         { ({ style, rowIndex, columnIndex }) => (
           <div style={ style }>

@@ -12,6 +12,7 @@ export const FastList = ({
   height,
   overscanCount = 0,
   initialScrollOffset,
+  ...rest
 }: FastListProps) => (
   <AutoSizer>
     { ({ width: autoWidth, height: autoHeight }) => (
@@ -23,6 +24,7 @@ export const FastList = ({
         layout={ direction === 'column' ? 'vertical' : 'horizontal' }
         initialScrollOffset={ initialScrollOffset }
         overscanCount={ overscanCount }
+        { ...rest }
       >
         { ({ style, index }) => (
           <div style={ style }>

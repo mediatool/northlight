@@ -1,6 +1,11 @@
 import { StackDirection } from '@chakra-ui/react'
+import { VariableSizeListProps } from 'react-window'
 
-export type FastListProps = {
+export interface FastListProps
+  extends Omit<
+  VariableSizeListProps,
+  'itemSize' | 'children' | 'height' | 'width' | 'direction'
+  > {
   itemSize: number | ((index: number) => number)
   itemCount: number
   direction?: StackDirection
