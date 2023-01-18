@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useClipboard, useMultiStyleConfig } from '@chakra-ui/react'
 import { CheckDuo, CopyDuo } from '@mediatool/icons'
 import { IconButton } from '../icon-button'
@@ -13,8 +13,12 @@ export const ClipboardInput = ({
   'aria-label': ariaLabel,
   ...rest
 }: ClipboardInputProps) => {
-  const { hasCopied, onCopy } = useClipboard(value)
+  const { hasCopied, onCopy, setValue } = useClipboard(value)
   const { button, icon, tooltip } = useMultiStyleConfig('ClipboardInput', { size })
+
+  useEffect(() => {
+    setValue(value)
+  }, [ value ])
 
   return (
     <InputGroup size={ size } data-testid="clipboard-input-test-id">
