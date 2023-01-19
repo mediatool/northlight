@@ -8,10 +8,12 @@ export type NumberInputProps =
   & {
     size?: NumberInputSizeProps
     onChange?: (...event: any[]) => void
+    onlyAcceptPercentage?: boolean
+    onInputChange?: (input: string) => void
   }
 
 export type NumberInputFieldProps =
-  Omit<ChakraNumberInputProps, 'onChange'>
+  Omit<NumberInputProps, 'onChange'>
   & {
     name: string
     label: string
@@ -20,5 +22,9 @@ export type NumberInputFieldProps =
     isRequired?: boolean
     unit?: string
     direction?: StackDirection
-    onChange?: (e: React.ChangeEvent<HTMLInputElement> | string) => void
+    onChange?: (e: number | string) => void
   }
+
+export interface NumberInputStepperProps {
+  includePercentage?: boolean
+}

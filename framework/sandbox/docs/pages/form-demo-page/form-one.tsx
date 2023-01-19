@@ -179,6 +179,7 @@ export const FormOne = () => {
             name="dogs"
             label="Enter how many dogs you own"
             direction="row"
+            onlyAcceptPercentage={ true }
           />
           <SwitchField
             name="newsletter"

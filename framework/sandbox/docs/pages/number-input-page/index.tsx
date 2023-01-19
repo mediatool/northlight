@@ -24,7 +24,7 @@ const NumberInputPage = () => (
     <Stack spacing={ 4 }>
       <Text>Mediatool uses 1 number input</Text>
       <HStack>
-        <NumberInput />
+        <NumberInput onlyAcceptPercentage={ true } />
       </HStack>
       <Code w="max-content">{ '<NumberInput />' }</Code>
       <Divider />
