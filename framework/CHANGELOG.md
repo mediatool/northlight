@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.10](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.9...@mediatool/ui@2.21.10) (2023-01-19)
+
+
+### Bug Fixes
+
+* **ui:** set empty image to null ([fb985c9](https://github.com/mediatool/mediatool/commit/fb985c927441e5c37ab448a61ff4374ba0c5a88b))
+* **ui:** sync up useClipboard hook with value prop ([7481a7e](https://github.com/mediatool/mediatool/commit/7481a7e87d977b2e3d4ef08e6b030a021b9ac611))
+
+
+
+
+
 ## [2.21.9](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.8...@mediatool/ui@2.21.9) (2023-01-17)
 
 
