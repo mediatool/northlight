@@ -60,7 +60,7 @@ export interface FilePickerFieldProps extends Omit<FilePickerProps, 'onChange'> 
   validate?: RegisterOptions
   isRequired?: boolean
   direction?: StackDirection
-  onChange?: (File: string) => void
+  onChange?: (File: string | null) => void
 }
 export interface MultiFilePickerFieldProps extends Omit<FilePickerFieldProps, 'onChange'> {
   onChange?: (File: string[]) => void

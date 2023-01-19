@@ -34,8 +34,8 @@ export const FilePickerField = ({
               onChangeCallback(formattedFile)
             } else {
               setUploaded(0)
-              onChange('')
-              onChangeCallback('')
+              onChange(null)
+              onChangeCallback(null)
             }
           } }
           value={ value }
