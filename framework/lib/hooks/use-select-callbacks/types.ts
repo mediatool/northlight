@@ -15,3 +15,9 @@ export interface UseSelectCallbacksProps<T>
   isMulti: boolean
   value: T | T[]
 }
+export interface BasicOption {
+  label: string
+  value: unknown
+}
+
+export type SelectActionMeta<T> = ActionMeta<T>

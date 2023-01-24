@@ -43,6 +43,7 @@ export interface SearchBarProps<T extends SearchBarOptionType>
   customOption?: CustomElementType<T>
   customTag?: CustomElementType<T>
   loadOptions?: ((query: string) => Promise<T[]>) | null
+  onSearchInputChange?: (input: string) => void
 }
 
 export interface SearchBarFieldProps<T extends SearchBarOptionType> extends Omit<SearchBarProps<T>, 'onChange'> {

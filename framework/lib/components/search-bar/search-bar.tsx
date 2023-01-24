@@ -30,6 +30,7 @@ export const SearchBar = forwardRef(
     onRemove = identity,
     'data-testid': testId,
     value,
+    onSearchInputChange = identity,
     ...rest
   }: SearchBarProps<T>,
     ref: React.Ref<SelectInstance<T, boolean, GroupBase<T>>>
@@ -80,6 +81,7 @@ export const SearchBar = forwardRef(
     const resetFiltered = (v: string, { action }: InputActionMeta) => {
       if (clearInputOnSelect || action !== 'set-value') {
         setFilterInput(v)
+        onSearchInputChange(v)
         if (v === '') {
           setFiltered(defaultOptions)
         }
