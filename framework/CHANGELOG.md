@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.11](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.10...@mediatool/ui@2.21.11) (2023-01-24)
+
+
+### Bug Fixes
+
+* **ui:** search bar adjustments ([c17c656](https://github.com/mediatool/mediatool/commit/c17c656ae20c25e5c49faebed465889c3a85ef49))
+
+
+
+
+
 ## [2.21.10](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.9...@mediatool/ui@2.21.10) (2023-01-19)
 
 
