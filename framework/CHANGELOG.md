@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.12](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.11...@mediatool/ui@2.21.12) (2023-01-25)
+
+
+### Bug Fixes
+
+* **ui:** reTrigger validation onSubmit ([fa129ed](https://github.com/mediatool/mediatool/commit/fa129ed7678af071ccfc427be65962aa497994cc))
+* **ui:** typography customizability ([06323f8](https://github.com/mediatool/mediatool/commit/06323f8c42cfbb6c6ab33672b5737f7f9fc9110d))
+
+
+
+
+
 ## [2.21.11](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.10...@mediatool/ui@2.21.11) (2023-01-24)
 
 
