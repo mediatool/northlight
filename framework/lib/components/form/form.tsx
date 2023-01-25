@@ -57,7 +57,10 @@ export function Form<FormValues extends FieldValues> ({
             ? shouldTrim
               ? newMethods.handleSubmit((values) => onSubmit(trimFormValues<FormValues>(values)))
               : newMethods.handleSubmit(onSubmit)
-            : (e) => e.preventDefault()
+            : (e) => {
+              newMethods.trigger()
+              e.preventDefault()
+            }
         }
       >
         { typeof children === 'function' ? children(newMethods) : children }
