@@ -5,6 +5,7 @@ import {
   Divider,
   HStack,
   Highlight,
+  Image,
   Stack,
   Table,
   Tbody,
@@ -15,6 +16,7 @@ import {
 } from '../../../../lib/components'
 import { Page } from '../../components'
 import { Body, Headings, Labels, Stylized, TableHead } from './data'
+import illustration from './typography-instructional.png'
 
 const TableHeadings = () => (
   <Thead>
@@ -37,8 +39,9 @@ const TypographyPage = () => (
       </Text>
       <Text>To pass custom styles, use the { ' ' }
         <Code>sx</Code>{ ' ' }
-        prop. <b>Don't do, { '<P color="blue.500" />' }, do { '<P sx={{color: "blue.500"}} />' }</b>
+        prop.
       </Text>
+      <Image src={ illustration } w="40%" maxW="xl" />
       <Text>
         All styles of this typography components are customizable,
         however you should only apply custom styles if you have to!
