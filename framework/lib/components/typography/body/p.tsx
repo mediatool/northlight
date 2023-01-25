@@ -5,9 +5,10 @@ import { PProps } from './types'
 export const P = ({
   children,
   variant = '16',
+  sx = {},
   ...rest
 }: PProps) => {
-  const styles = useStyleConfig('P', { variant })
+  const styles = useStyleConfig('P', { variant, sx })
 
   return (
     <ChakraText
