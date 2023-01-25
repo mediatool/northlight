@@ -1,16 +1,12 @@
 import React from 'react'
-import { BanSolid, CheckSolid } from '@mediatool/icons'
 import { highlight } from '../../../../lib'
 import {
   Code,
   Divider,
   HStack,
   Highlight,
-  Icon,
   Stack,
   Table,
-  Tag,
-  TagLeftIcon,
   Tbody,
   Td,
   Text,
@@ -39,15 +35,17 @@ const TypographyPage = () => (
           based on the use: Headings, Body, and Stylized text.
         </Highlight>
       </Text>
+      <Text>To pass custom styles, use the { ' ' }
+        <Code>sx</Code>{ ' ' }
+        prop. <b>Don't do, { '<P color="blue.500" />' }, do { '<P sx={{color: "blue.500"}} />' }</b>
+      </Text>
+      <Text>
+        All styles of this typography components are customizable,
+        however you should only apply custom styles if you have to!
+      </Text>
       <Divider />
       <HStack spacing={ 8 }>
         <Text fontSize={ 24 } fontWeight="bold" textDecoration="underline">Headings</Text>
-        <Tag bgColor="red.600">
-          <TagLeftIcon>
-            <Icon as={ BanSolid } />
-          </TagLeftIcon>
-          Not customizable
-        </Tag>
       </HStack>
       <Table>
         <TableHeadings />
@@ -69,12 +67,6 @@ const TypographyPage = () => (
       </Table>
       <HStack spacing={ 8 }>
         <Text fontSize={ 24 } fontWeight="bold" textDecoration="underline">Body</Text>
-        <Tag bgColor="red.600">
-          <TagLeftIcon>
-            <Icon as={ BanSolid } />
-          </TagLeftIcon>
-          Not customizable
-        </Tag>
       </HStack>
       <Table>
         <TableHeadings />
@@ -96,12 +88,6 @@ const TypographyPage = () => (
       </Table>
       <HStack spacing={ 8 }>
         <Text fontSize={ 24 } fontWeight="bold" textDecoration="underline">Stylized</Text>
-        <Tag bgColor="green.600">
-          <TagLeftIcon>
-            <Icon as={ CheckSolid } />
-          </TagLeftIcon>
-          Customizable
-        </Tag>
       </HStack>
       <Text>To customize, pass the styles with the{ ' ' }
         <Code>sx</Code>{ ' ' }
@@ -127,12 +113,6 @@ const TypographyPage = () => (
       </Table>
       <HStack spacing={ 8 }>
         <Text fontSize={ 24 } fontWeight="bold" textDecoration="underline">Labels</Text>
-        <Tag bgColor="green.600">
-          <TagLeftIcon>
-            <Icon as={ CheckSolid } />
-          </TagLeftIcon>
-          Customizable
-        </Tag>
       </HStack>
       <Text>To customize, pass the styles with the{ ' ' }
         <Code>sx</Code>{ ' ' }
