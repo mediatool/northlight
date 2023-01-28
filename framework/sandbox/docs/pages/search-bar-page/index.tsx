@@ -84,7 +84,7 @@ const customTag = ({ label }: Option) => {
 const SearchBarPage = () => (
   <Page
     title="Search Bar"
-    subtitle="Search Bar is a reskinned async react select with some exra functionalites and utils"
+    subtitle="Search Bar is a reskinned async react select with some extra functionalites and utils"
   >
     <Stack spacing={ 4 }>
       <Stack mb={ 4 } spacing={ 4 } w="60%">

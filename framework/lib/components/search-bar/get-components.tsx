@@ -17,12 +17,10 @@ export function getComponents<T extends SearchBarOptionType> () {
           <chakraComponents.DropdownIndicator { ...props }>
             <Icon as={ props.selectProps.icon } />
           </chakraComponents.DropdownIndicator>
-
         )
         : (
           <chakraComponents.DropdownIndicator { ...props } />
         )
-
     ),
     Option: (props: OptionProps<T>) =>
       (props.selectProps.customOption

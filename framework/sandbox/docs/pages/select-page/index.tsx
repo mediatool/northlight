@@ -1,10 +1,12 @@
 import React from 'react'
+import { ListSelectDuo } from '@mediatool/icons'
 import {
   Code,
   Divider,
   Form,
   HStack,
   Link,
+  P,
   Select,
   SelectField,
   Stack,
@@ -47,12 +49,16 @@ const SelectPage = () => (
       </Text>
     ) }
   >
-    <Stack spacing={ 4 }>
+    <Stack spacing={ 4 } w="40%">
       <Stack mb={ 4 } spacing={ 4 } maxWidth="400px">
         <Text>Mediatool uses 2 selects components: </Text>
         <HStack spacing={ 8 }>
           <VStack spacing={ 4 }>
-            <Select options={ options } placeholder="Select here..." onChange={ (i) => console.log(i) } />
+            <Select
+              options={ options }
+              placeholder="Select here..."
+              onChange={ (i) => console.log(i) }
+            />
             <Code w="max-content">
               { '<Select placeholder="Select a color..." />' }
             </Code>
@@ -99,11 +105,10 @@ const SelectPage = () => (
       <Divider />
       <Text>
         The Select has a custom <strong>onAdd </strong>
-        and <strong>onRemove</strong> as callbacks where the recently removed or added
-        item is the argument.
-        If multiple items were removed at once,
-        the onRemove will return an array of all removed items as opposed
-        to only returning a single value if one item was removed, so check the type!
+        and <strong>onRemove</strong> as callbacks where the recently removed or
+        added item is the argument. If multiple items were removed at once, the
+        onRemove will return an array of all removed items as opposed to only
+        returning a single value if one item was removed, so check the type!
       </Text>
       <Code w="max-content" display="block" whiteSpace="pre">
         { `<Select
@@ -111,7 +116,9 @@ const SelectPage = () => (
   onRemove={(removedItem) => console.log('removed', removedItem)}
 />` }
       </Code>
-      <Text>They also work for <strong>{ '<SelectField>' }</strong></Text>
+      <Text>
+        They also work for <strong>{ '<SelectField>' }</strong>
+      </Text>
       <Divider />
       <Text>
         They can be used in 3 different <strong>size</strong>
@@ -129,6 +136,12 @@ const SelectPage = () => (
         If you don't specify a size it will be <strong>md</strong>
       </Text>
       <Divider />
+      <P>
+        The icon, selected tag, and dropdown option can all be customized with{ ' ' }
+        <b>icon</b>, <b>customOption</b>, <b>customTag</b>
+      </P>
+      <Select icon={ ListSelectDuo } options={ options } />
+      <P>See <Link sx={ { color: 'blue.500', textDecoration: 'underline' } } href="/components/search-bar">Search Bar</Link> for more info on use of customOption and customTag</P>
       <Text>
         When using the select in form use <strong>SelectField</strong>
       </Text>
@@ -173,7 +186,9 @@ const SelectPage = () => (
       <Text>
         To grab the combobox component(the part of the select with all the juicy
         stuff),
-        <br />grab <strong>child[0].child[2].child[0].child[1].child[0]</strong>. Example:
+        <br />
+        grab <strong>child[0].child[2].child[0].child[1].child[0]</strong>.
+        Example:
       </Text>
       <Code w="max-content" display="block" whiteSpace="pre">
         { ` const select = screen.getByTestId('custom-testid).children[0].children[2].children[0].children[1].children[0]
