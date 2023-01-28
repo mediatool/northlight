@@ -1,3 +1,4 @@
+import { ComponentType } from 'react'
 import {
   GroupBase,
 } from 'chakra-react-select'
@@ -13,6 +14,7 @@ declare module 'react-select/dist/declarations/src/Select' {
     > {
     customOption?: CustomElementType<Option>
     customTag?: CustomElementType<Option>
+    icon?: ComponentType<any>
   }
 }
 

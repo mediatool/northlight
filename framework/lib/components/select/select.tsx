@@ -9,6 +9,7 @@ import { equals, identity, is } from 'ramda'
 import { Option, SelectProps } from './types'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 import { useSelectCallbacks } from '../../hooks'
+import { getComponents } from '../search-bar/get-components'
 
 export function Select<T extends Option> ({
   options,
@@ -19,7 +20,10 @@ export function Select<T extends Option> ({
   isLoading,
   loadingList = () => null,
   'data-testid': testId,
+  customOption = null,
+  customTag = null,
   value,
+  icon,
   ...rest
 }: SelectProps<T>) {
   const CustomSelect = ChakraReactSelect as FunctionComponent<SelectProps<T>>
@@ -30,6 +34,8 @@ export function Select<T extends Option> ({
     isMulti,
     value: is(Array, value) ? value as T[] : [],
   })
+
+  const customComponents = getComponents<T>()
 
   const prevOptions =
     useRef<OptionsOrGroups<T, GroupBase<T>> | undefined>(options)
@@ -55,6 +61,10 @@ export function Select<T extends Option> ({
         isLoading={ isLoading }
         { ...(isLoading && { components: { MenuList: loadingList } }) }
         value={ value }
+        customOption={ customOption }
+        customTag={ customTag }
+        icon={ icon }
+        components={ customComponents }
         { ...rest }
       />
     </Box>

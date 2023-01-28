@@ -17,6 +17,7 @@ export interface SelectProps<T> extends Omit<ChakraReactSelectProps<T, boolean, 
   size?: Size
   'data-testid'?: string
   loadingList?: ComponentType<MenuListProps<T, boolean, GroupBase<T>>> | undefined
+  icon?: ComponentType<any>
 }
 
 export type SelectFieldProps<T> =

@@ -1,3 +1,4 @@
+import { ComponentType } from 'react'
 import { StackDirection } from '@chakra-ui/react'
 import {
   ActionMeta,
@@ -44,6 +45,7 @@ export interface SearchBarProps<T extends SearchBarOptionType>
   customTag?: CustomElementType<T>
   loadOptions?: ((query: string) => Promise<T[]>) | null
   onSearchInputChange?: (input: string) => void
+  icon?: ComponentType<any>
 }
 
 export interface SearchBarFieldProps<T extends SearchBarOptionType> extends Omit<SearchBarProps<T>, 'onChange'> {

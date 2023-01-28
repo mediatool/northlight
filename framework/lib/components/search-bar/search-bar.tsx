@@ -7,6 +7,7 @@ import {
 } from 'chakra-react-select'
 import { filter, identity, is, test, toLower } from 'ramda'
 import debounce from 'lodash.debounce'
+import { SearchDuo } from '@mediatool/icons'
 import { searchBarStyles } from './styles'
 import { useSelectCallbacks } from '../../hooks'
 import { Box } from '../box'
@@ -31,6 +32,7 @@ export const SearchBar = forwardRef(
     'data-testid': testId,
     value,
     onSearchInputChange = identity,
+    icon = SearchDuo,
     ...rest
   }: SearchBarProps<T>,
     ref: React.Ref<SelectInstance<T, boolean, GroupBase<T>>>
@@ -107,6 +109,7 @@ export const SearchBar = forwardRef(
           inputValue={ filterInput }
           customOption={ customOption }
           customTag={ customTag }
+          icon={ icon }
           components={ customComponents }
           ref={ ref }
           value={ value }

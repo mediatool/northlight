@@ -6,16 +6,23 @@ import {
   OptionProps,
   chakraComponents,
 } from 'chakra-react-select'
-import { SearchDuo } from '@mediatool/icons'
 import { Icon } from '../icon'
 import { SearchBarOptionType } from './types'
 
 export function getComponents<T extends SearchBarOptionType> () {
   return {
     DropdownIndicator: (props: DropdownIndicatorProps<T>) => (
-      <chakraComponents.DropdownIndicator { ...props }>
-        <Icon as={ SearchDuo } />
-      </chakraComponents.DropdownIndicator>
+      props.selectProps.icon
+        ? (
+          <chakraComponents.DropdownIndicator { ...props }>
+            <Icon as={ props.selectProps.icon } />
+          </chakraComponents.DropdownIndicator>
+
+        )
+        : (
+          <chakraComponents.DropdownIndicator { ...props } />
+        )
+
     ),
     Option: (props: OptionProps<T>) =>
       (props.selectProps.customOption
