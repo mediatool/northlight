@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.12...@mediatool/ui@2.22.0) (2023-01-29)
+
+
+### Features
+
+* **ui:** Percentage Input ([07d911f](https://github.com/mediatool/mediatool/commit/07d911f1bac3a88f17941a9fe1409b3ba072e443))
+* **ui:** support for custom tags/options and icon select ([ac448ab](https://github.com/mediatool/mediatool/commit/ac448abe2e2ff5aa2eb15ca0cfcafcb934728371))
+
+
+
+
+
 ## [2.21.12](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.11...@mediatool/ui@2.21.12) (2023-01-25)
 
 
