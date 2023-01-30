@@ -48,21 +48,26 @@ export function Form<FormValues extends FieldValues> ({
     }, [ initialValues ])
   }
 
+  const formatValues = (values: FormValues) => {
+    if (!shouldTrim) {
+      return values
+    }
+
+    return trimFormValues<FormValues>(values)
+  }
+
+  const handleSubmit = newMethods.formState.isValid
+    ? newMethods.handleSubmit((values) =>
+      onSubmit(formatValues(values), newMethods)
+    )
+    : (e: React.FormEvent<HTMLFormElement>) => {
+      newMethods.trigger()
+      e.preventDefault()
+    }
+
   return (
     <FormProvider { ...newMethods } { ...rest }>
-      <form
-        style={ { width: '100%' } }
-        onSubmit={
-          newMethods.formState.isValid
-            ? shouldTrim
-              ? newMethods.handleSubmit((values) => onSubmit(trimFormValues<FormValues>(values)))
-              : newMethods.handleSubmit(onSubmit)
-            : (e) => {
-              newMethods.trigger()
-              e.preventDefault()
-            }
-        }
-      >
+      <form style={ { width: '100%' } } onSubmit={ handleSubmit }>
         { typeof children === 'function' ? children(newMethods) : children }
       </form>
     </FormProvider>

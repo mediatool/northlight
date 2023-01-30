@@ -75,7 +75,7 @@ const FormPage = () => (
       </P>
       <P>
         <strong>onSubmit </strong>- This is a function on the form ( formValues
-        ) { '=>' } void
+        , methods ) { '=>' } any | { 'Promise<any>' }
       </P>
       <P>
         <strong>validate </strong>- This should be a function that
@@ -138,7 +138,14 @@ const FormPage = () => (
 
 <Form
   initialValues={ { firstName: '' } }
-  onSubmit={ (values) => { console.log(values) } }
+  onSubmit={ async (values, methods) => {
+      try {
+        await submitValuesToBackend(values)
+      }
+      catch (err) {
+        methods.setError('firstName', { message: err.message })
+      }
+  } }
   formSettings={ {
     mode: 'onSubmit',
   } }
@@ -181,7 +188,14 @@ const methods = useForm({
 })
 
 <Form
-  onSubmit={ (values) => { console.log(values) } }
+  onSubmit={ async (values) => {
+    try {
+      await submitValuesToBackend(values)
+    }
+    catch (err) {
+      methods.setError('firstName', { message: err.message })
+    }
+} }
   methods={ methods }
 >
   <HStack alignItems="end" w="300px">

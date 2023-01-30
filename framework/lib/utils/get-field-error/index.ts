@@ -7,6 +7,6 @@ export function getFieldError<T extends FieldValues> (name: string, errors: Fiel
   const leftBracketAndDot = /[.[\]]/g
   const fieldErrorPath = split(leftBracketAndDot, nameWithoutRightBracket)
 
-  const fieldError: FieldErrorType = path(fieldErrorPath, errors)
+  const fieldError: FieldErrorType<T> = path(fieldErrorPath, errors)
   return fieldError
 }

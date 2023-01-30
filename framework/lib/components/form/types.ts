@@ -6,17 +6,20 @@ import {
   FieldValues,
   Merge,
   RegisterOptions,
-  SubmitHandler,
+  SetValueConfig,
   UseFormProps,
   UseFormReturn,
 } from 'react-hook-form'
 import { StackDirection } from '@chakra-ui/react'
 
-export type SetValueOptionsType = Partial<{
-  shouldValidate: boolean
-  shouldDirty: boolean
-  shouldTouch: boolean
-}> | undefined
+type Maybe<T> = T | undefined
+
+type CustomSubmitHandler<TFieldValues extends FieldValues> = (
+  data: TFieldValues,
+  event: UseFormReturn<TFieldValues>
+) => any | Promise<any>
+
+export type SetValueOptionsType = Maybe<SetValueConfig>
 
 export type FieldProps = {
   name: string
@@ -34,16 +37,17 @@ export type FieldProps = {
 export type FormProps<FormValues extends FieldValues> = {
   initialValues: FormValues
   enableReinitialize?: boolean
-  onSubmit: SubmitHandler<FormValues>
+  onSubmit: CustomSubmitHandler<FormValues>
   methods?: UseFormReturn<FormValues>
   formSettings?: UseFormProps<FormValues>
   validate?: any
   shouldTrim?: boolean
   children:
-  | ((
-    methods: UseFormReturn<FormValues>
-  ) => ReactNode)
+  | ((methods: UseFormReturn<FormValues>) => ReactNode)
   | ReactNode
 }
 
-export type FieldErrorType = FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined
+export type FieldErrorType<T extends FieldValues> =
+  | FieldError
+  | Merge<FieldError, FieldErrorsImpl<T>>
+  | undefined
