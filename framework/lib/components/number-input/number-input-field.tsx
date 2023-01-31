@@ -4,6 +4,7 @@ import { NumberInputFieldProps } from './types'
 import { Field } from '../form'
 import { NumberInput } from './number-input'
 import { advancedParseFloat } from './advanced-parse-float'
+import { InputGroupWrapper } from '../../internal-components'
 
 export const NumberInputField = ({
   name,
@@ -13,10 +14,11 @@ export const NumberInputField = ({
   validate,
   onChange: onChangeCallback = identity,
   onlyAcceptPercentage = false,
+  inputLeftElement,
+  inputRightElement,
   ...rest
 }: NumberInputFieldProps) => {
   const percentageFactor = onlyAcceptPercentage ? 0.01 : 1
-  const [ displayValue, setDisplayValue ] = useState('')
 
   return (
     <Field
@@ -26,21 +28,30 @@ export const NumberInputField = ({
       isRequired={ isRequired }
       validate={ validate }
     >
-      { ({ onChange }) => (
-        <NumberInput
-          name={ name }
-          data-testid="number-input-field-test-id"
-          onInputChange={ (v) => {
-            setDisplayValue(v)
-            const parsed = advancedParseFloat(parseFloat(v) * percentageFactor)
-            onChange(parsed)
-            onChangeCallback(parsed)
-          } }
-          value={ displayValue }
-          onlyAcceptPercentage={ onlyAcceptPercentage }
-          { ...rest }
-        />
-      ) }
+      { ({ onChange, value }) => {
+        const [ displayValue, setDisplayValue ] = useState(value || '')
+
+        return (
+          <InputGroupWrapper
+            inputLeftElement={ inputLeftElement }
+            inputRightElement={ inputRightElement }
+          >
+            <NumberInput
+              name={ name }
+              data-testid="number-input-field-test-id"
+              onInputChange={ (v) => {
+                setDisplayValue(v)
+                const parsed = advancedParseFloat(parseFloat(v) * percentageFactor)
+                onChange(parsed)
+                onChangeCallback(parsed)
+              } }
+              value={ displayValue }
+              onlyAcceptPercentage={ onlyAcceptPercentage }
+              { ...rest }
+            />
+          </InputGroupWrapper>
+        )
+      } }
     </Field>
   )
 }
