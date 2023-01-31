@@ -8,6 +8,7 @@ import { SearchBar } from './search-bar'
 import { HStack } from '../stack'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
+import { InputGroupWrapper } from '../../internal-components'
 
 export const SearchBarField = <T extends SearchBarOptionType> ({
   name,
@@ -18,6 +19,8 @@ export const SearchBarField = <T extends SearchBarOptionType> ({
   validate,
   isClearable = true,
   onChange: onChangeCallback = identity,
+  inputLeftElement,
+  inputRightElement,
   ...rest
 }: SearchBarFieldProps<T>) => (
   <Field
@@ -30,20 +33,25 @@ export const SearchBarField = <T extends SearchBarOptionType> ({
   >
     { ({ value, onChange }) => (
       <HStack w="full">
-        <SearchBar
-          name={ name }
-          isMulti={ isMulti }
-          onChange={ (values: FieldValues, event) => {
-            onChange(
-              isMulti
-                ? values
-                : values.value
-            )
-            onChangeCallback(values as T | T[], event)
-          } }
-          value={ value }
-          { ...rest }
-        />
+        <InputGroupWrapper
+          inputLeftElement={ inputLeftElement }
+          inputRightElement={ inputRightElement }
+        >
+          <SearchBar
+            name={ name }
+            isMulti={ isMulti }
+            onChange={ (values: FieldValues, event) => {
+              onChange(
+                isMulti
+                  ? values
+                  : values.value
+              )
+              onChangeCallback(values as T | T[], event)
+            } }
+            value={ value }
+            { ...rest }
+          />
+        </InputGroupWrapper>
         <IconButton
           aria-label={ `${name}-close-button` }
           variant="danger"

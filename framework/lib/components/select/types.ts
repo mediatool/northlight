@@ -2,6 +2,7 @@ import { ActionMeta, Props as ChakraReactSelectProps, GroupBase, MenuListProps }
 import { StackDirection } from '@chakra-ui/react'
 import { ComponentType } from 'react'
 import { RegisterOptions } from 'react-hook-form'
+import { InputFieldProps } from '../../types'
 
 type Size = 'sm' | 'md' | 'lg'
 export interface Option {
@@ -22,6 +23,7 @@ export interface SelectProps<T> extends Omit<ChakraReactSelectProps<T, boolean, 
 
 export type SelectFieldProps<T> =
   Omit<SelectProps<T>, 'onChange'>
+  & InputFieldProps
   & {
     onChange?: (val: T | T[], event:ActionMeta<T>) => void
     direction?: StackDirection

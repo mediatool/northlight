@@ -1,5 +1,6 @@
 import { NumberInputProps as ChakraNumberInputProps, StackDirection } from '@chakra-ui/react'
 import { RegisterOptions } from 'react-hook-form'
+import { InputFieldProps } from '../../types'
 
 export type NumberInputSizeProps = 'sm' | 'md' | 'lg'
 
@@ -14,6 +15,7 @@ export type NumberInputProps =
 
 export type NumberInputFieldProps =
   Omit<NumberInputProps, 'onChange'>
+  & InputFieldProps
   & {
     name: string
     label: string
@@ -23,6 +25,8 @@ export type NumberInputFieldProps =
     unit?: string
     direction?: StackDirection
     onChange?: (e: number | string) => void
+    inputLeftElement?: React.ReactNode
+    inputRightElement?: React.ReactNode
   }
 
 export interface NumberInputStepperProps {

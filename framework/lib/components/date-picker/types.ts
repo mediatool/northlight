@@ -9,6 +9,7 @@ import {
 } from '@react-aria/datepicker'
 import { DateRange } from '@react-types/calendar'
 import { RegisterOptions } from 'react-hook-form'
+import { InputFieldProps } from '../../types'
 
 export * from './components/date-field'
 export * from './components/calendar/date-select'
@@ -33,7 +34,7 @@ export interface DateRangePickerProps
 }
 
 export interface DatePickerFieldProps
-  extends Omit<ChakraInputProps, 'onChange'> {
+  extends Omit<ChakraInputProps, 'onChange'>, InputFieldProps {
   name: string
   label: string
   minValue?: string

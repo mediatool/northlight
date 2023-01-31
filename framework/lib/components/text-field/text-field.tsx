@@ -3,8 +3,9 @@ import { identity } from 'ramda'
 import { TextFieldProps } from './types'
 import { Input } from '../input'
 import { Field } from '../form'
+import { InputGroupWrapper } from '../../internal-components'
 
-export function TextField ({
+export const TextField = ({
   name,
   label,
   as: As = Input,
@@ -12,17 +13,22 @@ export function TextField ({
   validate,
   direction = 'column',
   onChange: onChangeCallback = identity,
+  inputLeftElement,
+  inputRightElement,
   ...rest
-}: TextFieldProps) {
-  return (
-    <Field
-      name={ name }
-      label={ label }
-      isRequired={ isRequired }
-      validate={ validate }
-      direction={ direction }
-    >
-      { ({ onChange, value }) => (
+}: TextFieldProps) => (
+  <Field
+    name={ name }
+    label={ label }
+    isRequired={ isRequired }
+    validate={ validate }
+    direction={ direction }
+  >
+    { ({ onChange, value }) => (
+      <InputGroupWrapper
+        inputLeftElement={ inputLeftElement }
+        inputRightElement={ inputRightElement }
+      >
         <As
           id={ name }
           name={ name }
@@ -34,7 +40,7 @@ export function TextField ({
           data-testid="text-field-test-id"
           { ...rest }
         />
-      ) }
-    </Field>
-  )
-}
+      </InputGroupWrapper>
+    ) }
+  </Field>
+)

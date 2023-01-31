@@ -8,6 +8,7 @@ import { Select } from './select'
 import { HStack } from '../stack'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
+import { InputGroupWrapper } from '../../internal-components'
 
 export function SelectField<T extends Option> ({
   name,
@@ -19,6 +20,8 @@ export function SelectField<T extends Option> ({
   validate,
   isClearable = true,
   onChange: onChangeCallback = identity,
+  inputLeftElement,
+  inputRightElement,
   ...rest
 }: SelectFieldProps<T>) {
   return (
@@ -32,26 +35,31 @@ export function SelectField<T extends Option> ({
     >
       { ({ value, onChange }) => (
         <HStack w="full">
-          <Select<T>
-            name={ name }
-            options={ options }
-            isMulti={ isMulti }
-            onChange={ (values: FieldValues, event) => {
-              onChange(
-                isMulti
-                  ? values.map((item: any) => item.value)
-                  : values.value
-              )
-              onChangeCallback(values as T | T[], event)
-            } }
-            value={
+          <InputGroupWrapper
+            inputLeftElement={ inputLeftElement }
+            inputRightElement={ inputRightElement }
+          >
+            <Select<T>
+              name={ name }
+              options={ options }
+              isMulti={ isMulti }
+              onChange={ (values: FieldValues, event) => {
+                onChange(
+                  isMulti
+                    ? values.map((item: any) => item.value)
+                    : values.value
+                )
+                onChangeCallback(values as T | T[], event)
+              } }
+              value={
               value
                 ? options?.flatMap((inner : any) => (inner.options ? inner.options : inner))
                   .filter((option: any) => value.includes(option.value)) as any
                 : null
             }
-            { ...rest }
-          />
+              { ...rest }
+            />
+          </InputGroupWrapper>
           <IconButton
             aria-label={ `${name}-close-button` }
             variant="danger"

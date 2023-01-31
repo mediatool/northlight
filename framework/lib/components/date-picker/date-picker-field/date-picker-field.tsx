@@ -5,6 +5,7 @@ import { DatePickerFieldProps } from '../types'
 import { Field } from '../../form'
 import { DatePicker } from '../date-picker/date-picker'
 import { useFormContext } from '../../../hooks'
+import { InputGroupWrapper } from '../../../internal-components'
 
 export const DatePickerField = ({
   name,
@@ -16,6 +17,8 @@ export const DatePickerField = ({
   validate,
   firstDayOfWeek = 'monday',
   onChange: onChangeCallback = identity,
+  inputLeftElement,
+  inputRightElement,
   ...rest
 }: DatePickerFieldProps) => {
   const { setValue, setError, trigger } = useFormContext()
@@ -47,18 +50,23 @@ export const DatePickerField = ({
       validate={ validate }
     >
       { ({ value, onChange }, { formState: { errors } }) => (
-        <DatePicker
-          firstDayOfWeek={ firstDayOfWeek }
-          aria-label={ label }
-          isInvalid={ !!errors[name] }
-          onChange={ handleChange }
-          resetDate={ () => onChange(null) }
-          value={ value ? parseDate(value) as any : null }
-          minValue={ minValue ? parseDate(minValue) as DateValue : undefined }
-          maxValue={ maxValue ? parseDate(maxValue) as DateValue : undefined }
-          validationState={ errors.name ? 'invalid' : 'valid' }
-          { ...rest as any }
-        />
+        <InputGroupWrapper
+          inputLeftElement={ inputLeftElement }
+          inputRightElement={ inputRightElement }
+        >
+          <DatePicker
+            firstDayOfWeek={ firstDayOfWeek }
+            aria-label={ label }
+            isInvalid={ !!errors[name] }
+            onChange={ handleChange }
+            resetDate={ () => onChange(null) }
+            value={ value ? parseDate(value) as any : null }
+            minValue={ minValue ? parseDate(minValue) as DateValue : undefined }
+            maxValue={ maxValue ? parseDate(maxValue) as DateValue : undefined }
+            validationState={ errors.name ? 'invalid' : 'valid' }
+            { ...rest as any }
+          />
+        </InputGroupWrapper>
       ) }
     </Field>
 

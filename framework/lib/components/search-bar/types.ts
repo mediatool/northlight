@@ -7,6 +7,7 @@ import {
   GroupBase,
 } from 'chakra-react-select'
 import { RegisterOptions } from 'react-hook-form'
+import { InputFieldProps } from '~/lib/types'
 
 type Size = 'sm' | 'md' | 'lg'
 export interface SearchBarOptionType {
@@ -48,7 +49,7 @@ export interface SearchBarProps<T extends SearchBarOptionType>
   icon?: ComponentType<any>
 }
 
-export interface SearchBarFieldProps<T extends SearchBarOptionType> extends Omit<SearchBarProps<T>, 'onChange'> {
+export interface SearchBarFieldProps<T extends SearchBarOptionType> extends Omit<SearchBarProps<T>, 'onChange'>, InputFieldProps {
   onChange?: (val: T | T[], event: ActionMeta<T>) => void
   direction?: StackDirection
   name: string
