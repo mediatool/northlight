@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.23.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.22.0...@mediatool/ui@2.23.0) (2023-01-31)
+
+
+### Bug Fixes
+
+* **ui:** export advancedParseFloat, displayValue ([0e4724d](https://github.com/mediatool/mediatool/commit/0e4724d5ef9f1b5225b5ba065c553c2c73df760b))
+
+
+### Features
+
+* **ui:** implement input group wrapper ([4458443](https://github.com/mediatool/mediatool/commit/44584433da779f44e8bebafd42c50f86a2a23bf3))
+* **ui:** input group wrapper ([0fbd700](https://github.com/mediatool/mediatool/commit/0fbd70024c7874304d1065f28c468bfdd45883e5))
+
+
+
+
+
 # [2.22.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.21.12...@mediatool/ui@2.22.0) (2023-01-29)
 
 
