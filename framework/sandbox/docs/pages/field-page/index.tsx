@@ -1,5 +1,5 @@
 import React from 'react'
-import { Code, Link, Stack, Text } from '../../../../lib/components'
+import { Code, Link, P, Stack, Text } from '../../../../lib/components'
 import { Page } from '../../components'
 
 const FieldPage = () => (
@@ -58,7 +58,6 @@ const FieldPage = () => (
           { ' ' }
           React Hook Form Register(validation) docs
         </Link>
-
       </Text>
       <Text>
         <strong>direction </strong>- This is if the formlabel should be to the
@@ -67,9 +66,11 @@ const FieldPage = () => (
       <Text>
         <strong>isRequired </strong>- If the field is required
       </Text>
-      <Text><strong>Example</strong></Text>
-      <Code w="max-content" display="block" whiteSpace="pre">{
-`<TextField
+      <Text>
+        <strong>Example</strong>
+      </Text>
+      <Code w="max-content" display="block" whiteSpace="pre">
+        { `<TextField
  name="validaton"
  label="validation"
  direction="row"
@@ -77,7 +78,18 @@ const FieldPage = () => (
  validate={{maxLength: { value: 2, message: "Max length 2!"}}}
 />` }
       </Code>
-
+      <P>
+        TextField, NumberInputField, Date Picker Field, Search bar field and Select field also take custom props{ ' ' }
+        <b>inputLeftElement and inputRightElement</b>, which gives the
+        possibility to add addons in an InputGroup
+      </P>
+      <Code w="max-content" display="block" whiteSpace="pre">
+        { `<TextField
+ name="validaton"
+ label="validation"
+ inputRightElement={<InputRightAddon bgColor="blue.50" children="/100" />}
+/>` }
+      </Code>
     </Stack>
   </Page>
 )
