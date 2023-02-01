@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { identity } from 'ramda'
+import { identity, isNil } from 'ramda'
 import { NumberInputFieldProps } from './types'
 import { Field } from '../form'
 import { NumberInput } from './number-input'
@@ -29,7 +29,10 @@ export const NumberInputField = ({
       validate={ validate }
     >
       { ({ onChange, value }) => {
-        const [ displayValue, setDisplayValue ] = useState(value || '')
+        const initialValue = isNil(value) || Number.isNaN(parseFloat(value))
+          ? ''
+          : advancedParseFloat(value / percentageFactor)
+        const [ displayValue, setDisplayValue ] = useState(initialValue)
 
         return (
           <InputGroupWrapper
