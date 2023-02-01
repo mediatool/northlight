@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.23.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.23.0...@mediatool/ui@2.23.1) (2023-02-01)
+
+
+### Bug Fixes
+
+* **ui:** set initial value to display with percentage factor for number input field ([70537b5](https://github.com/mediatool/mediatool/commit/70537b556e03110d2da26f3fd31c02f0f64a4aa7))
+
+
+
+
+
 # [2.23.0](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.22.0...@mediatool/ui@2.23.0) (2023-01-31)
 
 
