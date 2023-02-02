@@ -18,7 +18,11 @@ export const NumberInputField = ({
   inputRightElement,
   ...rest
 }: NumberInputFieldProps) => {
-  const percentageFactor = onlyAcceptPercentage ? 0.01 : 1
+  const formatNumber = (value: number, factor: number) => (
+    onlyAcceptPercentage
+      ? advancedParseFloat(value * factor)
+      : value
+  )
 
   return (
     <Field
@@ -31,7 +35,8 @@ export const NumberInputField = ({
       { ({ onChange, value }) => {
         const initialValue = isNil(value) || Number.isNaN(parseFloat(value))
           ? ''
-          : advancedParseFloat(value / percentageFactor)
+          : formatNumber(value, 100)
+
         const [ displayValue, setDisplayValue ] = useState(initialValue)
 
         return (
@@ -44,7 +49,8 @@ export const NumberInputField = ({
               data-testid="number-input-field-test-id"
               onInputChange={ (v) => {
                 setDisplayValue(v)
-                const parsed = advancedParseFloat(parseFloat(v) * percentageFactor)
+                const parsed = formatNumber(parseFloat(v), 0.01)
+
                 onChange(parsed)
                 onChangeCallback(parsed)
               } }

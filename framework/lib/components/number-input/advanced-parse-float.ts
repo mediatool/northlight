@@ -1,6 +1,6 @@
 import { head, isNil, last, length, match, split } from 'ramda'
 
-const regex = /(9{6,}|0{6,})(\d)*$/gm
+const regex = /(9{18,}|0{18,})(\d)*$/gm
 
 export const advancedParseFloat = (value: number | string) => {
   if (isNil(value) || Number.isNaN(parseFloat(value as string))) {
