@@ -18,6 +18,7 @@ export const YearSelect = ({
       iconSize="0px"
       variant="unstyled"
       sx={ dateSelect }
+      w="max-content"
     >
       { years.map((year, i) => (
         <option key={ year.formatted } value={ i }>

@@ -52,6 +52,7 @@ export const MonthSelect = ({
       size="sm"
       variant="unstyled"
       sx={ dateSelect }
+      w="max-content"
     >
       { isEditing ? (
         months.map((month, i) => (
