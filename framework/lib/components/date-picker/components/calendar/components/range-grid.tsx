@@ -3,7 +3,6 @@ import { chakra } from '@chakra-ui/react'
 import { useCalendarGrid } from '@react-aria/calendar'
 import { endOfMonth, getWeeksInMonth } from '@internationalized/date'
 import { times } from 'ramda'
-import { Table, Tbody, Thead, Tr } from '../../../../table'
 import { Box } from '../../../../box'
 import { DayLabels } from './day-labels'
 import { RangeCell } from './range-cell'
@@ -18,19 +17,19 @@ export const RangeCalendarGrid = ({ state, locale, offset = {} }: RangeCalendarG
 
   return (
     <Box h="245px" p="0">
-      <Table variant="unstyled" { ...gridProps }>
-        <Thead { ...headerProps }>
+      <chakra.table { ...gridProps } sx={ { borderSpacing: '0px' } }>
+        <chakra.thead { ...headerProps }>
           <DayLabels weekDays={ weekDays } />
-        </Thead>
-        <Tbody>
+        </chakra.thead>
+        <chakra.tbody>
           { times((weekIndex) => (
-            <Tr key={ weekIndex }>
+            <chakra.tr key={ weekIndex }>
               { state
                 .getDatesInWeek(weekIndex, startDate)
                 .map((date, i) =>
                   (date ? (
                     <RangeCell
-                      key={ date.day }
+                      key={ i as number }
                       state={ state }
                       date={ date }
                       currentMonth={ startDate }
@@ -40,10 +39,10 @@ export const RangeCalendarGrid = ({ state, locale, offset = {} }: RangeCalendarG
                     <chakra.td key={ i as number } />
                   ))
                 ) }
-            </Tr>
+            </chakra.tr>
           ), weeksInMonth + 1) }
-        </Tbody>
-      </Table>
+        </chakra.tbody>
+      </chakra.table>
 
     </Box>
   )
