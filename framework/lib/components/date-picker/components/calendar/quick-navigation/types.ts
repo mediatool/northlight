@@ -7,6 +7,7 @@ export interface QuickSelectProps {
   fiscalStartMonth: number
   updateVisibleRange: () => void
   locale: string
+  height?: string
 }
 
 export interface DateButtonProps {
