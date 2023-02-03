@@ -1,5 +1,5 @@
 import React from 'react'
-import { Code, DateRangePickerField, Divider, Form, P, Stack } from '../../../../lib'
+import { Code, DateRangePickerField, Divider, Form, HStack, P, Stack } from '../../../../lib'
 import { Page } from '../../components'
 
 const DateRangePickerPage = () => (
@@ -11,10 +11,22 @@ const DateRangePickerPage = () => (
       <Form initialValues={ { date: null } } onSubmit={ () => {} }>
         { ({ watch }) => (
           <Stack spacing={ 4 }>
-            <DateRangePickerField name="date" label="Pick a date" />
-            <Code w="max-content">
-              { '<DateRangePickerField name="date" label="pick a date" />' }
-            </Code>
+            <P>Mediatool uses 2 date range pickers</P>
+            <HStack spacing="4">
+              <Stack spacing="4">
+                <DateRangePickerField name="date" label="Advanced" mode="advanced" />
+                <Code w="max-content">
+                  { '<DateRangePickerField name="date" label="Advanced" mode="advanced"/>' }
+                </Code>
+              </Stack>
+              <Stack spacing="4">
+                <DateRangePickerField name="date-simple" label="Simple" mode="simple" />
+                <Code w="max-content">
+                  { '<DateRangePickerField name="date-simple" label="Simple" mode="simple"/>' }
+                </Code>
+              </Stack>
+            </HStack>
+            <P>The default isadvanced</P>
             <Divider />
             <P>
               You can pass on custom formatting to date-picker via{ ' ' }
@@ -47,7 +59,7 @@ const DateRangePickerPage = () => (
             </P>
             <Code w="max-content">
               {
-                  '<DateRangePickerField name="restrained-date" label="With min and max" minValue="2022-12-10" maxValue="2022-12-12" />'
+                  '<DateRangePickerField name="restrained-date" label="With min and max" minValue="2022-12-01" maxValue="2023-01-23" />'
                 }
             </Code>
             <Divider />
