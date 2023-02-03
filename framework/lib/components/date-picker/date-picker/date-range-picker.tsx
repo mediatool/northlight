@@ -15,6 +15,7 @@ import { DateField, StyledField, Trigger } from '../components/date-field'
 import { IconButton } from '../../icon-button'
 import { InputGroup, InputRightElement } from '../../input'
 import { Icon } from '../../icon'
+import { SimpleRangeCalendar } from '../components/calendar/simple-range-calendar'
 
 export const DateRangePicker = (props: DateRangePickerProps) => {
   const {
@@ -25,6 +26,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     dateFormat,
     minValue,
     fiscalStartMonth,
+    mode = 'advanced',
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -99,12 +101,23 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       { state.isOpen && (
         <PopoverContent { ...dialogProps } ref={ ref } w="max-content">
           <FocusScope contain={ true } restoreFocus={ true }>
+            { mode === 'simple' && (
+              <SimpleRangeCalendar
+                { ...calendarProps }
+                resetDate={ resetDate }
+                handleClose={ handleClose }
+                fiscalStartMonth={ fiscalStartMonth || 0 }
+              />
+            ) }
+            {
+            mode === 'advanced' && (
             <RangeCalendar
               { ...calendarProps }
               resetDate={ resetDate }
               handleClose={ handleClose }
               fiscalStartMonth={ fiscalStartMonth || 0 }
             />
+            ) }
           </FocusScope>
         </PopoverContent>
       ) }

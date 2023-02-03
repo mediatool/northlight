@@ -23,6 +23,8 @@ type DatePickerSettings = {
   isClearable?: boolean
 }
 
+type DatePickerMode = 'simple' | 'advanced'
+
 export interface DatePickerProps
   extends AriaDatePickerProps<DateValue>,
   DatePickerSettings {}
@@ -31,6 +33,7 @@ export interface DateRangePickerProps
   extends AriaDateRangePickerProps<DateValue>,
   DatePickerSettings {
   fiscalStartMonth?: number
+  mode?: DatePickerMode
 }
 
 export interface DatePickerFieldProps
@@ -50,6 +53,7 @@ export interface DatePickerFieldProps
 
 export interface DateRangePickerFieldProps extends Omit<DatePickerFieldProps, 'onChange'> {
   onChange?: (date: DateRange) => void
+  mode?: DatePickerMode
 }
 interface DateRangeFormatted {
   startDate: string
