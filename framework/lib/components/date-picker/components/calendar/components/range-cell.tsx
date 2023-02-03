@@ -1,25 +1,13 @@
 import React, { useRef } from 'react'
 import { chakra } from '@chakra-ui/react'
 import { useCalendarCell } from '@react-aria/calendar'
-import {
-  endOfMonth,
-  endOfWeek,
-  isSameMonth,
-  startOfMonth,
-  today,
-} from '@internationalized/date'
-import { palette } from '@mediatool/tokens'
-import { equals } from 'ramda'
-import { Box } from '../../../../box'
+import { isSameMonth, today } from '@internationalized/date'
 import { RangeCellProps } from './types'
-import { Button } from '../../../../button'
 
-export const RangeCell = ({
-  state,
-  date,
-  currentMonth,
-  locale,
-}: RangeCellProps) => {
+export const RangeCell = ({ state, date, currentMonth }: RangeCellProps) => {
+  const isOutsideMonth = !isSameMonth(currentMonth, date)
+  if (isOutsideMonth) return <chakra.td />
+
   const ref = useRef<HTMLButtonElement>(null)
   const { cellProps, buttonProps, isSelected, formattedDate } = useCalendarCell(
     { date },
@@ -27,85 +15,44 @@ export const RangeCell = ({
     ref
   )
 
-  const isHighlighted =
-    state.highlightedRange &&
-    state.highlightedRange.start < date &&
-    date < state.highlightedRange.end
-
-  const isBreakingDate =
-    equals(endOfWeek(date, locale), date) || equals(endOfMonth(date), date)
-
   const isToday = date.compare(today(state.timeZone)) === 0
-
-  const isOutsideMonth = !isSameMonth(currentMonth, date)
-
-  const isFirst =
-    state.highlightedRange &&
-    equals(state.highlightedRange.start, date) &&
-    !equals(state.highlightedRange.end, date)
 
   return (
     <chakra.td { ...cellProps }>
-      <Button
+      <chakra.button
         { ...buttonProps }
         ref={ ref }
-        hidden={ isOutsideMonth }
-        rounded={ isHighlighted ? 'xs' : 'full' }
-        variant={ isSelected ? 'brand' : 'ghost' }
-        borderWidth={ isToday ? '1px' : 'none' }
-        borderColor={ isHighlighted ? 'transparent' : 'gray.50' }
-        bgColor={ isHighlighted ? 'gray.50' : undefined }
-        color={ isHighlighted ? 'text.default' : undefined }
-        position="relative"
-        my="2px"
+        borderRadius="xs"
+        bgColor={ isSelected ? 'blue.500' : 'transparent' }
+        color={ isSelected ? 'text.inverted' : 'text.default' }
+        fontSize="sm"
+        ring={ isToday && !isSelected ? '1px' : '0px' }
+        ringColor="blue.500"
+        mx="-0a"
+        my="0a"
         zIndex="docked"
         transition="none"
-        w="32px"
-        h="28px"
-        size="sm"
+        w="8"
+        h="8"
         fontWeight="medium"
-        boxShadow={
-          isFirst && !isBreakingDate
-            ? `12px 0 0 0px ${palette.gray['50']}`
-            : 'none'
-        }
-        _focusVisible={
-          isFirst && !isBreakingDate
-            ? {}
-            : {
-              outline: 'none',
-              ring: '2px',
-              ringColor: 'border.wcag',
-              ringOffset: isHighlighted ? '0px' : '1px',
-            }
-        }
+        _focusVisible={ {
+          outline: 'none',
+          ring: '2px',
+          ringColor: 'border.wcag',
+          ringOffset: '1px',
+        } }
         _hover={ {
-          bgColor: isHighlighted
-            ? 'gray.100'
-            : isSelected
-              ? 'blue.400'
-              : 'gray.50',
+          bgColor: isSelected ? 'blue.400' : 'gray.50',
+          _disabled: {
+            bgColor: 'transparent',
+          },
+        } }
+        _disabled={ {
+          opacity: 0.3,
         } }
       >
-        <Box
-          h="full"
-          zIndex="base"
-          position="absolute"
-          top="50%"
-          transform="translateY(-50%)"
-          w="full"
-          boxShadow={
-            isHighlighted &&
-            !isBreakingDate && (
-              equals(startOfMonth(date), date) ||
-              !equals(state.focusedDate, date)
-            )
-              ? `10px 0 0 0px ${palette.gray['50']}`
-              : 'none'
-          }
-        />
         { formattedDate }
-      </Button>
+      </chakra.button>
     </chakra.td>
   )
 }
