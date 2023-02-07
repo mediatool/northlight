@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.23.2](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.23.1...@mediatool/ui@2.23.2) (2023-02-07)
+
+
+### Bug Fixes
+
+* **ui:** adding second methods argument to onSubmit callback ([acda3d9](https://github.com/mediatool/mediatool/commit/acda3d9cb78e28c5eaf6fd025859b5c3e3901b36))
+* **ui:** advanced-parse-float ([af397f7](https://github.com/mediatool/mediatool/commit/af397f7d9f8ae963dd27ee453739bc4cefd92bd5))
+* **ui:** remove default percentage input limited range ([95dc304](https://github.com/mediatool/mediatool/commit/95dc304a4ef8a890048e06b14764c6b8666ccd30))
+
+
+
+
+
 ## [2.23.1](https://github.com/mediatool/mediatool/compare/@mediatool/ui@2.23.0...@mediatool/ui@2.23.1) (2023-02-01)
 
 
