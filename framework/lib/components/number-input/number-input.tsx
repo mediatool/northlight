@@ -18,8 +18,6 @@ export const NumberInput = ({
   ...rest
 }: NumberInputProps) => {
   const percentageProps = onlyAcceptPercentage && {
-    max: 100,
-    min: 0,
     step: 0.1,
   }
 
