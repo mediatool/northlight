@@ -25,7 +25,7 @@ export const Calendar: ComponentMultiStyleConfig = {
     dateSelect: {
       fontWeight: 'semibold',
       border: 'none',
-      padding: '0a',
+      padding: '0',
       borderRadius: 'md',
       color: color.text.default,
       bgColor: color.background.button.ghost,
