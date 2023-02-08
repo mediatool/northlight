@@ -13,6 +13,7 @@ import { HStack } from '../../stack'
 import { InputGroup, InputRightElement } from '../../input'
 import { Popover, PopoverAnchor, PopoverContent } from '../../popover'
 import { Icon } from '../../icon'
+import { Box } from '../../box'
 
 export const DatePicker = (props: DatePickerProps) => {
   const {
@@ -51,10 +52,12 @@ export const DatePicker = (props: DatePickerProps) => {
         <HStack minW={ 56 }>
           <InputGroup { ...groupProps } ref={ ref } __css={ group }>
             <StyledField isDisabled={ isDisabled } isInvalid={ isInvalid }>
-              <DateField
-                { ...fieldProps }
-                dateFormat={ dateFormat }
-              />
+              <Box paddingInline="1a">
+                <DateField
+                  { ...fieldProps }
+                  dateFormat={ dateFormat }
+                />
+              </Box>
             </StyledField>
             <InputRightElement>
               <Trigger

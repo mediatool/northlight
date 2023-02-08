@@ -66,7 +66,10 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
         <HStack>
           <InputGroup { ...groupProps } ref={ ref } __css={ group }>
             <StyledField isDisabled={ isDisabled } isInvalid={ isInvalid }>
-              <HStack paddingInlineEnd={ 10 }>
+              <HStack
+                paddingInlineStart="1a"
+                paddingInlineEnd={ 10 }
+              >
                 <DateField
                   { ...startFieldProps }
                   dateFormat={ dateFormat }

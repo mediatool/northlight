@@ -40,7 +40,6 @@ export const DatePicker: ComponentMultiStyleConfig = {
       width: '100%',
       height: '100%',
       alignItems: 'center',
-      paddingInlineStart: '0.375rem',
     },
     dateSegment: {
       caretColor: 'transparent',
