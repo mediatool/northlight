@@ -1,4 +1,4 @@
-import { palette } from '@mediatool/tokens'
+import { palette } from '@northlight/tokens'
 import { Color, ColorGrade } from '../../types'
 
 export const getShades = (startShade: number, endShade?: number) => {

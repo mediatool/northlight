@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CDeleteDuo, HubDuo } from '@mediatool/icons'
+import { CDeleteDuo, HubDuo } from '@northlight/icons'
 import {
   Code,
   HStack,

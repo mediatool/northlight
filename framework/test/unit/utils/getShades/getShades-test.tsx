@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { palette } from '@mediatool/tokens'
+import { palette } from '@northlight/tokens'
 import { getShades } from '../../../../lib'
 
 const testShades500 = [

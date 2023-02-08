@@ -1,5 +1,5 @@
 import React from 'react'
-import { DragDuo } from '@mediatool/icons'
+import { DragDuo } from '@northlight/icons'
 import { Icon } from '../icon'
 import { DragHandleProps } from './types'
 

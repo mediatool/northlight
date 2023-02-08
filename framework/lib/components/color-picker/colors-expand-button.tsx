@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChevronDownDuo, ChevronUpDuo } from '@mediatool/icons'
+import { ChevronDownDuo, ChevronUpDuo } from '@northlight/icons'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'

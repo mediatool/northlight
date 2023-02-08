@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react'
-import { CheckSolid } from '@mediatool/icons'
+import { CheckSolid } from '@northlight/icons'
 import { useCheckboxGroupItem } from '@react-aria/checkbox'
 import { SlideFade, useMultiStyleConfig } from '@chakra-ui/react'
 import { useRadio } from '@react-aria/radio'

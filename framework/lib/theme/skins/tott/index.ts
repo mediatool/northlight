@@ -2,7 +2,7 @@ import { ThemeOverride } from '@chakra-ui/react'
 import {
   TottSkin as TottSkinTokens,
   typography,
-} from '@mediatool/tokens'
+} from '@northlight/tokens'
 
 export const TottSkin:ThemeOverride = {
   colors: TottSkinTokens.color,

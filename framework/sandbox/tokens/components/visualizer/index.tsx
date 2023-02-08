@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { RefreshDataSolid } from '@mediatool/icons'
+import { RefreshDataSolid } from '@northlight/icons'
 import { keyframes } from '@emotion/react'
 import { Box, Icon, IconButton, Tooltip } from '../../../../lib'
 import { Tokens } from '../../utils/types'

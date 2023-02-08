@@ -1,5 +1,5 @@
 import React from 'react'
-import { palette } from '@mediatool/tokens'
+import { palette } from '@northlight/tokens'
 import { Clickable } from '../../../../clickable'
 import { P } from '../../../../typography'
 

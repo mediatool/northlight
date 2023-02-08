@@ -1,6 +1,6 @@
 import React from 'react'
 import { chakra, useMultiStyleConfig } from '@chakra-ui/react'
-import { BusinessContactDuo, UserSquareDuo } from '@mediatool/icons'
+import { BusinessContactDuo, UserSquareDuo } from '@northlight/icons'
 import { Icon } from '../icon'
 import { Box } from '../box'
 import { getInitials } from '../../utils'

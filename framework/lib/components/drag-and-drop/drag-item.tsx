@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { DotsMatrixSolid } from '@mediatool/icons'
+import { DotsMatrixSolid } from '@northlight/icons'
 import { Tag, TagLabel, TagRightIcon } from '../tag'
 import { Icon } from '../icon'
 import { DragItemProps } from './types'

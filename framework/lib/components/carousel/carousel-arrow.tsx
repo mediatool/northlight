@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChevronLeftSolid, ChevronRightSolid } from '@mediatool/icons'
+import { ChevronLeftSolid, ChevronRightSolid } from '@northlight/icons'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { Center } from '../center'
 import { IconButton } from '../icon-button'

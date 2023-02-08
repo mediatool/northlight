@@ -4,7 +4,7 @@ import {
   ConversationDuo,
   DotsHorizontalSolid,
   Globe05Solid,
-} from '@mediatool/icons'
+} from '@northlight/icons'
 import {
   Code,
   Divider,

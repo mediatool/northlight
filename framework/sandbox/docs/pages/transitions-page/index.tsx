@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { palette } from '@mediatool/tokens'
+import { palette } from '@northlight/tokens'
 import { DefaultPageSubtitle, Page } from '../../components'
 import {
   Box,

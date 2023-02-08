@@ -8,7 +8,7 @@ import {
   ColorsDuo,
   MediatoolLogoDuo,
   UsersDuo,
-} from '@mediatool/icons'
+} from '@northlight/icons'
 import {
   Blockquote,
   Box,

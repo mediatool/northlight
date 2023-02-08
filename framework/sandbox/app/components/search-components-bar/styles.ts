@@ -1,5 +1,5 @@
 import { ChakraStylesConfig } from 'chakra-react-select'
-import { palette } from '@mediatool/tokens'
+import { palette } from '@northlight/tokens'
 
 export const searchComponentsBarStyles: ChakraStylesConfig = {
   loadingIndicator: () => ({ display: 'none' }),

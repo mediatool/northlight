@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { ColorsDuo } from '@mediatool/icons'
+import { ColorsDuo } from '@northlight/icons'
 import { FocusScope } from '@react-aria/focus'
 import { useMultiStyleConfig, useToken } from '@chakra-ui/react'
 import { useBoolean, useDisclosure } from '../../hooks'

@@ -1,7 +1,7 @@
 import {
   WebappSkin,
   typography,
-} from '@mediatool/tokens'
+} from '@northlight/tokens'
 import { TokensSet } from './types'
 
 const { color, sizing, spacing, opacity, borderRadius, borderWidth } = WebappSkin

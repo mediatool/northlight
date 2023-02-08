@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useClipboard, useMultiStyleConfig } from '@chakra-ui/react'
-import { CheckDuo, CopyDuo } from '@mediatool/icons'
+import { CheckDuo, CopyDuo } from '@northlight/icons'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
 import { Tooltip } from '../tooltip'

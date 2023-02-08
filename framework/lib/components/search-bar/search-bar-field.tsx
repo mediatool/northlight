@@ -1,6 +1,6 @@
 import React from 'react'
 import { FieldValues } from 'react-hook-form'
-import { XCloseSolid } from '@mediatool/icons'
+import { XCloseSolid } from '@northlight/icons'
 import { identity, isEmpty } from 'ramda'
 import { SearchBarFieldProps, SearchBarOptionType } from './types'
 import { Field } from '../form'

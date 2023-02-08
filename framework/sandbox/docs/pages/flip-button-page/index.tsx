@@ -1,5 +1,5 @@
 import React from 'react'
-import { AgencySolid, UsersDuo } from '@mediatool/icons'
+import { AgencySolid, UsersDuo } from '@northlight/icons'
 import {
   Box,
   Code,

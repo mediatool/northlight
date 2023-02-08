@@ -1,5 +1,5 @@
 import React from 'react'
-import { CheckDuo, EditDuo, XCloseSolid } from '@mediatool/icons'
+import { CheckDuo, EditDuo, XCloseSolid } from '@northlight/icons'
 import {
   HStack,
   useEditableControls,

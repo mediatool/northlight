@@ -167,7 +167,7 @@ const FormPage = () => (
           <Blockquote>Example 2</Blockquote>
           <P>This accomplishes the same thing but with methods prop</P>
           <Code w="max-content" display="block" whiteSpace="pre">
-            { `import { useForm } from '@mediatool/ui'
+            { `import { useForm } from '@northlight/ui'
 const validation = (values: any) => {
   const errors: any = {}
   if (values.firstName === 'admin') {

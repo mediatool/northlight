@@ -1,4 +1,4 @@
-import { Dataflow01Duo, SmileyDuo, SquareSetSolid } from '@mediatool/icons'
+import { Dataflow01Duo, SmileyDuo, SquareSetSolid } from '@northlight/icons'
 import { MainPage } from './app'
 import { routes as docRoutes } from './docs/routes'
 import { routes as tokensRoutes } from './tokens/routes'

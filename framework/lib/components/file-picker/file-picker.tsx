@@ -7,7 +7,7 @@ import {
   Image03Solid,
   TrashFullDuo,
   UploadCloudSolid,
-} from '@mediatool/icons'
+} from '@northlight/icons'
 import { identity } from 'ramda'
 import AvatarEditor from 'react-avatar-editor'
 import { FileEditorModal } from './file-editor-modal'

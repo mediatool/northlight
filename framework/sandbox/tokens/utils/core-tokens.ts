@@ -8,7 +8,7 @@ import {
   coreSpacing,
   coreZIndex,
   palette,
-} from '@mediatool/tokens'
+} from '@northlight/tokens'
 import { TokensSet } from './types'
 
 export const CoreTokens: TokensSet[] = [

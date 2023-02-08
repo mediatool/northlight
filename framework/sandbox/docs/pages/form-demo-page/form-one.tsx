@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextSolid } from '@mediatool/icons'
+import { TextSolid } from '@northlight/icons'
 import {
   Avatar,
   Button,

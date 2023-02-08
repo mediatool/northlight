@@ -1,4 +1,4 @@
-import * as mediatoolIcons from '@mediatool/icons'
+import * as mediatoolIcons from '@northlight/icons'
 import { compose, filter, keys, map, prop, test } from 'ramda'
 import { IconComponent, IconVariantType } from './types'
 

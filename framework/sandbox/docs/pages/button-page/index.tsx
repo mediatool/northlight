@@ -1,5 +1,5 @@
 import React from 'react'
-import { CDeleteSolid, FolderCheckDuo, PencilSolid, PlusDuo } from '@mediatool/icons'
+import { CDeleteSolid, FolderCheckDuo, PencilSolid, PlusDuo } from '@northlight/icons'
 import {
   Button,
   Code,

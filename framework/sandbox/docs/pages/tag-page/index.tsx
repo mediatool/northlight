@@ -1,5 +1,5 @@
 import React from 'react'
-import { StackSolid } from '@mediatool/icons'
+import { StackSolid } from '@northlight/icons'
 import {
   Code,
   Divider,

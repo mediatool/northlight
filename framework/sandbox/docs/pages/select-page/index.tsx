@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListSelectDuo } from '@mediatool/icons'
+import { ListSelectDuo } from '@northlight/icons'
 import {
   Code,
   Divider,

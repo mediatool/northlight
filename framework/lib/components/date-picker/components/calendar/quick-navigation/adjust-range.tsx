@@ -4,7 +4,7 @@ import {
   ArrowCircleRightDuo,
   ChevronDownSolid,
   ChevronUpSolid,
-} from '@mediatool/icons'
+} from '@northlight/icons'
 import { CalendarDate } from '@internationalized/date'
 import { Lead, P } from '../../../../typography'
 import { Clickable } from '../../../../clickable'

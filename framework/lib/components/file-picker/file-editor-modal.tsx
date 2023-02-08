@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react'
 import AvatarEditor from 'react-avatar-editor'
-import { ZoomInDuo } from '@mediatool/icons'
+import { ZoomInDuo } from '@northlight/icons'
 import { EditableText } from '../editable-text'
 import { Icon } from '../icon'
 import { HStack, Stack } from '../stack'

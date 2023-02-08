@@ -7,7 +7,7 @@ import {
 } from 'chakra-react-select'
 import { filter, identity, is, test, toLower } from 'ramda'
 import debounce from 'lodash.debounce'
-import { SearchDuo } from '@mediatool/icons'
+import { SearchDuo } from '@northlight/icons'
 import { searchBarStyles } from './styles'
 import { useSelectCallbacks } from '../../hooks'
 import { Box } from '../box'

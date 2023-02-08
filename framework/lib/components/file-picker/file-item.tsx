@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { identity } from 'ramda'
 import { useMultiStyleConfig } from '@chakra-ui/react'
-import { DownloadDuo, EditBoxDuo, FileBlankDuo, Image03Duo } from '@mediatool/icons'
+import { DownloadDuo, EditBoxDuo, FileBlankDuo, Image03Duo } from '@northlight/icons'
 import AvatarEditor from 'react-avatar-editor'
 import { Icon } from '../icon'
 import { SlideFade } from '../transitions'

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DocumentsDuo, SmileyDuo } from '@mediatool/icons'
+import { DocumentsDuo, SmileyDuo } from '@northlight/icons'
 import {
   Code,
   EditableText,

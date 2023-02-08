@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowCircleRightDuo } from '@mediatool/icons'
+import { ArrowCircleRightDuo } from '@northlight/icons'
 import {
   HStack,
   Icon,

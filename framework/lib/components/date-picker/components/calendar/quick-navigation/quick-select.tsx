@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { CalendarDate } from '@internationalized/date'
 import { any, equals, map } from 'ramda'
-import { palette } from '@mediatool/tokens'
+import { palette } from '@northlight/tokens'
 import { Flex } from '../../../../flex'
 import { Stack } from '../../../../stack'
 import { Box } from '../../../../box'

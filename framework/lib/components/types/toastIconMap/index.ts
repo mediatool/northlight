@@ -3,7 +3,7 @@ import {
   AlertTriangleSolid,
   BellSolid,
   CheckCircleSolid,
-} from '@mediatool/icons'
+} from '@northlight/icons'
 import { AlertVariants } from '../../alert/types'
 
 export const toastIconMap: Record<AlertVariants, any> = {

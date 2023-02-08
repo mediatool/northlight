@@ -6,7 +6,7 @@ const Icons = () => (
   <Stack p={ 4 } spacing={ 4 }>
     <H1>Mediatool icons</H1>
     <P>Exported as components from the package{ ' ' }
-      <Code>@mediatool/icons</Code>
+      <Code>@northlight/icons</Code>
     </P>
     <Divider />
     <Stack>

@@ -4,7 +4,7 @@ import {
   NumberDecrementStepper,
   NumberIncrementStepper,
 } from '@chakra-ui/react'
-import { ChevronDownSolid, ChevronUpSolid } from '@mediatool/icons'
+import { ChevronDownSolid, ChevronUpSolid } from '@northlight/icons'
 import { Icon } from '../icon'
 import { HStack } from '../stack'
 import { Divider } from '../divider'

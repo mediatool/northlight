@@ -2,7 +2,7 @@ import { ThemeOverride } from '@chakra-ui/react'
 import {
   WebappSkin as WebappSkinTokens,
   typography,
-} from '@mediatool/tokens'
+} from '@northlight/tokens'
 
 export const WebappSkin:ThemeOverride = {
   colors: WebappSkinTokens.color,

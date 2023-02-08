@@ -1,7 +1,7 @@
 import React, { DragEvent, useEffect, useRef, useState } from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { filter, identity } from 'ramda'
-import { Image03Solid, UploadCloudSolid } from '@mediatool/icons'
+import { Image03Solid, UploadCloudSolid } from '@northlight/icons'
 import { Box } from '../box'
 import { Icon } from '../icon'
 import { Input } from '../input'

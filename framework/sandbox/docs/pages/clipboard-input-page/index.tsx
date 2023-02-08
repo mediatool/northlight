@@ -33,8 +33,8 @@ const ClipboardInputPage = () => (
       <Code w="max-content">{ '<ClipboardInput value="Size md (default)" />' }</Code>
       <Divider />
       <Text>It is possible to pass a custom <b>aria-label</b> to the copy button</Text>
-      <ClipboardInput value="hello@mediatool.com" aria-label="Copy email" />
-      <Code w="max-content">{ '<ClipboardInput value="hello@mediatool.com" aria-label="Copy email" />' }</Code>
+      <ClipboardInput value="hello@northlight.com" aria-label="Copy email" />
+      <Code w="max-content">{ '<ClipboardInput value="hello@northlight.com" aria-label="Copy email" />' }</Code>
     </Stack>
   </Page>
 )

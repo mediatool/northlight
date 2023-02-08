@@ -3,7 +3,7 @@ import {
   ChevronDownSolid,
   ChevronUpSolid,
   XCloseSolid,
-} from '@mediatool/icons'
+} from '@northlight/icons'
 import {
   Button,
   HStack,
