@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "sandbox.tsx",
+    "sandbox/**/*",
+    "test/**/*",
+    "vite.config.ts"
+  ],
+  "compilerOptions": {
+    "noEmitOnError": true
+  },
+  "files": []
+}

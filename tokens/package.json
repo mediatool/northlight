@@ -1,0 +1,33 @@
+{
+  "name": "@mediatool/tokens",
+  "version": "2.0.2",
+  "license": "UNLICENSED",
+  "exports": {
+    "types": "./dist/ts/types.d.ts",
+    "import": "./dist/es/tokens.mjs",
+    "require": "./dist/cjs/tokens.js"
+  },
+  "main": "./dist/cjs/tokens.js",
+  "types": "./dist/ts/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "transform": "yarn token-transformer lib/tokens.json dist/sets/tott/global.json global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/tott/tott.json global,tott global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/tott/tott-components.json global,tott,components global,tott && yarn token-transformer lib/tokens.json dist/sets/webapp/global.json global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/webapp/webapp.json global,webapp global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/webapp/webapp-components.json global,webapp,components global,webapp",
+    "build": "yarn transform && node scripts/sd-build.js && yarn rollup -c",
+    "clean": "rm -rf dist",
+    "lint": "eslint --ext ts,js scripts/* *.ts *.js",
+    "prepublishOnly": "yarn clean && yarn build",
+    "test": "echo testless"
+  },
+  "devDependencies": {
+    "@mediatool/eslint-config-mediatool": "^1.1.13",
+    "@rollup/plugin-json": "^4.1.0",
+    "ramda": "0.15.1",
+    "rollup": "^2.78.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-esbuild": "^4.9.3",
+    "style-dictionary": "^3.7.1",
+    "token-transformer": "^0.0.25"
+  }
+}

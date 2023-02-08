@@ -1,0 +1,47 @@
+{
+  "include": [
+    "index.ts",
+    "sandbox.tsx",
+    "lib/**/*",
+    "test/**/*",
+    "sandbox/**/*",
+    "@types"
+  ],
+  "files": [
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "declaration": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "declarationDir": "dist",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "esnext",
+    "sourceMap": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "types": [
+      "@chakra-ui/react",
+      "vite/client",
+      "mocha"
+    ],
+    "typeRoots": ["@types"],
+    "paths": {
+      "~/*": ["./*"],
+      "~lib/*": ["./lib/*"]
+    }
+  }
+}

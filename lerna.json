@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "changelog",
+    "framework",
+    "tokens",
+    "icons"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true
+}
