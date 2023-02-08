@@ -25,13 +25,14 @@ export const CalendarCell = ({
       <Button
         { ...buttonProps }
         ref={ ref }
-        rounded="full"
+        borderRadius="xs"
         boxSize={ 8 }
         hidden={ isOutsideMonth }
         size="sm"
         fontWeight="medium"
         variant={ isSelected ? 'brand' : 'ghost' }
-        borderWidth={ isToday ? '1px' : 'none' }
+        ring={ isToday && !isSelected ? '1px' : '0px' }
+        ringColor="blue.500"
       >
         { formattedDate }
       </Button>
