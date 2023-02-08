@@ -21,6 +21,7 @@ export const RangeCell = ({ state, date, currentMonth }: RangeCellProps) => {
     <chakra.td { ...cellProps }>
       <chakra.button
         { ...buttonProps }
+        type="button"
         ref={ ref }
         borderRadius="xs"
         bgColor={ isSelected ? 'blue.500' : 'transparent' }
