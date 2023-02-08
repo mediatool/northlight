@@ -1,0 +1,11 @@
+*node_modules*
+.idea/
+.vscode/
+**/*/dist
+*/Dockerfile
+*/demo/dist
+.DS_Store
+**/*/.nyc_output
+**/cypress/videos
+**/cypress/screenshots
+.icloud

@@ -1,6 +1,5 @@
 {
   "packages": [
-    "changelog",
     "framework",
     "tokens",
     "icons"

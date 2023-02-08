@@ -1,7 +1,6 @@
 {
   "private": true,
   "workspaces": [
-    "changelog",
     "framework",
     "tokens",
     "icons"
@@ -15,5 +14,5 @@
     "transpile": "lerna run build",
     "lint": "lerna run lint"
   },
-  "name": "ui"
+  "name": "northlight"
 }
