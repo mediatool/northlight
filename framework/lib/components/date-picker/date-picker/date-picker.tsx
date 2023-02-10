@@ -23,6 +23,7 @@ export const DatePicker = (props: DatePickerProps) => {
     isInvalid = false,
     dateFormat,
     minValue,
+    variant = 'outline',
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -51,8 +52,11 @@ export const DatePicker = (props: DatePickerProps) => {
       <PopoverAnchor>
         <HStack minW={ 56 }>
           <InputGroup { ...groupProps } ref={ ref } __css={ group }>
-            <StyledField isDisabled={ isDisabled } isInvalid={ isInvalid }>
-              <Box paddingInline="1a">
+            <StyledField isDisabled={ isDisabled } isInvalid={ isInvalid } variant={ variant }>
+              <Box
+                paddingInlineStart="1a"
+                paddingInlineEnd={ 10 }
+              >
                 <DateField
                   { ...fieldProps }
                   dateFormat={ dateFormat }

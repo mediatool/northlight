@@ -18,6 +18,7 @@ export interface StyledFieldProps extends HTMLAttributes<HTMLElement> {
   isInvalid?: boolean
   isDisabled?: boolean
   children: ReactNode
+  variant?: 'outline' | 'filled'
 }
 export interface TriggerProps extends AriaButtonProps {
   handleClick: () => void
