@@ -11,16 +11,13 @@ import { DateRange } from '@react-types/calendar'
 import { RegisterOptions } from 'react-hook-form'
 import { InputFieldProps } from '../../types'
 
-export * from './components/date-field'
-export * from './components/calendar/date-select'
-export * from './components/calendar/components'
-
 type DatePickerSettings = {
   firstDayOfWeek: 'sunday' | 'monday'
   resetDate: () => void
   isInvalid?: boolean
   dateFormat?: string
   isClearable?: boolean
+  variant?: 'outline' | 'filled'
 }
 
 type DatePickerMode = 'simple' | 'advanced'

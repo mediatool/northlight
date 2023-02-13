@@ -16,7 +16,7 @@ export const DateButton = ({
           fontWeight: 'semibold',
         } }
         sx={ {
-          color: isActive ? 'background.button.brand' : 'text.defualt',
+          color: isActive ? 'background.button.brand' : 'text.default',
           cursor: 'pointer',
           fontWeight: isActive ? 'semibold' : 'regular',
         } }

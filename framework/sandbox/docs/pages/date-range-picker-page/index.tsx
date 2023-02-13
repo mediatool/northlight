@@ -63,6 +63,11 @@ const DateRangePickerPage = () => (
                 }
             </Code>
             <Divider />
+            <P>The date range picker comes in two variants</P>
+            <HStack>
+              <DateRangePickerField variant="outline" label="outline" name="outline" />
+              <DateRangePickerField variant="filled" label="filled" name="filled" />
+            </HStack>
             <P>
               You can adjust the custom company fiscal year by setting the { ' ' }
               <b>fiscalStartMonth</b> to the number of the month, counting

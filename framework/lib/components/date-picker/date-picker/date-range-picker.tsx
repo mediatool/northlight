@@ -27,6 +27,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     minValue,
     fiscalStartMonth,
     mode = 'advanced',
+    variant = 'outline',
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -65,8 +66,11 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       <PopoverAnchor>
         <HStack>
           <InputGroup { ...groupProps } ref={ ref } __css={ group }>
-            <StyledField isDisabled={ isDisabled } isInvalid={ isInvalid }>
-              <HStack paddingInlineEnd={ 10 }>
+            <StyledField isDisabled={ isDisabled } isInvalid={ isInvalid } variant={ variant }>
+              <HStack
+                paddingInlineStart="1a"
+                paddingInlineEnd={ 10 }
+              >
                 <DateField
                   { ...startFieldProps }
                   dateFormat={ dateFormat }
