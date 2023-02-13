@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.0.4...@northlight/ui@1.1.0) (2023-02-13)
+
+
+### Bug Fixes
+
+* **ui:** fix immediate submit ([ffa83de](https://github.com/mediatool/northlight/commit/ffa83de3407a6f83614653173b5a292bd5a5b3cd))
+* **ui:** remove default inline padding ([0a9dc09](https://github.com/mediatool/northlight/commit/0a9dc0983e3e25e32258512e6a57e4c8bc385f65))
+* **ui:** update normal cell styling ([94a20e8](https://github.com/mediatool/northlight/commit/94a20e812f67405da4c899990087b69dffe1b694))
+
+
+### Features
+
+* **ui:** filled variant ([3b91a4b](https://github.com/mediatool/northlight/commit/3b91a4b26a72a3c2ff15229413270b2df87a475d))
+
+
+
+
+
 ## [1.0.4](https://github.com/mediatool/northlight/compare/@northlight/ui@1.0.2...@northlight/ui@1.0.4) (2023-02-08)
 
 **Note:** Version bump only for package @northlight/ui
