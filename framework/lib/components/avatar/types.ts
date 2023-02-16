@@ -1,3 +1,4 @@
+import React from 'react'
 import { AvatarProps as ChakraAvatarProps } from '@chakra-ui/react'
 
 export interface AvatarProps extends ChakraAvatarProps {
@@ -8,4 +9,10 @@ export interface AvatarProps extends ChakraAvatarProps {
 }
 export interface AvatarBadgeProps {
   notificationCount?: number
+}
+
+export interface AvatarGroupProps {
+  max: number
+  spacing?: number | string
+  children: JSX.Element[] | React.ReactNode[]
 }
