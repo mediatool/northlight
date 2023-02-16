@@ -5,15 +5,18 @@ import {
   Divider,
   HStack,
   Icon,
+  P,
   Stack,
   Tag,
   TagCloseButton,
+  TagGroup,
   TagLabel,
   TagLeftIcon,
   TagRightIcon,
   Text,
 } from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
+import { arrayWithLength } from '../../utils'
 
 const TagPage = () => (
   <Page
@@ -56,6 +59,20 @@ const TagPage = () => (
           </Code>
         </Stack>
       </HStack>
+      <Divider />
+      <P>Use the { '<TagGroup />' } util component for responsive horizontal tag layouts, try resizing the window!</P>
+      <TagGroup w="20%" border="1px solid black" p="2" borderRadius="md">
+        { arrayWithLength(10).map((i) => (
+          <Tag w="max-content" key={ i }>{ i }</Tag>
+        )) }
+      </TagGroup>
+      <Code w="max-content" display="block" whiteSpace="pre">{
+`<TagGroup w="20%" border="1px solid black" p="2" borderRadius="md">
+  { arrayWithLength(10).map((i) => (
+    <Tag w="max-content">{ i }</Tag>
+  )) }
+</TagGroup>` }
+      </Code>
       <Divider />
       <Text>One can add an icon using <strong>TagLeftIcon   </strong>
         or <strong>TagRightIcon</strong>, there's also a <strong>TagCloseButton</strong>

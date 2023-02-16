@@ -1,16 +1,19 @@
 import React from 'react'
 import {
   Avatar,
+  AvatarGroup,
   Code,
   Divider,
   HStack,
   Heading,
+  P,
   Stack,
   Text,
   VStack,
 } from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
 import { users } from '../../../app/context'
+import { arrayWithLength } from '../../utils'
 
 const AvatarPage = () => (
   <Page
@@ -50,6 +53,32 @@ const AvatarPage = () => (
         <Text>If there is no name nor image, it renders a fallback icon</Text>
         <Avatar />
         <Code w="max-content">{ '<Avatar />' }</Code>
+        <P>It can be grouped together using { '<AvatarGroup />' }</P>
+        <AvatarGroup max={ 3 }>
+          { arrayWithLength(5).map((i) => (
+            <Avatar
+              name="Anakin Skywalker"
+              image={ users.anakin.image }
+              size="sm"
+              variant="rounded"
+              key={ i }
+            />
+          )) }
+        </AvatarGroup>
+        <Code w="max-content" display="block" whiteSpace="pre">{
+`¨<AvatarGroup max={ 3 }>
+  { arrayWithLength(5).map((i) => (
+    <Avatar
+      name="Anakin Skywalker"
+      image={ users.anakin.image }
+      size="sm"
+      variant="rounded"
+      key={ i }
+    />
+  )) }
+</AvatarGroup>` }
+        </Code>
+        <P>AvatarGroup takes a spacing and max prop</P>
       </Stack>
       <Divider />
       <Text>
