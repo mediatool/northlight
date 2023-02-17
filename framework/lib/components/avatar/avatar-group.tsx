@@ -6,7 +6,7 @@ import { OverflowGroup } from '../overflow-group'
 
 export const AvatarGroup = ({
   children,
-  max = 999,
+  max = Infinity,
   spacing = '-4',
   ...rest
 }: AvatarGroupProps) => {

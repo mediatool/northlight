@@ -6,11 +6,11 @@ import { TagGroupProps } from './types'
 
 export const TagGroup = ({
   children,
-  max = 999,
+  max = Infinity,
   spacing = '2',
   ...rest
 }: TagGroupProps) => {
-  const [ nbrRemainingAvatars, setNbrRemainingAvatars ] = useState(0)
+  const [ nbrRemainingTags, setNbrRemainingTags ] = useState(0)
   const { rect, containerRef } = useOverflowGroup()
 
   return (
@@ -21,12 +21,12 @@ export const TagGroup = ({
       { ...rest }
     >
       <HStack spacing={ spacing }>
-        <OverflowGroup max={ max } onChange={ setNbrRemainingAvatars } rect={ rect }>
+        <OverflowGroup max={ max } onChange={ setNbrRemainingTags } rect={ rect }>
           { children }
         </OverflowGroup>
       </HStack>
-      { nbrRemainingAvatars > 0 && (
-        <Tag variant="subtle">+{ nbrRemainingAvatars }</Tag>
+      { nbrRemainingTags > 0 && (
+        <Tag variant="subtle">+{ nbrRemainingTags }</Tag>
       ) }
     </HStack>
   )
