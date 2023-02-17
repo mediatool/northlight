@@ -6,6 +6,7 @@
     "icons"
   ],
   "devDependencies": {
+    "@nrwl/nx-cloud": "^15.0.3",
     "lerna": "^5.1.6",
     "nx": "^15.7.1"
   },
