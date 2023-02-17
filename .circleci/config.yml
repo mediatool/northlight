@@ -1,0 +1,66 @@
+version: 2.1
+
+commands:
+  install:
+    parameters:
+      node-version:
+        type: string
+    steps:
+      - run:
+          name: Set auth token
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - restore_cache:
+          name: 'Restoring cache'
+          key: yarn-hash-{{ checksum "yarn.lock" }}
+      - run:
+          name: 'Install packages'
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          name: 'Saving cache'
+          key: yarn-hash-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules/
+            - framework/node_modules/
+            - tokens/node_modules/
+            - icons/node_modules/
+  transpile:
+    steps:
+      - run:
+          name: Transpile
+          command: yarn transpile
+  lint:
+    steps:
+      - run:
+          name: Lint
+          command: yarn lint
+  run-tests:
+    steps:
+      - run:
+          name: Test
+          command: yarn test
+      - store_test_results:
+          path: test-results
+jobs:
+  test:
+    parameters:
+      node-version:
+        type: string
+    docker:
+      - image: cimg/node:<< parameters.node-version >>
+    steps:
+      - checkout
+      - install:
+          node-version: << parameters.node-version >>
+      - transpile
+      - lint
+      - run-tests
+
+workflows:
+  test-all:
+    jobs:
+      - test:
+          matrix:
+            parameters:
+              node-version:
+                - '14.20'
+                - '16.15'
