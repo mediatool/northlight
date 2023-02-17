@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/mediatool/northlight/compare/@northlight/ui@1.2.0...@northlight/ui@1.2.1) (2023-02-17)
+
+
+### Bug Fixes
+
+* **framework:** changed number of decimals to 13 instead of 18 for number input ([3d030b8](https://github.com/mediatool/northlight/commit/3d030b8f4034be639b781cdbd0c32d721cb4396d))
+
+
+
+
+
 # [1.2.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.1.0...@northlight/ui@1.2.0) (2023-02-17)
 
 
