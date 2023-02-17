@@ -1,0 +1,38 @@
+{
+  "extends": "nx/presets/npm.json",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "lint",
+          "test",
+          "transpile",
+          "unit"
+        ]
+      }
+    }
+  },
+  "namedInputs": {
+    "source": ["{projectRoot}/lib/*"]
+  },
+  "targetDefaults": {
+    "transpile": {
+      "dependsOn": ["^transpile"],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "lint": {
+      "dependsOn": ["transpile"]
+    },
+    "test": {
+      "dependsOn": ["transpile"],
+      "inputs": [{ "runtime": "node -v" }, "source", "^source"]
+    },
+    "demo": {
+      "dependsOn": ["^transpile"]
+    }
+  },
+  "affected": {
+    "defaultBase": "master"
+  }
+}

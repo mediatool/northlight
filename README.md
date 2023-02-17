@@ -9,14 +9,10 @@ To start up a local sandbox environment of the Northlight UI framework:
 1. Clone this repository
 2. cd into the directory
 3. run `yarn`
-4. cd into `/tokens`
-5. run `yarn build`
-6. cd into `/icons`
-7. run `yarn build`
-8. cd into `/framework`
-9. run `yarn start`
+4. cd into `/framework`
+5. run `yarn nx demo`
 
-This will spin up a local environment sandbox at localhost:3008
+This will spin up a local environment sandbox at localhost:3008 (or the first available port after that)
 
 ## Usage
 
