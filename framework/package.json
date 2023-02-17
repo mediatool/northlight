@@ -22,14 +22,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup --config rollup.config.js",
+    "build": "vite build",
+    "transpile": "rollup --config rollup.config.js",
     "clean": "rm -rf dist",
     "lint": "eslint --ext ts,tsx lib/ sandbox/ test",
-    "prepublishOnly": "yarn clean && yarn build",
-    "start": "vite",
+    "prepublishOnly": "yarn clean && yarn transpile",
+    "demo": "vite",
     "tokens": "node sd-build.js",
-    "test": "yarn lint && yarn unit",
-    "unit": "mocha"
+    "test": "mocha"
   },
   "dependencies": {
     "@chakra-ui/clickable": "^2.0.11",
