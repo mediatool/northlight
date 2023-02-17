@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.1.0...@northlight/ui@1.2.0) (2023-02-17)
+
+
+### Features
+
+* **framework:** avatar-group ([89e530a](https://github.com/mediatool/northlight/commit/89e530ad12a3eb5dcd6d99c9598d0d4e124ef101))
+* **framework:** overflow-group ([7bda0d7](https://github.com/mediatool/northlight/commit/7bda0d7ea087566efe1ade62c1727434c51dc3f3))
+* **framework:** tag-group ([030b1d1](https://github.com/mediatool/northlight/commit/030b1d14237665999ac8753566dc42d80ac85b8c))
+
+
+
+
+
 # [1.1.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.0.4...@northlight/ui@1.1.0) (2023-02-13)
 
 
