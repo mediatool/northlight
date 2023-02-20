@@ -50,6 +50,13 @@ const AvatarPage = () => (
         </Text>
         <Avatar name="Anakin Skywalker" />
         <Code w="max-content">{ '<Avatar name="Anakin Skywalker" />' }</Code>
+        <Text>It will asign a random background color for the image based on the Intitials</Text>
+        <HStack>
+          <Avatar name="Anakin Skywalker" />
+          <Avatar name="Obiwan Kenobi" />
+          <Avatar name="Han Solo" />
+          <Avatar name="Master Yoda" />
+        </HStack>
         <Text>If there is no name nor image, it renders a fallback icon</Text>
         <Avatar />
         <Code w="max-content">{ '<Avatar />' }</Code>

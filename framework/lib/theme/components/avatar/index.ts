@@ -1,4 +1,6 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { getContrastColor } from '../../../utils'
+import { getAvatarBgColor } from './get-avatar-bg-color'
 
 export const Avatar: ComponentMultiStyleConfig = {
   parts: [ 'container', 'text', 'badge', 'icon' ],
@@ -81,39 +83,43 @@ export const Avatar: ComponentMultiStyleConfig = {
     colors: color,
     sizes: sizing,
     radii: borderRadius,
-  }, image }) => ({
-    container: {
-      bgColor: image ? color.background.avatar.image : color.background.avatar.default,
-      color: color.text.inverted,
-      display: 'grid',
-      placeItems: 'center',
-      objectFit: 'cover',
-      position: 'relative',
-    },
-    userImage: {
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-    },
-    badge: {
-      position: 'absolute',
-      bottom: `-${sizing['1']}`,
-      right: `-${sizing['1']}`,
-      minWidth: sizing['5'],
-      height: sizing['5'],
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      fontSize: 'xs',
-      fontWeight: 'semibold',
-      padding: sizing['0a'],
-      bgColor: color.red['500'],
-      color: color.text.inverted,
-      borderRadius: borderRadius.avatar.square,
-      border: 'none',
-    },
+  }, image, name }) => {
+    const avatarBgColor = getAvatarBgColor(image, name, color)
 
-  }),
+    return {
+      container: {
+        bgColor: avatarBgColor,
+        color: getContrastColor(avatarBgColor),
+        display: 'grid',
+        placeItems: 'center',
+        objectFit: 'cover',
+        position: 'relative',
+      },
+      userImage: {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+      },
+      badge: {
+        position: 'absolute',
+        bottom: `-${sizing['1']}`,
+        right: `-${sizing['1']}`,
+        minWidth: sizing['5'],
+        height: sizing['5'],
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 'xs',
+        fontWeight: 'semibold',
+        padding: sizing['0a'],
+        bgColor: color.red['500'],
+        color: color.text.inverted,
+        borderRadius: borderRadius.avatar.square,
+        border: 'none',
+      },
+
+    }
+  },
   variants: {
     square: ({ theme: { radii: borderRadius } }) => ({
       container: {
