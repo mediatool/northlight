@@ -7,7 +7,6 @@ import {
   AriaDatePickerProps,
   AriaDateRangePickerProps,
 } from '@react-aria/datepicker'
-import { DateRange } from '@react-types/calendar'
 import { RegisterOptions } from 'react-hook-form'
 import { InputFieldProps } from '../../types'
 
@@ -27,8 +26,15 @@ export interface DatePickerProps
   DatePickerSettings {}
 
 export interface DateRangePickerProps
-  extends AriaDateRangePickerProps<DateValue>,
+  extends Omit<AriaDateRangePickerProps<DateValue>, 'onChange' | 'value' | 'minValue' | 'maxValue'>,
   DatePickerSettings {
+  onChange?: (date: null | { startDate: string, endDate: string }) => void
+  value: {
+    startDate: string
+    endDate: string
+  }
+  minValue: string | undefined
+  maxValue: string | undefined
   fiscalStartMonth?: number
   mode?: DatePickerMode
 }
@@ -49,7 +55,7 @@ export interface DatePickerFieldProps
 }
 
 export interface DateRangePickerFieldProps extends Omit<DatePickerFieldProps, 'onChange'> {
-  onChange?: (date: DateRange) => void
+  onChange?: (date: null | { startDate: string, endDate: string }) => void
   mode?: DatePickerMode
 }
 interface DateRangeFormatted {
