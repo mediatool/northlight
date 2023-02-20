@@ -31,6 +31,10 @@ export default [ {
     name: 'mtUiFramework',
     sourcemap: true,
     file: 'dist/umd/mediatool-ui-framework.js',
+  }, {
+    format: 'cjs',
+    sourcemap: true,
+    file: 'dist/cjs/mediatool-ui-framework.js',
   } ],
 }, {
   input: './index.ts',

@@ -16,6 +16,10 @@
     "./sandbox": {
       "types": "./dist/es/sandbox.d.mts",
       "import": "./dist/es/sandbox.mjs"
+    },
+    "./common": {
+      "import": "./dist/cjs/mediatool-ui-framework.js",
+      "require": "./dist/cjs/mediatool-ui-framework.js"
     }
   },
   "files": [
