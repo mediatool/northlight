@@ -58,6 +58,10 @@ export const OverflowGroup = ({
     initMax,
   ])
 
+  useEffect(() => {
+    isLocked.current = false
+  }, [ rectDependency.clientHeight, rectDependency.clientWidth ])
+
   const handleResize = () => {
     setTimeout(() => {
       isLocked.current = false
