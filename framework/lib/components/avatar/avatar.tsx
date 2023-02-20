@@ -19,6 +19,7 @@ export const Avatar = ({
     variant,
     image,
     size,
+    name,
   })
 
   return (
