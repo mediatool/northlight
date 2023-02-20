@@ -1,0 +1,4 @@
+#!/bin/bash
+yarn
+yarn --cwd .. transpile
+yarn vite build
