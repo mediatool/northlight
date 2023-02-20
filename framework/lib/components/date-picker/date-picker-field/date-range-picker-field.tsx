@@ -1,12 +1,9 @@
 import React from 'react'
-import { DateValue, parseDate } from '@internationalized/date'
 import { identity } from 'ramda'
-import { DateRange } from '@react-types/datepicker'
 import { DateRangePickerFieldProps, FormBody } from '../types'
 import { Field } from '../../form'
 import { DateRangePicker } from '../date-picker/date-range-picker'
 import { useFormContext } from '../../../hooks'
-import { isValidDateRange } from './utils'
 
 export const DateRangePickerField = ({
   name,
@@ -22,14 +19,11 @@ export const DateRangePickerField = ({
 }: DateRangePickerFieldProps) => {
   const { setValue, setError, trigger } = useFormContext<FormBody>()
 
-  const handleChange = (date: DateRange) => {
-    setValue(name, {
-      startDate: date?.start.toString(),
-      endDate: date?.end.toString(),
-    })
+  const handleChange = (dateRange: { startDate: string, endDate: string }) => {
+    setValue(name, dateRange)
     if (
-      (minValue && date?.start < parseDate(minValue)) ||
-      (maxValue && date?.end > parseDate(maxValue))
+      (minValue && dateRange?.startDate < minValue) ||
+      (maxValue && dateRange?.endDate > maxValue)
     ) {
       setError(name, {
         type: 'custom',
@@ -43,7 +37,7 @@ export const DateRangePickerField = ({
     } else {
       trigger(name)
     }
-    onChangeCallback(date)
+    onChangeCallback(dateRange)
   }
 
   return (
@@ -61,13 +55,9 @@ export const DateRangePickerField = ({
           isInvalid={ !!errors[name] }
           onChange={ handleChange }
           resetDate={ () => onChange(null) }
-          value={
-            isValidDateRange(value)
-              ? { start: parseDate(value.startDate), end: parseDate(value.endDate) }
-              : null
-          }
-          minValue={ minValue ? (parseDate(minValue) as DateValue) : undefined }
-          maxValue={ maxValue ? (parseDate(maxValue) as DateValue) : undefined }
+          value={ value }
+          minValue={ minValue }
+          maxValue={ maxValue }
           validationState={ errors.name ? 'invalid' : 'valid' }
           { ...(rest as any) }
         />
