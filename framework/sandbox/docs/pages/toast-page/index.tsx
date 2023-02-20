@@ -4,6 +4,7 @@ import {
   Code,
   Divider,
   HStack,
+  P,
   Stack,
   Text,
   Toast,
@@ -59,15 +60,9 @@ const ToastPage = () => {
           <Button
             variant="success"
             onClick={ () => toast({
-              position: 'top-right',
-              render: ({ onClose }) => (
-                <Toast
-                  variant="success"
-                  title="Saved"
-                  description="Your setting have been saved, you will need to reload the page before the changes take effect."
-                  onClose={ onClose }
-                />
-              ),
+              variant: 'success',
+              title: 'Saved',
+              description: 'Your setting have been saved, you will need to reload the page before the changes take effect.',
             })
           }
           >
@@ -96,16 +91,23 @@ const ToastPage = () => {
 `const toast = useToast()
 toast({
   position: 'top-right',
-  render: ({ onClose }) => (
-    <Toast
-      variant="error"
-      title="Error  "
-      description="Please save you changes before exiting"
-      onClose={ onClose }
-    />
-  ),
+  variant:"error"
+  title:"Error  "
+  description:"Please save you changes before exiting"
+  onClose={ onClose }
 })` }
         </Code>
+        <P>
+          The default values are: <br />
+        </P>
+        <Code w="max-content" whiteSpace="pre" display="block">
+          variant: 'success' <br />
+          title: 'Success' <br />
+          position: 'top' <br />
+        </Code>
+        <P>
+          One can also render a custom element using the <b>render</b> prop.
+        </P>
         <Text>Example: </Text>
         <Code w="max-content" display="block" whiteSpace="pre">{
 `const toast = useToast()
