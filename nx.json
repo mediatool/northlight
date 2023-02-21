@@ -10,6 +10,7 @@
           "transpile",
           "unit"
         ],
+        "cacheDirectory": "./.cache/nx",
         "accessToken": "Mjc2ZmI1ZDgtOTIyOC00Nzc1LWJkMWUtN2FmOGY5Yzg5ZTk3fHJlYWQtd3JpdGU="
       }
     }
@@ -23,10 +24,10 @@
       "outputs": ["{projectRoot}/dist"]
     },
     "lint": {
-      "dependsOn": ["transpile"]
+      "dependsOn": ["^transpile"]
     },
     "test": {
-      "dependsOn": ["transpile"],
+      "dependsOn": ["^transpile"],
       "inputs": [{ "runtime": "node -v" }, "source", "^source"]
     },
     "demo": {
