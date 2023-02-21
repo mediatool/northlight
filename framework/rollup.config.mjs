@@ -1,10 +1,12 @@
+import { readFileSync } from 'fs'
 import image from '@rollup/plugin-image'
 import json from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import dts from 'rollup-plugin-dts'
 import esbuild from 'rollup-plugin-esbuild'
-import pkg from './package.json'
+
+const pkg = JSON.parse(readFileSync('./package.json', 'utf8'))
 
 const external = [
   ...Object.keys(pkg.peerDependencies),
