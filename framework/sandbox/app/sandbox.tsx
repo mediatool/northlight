@@ -41,7 +41,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                 >
                   <FormControl display="flex" alignItems="center" my={ 2 } pl={ 2 }>
                     <FormLabel htmlFor="tott" mb="0">
-                      TOTT theme, uhm?
+                      Dark theme
                     </FormLabel>
                     <Switch id="tott" onChange={ () => setTott(!tott) } />
                   </FormControl>
