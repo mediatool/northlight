@@ -61,13 +61,13 @@ export const SearchComponentsBar = ({
 
   return (
     <Stack p="4">
-      <Card w="lg">
-        <SearchBar placeholder="Ctrl + k..." onMenuOpen={ onOpen } />
+      <Card w="xl">
+        <SearchBar placeholder="Ctrl/Control + K to release the beast" onMenuOpen={ onOpen } />
       </Card>
       <Modal
         isOpen={ isOpen }
         onClose={ onClose }
-        size="3xl"
+        size="4xl"
         autoFocus={ true }
         initialFocusRef={ ref }
       >

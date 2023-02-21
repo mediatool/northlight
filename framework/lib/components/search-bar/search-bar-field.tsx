@@ -55,8 +55,8 @@ export const SearchBarField = <T extends SearchBarOptionType> ({
         <IconButton
           aria-label={ `${name}-close-button` }
           variant="danger"
-          size="sm"
-          fontSize="xs"
+          size="lg"
+          fontSize="sm"
           hidden={ isEmpty(value) || !isClearable }
           onClick={ () => onChange([]) }
           icon={ <Icon as={ XCloseSolid } /> }
