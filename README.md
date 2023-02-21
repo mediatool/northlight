@@ -8,19 +8,15 @@ To start up a local sandbox environment of the Northlight UI framework:
 
 1. Clone this repository
 2. cd into the directory
-3. run `yarn`
+3. run `pnpm`
 4. cd into `/framework`
-5. run `yarn nx demo`
+5. run `pnpm nx demo`
 
 This will spin up a local environment sandbox at localhost:3008 (or the first available port after that)
 
 ## Usage
 
-To get started with Northlight, you will need to install the following packages from npm:
-
-```
-yarn add @northlight/ui
-```
+To get started with Northlight, you will need to install `@northlight/ui` from npm:
 
 Once installed, you can then import the different components from Northlight into your application. Here is an example of a basic button component:
 

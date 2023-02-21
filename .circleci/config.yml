@@ -1,6 +1,11 @@
 version: 2.1
 
 commands:
+  install-pnpm:
+    steps:
+      - run:
+          name: Install pnpm
+          command: command -v pnpm || npm install -g pnpm
   install:
     parameters:
       node-version:
@@ -14,14 +19,15 @@ commands:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - restore_cache:
           name: 'Restoring cache'
-          key: yarn-hash-{{ checksum "/tmp/node-version" }}-{{ checksum "yarn.lock" }}
+          key: pnpm-hash-{{ checksum "/tmp/node-version" }}-{{ checksum "pnpm-lock.yaml" }}
       - run:
           name: 'Install packages'
-          command: yarn install --frozen-lockfile
+          command: pnpm install --frozen-lockfile
       - save_cache:
           name: 'Saving cache'
-          key: yarn-hash-{{ checksum "/tmp/node-version" }}-{{ checksum "yarn.lock" }}
+          key: pnpm-hash-{{ checksum "/tmp/node-version" }}-{{ checksum "pnpm-lock.yaml" }}
           paths:
+            - ~/.local/share/pnpm/store
             - node_modules/
             - framework/node_modules/
             - tokens/node_modules/
@@ -52,6 +58,7 @@ jobs:
       - image: cimg/node:<< parameters.node-version >>
     steps:
       - checkout
+      - install-pnpm
       - install:
           node-version: << parameters.node-version >>
       - transpile

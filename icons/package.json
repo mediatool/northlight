@@ -13,10 +13,10 @@
     "dist"
   ],
   "scripts": {
-    "transpile": "yarn svgo && yarn svgr && yarn rollup -c",
+    "transpile": "pnpm svgo && pnpm svgr && pnpm rollup -c",
     "clean": "rm -rf dist",
     "lint": "eslint --ext ts,js *.ts *.js",
-    "prepublishOnly": "yarn clean && yarn build",
+    "prepublishOnly": "pnpm clean && pnpm build",
     "svgo": "svgo -f assets -o dist/svg",
     "svgr": "svgr -d dist/lib dist/svg",
     "test": "echo testless"

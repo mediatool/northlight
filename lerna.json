@@ -5,6 +5,6 @@
     "icons"
   ],
   "version": "independent",
-  "npmClient": "yarn",
+  "npmClient": "pnpm",
   "useWorkspaces": true
 }

@@ -13,11 +13,11 @@
     "dist"
   ],
   "scripts": {
-    "transform": "yarn token-transformer lib/tokens.json dist/sets/tott/global.json global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/tott/tott.json global,tott global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/tott/tott-components.json global,tott,components global,tott && yarn token-transformer lib/tokens.json dist/sets/webapp/global.json global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/webapp/webapp.json global,webapp global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/webapp/webapp-components.json global,webapp,components global,webapp",
-    "transpile": "yarn transform && node scripts/sd-build.js && yarn rollup -c",
+    "transform": "pnpm token-transformer lib/tokens.json dist/sets/tott/global.json global --resolveReferences=false && pnpm token-transformer lib/tokens.json dist/sets/tott/tott.json global,tott global --resolveReferences=false && pnpm token-transformer lib/tokens.json dist/sets/tott/tott-components.json global,tott,components global,tott && pnpm token-transformer lib/tokens.json dist/sets/webapp/global.json global --resolveReferences=false && pnpm token-transformer lib/tokens.json dist/sets/webapp/webapp.json global,webapp global --resolveReferences=false && pnpm token-transformer lib/tokens.json dist/sets/webapp/webapp-components.json global,webapp,components global,webapp",
+    "transpile": "pnpm transform && node scripts/sd-build.js && pnpm rollup -c",
     "clean": "rm -rf dist",
     "lint": "eslint --ext ts,js scripts/*.* *.ts *.js",
-    "prepublishOnly": "yarn clean && yarn build",
+    "prepublishOnly": "pnpm clean && pnpm build",
     "test": "echo testless"
   },
   "devDependencies": {
