@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Link as ReactRouterLink } from 'react-router-dom'
 import { head } from 'ramda'
 import {
   Flex,
+  Box,
+  Capitalized,
   FormControl,
   FormLabel,
   Grid,
+  Link,
   MediatoolThemeProvider,
   Stack,
+  HStack,
+  Icon,
   Switch,
   tottTheme,
 } from '../../lib'
+import { NorthlightLogoXs } from '@northlight/icons'
 import { CalendarProvider, I18nProvider, UserProvider } from './context'
 import { MainMenu, MainPage, Routing, SubMenu } from '.'
 import { SearchComponentsBar } from './components'
@@ -39,6 +45,12 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   overflow="auto"
                   p={ 2 }
                 >
+                  <Link as={ ReactRouterLink } to="/components/" sx={{ _hover: {textDecoration: 'none'} , _focus: {outline: 'none' }}} >
+                  <HStack>
+                  <Icon as={ NorthlightLogoXs } mt={ 4 } ml={ 2 } boxSize={ 16 }/>
+                  <Capitalized>Northlight</Capitalized>
+                  </HStack>
+                  </Link>
                   <FormControl display="flex" alignItems="center" my={ 2 } pl={ 2 }>
                     <FormLabel htmlFor="tott" mb="0">
                       Dark theme
@@ -48,8 +60,8 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   <MainMenu menuItems={ routes } />
                   <SubMenu mainRoutes={ routes } />
                 </Flex>
-                <Stack spacing="4" pt="4">
-                  <SearchComponentsBar routes={ head(routes)?.subItems || [] } />
+                <Stack spacing="5" pt="4">
+                  <Box ml={ 10 }><SearchComponentsBar routes={ head(routes)?.subItems || [] } /></Box>
                   <Routing fallback={ head(routes)?.path } routes={ routes } />
                 </Stack>
               </Grid>

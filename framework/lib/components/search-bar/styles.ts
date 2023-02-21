@@ -10,6 +10,7 @@ export const searchBarStyles = (
       ...provided,
       width: '100%',
       color: 'text.default',
+      alignSelf: 'center',
     }),
     option: (provided, state) => ({
       ...provided,
