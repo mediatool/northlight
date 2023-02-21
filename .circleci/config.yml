@@ -7,17 +7,20 @@ commands:
         type: string
     steps:
       - run:
+          name: Store node version
+          command: node -v > /tmp/node-version
+      - run:
           name: Set auth token
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - restore_cache:
           name: 'Restoring cache'
-          key: yarn-hash-{{ checksum "yarn.lock" }}
+          key: yarn-hash-{{ checksum "/tmp/node-version" }}-{{ checksum "yarn.lock" }}
       - run:
           name: 'Install packages'
           command: yarn install --frozen-lockfile
       - save_cache:
           name: 'Saving cache'
-          key: yarn-hash-{{ checksum "yarn.lock" }}
+          key: yarn-hash-{{ checksum "/tmp/node-version" }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules/
             - framework/node_modules/
