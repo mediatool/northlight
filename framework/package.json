@@ -22,6 +22,7 @@
     "dist"
   ],
   "scripts": {
+    "build": "vite build",
     "transpile": "rollup --config rollup.config.js",
     "clean": "rm -rf dist",
     "lint": "eslint --ext ts,tsx lib/ sandbox/ test",
