@@ -28,7 +28,8 @@
     "prepublishOnly": "yarn clean && yarn build",
     "start": "vite",
     "tokens": "node sd-build.js",
-    "test": "yarn lint && frontend-tools test"
+    "test": "yarn lint && yarn unit",
+    "unit": "mocha"
   },
   "dependencies": {
     "@chakra-ui/clickable": "^2.0.11",
@@ -57,6 +58,7 @@
     "@react-stately/datepicker": "^3.2.0",
     "@react-stately/radio": "^3.6.1",
     "@shopify/react-i18n": "^7.4.0",
+    "@types/mocha": "^10.0.1",
     "@types/ramda": "^0.28.15",
     "@types/react-avatar-editor": "^13.0.0",
     "@types/react-virtualized-auto-sizer": "^1.0.1",
@@ -74,7 +76,8 @@
     "style-dictionary": "^3.7.1"
   },
   "devDependencies": {
-    "@mediatool/frontend-tools": "^0.0.6",
+    "@esbuild-kit/cjs-loader": "^2.4.2",
+    "@esbuild-kit/esm-loader": "^2.5.5",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-image": "^2.1.1",
     "@rollup/plugin-json": "^4.1.0",
@@ -82,6 +85,7 @@
     "@rollup/plugin-typescript": "^8.3.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
+    "@types/chai": "^4.3.4",
     "@types/lodash.debounce": "^4.0.7",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.5",
@@ -91,6 +95,9 @@
     "chai": "^4.3.7",
     "esbuild": "^0.14.48",
     "fuse.js": "^6.6.2",
+    "global-jsdom": "^8.7.0",
+    "jsdom": "^21.1.0",
+    "mocha": "^10.2.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "5.2.0",
