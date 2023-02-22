@@ -5,12 +5,14 @@ import {
   FieldErrorsImpl,
   FieldValues,
   Merge,
+  UseFormReturn as RHFUseFormReturn,
   RegisterOptions,
   SetValueConfig,
   UseFormProps,
-  UseFormReturn,
 } from 'react-hook-form'
 import { StackDirection } from '@chakra-ui/react'
+
+export type UseFormReturn<T extends FieldValues> = RHFUseFormReturn<T>
 
 type Maybe<T> = T | undefined
 
