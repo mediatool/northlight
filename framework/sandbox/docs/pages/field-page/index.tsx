@@ -44,7 +44,8 @@ const FieldPage = () => (
       </Text>
       <Text>
         <strong>label </strong>- descriptive text that appears next to, or on
-        top of the field, required for accessibility
+        top of the field, for accessibility.
+        If no visible label is defined then an <b>aria-label</b> should be specified
       </Text>
       <Text>
         <strong>validate</strong>- Custom validation specific to field, check
