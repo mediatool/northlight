@@ -1,4 +1,4 @@
-import { CheckboxProps as ChakraCheckboxProps } from '@chakra-ui/react'
+import { CheckboxProps as ChakraCheckboxProps, StackDirection } from '@chakra-ui/react'
 import { ChangeEvent } from 'react'
 import { RegisterOptions } from 'react-hook-form'
 
@@ -20,4 +20,5 @@ export type CheckboxFieldProps =
     validate?: RegisterOptions
     isRequired?: boolean
     variant?: CheckboxVariants
+    direction?: StackDirection
   }

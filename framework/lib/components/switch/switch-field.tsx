@@ -11,6 +11,7 @@ export const SwitchField = ({
   isRequired,
   validate,
   onChange: onChangeCallback = identity,
+  direction = 'row',
   ...rest
 }: SwitchFieldProps) => (
   <Box w={ label ? 'full' : 'fit-content' }>
@@ -18,7 +19,7 @@ export const SwitchField = ({
       name={ name }
       label={ label }
       isRequired={ isRequired }
-      direction="row"
+      direction={ direction }
       validate={ validate }
     >
       { ({ onChange, value }) => (

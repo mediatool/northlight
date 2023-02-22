@@ -61,8 +61,9 @@ const FieldPage = () => (
         </Link>
       </Text>
       <Text>
-        <strong>direction </strong>- This is if the formlabel should be to the
-        left ("row"), or on top of the field ("column")
+        <strong>direction </strong>- This follows the chakra ui:s StackDirection type,
+        "row", "row-reverse", "column", "column-reverse",
+        changes the alignment between the field and the label
       </Text>
       <Text>
         <strong>isRequired </strong>- If the field is required

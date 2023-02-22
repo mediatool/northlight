@@ -1,4 +1,4 @@
-import { SwitchProps as ChakraSwitchProps } from '@chakra-ui/react'
+import { SwitchProps as ChakraSwitchProps, StackDirection } from '@chakra-ui/react'
 import { ChangeEvent } from 'react'
 import { RegisterOptions } from 'react-hook-form'
 
@@ -16,4 +16,5 @@ export type SwitchFieldProps =
     label: string
     validate?: RegisterOptions
     isRequired?: boolean
+    direction?: StackDirection
   }
