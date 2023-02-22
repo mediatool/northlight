@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/mediatool/northlight/compare/@northlight/ui@1.2.1...@northlight/ui@1.2.2) (2023-02-22)
+
+
+### Bug Fixes
+
+* **framework:** added deps to useEffect, renamed variables ([646d448](https://github.com/mediatool/northlight/commit/646d448689df40f76d60b77fff0cd6c53a703588)), closes [/github.com/mediatool/northlight/pull/3#event-8545068750](https://github.com//github.com/mediatool/northlight/pull/3/issues/event-8545068750)
+* **framework:** overflow group responsive issue ([52add7e](https://github.com/mediatool/northlight/commit/52add7e5ebf36164e56d09c821b408cce8f2b6a8))
+* **framework:** random avatar color ([4e403d1](https://github.com/mediatool/northlight/commit/4e403d1642325458aa76ae86bf91197ea8f3af7e))
+* **framework:** remove faulty illustration ([0a7892c](https://github.com/mediatool/northlight/commit/0a7892c3294d7d7699106cb982053c0f6c8801ea))
+* **framework:** Tott theme uhm? -> Dark theme ([670bcb3](https://github.com/mediatool/northlight/commit/670bcb387866790079623f9a502b4ec87d40bbe2))
+
+
+
+
+
 ## [1.2.1](https://github.com/mediatool/northlight/compare/@northlight/ui@1.2.0...@northlight/ui@1.2.1) (2023-02-17)
 
 
