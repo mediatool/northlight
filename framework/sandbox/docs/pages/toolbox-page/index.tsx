@@ -75,6 +75,10 @@ const ToolboxPage = () => {
 </Flex>` }
           </Code>
         </Stack>
+        <P>
+          <b>width</b> - if the set widths, sm, md, lg
+          are not flexible enough one can specify their own width, ex width="500px".
+        </P>
         <P><b>{ '<ToolboxFooter />' }</b> is flexed, meaning one can adjust it's layout by directly putting inline styles such as gap, justifyContent</P>
         <P>
           <b>isOpen, onClose</b>, booleans, required, can get simply from
