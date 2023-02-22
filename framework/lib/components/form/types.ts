@@ -23,7 +23,7 @@ export type SetValueOptionsType = Maybe<SetValueConfig>
 
 export type FieldProps = {
   name: string
-  label: string
+  label?: string
   direction?: StackDirection
   isRequired?: boolean
   isSelect?: boolean
