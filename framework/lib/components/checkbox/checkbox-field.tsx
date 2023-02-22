@@ -10,13 +10,14 @@ export const CheckboxField = ({
   variant,
   isRequired,
   validate,
+  direction = 'row',
   ...rest
 }: CheckboxFieldProps) => (
   <Box w={ label ? 'full' : 'fit-content' }>
     <Field
       name={ name }
       label={ label }
-      direction="row"
+      direction={ direction }
       isRequired={ isRequired }
       validate={ validate }
     >
