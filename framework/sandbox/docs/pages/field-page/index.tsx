@@ -1,5 +1,5 @@
 import React from 'react'
-import { Code, Link, P, Stack, Text } from '../../../../lib/components'
+import { Code, Divider, Link, P, Stack, Text } from '../../../../lib/components'
 import { Page } from '../../components'
 
 const FieldPage = () => (
@@ -90,6 +90,13 @@ const FieldPage = () => (
  inputRightElement={<InputRightAddon bgColor="blue.50" children="/100" />}
 />` }
       </Code>
+      <Divider />
+      <b>
+        All field components will take up the full width of their container,
+        except: switch,
+        checkbox and radio-group if they are rendered without a label
+        since they have an intrinstic size.
+      </b>
     </Stack>
   </Page>
 )
