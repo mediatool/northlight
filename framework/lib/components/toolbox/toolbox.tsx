@@ -15,6 +15,7 @@ export const Toolbox = ({
   direction = 'right',
   shouldPush = false,
   size = 'md',
+  width,
   onClose,
   autoFocus = true,
   ...rest
@@ -30,19 +31,21 @@ export const Toolbox = ({
     }
   }
 
+  const toolboxWidth = (width ?? container.w) as string
+
   return (
-    <Box w={ container.w as string } display={ isOpen && shouldPush ? 'initial' : 'none' }>
+    <Box w={ toolboxWidth } display={ isOpen && shouldPush ? 'initial' : 'none' }>
       <Portal>
         <Slide
           direction={ direction }
           in={ isOpen }
           style={ {
             height: container.h as string,
-            width: container.w as string,
+            width: toolboxWidth,
             zIndex: coreZIndex.overlay,
           } }
         >
-          <Flex sx={ container } { ...rest } onKeyDown={ handleKeyDown }>
+          <Flex sx={ { ...container, w: toolboxWidth } } { ...rest } onKeyDown={ handleKeyDown }>
             <FocusScope autoFocus={ autoFocus }>
               { newChildren }
             </FocusScope>
