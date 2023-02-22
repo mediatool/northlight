@@ -38,7 +38,7 @@ export const Toolbox = ({
           style={ {
             height: container.h as string,
             width: container.w as string,
-            zIndex: 'overlay',
+            zIndex: '1000',
           } }
         >
           <Flex sx={ container } { ...rest } onKeyDown={ handleKeyDown }>
