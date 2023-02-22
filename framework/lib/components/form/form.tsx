@@ -1,16 +1,17 @@
-import React, { useEffect, useRef } from 'react'
+import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react'
 import {
   DeepPartial,
   FieldValues,
   FormProvider,
   Resolver,
+  UseFormReturn,
   useForm,
 } from 'react-hook-form'
-import { equals } from 'ramda'
+import { always, equals } from 'ramda'
 import { FormProps } from './types'
 import { trimFormValues } from './trim-form-values'
 
-export function Form<FormValues extends FieldValues> ({
+export const Form = forwardRef(<FormValues extends FieldValues>({
   initialValues,
   onSubmit,
   children,
@@ -20,7 +21,7 @@ export function Form<FormValues extends FieldValues> ({
   enableReinitialize = false,
   shouldTrim = true,
   ...rest
-}: FormProps<FormValues>) {
+}: FormProps<FormValues>, ref: React.Ref<UseFormReturn<FormValues>>) => {
   const customResolver: Resolver<FormValues, any> = (
     values,
     _context,
@@ -37,6 +38,8 @@ export function Form<FormValues extends FieldValues> ({
       resolver: validate ? customResolver : undefined,
       ...formSettings,
     })
+
+  useImperativeHandle(ref, always(newMethods), [])
 
   if (enableReinitialize) {
     const initalValuesImage = useRef({})
@@ -72,4 +75,4 @@ export function Form<FormValues extends FieldValues> ({
       </form>
     </FormProvider>
   )
-}
+})
