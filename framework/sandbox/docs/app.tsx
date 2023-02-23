@@ -12,6 +12,7 @@ import {
   Fontshfeatured,
   Hash01Duo,
   Iconshfeatured,
+  LinkDuo,
   MediatoolLogoSolid,
   NorthlightLogo,
   OctocatW,
@@ -48,6 +49,7 @@ import {
   VStack,
   highlight,
 } from '../../lib'
+import paolo from './images/paolo.png'
 
 const DocsApp = () => {
   const capitalizedStyles = useStyleConfig('Capitalized')
@@ -315,6 +317,33 @@ const DocsApp = () => {
                   <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
                     <Button leftIcon={ <Hash01Duo /> } variant="ghost">
                       Slack
+                    </Button>
+                  </Link>
+                </ButtonGroup>
+              </CardFooter>
+            </Card>
+
+            <Card maxW="xs" boxShadow="none" borderColor="white" bgColor="transparent">
+              <CardBody>
+                <Image
+                  src={ paolo }
+                  alt="Paolo"
+                  borderRadius="lg"
+                />
+                <Stack mt="6" spacing="3">
+                  <Heading size="md">Paolo</Heading>
+                </Stack>
+              </CardBody>
+              <CardFooter paddingTop="0" bgColor="transparent">
+                <ButtonGroup spacing="2">
+                  <Link href="https://github.com/PaoloGiraudi" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                    <Button leftIcon={ <ShapesDuo /> } variant="ghost">
+                      Github
+                    </Button>
+                  </Link>
+                  <Link href="https://www.linkedin.com/in/paologiraudi/" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                    <Button leftIcon={ <LinkDuo /> } variant="ghost">
+                      LinkedIn
                     </Button>
                   </Link>
                 </ButtonGroup>
