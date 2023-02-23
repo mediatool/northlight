@@ -25,7 +25,7 @@ const CardPage = () => (
     ) }
   >
     <HStack spacing={ 4 } mt={ 10 }>
-      <Card maxW="sm">
+      <Card maxW="sm" bgColor="transparent">
         <CardBody>
           <Image
             borderRadius="6"
@@ -42,7 +42,7 @@ const CardPage = () => (
           </Stack>
         </CardBody>
         <Divider />
-        <CardFooter justifyContent="space-around">
+        <CardFooter justifyContent="space-around" bgColor="transparent">
           <Button variant="ghost">
             Light Side
           </Button>
