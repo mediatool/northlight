@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { Code, Divider, H1, Link, P, Stack, Text } from '../../lib'
 
 const Icons = () => (
-  <Stack p={ 4 } spacing={ 4 }>
+  <Stack p={ 4 } spacing={ 4 } bgColor="background.default" height="auto">
     <H1>Mediatool icons</H1>
     <P>Exported as components from the package{ ' ' }
       <Code>@northlight/icons</Code>

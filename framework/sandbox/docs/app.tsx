@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link as ReactRouterLink } from 'react-router-dom'
-import { CardBody, CardFooter, Center, Flex, Heading, useMediaQuery, useStyleConfig, Link } from '@chakra-ui/react'
+import { CardBody, CardFooter, Center, Flex, Heading, Link, useStyleConfig } from '@chakra-ui/react'
 import { mergeAll } from 'ramda'
 import {
   BrandDuo,
@@ -35,10 +35,16 @@ import {
   HStack,
   Highlight,
   Icon,
+  Image,
   Lead,
   P,
+  SimpleGrid,
   SlideFade,
   Stack,
+  Stat,
+  StatLabel,
+  StatNumber,
+  Tiny,
   VStack,
   highlight,
 } from '../../lib'
@@ -46,25 +52,20 @@ import {
 const DocsApp = () => {
   const capitalizedStyles = useStyleConfig('Capitalized')
 
-  const [ isNotSmallerScreen ] = useMediaQuery('(min-width:600px)')
-
   return (
     <Box
-      // w="100%"
-      // h="100%"
+      w="100%"
+      h="100%"
       p={ 12 }
       overflowY="auto"
       overflowX="hidden"
       overscrollBehavior="contain"
+      bgColor="background.default"
     >
-      <HStack sx={ { bg: 'blue.500' } } borderRadius={ "md" } justifyContent="space-around">
-        <Flex
-          direction={ isNotSmallerScreen ? 'row' : 'column' }
-          gap={ 10 }
-          p={ isNotSmallerScreen ? '16' : '0' }
-        >
+      <HStack sx={ { bg: 'blue.500' } } borderRadius="md" justifyContent="space-around">
+        <Flex gap={ 10 }>
 
-          <Box mt={ isNotSmallerScreen ? '0' : 16 } alignSelf="flex-start" justifyContent="space-around">
+          <Box alignSelf="flex-start" p={ 20 } justifyContent="space-around">
             <Fade in={ true } enterDelay={ 800 }>
               <Capitalized sx={ { fontSize: '64px', fontWeight: 'regular' } }>NORTH</Capitalized>
               <Highlight
@@ -92,73 +93,73 @@ const DocsApp = () => {
             </Fade>
           </Box>
           <Fade in={ true } enterDelay={ 800 }>
-          <Icon as={ NorthlightLogo } boxSize={ 96 } alignSelf="flex-end" flexGrow={ 1 } />
+            <Icon as={ NorthlightLogo } boxSize={ 96 } p={ 5 } mt={ 10 } mr={ 20 } alignSelf="flex-end" flexGrow={ 1 } />
           </Fade>
         </Flex>
       </HStack>
       <Fade in={ true } enterDelay={ 1500 }>
-      <SimpleGrid columns={ 3 } spacingX="40px" spacingY="20px" mt={ 16 }>
+        <SimpleGrid columns={ 3 } spacingX="40px" spacingY="20px" mt={ 16 }>
 
-        <Box
-          borderRadius="none"
-          maxHeight={ 280 }
-        >
-          <Flex
-            flexFlow="column"
-            flexGrow={ 1 }
+          <Box
+            borderRadius="none"
             maxHeight={ 280 }
           >
-            <Center mb={ 5 }>
-              <Icon as={ Tokenshfeatured } sx={ { SVGPreserveAspectRatio: 'none', width: '100%', height: 'auto' } } />
-            </Center>
-          </Flex>
-          <H3>Design Tokens</H3>
-          <P>Tokens are platform-agnostic variables that represent Mediatool's brand.</P>
-          <Link as={ ReactRouterLink } to="/tokens" sx={{_hover: {textDecoration: 'none'}}}>
-          <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" bgColor="gray.50" mt={ 5 }>View here</Button>
-          </Link>
-        </Box>
+            <Flex
+              flexFlow="column"
+              flexGrow={ 1 }
+              maxHeight={ 280 }
+            >
+              <Center mb={ 5 }>
+                <Icon as={ Tokenshfeatured } sx={ { SVGPreserveAspectRatio: 'none', width: '100%', height: 'auto' } } />
+              </Center>
+            </Flex>
+            <H3>Design Tokens</H3>
+            <P>Tokens are platform-agnostic variables that represent Mediatool's brand.</P>
+            <Link as={ ReactRouterLink } to="/tokens" sx={ { _hover: { textDecoration: 'none' } } }>
+              <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>View here</Button>
+            </Link>
+          </Box>
 
-        <Box
-          borderRadius="none"
-          maxHeight={ 280 }
-        >
-          <Flex
-            flexFlow="column"
-            flexGrow={ 1 }
+          <Box
+            borderRadius="none"
             maxHeight={ 280 }
           >
-            <Center mb={ 5 }>
-              <Icon as={ Compohfeatured } sx={ { SVGPreserveAspectRatio: 'none', width: '100%', height: 'auto' } } />
-            </Center>
-          </Flex>
-          <H3>Components</H3>
-          <P>Reusable elements and styles, packaged through code for buildin UIs.</P>
-          <Link as={ ReactRouterLink } to="/components" sx={{_hover: {textDecoration: 'none'}}}>
-          <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" bgColor="gray.50" mt={ 5 }>View here</Button>
-          </Link>
-        </Box>
+            <Flex
+              flexFlow="column"
+              flexGrow={ 1 }
+              maxHeight={ 280 }
+            >
+              <Center mb={ 5 }>
+                <Icon as={ Compohfeatured } sx={ { SVGPreserveAspectRatio: 'none', width: '100%', height: 'auto' } } />
+              </Center>
+            </Flex>
+            <H3>Components</H3>
+            <P>Reusable elements and styles, packaged through code for buildin UIs.</P>
+            <Link as={ ReactRouterLink } to="/components" sx={ { _hover: { textDecoration: 'none' } } }>
+              <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>View here</Button>
+            </Link>
+          </Box>
 
-        <Box
-          borderRadius="none"
-          maxHeight={ 280 }
-        >
-          <Flex
-            flexFlow="column"
-            flexGrow={ 1 }
+          <Box
+            borderRadius="none"
             maxHeight={ 280 }
           >
-            <Center mb={ 5 }>
-              <Icon rightIcon={ <ChevronRightDuo /> } as={ Iconshfeatured } sx={ { SVGPreserveAspectRatio: 'none', width: '100%', height: 'auto' } } />
-            </Center>
-          </Flex>
-          <H3>Icons</H3>
-          <P>Northlight icons and assets with detailed documentation on how to use.</P>
-          <Link as={ ReactRouterLink } to="/icons" sx={{_hover: {textDecoration: 'none'}}}>
-          <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" bgColor="gray.50" mt={ 5 }>View here</Button>
-          </Link>
-        </Box>
-      </SimpleGrid>
+            <Flex
+              flexFlow="column"
+              flexGrow={ 1 }
+              maxHeight={ 280 }
+            >
+              <Center mb={ 5 }>
+                <Icon rightIcon={ <ChevronRightDuo /> } as={ Iconshfeatured } sx={ { SVGPreserveAspectRatio: 'none', width: '100%', height: 'auto' } } />
+              </Center>
+            </Flex>
+            <H3>Icons</H3>
+            <P>Northlight icons and assets with detailed documentation on how to use.</P>
+            <Link as={ ReactRouterLink } to="/icons" sx={ { _hover: { textDecoration: 'none' } } }>
+              <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>View here</Button>
+            </Link>
+          </Box>
+        </SimpleGrid>
 
         <SimpleGrid columns={ 3 } spacingX="40px" spacingY="20px" mt={ 52 } mb={ 52 }>
 
@@ -177,8 +178,8 @@ const DocsApp = () => {
             </Flex>
             <H3>Webfonts</H3>
             <P>Everything you need to present content as clearly and efficiently as possible.</P>
-            <Link as={ ReactRouterLink } to="/components/typography" sx={{_hover: {textDecoration: 'none'}}}>
-            <Button rightIcon={ <ChevronRightDuo /> } bgColor="gray.50" variant="ghost" mt={ 5 }>View here</Button>
+            <Link as={ ReactRouterLink } to="/components/typography" sx={ { _hover: { textDecoration: 'none' } } }>
+              <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>View here</Button>
             </Link>
           </Box>
 
@@ -197,8 +198,8 @@ const DocsApp = () => {
             </Flex>
             <H3>Figma Toolkit</H3>
             <P>Prototype and design layouts in Figma using NORTHLIGHT Design System.</P>
-            <Link href="https://www.figma.com/files/project/63775532" target={'_blank'} sx={{_hover: {textDecoration: 'none'}}}>
-            <Button rightIcon={ <ChevronRightDuo /> } bgColor="gray.50" variant="ghost" mt={ 5 }>View here</Button>
+            <Link href="https://www.figma.com/files/project/63775532" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+              <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>View here</Button>
             </Link>
           </Box>
 
@@ -217,15 +218,15 @@ const DocsApp = () => {
             </Flex>
             <H3>Design principles</H3>
             <P>Practical guides and principles for designing and developing experiences.</P>
-            <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" isDisabled={ true } bgColor="gray.50" mt={ 5 }>View here</Button>
+            <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" isDisabled={ true } mt={ 5 }>View here</Button>
           </Box>
         </SimpleGrid>
       </Fade>
 
-      <Flex minWidth="max-content" minHeight={ 80 } alignItems="center" borderRadius={ "md" } justifyContent={ 'center' } gap="2" bgColor="gray.50">
+      <Flex minWidth="max-content" minHeight={ 80 } alignItems="center" borderRadius="md" justifyContent="center" gap="2">
         <Fade in={ true } enterDelay={ 800 }>
           <Box textAlign="center" mb={ 5 }>
-            <Capitalized sx={ { fontSize: '64px', fontWeight: 'regular', textAlign: 'center' } }>NORTH</Capitalized>
+            <Capitalized sx={ { color: 'inherit', fontSize: '64px', fontWeight: 'regular', textAlign: 'center' } }>NORTH</Capitalized>
             <Highlight
               query="Light"
               styles={ mergeAll([
@@ -262,7 +263,7 @@ const DocsApp = () => {
         </Fade>
       </Flex>
 
-      <Flex minWidth="max-content" minHeight={ 80 } alignItems="center" mt={ 24 } justifyContent={ 'center' } gap="2">
+      <Flex minWidth="max-content" minHeight={ 80 } alignItems="center" mt={ 24 } justifyContent="center" gap="2">
         <Fade in={ true } enterDelay={ 800 }>
           <H1 mb={ 5 }>Built by Giants</H1>
           <HStack borderColor="white" boxShadow="none">
@@ -279,15 +280,15 @@ const DocsApp = () => {
               </CardBody>
               <CardFooter paddingTop="0">
                 <ButtonGroup spacing="2">
-                <Link href="https://github.com/magnusohlin" target={'_blank'} sx={{_hover: {textDecoration: 'none'}}}>
-                  <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                    Github
-                  </Button>
+                  <Link href="https://github.com/magnusohlin" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                    <Button leftIcon={ <ShapesDuo /> } variant="ghost">
+                      Github
+                    </Button>
                   </Link>
-                  <Link href="https://mediatool.slack.com" target={'_blank'} sx={{_hover: {textDecoration: 'none'}}}>
-                  <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                    Slack
-                  </Button>
+                  <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                    <Button leftIcon={ <Hash01Duo /> } variant="ghost">
+                      Slack
+                    </Button>
                   </Link>
                 </ButtonGroup>
               </CardFooter>
@@ -306,15 +307,15 @@ const DocsApp = () => {
               </CardBody>
               <CardFooter paddingTop="0">
                 <ButtonGroup spacing="2">
-                <Link href="https://github.com/SebCodesTheWeb" target={'_blank'} sx={{_hover: {textDecoration: 'none'}}}>
-                  <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                    Github
-                  </Button>
+                  <Link href="https://github.com/SebCodesTheWeb" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                    <Button leftIcon={ <ShapesDuo /> } variant="ghost">
+                      Github
+                    </Button>
                   </Link>
-                  <Link href="https://mediatool.slack.com" target={'_blank'} sx={{_hover: {textDecoration: 'none'}}}>
-                  <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                    Slack
-                  </Button>
+                  <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                    <Button leftIcon={ <Hash01Duo /> } variant="ghost">
+                      Slack
+                    </Button>
                   </Link>
                 </ButtonGroup>
               </CardFooter>
@@ -333,15 +334,15 @@ const DocsApp = () => {
               </CardBody>
               <CardFooter paddingTop="0">
                 <ButtonGroup spacing="2">
-                <Link href="/" target={'_blank'} sx={{_hover: {textDecoration: 'none'}}}>
-                  <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                    Github
-                  </Button>
+                  <Link href="/" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                    <Button leftIcon={ <ShapesDuo /> } variant="ghost">
+                      Github
+                    </Button>
                   </Link>
-                  <Link href="https://mediatool.slack.com" target={'_blank'} sx={{_hover: {textDecoration: 'none'}}}>
-                  <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                    Slack
-                  </Button>
+                  <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                    <Button leftIcon={ <Hash01Duo /> } variant="ghost">
+                      Slack
+                    </Button>
                   </Link>
                 </ButtonGroup>
               </CardFooter>
@@ -360,15 +361,15 @@ const DocsApp = () => {
               </CardBody>
               <CardFooter paddingTop="0">
                 <ButtonGroup spacing="2">
-                <Link href="https://github.com/ilija-" target={'_blank'} sx={{_hover: {textDecoration: 'none'}}}>
-                  <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                    Github
-                  </Button>
+                  <Link href="https://github.com/ilija-" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                    <Button leftIcon={ <ShapesDuo /> } variant="ghost">
+                      Github
+                    </Button>
                   </Link>
-                  <Link href="https://mediatool.slack.com" target={'_blank'} sx={{_hover: {textDecoration: 'none'}}}>
-                  <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                    Slack
-                  </Button>
+                  <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                    <Button leftIcon={ <Hash01Duo /> } variant="ghost">
+                      Slack
+                    </Button>
                   </Link>
                 </ButtonGroup>
               </CardFooter>
@@ -382,7 +383,7 @@ const DocsApp = () => {
         <Divider />
       </Flex>
 
-      <Flex minWidth="max-content" minHeight={ 20 } alignItems="center" justifyContent="center" gap="2" mt={ 10 } >
+      <Flex minWidth="max-content" minHeight={ 20 } alignItems="center" justifyContent="center" gap="2" mt={ 10 }>
 
         <HStack borderColor="white" boxShadow="none" spacing={ 10 }>
           <H4 as="kbd">We care:</H4>
@@ -413,7 +414,6 @@ const DocsApp = () => {
         </HStack>
       </Flex>
 
-
       <VStack spacing={ 32 } sx={ { backgroundImage: `url(${'https://i.ibb.co/xfwV9rj/northlight-logo.png'})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'top left', backgroundSize: '20%' } }>
         <VStack />
         <SlideFade in={ true } enterDelay={ 1200 }>
@@ -433,15 +433,11 @@ const DocsApp = () => {
                 </Highlight>
               </HStack>
               <HStack justifyContent="space-around">
-                <Flex
-                  direction={ isNotSmallerScreen ? 'row' : 'column' }
-                  gap={ 10 }
-                  p={ isNotSmallerScreen ? '16' : '0' }
-                >
+                <Flex gap={ 10 }>
 
-                  <Box mt={ isNotSmallerScreen ? '0' : 16 } alignSelf="flex-start" justifyContent="space-around">
+                  <Box alignSelf="flex-start" justifyContent="space-around">
                     <Fade in={ true } enterDelay={ 800 }>
-                      <H2 mb={ 6 } sx={ { color: '#111' } }>
+                      <H2 mb={ 6 } sx={ { color: 'mono.white' } }>
                         Want to join the giants ?
                       </H2>
                       <Box>

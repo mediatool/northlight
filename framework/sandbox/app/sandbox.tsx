@@ -1,22 +1,22 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Link as ReactRouterLink } from 'react-router-dom'
 import { head } from 'ramda'
+import { NorthlightLogoXs } from '@northlight/icons'
 import {
-  Flex,
   Box,
   Capitalized,
+  Flex,
   FormControl,
   FormLabel,
   Grid,
+  HStack,
+  Icon,
   Link,
   MediatoolThemeProvider,
   Stack,
-  HStack,
-  Icon,
   Switch,
   tottTheme,
 } from '../../lib'
-import { NorthlightLogoXs } from '@northlight/icons'
 import { CalendarProvider, I18nProvider, UserProvider } from './context'
 import { MainMenu, MainPage, Routing, SubMenu } from '.'
 import { SearchComponentsBar } from './components'
@@ -35,21 +35,25 @@ export const Sandbox = ({ routes }: SandboxProps) => {
           <I18nProvider>
             <BrowserRouter>
               <Grid
-                height="100vh"
+                minHeight="100vh"
                 gridTemplateColumns="280px auto"
                 color="text.default"
                 bgColor="background.default"
+                pl={ 4 }
               >
                 <Flex
                   direction="column"
                   overflow="auto"
-                  p={ 2 }
                 >
-                  <Link as={ ReactRouterLink } to="/components/" sx={{ _hover: {textDecoration: 'none'} , _focus: {outline: 'none' }}} >
-                  <HStack>
-                  <Icon as={ NorthlightLogoXs } mt={ 4 } ml={ 2 } boxSize={ 16 }/>
-                  <Capitalized>Northlight</Capitalized>
-                  </HStack>
+                  <Link
+                    as={ ReactRouterLink }
+                    to="/components/"
+                    sx={ { _hover: { textDecoration: 'none' }, _focus: { outline: 'none' } } }
+                  >
+                    <HStack>
+                      <Icon as={ NorthlightLogoXs } mt={ 4 } ml={ 2 } boxSize={ 16 } />
+                      <Capitalized>Northlight</Capitalized>
+                    </HStack>
                   </Link>
                   <FormControl display="flex" alignItems="center" my={ 2 } pl={ 2 }>
                     <FormLabel htmlFor="tott" mb="0">
