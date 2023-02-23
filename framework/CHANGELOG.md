@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/mediatool/northlight/compare/@northlight/ui@1.2.1...@northlight/ui@1.2.2) (2023-02-23)
+
+
+### Bug Fixes
+
+* **framework:** added deps to useEffect, renamed variables ([646d448](https://github.com/mediatool/northlight/commit/646d448689df40f76d60b77fff0cd6c53a703588)), closes [/github.com/mediatool/northlight/pull/3#event-8545068750](https://github.com//github.com/mediatool/northlight/pull/3/issues/event-8545068750)
+* **framework:** fit-content on field comp instrinstic w ([bf67401](https://github.com/mediatool/northlight/commit/bf67401692c7fee2b6775e58225d2dc872e9e622))
+* **framework:** fix z-index in Slide ([8f60723](https://github.com/mediatool/northlight/commit/8f607232a89be861e8ffd8fbdf4c910ae869887c))
+* **framework:** make label prop optional on field ([2737487](https://github.com/mediatool/northlight/commit/2737487fb7490a4cbe5b80ed049eec52c27db62e))
+* **framework:** overflow group responsive issue ([52add7e](https://github.com/mediatool/northlight/commit/52add7e5ebf36164e56d09c821b408cce8f2b6a8))
+* **framework:** random avatar color ([4e403d1](https://github.com/mediatool/northlight/commit/4e403d1642325458aa76ae86bf91197ea8f3af7e))
+* **framework:** remove faulty illustration ([0a7892c](https://github.com/mediatool/northlight/commit/0a7892c3294d7d7699106cb982053c0f6c8801ea))
+* **framework:** Tott theme uhm? -> Dark theme ([670bcb3](https://github.com/mediatool/northlight/commit/670bcb387866790079623f9a502b4ec87d40bbe2))
+* **framework:** use Mediatool date strings on props to components instead of dateValues ([f6424d3](https://github.com/mediatool/northlight/commit/f6424d3e86ccde6ec9996eca0177090fcdddceab))
+
+
+
+
+
 ## [1.2.1](https://github.com/mediatool/northlight/compare/@northlight/ui@1.2.0...@northlight/ui@1.2.1) (2023-02-17)
 
 
