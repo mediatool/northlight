@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.0.4...@northlight/tokens@1.0.5) (2023-02-23)
+
+
+### Bug Fixes
+
+* prepublishOnly scripts ([0b46153](https://github.com/mediatool/northlight/commit/0b461537345c832000a2fc69325465cc27bb3385))
+
+
+
+
+
 ## [1.0.4](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.0.2...@northlight/tokens@1.0.4) (2023-02-23)
 
 **Note:** Version bump only for package @northlight/tokens
