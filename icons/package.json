@@ -16,7 +16,7 @@
     "transpile": "yarn svgo && yarn svgr && yarn rollup -c",
     "clean": "rm -rf dist",
     "lint": "eslint --ext ts,js *.ts *.js",
-    "prepublishOnly": "yarn clean && yarn build",
+    "prepublishOnly": "yarn clean && yarn transpile",
     "svgo": "svgo -f assets -o dist/svg",
     "svgr": "svgr -d dist/lib dist/svg",
     "test": "echo testless"
