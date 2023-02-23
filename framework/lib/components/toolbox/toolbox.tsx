@@ -1,5 +1,6 @@
 import React from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/system'
+import { coreZIndex } from '@northlight/tokens'
 import { FocusScope } from '@react-aria/focus'
 import { Flex } from '../flex'
 import { Slide } from '../transitions'
@@ -38,7 +39,7 @@ export const Toolbox = ({
           style={ {
             height: container.h as string,
             width: container.w as string,
-            zIndex: '1000',
+            zIndex: coreZIndex.overlay,
           } }
         >
           <Flex sx={ container } { ...rest } onKeyDown={ handleKeyDown }>
