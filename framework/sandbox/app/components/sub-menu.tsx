@@ -32,7 +32,14 @@ interface SubMenuProps {
 }
 
 export const SubMenu = ({ mainRoutes }: SubMenuProps) => (
-  <Stack color="text.default" overflow="auto" pr={ 2 } bgColor="background.default">
+  <Stack
+    color="text.default"
+    overflow="auto"
+    maxHeight="70vh"
+    pr={ 2 }
+    bgColor="background.default"
+    sx={ { '::-webkit-scrollbar': { display: 'none' }, '::-webkit-scrollbar-thumb': { background: 'blue.500' }, _hover: { '::-webkit-scrollbar': { display: 'block' } } } }
+  >
     <Switch>
       { mainRoutes.map(({ path: mainPath, subItems = [] }) => (
         <RouterRoute

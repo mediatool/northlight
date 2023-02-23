@@ -15,17 +15,20 @@ export interface MenuItemProps {
 
 const MenuItem = ({ path, Icon: IconComponent, title }: MenuItemProps) => (
   <HStack
-    p={ 2 }
+    pl={ 2 }
+    mt={ 5 }
     to={ path }
     as={ NavLink }
     borderRadius={ 6 }
     _hover={ { bgColor: 'background.button.default-hover' } }
     _activeLink={ { bgColor: 'background.button.brand', color: 'text.inverted' } }
   >
-    <Icon as={ IconComponent } boxSize={ 6 } />
-    <Label size="md" sx={ { color: 'inherit', cursor: 'pointer' } }>
-      { title }
-    </Label>
+    <HStack p={ 2 }>
+      <Icon as={ IconComponent } boxSize={ 6 } />
+      <Label size="md" sx={ { color: 'inherit', cursor: 'pointer' } }>
+        { title }
+      </Label>
+    </HStack>
   </HStack>
 )
 
