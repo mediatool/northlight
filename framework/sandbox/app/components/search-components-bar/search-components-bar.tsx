@@ -84,6 +84,7 @@ export const SearchComponentsBar = ({
             noOptionsMessage={ () => null }
             loadingMessage={ () => null }
             onKeyDown={ handleKeyDown }
+            placeholder="Search for components, icons, styles...⊂(▀¯▀⊂ )"
           />
         </ModalContent>
       </Modal>
