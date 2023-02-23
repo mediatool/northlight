@@ -65,7 +65,9 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   <SubMenu mainRoutes={ routes } />
                 </Flex>
                 <Stack spacing="5" pt="4">
-                  <Box ml={ 10 }><SearchComponentsBar routes={ head(routes)?.subItems || [] } /></Box>
+                  <Box ml={ 10 }>
+                    <SearchComponentsBar routes={ head(routes)?.subItems || [] } />
+                  </Box>
                   <Routing fallback={ head(routes)?.path } routes={ routes } />
                 </Stack>
               </Grid>
