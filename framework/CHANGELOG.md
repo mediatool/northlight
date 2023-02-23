@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.5](https://github.com/mediatool/northlight/compare/@northlight/ui@1.2.4...@northlight/ui@1.2.5) (2023-02-23)
+
+
+### Bug Fixes
+
+* **framework:** access to form context api via ref ([a602437](https://github.com/mediatool/northlight/commit/a60243799746698b4d07941557cbad99edaf80cf))
+* **framework:** customize direction switch and checkbox ([ea875cd](https://github.com/mediatool/northlight/commit/ea875cdad067bf8e3cbcca0a3ba1ba2d935c68af))
+* **framework:** customize width on toolbox ([dc7ff97](https://github.com/mediatool/northlight/commit/dc7ff97ca9bf46deace661af635698cd4522bae5))
+* **framework:** Fixes the card dark mode switching ([0a29231](https://github.com/mediatool/northlight/commit/0a29231308f81beb19370a6a3b477f2822afc3b7))
+* **framework:** Searchbar placeholder updates, favico added ([d3402c4](https://github.com/mediatool/northlight/commit/d3402c41a7fa3e4df35c377e17c5675cfb1f2cbf))
+* **framework:** update toolbox z-index with token value ([6b898a7](https://github.com/mediatool/northlight/commit/6b898a7326d7054422da747d80255182c2ae20bd))
+
+
+
+
+
 ## [1.2.4](https://github.com/mediatool/northlight/compare/@northlight/ui@1.2.3...@northlight/ui@1.2.4) (2023-02-23)
 
 **Note:** Version bump only for package @northlight/ui
