@@ -35,6 +35,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
           <I18nProvider>
             <BrowserRouter>
               <Grid
+                height="100vh"
                 minHeight="100vh"
                 gridTemplateColumns="280px auto"
                 color="text.default"
@@ -64,7 +65,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   <MainMenu menuItems={ routes } />
                   <SubMenu mainRoutes={ routes } />
                 </Flex>
-                <Stack spacing="5" pt="4">
+                <Stack spacing="5" pt="4" height="100vh">
                   <Box ml={ 10 }>
                     <SearchComponentsBar routes={ head(routes)?.subItems || [] } />
                   </Box>
