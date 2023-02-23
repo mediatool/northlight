@@ -437,7 +437,7 @@ const DocsApp = () => {
 
                   <Box alignSelf="flex-start" justifyContent="space-around">
                     <Fade in={ true } enterDelay={ 800 }>
-                      <H2 mb={ 6 } sx={ { color: 'mono.white' } }>
+                      <H2 mb={ 6 }>
                         Want to join the giants ?
                       </H2>
                       <Box>
