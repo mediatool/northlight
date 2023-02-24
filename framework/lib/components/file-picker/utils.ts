@@ -32,9 +32,9 @@ export const convertBlobToFile = (
 
 export const compressImage = (
   file: File,
-  maxWidth: number = 3000,
-  maxHeight: number = 3000,
-  quality: number = 0.75
+  maxWidth = 3000,
+  maxHeight = 3000,
+  quality = 0.75
 ) => {
   const canvas = document.createElement('canvas')
   const context = canvas.getContext('2d')

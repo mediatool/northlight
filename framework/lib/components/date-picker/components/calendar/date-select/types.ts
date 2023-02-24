@@ -11,7 +11,7 @@ export interface YearSelectCalendarProps {
   state: CalendarState
 }
 
-export interface YearSelectRangeCalendarProps extends MonthSelectProps {}
+export type YearSelectRangeCalendarProps = MonthSelectProps
 
 export interface YearValue {
   value: CalendarDate
@@ -22,7 +22,7 @@ export interface UseYearsCalendarProps {
   state: CalendarState
 }
 
-export interface UseYearsRangeCalendarProps extends MonthSelectProps {}
+export type UseYearsRangeCalendarProps = MonthSelectProps
 
 export interface YearSelectProps {
   onChange: ChangeEventHandler<HTMLSelectElement>
