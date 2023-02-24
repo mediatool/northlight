@@ -137,7 +137,11 @@ const DocsApp = () => {
             </Flex>
             <H3>Components</H3>
             <P>Reusable elements and styles, packaged through code for buildin UIs.</P>
-            <Link as={ ReactRouterLink } to="/components" sx={ { _hover: { textDecoration: 'none' } } }>
+            <Link
+              as={ ReactRouterLink }
+              to="/components"
+              sx={ { _hover: { textDecoration: 'none' } } }
+            >
               <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>View here</Button>
             </Link>
           </Box>
