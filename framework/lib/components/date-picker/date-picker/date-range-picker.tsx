@@ -36,7 +36,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     variant = 'outline',
     onChange: onChangeCallback = identity,
     value,
-    minValue,
+    minValue = '1994-03-08',
     maxValue,
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
