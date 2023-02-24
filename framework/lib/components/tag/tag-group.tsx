@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { HStack } from '../stack'
 import { OverflowGroup, useOverflowGroup } from '../overflow-group'
-import { Tag } from './tag'
 import { TagGroupProps } from './types'
+import { OverflowIndicator as DefaultOverflowIndicator } from './overflow-indicator'
 
 export const TagGroup = ({
   children,
   max = Infinity,
   spacing = '2',
+  OverflowIndicator = DefaultOverflowIndicator,
   ...rest
 }: TagGroupProps) => {
   const [ nbrRemainingTags, setNbrRemainingTags ] = useState(0)
@@ -26,7 +27,7 @@ export const TagGroup = ({
         </OverflowGroup>
       </HStack>
       { nbrRemainingTags > 0 && (
-        <Tag variant="subtle">+{ nbrRemainingTags }</Tag>
+        <OverflowIndicator nbrRemainingTags={ nbrRemainingTags } />
       ) }
     </HStack>
   )
