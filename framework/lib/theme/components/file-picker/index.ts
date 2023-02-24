@@ -24,7 +24,7 @@ const thickRing: CSSObject = {
   },
 }
 
-const getInvalidColorStyles = (isInvalid: boolean, isImage: boolean = true) => ({
+const getInvalidColorStyles = (isInvalid: boolean, isImage = true) => ({
   borderColor: isInvalid ? 'red.500' : 'gray.300',
   bgColor: isInvalid && 'red.50',
   animation: isInvalid && `500ms ${shakeAnimation} ease`,

@@ -265,148 +265,146 @@ const DocsApp = () => {
         </Fade>
       </Flex>
 
-      <Flex minWidth="max-content" minHeight={ 80 } alignItems="center" mt={ 24 } justifyContent="center" gap="2">
-        <Fade in={ true } enterDelay={ 800 }>
-          <H1 mb={ 5 }>Built by Giants</H1>
-          <HStack borderColor="white" boxShadow="none">
-            <Card maxW="xs" boxShadow="none" borderColor="white" bgColor="transparent">
-              <CardBody>
-                <Image
-                  src="https://gcdnb.pbrd.co/images/M1CXHU64TWXd.png?o=1"
-                  alt="Magnus"
-                  borderRadius="lg"
-                />
-                <Stack mt="6" spacing="3">
-                  <Heading size="md">Magnus</Heading>
-                </Stack>
-              </CardBody>
-              <CardFooter paddingTop="0" bgColor="transparent">
-                <ButtonGroup spacing="2">
-                  <Link href="https://github.com/magnusohlin" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
-                    <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                      Github
-                    </Button>
-                  </Link>
-                  <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
-                    <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                      Slack
-                    </Button>
-                  </Link>
-                </ButtonGroup>
-              </CardFooter>
-            </Card>
+      <Fade in={ true } enterDelay={ 800 }>
+        <H1 mb={ 5 }>Built by Giants</H1>
+        <SimpleGrid spacing={ 4 } templateColumns="repeat(auto-fit, minmax(220px, 1fr))">
+          <Card maxW="xs" boxShadow="none" borderColor="white" bgColor="transparent">
+            <CardBody>
+              <Image
+                src="https://gcdnb.pbrd.co/images/M1CXHU64TWXd.png?o=1"
+                alt="Magnus"
+                borderRadius="lg"
+              />
+              <Stack mt="6" spacing="3">
+                <Heading size="md">Magnus</Heading>
+              </Stack>
+            </CardBody>
+            <CardFooter paddingTop="0" bgColor="transparent">
+              <ButtonGroup spacing="2">
+                <Link href="https://github.com/magnusohlin" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                  <Button leftIcon={ <ShapesDuo /> } variant="ghost">
+                    Github
+                  </Button>
+                </Link>
+                <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                  <Button leftIcon={ <Hash01Duo /> } variant="ghost">
+                    Slack
+                  </Button>
+                </Link>
+              </ButtonGroup>
+            </CardFooter>
+          </Card>
 
-            <Card maxW="xs" boxShadow="none" borderColor="white" bgColor="transparent">
-              <CardBody>
-                <Image
-                  src="https://gcdnb.pbrd.co/images/gw3nEkLGENoz.png?o=1"
-                  alt="Sebastian"
-                  borderRadius="lg"
-                />
-                <Stack mt="6" spacing="3">
-                  <Heading size="md">Sebe J.</Heading>
-                </Stack>
-              </CardBody>
-              <CardFooter paddingTop="0" bgColor="transparent">
-                <ButtonGroup spacing="2">
-                  <Link href="https://github.com/SebCodesTheWeb" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
-                    <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                      Github
-                    </Button>
-                  </Link>
-                  <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
-                    <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                      Slack
-                    </Button>
-                  </Link>
-                </ButtonGroup>
-              </CardFooter>
-            </Card>
+          <Card maxW="xs" boxShadow="none" borderColor="white" bgColor="transparent">
+            <CardBody>
+              <Image
+                src="https://gcdnb.pbrd.co/images/gw3nEkLGENoz.png?o=1"
+                alt="Sebastian"
+                borderRadius="lg"
+              />
+              <Stack mt="6" spacing="3">
+                <Heading size="md">Sebe J.</Heading>
+              </Stack>
+            </CardBody>
+            <CardFooter paddingTop="0" bgColor="transparent">
+              <ButtonGroup spacing="2">
+                <Link href="https://github.com/SebCodesTheWeb" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                  <Button leftIcon={ <ShapesDuo /> } variant="ghost">
+                    Github
+                  </Button>
+                </Link>
+                <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                  <Button leftIcon={ <Hash01Duo /> } variant="ghost">
+                    Slack
+                  </Button>
+                </Link>
+              </ButtonGroup>
+            </CardFooter>
+          </Card>
 
-            <Card maxW="xs" boxShadow="none" borderColor="white" bgColor="transparent">
-              <CardBody>
-                <Image
-                  src={ paolo }
-                  alt="Paolo"
-                  borderRadius="lg"
-                />
-                <Stack mt="6" spacing="3">
-                  <Heading size="md">Paolo</Heading>
-                </Stack>
-              </CardBody>
-              <CardFooter paddingTop="0" bgColor="transparent">
-                <ButtonGroup spacing="2">
-                  <Link href="https://github.com/PaoloGiraudi" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
-                    <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                      Github
-                    </Button>
-                  </Link>
-                  <Link href="https://www.linkedin.com/in/paologiraudi/" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
-                    <Button leftIcon={ <LinkDuo /> } variant="ghost">
-                      LinkedIn
-                    </Button>
-                  </Link>
-                </ButtonGroup>
-              </CardFooter>
-            </Card>
+          <Card maxW="xs" boxShadow="none" borderColor="white" bgColor="transparent">
+            <CardBody>
+              <Image
+                src={ paolo }
+                alt="Paolo"
+                borderRadius="lg"
+              />
+              <Stack mt="6" spacing="3">
+                <Heading size="md">Paolo</Heading>
+              </Stack>
+            </CardBody>
+            <CardFooter paddingTop="0" bgColor="transparent">
+              <ButtonGroup spacing="2">
+                <Link href="https://github.com/PaoloGiraudi" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                  <Button leftIcon={ <ShapesDuo /> } variant="ghost">
+                    Github
+                  </Button>
+                </Link>
+                <Link href="https://www.linkedin.com/in/paologiraudi/" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                  <Button leftIcon={ <LinkDuo /> } variant="ghost">
+                    LinkedIn
+                  </Button>
+                </Link>
+              </ButtonGroup>
+            </CardFooter>
+          </Card>
 
-            <Card maxW="xs" boxShadow="none" borderColor="white" bgColor="transparent">
-              <CardBody>
-                <Image
-                  src="https://gcdnb.pbrd.co/images/hBqPPYEPuo3t.png?o=1"
-                  alt="Hanna"
-                  borderRadius="lg"
-                />
-                <Stack mt="6" spacing="3">
-                  <Heading size="md">Hanna</Heading>
-                </Stack>
-              </CardBody>
-              <CardFooter paddingTop="0" bgColor="transparent">
-                <ButtonGroup spacing="2">
-                  <Link href="/" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
-                    <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                      Github
-                    </Button>
-                  </Link>
-                  <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
-                    <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                      Slack
-                    </Button>
-                  </Link>
-                </ButtonGroup>
-              </CardFooter>
-            </Card>
+          <Card maxW="xs" boxShadow="none" borderColor="white" bgColor="transparent">
+            <CardBody>
+              <Image
+                src="https://gcdnb.pbrd.co/images/hBqPPYEPuo3t.png?o=1"
+                alt="Hanna"
+                borderRadius="lg"
+              />
+              <Stack mt="6" spacing="3">
+                <Heading size="md">Hanna</Heading>
+              </Stack>
+            </CardBody>
+            <CardFooter paddingTop="0" bgColor="transparent">
+              <ButtonGroup spacing="2">
+                <Link href="/" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                  <Button leftIcon={ <ShapesDuo /> } variant="ghost">
+                    Github
+                  </Button>
+                </Link>
+                <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                  <Button leftIcon={ <Hash01Duo /> } variant="ghost">
+                    Slack
+                  </Button>
+                </Link>
+              </ButtonGroup>
+            </CardFooter>
+          </Card>
 
-            <Card maxW="xs" boxShadow="none" borderColor="white" bgColor="transparent">
-              <CardBody>
-                <Image
-                  src="https://gcdnb.pbrd.co/images/wvIJrQUXz1Mf.png?o=1"
-                  alt="Iliya"
-                  borderRadius="lg"
-                />
-                <Stack mt="6" spacing="3">
-                  <Heading size="md">Iliya</Heading>
-                </Stack>
-              </CardBody>
-              <CardFooter paddingTop="0" bgColor="transparent">
-                <ButtonGroup spacing="2">
-                  <Link href="https://github.com/ilija-" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
-                    <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                      Github
-                    </Button>
-                  </Link>
-                  <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
-                    <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                      Slack
-                    </Button>
-                  </Link>
-                </ButtonGroup>
-              </CardFooter>
-            </Card>
-          </HStack>
+          <Card maxW="xs" boxShadow="none" borderColor="white" bgColor="transparent">
+            <CardBody>
+              <Image
+                src="https://gcdnb.pbrd.co/images/wvIJrQUXz1Mf.png?o=1"
+                alt="Iliya"
+                borderRadius="lg"
+              />
+              <Stack mt="6" spacing="3">
+                <Heading size="md">Iliya</Heading>
+              </Stack>
+            </CardBody>
+            <CardFooter paddingTop="0" bgColor="transparent">
+              <ButtonGroup spacing="2">
+                <Link href="https://github.com/ilija-" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                  <Button leftIcon={ <ShapesDuo /> } variant="ghost">
+                    Github
+                  </Button>
+                </Link>
+                <Link href="https://mediatool.slack.com" target="_blank" sx={ { _hover: { textDecoration: 'none' } } }>
+                  <Button leftIcon={ <Hash01Duo /> } variant="ghost">
+                    Slack
+                  </Button>
+                </Link>
+              </ButtonGroup>
+            </CardFooter>
+          </Card>
 
-        </Fade>
-      </Flex>
+        </SimpleGrid>
+      </Fade>
 
       <Flex mt={ 20 }>
         <Divider />
