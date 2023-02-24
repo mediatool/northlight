@@ -73,6 +73,9 @@ const TagPage = () => (
   )) }
 </TagGroup>` }
       </Code>
+      <P>One can customize the last overlfow tag indicating the number
+        of remaining tags with <b>OverflowIndicator</b> prop
+      </P>
       <Divider />
       <Text>One can add an icon using <strong>TagLeftIcon   </strong>
         or <strong>TagRightIcon</strong>, there's also a <strong>TagCloseButton</strong>
