@@ -10,6 +10,11 @@ import {
 import { RegisterOptions } from 'react-hook-form'
 import { InputFieldProps } from '../../types'
 
+export interface DateRange {
+  startDate: string
+  endDate: string
+}
+
 type DatePickerSettings = {
   firstDayOfWeek: 'sunday' | 'monday'
   resetDate: () => void
@@ -28,13 +33,10 @@ export interface DatePickerProps
 export interface DateRangePickerProps
   extends Omit<AriaDateRangePickerProps<DateValue>, 'onChange' | 'value' | 'minValue' | 'maxValue'>,
   DatePickerSettings {
-  onChange?: (date: null | { startDate: string, endDate: string }) => void
-  value: {
-    startDate: string
-    endDate: string
-  }
-  minValue: string | undefined
-  maxValue: string | undefined
+  onChange?: (date: null | DateRange) => void
+  value: DateRange | null
+  minValue?: string | undefined
+  maxValue?: string | undefined
   fiscalStartMonth?: number
   mode?: DatePickerMode
 }
@@ -55,12 +57,8 @@ export interface DatePickerFieldProps
 }
 
 export interface DateRangePickerFieldProps extends Omit<DatePickerFieldProps, 'onChange'> {
-  onChange?: (date: null | { startDate: string, endDate: string }) => void
+  onChange?: (date: null | DateRange) => void
   mode?: DatePickerMode
 }
-interface DateRangeFormatted {
-  startDate: string
-  endDate: string
-}
 
-export type FormBody = Record<string, DateRangeFormatted>
+export type FormBody = Record<string, DateRange>
