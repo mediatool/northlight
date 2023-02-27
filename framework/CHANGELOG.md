@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.2.5...@northlight/ui@1.3.0) (2023-02-27)
+
+
+### Bug Fixes
+
+* **framework:** add the biggest giant of them all ([5ab7050](https://github.com/mediatool/northlight/commit/5ab7050e9b62e5e2d74190008567e377776ca2c4))
+* **framework:** custom OverflowIndicator ([4557c8c](https://github.com/mediatool/northlight/commit/4557c8c5fb9d55b22cadd979dea4d81e7c6a3b2a))
+* **framework:** fix date range picker types ([e8e8079](https://github.com/mediatool/northlight/commit/e8e8079e76fff89aeace0c05b1e019003358b3b8))
+* **framework:** fix scrolling ([92a4f4f](https://github.com/mediatool/northlight/commit/92a4f4f48eb681235c9d8ec03a2e7431a0f3380b))
+
+
+### Features
+
+* **framework:** addAlpha util ([a4f7772](https://github.com/mediatool/northlight/commit/a4f7772dd0b84cef01bc2ecab1654a5003c958c8))
+
+
+
+
+
 ## [1.2.5](https://github.com/mediatool/northlight/compare/@northlight/ui@1.2.4...@northlight/ui@1.2.5) (2023-02-23)
 
 
