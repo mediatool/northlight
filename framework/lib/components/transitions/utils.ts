@@ -83,8 +83,8 @@ export const useDelay = (
 }
 
 export const useHiddenDisplay = (
-  anchor: boolean = false,
-  exitDelay: number = 0,
+  anchor = false,
+  exitDelay = 0,
   exitDuration: DurationType = 0,
   duration: DurationType = 0,
   onTransitionComplete: (hidden: boolean) => void = identity
