@@ -16,8 +16,8 @@ const Icons = () => (
     <SimpleGrid spacing={ 10 } alignItems="center" minChildWidth="300px" templateColumns="repeat(auto-fit, minmax(200px, 1fr))">
 
       <Spacer />
-      <Link as={ NavLink } sx={ { borderRadius: 'lg', _hover: { textDecoration: 'none', bgColor: 'blue.500', color: 'gray.50' } } } to="/icons/duo">
-        <Card align="center" variant="outline" sx={ { _hover: { color: 'mono.white', borderColor: 'blue.500' } } }>
+      <Link as={ NavLink } sx={ { borderRadius: 'lg', _hover: { textDecoration: 'none', color: 'gray.50' } } } to="/icons/duo">
+        <Card align="center" variant="outline" sx={ { _hover: { color: 'mono.white', borderColor: 'blue.500', bgColor: 'blue.500' } } }>
           <CardHeader>
             <Heading size="md"> Duo </Heading>
           </CardHeader>
@@ -28,8 +28,8 @@ const Icons = () => (
         </Card>
       </Link>
 
-      <Link as={ NavLink } sx={ { borderRadius: 'lg', _hover: { textDecoration: 'none', bgColor: 'blue.500', color: 'gray.50' } } } to="/icons/solid">
-        <Card align="center" variant="outline" sx={ { _hover: { color: 'mono.white', borderColor: 'blue.500' } } }>
+      <Link as={ NavLink } sx={ { borderRadius: 'lg', _hover: { textDecoration: 'none', color: 'gray.50' } } } to="/icons/solid">
+        <Card align="center" variant="outline" sx={ { _hover: { color: 'mono.white', borderColor: 'blue.500', bgColor: 'blue.500' } } }>
           <CardHeader>
             <Heading size="md"> Solid </Heading>
           </CardHeader>
