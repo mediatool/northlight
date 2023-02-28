@@ -20,7 +20,7 @@ import { SimpleRangeCalendar } from '../components/calendar/simple-range-calenda
 import { isValidDateRange } from '../date-picker-field/utils'
 
 const parseValue = (value: any) => {
-  if (isValidDateRange(value)) return null
+  if (!isValidDateRange(value)) return null
   return { start: parseDate(value.startDate), end: parseDate(value.endDate) }
 }
 
