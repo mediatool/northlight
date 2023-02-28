@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/mediatool/northlight/compare/@northlight/ui@1.3.0...@northlight/ui@1.3.1) (2023-02-28)
+
+
+### Bug Fixes
+
+* **framework:** clicakble types and react router link ([4db679d](https://github.com/mediatool/northlight/commit/4db679da41a08320986d3cda524202abedde2abe))
+
+
+
+
+
 # [1.3.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.2.5...@northlight/ui@1.3.0) (2023-02-27)
 
 
