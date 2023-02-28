@@ -16,6 +16,7 @@ export const Clickable = ({ href, linkProps, ...rest }: ClickableProps) => {
           as={ ReactRouterLink }
           _focusVisible={ ring }
           to={ href }
+          _hover={ { textDecoration: 'none' } }
           { ...linkProps }
           { ...clickable }
         />
