@@ -17,7 +17,7 @@ const Icons = () => (
 
       <Spacer />
       <Link as={ NavLink } sx={ { borderRadius: 'lg', _hover: { textDecoration: 'none', color: 'gray.50' } } } to="/icons/duo">
-        <Card align="center" variant="outline" sx={ { _hover: { color: 'mono.white', borderColor: 'blue.500', bgColor: 'blue.500' } } }>
+        <Card align="center" variant="outline" sx={ { bgColor: 'transparent', _hover: { color: 'mono.white', borderColor: 'blue.500', bgColor: 'blue.500' } } }>
           <CardHeader>
             <Heading size="md"> Duo </Heading>
           </CardHeader>
@@ -29,7 +29,7 @@ const Icons = () => (
       </Link>
 
       <Link as={ NavLink } sx={ { borderRadius: 'lg', _hover: { textDecoration: 'none', color: 'gray.50' } } } to="/icons/solid">
-        <Card align="center" variant="outline" sx={ { _hover: { color: 'mono.white', borderColor: 'blue.500', bgColor: 'blue.500' } } }>
+        <Card align="center" variant="outline" sx={ { bgColor: 'transparent', _hover: { color: 'mono.white', borderColor: 'blue.500', bgColor: 'blue.500' } } }>
           <CardHeader>
             <Heading size="md"> Solid </Heading>
           </CardHeader>
