@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/mediatool/northlight/compare/@northlight/ui@1.3.1...@northlight/ui@1.3.2) (2023-03-01)
+
+
+### Bug Fixes
+
+* **framework:** change default textDecoration ([85a6db1](https://github.com/mediatool/northlight/commit/85a6db116d7b1057dae8007ff19c0e76d3e06d3d))
+
+
+
+
+
 ## [1.3.1](https://github.com/mediatool/northlight/compare/@northlight/ui@1.3.0...@northlight/ui@1.3.1) (2023-02-28)
 
 
