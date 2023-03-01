@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.3](https://github.com/mediatool/northlight/compare/@northlight/ui@1.3.2...@northlight/ui@1.3.3) (2023-03-01)
+
+
+### Bug Fixes
+
+* **framework:** Card showing white bg on production in dark mode ([08060ed](https://github.com/mediatool/northlight/commit/08060edf57e3a9a0c807ed888ec99ec16944e8c4))
+* **framework:** date-range picker crashes when set null value ([cbe5c6c](https://github.com/mediatool/northlight/commit/cbe5c6cc31647dc0298765659283f88832fec36b))
+* **framework:** Giants block causing page size issues ([dd8eb75](https://github.com/mediatool/northlight/commit/dd8eb75c5c39c5248817b9153c5299f158a9a652))
+
+
+
+
+
 ## [1.3.2](https://github.com/mediatool/northlight/compare/@northlight/ui@1.3.1...@northlight/ui@1.3.2) (2023-03-01)
 
 
