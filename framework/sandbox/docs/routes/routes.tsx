@@ -8,6 +8,11 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/input-page'),
   },
   {
+    title: 'Step stack',
+    path: '/step-stack',
+    component: () => import('../pages/step-stack-page'),
+  },
+  {
     title: 'Search Bar',
     path: '/search-bar',
     component: () => import('../pages/search-bar-page'),
