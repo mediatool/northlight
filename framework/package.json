@@ -4,8 +4,6 @@
   "description": "Mediatool UI library, based on Chakra-ui",
   "license": "MIT",
   "author": "Mediatool",
-  "types": "./dist/ts/types.d.ts",
-  "main": "./dist/es/mediatool-ui-framework.mjs",
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -18,18 +16,20 @@
       "import": "./dist/es/sandbox.mjs"
     }
   },
+  "main": "./dist/es/mediatool-ui-framework.mjs",
+  "types": "./dist/ts/types.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "vite build",
-    "transpile": "rollup -c",
     "clean": "rm -rf dist",
+    "demo": "vite",
     "lint": "eslint --ext ts,tsx lib/ sandbox/ test",
     "prepublishOnly": "yarn clean && yarn transpile",
-    "demo": "vite",
+    "test": "mocha",
     "tokens": "node sd-build.js",
-    "test": "mocha"
+    "transpile": "rollup -c"
   },
   "dependencies": {
     "@chakra-ui/clickable": "^2.0.14",
