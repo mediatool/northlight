@@ -1,6 +1,4 @@
-/* eslint-disable */
 import { defineConfig } from 'vite'
-import path from 'path'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 
 export default defineConfig({
@@ -11,14 +9,8 @@ export default defineConfig({
       strict: false,
     },
   },
-  resolve: {
-    alias: {
-      '~': path.resolve(__dirname),
-      '~lib': path.resolve(__dirname, 'lib')
-    }
-  },
   plugins: [ reactRefresh() ],
   build: {
     outDir: 'dist',
-  }
+  },
 })

@@ -7,7 +7,7 @@ import {
   GroupBase,
 } from 'chakra-react-select'
 import { RegisterOptions } from 'react-hook-form'
-import { InputFieldProps } from '~/lib/types'
+import { InputFieldProps } from '../../types'
 
 type Size = 'sm' | 'md' | 'lg'
 export interface SearchBarOptionType {

@@ -10,7 +10,6 @@ import {
   Text,
 } from '../../../../lib/components'
 import { DefaultPageSubtitle, Page } from '../../components'
-import { } from '~/../icons'
 
 const ButtonPage = () => (
   <Page
