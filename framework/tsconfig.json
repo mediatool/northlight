@@ -38,10 +38,6 @@
       "vite/client",
       "mocha"
     ],
-    "typeRoots": ["@types"],
-    "paths": {
-      "~/*": ["./*"],
-      "~lib/*": ["./lib/*"]
-    }
+    "typeRoots": ["@types"]
   }
 }
