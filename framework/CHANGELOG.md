@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.3.3...@northlight/ui@1.4.0) (2023-03-04)
+
+
+### Features
+
+* **framework:** StepStack ([15b474a](https://github.com/mediatool/northlight/commit/15b474a9272463e09682bb44fb9db072026e7ea0))
+
+
+
+
+
 ## [1.3.3](https://github.com/mediatool/northlight/compare/@northlight/ui@1.3.2...@northlight/ui@1.3.3) (2023-03-01)
 
 
