@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/mediatool/northlight/compare/@northlight/ui@1.4.0...@northlight/ui@1.4.1) (2023-03-06)
+
+
+### Bug Fixes
+
+* **framework): Revert "chore(framework:** fix dependency types" ([7882a3c](https://github.com/mediatool/northlight/commit/7882a3c2a9e356d803d2eac3f111b82bcab9e182))
+* **framework:** remove absolute imports ([661d429](https://github.com/mediatool/northlight/commit/661d4292e71fb31d1004e56cace02165d1ab8e0d))
+
+
+
+
+
 # [1.4.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.3.3...@northlight/ui@1.4.0) (2023-03-04)
 
 
