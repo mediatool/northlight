@@ -62,7 +62,7 @@ export default [ {
     file: 'dist/ts/types.d.ts',
   } ],
 }, {
-  input: './sandbox/app/sandbox.tsx',
+  input: './sandbox/app/index.ts',
   external,
   plugins: [
     esbuild(),
@@ -73,7 +73,7 @@ export default [ {
     file: 'dist/es/sandbox.mjs',
   } ],
 }, {
-  input: './sandbox/app/sandbox.tsx',
+  input: './sandbox/app/index.ts',
   external,
   plugins: [
     dts(),

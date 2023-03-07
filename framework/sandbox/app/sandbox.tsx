@@ -18,10 +18,11 @@ import {
   tottTheme,
 } from '../../lib'
 import { CalendarProvider, I18nProvider, UserProvider } from './context'
-import { MainMenu, MainPage, Routing, SubMenu } from '.'
-import { SearchComponentsBar } from './components'
+import { MainPage } from './types'
+import { MainMenu, SearchComponentsBar, SubMenu } from './components'
+import { Routing } from './routing'
 
-interface SandboxProps {
+export interface SandboxProps {
   routes: MainPage[]
 }
 
