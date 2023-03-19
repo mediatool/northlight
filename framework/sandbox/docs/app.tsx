@@ -488,12 +488,12 @@ const DocsApp = () => {
                 Developed from the Giants at <Icon color="blue.500" as={ MediatoolLogoSolid } boxSize={ 5 } ml={ 2 } alignSelf="flex-end" flexGrow={ 1 } />
               </Lead>
               <Tiny maxW="100vh" textAlign="center">
-                Mediatool UI is not responsible for any possible deaths of
-                users. Mediatool UI is not responsible for badly written code.
-                Mediatool UI do proudly collect its users data. By installing
-                Mediatool UI the developer agrees to all of this requirments as
+                Northlight UI is not responsible for any possible deaths of
+                users. Northlight UI is not responsible for badly written code.
+                Northlight UI do proudly collect its users data. By installing
+                Northlight UI the developer agrees to all of this requirments as
                 stated above and agrees to give away half their salary to
-                Mediatool UI creators as "donations"
+                Northlight UI creators as "donations"
               </Tiny>
             </VStack>
           </VStack>

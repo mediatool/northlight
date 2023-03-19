@@ -1,7 +1,7 @@
 {
   "name": "@northlight/ui",
   "version": "1.4.2",
-  "description": "Mediatool UI library, based on Chakra-ui",
+  "description": "Northlight UI library, based on Chakra-ui",
   "license": "MIT",
   "author": "Mediatool",
   "exports": {
