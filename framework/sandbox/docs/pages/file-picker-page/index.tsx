@@ -282,7 +282,7 @@ const FilePickerPage = () => {
 />` }
           </Code>
           <P>
-            To enable more developer control, mediatool ui also exports a multi
+            To enable more developer control, Northlight ui also exports a multi
             file uploader, which provides the same methods such as onChange, but
             does not render any UI file-items
           </P>
