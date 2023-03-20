@@ -2,6 +2,7 @@ import React from 'react'
 import {
   Avatar,
   AvatarGroup,
+  AvatarProps,
   Code,
   Divider,
   HStack,
@@ -14,6 +15,8 @@ import {
 import { DefaultPageSubtitle, Page } from '../../components'
 import { users } from '../../../app/context'
 import { arrayWithLength } from '../../utils'
+
+const sizes: AvatarProps['size'][] = [ '2xs', 'xs', 'sm', 'md', 'lg' ]
 
 const AvatarPage = () => (
   <Page
@@ -91,30 +94,16 @@ const AvatarPage = () => (
       <Text>
         It can be used in 3 <strong>sizes</strong>
       </Text>
-      <HStack>
-        <Avatar
-          image={ users.anakin.image }
-          name="Anakin Skywalker"
-          size="sm"
-        />
-        <Heading size="sm">sm</Heading>
-      </HStack>
-      <HStack>
-        <Avatar
-          image={ users.anakin.image }
-          name="Anakin Skywalker"
-          size="md"
-        />
-        <Heading size="sm">md</Heading>
-      </HStack>
-      <HStack>
-        <Avatar
-          image={ users.anakin.image }
-          name="Anakin Skywalker"
-          size="lg"
-        />
-        <Heading size="md">lg</Heading>
-      </HStack>
+      { sizes.map((size) => (
+        <HStack>
+          <Avatar
+            image={ users.anakin.image }
+            name="Anakin Skywalker"
+            size={ size }
+          />
+          <Heading size="sm">{ size }</Heading>
+        </HStack>
+      )) }
       <Text>
         If you don't specify a size it will be <strong>md</strong>
       </Text>
