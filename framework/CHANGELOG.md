@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.3](https://github.com/mediatool/northlight/compare/@northlight/ui@1.4.2...@northlight/ui@1.4.3) (2023-03-21)
+
+
+### Bug Fixes
+
+* **framework:** add missing avatar sizes ([ac84578](https://github.com/mediatool/northlight/commit/ac845781a75950e267cd6b77c1a8375cf0ba3c64))
+
+
+
+
+
 ## [1.4.2](https://github.com/mediatool/northlight/compare/@northlight/ui@1.4.1...@northlight/ui@1.4.2) (2023-03-07)
 
 **Note:** Version bump only for package @northlight/ui
