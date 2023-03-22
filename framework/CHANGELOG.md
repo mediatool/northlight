@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.4](https://github.com/mediatool/northlight/compare/@northlight/ui@1.4.3...@northlight/ui@1.4.4) (2023-03-22)
+
+
+### Bug Fixes
+
+* **framework:** fix debounce in searchbar ([e234c38](https://github.com/mediatool/northlight/commit/e234c388cc4467be15963896d60ca04f668dd7fb))
+
+
+
+
+
 ## [1.4.3](https://github.com/mediatool/northlight/compare/@northlight/ui@1.4.2...@northlight/ui@1.4.3) (2023-03-21)
 
 
