@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react'
+import React, { forwardRef, useCallback, useState } from 'react'
 import {
   AsyncSelect,
   GroupBase,
@@ -74,11 +74,11 @@ export const SearchBar = forwardRef(
       return []
     }
 
-    const debouncedLoadOptions = debounce(
+    const debouncedLoadOptions = useCallback(debounce(
       loadOptions,
       debouncedWaitTime,
       debouncedOptions
-    )
+    ), [ getCustomOptions ])
 
     const resetFiltered = (v: string, { action }: InputActionMeta) => {
       if (clearInputOnSelect || action !== 'set-value') {
