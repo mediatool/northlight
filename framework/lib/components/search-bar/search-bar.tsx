@@ -7,7 +7,7 @@ import {
 } from 'chakra-react-select'
 import { filter, identity, is, test, toLower } from 'ramda'
 import { SearchDuo } from '@northlight/icons'
-import { createDebounceFunctionInstance } from 'lib/utils'
+import { createDebounceFunctionInstance } from '../../utils'
 import { searchBarStyles } from './styles'
 import { useSelectCallbacks } from '../../hooks'
 import { Box } from '../box'
