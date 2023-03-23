@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useState } from 'react'
+import React, { forwardRef, useMemo, useState } from 'react'
 import {
   AsyncSelect,
   GroupBase,
@@ -6,8 +6,8 @@ import {
   SelectInstance,
 } from 'chakra-react-select'
 import { filter, identity, is, test, toLower } from 'ramda'
-import debounce from 'lodash.debounce'
 import { SearchDuo } from '@northlight/icons'
+import { createDebounceFunctionInstance } from 'lib/utils'
 import { searchBarStyles } from './styles'
 import { useSelectCallbacks } from '../../hooks'
 import { Box } from '../box'
@@ -22,7 +22,6 @@ export const SearchBar = forwardRef(
     customTag = null,
     sx = {},
     debouncedWaitTime = 200,
-    debouncedOptions = {},
     loadOptions: getCustomOptions = null,
     clearInputOnSelect = true,
     closeMenuOnSelect = false,
@@ -39,6 +38,10 @@ export const SearchBar = forwardRef(
   ) => {
     const [ filtered, setFiltered ] = useState(defaultOptions)
     const [ filterInput, setFilterInput ] = useState('')
+    const debounceFunction = useMemo(
+      () => createDebounceFunctionInstance(debouncedWaitTime),
+      [ debouncedWaitTime ]
+    )
     const handleChange = useSelectCallbacks<T>({
       onChange,
       onAdd,
@@ -65,20 +68,14 @@ export const SearchBar = forwardRef(
       return newOptions
     }
 
-    const loadOptions = async (
+    const loadOptions = debounceFunction(async (
       query: string,
       callback: (options: T[]) => void
     ) => {
       const newOptions = await getOptions(query)
       callback(newOptions)
       return []
-    }
-
-    const debouncedLoadOptions = useCallback(debounce(
-      loadOptions,
-      debouncedWaitTime,
-      debouncedOptions
-    ), [ getCustomOptions ])
+    })
 
     const resetFiltered = (v: string, { action }: InputActionMeta) => {
       if (clearInputOnSelect || action !== 'set-value') {
@@ -95,7 +92,7 @@ export const SearchBar = forwardRef(
         <AsyncSelect
           cacheOptions={ true }
           defaultOptions={ filtered }
-          loadOptions={ debouncedLoadOptions }
+          loadOptions={ loadOptions }
           onChange={ handleChange }
           placeholder="Search..."
           chakraStyles={ searchBarStyles(sx) }

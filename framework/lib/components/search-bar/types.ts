@@ -14,11 +14,6 @@ export interface SearchBarOptionType {
   label: string
   value: any
 }
-interface DebounceOptionsType {
-  leading?: boolean
-  maxWait?: number
-  trailing?: boolean
-}
 
 export type CustomElementType<T extends SearchBarOptionType> = ((
   props: T
@@ -36,7 +31,6 @@ export interface SearchBarProps<T extends SearchBarOptionType>
   size?: Size
   'data-testid'?: string
   debouncedWaitTime?: number
-  debouncedOptions?: DebounceOptionsType
   clearInputOnSelect?: boolean
   closeMenuonSelect?: boolean
   defaultOptions?: T[]

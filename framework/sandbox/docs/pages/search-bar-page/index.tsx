@@ -208,16 +208,8 @@ const customTag = ({ label }: ExampleOptionsType) => {
         </Code>
         <Divider />
         <P>
-          The Search bar is debounced by default, based on
-          <Link
-            href="https://lodash.com/docs/4.17.15#debounce"
-            color="blue.600"
-            _hover={ { textDecoration: 'underline' } }
-            isExternal={ true }
-          >
-            { ' ' }
-            lodash.debounce{ ' ' }
-          </Link>
+          The Search bar is debounced with a default wait time
+          of 200ms. You can change this with the debouncedWaitTime prop.
         </P>
         <SearchBar
           loadOptions={ loadOptions }
