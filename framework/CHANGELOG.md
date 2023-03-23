@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.6](https://github.com/mediatool/northlight/compare/@northlight/ui@1.4.5...@northlight/ui@1.4.6) (2023-03-23)
+
+
+### Bug Fixes
+
+* **framework:** fix import path in search bar ([32ebbce](https://github.com/mediatool/northlight/commit/32ebbce8969f6936c391b1a0ae7643a381a5cfab))
+
+
+
+
+
 ## [1.4.5](https://github.com/mediatool/northlight/compare/@northlight/ui@1.4.4...@northlight/ui@1.4.5) (2023-03-23)
 
 
