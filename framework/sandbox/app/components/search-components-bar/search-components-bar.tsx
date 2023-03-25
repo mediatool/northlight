@@ -11,7 +11,6 @@ import { ComponentPageLink } from './component-page-link'
 export const SearchComponentsBar = ({
   routes,
 }: SearchBarComponentsBarProps) => {
-  const location = useLocation()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const history = useHistory()
   const ref = useRef(null)
@@ -56,13 +55,10 @@ export const SearchComponentsBar = ({
     }
   }
 
-  const currentPage = location.pathname.split('/')[1]
-  if (currentPage !== 'components') return null
-
   return (
-    <Stack p="4">
-      <Card w="xl">
-        <SearchBar placeholder="Ctrl/Control + K to release the beast" onMenuOpen={ onOpen } />
+    <Stack w="full">
+      <Card w="full">
+        <SearchBar placeholder="Search" onMenuOpen={ onOpen } variant="filled" />
       </Card>
       <Modal
         isOpen={ isOpen }

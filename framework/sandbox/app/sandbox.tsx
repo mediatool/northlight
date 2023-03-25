@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Link as ReactRouterLink } from 'react-router-dom'
-import { head } from 'ramda'
-import { NorthlightLogoXs } from '@northlight/icons'
+import { head, last } from 'ramda'
 import {
-  Box,
+  LinkDuo,
+  NorthlightLogoXs,
+  Star01Duo,
+  Star01Solid,
+} from '@northlight/icons'
+import {
+  Button,
   Capitalized,
-  Flex,
-  FormControl,
-  FormLabel,
+  Center,
   Grid,
+  GridItem,
   HStack,
   Icon,
+  IconButton,
   Link,
   MediatoolThemeProvider,
   Stack,
-  Switch,
   tottTheme,
 } from '../../lib'
 import { CalendarProvider, I18nProvider, UserProvider } from './context'
@@ -28,6 +32,9 @@ export interface SandboxProps {
 
 export const Sandbox = ({ routes }: SandboxProps) => {
   const [ tott, setTott ] = useState(false)
+  const currentPage = last(window.location.pathname.split('/'))
+  const isHomePage = currentPage === 'components' || currentPage === 'reference'
+  const pageProportions = isHomePage || window.innerWidth < 2000 ? '25rem auto' : '25rem auto 28rem'
 
   return (
     <MediatoolThemeProvider theme={ tott ? tottTheme : undefined } themeName={ tott ? 'tottTheme' : 'webappTheme' }>
@@ -35,44 +42,105 @@ export const Sandbox = ({ routes }: SandboxProps) => {
         <CalendarProvider>
           <I18nProvider>
             <BrowserRouter>
-              <Grid
-                height="100vh"
-                minHeight="100vh"
-                gridTemplateColumns="280px auto"
-                color="text.default"
-                bgColor="background.default"
-                pl={ 4 }
-              >
-                <Flex
-                  direction="column"
-                  overflow="auto"
+              <Center w="full" bgColor="background.default" h="full">
+                <Stack
+                  h="full"
+                  minH="100vh"
+                  color="text.default"
+                  maxW="2560px"
+                  w="full"
                 >
-                  <Link
-                    as={ ReactRouterLink }
-                    to="/components/"
-                    sx={ { _hover: { textDecoration: 'none' }, _focus: { outline: 'none' } } }
+                  <Grid
+                    gridTemplateColumns="25rem auto 28rem"
+                    color="text.default"
+                    w="full"
+                    gap="8"
+                    position="sticky"
+                    top="0"
+                    left="0"
+                    zIndex="banner"
+                    bgColor="background.default"
+                    borderBottom="1px solid"
+                    borderColor="gray.200"
+                    p="2"
                   >
-                    <HStack>
-                      <Icon as={ NorthlightLogoXs } mt={ 4 } ml={ 2 } boxSize={ 16 } />
-                      <Capitalized>Northlight</Capitalized>
+                    <HStack alignItems="center" w="full">
+                      <Link
+                        as={ ReactRouterLink }
+                        to="/components/"
+                        sx={ {
+                          _hover: { textDecoration: 'none' },
+                          _focus: { outline: 'none' },
+                        } }
+                      >
+                        <HStack>
+                          <Icon
+                            as={ NorthlightLogoXs }
+                            pl="4"
+                            boxSize={ 16 }
+                            mt="4"
+                          />
+                          <Capitalized mt="4">Northlight</Capitalized>
+                        </HStack>
+                      </Link>
                     </HStack>
-                  </Link>
-                  <FormControl display="flex" alignItems="center" my={ 2 } pl={ 2 }>
-                    <FormLabel htmlFor="tott" mb="0">
-                      Dark theme
-                    </FormLabel>
-                    <Switch id="tott" onChange={ () => setTott(!tott) } />
-                  </FormControl>
-                  <MainMenu menuItems={ routes } />
-                  <SubMenu mainRoutes={ routes } />
-                </Flex>
-                <Stack spacing="5" pt="4" height="100vh">
-                  <Box ml={ 10 }>
-                    <SearchComponentsBar routes={ head(routes)?.subItems || [] } />
-                  </Box>
-                  <Routing fallback={ head(routes)?.path } routes={ routes } />
+                    <HStack alignItems="center" w="full">
+                      <SearchComponentsBar
+                        routes={ head(routes)?.subItems || [] }
+                      />
+                    </HStack>
+                    <HStack>
+                      <IconButton
+                        variant="ghost"
+                        icon={ <Icon as={ tott ? Star01Solid : Star01Duo } /> }
+                        aria-label="dark mode"
+                        onClick={ () => setTott(!tott) }
+                      />
+                      <Link as={ ReactRouterLink } to="/components">
+                        <Button variant="ghost">Learn</Button>
+                      </Link>
+                      <Link as={ ReactRouterLink } to="./reference">
+                        <Button variant="ghost">API Reference</Button>
+                      </Link>
+                      <Link
+                        isExternal={ true }
+                        href=" https://github.com/mediatool/northlight"
+                      >
+                        <Button
+                          variant="ghost"
+                          rightIcon={ <Icon as={ LinkDuo } /> }
+                        >
+                          Contribute
+                        </Button>
+                      </Link>
+                    </HStack>
+                  </Grid>
+                  <Grid
+                    gridTemplateColumns={ pageProportions }
+                    color="text.default"
+                    w="full"
+                    gap="8"
+                    position="relative"
+                    pt="4"
+                  >
+                    <GridItem>
+                      <Stack w="25rem" position="fixed">
+                        <MainMenu menuItems={ routes } />
+                        <SubMenu mainRoutes={ routes } />
+                      </Stack>
+                    </GridItem>
+                    <GridItem>
+                      <Center w="full">
+                        <Routing
+                          fallback={ head(routes)?.path }
+                          routes={ routes }
+                        />
+                      </Center>
+                    </GridItem>
+                    <GridItem />
+                  </Grid>
                 </Stack>
-              </Grid>
+              </Center>
             </BrowserRouter>
           </I18nProvider>
         </CalendarProvider>

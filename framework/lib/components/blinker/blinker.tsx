@@ -11,7 +11,5 @@ export const Blinker = ({
 }: BlinkerProps) => {
   const styles = useStyleConfig('Blinker', { color, size, isBlinking })
 
-  return (
-    <Box sx={ styles } data-testid="blinker-test-id" { ...rest } />
-  )
+  return <Box sx={ styles } data-testid="blinker-test-id" { ...rest } />
 }

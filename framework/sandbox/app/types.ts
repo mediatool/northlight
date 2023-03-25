@@ -6,6 +6,7 @@ export interface Page {
   path: string
   title: string
   component: () => Promise<DefaultComponent>
+  extraProps?: Record<string, any>
 }
 
 export interface MainPage extends Page {

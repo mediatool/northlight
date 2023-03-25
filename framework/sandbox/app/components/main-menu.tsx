@@ -16,7 +16,6 @@ export interface MenuItemProps {
 const MenuItem = ({ path, Icon: IconComponent, title }: MenuItemProps) => (
   <HStack
     pl={ 2 }
-    mt={ 5 }
     to={ path }
     as={ NavLink }
     borderRadius={ 6 }
