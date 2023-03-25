@@ -1,5 +1,6 @@
 import React from 'react'
 import { ListSelectDuo } from '@northlight/icons'
+import { parse } from 'react-docgen-typescript'
 import {
   Code,
   Divider,
@@ -43,11 +44,11 @@ const SelectPage = () => (
           href="https://github.com/csandman/chakra-react-select"
           isExternal={ true }
         >
-          &nbsp;Chakra React Select&nbsp;
+            &nbsp;Chakra React Select&nbsp;
         </Link>
         as core component.
       </Text>
-    ) }
+      ) }
   >
     <Stack spacing={ 4 } w="40%">
       <Stack mb={ 4 } spacing={ 4 } maxWidth="400px">
@@ -76,7 +77,8 @@ const SelectPage = () => (
         </HStack>
       </Stack>
       <Text>
-        There are 2 additional <strong>states</strong> of the select compoennt:{ ' ' }
+        There are 2 additional <strong>states</strong> of the select
+        compoennt:{ ' ' }
       </Text>
       <VStack alignItems="flex-start" spacing={ 8 }>
         <Stack spacing={ 4 }>
@@ -105,10 +107,11 @@ const SelectPage = () => (
       <Divider />
       <Text>
         The Select has a custom <strong>onAdd </strong>
-        and <strong>onRemove</strong> as callbacks where the recently removed or
-        added item is the argument. If multiple items were removed at once, the
-        onRemove will return an array of all removed items as opposed to only
-        returning a single value if one item was removed, so check the type!
+        and <strong>onRemove</strong> as callbacks where the recently removed
+        or added item is the argument. If multiple items were removed at once,
+        the onRemove will return an array of all removed items as opposed to
+        only returning a single value if one item was removed, so check the
+        type!
       </Text>
       <Code w="max-content" display="block" whiteSpace="pre">
         { `<Select
@@ -141,7 +144,16 @@ const SelectPage = () => (
         <b>icon</b>, <b>customOption</b>, <b>customTag</b>
       </P>
       <Select icon={ ListSelectDuo } options={ options } />
-      <P>See <Link sx={ { color: 'blue.500', textDecoration: 'underline' } } href="/components/search-bar">Search Bar</Link> for more info on use of customOption and customTag</P>
+      <P>
+        See{ ' ' }
+        <Link
+          sx={ { color: 'blue.500', textDecoration: 'underline' } }
+          href="/components/search-bar"
+        >
+          Search Bar
+        </Link>{ ' ' }
+        for more info on use of customOption and customTag
+      </P>
       <Text>
         When using the select in form use <strong>SelectField</strong>
       </Text>
@@ -184,8 +196,8 @@ const SelectPage = () => (
 />` }
       </Code>
       <Text>
-        To grab the combobox component(the part of the select with all the juicy
-        stuff),
+        To grab the combobox component(the part of the select with all the
+        juicy stuff),
         <br />
         grab <strong>child[0].child[2].child[0].child[1].child[0]</strong>.
         Example:
