@@ -6,6 +6,44 @@ import { DraggableProps } from './types'
 import { DragItem } from './drag-item'
 import { ring } from '../../utils'
 
+/**
+ *  Will turn it's childen into a draggable component when under DragAndDrop context
+ * @see {@link https://northlight.dev/reference/draggable}
+ *
+ * @example (Example)
+ * ##Basic exapmle
+ * (?
+ * <DragAndDrop>
+ * <HStack>
+ * <Draggable id="random-id" />
+ * <Draggable />
+ * </HStack>
+ * </DragAndDrop>
+ * ?)
+ * <br />
+ * (Notice that the id prop is required)
+ *
+ * @example (Example)
+ * ## With custom children
+ *
+ * (?
+ * <DragAndDrop>
+ * <Box p="4">
+ * <Draggable id="random-id">
+ * <Center
+ * boxSize="3xs"
+ * boxShadow="xl"
+ * borderRadius="st.border.radius.lg"
+ * bgColor="bg.overlayer"
+ * >I am draggable</Center>
+ * </Draggable>
+ * </Box>
+ *
+ * </DragAndDrop>
+ * ?)
+ *
+ *
+ */
 export const Draggable = ({
   itemLabel,
   children,
@@ -37,12 +75,12 @@ export const Draggable = ({
   return (
     <Box
       ref={ setNodeRef }
-      { ...dragEventListeners }
       { ...attributes }
       transform={ CSS.Translate.toString(transform) }
       _focusVisible={ ring }
       tabIndex={ disableDrag ? -1 : 0 }
       w="max-content"
+      { ...dragEventListeners }
     >
       { typeof childrenWithDragCursor === 'function'
         ? childrenWithDragCursor(listeners, props)

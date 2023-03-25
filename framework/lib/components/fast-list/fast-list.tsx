@@ -3,6 +3,21 @@ import { VariableSizeList } from 'react-window'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import { FastListProps } from './types'
 
+/**
+ * Wrapper that renders children in a virtualized stacked layout
+ * @see FastGrid
+ * @see {@link https://northlight.dev/reference/fast-list}
+ *
+ * @example (Example)
+ * (?
+ * <Box h="500px" w="300p" border="1px solid gray" p={ 4 } borderRadius={ 4 }>
+    <FastList itemCount={ 10000 } itemSize={ 30 } overscanCount={ 100 }>
+        { (index) => `item-${index}` }
+    </FastList>
+</Box>
+ * ?)
+ *
+ */
 export const FastList = forwardRef(({
   itemCount,
   itemSize,

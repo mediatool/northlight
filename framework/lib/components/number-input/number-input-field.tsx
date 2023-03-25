@@ -4,8 +4,15 @@ import { NumberInputFieldProps } from './types'
 import { Field } from '../form'
 import { NumberInput } from './number-input'
 import { advancedParseFloat } from './advanced-parse-float'
-import { InputGroupWrapper } from '../../internal-components'
+import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 
+/**
+ * The number input component wrapped in a <Field />
+ * meant to be used only inside <Form />
+ * @see NumberInput
+ * @see {@link https://northlight.dev/reference/number-input-field}
+ *
+ */
 export const NumberInputField = ({
   name,
   label,

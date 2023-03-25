@@ -7,6 +7,29 @@ import { getInitials } from '../../utils'
 import { AvatarProps } from './types'
 import { AvatarBadge } from './avatar-badge'
 
+/**
+ * @see AvatarGroup
+ * @see {@link https://northlight.dev/reference/avatar}
+ *
+ * @example (Example)
+ * Avatar takes a name and image
+ * (?
+ * <Avatar name="Anakin Skywalker" image='https://thenerdstash.com/wp-content/uploads/2021/10/Hayden-Christensen-Anakin-Skywalker.jpg' />
+ * ?)
+ *
+ * <br />
+ * If there is no image, it will render the initials of the name along with a random bg color.
+ * (?
+ * <Avatar name="Anakin Skywalker" />
+ * ?)
+ *
+ * <br />
+ *
+ * If the name also is undefined, it will render a fallback icon
+ * (?
+ * <Avatar />
+ * ?)
+ */
 export const Avatar = ({
   variant = 'square',
   notificationCount = 0,

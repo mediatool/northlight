@@ -5,6 +5,29 @@ import { MultiFilePicker } from './multi-file-picker'
 import { createFileObjectFromSrc, isFile, toBase64 } from './utils'
 import { FileFormat, MultiFilePickerFieldProps } from './types'
 
+/**
+ * The multi file picker component wrapped in a <Field />
+ * meant to be used only inside <Form />
+ * @see MultiFilePicker
+ * @see Field
+ * @see {@link https://northlight.dev/reference/multi-file-picker-field}
+ *
+ * @example (Example)
+ * ## Meant for uploading images in a form
+ * Where they handled as base64 strings
+ * (?
+ * <Form initialValues={{images: []}}>
+ * {({watch}) => (
+ * <Stack>
+ * <MultiFilePickerField name="images" />
+ * <Code maxH="xs" overflowY="scroll">{JSON.stringify(watch(), null, 2)}</Code>
+ * </Stack>
+ * )}
+ * </Form>
+ *
+ * ?)
+ *
+ */
 export const MultiFilePickerField = ({
   name,
   label,

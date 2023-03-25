@@ -4,6 +4,12 @@ import { Tag, TagLabel, TagLeftIcon } from '../tag'
 import { blockVariantMap } from './block-variant-map'
 import { StatusBlockProps, statusIconMap } from './types'
 
+/**
+ * Used as status indicator
+ * @see {@link https://northlight.dev/reference/status-block}
+ * @example
+ * (? <StatusBlock variant="approved" /> ?)
+ */
 export const StatusBlock = ({ variant }: StatusBlockProps) => {
   const [ bgColor, contentColor ] = blockVariantMap[variant]
 

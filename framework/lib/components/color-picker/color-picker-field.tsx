@@ -3,6 +3,13 @@ import { Field } from '../form'
 import { ColorPicker } from './color-picker'
 import { ColorPickerFieldProps } from './types'
 
+/**
+ * The <ColorPicker /> component wrapped in a <Field />
+ * meant to be used only inside <Form />
+ * @see ColorPicker
+ * @see {@link https://northlight.dev/reference/color-picker}
+ *
+ */
 export const ColorPickerField = ({
   name,
   label,

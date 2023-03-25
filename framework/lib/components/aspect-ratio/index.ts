@@ -1,3 +1,2 @@
-export {
-  AspectRatio,
-} from '@chakra-ui/react'
+export * from './aspect-ratio'
+export type { AspectRatioProps } from '@chakra-ui/react'

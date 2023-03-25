@@ -2,6 +2,13 @@ import React from 'react'
 import { Heading, useStyleConfig } from '@chakra-ui/react'
 import { HeadingProps } from './types'
 
+/**
+ * @see {@link https://northlight.dev/reference/h4}
+ * @example (Example)
+ * (?
+ * <H4>Heading 4</H4>
+ * ?)
+ */
 export const H4 = ({
   children,
   sx = {},

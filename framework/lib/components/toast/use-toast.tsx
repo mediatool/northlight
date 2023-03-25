@@ -3,6 +3,22 @@ import { useToast as useChakraToast } from '@chakra-ui/react'
 import { Toast } from './toast'
 import { UseToastOptions } from './types'
 
+/**
+ * This hook returns a toast function that when called will popup a toast
+ * @see Toast
+ * @see {@link https://northlight.dev/reference/use-toast}
+ * @example
+ * (?
+ * () => {
+ * const toast = useToast()
+ * const handleClick = () => {
+ * toast({title: 'Success', description: 'Your file changes have been saved' })
+ * }
+ * return (
+ * <Button onClick={handleClick} variant="success">Save</Button>
+ * )}
+ * ?)
+ */
 export const useToast = (defaultOpts: UseToastOptions = {}) => {
   const toast = useChakraToast(defaultOpts)
 

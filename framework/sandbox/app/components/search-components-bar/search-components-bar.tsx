@@ -1,7 +1,7 @@
 import React, { KeyboardEvent, useEffect, useMemo, useRef } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import Fuse from 'fuse.js'
-import { map, prop } from 'ramda'
+import { chain, defaultTo, map, prop } from 'ramda'
 import { Modal, ModalContent, ModalOverlay } from '@chakra-ui/react'
 import { searchComponentsBarStyles } from './styles'
 import { Card, SearchBar, Stack, useDisclosure } from '../../../../lib'
@@ -11,7 +11,6 @@ import { ComponentPageLink } from './component-page-link'
 export const SearchComponentsBar = ({
   routes,
 }: SearchBarComponentsBarProps) => {
-  const location = useLocation()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const history = useHistory()
   const ref = useRef(null)
@@ -29,21 +28,26 @@ export const SearchComponentsBar = ({
     }
   }, [])
 
-  const options = map(
-    (route) => ({
-      value: route.path,
-      label: route.title,
-    }),
+  const options = chain(
+    (route) =>
+      defaultTo([], route.subItems).map((subRoute) => ({
+        value: `${route.path}${subRoute.path}`,
+        label: `${route.title} ${subRoute.title}`,
+      })),
     routes
   )
 
-  const fuse = useMemo(() => new Fuse(options, {
-    threshold: 0.2,
-    keys: [ 'label' ],
-  }), [ options ])
+  const fuse = useMemo(
+    () =>
+      new Fuse(options, {
+        threshold: 0.2,
+        keys: [ 'label' ],
+      }),
+    [ options ]
+  )
 
   const handleChange = ({ value }: RouteOption) => {
-    history.push(`/components${value}`)
+    history.push(`${value}`)
     onClose()
   }
 
@@ -56,13 +60,10 @@ export const SearchComponentsBar = ({
     }
   }
 
-  const currentPage = location.pathname.split('/')[1]
-  if (currentPage !== 'components') return null
-
   return (
-    <Stack p="4">
-      <Card w="xl">
-        <SearchBar placeholder="Ctrl/Control + K to release the beast" onMenuOpen={ onOpen } />
+    <Stack w="full">
+      <Card w="full">
+        <SearchBar placeholder="Search" onMenuOpen={ onOpen } variant="filled" />
       </Card>
       <Modal
         isOpen={ isOpen }

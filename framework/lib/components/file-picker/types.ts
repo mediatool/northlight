@@ -41,6 +41,7 @@ export type ModalBooleans = {
   canEditFileName?: boolean
 }
 export interface FilePickerProps {
+  /** Ex: acceptFormat="'acceptFormat="video/*, .jpg" */
   acceptFormat?: string
   onChange?: (image: File | null) => void
   compression?: CompressionType
@@ -49,6 +50,7 @@ export interface FilePickerProps {
   maxFileSize?: number
   value?: string | null
   loadWithSpinner?: boolean
+  /** Will upon a popup modal for the user to click another button to triggr delte callback */
   confirmDelete?: boolean
   editFileOptions?: EditFileOptionsType
   showProgress?: boolean
@@ -77,9 +79,11 @@ export interface MultiFilePickerProps<T extends FileFormat> extends Omit<FilePic
 }
 
 export interface MultiFileUploaderProps<T extends FileFormat> {
+  /** Ex: acceptFormat="'acceptFormat="video/*, .jpg" */
   acceptFormat?: string
   compression?: CompressionType
   maxFileSize?: number
+  /** Callback Will immediately return file objects before compressed */
   addFilesToQueue?: (files: T[]) => void
   updatePreviewFiles?: (files: any[]) => void
   onChange?: (files: File[]) => void

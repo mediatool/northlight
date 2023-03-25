@@ -16,7 +16,6 @@ export interface MenuItemProps {
 const MenuItem = ({ path, Icon: IconComponent, title }: MenuItemProps) => (
   <HStack
     pl={ 2 }
-    mt={ 5 }
     to={ path }
     as={ NavLink }
     borderRadius={ 6 }
@@ -37,7 +36,7 @@ export interface MainMenuProps {
 }
 
 export const MainMenu = ({ menuItems }: MainMenuProps) => (
-  <Stack spacing={ 2 } mb={ 6 } color="text.default" bgColor="background.default">
+  <Stack spacing={ 2 } mb={ 6 } color="text.default" bgColor="bg.layer">
     { menuItems.map((item) => <MenuItem key={ item.path } { ...item } />) }
   </Stack>
 )

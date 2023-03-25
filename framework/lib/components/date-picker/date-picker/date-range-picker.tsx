@@ -24,6 +24,51 @@ const parseValue = (value: any) => {
   return { start: parseDate(value.startDate), end: parseDate(value.endDate) }
 }
 
+/**
+ * Popover to choose date range on format {startDate:' yyyy-mm-dd', endDate: 'yyyy-mm-dd'}
+ *
+ * @see DatePicker
+ * @see DateRangePickerField
+ * @see {@link https://northlight.dev/reference/date-range-picker}
+ * @example (Example)
+ * ## Advanced Mode
+ * (Due to it being harder to setup normal date range picker,
+ *  the date range picker field is demoed,
+ *  here, you need to pass down and parse a value for the date range picker for it to work properly,
+ *  consult the date picker documentation and the source code for date range picker
+ * field for appropiate use)
+ * (?
+ * <Form initialValues={{date: null}}>
+  * <DateRangePickerField name="date"/>
+ * </Form>
+ * ?)
+ *
+ * @example (Example)
+ * ## Simple mode
+ * The previous example was the date range picker variant
+ * for which we call advance, this one is a simpler version with the same core functionality:
+ * (?
+ * <Form initialValues={{date: null}}>
+  * <DateRangePickerField name="date" mode="simple"/>
+ * </Form>
+ * ?)
+ *
+ * @example (Example)
+ * ### Another example
+ * (?
+ * <Form initialValues={{date: null}}>
+  * <DateRangePickerField
+  * name="date"
+  * mode="simple"
+  * variant="filled"
+  * fiscalStarMonth={3}
+  * dateFormat="mm|dd-yyyy"
+  * minValue="2023-01-01"
+  * maxValue="2024-01-01"
+  * />
+ * </Form>
+ * ?)
+ */
 export const DateRangePicker = (props: DateRangePickerProps) => {
   const {
     isDisabled,

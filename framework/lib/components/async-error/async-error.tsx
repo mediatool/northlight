@@ -9,6 +9,14 @@ import { Icon } from '../icon'
 import { VStack } from '../stack'
 import { AsyncErrorProps } from './types'
 
+/**
+ * @see {@link https://northlight.dev/reference/async-error}
+ * @example
+ * (?
+ * <AsyncError />
+ * ?)
+ *
+ */
 export const AsyncError = ({
   message = '',
   ...rest

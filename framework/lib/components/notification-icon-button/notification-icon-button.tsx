@@ -4,6 +4,24 @@ import { Blinker } from '../blinker'
 import { IconButton } from '../icon-button'
 import { NotificationIconButtonProps } from './types'
 
+/**
+ * A custom component that composes the IconButton and Blinker components.
+ *  The notification blinker blinks on hover.
+ * @see {@link https://northlight.dev/reference/notification-icon-button}
+ *
+ * @example
+ * (?
+ * <Box w="min-content">
+<NotificationIconButton
+  variant="brand"
+  aria-label="conversations"
+  icon={ <Icon as={ ConversationDuo } /> }
+  hasNotification={ true }
+  size="lg"
+/>
+</Box>
+ * ?)
+ */
 export const NotificationIconButton = forwardRef(({
   variant = 'ghost',
   icon,

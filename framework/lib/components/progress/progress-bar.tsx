@@ -7,6 +7,35 @@ import { Fade } from '../transitions'
 import { ProgressBarProps } from './types'
 import { animationSlideTime, updateTimeThreshold } from './constants'
 
+/**
+ * @see {@link https:/northlight/reference/progress-bar}
+ *
+ * @example
+ * (?
+ * () => {
+  const [ progress, setProgress ] = useState(0)
+  if (progress > 1 && buffer) {
+    clearInterval(buffer)
+    buffer = null
+  }
+
+  const handleClick = () => {
+    setProgress(0)
+    buffer = setInterval(
+      () => setProgress((prev) => prev + Math.random() * 0.1),
+      Math.random() * 300 + 200
+    )
+  }
+  return (
+    <Stack>
+    <ProgressBar loaded={ progress } hideDisplay={true}/>
+    <Button onClick={ handleClick }>Start Loading</Button>
+    </Stack>
+  )
+ * }
+ * ?)
+ *
+ */
 export const ProgressBar = ({
   loaded,
   onLoadEnd = () => {},

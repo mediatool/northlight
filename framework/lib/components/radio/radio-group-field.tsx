@@ -5,6 +5,14 @@ import { Field } from '../form'
 import { RadioGroup } from './radio-group'
 import { Box } from '../box'
 
+/**
+ * The radio group component wrapped in a <Field />
+ * meant to be used only inside <Form />
+ * @see RadioGroup
+ * @see Radio
+ * @see {@link https://northlight.dev/reference/radio-group-field}
+ *
+ */
 export const RadioGroupField = ({
   name,
   label,

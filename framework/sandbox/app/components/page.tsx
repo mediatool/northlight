@@ -15,7 +15,7 @@ export const Page = ({
   <Box
     w="100%"
     h="100%"
-    p={ 5 }
+    p={ 6 }
     overflowY="auto"
     overscrollBehavior="contain"
     bgColor="background.default"

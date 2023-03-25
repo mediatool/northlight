@@ -7,6 +7,10 @@ import {
 } from '@chakra-ui/react'
 import { ModalProps } from './types'
 
+/**
+ * @see {@link https://northlight.dev/reference/modal}
+ *
+ * */
 export const Modal = ({
   isCentered = true,
   children,

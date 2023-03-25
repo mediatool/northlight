@@ -15,10 +15,13 @@ export interface DateRange {
   endDate: string
 }
 
-type DatePickerSettings = {
+interface DatePickerSettings {
   firstDayOfWeek: 'sunday' | 'monday'
   resetDate: () => void
   isInvalid?: boolean
+  /** The dateFormat is a string,
+   *  which acts as a template on how to display the date for the user, ex:
+   *  dateFormat="mm.dd.yyyy" */
   dateFormat?: string
   isClearable?: boolean
   variant?: 'outline' | 'filled'

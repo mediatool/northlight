@@ -2,6 +2,10 @@ import React from 'react'
 import { Radio as ChakraRadio } from '@chakra-ui/react'
 import { RadioProps } from './types'
 
+/**
+ * @see RadioGroup
+ * @see {@link https://northlight.dev/reference/radio}
+ */
 export const Radio = ({
   size = 'md',
   onChange,

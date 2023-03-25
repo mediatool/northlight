@@ -6,6 +6,15 @@ import { DragItem } from './drag-item'
 import { ring } from '../../utils'
 import { SortableItemProps } from './types'
 
+/**
+ * Renders a draggable item under sortable context
+ * @see SortableList
+ * @see MultiSort
+ * @see {@link https://northlight.dev/reference/sortable-item}
+ *
+ * @example
+ * (? <SortableItem id="sortable-1"/> ?)
+ * */
 export const SortableItem = ({
   itemLabel = 'Drag me',
   dblClickThreshold = 300,

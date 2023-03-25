@@ -39,7 +39,7 @@ export const Routing = ({ routes, basename, fallback }: RoutingProps) => (
         />
       )
 
-      const subRoutes = subItems.map(({ path: subPath, component: subComponent }) => {
+      const subRoutes = subItems.map(({ path: subPath, component: subComponent, extraProps }) => {
         const fullPath = `${path}${subPath}`
         return (
           <Route
@@ -49,6 +49,7 @@ export const Routing = ({ routes, basename, fallback }: RoutingProps) => (
               <LazyPage
                 { ...props }
                 loader={ subComponent }
+                { ...extraProps }
               />
             ) }
           />

@@ -2,6 +2,12 @@ import React from 'react'
 import { FormLabelProps } from './types'
 import { Label } from '../typography'
 
+/**
+ * Renders a label, meant to be used alongside a field component
+ * @see Field
+ * @see {@link https://northlight.dev/reference/form-label}
+ *
+ */
 export const FormLabel = ({
   children: label,
   ...rest

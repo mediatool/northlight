@@ -4,6 +4,49 @@ import { identity } from 'ramda'
 import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils'
 import { CollapseProps } from './types'
 
+/**
+ * Simple transition to hide/show content
+ * @see Fade
+ * @see ScaleFade
+ * @see SlideFade
+ * @see {@link https://northlight.dev/reference/collapse}
+ *
+ * @example (Example)
+ * ##View other options
+ * (?
+ *
+() => {
+  const [ show, setShow ] = useState(false)
+  const toggle = () => {
+    setShow((prev) => !prev)
+
+  }
+  return (
+    <>
+       <Button onClick={toggle}>Click Me</Button>
+  <Box borderRadius="st.border.radius.sm"
+  borderWidth="st.border.width.sm" borderColor="border.default">
+            <Collapse in={ show}>
+  <HStack p="10" bg="bg.filled" rounded="md" >
+  <P>
+  Enable advanced mode
+  </P>
+
+  <Switch />
+  </HStack>
+            </Collapse>
+  </Box>
+    </>
+
+  )
+
+}
+
+ * ?)
+
+ *
+ */
+
 export const Collapse = ({
   children,
   enterDuration = null,
