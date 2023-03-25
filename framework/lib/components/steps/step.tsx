@@ -5,6 +5,15 @@ import { Flex } from '../flex'
 import { ring } from '../../utils'
 import { StepProps } from './types'
 
+/**
+ * Renders a step in a step list
+ * @see StepList
+ * @see Steps
+ * @see {@link https://northlight.dev/reference/step}
+ * @example
+ * (? <Step label="Step 1" description="Personal information" /> ?)
+ *
+ */
 export const Step = ({
   label,
   description,

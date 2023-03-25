@@ -2,6 +2,28 @@ import React, { cloneElement, forwardRef } from 'react'
 import { IconButton as ChakraIconButton } from '@chakra-ui/react'
 import { IconButtonProps } from './types'
 
+/**
+ * A normal button but renders an icon instead of text
+ * @see Button
+ * @see Icon
+ * @see {@link https://northlight.dev/reference/icon-button}
+ *
+ * @example (Example)
+ * (?
+ * <IconButton variant='brand' icon={<Icon as={UsersDuo} />} onClick={console.log}/>
+ * ?)
+ *
+ * @example (Example)
+ * (?
+        <IconButton
+          isRound={ true }
+          aria-label="create"
+          variant="success"
+          icon={ <Icon as={ PlusSolid } /> }
+        />
+ * ?)
+ *
+ */
 export const IconButton = forwardRef(({
   variant = 'default',
   icon,

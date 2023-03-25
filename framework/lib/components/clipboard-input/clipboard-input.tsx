@@ -7,6 +7,17 @@ import { Tooltip } from '../tooltip'
 import { Input, InputGroup, InputRightElement } from '../input'
 import { ClipboardInputProps } from './types'
 
+/**
+ * Meant to display non editable copiable text
+ * @see {@link https://northlight.dev/reference/clipboard-input}
+ *
+ * @example (Example)
+ * ## Your token
+ * (?
+ * <ClipboardInput value="8aa6d075-eae2-49b3-8f65-318ece801b3b" aria-label="Copy token" />
+ * ?)
+ *
+ */
 export const ClipboardInput = ({
   size = 'md',
   value,

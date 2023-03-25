@@ -2,6 +2,13 @@ import React, { cloneElement, useCallback, useRef } from 'react'
 import { Grid, useStyleConfig } from '@chakra-ui/react'
 import { SplitPaneProps } from './types'
 
+/**
+ * Used for split screen layouts
+ * @see PaneItem
+ * @see PaneDivider
+ * @see {@link https://northlight.dev/reference/split-pane}
+ *
+ */
 export const SplitPane = ({
   children,
   initialSplit = 50,

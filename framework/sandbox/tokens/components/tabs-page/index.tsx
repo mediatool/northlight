@@ -9,13 +9,13 @@ interface Props {
 }
 
 const TabsPage = ({ dataSet }: Props) => (
-  <Tabs isLazy={ true } height="full" lazyBehavior="keepMounted">
+  <Tabs isLazy={ true } height="full" lazyBehavior="keepMounted" w="100%">
     <TabList
       p={ 1 }
       position="absolute"
       zIndex="maxnus"
-      top={ 8 }
-      right={ 8 }
+      top={ 10 }
+      right={ 4 }
       background="mono.black"
       borderRadius="full"
     >
@@ -23,9 +23,9 @@ const TabsPage = ({ dataSet }: Props) => (
         <Tab key={ name }>{ name }</Tab>
       ), dataSet) }
     </TabList>
-    <TabPanels height="full">
+    <TabPanels height="calc(100vh - 100px)" w="100%">
       { map(({ data, title }) => (
-        <TabPanel height="full" key={ title }>
+        <TabPanel height="full" key={ title } w="100%">
           <Visualizer data={ data } title={ title } />
         </TabPanel>
       ), dataSet) }

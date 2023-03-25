@@ -7,6 +7,19 @@ import { Stack } from '../stack'
 import { defaultEditOptions, fiveHundredMB } from './constants'
 import { FileFormat, MultiFilePickerProps } from './types'
 
+/**
+ * Lets user import file of any type as Javascript File Object
+ * @see FilePicker
+ * @see {@link https://northlight.dev/reference/multi-file-picker}
+ *
+ * @example (Example)
+ * (?
+ * <MultiFilePicker />
+ * ?)
+ * ## For more information, view: <a href="https://northlight.dev/components/file%20picker">guide</a>
+ *
+ *
+ */
 export function MultiFilePicker<T extends FileFormat> ({
   acceptFormat = '*',
   compression,

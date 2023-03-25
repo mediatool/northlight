@@ -13,6 +13,78 @@ import { indexOf, insert, keys, remove } from 'ramda'
 import { DragAndDrop } from './drag-and-drop'
 import { MultiItemType, MultiSortProps } from './types'
 
+/**
+ * Util component for sorting items in two dimensions(container and order in container)
+ * @see SortableList
+ * @see DragAndDrop
+ * @see {@link https://northlight.dev/reference/multi-sort}
+ *
+ * @example
+ * (?
+ * () => {
+  const [ multiItems, setMultiItems ] = useState({
+    container1: [
+      'JavaScript',
+      'Python',
+      'Front end',
+      'Back end',
+    ],
+    container2: [ 'HTML', 'CSS' ],
+    container3: [ 'Chakra UI', 'Next.js', 'Tailwind UI' ],
+  })
+  return (
+    <Stack>
+          <MultiSort
+            items={ multiItems }
+            onChange={ (items) => setMultiItems(items) }
+          >
+            { (items, activeId) => (
+              <HStack alignItems="start">
+                <VStack>
+                  <Heading size="sm">I like</Heading>
+                  <DropZone name="container1">
+                    <SortableContainer items={ items.container1 } />
+                  </DropZone>
+                </VStack>
+                <VStack>
+                  <Heading size="sm">I don't like</Heading>
+                  <DropZone name="container2">
+                    <SortableContainer items={ items.container2 } />
+                  </DropZone>
+                </VStack>
+                <VStack>
+                  <Heading size="sm">Neutral</Heading>
+                  <DropZone name="container3">
+                    <SortableContainer items={ items.container3 } />
+                  </DropZone>
+                </VStack>
+                <DragOverlay>
+                  { activeId ? (
+                    <DragItem
+                      itemLabel={ activeId }
+                      isDragging={ true }
+                      bgColor="background.tag.default"
+                    />
+                  ) : null }
+                </DragOverlay>
+              </HStack>
+            ) }
+          </MultiSort>
+          <Text>Controlled output: </Text>
+          <Code p={ 2 } borderRadius={ 4 }>
+            <pre>{ JSON.stringify(multiItems, null, 2) }</pre>
+          </Code>
+</Stack>
+  )
+ * }
+ * ?)
+ * <br />
+ * Multisort abstracts logic away for setting up sortable items between multiple containers,
+ *  you can then separate, or create and style this containers as you want,
+ *  by putting them under <Droppable /> or a prestyled <Dropzone />
+
+SortableContainer is a wrapper for a <Sortable /> with a sortable item
+ * */
 export function MultiSort<itemKeys extends string | number | symbol> ({
   items: sortableItems,
   onChange = () => {},

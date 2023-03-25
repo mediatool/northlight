@@ -4,13 +4,11 @@ import { RegisterOptions } from 'react-hook-form'
 
 export type TextSizeProps = 'sm' | 'md'
 
-export type TextareaProps =
-  ChakraTextareaProps
-  & {
-    onChange?: (...event: any[]) => void | ((e: ChangeEvent<HTMLInputElement>) => void)
-    value?: boolean
-    size?: TextSizeProps
-  }
+export interface TextareaProps extends ChakraTextareaProps {
+  onChange?: (...event: any[]) => void | ((e: ChangeEvent<HTMLInputElement>) => void)
+  value?: string
+  size?: TextSizeProps
+}
 
 export type TextareaFieldProps =
   ChakraTextareaProps

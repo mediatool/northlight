@@ -8,10 +8,8 @@ export interface TextInputFormatter {
   unFormat: (value: string) => string
 }
 
-export type TextFieldProps =
-Omit<ChakraInputProps, 'onChange'>
-& InputFieldProps
-& {
+export interface TextFieldProps extends Omit<ChakraInputProps, 'onChange'>
+  , InputFieldProps {
   name: string
   label: string
   mask?: string

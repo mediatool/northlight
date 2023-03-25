@@ -9,7 +9,9 @@ export interface ColorPickerProps
   'onChange' | 'value' | 'aria-label' | 'variant'
   > {
   onChange?: (value: string) => void
+  /** This are what color options the user can choose */
   colors?: string[]
+  /** This are the extended color options  displayed when clicking the down caret */
   expandedColors?: string[]
   value?: string | null
   size?: ColorPickerSize

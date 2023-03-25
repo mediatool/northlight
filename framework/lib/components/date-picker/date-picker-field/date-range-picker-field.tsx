@@ -5,6 +5,13 @@ import { Field } from '../../form'
 import { DateRangePicker } from '../date-picker/date-range-picker'
 import { useFormContext } from '../../../hooks'
 
+/**
+ * The <DateRangePicker /> component wrapped in a <Field />
+ * meant to be used only inside <Form />
+ * @see DateRangePicker
+ * @see {@link https://northlight.dev/reference/date-range-picker-field}
+ *
+ */
 export const DateRangePickerField = ({
   name,
   minValue,

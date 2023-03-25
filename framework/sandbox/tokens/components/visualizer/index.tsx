@@ -31,7 +31,7 @@ export const Visualizer = ({ data, title }: Props) => {
   }, [ ref.current ])
 
   return (
-    <Box position="relative" height="full">
+    <Box position="relative" height="full" w="100%">
       <Tooltip label="Force refresh" placement="right">
         <IconButton
           variant="brand"

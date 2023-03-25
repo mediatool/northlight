@@ -21,6 +21,58 @@ import { SortableItem } from './sortable-item'
 import { DragItem } from './drag-item'
 import { SortableListProps } from './types'
 
+/**
+ * Util component to render sortable items under sortable context
+ * @see SortableItem
+ * @see Sortable
+ * @see {@link https://northlight.dev/reference/sortable-list}
+ *
+ * @example (Example)
+ * ## You can render any layout of sortable components, for example grid:
+ * (?
+ * () => {
+ * const [items, setItems] = useState(Array.from({length: 100}, (_, i) => i))
+ * return (
+ * <Stack>
+<SimpleGrid minChildWidth="50px" spacing={ 4 }>
+    <SortableList
+        items={ items }
+        onChange={ (items) => setItems(items) }
+    />
+</SimpleGrid>
+          <Code p={ 2 } borderRadius={ 4 }>
+            { JSON.stringify(items, null, 2) }
+          </Code>
+          </Stack>
+ * )}
+ * ?)
+ *
+ * @example (Example)
+ * ### With custom component
+ * (?
+ * <Stack>
+ *
+ * <SortableList
+  items={ [ { name: 'item1' }, { name: 'item2' }, { name: 'item3' } ] }
+  createKey={ (item) => item.name }
+  disableDrag={ true }
+>
+  { ({ name }, listeners, { isOver }) => (
+    <HStack>
+      <DragHandle { ...listeners } isDragging={ isOver } />
+      <Input defaultValue={ name } />
+    </HStack>
+  ) }
+</SortableList>
+</Stack>
+ * ?)
+<br />
+If disableDrag=false, then when the user double clicks it will trigger
+the default behaviour of the rendered component instead of the dragging,
+ you can adjust the threshold with dblClickThreshold, default is 300ms
+ *
+ *
+ */
 export function SortableList<T> ({
   children,
   items: sortableItems,

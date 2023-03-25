@@ -3,7 +3,44 @@ import { Fade as ChakraFade } from '@chakra-ui/react'
 import { identity } from 'ramda'
 import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils'
 import { FadeProps } from './types'
+/**
+ * Simple transition to hide/show content
+ * @see ScaleFade
+ * @see SlideFade
+ * @see {@link https://northlight.dev/reference/fade}
+ *
+ * @example (Example)
+ * ##View other options
+ * (?
+ *
+() => {
+  const [ show, setShow ] = useState(false)
+  const toggle = () => {
+    setShow((prev) => !prev)
 
+  }
+  return (
+    <>
+       <Button onClick={toggle}>Render random number</Button>
+  <Box borderRadius="st.border.radius.sm"
+  borderWidth="st.border.width.sm" borderColor="border.default">
+            <Fade in={ show} exitDuration={1}>
+  <HStack p="10" bg="bg.filled" rounded="md" >
+  <H3>
+  {Math.round(Math.random() * 100)}
+  </H3>
+  </HStack>
+            </Fade>
+  </Box>
+    </>
+
+  )
+
+}
+
+ * ?)
+ *
+ */
 export const Fade = ({
   children,
   enterDuration = null,

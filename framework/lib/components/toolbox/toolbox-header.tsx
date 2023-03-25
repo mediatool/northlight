@@ -5,6 +5,11 @@ import { Flex } from '../flex'
 import { ToolboxHeaderProps } from './types'
 import { H3 } from '../typography'
 
+/**
+ * @see Toolbox
+ * @see {@link https://northlight.dev/reference/toolbox-header}
+ *
+ */
 export const ToolboxHeader = ({
   children,
   onClose,

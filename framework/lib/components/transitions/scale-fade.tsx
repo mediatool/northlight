@@ -4,6 +4,41 @@ import { identity } from 'ramda'
 import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils'
 import { ScaleFadeProps } from './types'
 
+/**
+ * Simple transition to hide/show content
+ * @see Fade
+ * @see SlideFade
+ * @see {@link https://northlight.dev/reference/slide-fade}
+ *
+ * @example (Example)
+ * ##View other options
+ * (?
+ *
+() => {
+  const [ show, setShow ] = useState(false)
+  const toggle = () => {
+    setShow((prev) => !prev)
+
+  }
+  return (
+    <>
+       <Button onClick={toggle}>Render random number</Button>
+  <Box borderRadius="st.border.radius.sm"
+  borderWidth="st.border.width.sm" borderColor="border.default">
+            <SlideFade in={ show} exitDuration={1}>
+  <HStack p="10" bg="bg.filled" rounded="md" >
+  <H3>
+  {Math.round(Math.random() * 100)}
+  </H3>
+  </HStack>
+            </SlideFade>
+  </Box>
+    </>
+  )
+}
+ * ?)
+ *
+ */
 export const ScaleFade = ({
   children,
   enterDuration = null,

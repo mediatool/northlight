@@ -6,6 +6,13 @@ import { createPreviewFileObject, getNewUploadingFiles, isFile, isOverflowing } 
 import { FileFormat, MultiFileListProps } from './types'
 import { defaultEditOptions } from './constants'
 
+/**
+ * Show list of files, their uploading progress as well as options to edit/delete them
+ * @see MultiFileUploader
+ * @see MultiFilePicker
+ * @see {@link https://northlight.dev/multi-file-list}
+ *
+ */
 export function MultiFileList<T extends FileFormat> ({
   files,
   uploadingFiles,

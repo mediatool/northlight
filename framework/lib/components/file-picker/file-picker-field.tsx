@@ -5,6 +5,29 @@ import { FilePicker } from './file-picker'
 import { toBase64 } from './utils'
 import { FilePickerFieldProps } from './types'
 
+/**
+ * The file picker component wrapped in a <Field />
+ * meant to be used only inside <Form />
+ * @see FilePicker
+ * @see Field
+ * @see {@link https://northlight.dev/reference/file-picker-field}
+ *
+ * @example (Example)
+ * ## Meant for uploading images in a form
+ * Where they handled as base64 string
+ * (?
+ * <Form initialValues={{image: ''}}>
+ * {({watch}) => (
+ * <Stack>
+ * <FilePickerField name="image" />
+ * <Code maxH="xs" overflowY="scroll">{JSON.stringify(watch(), null, 2)}</Code>
+ * </Stack>
+ * )}
+ * </Form>
+ *
+ * ?)
+ *
+ */
 export const FilePickerField = ({
   name,
   label,

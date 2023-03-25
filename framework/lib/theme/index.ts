@@ -31,6 +31,10 @@ const overrides: ThemeOverride = {
   },
   styles: {
     global: {
+      html: {
+        'scroll-behavior': 'smooth',
+        overflow: 'scroll',
+      },
       body: {
         height: '100%',
       },

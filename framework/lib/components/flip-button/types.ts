@@ -84,6 +84,7 @@ export interface FlipButtonGroupProps
   children?: React.ReactNode[] | React.ReactNode
   name?: string
   value?: string | string[]
+  /** This enables passing styles directly to the div closes to the flip buttons */
   sx?: CSSObject
 }
 

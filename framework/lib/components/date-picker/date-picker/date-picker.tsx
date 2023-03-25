@@ -15,6 +15,51 @@ import { Popover, PopoverAnchor, PopoverContent } from '../../popover'
 import { Icon } from '../../icon'
 import { Box } from '../../box'
 
+/**
+ * Popover to select single date
+ * @see DatePickerField
+ * @see {@link https://northlight.dev/reference/date-picker}
+ *
+ * @example (Example)
+ * ## When is your birthday
+ * (?
+ * () => {
+ * const [ date, setDate ] = useState('2023-10-10')
+ *
+ * const parseDate = () => {
+ * return undefined
+ * }
+ *
+ * return (
+ * <DatePicker
+ * firstDayOfWeek="monday"
+ * resetDate={() => setDate(null)} onChange={setDate} value={parseDate(date)}/>
+ * )
+ * }
+ *
+ * ?)
+ * <br />
+ * ### Some notes on date format
+ * As you can see in the above example, the parseDate function returns undefined.
+ *  The DatePicker natively handles
+ * dates as a DateValue object. To get out a string value on format yyyy-mm-dd,
+ *  you can use the javascript <b>.toString</b> method,
+ *  and for getting it back from string to DateValue,
+ *  you can use the parseDate util.
+ * <br />
+ * To read more about date formatting, consult the
+ * <a target="_blank" style="fontWeight: bold;" href="https://react-spectrum.adobe.com/internationalized/date/CalendarDate.html">react aria internationalized documentation</a>
+ *
+ * @example (Example)
+ * ## Another example
+ * (?
+  * <DatePicker
+  * variant="filled"
+  * dateFormat="mm|dd-yyyy"
+  * />
+ * ?)
+ *
+ */
 export const DatePicker = (props: DatePickerProps) => {
   const {
     isDisabled,
