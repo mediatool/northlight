@@ -6,6 +6,7 @@ export interface AvatarProps extends ChakraAvatarProps {
   image?: string
   notificationCount?: number
   size?: '2xs' | 'xs' | 'sm' | 'md' | 'lg'
+  variant?: 'square' | 'rounded'
 }
 export interface AvatarBadgeProps {
   notificationCount?: number

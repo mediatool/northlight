@@ -83,7 +83,12 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
     .filter((example) => example.data !== '') as unknown as CodeExample[][]
 
   const headers = codeExamples
-    .map((example) => example[0].data.split('\n')[0])
+    .map((example, i) => {
+      if (!example[0]) {
+        return `Example ${i}`
+      }
+      return example[0].data.split('\n')[0]
+    })
     .map(removeSpecialChars)
 
   const propEntries = values(data.props)
