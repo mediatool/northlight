@@ -10,3 +10,6 @@
 **/cypress/screenshots
 .icloud
 .cache/
+framework/sandbox/reference/pages/**
+framework/sandbox/reference/routes/**
+

@@ -2,6 +2,7 @@ import { parseCode } from './parse.mjs'
 import { getAllExportedComponents } from './find-components.mjs'
 import { generateDocumentation } from './generateDocumenation.mjs'
 import { saveFile } from './save-file.mjs'
+import { formatFileName } from './format-file-name.mjs'
 
 console.log('Searching files...')
 const paths = getAllExportedComponents()
@@ -11,23 +12,24 @@ const info = parseCode(paths)
 console.log('Saved files \n---------\n')
 
 const routeContent = info.map((data) => {
-  const name = data.displayName
+  const componentName = data.displayName
+  const fileName = formatFileName(componentName)
+
   saveFile(
-    `sandbox/reference/pages/${data.displayName}-page/index.tsx`,
+    `sandbox/reference/pages/${fileName}-page/index.tsx`,
     generateDocumentation(data)
   )
 
   return `{
-    "title": \`${data.displayName}\`,
-    "path": \`/${name}\`,
-    "component": () => import(\`../pages/${data.displayName}-page\`),
+    "title": \`${componentName}\`,
+    "path": \`/${fileName}\`,
+    "component": () => import(\`../pages/${fileName}-page\`),
   },`
 })
 
 const routePath = 'sandbox/reference/routes/routes.tsx'
 const routes = routeContent.reduce((acc, curr) => acc + curr, '')
-const routeFile = `
-import { prop, sortBy } from 'ramda'
+const routeFile = `import { prop, sortBy } from 'ramda'
 import { Page } from '../../app'
 
 export const routes: Page[] = sortBy(prop('title'), [

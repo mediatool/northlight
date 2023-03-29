@@ -22,7 +22,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && yarn build-docs",
     "clean": "rm -rf dist",
     "demo": "vite",
     "lint": "eslint --ext ts,tsx lib/ sandbox/ test",
