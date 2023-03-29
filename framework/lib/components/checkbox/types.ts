@@ -4,13 +4,11 @@ import { RegisterOptions } from 'react-hook-form'
 
 export type CheckboxVariants = 'default' | 'rounded'
 
-export type CheckboxProps =
-  ChakraCheckboxProps
-  & {
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void
-    value?: boolean
-    variant?: CheckboxVariants
-  }
+export interface CheckboxProps extends Omit<ChakraCheckboxProps, 'value'> {
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  value?: boolean
+  variant?: CheckboxVariants
+}
 
 export type CheckboxFieldProps =
   ChakraCheckboxProps
