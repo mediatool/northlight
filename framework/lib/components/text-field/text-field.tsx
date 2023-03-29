@@ -3,7 +3,7 @@ import { identity } from 'ramda'
 import { TextFieldProps } from './types'
 import { Input } from '../input'
 import { Field } from '../form'
-import { InputGroupWrapper } from '../../internal-components'
+import { InputGroupWrapper } from '../../internal-components/input-group-wrapper'
 
 export const TextField = ({
   name,

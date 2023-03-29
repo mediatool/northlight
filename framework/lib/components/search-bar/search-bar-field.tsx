@@ -8,7 +8,7 @@ import { SearchBar } from './search-bar'
 import { HStack } from '../stack'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
-import { InputGroupWrapper } from '../../internal-components/input-group-wrapper'
+import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 
 export const SearchBarField = <T extends SearchBarOptionType> ({
   name,

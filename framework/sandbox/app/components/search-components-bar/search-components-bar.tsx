@@ -1,5 +1,5 @@
 import React, { KeyboardEvent, useEffect, useMemo, useRef } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import Fuse from 'fuse.js'
 import { map, prop } from 'ramda'
 import { Modal, ModalContent, ModalOverlay } from '@chakra-ui/react'

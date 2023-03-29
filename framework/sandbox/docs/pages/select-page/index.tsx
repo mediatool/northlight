@@ -1,6 +1,5 @@
 import React from 'react'
 import { ListSelectDuo } from '@northlight/icons'
-import { parse } from 'react-docgen-typescript'
 import {
   Code,
   Divider,

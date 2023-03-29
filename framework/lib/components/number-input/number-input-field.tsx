@@ -4,7 +4,7 @@ import { NumberInputFieldProps } from './types'
 import { Field } from '../form'
 import { NumberInput } from './number-input'
 import { advancedParseFloat } from './advanced-parse-float'
-import { InputGroupWrapper } from '../../internal-components'
+import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 
 export const NumberInputField = ({
   name,

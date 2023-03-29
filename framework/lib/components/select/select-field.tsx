@@ -8,7 +8,7 @@ import { Select } from './select'
 import { HStack } from '../stack'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
-import { InputGroupWrapper } from '../../internal-components'
+import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 
 export function SelectField<T extends Option> ({
   name,

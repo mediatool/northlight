@@ -1,4 +1,3 @@
-import { last } from 'ramda'
 import React from 'react'
 import {
   NavLink,
@@ -7,7 +6,7 @@ import {
   useLocation,
 } from 'react-router-dom'
 import { NavSideLink } from '../../../lib/internal-components'
-import { HStack, Label, Stack } from '../../../index'
+import { Stack } from '../../../index'
 import { MainPage } from '../types'
 
 export interface SubMenuItemProps {

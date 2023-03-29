@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 import { prop, sortBy } from 'ramda'
 import { Page } from '../../app'
 

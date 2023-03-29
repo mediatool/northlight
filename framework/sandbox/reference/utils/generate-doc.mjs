@@ -32,7 +32,7 @@ const writeRoutes = () => {
   const routeContent = getRouteContent()
   const routePath = 'sandbox/reference/routes/routes.tsx'
   const routes = routeContent.reduce((acc, curr) => acc + curr, '')
-  const routeFile = `
+  const routeFile = `/* eslint-disable */
 import { prop, sortBy } from 'ramda'
 import { Page } from '../../app'
 

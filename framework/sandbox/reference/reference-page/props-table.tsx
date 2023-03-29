@@ -30,7 +30,7 @@ export interface PropsTableProps {
 }
 
 const matchPageLink =
-  /\b(?:https?|ftp):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*[a-z0-9-+&@#\/%=~_|]/gi
+  /\b(?:https?|ftp):\/\/[a-z0-9-+&@#/%?=~_|!:,.;]*[a-z0-9-+&@#/%=~_|]/gi
 
 export const PropsTable = ({
   name,

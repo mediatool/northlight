@@ -5,7 +5,7 @@ import { DatePickerFieldProps } from '../types'
 import { Field } from '../../form'
 import { DatePicker } from '../date-picker/date-picker'
 import { useFormContext } from '../../../hooks'
-import { InputGroupWrapper } from '../../../internal-components'
+import { InputGroupWrapper } from '../../../internal-components/input-group-wrapper'
 
 export const DatePickerField = ({
   name,
