@@ -12,4 +12,5 @@ export const WebappSkin:ThemeOverride = {
   borders: WebappSkinTokens.borderWidth,
   opacity: WebappSkinTokens.opacity,
   typography,
+  shadows: WebappSkinTokens.boxShadow,
 }
