@@ -8,6 +8,9 @@ import { AvatarProps } from './types'
 import { AvatarBadge } from './avatar-badge'
 
 /**
+ * @see AvatarGroup
+ * @see {@link https://northlight.dev/reference/avatar}
+ *
  * @example (Example)
  * Avatar takes a name and image
  * (?

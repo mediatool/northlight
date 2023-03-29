@@ -4,7 +4,7 @@ import ReferencePage from '../../reference-page'
 
 
 const AvatarBadgePage = () => (
-  <ReferencePage data={{"tags":{},"filePath":"lib/components/avatar/avatar-badge.tsx","description":"","displayName":"AvatarBadge","methods":[],"props":{"notificationCount":{"defaultValue":{"value":"0"},"description":"","name":"notificationCount","parent":{"fileName":"framework/lib/components/avatar/types.ts","name":"AvatarBadgeProps"},"declarations":[{"fileName":"framework/lib/components/avatar/types.ts","name":"AvatarBadgeProps"}],"required":false,"type":{"name":"number"}}}}} />
+  <ReferencePage data={{"tags":{"see":"Avatar *\n{@link https://northlight.dev/reference/avatar}","example":"(Example)\nExamle:\n(?\n<Avatar notificationCount={4} />\n?)"},"filePath":"lib/components/avatar/avatar-badge.tsx","description":"Specific component meant to be used with <Avatar /> to display notification","displayName":"AvatarBadge","methods":[],"props":{}}} />
 );
 
 export default AvatarBadgePage

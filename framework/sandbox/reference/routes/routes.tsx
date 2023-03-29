@@ -12,10 +12,6 @@ export const routes: Page[] = sortBy(prop('title'), [
       "path": `/async-error`,
       "component": () => import(`../pages/async-error-page`),
     },{
-      "title": `AvatarBadge`,
-      "path": `/avatar-badge`,
-      "component": () => import(`../pages/avatar-badge-page`),
-    },{
       "title": `AvatarGroup`,
       "path": `/avatar-group`,
       "component": () => import(`../pages/avatar-group-page`),

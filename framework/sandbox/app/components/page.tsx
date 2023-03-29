@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import { isEmpty, isNil } from 'ramda'
 import { LinkDuo } from '@northlight/icons'
+import { NavLink } from 'react-router-dom'
 import {
   Badge,
   Box,
@@ -66,7 +67,7 @@ export const Page = ({
         <>
           <P>See also: </P>
           { references?.map((reference) => (
-            <Link href={ `/reference/${reference}` }>
+            <Link to={ `/reference/${reference}` } as={ NavLink }>
               <Badge>{ reference }</Badge>
             </Link>
           )) }

@@ -34,6 +34,7 @@ import { Page } from '../../app/components'
 import { FileLink, PropsTable } from './props-table'
 import { splitMarkdownAndCode } from './split-markdown-and-code'
 import { SideNavBar } from './side-nav-bar'
+import { formatFileName } from '../utils/format-file-name.mjs'
 
 interface ReferencePageProps {
   data: ComponentDoc
@@ -116,9 +117,10 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
   const sourceCodeLink = `https://github.com/mediatool/northlight/tree/master/framework/${githubPath}`
 
   const references =
-    data.tags && data.tags.see
+    (data.tags && data.tags.see
       ? data.tags.see.split('*\n').filter((str) => !str.includes('@link'))
-      : []
+      : [])
+      .map(formatFileName) as string[]
 
   const DOCS_WIDTH = '50vw'
 
