@@ -16,7 +16,7 @@ import {
   PopoverTrigger,
   Stack,
   useDisclosure,
-} from '../../../../lib'
+} from '../../../lib'
 
 export interface FileLink {
   fileName: string

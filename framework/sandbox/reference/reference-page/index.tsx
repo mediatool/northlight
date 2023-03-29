@@ -27,12 +27,12 @@ import {
   TabPanels,
   Tabs,
   VStack,
-} from '../../../../lib/components'
+} from '../../../lib/components'
 import {
   CodeEditor,
   MarkdownPreview,
-} from '../../../../lib/internal-components'
-import { Page } from '../../../app/components'
+} from '../../../lib/internal-components'
+import { Page } from '../../app/components'
 import { FileLink, PropsTable } from './props-table'
 import { splitMarkdownAndCode } from './split-markdown-and-code'
 import { SideNavBar } from './side-nav-bar'

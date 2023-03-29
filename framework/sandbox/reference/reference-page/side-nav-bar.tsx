@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Capitalized, Stack } from '../../../../lib'
-import { NavSideLink } from '../../../../lib/internal-components'
+import { Capitalized, Stack } from '../../../lib'
+import { NavSideLink } from '../../../lib/internal-components'
 
 interface SideNavBarProps {
   links: string[]
