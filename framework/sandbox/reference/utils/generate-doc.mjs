@@ -4,6 +4,7 @@ import { getAllExportedComponents } from './find-components.mjs'
 import { generateDocumentation } from './generateDocumenation.mjs'
 import { saveFile } from './save-file.mjs'
 import { formatFileName } from './format-file-name.mjs'
+import { triggerRerender } from './trigger-rerender.mjs'
 
 console.log('Searching files...')
 const paths = getAllExportedComponents()
@@ -48,6 +49,7 @@ export const routes: Page[] = sortBy(prop('title'), [
   const formattedRouteFile = results[0].output || routeFile
 
   saveFile(routePath, formattedRouteFile)
+  triggerRerender()
 }
 
 writeRoutes()

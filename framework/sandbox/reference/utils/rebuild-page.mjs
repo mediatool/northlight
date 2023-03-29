@@ -1,30 +1,21 @@
-import fs from 'fs'
 import R from 'ramda'
 import { parseCode } from './parse.mjs'
-import path from 'path'
 import { generateDocumentation } from './generateDocumenation.mjs'
 import { saveFile } from './save-file.mjs'
+import { formatFileName } from './format-file-name.mjs'
+import { triggerRerender } from './trigger-rerender.mjs'
 
 const filePathTobeRebuilt = R.last(process.argv)
 
-const saveFile = async (filePath, documentationJSX) => {
-  const directoryPath = path.dirname(filePath)
-
-  try {
-    await fs.promises.access(directoryPath)
-  } catch (error) {
-    if (error.code === 'ENOENT') {
-      await fs.promises.mkdir(directoryPath, { recursive: true })
-    } else {
-      throw error
-    }
-  }
-
-  await fs.promises.writeFile(filePath, documentationJSX)
+const updateFile = async () => {
+  const data = parseCode(filePathTobeRebuilt)[0]
+  const fileName = formatFileName(data.displayName)
+  const content = await generateDocumentation(data)
+  saveFile(
+    `sandbox/reference/pages/${fileName}-page/index.tsx`,
+    content
+  )
+  triggerRerender()
 }
 
-const data = parseCode(filePathTobeRebuilt)[0]
-saveFile(
-  `sandbox/reference/pages/${data.displayName}-page/index.tsx`,
-  generateDocumentation(data)
-)
+updateFile()

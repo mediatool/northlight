@@ -31,7 +31,7 @@
     "tokens": "node sd-build.js",
     "transpile": "rollup -c",
     "build-docs": "node sandbox/reference/utils/generate-doc.mjs",
-    "watch-docs": "run-when-changed --watch \"lib/**/*.tsx\" --exec \"node sandbox/reference/utils/rebuild-page.js %s \""
+    "watch-docs": "run-when-changed --watch \"lib/**/*.tsx\" --exec \"node sandbox/reference/utils/rebuild-page.mjs %s \""
   },
   "dependencies": {
     "@chakra-ui/clickable": "^2.0.14",
