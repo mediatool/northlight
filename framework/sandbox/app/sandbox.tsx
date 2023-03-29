@@ -30,7 +30,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
   const [ tott, setTott ] = useState(false)
 
   return (
-    <MediatoolThemeProvider theme={ tott ? tottTheme : undefined }>
+    <MediatoolThemeProvider theme={ tott ? tottTheme : undefined } themeName={ tott ? 'tottTheme' : 'webappTheme' }>
       <UserProvider>
         <CalendarProvider>
           <I18nProvider>
