@@ -11,5 +11,6 @@ export const TottSkin:ThemeOverride = {
   radii: TottSkinTokens.borderRadius,
   borders: TottSkinTokens.borderWidth,
   opacity: TottSkinTokens.opacity,
+  shadows: TottSkinTokens.boxShadow,
   typography,
 }

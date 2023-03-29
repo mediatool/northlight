@@ -54,7 +54,9 @@ const overrides: ThemeOverride = {
   fontSizes: coreFontSize,
   lineHeights: coreLineHeight,
   radii: coreBorderRadius,
+  borderWidths: WebappSkin.borders,
 }
 
 export const theme = extendTheme(overrides, WebappSkin)
+
 export const tottTheme = extendTheme(overrides, TottSkin)
