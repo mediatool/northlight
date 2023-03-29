@@ -14,10 +14,12 @@ export const SideNavBar = ({ links, sections }: SideNavBarProps) => {
     const handleScroll = () => {
       let index = sections.length
       while (
-        --index &&
-        window.scrollY + window.innerHeight / 3 <
-          document.getElementById(sections[index]).offsetTop
-      ) {}
+        index > 0 &&
+        window.scrollY <
+          (document.getElementById(sections[index - 1])?.offsetTop || 0)
+      ) {
+        index -= 1
+      }
       setActiveSection(index)
     }
 

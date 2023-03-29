@@ -15,6 +15,7 @@ import {
 import Fuse from 'fuse.js'
 import prettier from 'prettier'
 import parserTypeScript from 'prettier/parser-typescript'
+import { useIsRightSidebarVisible } from '../../use-is-right-side-bar-visible'
 import {
   Box,
   Flex,
@@ -28,10 +29,7 @@ import {
   Tabs,
   VStack,
 } from '../../../lib/components'
-import {
-  CodeEditor,
-  MarkdownPreview,
-} from '../../../lib/internal-components'
+import { CodeEditor, MarkdownPreview } from '../../../lib/internal-components'
 import { Page } from '../../app/components'
 import { FileLink, PropsTable } from './props-table'
 import { splitMarkdownAndCode } from './split-markdown-and-code'
@@ -72,6 +70,8 @@ interface CodeExample {
 
 const ReferencePage = ({ data }: ReferencePageProps) => {
   const [ tabIndex, setTabIndex ] = useState(0)
+  const isRightSidebarVisible = useIsRightSidebarVisible()
+
   const codeExamples = propOr<CodeExample[], unknown, string>(
     '',
     'example',
@@ -192,11 +192,13 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
               </TabPanels>
             </Tabs>
           </Stack>
-          { tabIndex === 0 && !isEmpty(codeExamples) && window.innerWidth > 2000 && (
-            <SideNavBar
-              links={ headers }
-              sections={ times((n) => `Example-${n}`, length(headers)) }
-            />
+          { tabIndex === 0 &&
+            !isEmpty(codeExamples) &&
+            isRightSidebarVisible && (
+              <SideNavBar
+                links={ headers }
+                sections={ times((n) => `Example-${n}`, length(headers)) }
+              />
           ) }
         </Flex>
       </VStack>

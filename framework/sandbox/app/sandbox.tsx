@@ -25,6 +25,7 @@ import { CalendarProvider, I18nProvider, UserProvider } from './context'
 import { MainPage } from './types'
 import { MainMenu, SearchComponentsBar, SubMenu } from './components'
 import { Routing } from './routing'
+import { useIsRightSidebarVisible } from '../use-is-right-side-bar-visible'
 
 export interface SandboxProps {
   routes: MainPage[]
@@ -32,9 +33,10 @@ export interface SandboxProps {
 
 export const Sandbox = ({ routes }: SandboxProps) => {
   const [ tott, setTott ] = useState(false)
+  const isRightSidebarVisible = useIsRightSidebarVisible()
   const currentPage = last(window.location.pathname.split('/'))
   const isHomePage = currentPage === 'components' || currentPage === 'reference'
-  const pageProportions = isHomePage || window.innerWidth < 2000 ? '25rem auto' : '25rem auto 28rem'
+  const pageProportions = isHomePage || !isRightSidebarVisible ? '23rem auto' : '23rem auto 28rem'
 
   return (
     <MediatoolThemeProvider theme={ tott ? tottTheme : undefined } themeName={ tott ? 'tottTheme' : 'webappTheme' }>
@@ -51,7 +53,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   w="full"
                 >
                   <Grid
-                    gridTemplateColumns="25rem auto 28rem"
+                    gridTemplateColumns="23rem auto 28rem"
                     color="text.default"
                     w="full"
                     gap="8"
@@ -124,7 +126,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     pt="4"
                   >
                     <GridItem>
-                      <Stack w="25rem" position="fixed">
+                      <Stack w="23rem" position="fixed">
                         <MainMenu menuItems={ routes } />
                         <SubMenu mainRoutes={ routes } />
                       </Stack>
