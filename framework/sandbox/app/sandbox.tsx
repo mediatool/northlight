@@ -8,6 +8,7 @@ import {
   Star01Solid,
 } from '@northlight/icons'
 import {
+  Box,
   Button,
   Capitalized,
   Center,
@@ -36,7 +37,8 @@ export const Sandbox = ({ routes }: SandboxProps) => {
   const isRightSidebarVisible = useIsRightSidebarVisible()
   const currentPage = last(window.location.pathname.split('/'))
   const isHomePage = currentPage === 'components' || currentPage === 'reference'
-  const pageProportions = isHomePage || !isRightSidebarVisible ? '23rem auto' : '23rem auto 28rem'
+  const pageProportions =
+    isHomePage || !isRightSidebarVisible ? '23rem auto' : '23rem auto 28rem'
 
   return (
     <MediatoolThemeProvider theme={ tott ? tottTheme : undefined } themeName={ tott ? 'tottTheme' : 'webappTheme' }>
@@ -63,11 +65,15 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     left="0"
                     zIndex="banner"
                     bgColor="background.default"
-                    borderBottom="1px solid"
-                    borderColor="gray.200"
-                    p="2"
                   >
-                    <HStack alignItems="center" w="full">
+                    <HStack
+                      alignItems="center"
+                      w="full"
+                      borderColor="border.default"
+                      borderStyle="solid"
+                      borderBottomWidth="st.border.width.xs"
+                      bgColor="bg.layer"
+                    >
                       <Link
                         as={ ReactRouterLink }
                         to="/components/"
@@ -87,11 +93,11 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                         </HStack>
                       </Link>
                     </HStack>
-                    <HStack alignItems="center" w="full">
+                    <Center w="full">
                       <SearchComponentsBar
                         routes={ head(routes)?.subItems || [] }
                       />
-                    </HStack>
+                    </Center>
                     <HStack>
                       <IconButton
                         variant="ghost"
@@ -126,7 +132,12 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     position="relative"
                   >
                     <GridItem>
-                      <Stack w="23rem" position="fixed" bgColor="bg.layer" p="2">
+                      <Stack
+                        w="23rem"
+                        position="fixed"
+                        bgColor="bg.layer"
+                        p="2"
+                      >
                         <MainMenu menuItems={ routes } />
                         <SubMenu mainRoutes={ routes } />
                       </Stack>
