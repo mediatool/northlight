@@ -29,5 +29,6 @@ export interface AvatarBadgeProps {
 export interface AvatarGroupProps {
   max: number
   spacing?: number | string
+  /** The children should be avatar components */
   children: JSX.Element[] | React.ReactNode[]
 }

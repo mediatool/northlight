@@ -9,6 +9,7 @@ const options = {
   savePropValueAsString: true,
   shouldExtractLiteralValuesFromEnum: true,
   shouldExtractValuesFromUnion: true,
+  skipChildrenPropWithoutDoc: false,
   propFilter: (prop) => {
     if (prop.parent) {
       return !pathFromChakraOrReact(prop.parent.fileName)

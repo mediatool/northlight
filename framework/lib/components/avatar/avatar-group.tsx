@@ -4,6 +4,28 @@ import { AvatarGroupProps } from './types'
 import { Small } from '../typography'
 import { OverflowGroup } from '../overflow-group'
 
+/**
+ * Used to display a group of users
+ * @see Avatar
+ * @see {@link https://northlight.dev/reference/avatar-group}
+ *
+ * @example (Example)
+ * Example:
+ * (?
+ * <AvatarGroup max={ 3 }>
+  {[1, 2, 3, 4, 5].map((i) => (
+    <Avatar
+      name="Anakin Skywalker"
+      image="https://thenerdstash.com/wp-content/uploads/2021/10/Hayden-Christensen-Anakin-Skywalker.jpg"
+      size="sm"
+      variant="rounded"
+      key={ i }
+    />
+  )) }
+</AvatarGroup>
+ * ?)
+ *
+ */
 export const AvatarGroup = ({
   children,
   max = Infinity,
