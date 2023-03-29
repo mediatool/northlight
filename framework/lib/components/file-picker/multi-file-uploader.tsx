@@ -19,6 +19,7 @@ import { HStack, Stack } from '../stack'
 import { Lead, P } from '../typography'
 import { fiveHundredMB } from './constants'
 import { FileFormat, MultiFileUploaderProps } from './types'
+import { useCurrentTheme } from '../../utils'
 
 export function MultiFileUploader<T extends FileFormat> ({
   acceptFormat = '*',
@@ -30,7 +31,8 @@ export function MultiFileUploader<T extends FileFormat> ({
 }: MultiFileUploaderProps<T>) {
   const inputRef = useRef<HTMLInputElement>(null)
   const [ isInvalid, setIsInvalid ] = useState(false)
-  const { multiFilePicker } = useMultiStyleConfig('FilePicker', { isInvalid })
+  const currentTheme = useCurrentTheme()
+  const { multiFilePicker } = useMultiStyleConfig('FilePicker', { isInvalid, currentTheme })
   const [ active, setActive ] = useState(false)
   const [ errorMessage, setErrorMessage ] = useState('')
 

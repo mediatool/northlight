@@ -35,6 +35,7 @@ import {
 } from './utils'
 import { FileIconButton } from './file-icon-button'
 import { defaultEditOptions, fiveHundredMB } from './constants'
+import { useCurrentTheme } from '../../utils'
 
 export const FilePicker = ({
   acceptFormat = '*',
@@ -77,10 +78,13 @@ export const FilePicker = ({
     }
   }, [ isUploading ])
 
+  const currentTheme = useCurrentTheme()
+
   const { filePicker } = useMultiStyleConfig('FilePicker', {
     isImage,
     hasLoaded,
     isInvalid,
+    currentTheme,
   })
 
   useEffect(() => {
@@ -285,7 +289,7 @@ export const FilePicker = ({
               position="absolute"
               bottom="3"
               justifyContent="center"
-              bgColor="mono.white"
+              bgColor="bg.layer"
               borderRadius={ 6 }
               width="90%"
               py={ 2 }

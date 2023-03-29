@@ -49,7 +49,7 @@ const AsyncErrorPage = () => {
               h={ height }
               ref={ containerRef }
               borderWidth="2px"
-              borderColor="gray.200"
+              borderColor="border.default"
               borderStyle="solid"
               p="2"
               borderRadius="md"
@@ -70,7 +70,7 @@ const AsyncErrorPage = () => {
               ) }
             </Wrap>
           </Stack>
-          <Stack bgColor="gray.50" p="2" borderRadius="md">
+          <Stack bgColor="bg.layer" p="2" borderRadius="md">
             <HStack>
               <Label>Height</Label>
               <CustomSlider onChange={ setHeight } />
