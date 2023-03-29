@@ -26,7 +26,6 @@ const thickRing: CSSObject = {
 }
 
 const getBgColor = (currentTheme: CurrentTheme) => {
-  console.log({ currentTheme })
   switch (currentTheme) {
     case 'webappTheme': return 'blue.50'
     case 'tottTheme': return 'blue.900'

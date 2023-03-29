@@ -43,7 +43,7 @@ export const RangeCell = ({ state, date, currentMonth }: RangeCellProps) => {
           ringOffset: '1px',
         } }
         _hover={ {
-          bgColor: isSelected ? 'blue.400' : 'gray.50',
+          bgColor: isSelected ? 'blue.400' : 'bg.filled',
           _disabled: {
             bgColor: 'transparent',
           },

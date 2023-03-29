@@ -1,5 +1,6 @@
 import { ChakraStylesConfig } from 'chakra-react-select'
 import { palette } from '@northlight/tokens'
+import { getContrastColor } from '../../../../lib/utils'
 
 export const searchComponentsBarStyles: ChakraStylesConfig = {
   loadingIndicator: () => ({ display: 'none' }),
@@ -32,7 +33,7 @@ export const searchComponentsBarStyles: ChakraStylesConfig = {
     borderBottomLeftRadius: 'md',
     borderBottomRightRadius: 'md',
     border: 'none',
-    bgColor: 'text.inverted',
+    bgColor: 'background.default',
   }),
   option: (styles, { isFocused }) => {
     const focusRing = isFocused && {
@@ -42,6 +43,9 @@ export const searchComponentsBarStyles: ChakraStylesConfig = {
       ringOffset: '1px',
     }
 
+    const bgColor = isFocused ? 'bg.brand.hover' : 'bg.filled'
+    const color = getContrastColor(bgColor)
+
     return {
       ...styles,
       mt: '4',
@@ -50,8 +54,8 @@ export const searchComponentsBarStyles: ChakraStylesConfig = {
       w: '90%',
       mx: 'auto',
       transition: 'none',
-      bgColor: isFocused ? 'blue.500' : 'gray.50',
-      color: isFocused ? 'text.inverted' : 'text.default',
+      bgColor,
+      color,
       fontWeight: 'semibold',
       ...focusRing,
     }

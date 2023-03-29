@@ -149,8 +149,9 @@ export function FileItem<T extends FileFormat> ({
             spacing="3"
             justifyContent="center"
             borderRadius="6"
-            bgColor="mono.white"
+            bgColor="bg.filled"
             display={ file.isUploading ? 'none' : 'flex' }
+            p="1"
           >
             { canEdit && (
             <FileIconButton
@@ -166,8 +167,6 @@ export function FileItem<T extends FileFormat> ({
             />
             <CloseButton
               onClick={ confirmDelete ? deleteModalDisclosure.onOpen : clearImage }
-              bgColor="gray.50"
-              _hover={ { bgColor: 'gray.100' } }
             />
           </HStack>
         </HStack>
