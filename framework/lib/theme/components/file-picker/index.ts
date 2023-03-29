@@ -1,5 +1,6 @@
 import { ComponentMultiStyleConfig, keyframes } from '@chakra-ui/react'
 import { CSSObject } from '@emotion/react'
+import { CurrentTheme } from '../../../utils'
 
 const shakeAnimation = keyframes`
   0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -24,19 +25,28 @@ const thickRing: CSSObject = {
   },
 }
 
-const getInvalidColorStyles = (isInvalid: boolean, isImage = true) => ({
+const getBgColor = (currentTheme: CurrentTheme) => {
+  console.log({ currentTheme })
+  switch (currentTheme) {
+    case 'webappTheme': return 'blue.50'
+    case 'tottTheme': return 'blue.900'
+    default: return 'bg.filled'
+  }
+}
+
+const getInvalidColorStyles = (isInvalid: boolean, isImage = true, currentTheme: CurrentTheme = 'webappTheme') => ({
   borderColor: isInvalid ? 'red.500' : 'gray.300',
   bgColor: isInvalid && 'red.50',
   animation: isInvalid && `500ms ${shakeAnimation} ease`,
   _hover: isImage && {
-    bgColor: isInvalid ? 'red.50' : 'blue.50',
+    bgColor: isInvalid ? 'red.50' : getBgColor(currentTheme),
     borderColor: isInvalid ? 'red.500' : 'blue.500',
   },
 })
 
 export const FilePicker: ComponentMultiStyleConfig = {
   parts: [ 'filePicker', 'fileItem', 'multiFilePicker' ],
-  baseStyle: ({ theme: { sizes, colors }, hasLoaded, isImage, isInvalid }) => ({
+  baseStyle: ({ theme: { sizes, colors }, hasLoaded, isImage, isInvalid, currentTheme }) => ({
     filePicker: {
       display: 'flex',
       flexDirection: 'column',
@@ -49,7 +59,7 @@ export const FilePicker: ComponentMultiStyleConfig = {
       borderWidth: hasLoaded && isImage ? '0' : sizes['0a'],
       borderStyle: 'dashed',
       borderRadius: 'lg',
-      ...getInvalidColorStyles(isInvalid, isImage),
+      ...getInvalidColorStyles(isInvalid, isImage, currentTheme),
       ...thickRing,
     },
     multiFilePicker: {
@@ -60,7 +70,7 @@ export const FilePicker: ComponentMultiStyleConfig = {
       borderWidth: sizes['0a'],
       borderStyle: 'dashed',
       borderRadius: 'lg',
-      ...getInvalidColorStyles(isInvalid),
+      ...getInvalidColorStyles(isInvalid, undefined, currentTheme),
       ...thickRing,
     },
     fileItem: {
