@@ -51,6 +51,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   color="text.default"
                   maxW="2560px"
                   w="full"
+                  spacing="0"
                 >
                   <Grid
                     gridTemplateColumns="23rem auto 28rem"
@@ -123,16 +124,15 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     w="full"
                     gap="8"
                     position="relative"
-                    pt="4"
                   >
                     <GridItem>
-                      <Stack w="23rem" position="fixed">
+                      <Stack w="23rem" position="fixed" bgColor="bg.layer" p="2">
                         <MainMenu menuItems={ routes } />
                         <SubMenu mainRoutes={ routes } />
                       </Stack>
                     </GridItem>
                     <GridItem>
-                      <Center w="full">
+                      <Center w="full" pt="4">
                         <Routing
                           fallback={ head(routes)?.path }
                           routes={ routes }

@@ -35,9 +35,9 @@ export const SubMenu = ({ mainRoutes }: SubMenuProps) => (
   <Stack
     color="text.default"
     overflow="auto"
-    maxHeight="calc(100vh - 400px)"
+    maxHeight="calc(100vh - 330px)"
     pr={ 2 }
-    bgColor="background.default"
+    bgColor="bg.layer"
     sx={ {
       '::-webkit-scrollbar': { display: 'none' },
       '::-webkit-scrollbar-thumb': { background: 'blue.500' },
