@@ -5,6 +5,11 @@ import { Stack } from '../stack'
 import { FlipButtonGroupProps } from './types'
 import { FlipButtonContext, useFlipButton } from './utils'
 
+/**
+ * Provides context to FlipButton
+ * @see FlipButton
+ * @see {@link https://northlight.dev/reference/flip-button-group}
+ */
 export const FlipButtonGroup = (props: FlipButtonGroupProps) => {
   const {
     isMulti = false,

@@ -37,6 +37,19 @@ import { FileIconButton } from './file-icon-button'
 import { defaultEditOptions, fiveHundredMB } from './constants'
 import { useCurrentTheme } from '../../utils'
 
+/**
+ * Lets user import file of any type as Javascript File Object
+ * @see MultiFilePicker
+ * @see {@link https://northlight.dev/reference/file-picker}
+ *
+ * @example (Example)
+ * Basic:
+ * (?
+ * <FilePicker />
+ * ?)
+ *
+ *
+ */
 export const FilePicker = ({
   acceptFormat = '*',
   onChange = identity,

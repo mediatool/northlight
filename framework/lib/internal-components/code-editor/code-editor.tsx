@@ -9,6 +9,7 @@ import {
 import { typography } from '@northlight/tokens'
 import { useMultiStyleConfig } from '@chakra-ui/system'
 import { CheckDuo, CopyDuo } from '@northlight/icons'
+import * as iconLib from '@northlight/icons'
 import { Box } from '../../components/box'
 import { Stack } from '../../components/stack'
 import { IconButton } from '../../components/icon-button'
@@ -25,7 +26,7 @@ export const CodeEditor = (props: CodeEditorProps) => {
   const { button, icon, tooltip } = useMultiStyleConfig('ClipboardInput', {
     size: 'md',
   })
-  const scope = { ...uiLib, ...React }
+  const scope = { ...uiLib, ...React, ...iconLib }
 
   return (
     <Box

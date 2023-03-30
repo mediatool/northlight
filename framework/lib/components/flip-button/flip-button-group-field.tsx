@@ -4,6 +4,26 @@ import { Field } from '../form'
 import { FlipButtonGroup } from './flip-button-group'
 import { FlipButtonGroupFieldProps } from './types'
 
+/**
+ * The FlipButtonGroup component wrapped in a <Field />
+ * meant to be used only inside <Form />
+ * @see FlipButton
+ * @see {@link https://northlight.dev/reference/flip-button-group-field}
+ *
+ * @example (Example)
+ * Use like this:
+ * (?
+ * <Form intitialValues={{foods: 'pizza'}}>
+          <FlipButtonGroupField name="foods" label="Select the food you enjoy most" variant="brand">
+            <FlipButton value="pizza">Pizza</FlipButton>
+            <FlipButton value="hamburger">Button</FlipButton>
+            <FlipButton value="steak">Steak</FlipButton>
+          </FlipButtonGroupField>
+ * </Form>
+ *
+ * ?)
+ *
+ */
 export const FlipButtonGroupField = ({
   name,
   label,

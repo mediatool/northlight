@@ -30,7 +30,7 @@ export function SelectField<T extends Option> ({
       label={ label }
       direction={ direction }
       isRequired={ isRequired }
-      isSelect={ true }
+      noLabelConnection={ true }
       validate={ validate }
     >
       { ({ value, onChange }) => (
