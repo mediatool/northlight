@@ -20,6 +20,29 @@ import {
 } from '../popover'
 import { ColorsExpandButton } from './colors-expand-button'
 
+/**
+ * Dropdown menu where user can select hex value
+ * from set colors
+ * @see {@link https://northlight.dev/reference/color-picker}
+ *
+ * @example (Example)
+ * ##Pick a color for this campaign
+ * (?
+ * () => {
+ * const [ color, setColor ] = useState(undefined)
+ * return (
+ * <HStack>
+ * <ColorPicker color={color} onChange={setColor}/>
+ *   <ClipboardInput value={ color } />
+
+ * </HStack>
+ * )
+ * }
+ *
+ * ?)
+ *
+ *
+ */
 export const ColorPicker = ({
   onChange = () => {},
   colors = defaultColors,

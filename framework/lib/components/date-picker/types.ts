@@ -15,7 +15,7 @@ export interface DateRange {
   endDate: string
 }
 
-type DatePickerSettings = {
+interface DatePickerSettings {
   firstDayOfWeek: 'sunday' | 'monday'
   resetDate: () => void
   isInvalid?: boolean
