@@ -38,7 +38,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
   const currentPage = last(window.location.pathname.split('/'))
   const isHomePage = currentPage === 'components' || currentPage === 'reference'
   const pageProportions =
-    isHomePage || !isRightSidebarVisible ? '23rem auto' : '23rem auto 28rem'
+    isHomePage || !isRightSidebarVisible ? '20rem auto' : '20rem auto 28rem'
 
   return (
     <MediatoolThemeProvider theme={ tott ? tottTheme : undefined } themeName={ tott ? 'tottTheme' : 'webappTheme' }>
@@ -56,7 +56,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   spacing="0"
                 >
                   <Grid
-                    gridTemplateColumns="23rem auto 28rem"
+                    gridTemplateColumns="20rem auto 28rem"
                     color="text.default"
                     w="full"
                     gap="8"
@@ -69,9 +69,6 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     <HStack
                       alignItems="center"
                       w="full"
-                      borderColor="border.default"
-                      borderStyle="solid"
-                      borderBottomWidth="st.border.width.xs"
                       bgColor="bg.layer"
                     >
                       <Link
@@ -133,7 +130,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   >
                     <GridItem>
                       <Stack
-                        w="23rem"
+                        w="20rem"
                         position="fixed"
                         bgColor="bg.layer"
                         p="2"

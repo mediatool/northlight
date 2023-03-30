@@ -40,7 +40,5 @@ export const splitMarkdownAndCode = (input: string): SplitResult[] => {
     }
   }
 
-  console.log({ result })
-
   return result
 }

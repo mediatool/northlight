@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useMemo, useState } from 'react'
 import { ComponentDoc, PropItem } from 'react-docgen-typescript'
 import {
+  compose,
   head,
   isEmpty,
   last,
@@ -8,7 +9,9 @@ import {
   map,
   prop,
   propOr,
+  reverse,
   slice,
+  sortBy,
   times,
   values,
 } from 'ramda'
@@ -107,6 +110,8 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
   const filteredPropEntries =
     query.length > 1 ? map(prop('item'), fuse.search(query)) : propEntries
 
+  const sortedPropEntries = reverse(sortBy(prop('required'), filteredPropEntries))
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.length !== 1) {
       setQuery(e.target.value)
@@ -180,10 +185,12 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
                     />
                   </Box>
                   <Stack spacing="8">
-                    { filteredPropEntries.map((propData) => (
+                    { sortedPropEntries.map((propData) => (
                       <PropsTable
+                        key={ propData.name }
                         name={ propData.name }
                         type={ propData.type }
+                        isRequired={ propData.required }
                         description={ propData.description }
                         file={ head(
                           propOr<never[], PropItem, FileLink[]>(

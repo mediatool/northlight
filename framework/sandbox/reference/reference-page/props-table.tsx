@@ -2,11 +2,14 @@ import React from 'react'
 import { isEmpty, isNil, propOr, slice } from 'ramda'
 import { PropItemType } from 'react-docgen-typescript'
 import { palette } from '@northlight/tokens'
+import { AlertCircleDuo } from '@northlight/icons'
 import {
   Box,
   Code,
   Divider,
   Flex,
+  HStack,
+  Icon,
   Lead,
   Link,
   P,
@@ -14,6 +17,7 @@ import {
   PopoverBody,
   PopoverContent,
   PopoverTrigger,
+  Small,
   Stack,
   useDisclosure,
 } from '../../../lib'
@@ -27,6 +31,7 @@ export interface PropsTableProps {
   description: string
   type: PropItemType
   file?: FileLink
+  isRequired: boolean
 }
 
 const matchPageLink =
@@ -36,6 +41,7 @@ export const PropsTable = ({
   name,
   description,
   type,
+  isRequired,
   file,
 }: PropsTableProps) => {
   const fileLink = !isNil(file)
@@ -62,7 +68,15 @@ export const PropsTable = ({
 
   return (
     <Stack spacing="0">
-      <Lead>{ name }</Lead>
+      <HStack spacing="3">
+        <Lead>{ name }</Lead>
+        { isRequired && (
+        <HStack spacing="1">
+          <Icon as={ AlertCircleDuo } size="xs" color="text.warning" />
+          <Small>Required</Small>
+        </HStack>
+        ) }
+      </HStack>
       <Divider />
       <Stack pt="2" spacing="2">
         { !isEmpty(description) && (
