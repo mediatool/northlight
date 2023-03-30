@@ -61,6 +61,8 @@ const overrides: ThemeOverride = {
   borderWidths: WebappSkin.borders,
 }
 
+console.log(WebappSkin)
+
 export const theme = extendTheme(overrides, WebappSkin)
 
 export const tottTheme = extendTheme(overrides, TottSkin)
