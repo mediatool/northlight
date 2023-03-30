@@ -17,6 +17,8 @@ import { Box } from '../../box'
 
 /**
  * Popover to select single date
+ * @see DatePickerField
+ * @see {@link https://northlight.dev/reference/date-picker}
  *
  * @example (Example)
  * ## When is your birthday

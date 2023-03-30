@@ -7,6 +7,28 @@ import { DatePicker } from '../date-picker/date-picker'
 import { useFormContext } from '../../../hooks'
 import { InputGroupWrapper } from '../../../internal-components/input-group-wrapper'
 
+/**
+ * The <DatePicker /> component wrapped in a <Field />
+ * meant to be used only inside <Form />
+ * @see DatePicker
+ * @see {@link https://northlight.dev/reference/date-picker-field}
+ *
+ * @example (Example)
+ * ##Fill in your information:
+ * (?
+ * <Form initialValues={{date: null}}>
+ * <DatePickerField name="date" />
+ * </Form>
+ *
+ * ?)
+ * <br />
+ * ###The simplest way
+ * Using the date picker in a form is probably the easiest
+ * way to use it, it will handle the state for you and you
+ * can retrieve the date at the end as a string on format
+ * yyyy-mm-dd on the onSubmit callback on <Form>
+ *
+ */
 export const DatePickerField = ({
   name,
   minValue,
