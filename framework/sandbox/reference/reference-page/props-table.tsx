@@ -45,7 +45,7 @@ export const PropsTable = ({
   file,
 }: PropsTableProps) => {
   const fileLink = !isNil(file)
-    ? `Declared in ${file.fileName} as ${file.name}`
+    ? `Declared in ${file.fileName} by ${file.name}`
     : ''
 
   const { isOpen, onOpen, onClose } = useDisclosure()

@@ -1,7 +1,6 @@
 import React, { ChangeEvent, useMemo, useState } from 'react'
 import { ComponentDoc, PropItem } from 'react-docgen-typescript'
 import {
-  compose,
   head,
   isEmpty,
   last,
@@ -9,9 +8,8 @@ import {
   map,
   prop,
   propOr,
-  reverse,
   slice,
-  sortBy,
+  sort,
   times,
   values,
 } from 'ramda'
@@ -72,6 +70,19 @@ interface CodeExample {
   type: string
 }
 
+const isDefinedExternal = (item: PropItem) => {
+  if (!item.declarations) return false
+  return item.declarations[0].fileName.includes('node_modules')
+}
+
+const sortPropItems = (a: PropItem, b: PropItem) => {
+  if (a.required && !b.required) return -1
+  if (b.required && !a.required) return 1
+  if (!isDefinedExternal(a) && isDefinedExternal(b)) return -1
+  if (isDefinedExternal(a) && !isDefinedExternal(b)) return 1
+  return 0
+}
+
 const ReferencePage = ({ data }: ReferencePageProps) => {
   const [ tabIndex, setTabIndex ] = useState(0)
   const isRightSidebarVisible = useIsRightSidebarVisible()
@@ -110,7 +121,7 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
   const filteredPropEntries =
     query.length > 1 ? map(prop('item'), fuse.search(query)) : propEntries
 
-  const sortedPropEntries = reverse(sortBy(prop('required'), filteredPropEntries))
+  const sortedPropEntries = sort(sortPropItems, filteredPropEntries)
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.length !== 1) {

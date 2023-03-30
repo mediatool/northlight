@@ -5,6 +5,26 @@ import { EditableInput as ChakraEditableInput, Editable, EditablePreview } from 
 import { EditableProps } from './types'
 import { EditableControls } from './editable-controls'
 
+/**
+ * Used to safely modify text with default or previousely set value
+ * @see {@link https://northlight.dev/reference/editable-text}
+ *
+ * @example (Example)
+ * ##Edit password
+ * (?
+ * () => {
+ * const [v, setV] = useState('123456789')
+ * return (
+ * <Box p="2">
+ * <EditableText value={v} onSubmit={setV} />
+ * </Box>
+ *
+ * )
+ * }
+ * ?)
+ *
+ *
+ */
 export const EditableText = ({
   size = 'md',
   value: inputValue,
