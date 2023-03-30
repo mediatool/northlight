@@ -10,13 +10,11 @@ export interface CheckboxProps extends Omit<ChakraCheckboxProps, 'value'> {
   variant?: CheckboxVariants
 }
 
-export type CheckboxFieldProps =
-  ChakraCheckboxProps
-  & {
-    name: string
-    label: string
-    validate?: RegisterOptions
-    isRequired?: boolean
-    variant?: CheckboxVariants
-    direction?: StackDirection
-  }
+export interface CheckboxFieldProps extends ChakraCheckboxProps {
+  name: string
+  label: string
+  validate?: RegisterOptions
+  isRequired?: boolean
+  variant?: CheckboxVariants
+  direction?: StackDirection
+}

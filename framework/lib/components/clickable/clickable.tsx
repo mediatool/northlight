@@ -6,6 +6,26 @@ import { isNil } from 'ramda'
 import { ClickableProps } from './types'
 import { ring } from '../../utils'
 
+/**
+ * Wrapper component to make children interactive
+ * by taking care of focus/accessibility, will render
+ * either a link or button depending on if passing
+ * an href
+ * @see {@link https://northlight.dev/reference/clickable}
+ * @example (Example)
+ * ## Spam notificatoins
+ * (?
+ * () => {
+ * const [ count, setCount ] = useState(0)
+ * return (
+ *             <Clickable onClick={ () => setCount((prev) => prev + 1) }>
+              <Avatar name="anakin skywalker" variant="rounded" notificationCount={count}/>
+            </Clickable>
+ * )
+ * }
+ * ?)
+ *
+ */
 export const Clickable = ({ href, linkProps, ...rest }: ClickableProps) => {
   const clickable = useClickable(rest)
 
