@@ -11,11 +11,15 @@ export type OffsetType = number | string
 export type ChildrenType = React.ReactNode | React.ReactNode[]
 export type TransitionDirection = 'right' | 'bottom' | 'left' | 'top' | null
 
+/** For fade component */
 export interface FadeProps extends ChakraFadeProps {
+  /** Sets both enterDuration and exitDuration at same time to same value */
   duration?: DurationType
   enterDuration?: DurationType
   exitDuration?: DurationType
+  /** Makes the element not focusable when not visible */
   disableFocus?: boolean
+  /** Will remove the component from DOM tree if in is false */
   hideDisplay?: boolean
   enterDelay?: number
   exitDelay?: number

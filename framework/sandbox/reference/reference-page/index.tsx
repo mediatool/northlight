@@ -121,7 +121,10 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
   const filteredPropEntries =
     query.length > 1 ? map(prop('item'), fuse.search(query)) : propEntries
 
-  const sortedPropEntries = sort(sortPropItems, filteredPropEntries)
+  const sortedPropEntries =
+    query.length > 1
+      ? filteredPropEntries
+      : sort(sortPropItems, filteredPropEntries)
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.length !== 1) {
@@ -132,11 +135,11 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
   const githubPath = last(data.filePath.split('framework/'))
   const sourceCodeLink = `https://github.com/mediatool/northlight/tree/master/framework/${githubPath}`
 
-  const references =
-    (data.tags && data.tags.see
+  const references = (
+    data.tags && data.tags.see
       ? data.tags.see.split('*\n').filter((str) => !str.includes('@link'))
-      : [])
-      .map(formatFileName) as string[]
+      : []
+  ).map(formatFileName) as string[]
 
   const DOCS_WIDTH = '50vw'
 
