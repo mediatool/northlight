@@ -13,7 +13,7 @@ import { ring } from '../../utils'
  * an href
  * @see {@link https://northlight.dev/reference/clickable}
  * @example (Example)
- * ## Spam notificatoins
+ * ### Click to send notification
  * (?
  * () => {
  * const [ count, setCount ] = useState(0)

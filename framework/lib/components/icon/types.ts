@@ -1,7 +1,7 @@
 import { ComponentType } from 'react'
 import { IconProps as ChakraIconProps } from '@chakra-ui/react'
 
-export type IconProps = ChakraIconProps & {
+export interface IconProps extends ChakraIconProps {
   as?: ComponentType<any>
   size?: 'xs' | 'sm' | 'md' | 'lg'
 }

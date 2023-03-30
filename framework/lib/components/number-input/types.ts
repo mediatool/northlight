@@ -4,14 +4,12 @@ import { InputFieldProps } from '../../types'
 
 export type NumberInputSizeProps = 'sm' | 'md' | 'lg'
 
-export type NumberInputProps =
-  ChakraNumberInputProps
-  & {
-    size?: NumberInputSizeProps
-    onChange?: (...event: any[]) => void
-    onlyAcceptPercentage?: boolean
-    onInputChange?: (input: string) => void
-  }
+export interface NumberInputProps extends ChakraNumberInputProps {
+  size?: NumberInputSizeProps
+  onChange?: (...event: any[]) => void
+  onlyAcceptPercentage?: boolean
+  onInputChange?: (input: string) => void
+}
 
 export type NumberInputFieldProps =
   Omit<NumberInputProps, 'onChange'>

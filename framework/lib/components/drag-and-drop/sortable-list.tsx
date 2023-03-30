@@ -21,6 +21,33 @@ import { SortableItem } from './sortable-item'
 import { DragItem } from './drag-item'
 import { SortableListProps } from './types'
 
+/**
+ * Util component to render sortable items under sortable context
+ * @see SortableItem
+ * @see Sortable
+ * @see {@link https://northlight.dev/reference/sortable-list}
+ *
+ * @example
+ * ## You can render any layout of sortable components, for example grid:
+ * (?
+ * () => {
+ * const [items, setItems] = useState(Array.from({length: 100}, (_, i) => i))
+ * return (
+ * <Stack>
+<SimpleGrid minChildWidth="50px" spacing={ 4 }>
+    <SortableList
+        items={ items }
+        onChange={ (items) => setItems(items) }
+    />
+</SimpleGrid>
+          <Code p={ 2 } borderRadius={ 4 }>
+            { JSON.stringify(items, null, 2) }
+          </Code>
+          </Stack>
+ * )}
+ * ?)
+ *
+ */
 export function SortableList<T> ({
   children,
   items: sortableItems,

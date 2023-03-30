@@ -21,6 +21,37 @@ import { fiveHundredMB } from './constants'
 import { FileFormat, MultiFileUploaderProps } from './types'
 import { useCurrentTheme } from '../../utils'
 
+/**
+ * Input to upload multiple files without ui to render files
+ * @see MultiFilePicker
+ * @see {@link https://northlight.dev/reference/multi-file-uploader}
+ * @example
+ * (?
+ * () => {
+ * const [ images, setImages ] = useState([])
+ * return (
+ * <Stack>
+    <Box h="sm">
+      <Carousel>
+        { images.map((imageSrc) => (
+          <Image src={imageSrc} borderRadius="st.border.radius.md" />
+        )) }
+      </Carousel>
+    </Box>
+    <MultiFileUploader
+      acceptFormat="image/*"
+      onChange={ (newFiles) =>
+        setImages(
+          newFiles.map((file) => URL.createObjectURL(file))
+        )
+      }
+    />
+    </Stack>
+ * )
+ * }
+ * ?)
+ *
+ */
 export function MultiFileUploader<T extends FileFormat> ({
   acceptFormat = '*',
   compression,

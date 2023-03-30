@@ -13,7 +13,6 @@ import { DragItemProps } from './types'
  * @see {@link https://northlight.dev/reference/drag-item}
  *
  * @example (Example)
- * Example:
  * (?
  * <DragItem itemLabel="Option 1" bgColor="bg.filled" />
  * ?)

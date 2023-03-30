@@ -3,7 +3,7 @@ import { Color, ColorGrade } from '../../types'
 
 export type BlockVariant = 'working' | 'pending' | 'approved' | 'rejected'
 
-export type StatusBlockProps = {
+export interface StatusBlockProps {
   variant: BlockVariant
 }
 

@@ -1,7 +1,7 @@
 import { ComponentType } from 'react'
 import { LinkProps, NavLinkProps } from 'react-router-dom'
 
-export type NavbarItemProps = LinkProps & NavLinkProps & {
+export interface NavbarItemProps extends Omit<LinkProps, 'className' | 'style'>, NavLinkProps {
   to: string
   icon: ComponentType
   renderTitle?: boolean

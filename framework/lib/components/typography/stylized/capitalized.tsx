@@ -10,7 +10,6 @@ import { Text as ChakraText, TextProps, useStyleConfig } from '@chakra-ui/react'
  * @see {@link https://northlight.dev/reference/capitalized }
  *
  * @example (Example)
- * Example:
  * (?
  * <Capitalized sx={{color: 'red.500' }}>Error</Capitalized>
  * ?)

@@ -16,13 +16,11 @@ import { EditableControls } from './editable-controls'
  * const [v, setV] = useState('123456789')
  * return (
  * <Box p="2">
- * <EditableText value={v} onSubmit={setV} />
+ * <EditableText value={v} onSubmit={setV} leftItem={<Icon as={LockDuo} />}/>
  * </Box>
- *
  * )
  * }
  * ?)
- *
  *
  */
 export const EditableText = ({

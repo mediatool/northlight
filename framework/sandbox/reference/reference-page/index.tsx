@@ -84,6 +84,7 @@ const sortPropItems = (a: PropItem, b: PropItem) => {
 }
 
 const ReferencePage = ({ data }: ReferencePageProps) => {
+  console.log({ data })
   const [ tabIndex, setTabIndex ] = useState(0)
   const isRightSidebarVisible = useIsRightSidebarVisible()
 
@@ -156,7 +157,7 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
             <Tabs variant="line" onChange={ setTabIndex }>
               <TabList mb="8">
                 { !isEmpty(codeExamples) && <Tab>Usage</Tab> }
-                <Tab>Props</Tab>
+                { !isEmpty(sortedPropEntries) && <Tab>Props</Tab> }
               </TabList>
               <TabPanels>
                 { !isEmpty(codeExamples) && (
@@ -222,12 +223,14 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
           </Stack>
           { tabIndex === 0 &&
             !isEmpty(codeExamples) &&
-            isRightSidebarVisible && (
+            isRightSidebarVisible &&
+            length(headers) > 1 &&
+            (
               <SideNavBar
                 links={ headers }
                 sections={ times((n) => `Example-${n}`, length(headers)) }
               />
-          ) }
+            ) }
         </Flex>
       </VStack>
     </Page>

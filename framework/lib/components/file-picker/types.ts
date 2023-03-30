@@ -79,9 +79,11 @@ export interface MultiFilePickerProps<T extends FileFormat> extends Omit<FilePic
 }
 
 export interface MultiFileUploaderProps<T extends FileFormat> {
+  /** Ex: acceptFormat="'acceptFormat="video/*, .jpg" */
   acceptFormat?: string
   compression?: CompressionType
   maxFileSize?: number
+  /** Callback Will immediately return file objects before compressed */
   addFilesToQueue?: (files: T[]) => void
   updatePreviewFiles?: (files: any[]) => void
   onChange?: (files: File[]) => void

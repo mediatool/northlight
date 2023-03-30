@@ -7,6 +7,16 @@ import { Stack } from '../stack'
 import { Text } from '../text'
 import { NavbarItemProps } from './types'
 
+/**
+ * Used to navigate between pages
+ *
+ * @example
+ * This renders a react router NavLink
+ * (?
+ * <NavbarItem to="/hub" icon={HubDuo} title="Hub" />
+ * ?)
+ *
+ */
 export const NavbarItem = ({
   to,
   icon,

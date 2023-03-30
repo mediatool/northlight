@@ -6,7 +6,6 @@ import { ButtonProps } from './types'
  * @see {@link https://northlight.dev/reference/button}
  *
  * @example (Example)
- * Example:
  * (?
  * +const variants = ['link', 'success', 'default', 'danger', 'brand', 'ghost']
  *

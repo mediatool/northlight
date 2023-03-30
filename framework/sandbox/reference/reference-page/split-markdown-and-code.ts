@@ -5,9 +5,7 @@ type SplitResult = {
 
 export const splitMarkdownAndCode = (input: string): SplitResult[] => {
   const regex = /\(\?\s([\s\S]*?)\s\?\)/g
-  const parts: string[] = []
-  const matches: string[] = []
-
+  const results: SplitResult[] = []
   let lastIndex = 0
   let match: RegExpExecArray | null
 
@@ -19,26 +17,18 @@ export const splitMarkdownAndCode = (input: string): SplitResult[] => {
 
     const markdownPart = input.slice(lastIndex, matchIndex).trim()
     if (markdownPart) {
-      parts.push(markdownPart)
+      results.push({ type: 'Markdown', data: markdownPart })
     }
 
-    matches.push(code)
+    results.push({ type: 'Code', data: code })
     lastIndex = matchIndex + matchLength
 
     match = regex.exec(input)
   }
 
   if (lastIndex < input.length) {
-    parts.push(input.slice(lastIndex).trim())
+    results.push({ type: 'Markdown', data: input.slice(lastIndex).trim() })
   }
 
-  const result: SplitResult[] = []
-  for (let i = 0; i < parts.length; i += 1) {
-    result.push({ type: 'Markdown', data: parts[i] })
-    if (matches[i]) {
-      result.push({ type: 'Code', data: matches[i] })
-    }
-  }
-
-  return result
+  return results
 }

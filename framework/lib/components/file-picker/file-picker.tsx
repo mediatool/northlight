@@ -43,7 +43,6 @@ import { useCurrentTheme } from '../../utils'
  * @see {@link https://northlight.dev/reference/file-picker}
  *
  * @example (Example)
- * Basic:
  * (?
  * <FilePicker />
  * ?)

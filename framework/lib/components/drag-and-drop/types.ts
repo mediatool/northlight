@@ -60,8 +60,10 @@ export interface SortableListProps<T> {
 export interface MultiSortProps<itemKeys extends string | number | symbol> {
   children?: ChildrenType
   items: MultiItemType<itemKeys>
+  /** https://docs.dndkit.com/api-documentation/context-provider/collision-detection-algorithms */
   collisionDetection?: CollisionDetection
   onChange?: (items: MultiItemType<itemKeys>) => void
+  /** https://docs.dndkit.com/api-documentation/sensors */
   sensors?: SensorDescriptor<SensorOptions>[]
 }
 

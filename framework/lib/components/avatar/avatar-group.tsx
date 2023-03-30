@@ -10,7 +10,6 @@ import { OverflowGroup } from '../overflow-group'
  * @see {@link https://northlight.dev/reference/avatar-group}
  *
  * @example (Example)
- * Example:
  * (?
  * <AvatarGroup max={ 3 }>
   {[1, 2, 3, 4, 5].map((i) => (

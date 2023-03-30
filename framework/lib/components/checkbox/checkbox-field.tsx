@@ -6,8 +6,6 @@ import { Box } from '../box'
 
 /**
  * The checkbox component wrapped in a <Field />
-/**
- * The checkbox component wrapped in a <Field />
  * meant to be used only inside <Form />
  * @see Checkbox
  * @see {@link https://northlight.dev/reference/checkbox-field}

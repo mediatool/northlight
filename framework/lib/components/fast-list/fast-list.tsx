@@ -9,7 +9,6 @@ import { FastListProps } from './types'
  * @see {@link https://northlight.dev/reference/fast-list}
  *
  * @example (Example)
- * ## Example
  * (?
  * <Box h="500px" w="300p" border="1px solid gray" p={ 4 } borderRadius={ 4 }>
     <FastList itemCount={ 10000 } itemSize={ 30 } overscanCount={ 100 }>

@@ -10,7 +10,6 @@ import { DragHandleProps } from './types'
  * @see {@link https://northlight.dev/reference/drag-handle}
  *
  * @example (Example)
- * Ex:
  * (?
  * <DragHandle />
  * ?)

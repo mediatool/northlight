@@ -63,7 +63,7 @@ export const Page = ({
           </Link>
         </Box>
         ) }
-        { !isEmpty(references) && (
+        { !isEmpty(references) && !isNil(references) && (
         <>
           <P>See also: </P>
           { references?.map((reference) => (

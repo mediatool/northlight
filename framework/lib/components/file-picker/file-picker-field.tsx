@@ -10,7 +10,7 @@ import { FilePickerFieldProps } from './types'
  * meant to be used only inside <Form />
  * @see FilePicker
  * @see Field
- * @see {@link https://northlight.dev/reference/checkbox-field}
+ * @see {@link https://northlight.dev/reference/file-picker-field}
  *
  * @example (Example)
  * ## Meant for uploading images in a form

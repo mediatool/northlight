@@ -11,7 +11,6 @@ import { FlipButtonGroupFieldProps } from './types'
  * @see {@link https://northlight.dev/reference/flip-button-group-field}
  *
  * @example (Example)
- * Use like this:
  * (?
  * <Form intitialValues={{foods: 'pizza'}}>
           <FlipButtonGroupField name="foods" label="Select the food you enjoy most" variant="brand">

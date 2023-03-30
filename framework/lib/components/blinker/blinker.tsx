@@ -8,7 +8,6 @@ import { BlinkerProps } from './types'
  * @see {@link https://northlight.dev/reference/blinker}
  *
  * @example (Example)
- * Example:
  * (?
  * <Box p="4">
   * <Blinker color="bg.brand.default" />

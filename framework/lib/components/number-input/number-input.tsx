@@ -8,6 +8,17 @@ import { NumberInputStepper } from './number-input-stepper'
 import { NumberInputProps } from './types'
 import { advancedParseFloat } from './advanced-parse-float'
 
+/**
+ * Basic accessible input that only allows numbers, with support for arrow keys,
+ *  min max values and percentages
+ *
+ * @example
+ * (?
+ * <Box p="3">
+ * <NumberInput max={100} min={0} step={3} onlyAcceptPercentage={true} />
+ * </Box>
+ * ?)
+ */
 export const NumberInput = ({
   variant = 'default',
   size = 'md',

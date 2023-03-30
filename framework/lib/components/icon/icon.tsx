@@ -6,6 +6,16 @@ import {
 } from '@chakra-ui/react'
 import { IconProps } from './types'
 
+/**
+ * Pass down any icon from northlight/icons via as prop
+ * @see IconButton
+ * @see {@link https://northlight.dev/reference/icon}
+ *
+ * @example
+ * (?
+ * <Icon as={SmileyDuo} size="lg" />
+ * ?)
+ */
 export const Icon = forwardRef(({
   as: As,
   size,
