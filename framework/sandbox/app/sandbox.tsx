@@ -35,7 +35,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
   const [ tott, setTott ] = useState(false)
   const isRightSidebarVisible = useIsRightSidebarVisible()
   const currentPage = last(window.location.pathname.split('/'))
-  const isHomePage = currentPage === 'components' || currentPage === 'reference'
+  const isHomePage = currentPage === 'guide' || currentPage === 'reference'
   const pageProportions =
     isHomePage || !isRightSidebarVisible ? '20rem auto' : '20rem auto 28rem'
 
@@ -72,7 +72,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     >
                       <Link
                         as={ ReactRouterLink }
-                        to="/components/"
+                        to="/guide/"
                         sx={ {
                           _hover: { textDecoration: 'none' },
                           _focus: { outline: 'none' },

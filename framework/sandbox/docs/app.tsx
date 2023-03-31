@@ -254,7 +254,7 @@ const DocsApp = () => {
             </P>
             <Link
               as={ ReactRouterLink }
-              to="/components/typography"
+              to="/guide/typography"
               sx={ { _hover: { textDecoration: 'none' } } }
             >
               <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>
