@@ -24,6 +24,15 @@ import { ring } from '../../utils'
  * )
  * }
  * ?)
+ * @example (Example)
+ * ### Rendering a link if passing href
+ * (?
+          <Clickable href="/reference/select">
+            <Center boxSize="3xs" bgColor="gray.50">
+              Link
+            </Center>
+          </Clickable>
+ * ?)
  *
  */
 export const Clickable = ({ href, linkProps, ...rest }: ClickableProps) => {
