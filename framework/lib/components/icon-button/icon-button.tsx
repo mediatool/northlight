@@ -8,9 +8,19 @@ import { IconButtonProps } from './types'
  * @see Icon
  * @see {@link https://northlight.dev/reference/icon-button}
  *
- * @example
+ * @example (Example)
  * (?
  * <IconButton variant='brand' icon={<Icon as={UsersDuo} />} onClick={console.log}/>
+ * ?)
+ *
+ * @example (Example)
+ * (?
+        <IconButton
+          isRound={ true }
+          aria-label="create"
+          variant="success"
+          icon={ <Icon as={ PlusSolid } /> }
+        />
  * ?)
  *
  */
