@@ -1,7 +1,7 @@
 import React, { KeyboardEvent, useEffect, useMemo, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import Fuse from 'fuse.js'
-import { map, prop } from 'ramda'
+import { chain, defaultTo, map, prop } from 'ramda'
 import { Modal, ModalContent, ModalOverlay } from '@chakra-ui/react'
 import { searchComponentsBarStyles } from './styles'
 import { Card, SearchBar, Stack, useDisclosure } from '../../../../lib'
@@ -28,21 +28,26 @@ export const SearchComponentsBar = ({
     }
   }, [])
 
-  const options = map(
-    (route) => ({
-      value: route.path,
-      label: route.title,
-    }),
+  const options = chain(
+    (route) =>
+      defaultTo([], route.subItems).map((subRoute) => ({
+        value: `${route.path}${subRoute.path}`,
+        label: `${route.title} ${subRoute.title}`,
+      })),
     routes
   )
 
-  const fuse = useMemo(() => new Fuse(options, {
-    threshold: 0.2,
-    keys: [ 'label' ],
-  }), [ options ])
+  const fuse = useMemo(
+    () =>
+      new Fuse(options, {
+        threshold: 0.2,
+        keys: [ 'label' ],
+      }),
+    [ options ]
+  )
 
   const handleChange = ({ value }: RouteOption) => {
-    history.push(`/components${value}`)
+    history.push(`${value}`)
     onClose()
   }
 

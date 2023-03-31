@@ -7,9 +7,9 @@ import { routes as referenceRoutes } from './reference/routes'
 
 export const sandboxRoutes: MainPage[] = [
   {
-    title: 'Components',
+    title: 'Guide',
     Icon: SquareSetSolid,
-    path: '/components',
+    path: '/guide',
     component: () => import('./docs/app'),
     subItems: docRoutes,
   },

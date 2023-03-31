@@ -15,7 +15,7 @@ export interface MainPage extends Page {
 }
 
 export interface SearchBarComponentsBarProps {
-  routes: Page[]
+  routes: MainPage[]
 }
 
 export interface RouteOption {

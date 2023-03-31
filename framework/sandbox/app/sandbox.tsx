@@ -8,7 +8,6 @@ import {
   Star01Solid,
 } from '@northlight/icons'
 import {
-  Box,
   Button,
   Capitalized,
   Center,
@@ -92,7 +91,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     </HStack>
                     <Center w="full">
                       <SearchComponentsBar
-                        routes={ head(routes)?.subItems || [] }
+                        routes={ [ routes[0], routes[1] ] }
                       />
                     </Center>
                     <HStack>
