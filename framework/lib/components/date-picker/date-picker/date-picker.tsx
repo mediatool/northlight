@@ -50,6 +50,14 @@ import { Box } from '../../box'
  * To read more about date formatting, consult the
  * <a target="_blank" style="fontWeight: bold;" href="https://react-spectrum.adobe.com/internationalized/date/CalendarDate.html">react aria internationalized documentation</a>
  *
+ * @example (Example)
+ * ## Another example
+ * (?
+  * <DatePicker
+  * variant="filled"
+  * dateFormat="mm|dd-yyyy"
+  * />
+ * ?)
  *
  */
 export const DatePicker = (props: DatePickerProps) => {

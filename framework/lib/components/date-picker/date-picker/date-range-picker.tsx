@@ -57,7 +57,15 @@ const parseValue = (value: any) => {
  * ### Another example
  * (?
  * <Form initialValues={{date: null}}>
-  * <DateRangePickerField name="date" mode="simple" variant="filled" fiscalStarMonth={3} dateFormat="mm|dd-yyyy"minValue="2023-01-01" maxValue="2024-01-01" />
+  * <DateRangePickerField
+  * name="date" ¨
+  * mode="simple"
+  * variant="filled"
+  * fiscalStarMonth={3}
+  * dateFormat="mm|dd-yyyy"
+  * minValue="2023-01-01"
+  * maxValue="2024-01-01"
+  * />
  * </Form>
  * ?)
  */

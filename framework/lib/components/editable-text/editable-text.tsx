@@ -22,6 +22,18 @@ import { EditableControls } from './editable-controls'
  * }
  * ?)
  *
+ * @example (Example)
+ * ## Other notes
+        <p>
+          Pressing <b>ESC</b> or clicking on the
+          <b> red icon</b> will delete the changes and go back to the original state
+        </p>
+        <p>
+          Pressing <b>ENTER</b> or clicking on the
+          <b> green icon</b> will save the changes internally and fire the{ ' ' }
+          <Code>onSubmit</Code> callback.
+        </p>
+ *
  */
 export const EditableText = ({
   size = 'md',

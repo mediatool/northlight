@@ -88,11 +88,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/checkbox-page'),
   },
   {
-    title: 'Date Picker',
-    path: '/date-picker',
-    component: () => import('../pages/date-picker-page'),
-  },
-  {
     title: 'Date Range Picker',
     path: '/date-range-picker',
     component: () => import('../pages/date-range-picker-page'),
@@ -221,10 +216,5 @@ export const routes: Page[] = sortBy(prop('title'), [
     title: 'Typography',
     path: '/typography',
     component: () => import('../pages/typography-page'),
-  },
-  {
-    title: 'Editable text',
-    path: '/editable-text',
-    component: () => import('../pages/editable-text-page'),
   },
 ])
