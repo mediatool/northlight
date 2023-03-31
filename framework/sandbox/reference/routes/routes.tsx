@@ -4,6 +4,22 @@ import { Page } from '../../app'
 
 export const routes: Page[] = sortBy(prop('title'), [
   {
+      "title": `AccordionButton`,
+      "path": `/accordion-button`,
+      "component": () => import(`../pages/accordion-button-page`),
+    },{
+      "title": `AccordionItem`,
+      "path": `/accordion-item`,
+      "component": () => import(`../pages/accordion-item-page`),
+    },{
+      "title": `AccordionPanel`,
+      "path": `/accordion-panel`,
+      "component": () => import(`../pages/accordion-panel-page`),
+    },{
+      "title": `Accordion`,
+      "path": `/accordion`,
+      "component": () => import(`../pages/accordion-page`),
+    },{
       "title": `Alert`,
       "path": `/alert`,
       "component": () => import(`../pages/alert-page`),
@@ -203,10 +219,6 @@ export const routes: Page[] = sortBy(prop('title'), [
       "title": `NumberInputField`,
       "path": `/number-input-field`,
       "component": () => import(`../pages/number-input-field-page`),
-    },{
-      "title": `NumberInputStepper`,
-      "path": `/number-input-stepper`,
-      "component": () => import(`../pages/number-input-stepper-page`),
     },{
       "title": `NumberInput`,
       "path": `/number-input`,
