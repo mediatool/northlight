@@ -98,11 +98,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/radio-button-page'),
   },
   {
-    title: 'Toast',
-    path: '/toast',
-    component: () => import('../pages/toast-page'),
-  },
-  {
     title: 'Modal',
     path: '/modal',
     component: () => import('../pages/modal-page'),

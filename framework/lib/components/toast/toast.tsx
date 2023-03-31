@@ -9,6 +9,7 @@ import { Label, P } from '../typography'
 
 /**
  * Toast is a modified alert meant for popup alerts
+ * @see useToast
  * @see Alert
  * @see {@link https://northlight.dev/reference/toast}
  * @example
