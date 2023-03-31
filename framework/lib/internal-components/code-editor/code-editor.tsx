@@ -31,7 +31,7 @@ export const CodeEditor = (props: CodeEditorProps) => {
   return (
     <Box
       fontFamily="Fira Code"
-      fontSize="14px"
+      fontSize="13px"
       lineHeight="1.6"
       __css={ { pre: { borderRadius: 'lg' } } }
     >

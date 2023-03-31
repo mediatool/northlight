@@ -15,9 +15,7 @@ import { getComponents } from '../search-bar/get-components'
  * Select component that provides a customizable and accessible select input.
  * It is built on top of Chakra UI and Chakra React Select components.
  *
- * @see Blinker
  * @see SearchBar
- * @see New
  * @see {@link https://northlight.dev/reference/select}
  *
  * @example (Example)
