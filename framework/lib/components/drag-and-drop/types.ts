@@ -46,14 +46,22 @@ type MovedItemType<T> = {
 export interface SortableListProps<T> {
   children?: ChildrenType<T, ListenersType>
   items: T[]
+  /** Play around with this in case the sortable items don't land where
+   *  supposed to. See: https://docs.dndkit.com/api-documentation/context-provider/collision-detection-algorithms */
   collisionDetection?: CollisionDetection
+  /** Used to optimize rendering, see: https://docs.dndkit.com/presets/sortable#sorting-strategies  */
   strategy?: SortingStrategy
   onChange?: (items: T[]) => void
   createKey?: (item: T) => UniqueIdentifier
+  /** You can add an overlay, which can make it more accessible in use
+   *  cases where it can be hard to see for the user where their item will land on drop */
+
   displayOverlay?: boolean
+  /** In case you want to adjust the input methods, see: https://docs.dndkit.com/api-documentation/sensors */
   sensors?: SensorDescriptor<SensorOptions>[]
   dblClickThreshold?: number
   disableDrag?: boolean
+  /** callback, passes the dragged item and it's old / new index after a drag, */
   onMovedItem?: ({ item, oldIndex, newIndex }: MovedItemType<T>) => void
 }
 

@@ -27,7 +27,7 @@ import { SortableListProps } from './types'
  * @see Sortable
  * @see {@link https://northlight.dev/reference/sortable-list}
  *
- * @example
+ * @example (Example)
  * ## You can render any layout of sortable components, for example grid:
  * (?
  * () => {
@@ -46,6 +46,31 @@ import { SortableListProps } from './types'
           </Stack>
  * )}
  * ?)
+ *
+ * @example (Example)
+ * ### With custom component
+ * (?
+ * <Stack>
+ *
+ * <SortableList
+  items={ [ { name: 'item1' }, { name: 'item2' }, { name: 'item3' } ] }
+  createKey={ (item) => item.name }
+  disableDrag={ true }
+>
+  { ({ name }, listeners, { isOver }) => (
+    <HStack>
+      <DragHandle { ...listeners } isDragging={ isOver } />
+      <Input defaultValue={ name } />
+    </HStack>
+  ) }
+</SortableList>
+</Stack>
+ * ?)
+<br />
+If disableDrag=false, then when the user double clicks it will trigger
+the default behaviour of the rendered component instead of the dragging,
+ you can adjust the threshold with dblClickThreshold, default is 300ms
+ *
  *
  */
 export function SortableList<T> ({

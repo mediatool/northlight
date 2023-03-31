@@ -33,11 +33,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/drag-and-drop-page'),
   },
   {
-    title: 'Sortable List',
-    path: '/sortable-list',
-    component: () => import('../pages/sortable-list-page'),
-  },
-  {
     title: 'Toolbox',
     path: '/toolbox',
     component: () => import('../pages/toolbox-page'),
@@ -113,11 +108,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/switch-page'),
   },
   {
-    title: 'Spinner',
-    path: '/spinner',
-    component: () => import('../pages/spinner-page'),
-  },
-  {
     title: 'Tag',
     path: '/tag',
     component: () => import('../pages/tag-page'),
@@ -131,16 +121,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     title: 'Textarea',
     path: '/textarea',
     component: () => import('../pages/textarea-page'),
-  },
-  {
-    title: 'Status Pin',
-    path: '/status-pin',
-    component: () => import('../pages/status-pin-page'),
-  },
-  {
-    title: 'Status Block',
-    path: '/status-block',
-    component: () => import('../pages/status-block-page'),
   },
   {
     title: 'Modal',
