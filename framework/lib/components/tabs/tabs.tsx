@@ -10,6 +10,7 @@ import { TabsProps } from './types'
  * @example
  * (?
     <Tabs>
+    <Stack spacing="2">
       <TabList>
         <Tab>One</Tab>
         <Tab>Two</Tab>
@@ -17,15 +18,16 @@ import { TabsProps } from './types'
       </TabList>
       <TabPanels>
         <TabPanel>
-          <p>one!</p>
+          <P>one!</P>
         </TabPanel>
         <TabPanel>
-          <p>two!</p>
+          <P>two!</P>
         </TabPanel>
         <TabPanel>
-          <p>three!</p>
+          <P>three!</P>
         </TabPanel>
       </TabPanels>
+      </Stack>
     </Tabs>
  * ?)
  *

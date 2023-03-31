@@ -21,7 +21,7 @@ import { getComponents } from '../search-bar/get-components'
  * @see {@link https://northlight.dev/reference/select}
  *
  * @example (Example)
- * ## Single Select 9000
+ * ## Single Select
  * (?
  * <Select
  *   options={[{ label: 'Option 1', value: '1' }, { label: 'Option 2', value: '2' }]}

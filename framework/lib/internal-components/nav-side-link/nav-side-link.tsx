@@ -2,12 +2,7 @@ import React from 'react'
 import { Button } from '../../components/button'
 import { LinkOverlay } from '../../components/link-overlay'
 import { P } from '../../components/typography'
-
-const linkContainerStyles = {
-  p: '4',
-  _hover: { bgColor: 'blue.50' },
-  _active: { bgColor: 'blue.100' },
-}
+import { CurrentTheme, useCurrentTheme } from '../../utils'
 
 interface CustomNavLinkProps {
   linkName: string
@@ -16,19 +11,29 @@ interface CustomNavLinkProps {
   linkProps: Record<string, unknown>
 }
 
+const getBgColor = (currentTheme: CurrentTheme) => {
+  switch (currentTheme) {
+    case 'webappTheme': return 'blue.100'
+    case 'tottTheme': return 'blue.800'
+    default: return 'bg.filled'
+  }
+}
 export const NavSideLink = ({
   linkName,
   isActive,
   onClick,
   linkProps,
 }: CustomNavLinkProps) => {
-  const color = isActive ? 'blue.500' : 'text.default'
-  const bgColor = isActive ? 'blue.50' : 'transparent'
+  const currentTheme = useCurrentTheme()
+  const bgColorHover = getBgColor(currentTheme)
+  const color = isActive ? 'mono.white' : 'text.default'
 
   return (
     <Button
-      { ...linkContainerStyles }
-      bgColor={ bgColor }
+      p="4"
+      _hover={ { bgColor: isActive ? 'bg.brand.default' : bgColorHover } }
+      _active={ { bgColor: 'bg.brand.default' } }
+      bgColor={ isActive ? 'bg.brand.default' : 'transparent' }
       onClick={ onClick }
       display="flex"
       justifyContent="start"

@@ -19,6 +19,7 @@ import {
   PopoverTrigger,
   Small,
   Stack,
+  getContrastColor,
   useDisclosure,
 } from '../../../lib'
 
@@ -103,12 +104,12 @@ export const PropsTable = ({
               <PopoverContent
                 onMouseLeave={ onClose }
                 onMouseEnter={ onOpen }
-                bgColor="mediatoolBlue.500"
+                bgColor="bg.tertiary.default"
               >
                 <PopoverBody>
                   { isLinkAvailable && (
                     <Link
-                      sx={ { color: 'text.inverted' } }
+                      sx={ { color: getContrastColor('bg.tertiary.defualt') } }
                       isExternal={ true }
                       href={ `https://github.com/mediatool/northlight/tree/master/${propOr('', 'fileName', file)}` }
                     >
@@ -116,7 +117,7 @@ export const PropsTable = ({
                     </Link>
                   ) }
                   { !isLinkAvailable && (
-                    <P sx={ { color: 'text.inverted' } }>{ fileLink }</P>
+                    <P sx={ { color: getContrastColor('bg.tertiary.default') } }>{ fileLink }</P>
                   ) }
                 </PopoverBody>
               </PopoverContent>

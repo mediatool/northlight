@@ -154,7 +154,7 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
       <VStack spacing={ 4 } w={ DOCS_WIDTH }>
         <Flex justifyContent="space-between">
           <Stack mb={ 4 } spacing={ 4 }>
-            <Tabs variant="line" onChange={ setTabIndex }>
+            <Tabs variant="line" onChange={ setTabIndex } colorScheme="cyan">
               <TabList mb="8">
                 { !isEmpty(codeExamples) && <Tab>Usage</Tab> }
                 { !isEmpty(sortedPropEntries) && <Tab>Props</Tab> }
