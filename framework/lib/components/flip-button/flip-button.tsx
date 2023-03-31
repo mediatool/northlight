@@ -35,9 +35,9 @@ import { CustomContainerPropsType, CustomFlipButtonPropsType, FlipButtonProps } 
  * ### As a radio button group
  * (?
   *<FlipButtonGroup isMulti={ false } size="sm">
-  <FlipButton value="one">One</FlipButton>
-  <FlipButton value="two">Two</FlipButton>
-  <FlipButton value="three">Three</FlipButton>
+  <FlipButton value="one" icon={AgencyDuo}>One</FlipButton>
+  <FlipButton value="two" icon={StagesDuo}>Two</FlipButton>
+  <FlipButton value="three" icon={Flag04Duo}>Three</FlipButton>
 </FlipButtonGroup>
  * ?)
  *
@@ -45,9 +45,9 @@ import { CustomContainerPropsType, CustomFlipButtonPropsType, FlipButtonProps } 
  * ### As a checkbox button group
  * (?
   *<FlipButtonGroup isMulti={ true } size="sm">
-  <FlipButton value="one">One</FlipButton>
-  <FlipButton value="two">Two</FlipButton>
-  <FlipButton value="three">Three</FlipButton>
+  <FlipButton value="one" icon={TagsStackDuo}>One</FlipButton>
+  <FlipButton value="two" icon={Image03Duo}>Two</FlipButton>
+  <FlipButton value="three" icon={TagDuo }>Three</FlipButton>
 </FlipButtonGroup>
  * ?)
  *
