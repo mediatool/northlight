@@ -5,9 +5,21 @@ import { ButtonProps } from './types'
 /**
  * @see {@link https://northlight.dev/reference/button}
  *
+ * @example
+ * (?
+        <Button
+          variant="success"
+          leftIcon={ <Icon as={ FolderCheckDuo } /> }
+          rightIcon={ <Icon as={ PlusDuo } /> }
+        >
+          Create folder
+        </Button>
+ * ?)
+ *
  * @example (Example)
  * (?
- * +const variants = ['link', 'success', 'default', 'danger', 'brand', 'ghost']
+ * +
+ * const variants = ['link', 'success', 'default', 'danger', 'brand', 'ghost']
  *
  * const ExampleButton = () => {
  *  const [currentVariant, setCurrentVariant ] = useState(0)
@@ -18,7 +30,7 @@ import { ButtonProps } from './types'
  * setTimeout(() => {
  * setCurrentVariant((prev) => prev === 5 ? 0 : prev + 1)
  * setIsLoading(false)
- * }, 400)
+ * }, 300)
  *
  * }
  *

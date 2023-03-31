@@ -88,11 +88,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/fast-grid-page'),
   },
   {
-    title: 'Button',
-    path: '/button',
-    component: () => import('../pages/button-page'),
-  },
-  {
     title: 'Card',
     path: '/card',
     component: () => import('../pages/card-page'),
