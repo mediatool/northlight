@@ -98,11 +98,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/checkbox-page'),
   },
   {
-    title: 'Carousel',
-    path: '/carousel',
-    component: () => import('../pages/carousel-page'),
-  },
-  {
     title: 'Close Button',
     path: '/close-button',
     component: () => import('../pages/close-button-page'),
