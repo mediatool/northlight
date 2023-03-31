@@ -4,6 +4,29 @@ import { OverflowGroup, useOverflowGroup } from '../overflow-group'
 import { TagGroupProps } from './types'
 import { OverflowIndicator as DefaultOverflowIndicator } from './overflow-indicator'
 
+/**
+ * Used when rending multiple tags in limited container for responsive layout
+ * @see Tag
+ * @see {@link https://northlight.dev/reference/tag-group}
+ *
+ * @example
+ * ##Try resizing the window!
+ * (?
+  <TagGroup w="full"
+  borderWidth="st.border.width.sm"
+  borderColor="border.default"
+  borderStyle="solid"
+  p="2"
+  borderRadius="md"
+  >
+    { Array.from({length: 20}, (_, i) => i).map((i) => (
+      <Tag w="max-content" key={ i }>Brand-{ i }</Tag>
+    )) }
+  </TagGroup>
+ * ?)
+ *
+ *
+ */
 export const TagGroup = ({
   children,
   max = Infinity,

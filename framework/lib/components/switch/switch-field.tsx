@@ -5,6 +5,13 @@ import { Field } from '../form'
 import { Switch } from './switch'
 import { Box } from '../box'
 
+/**
+ * The switch component wrapped in a <Field />
+ * meant to be used only inside <Form />
+ * @see switch
+ * @see {@link https://northlight.dev/reference/switch-field}
+ *
+ */
 export const SwitchField = ({
   name,
   label,

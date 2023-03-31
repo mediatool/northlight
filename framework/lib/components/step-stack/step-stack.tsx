@@ -6,7 +6,17 @@ import { HStack, Stack } from '../stack'
 import { Center } from '../center'
 import { Divider } from '../divider'
 import { Label } from '../typography'
-
+/**
+ * Util wraper for creating ordered vertical layouts by stack
+ * @see {@link https://northlight.dev/reference/step-stack}
+ * @example
+ * (?
+ * <StepStack maxW="sm" spacing="4" rowHeight="10">
+    { Array.from({length: 5}, (_, i) => i).map((i) => <Input key={ i } />) }
+</StepStack>
+ * ?)
+ *
+ */
 export const StepStack = ({
   children,
   spacing = '4',

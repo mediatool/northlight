@@ -17,7 +17,7 @@ import { Icon } from '../../components/icon'
 import { paleNight } from './code-editor-styling'
 import { useClipboard } from '../../hooks'
 import { Tooltip } from '../../components/tooltip'
-import * as uiLib from '../../components'
+import * as uiLib from '../..'
 
 interface CodeEditorProps extends LiveProviderProps {}
 

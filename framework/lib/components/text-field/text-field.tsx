@@ -5,6 +5,16 @@ import { Input } from '../input'
 import { Field } from '../form'
 import { InputGroupWrapper } from '../../internal-components/input-group-wrapper'
 
+/**
+ * The Input component wrapped in <Field />
+ * Also supported formmated and musked input via as prop
+ * @see Input
+ * @see MaskedTextInput
+ * @see FormattedNumberInput
+ * @see {@link https://northlight.dev/reference/text-field}
+ *
+ *
+ */
 export const TextField = ({
   name,
   label,

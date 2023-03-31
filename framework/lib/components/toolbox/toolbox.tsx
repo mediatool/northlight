@@ -9,6 +9,36 @@ import { Portal } from '../portal'
 import { ToolboxProps } from './types'
 import { getChildrenWithProps } from '../../utils'
 
+/**
+ * Controllable Sidebar drawer
+ * @see Slide
+ * @example
+ * (?
+ *() => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  return (
+    <Flex>
+      <Button onClick={ onOpen } w="full">
+        Open Toolbox
+      </Button>
+      <Toolbox isOpen={ isOpen } onClose={ onClose } size="md">
+        <ToolboxHeader>Title</ToolboxHeader>
+        <ToolboxContent>
+          <Stack>
+            <Input />
+            <Input />
+          </Stack>
+        </ToolboxContent>
+        <ToolboxFooter justifyContent="end" gap="2">
+          <Button variant="ghost">Cancel</Button>
+          <Button variant="brand">Save</Button>
+        </ToolboxFooter>
+      </Toolbox>
+    </Flex>
+  )
+ }
+ * ?)
+ */
 export const Toolbox = ({
   isOpen = false,
   children,

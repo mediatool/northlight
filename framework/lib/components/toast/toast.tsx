@@ -7,6 +7,22 @@ import { HStack, Stack } from '../stack'
 import { CloseButton } from '../close-button'
 import { Label, P } from '../typography'
 
+/**
+ * Toast is a modified alert meant for popup alerts
+ * @see Alert
+ * @see {@link https://northlight.dev/reference/toast}
+ * @example
+ * (?
+ *
+        <HStack spacing={ 4 }>
+          <Toast variant="success" title="success" />
+          <Toast variant="warning" title="warning" />
+          <Toast variant="info" title="info" />
+          <Toast variant="error" title="error" />
+        </HStack>
+ * ?)
+ *
+ */
 export const Toast = ({
   variant = 'success',
   title = '',

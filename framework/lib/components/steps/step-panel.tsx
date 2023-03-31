@@ -8,7 +8,7 @@ import { TabPanel as ChakraStepPanel } from '../tabs'
  * @see StepPanels
  * @see {@link https://northlight.dev/reference/step-panel}
  * @example
- * (? <StepPanel /> ?)
+ * (? <StepPanel>Step 1</StepPanel>  ?)
  */
 export const StepPanel = (props: StepPanelProps) => (
   <ChakraStepPanel padding={ 0 } { ...props } />
