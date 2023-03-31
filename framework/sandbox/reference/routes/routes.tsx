@@ -48,10 +48,6 @@ export const routes: Page[] = sortBy(prop('title'), [
       "path": `/blinker`,
       "component": () => import(`../pages/blinker-page`),
     },{
-      "title": `Box`,
-      "path": `/box`,
-      "component": () => import(`../pages/box-page`),
-    },{
       "title": `Button`,
       "path": `/button`,
       "component": () => import(`../pages/button-page`),
@@ -255,6 +251,10 @@ export const routes: Page[] = sortBy(prop('title'), [
       "title": `RadioGroupField`,
       "path": `/radio-group-field`,
       "component": () => import(`../pages/radio-group-field-page`),
+    },{
+      "title": `RadioGroup`,
+      "path": `/radio-group`,
+      "component": () => import(`../pages/radio-group-page`),
     },{
       "title": `Radio`,
       "path": `/radio`,
