@@ -18,11 +18,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/search-bar-page'),
   },
   {
-    title: 'Overflow Group',
-    path: '/overflow-group',
-    component: () => import('../pages/overflow-group-page'),
-  },
-  {
     title: 'Transitions',
     path: '/transitions',
     component: () => import('../pages/transitions-page'),
