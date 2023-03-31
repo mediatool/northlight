@@ -68,11 +68,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/clickable-page'),
   },
   {
-    title: 'Avatar',
-    path: '/avatar',
-    component: () => import('../pages/avatar-page'),
-  },
-  {
     title: 'Badge',
     path: '/badge',
     component: () => import('../pages/badge-page'),
