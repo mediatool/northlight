@@ -24,6 +24,10 @@ export const routes: Page[] = sortBy(prop('title'), [
       "path": `/alert`,
       "component": () => import(`../pages/alert-page`),
     },{
+      "title": `AspectRatio`,
+      "path": `/aspect-ratio`,
+      "component": () => import(`../pages/aspect-ratio-page`),
+    },{
       "title": `AsyncError`,
       "path": `/async-error`,
       "component": () => import(`../pages/async-error-page`),
@@ -36,9 +40,17 @@ export const routes: Page[] = sortBy(prop('title'), [
       "path": `/avatar`,
       "component": () => import(`../pages/avatar-page`),
     },{
+      "title": `Badge`,
+      "path": `/badge`,
+      "component": () => import(`../pages/badge-page`),
+    },{
       "title": `Blinker`,
       "path": `/blinker`,
       "component": () => import(`../pages/blinker-page`),
+    },{
+      "title": `Box`,
+      "path": `/box`,
+      "component": () => import(`../pages/box-page`),
     },{
       "title": `Button`,
       "path": `/button`,

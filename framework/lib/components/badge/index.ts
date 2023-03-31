@@ -1,3 +1,2 @@
-export {
-  Badge,
-} from '@chakra-ui/react'
+export * from './badge'
+export type { BadgeProps } from '@chakra-ui/react'

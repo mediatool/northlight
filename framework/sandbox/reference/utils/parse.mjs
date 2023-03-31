@@ -1,9 +1,11 @@
 import { parse } from 'react-docgen-typescript'
 
 const pathFromChakraOrReact = (str) =>
-  str.includes('@chakra-ui/system') ||
-  str.includes('@chakra-ui/styled-system') ||
-  str.includes('@types/react')
+  str.fileName.includes('@chakra-ui/system') ||
+  (str.fileName.includes('@chakra-ui/styled-system')
+  && !str.name.includes('ThemingProps')
+  ) ||
+  str.fileName.includes('@types/react')
 
 const options = {
   savePropValueAsString: true,
@@ -12,7 +14,7 @@ const options = {
   skipChildrenPropWithoutDoc: false,
   propFilter: (prop) => {
     if (prop.parent) {
-      return !pathFromChakraOrReact(prop.parent.fileName)
+      return !pathFromChakraOrReact(prop.parent)
     }
     return false
   },
