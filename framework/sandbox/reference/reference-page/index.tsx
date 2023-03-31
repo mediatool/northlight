@@ -31,7 +31,7 @@ import {
   VStack,
 } from '../../../lib/components'
 import { CodeEditor, MarkdownPreview } from '../../../lib/internal-components'
-import { Page } from '../../app/components'
+import { Page } from './reference-page-wrapper'
 import { FileLink, PropsTable } from './props-table'
 import { splitMarkdownAndCode } from './split-markdown-and-code'
 import { SideNavBar } from './side-nav-bar'
