@@ -133,11 +133,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/split-page'),
   },
   {
-    title: 'Steps',
-    path: '/steps',
-    component: () => import('../pages/steps-page'),
-  },
-  {
     title: 'Typography',
     path: '/typography',
     component: () => import('../pages/typography-page'),
