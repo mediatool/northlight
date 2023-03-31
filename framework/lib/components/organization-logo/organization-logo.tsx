@@ -2,6 +2,15 @@ import React from 'react'
 import { chakra, useMultiStyleConfig } from '@chakra-ui/react'
 import { OrganizationLogoProps } from './types'
 
+/**
+ * @see {@link https://northlight.dev/reference/organization-logo}
+ *
+ * @example
+ * (?
+ * <OrganizationLogo name="mediatool" />
+ * ?)
+ *
+ */
 export const OrganizationLogo = ({
   name,
   image,

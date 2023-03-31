@@ -15,6 +15,8 @@ import { NavbarItemProps } from './types'
  * (?
  * <NavbarItem to="/hub" icon={HubDuo} title="Hub" />
  * ?)
+ * <br/>
+ * The component renders a react router NavLink. It needs an object with a title, path and icon.
  *
  */
 export const NavbarItem = ({

@@ -33,11 +33,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/file-picker-page'),
   },
   {
-    title: 'Organization Logo',
-    path: '/organization-logo',
-    component: () => import('../pages/organization-logo-page'),
-  },
-  {
     title: 'Drag and Drop',
     path: '/drag-and-drop',
     component: () => import('../pages/drag-and-drop-page'),
@@ -156,11 +151,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     title: 'Status Pin',
     path: '/status-pin',
     component: () => import('../pages/status-pin-page'),
-  },
-  {
-    title: 'Navbar Item',
-    path: '/navbar-item',
-    component: () => import('../pages/navbar-item-page'),
   },
   {
     title: 'Status Block',
