@@ -98,29 +98,14 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/radio-button-page'),
   },
   {
-    title: 'Tag',
-    path: '/tag',
-    component: () => import('../pages/tag-page'),
-  },
-  {
     title: 'Toast',
     path: '/toast',
     component: () => import('../pages/toast-page'),
   },
   {
-    title: 'Textarea',
-    path: '/textarea',
-    component: () => import('../pages/textarea-page'),
-  },
-  {
     title: 'Modal',
     path: '/modal',
     component: () => import('../pages/modal-page'),
-  },
-  {
-    title: 'Tabs',
-    path: '/tabs',
-    component: () => import('../pages/tabs-page'),
   },
   {
     title: 'Split pane',
