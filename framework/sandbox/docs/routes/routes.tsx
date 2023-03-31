@@ -63,11 +63,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/toolbox-page'),
   },
   {
-    title: 'Color Picker',
-    path: '/color-picker',
-    component: () => import('../pages/color-picker-page'),
-  },
-  {
     title: 'Breadcrumbs',
     path: '/breadcrumbs',
     component: () => import('../pages/breadcrumbs-page'),
