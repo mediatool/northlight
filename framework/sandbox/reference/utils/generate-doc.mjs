@@ -37,6 +37,11 @@ import { prop, sortBy } from 'ramda'
 import { Page } from '../../app'
 
 export const routes: Page[] = sortBy(prop('title'), [
+  {
+  "title": "A book guide on style props",
+  "path": "/theme-reference",
+  "component": () => import("../reference-page/theme-reference"),
+  },
   ${routes}
 ])
 `

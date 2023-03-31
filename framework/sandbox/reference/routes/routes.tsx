@@ -4,6 +4,11 @@ import { Page } from '../../app'
 
 export const routes: Page[] = sortBy(prop('title'), [
   {
+  "title": "A book guide on style props",
+  "path": "/theme-reference",
+  "component": () => import("../reference-page/theme-reference"),
+  },
+  {
       "title": `AccordionButton`,
       "path": `/accordion-button`,
       "component": () => import(`../pages/accordion-button-page`),
