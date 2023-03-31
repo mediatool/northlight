@@ -38,6 +38,7 @@ export const Page = ({
     bgColor="background.default"
     color="text.default"
     pb="10rem"
+    pt="4"
   >
     <Stack spacing={ 2 } maxW="xl">
       <Heading as="h1" size="lg">

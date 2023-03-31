@@ -124,7 +124,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     gridTemplateColumns={ pageProportions }
                     color="text.default"
                     w="full"
-                    gap="8"
+                    // gap="8"
                     position="relative"
                   >
                     <GridItem>
@@ -139,7 +139,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                       </Stack>
                     </GridItem>
                     <GridItem>
-                      <Center w="full" pt="4">
+                      <Center>
                         <Routing
                           fallback={ head(routes)?.path }
                           routes={ routes }
