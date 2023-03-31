@@ -103,11 +103,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/palette-page'),
   },
   {
-    title: 'Pin Input',
-    path: '/pin-input',
-    component: () => import('../pages/pin-input-page'),
-  },
-  {
     title: 'Radio',
     path: '/radio',
     component: () => import('../pages/radio-button-page'),
