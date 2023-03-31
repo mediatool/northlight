@@ -218,11 +218,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/tabs-page'),
   },
   {
-    title: 'Clipboard Input',
-    path: '/clipboard-input',
-    component: () => import('../pages/clipboard-input-page'),
-  },
-  {
     title: 'Split pane',
     path: '/split',
     component: () => import('../pages/split-page'),
