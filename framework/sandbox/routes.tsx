@@ -17,7 +17,7 @@ export const sandboxRoutes: MainPage[] = [
     title: 'Reference',
     Icon: SquareSetSolid,
     path: '/reference',
-    component: () => import('./docs/app'),
+    component: () => import('./reference/app'),
     subItems: referenceRoutes,
   },
   {

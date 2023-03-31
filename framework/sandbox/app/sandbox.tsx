@@ -124,7 +124,6 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     gridTemplateColumns={ pageProportions }
                     color="text.default"
                     w="full"
-                    // gap="8"
                     position="relative"
                   >
                     <GridItem>
