@@ -78,6 +78,12 @@ import { MultiItemType, MultiSortProps } from './types'
   )
  * }
  * ?)
+ * <br />
+ * Multisort abstracts logic away for setting up sortable items between multiple containers,
+ *  you can then separate, or create and style this containers as you want,
+ *  by putting them under <Droppable /> or a prestyled <Dropzone />
+
+SortableContainer is a wrapper for a <Sortable /> with a sortable item
  * */
 export function MultiSort<itemKeys extends string | number | symbol> ({
   items: sortableItems,
