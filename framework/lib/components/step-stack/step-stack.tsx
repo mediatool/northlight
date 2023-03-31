@@ -15,6 +15,12 @@ import { Label } from '../typography'
     { Array.from({length: 5}, (_, i) => i).map((i) => <Input key={ i } />) }
 </StepStack>
  * ?)
+<br />
+It takes all the props that a normal stack takes, with the addition of a
+ rowHeight prop, which is needed to get the correct height for the grey
+  line that goes between the steps. Any valid css height unit, px, rem, %,
+   and tokens xs, sm are valid input for rowHeight.
+(ex: rowHeight="3rem")
  *
  */
 export const StepStack = ({
