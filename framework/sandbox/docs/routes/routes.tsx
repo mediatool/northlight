@@ -93,11 +93,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/checkbox-page'),
   },
   {
-    title: 'Close Button',
-    path: '/close-button',
-    component: () => import('../pages/close-button-page'),
-  },
-  {
     title: 'Date Picker',
     path: '/date-picker',
     component: () => import('../pages/date-picker-page'),
