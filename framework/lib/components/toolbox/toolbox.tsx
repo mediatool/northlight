@@ -12,6 +12,7 @@ import { getChildrenWithProps } from '../../utils'
 /**
  * Controllable Sidebar drawer
  * @see Slide
+ * @see {@link https://northlight.dev/reference/toolbox}
  * @example
  * (?
  *() => {

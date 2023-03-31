@@ -28,11 +28,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/drag-and-drop-page'),
   },
   {
-    title: 'Toolbox',
-    path: '/toolbox',
-    component: () => import('../pages/toolbox-page'),
-  },
-  {
     title: 'Breadcrumbs',
     path: '/breadcrumbs',
     component: () => import('../pages/breadcrumbs-page'),
