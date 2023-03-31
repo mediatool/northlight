@@ -73,11 +73,6 @@ export const routes: Page[] = sortBy(prop('title'), [
     component: () => import('../pages/avatar-page'),
   },
   {
-    title: 'Async Error',
-    path: '/async-error',
-    component: () => import('../pages/async-error-page'),
-  },
-  {
     title: 'Badge',
     path: '/badge',
     component: () => import('../pages/badge-page'),
