@@ -123,7 +123,7 @@ const DocsApp = () => {
                 sx={ { _hover: { textDecoration: 'none' } } }
               >
                 <Button mt={ 8 } variant="ghost" size="lg" color="white">
-                  API Reference
+                  Components Reference
                 </Button>
               </Link>
             </Fade>

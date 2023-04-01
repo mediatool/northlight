@@ -105,7 +105,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                         <Button variant="ghost">Start</Button>
                       </Link>
                       <Link as={ ReactRouterLink } to="./reference">
-                        <Button variant="ghost">API Reference</Button>
+                        <Button variant="ghost">Reference</Button>
                       </Link>
                       <Link
                         isExternal={ true }
