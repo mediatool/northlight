@@ -1,4 +1,9 @@
-import { Dataflow01Duo, SmileyDuo, SquareSetSolid } from '@northlight/icons'
+import {
+  DatabaseDuo,
+  Dataflow01Duo,
+  SmileyDuo,
+  SquareSetSolid,
+} from '@northlight/icons'
 import { MainPage } from './app'
 import { routes as docRoutes } from './docs/routes'
 import { routes as tokensRoutes } from './tokens/routes'
@@ -15,7 +20,7 @@ export const sandboxRoutes: MainPage[] = [
   },
   {
     title: 'Reference',
-    Icon: SquareSetSolid,
+    Icon: DatabaseDuo,
     path: '/reference',
     component: () => import('./reference/app'),
     subItems: referenceRoutes,
