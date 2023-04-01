@@ -141,6 +141,19 @@ const DocsApp = () => {
           </Fade>
         </Flex>
       </HStack>
+      <VStack pt="16">
+        <H1>Why Northlight</H1>
+        <Box maxW="2xl">
+          <P textAlign="center">
+            Northlight is batteries included opionated open source design system
+            based on Chakra UI developed by Mediatool. The design system is
+            meant specifically for Mediatool products, alongst the creation
+            process we think that we managed to create something special, that
+            made it easy and rapid to develop moderns UI, and we wanted to share
+            it with the community!
+          </P>
+        </Box>
+      </VStack>
       <Fade in={ true } enterDelay={ 1500 }>
         <SimpleGrid columns={ 3 } spacingX="40px" spacingY="20px" mt={ 16 }>
           <Box borderRadius="none" maxHeight={ 280 }>
@@ -458,12 +471,12 @@ const DocsApp = () => {
                   </Button>
                 </Link>
                 <Link
-                  href="https://mediatool.slack.com"
+                  href="https://www.linkedin.com/in/sebastian-delgado-frontdev/"
                   target="_blank"
                   sx={ { _hover: { textDecoration: 'none' } } }
                 >
-                  <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                    Slack
+                  <Button leftIcon={ <LinkDuo /> } variant="ghost">
+                    LinkedIn
                   </Button>
                 </Link>
               </ButtonGroup>
@@ -675,10 +688,8 @@ const DocsApp = () => {
                     <Fade in={ true } enterDelay={ 800 }>
                       <H2 mb={ 6 }>Want to join the giants ?</H2>
                       <Box>
-                        <Capitalized>
-                          We accept only serious contributions. Be prepared for
-                          a deep screening.
-                        </Capitalized>
+                        We are happy for any contributions, feel free to open a
+                        PR or issue.
                       </Box>
                     </Fade>
                   </Box>

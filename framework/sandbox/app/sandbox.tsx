@@ -101,8 +101,8 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                         aria-label="dark mode"
                         onClick={ () => setTott(!tott) }
                       />
-                      <Link as={ ReactRouterLink } to="/components">
-                        <Button variant="ghost">Learn</Button>
+                      <Link as={ ReactRouterLink } to="/guide/quick-start">
+                        <Button variant="ghost">Start</Button>
                       </Link>
                       <Link as={ ReactRouterLink } to="./reference">
                         <Button variant="ghost">API Reference</Button>
