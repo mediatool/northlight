@@ -18,7 +18,7 @@ export default function ContributePage () {
       <Stack>
         <H1>How to Contribute</H1>
         <Lead>
-          Under refernce all the react components that are expored from the library are
+          Under reference all the react components that are expored from the library are
           covered
         </Lead>
       </Stack>
@@ -62,7 +62,7 @@ export default function ContributePage () {
           >
             react-docgen-typescript
           </Link>{ ' ' }
-          to autogenerate documentation from jsdoc comments
+          to autogenerate documentation pages from jsdoc comments
         </P>
         Example:
         <Code w="max-content" whiteSpace="pre" display="block">
@@ -88,12 +88,11 @@ const MyComponent = (props: MyComponentProps) => (
           </ListItem>
           <ListItem>
             <P>
-              The { '@see {@link}' } will make the link visible in code editors
-              refrence page to be easily accessible
+              The { '@see {@link}' } will make the link  to the reference page visible in code editors
             </P>
           </ListItem>
           <ListItem>
-            Notice that the component must be defined in .tsx file and exported from the library, a component that is exported like this: export { '{ Box } ' } from '@chakra-ui/react' will not generate a refernce page
+            Notice that the component must be defined in .tsx file and exported from the library, a component that is exported like this: export { '{ Box } ' } from '@chakra-ui/react' will not generate a reference page
 
           </ListItem>
         </UnorderedList>
@@ -123,14 +122,14 @@ const MyComponent = (props: MyComponentProps) => (
           </Link>{ ' ' }
         </P>
         <P>
-          From this live code editor, you don't have to import anything, all the
-          components, icons and react hooks such as useState are already
+          From this live code editor, you don't have to import anything, all the northlight
+          components, icons and hook are already
           imported
         </P>
       </Stack>
       <Stack>
         <P>
-          You can either just put pure jsx in the code example or write an
+          You can either write pure jsx in the code example or write an
           anonymous function:{ ' ' }
         </P>
         <Code w="max-content" whiteSpace="pre" display="block">
@@ -155,7 +154,7 @@ const MyComponent = (props: MyComponentProps) => (
         <P>
           As you have propably noticed, you need to wrap the actual code using{ ' ' }
           <b>(? //code ?)</b>
-          This is so our custom formatting can recognize what to put into react
+          . This is so our custom formatting can recognize what to put into react
           live
         </P>
       </Stack>
@@ -186,7 +185,7 @@ const MyComponent = (props: MyComponentProps) => (
           { `/**
  * @example (Example) 
  * (?
- * + // notice this plus
+ * + 
  * const SubComponent = () => //code
  * const MainComponent = () => <Box><SubComponent /></Box>
  * render(<MainComponent />)
@@ -198,7 +197,7 @@ const MyComponent = (props: MyComponentProps) => (
 )` }
         </Code>
         <P>
-          Then you need to call the <b>render</b> method at the end
+          And call the <b>render</b> method at the end
         </P>
       </Stack>
       <Stack>
@@ -216,8 +215,9 @@ const MyComponent = (props: MyComponentProps) => (
         <Code w="max-content" whiteSpace="pre" display="block">
           { `/**
  * @example (Example) 
- * (?
  * ## Header
+ * (?
+ * +
  * const SubComponent = () => //code
  * const MainComponent = () => <Box><SubComponent /></Box>
  * render(<MainComponent />)

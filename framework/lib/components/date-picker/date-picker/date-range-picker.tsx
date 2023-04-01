@@ -58,7 +58,7 @@ const parseValue = (value: any) => {
  * (?
  * <Form initialValues={{date: null}}>
   * <DateRangePickerField
-  * name="date" ¨
+  * name="date"
   * mode="simple"
   * variant="filled"
   * fiscalStarMonth={3}
