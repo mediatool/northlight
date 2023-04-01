@@ -5,9 +5,14 @@ import { NavSideLink } from '../../../lib/internal-components'
 interface SideNavBarProps {
   links: string[]
   sections: string[]
+  componentName: string
 }
 
-export const SideNavBar = ({ links, sections }: SideNavBarProps) => {
+export const SideNavBar = ({
+  links,
+  sections,
+  componentName = '',
+}: SideNavBarProps) => {
   const [ activeSection, setActiveSection ] = useState(0)
 
   useEffect(() => {
@@ -33,7 +38,7 @@ export const SideNavBar = ({ links, sections }: SideNavBarProps) => {
       { links.map((link, i) => (
         <NavSideLink
           linkName={ link }
-          linkProps={ { href: `/reference/Select#Example-${i}` } }
+          linkProps={ { href: `/reference/${componentName}#Example-${i}` } }
           isActive={ activeSection === i }
           onClick={ () => setActiveSection(i) }
         />

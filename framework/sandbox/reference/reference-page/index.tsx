@@ -229,6 +229,7 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
               <SideNavBar
                 links={ headers }
                 sections={ times((n) => `Example-${n}`, length(headers)) }
+                componentName={ formatFileName(data.displayName) }
               />
             ) }
         </Flex>
