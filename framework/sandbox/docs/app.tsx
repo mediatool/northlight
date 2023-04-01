@@ -110,7 +110,7 @@ const DocsApp = () => {
               </H2>
               <Link
                 as={ ReactRouterLink }
-                to="./components/form-example"
+                to="/guide/quick-start"
                 sx={ { _hover: { textDecoration: 'none' } } }
               >
                 <Button mt={ 8 } variant="brand" size="lg">
@@ -119,7 +119,7 @@ const DocsApp = () => {
               </Link>
               <Link
                 as={ ReactRouterLink }
-                to="/reference/select"
+                to="/reference"
                 sx={ { _hover: { textDecoration: 'none' } } }
               >
                 <Button mt={ 8 } variant="ghost" size="lg" color="white">
@@ -192,7 +192,7 @@ const DocsApp = () => {
             </P>
             <Link
               as={ ReactRouterLink }
-              to="/components"
+              to="/reference/accordion"
               sx={ { _hover: { textDecoration: 'none' } } }
             >
               <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>

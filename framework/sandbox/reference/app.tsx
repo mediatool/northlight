@@ -16,7 +16,7 @@ export default function ContributePage () {
   return (
     <Stack p="6" spacing="8" maxW="1000px">
       <Stack>
-        <H1>How to Contribute</H1>
+        <H1>Reference</H1>
         <Lead>
           Under reference all the react components that are expored from the library are
           covered
@@ -34,7 +34,7 @@ export default function ContributePage () {
         .
       </P>
       <Stack>
-        <H4>Example: adding a new component</H4>
+        <H4>How to contribute</H4>
         <StepStack>
           <P>
             Write your component under{ ' ' }
