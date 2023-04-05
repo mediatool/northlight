@@ -26,8 +26,8 @@ export interface SearchBarProps<T extends SearchBarOptionType>
   > {
   value?: T | T[]
   onChange?: (val: any, event: ActionMeta<T>) => void
-  onAdd?: (val: unknown) => void
-  onRemove?: (val: unknown) => void
+  onAdd?: (val: T['value']) => void
+  onRemove?: (val: T['value']) => void
   size?: Size
   'data-testid'?: string
   debouncedWaitTime?: number
