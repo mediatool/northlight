@@ -1,6 +1,6 @@
 {
   "name": "@northlight/ui",
-  "version": "1.4.6",
+  "version": "1.5.0",
   "description": "Northlight UI library, based on Chakra-ui",
   "license": "MIT",
   "author": "Mediatool",
@@ -46,7 +46,7 @@
     "@emotion/styled": "^11.10.6",
     "@internationalized/date": "^3.0.2",
     "@northlight/icons": "^1.0.6",
-    "@northlight/tokens": "^1.0.5",
+    "@northlight/tokens": "^1.0.6",
     "@react-aria/button": "^3.6.4",
     "@react-aria/calendar": "^3.0.5",
     "@react-aria/checkbox": "^3.7.1",
@@ -68,16 +68,16 @@
     "chakra-react-select": "4.4.3",
     "framer-motion": "^4",
     "lodash.debounce": "^4.0.8",
+    "markdown-to-jsx": "^7.2.0",
     "ramda": "^0.15.1",
     "react-avatar-editor": "^13.0.0",
     "react-hook-form": "^7.43.1",
     "react-input-mask": "2.0.4",
+    "react-live": "^3.2.0",
     "react-virtualized": "^9.22.3",
     "react-virtualized-auto-sizer": "^1.0.7",
     "react-window": "^1.8.8",
-    "style-dictionary": "^3.7.1",
-    "react-live": "^3.2.0",
-    "markdown-to-jsx": "^7.2.0"
+    "style-dictionary": "^3.7.1"
   },
   "devDependencies": {
     "@esbuild-kit/cjs-loader": "^2.4.2",

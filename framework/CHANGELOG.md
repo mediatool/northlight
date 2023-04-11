@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.4.6...@northlight/ui@1.5.0) (2023-04-11)
+
+
+### Bug Fixes
+
+* added missing google font ([f0e60f8](https://github.com/mediatool/northlight/commit/f0e60f860e50630d81ab3057bdcf9f9587475204))
+* **framework:** add new borders and shadows into chakra theme ([c358a63](https://github.com/mediatool/northlight/commit/c358a6311f853cb0e2ed881adba16ab9d5662e86))
+* **framework:** quick null check that threw sentry error ([027e9cc](https://github.com/mediatool/northlight/commit/027e9cc7066347d659ba29032510ae0d272a1867))
+* **framework:** update search compnents bar with new tokens ([82b0a9d](https://github.com/mediatool/northlight/commit/82b0a9d7a3e0a11d26bc8b6f609b2848f58c3424))
+
+
+### Features
+
+* **framework:** useCurrentTheme hook util ([dd472dc](https://github.com/mediatool/northlight/commit/dd472dc6fdd60a57361cdc4c1b473b7c0e81b44a))
+
+
+
+
+
 ## [1.4.6](https://github.com/mediatool/northlight/compare/@northlight/ui@1.4.5...@northlight/ui@1.4.6) (2023-03-23)
 
 
