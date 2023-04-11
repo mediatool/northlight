@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.0...@northlight/ui@1.5.1) (2023-04-11)
+
+
+### Bug Fixes
+
+* **framework:** add type for custom option ([cc6f02b](https://github.com/mediatool/northlight/commit/cc6f02b74a73a304fcebb6a4d4f5bf42da2fb2ac))
+
+
+
+
+
 # [1.5.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.4.6...@northlight/ui@1.5.0) (2023-04-11)
 
 
