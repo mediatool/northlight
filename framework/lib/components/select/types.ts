@@ -36,6 +36,7 @@ export interface SelectProps<T>
   | undefined
   /** Custom icon that will be put to the faremost right of the component */
   icon?: ComponentType<any>
+  customOption?: ((option: T) => JSX.Element) | null
 }
 
 export type SelectFieldProps<T> = Omit<SelectProps<T>, 'onChange'> &
