@@ -3,7 +3,8 @@
   "workspaces": [
     "framework",
     "tokens",
-    "icons"
+    "icons",
+    "docs"
   ],
   "devDependencies": {
     "@nrwl/nx-cloud": "^15.0.3",
