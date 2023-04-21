@@ -1,14 +1,9 @@
 {
   "include": [
     "index.ts",
-    "sandbox.tsx",
     "lib/**/*",
     "test/**/*",
-    "sandbox/**/*",
     "@types"
-  ],
-  "files": [
-    "vite.config.ts"
   ],
   "exclude": [
     "node_modules",
@@ -35,7 +30,6 @@
     ],
     "types": [
       "@chakra-ui/react",
-      "vite/client",
       "mocha"
     ],
     "typeRoots": ["@types"]
