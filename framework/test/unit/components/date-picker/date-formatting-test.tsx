@@ -1,7 +1,7 @@
 import React from 'react'
 import { expect } from 'chai'
 import { render, screen } from '@testing-library/react'
-import { join } from 'ramda'
+import { join, times } from 'ramda'
 import { DatePickerField, Form } from '../../../../lib/components'
 import { arrayWithLength } from '../../../../sandbox/docs/utils'
 
@@ -22,7 +22,7 @@ const getChild = (index: number) =>
   screen.getByTestId('date-field-test-id').children[index]
 
 const getSegments = () =>
-  arrayWithLength(5).map((index) => getChild(index - 1))
+  times(getChild, 5)
 
 const areSegmentsOrdered = (expectedOrder: string[]) => {
   expectedOrder.forEach((query: string | null, index: number) => {

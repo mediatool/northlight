@@ -61,25 +61,4 @@ export default [ {
     format: 'cjs',
     file: 'dist/ts/types.d.ts',
   } ],
-}, {
-  input: './sandbox/app/index.ts',
-  external,
-  plugins: [
-    esbuild(),
-  ],
-  output: [ {
-    format: 'es',
-    sourcemap: true,
-    file: 'dist/es/sandbox.mjs',
-  } ],
-}, {
-  input: './sandbox/app/index.ts',
-  external,
-  plugins: [
-    dts(),
-  ],
-  output: [ {
-    format: 'es',
-    file: 'dist/es/sandbox.d.mts',
-  } ],
 } ]
