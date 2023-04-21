@@ -7,12 +7,12 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/es/mediatool-ui-framework.d.mts",
-      "import": "./dist/es/mediatool-ui-framework.mjs",
-      "require": "./dist/umd/mediatool-ui-framework.js"
+      "types": "./dist/es/northlight.d.mts",
+      "import": "./dist/es/northlight.mjs",
+      "require": "./dist/umd/northlight.js"
     }
   },
-  "main": "./dist/es/mediatool-ui-framework.mjs",
+  "main": "./dist/es/northlight.mjs",
   "types": "./dist/ts/types.d.ts",
   "files": [
     "dist"
