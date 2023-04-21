@@ -3,7 +3,6 @@ import { expect } from 'chai'
 import { render, screen } from '@testing-library/react'
 import { join, times } from 'ramda'
 import { DatePickerField, Form } from '../../../../lib/components'
-import { arrayWithLength } from '../../../../sandbox/docs/utils'
 
 const getDatePickerField = (customProps = {}) => {
   const props = {

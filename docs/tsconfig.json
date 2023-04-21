@@ -1,4 +1,5 @@
 {
+  "extends": "../tsconfig.json",
   "include": [
     "src/**/*.tsx",
     "src/**/*.ts",
@@ -6,27 +7,4 @@
     "src/**/*.png",
     "src/**/*.jpg",
   ],
-  "compilerOptions": {
-    "baseUrl": ".",
-    "rootDir": ".",
-    "outDir": "dist",
-    "sourceMap": false,
-    "noEmit": true,
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noImplicitReturns": false,
-    "strict": true,
-    "isolatedModules": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "removeComments": false,
-    "jsx": "preserve",
-    "types": []
-  }
 }
