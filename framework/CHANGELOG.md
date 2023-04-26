@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.0...@northlight/ui@1.5.1) (2023-04-26)
+
+
+### Bug Fixes
+
+* **framework:** add type for custom option ([cc6f02b](https://github.com/mediatool/northlight/commit/cc6f02b74a73a304fcebb6a4d4f5bf42da2fb2ac))
+* **framework:** exclude all dependencies from bundle ([6ac5354](https://github.com/mediatool/northlight/commit/6ac5354a2fc4238cfe18c9186c377c36d8b4672d))
+* **framework:** replace wrong import of type ([b120307](https://github.com/mediatool/northlight/commit/b120307c9d462c64abe50cf8a0af42819b6be9b2))
+
+
+
+
+
 # [1.5.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.4.6...@northlight/ui@1.5.0) (2023-04-11)
 
 
