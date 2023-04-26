@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.3](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.2...@northlight/ui@1.5.3) (2023-04-26)
+
+
+### Bug Fixes
+
+* remove overflow:scroll on html element ([f720948](https://github.com/mediatool/northlight/commit/f72094830b6e1063263059b8eac13ae9b0075769))
+
+
+
+
+
 ## [1.5.1](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.0...@northlight/ui@1.5.1) (2023-04-26)
 
 
