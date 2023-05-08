@@ -32,7 +32,7 @@ const overrides: ThemeOverride = {
   styles: {
     global: {
       html: {
-        'scroll-behavior': 'smooth',
+        scrollBehavior: 'smooth',
       },
       body: {
         height: '100%',
