@@ -55,6 +55,10 @@ import {
   highlight,
 } from '@northlight/ui'
 import paolo from './images/paolo.png'
+import sebbe from './images/sebbe.png'
+import iliya from './images/iliya.png'
+import magnus from './images/magnus.png'
+import hanna from './images/hanna.png'
 
 const DocsApp = () => (
   <Box
@@ -142,11 +146,10 @@ const DocsApp = () => (
         <P textAlign="center">
           Northlight is batteries included opionated open source design system
           based on Chakra UI developed by Mediatool. The design system is
-          composed of UI components, icons, design tokens and standards
-          meant specifically for Mediatool products. Alongst the creation
-          process we managed to create something special, that
-          made it easy and rapid to develop moderns UI, and we wanted to share
-          it with the community.
+          composed of UI components, icons, design tokens and standards meant
+          specifically for Mediatool products. Alongst the creation process we
+          managed to create something special, that made it easy and rapid to
+          develop moderns UI, and we wanted to share it with the community.
         </P>
       </Box>
     </VStack>
@@ -196,8 +199,7 @@ const DocsApp = () => (
           </Flex>
           <H3>Components</H3>
           <P>
-            Reusable elements and styles, packaged through code for buildin
-            UIs.
+            Reusable elements and styles, packaged through code for buildin UIs.
           </P>
           <Link
             as={ ReactRouterLink }
@@ -256,8 +258,8 @@ const DocsApp = () => (
           </Flex>
           <H3>Webfonts</H3>
           <P>
-            Everything you need to present content as clearly and efficiently
-            as possible.
+            Everything you need to present content as clearly and efficiently as
+            possible.
           </P>
           <Link
             as={ ReactRouterLink }
@@ -406,7 +408,7 @@ const DocsApp = () => (
         >
           <CardBody>
             <Image
-              src="https://gcdnb.pbrd.co/images/M1CXHU64TWXd.png?o=1"
+              src={ magnus }
               alt="Magnus"
               borderRadius="lg"
             />
@@ -445,11 +447,7 @@ const DocsApp = () => (
           bgColor="transparent"
         >
           <CardBody>
-            <Image
-              src="https://gcdnb.pbrd.co/images/gw3nEkLGENoz.png?o=1"
-              alt="Sebastian"
-              borderRadius="lg"
-            />
+            <Image src={ sebbe } alt="Sebastian" borderRadius="lg" />
             <Stack mt="6" spacing="3">
               <Heading size="md">Sebe J.</Heading>
             </Stack>
@@ -522,7 +520,7 @@ const DocsApp = () => (
         >
           <CardBody>
             <Image
-              src="https://gcdnb.pbrd.co/images/hBqPPYEPuo3t.png?o=1"
+              src={ hanna }
               alt="Hanna"
               borderRadius="lg"
             />
@@ -562,7 +560,7 @@ const DocsApp = () => (
         >
           <CardBody>
             <Image
-              src="https://gcdnb.pbrd.co/images/wvIJrQUXz1Mf.png?o=1"
+              src={ iliya }
               alt="Iliya"
               borderRadius="lg"
             />
@@ -684,8 +682,8 @@ const DocsApp = () => (
                   <Fade in={ true } enterDelay={ 800 }>
                     <H2 mb={ 6 }>Want to join the giants ?</H2>
                     <Box>
-                      We are happy for any contributions, feel free to open a
-                      PR or issue.
+                      We are happy for any contributions, feel free to open a PR
+                      or issue.
                     </Box>
                   </Fade>
                 </Box>
@@ -717,8 +715,8 @@ const DocsApp = () => (
               />
             </Lead>
             <Tiny maxW="100vh" textAlign="center">
-              Northlight UI is not responsible for any possible deaths of
-              users. Northlight UI is not responsible for badly written code.
+              Northlight UI is not responsible for any possible deaths of users.
+              Northlight UI is not responsible for badly written code.
               Northlight UI do proudly collect its users data. By installing
               Northlight UI the developer agrees to all of this requirments as
               stated above and agrees to give away half their salary to
