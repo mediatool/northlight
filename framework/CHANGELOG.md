@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.4](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.3...@northlight/ui@1.5.4) (2023-05-09)
+
+
+### Bug Fixes
+
+* this fixes a console error when importing Northlight UI ([b4ed8d6](https://github.com/mediatool/northlight/commit/b4ed8d6a823fd19693fa54ac5594a72f1d085b42))
+
+
+
+
+
 ## [1.5.3](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.2...@northlight/ui@1.5.3) (2023-04-26)
 
 
