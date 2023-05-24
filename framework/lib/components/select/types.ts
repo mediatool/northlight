@@ -21,7 +21,7 @@ export interface SelectProps<T>
   'onChange' | 'value'
   > {
   /** Whatever is currently selected by the select will be controlled by value prop */
-  value?: Option | Option[]
+  value?: Option | Option[] | null
   /** Take a look at the second argument, the event,
    *  for info as to which specific elmeent was added */
   onChange?: (val: any, event: ActionMeta<T>) => void
