@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.5](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.4...@northlight/ui@1.5.5) (2023-05-24)
+
+
+### Bug Fixes
+
+* **framework:** extends stack props for avatar group ([a949052](https://github.com/mediatool/northlight/commit/a9490528e240d16a741fb14760ab956f1c83fad4))
+
+
+
+
+
 ## [1.5.4](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.3...@northlight/ui@1.5.4) (2023-05-09)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/mediatool/northlight/compare/@northlight/docs@1.1.3...@northlight/docs@1.1.4) (2023-05-24)
+
+
+### Bug Fixes
+
+* **docs:** moves images from external source to local ([6dd3637](https://github.com/mediatool/northlight/commit/6dd36372b9384643a112b2b5875704eaf6608fff))
+
+
+
+
+
 ## [1.1.3](https://github.com/mediatool/northlight/compare/@northlight/docs@1.1.2...@northlight/docs@1.1.3) (2023-05-09)
 
 **Note:** Version bump only for package @northlight/docs
