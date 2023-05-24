@@ -1,5 +1,5 @@
 import React from 'react'
-import { AvatarProps as ChakraAvatarProps } from '@chakra-ui/react'
+import { AvatarProps as ChakraAvatarProps, StackProps } from '@chakra-ui/react'
 
 export interface AvatarProps
   extends Omit<
@@ -26,7 +26,7 @@ export interface AvatarBadgeProps {
   notificationCount?: number
 }
 
-export interface AvatarGroupProps {
+export interface AvatarGroupProps extends StackProps {
   max: number
   spacing?: number | string
   /** The children should be avatar components */
