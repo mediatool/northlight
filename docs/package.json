@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "start": "yarn vite",
+    "dev": "yarn build:reference && yarn start",
     "build": "yarn build:reference && vite build",
     "build:reference": "node src/reference/utils/generate-doc.mjs",
     "lint": "yarn tsc --noEmit && eslint --ext ts,tsx src"
