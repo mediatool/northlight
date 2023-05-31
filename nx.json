@@ -30,9 +30,6 @@
       "dependsOn": ["^transpile"],
       "inputs": [{ "runtime": "node -v" }, "source", "^source"]
     },
-    "demo": {
-      "dependsOn": ["^transpile"]
-    },
     "build": {
       "dependsOn": ["^transpile"]
     }
