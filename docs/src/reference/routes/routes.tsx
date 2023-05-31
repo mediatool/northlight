@@ -221,10 +221,6 @@ export const routes: Page[] = sortBy(prop('title'), [
       "path": `/modal`,
       "component": () => import(`../pages/modal-page`),
     },{
-      "title": `NavbarItem`,
-      "path": `/navbar-item`,
-      "component": () => import(`../pages/navbar-item-page`),
-    },{
       "title": `NotificationIconButton`,
       "path": `/notification-icon-button`,
       "component": () => import(`../pages/notification-icon-button-page`),
