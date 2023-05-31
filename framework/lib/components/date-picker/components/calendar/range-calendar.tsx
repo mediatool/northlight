@@ -53,7 +53,7 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
     ref
   )
 
-  const { fiscalStartMonth, handleClose, resetDate } = props
+  const { fiscalStartMonth, handleClose, resetDate, isClearable = true } = props
 
   return (
     <Box { ...calendarProps } ref={ ref } __css={ rangeCalendarContainer }>
@@ -105,9 +105,11 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
                 />
                 <AdjustRange state={ state } adjust="end" />
                 <HStack alignSelf="end" pt="2">
-                  <Button onClick={ resetDate } variant="ghost" size="sm">
-                    Clear
-                  </Button>
+                  { isClearable && (
+                    <Button onClick={ resetDate } variant="ghost" size="sm">
+                      Clear
+                    </Button>
+                  ) }
                   <Button variant="brand" onClick={ handleClose } size="sm">
                     Save
                   </Button>

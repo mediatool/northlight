@@ -22,6 +22,7 @@ export const DateRangePickerField = ({
   validate,
   firstDayOfWeek = 'monday',
   onChange: onChangeCallback = identity,
+  isClearable = true,
   ...rest
 }: DateRangePickerFieldProps) => {
   const { setValue, setError, trigger } = useFormContext<FormBody>()
@@ -66,6 +67,7 @@ export const DateRangePickerField = ({
           minValue={ minValue }
           maxValue={ maxValue }
           validationState={ errors.name ? 'invalid' : 'valid' }
+          isClearable={ isClearable }
           { ...(rest as any) }
         />
       ) }

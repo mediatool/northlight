@@ -22,7 +22,8 @@
     "lint": "eslint --ext ts,tsx lib/ test/",
     "prepublishOnly": "yarn clean && yarn transpile",
     "test": "yarn mtft test",
-    "transpile": "rollup -c"
+    "transpile": "rollup -c",
+    "watch": "yarn transpile -w"
   },
   "dependencies": {
     "@chakra-ui/clickable": "^2.0.14",
