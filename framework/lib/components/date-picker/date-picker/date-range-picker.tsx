@@ -182,6 +182,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                 resetDate={ resetDate }
                 handleClose={ handleClose }
                 fiscalStartMonth={ fiscalStartMonth || 0 }
+                isClearable={ isClearable }
               />
             ) }
             {
@@ -191,6 +192,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
               resetDate={ resetDate }
               handleClose={ handleClose }
               fiscalStartMonth={ fiscalStartMonth || 0 }
+              isClearable={ isClearable }
             />
             ) }
           </FocusScope>
