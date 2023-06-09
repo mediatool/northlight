@@ -22,7 +22,7 @@ export interface AvatarProps
   size?: '2xs' | 'xs' | 'sm' | 'md' | 'lg'
   variant?: 'square' | 'rounded'
   tooltip?: boolean
-  tooltipPlacement: 'auto-start' | 'auto' | 'auto-end' | 'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'
+  tooltipPlacement?: 'auto-start' | 'auto' | 'auto-end' | 'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'
 }
 export interface AvatarBadgeProps {
   notificationCount?: number
