@@ -1,5 +1,5 @@
 import React from 'react'
-import { chakra, useMultiStyleConfig } from '@chakra-ui/react'
+import { Tooltip, chakra, useMultiStyleConfig } from '@chakra-ui/react'
 import { BusinessContactDuo, UserSquareDuo } from '@northlight/icons'
 import { Icon } from '../icon'
 import { Box } from '../box'
@@ -29,6 +29,14 @@ import { AvatarBadge } from './avatar-badge'
  * (?
  * <Avatar />
  * ?)
+ *
+ * <br />
+ *
+ * Avatar can also display a tooltip. To use the tooltip,
+ * name and tooltip (true) must be passed to Avatar.
+ * (?
+ * <Avatar name="Anakin Skywalker" tooltip={ true }/>
+ * ?)
  */
 export const Avatar = ({
   variant = 'square',
@@ -36,6 +44,8 @@ export const Avatar = ({
   name,
   image,
   size,
+  tooltip = false,
+  tooltipPlacement = 'top',
   ...rest
 }: AvatarProps) => {
   const { container, text, userImage, icon } = useMultiStyleConfig('Avatar', {
@@ -43,33 +53,37 @@ export const Avatar = ({
     image,
     size,
     name,
+    tooltip,
+    tooltipPlacement,
   })
 
   return (
-    <Box __css={ container } data-testid="avatar-test-id" { ...rest }>
-      { image
-        ? (
-          <chakra.img
-            alt={ name }
-            src={ image }
-            sx={ userImage }
-          />
-        ) : name
+    <Tooltip label={ name } isDisabled={ !tooltip } placement={ tooltipPlacement }>
+      <Box __css={ container } data-testid="avatar-test-id" { ...rest }>
+        { image
           ? (
-            <chakra.span sx={ text }>
-              { getInitials(name) }
-            </chakra.span>
-          )
-          : (
-            <Icon
-              as={ variant === 'square' ? UserSquareDuo : BusinessContactDuo }
-              sx={ icon }
-              aria-label="user-avatar"
+            <chakra.img
+              alt={ name }
+              src={ image }
+              sx={ userImage }
             />
-          ) }
-      { notificationCount > 0 && (
-        <AvatarBadge notificationCount={ notificationCount } />
-      ) }
-    </Box>
+          ) : name
+            ? (
+              <chakra.span sx={ text }>
+                { getInitials(name) }
+              </chakra.span>
+            )
+            : (
+              <Icon
+                as={ variant === 'square' ? UserSquareDuo : BusinessContactDuo }
+                sx={ icon }
+                aria-label="user-avatar"
+              />
+            ) }
+        { notificationCount > 0 && (
+          <AvatarBadge notificationCount={ notificationCount } />
+        ) }
+      </Box>
+    </Tooltip>
   )
 }
