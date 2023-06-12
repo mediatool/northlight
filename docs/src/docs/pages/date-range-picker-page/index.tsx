@@ -26,7 +26,7 @@ const DateRangePickerPage = () => (
                 </Code>
               </Stack>
             </HStack>
-            <P>The default isadvanced</P>
+            <P>The default is advanced</P>
             <Divider />
             <P>
               You can pass on custom formatting to date-picker via{ ' ' }
@@ -92,8 +92,21 @@ const DateRangePickerPage = () => (
               <b>isClearable</b>
               - A prop that when true shows a cross button
               to the right of the date field
-              that resets the date range
+              that resets the date range. It also has a clear button on calendar UI.
             </P>
+            <HStack>
+              <DateRangePickerField
+                name="date-clearable"
+                label="Clearable"
+                mode="simple"
+              />
+              <DateRangePickerField
+                name="date-not-clearable"
+                label="Not clearable"
+                mode="simple"
+                isClearable={ false }
+              />
+            </HStack>
           </Stack>
         ) }
       </Form>
