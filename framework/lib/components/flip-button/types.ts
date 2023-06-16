@@ -74,7 +74,7 @@ export interface FlipButtonProps {
   icon?: ComponentType<any>
   value: string
   label?: string
-  children: ((props: CustomFlipButtonProps) => JSX.Element) | string
+  children?: ((props: CustomFlipButtonProps) => JSX.Element) | string
 }
 
 export interface FlipButtonGroupProps
