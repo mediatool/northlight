@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.6](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.5...@northlight/ui@1.5.6) (2023-06-19)
+
+
+### Bug Fixes
+
+* **components:** make children prop optional in flip button ([7d156c0](https://github.com/mediatool/northlight/commit/7d156c0c37f15a470bf3da9b539726b92254927a))
+
+
+
+
+
 ## [1.5.5](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.4...@northlight/ui@1.5.5) (2023-05-24)
 
 
