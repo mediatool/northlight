@@ -1,6 +1,6 @@
 {
   "name": "@northlight/ui",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "Northlight UI library, based on Chakra-ui",
   "license": "MIT",
   "author": "Mediatool",
@@ -37,7 +37,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@internationalized/date": "^3.0.2",
-    "@northlight/icons": "^1.0.6",
+    "@northlight/icons": "^1.1.0",
     "@northlight/tokens": "^1.0.6",
     "@react-aria/button": "^3.6.4",
     "@react-aria/calendar": "^3.0.5",

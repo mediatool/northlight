@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.0.6...@northlight/icons@1.1.0) (2023-06-28)
+
+
+### Features
+
+* **icons:** add chart-pie icons ([54c4d28](https://github.com/mediatool/northlight/commit/54c4d28a02d882856638fb5727c682277fbbee1a))
+
+
+
+
+
 ## [1.0.6](https://github.com/mediatool/northlight/compare/@northlight/icons@1.0.5...@northlight/icons@1.0.6) (2023-03-01)
 
 **Note:** Version bump only for package @northlight/icons
