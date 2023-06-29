@@ -10,5 +10,5 @@
 **/cypress/screenshots
 .icloud
 .cache/
-framework/sandbox/reference/pages/**
-framework/sandbox/reference/routes/**
+docs/src/reference/pages/**
+docs/src/reference/routes/**
