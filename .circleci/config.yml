@@ -66,4 +66,4 @@ workflows:
             parameters:
               node-version:
                 - '14.20'
-                - '16.15'
+                - '16.20'
