@@ -5,6 +5,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": [
+          "build",
           "lint",
           "test",
           "transpile",
@@ -19,19 +20,23 @@
     "source": ["{projectRoot}/lib/*"]
   },
   "targetDefaults": {
+    "build": {
+      "dependsOn": ["transpile"]
+    },
     "transpile": {
       "dependsOn": ["^transpile"],
-      "outputs": ["{projectRoot}/dist"]
+      "outputs": [
+        "{projectRoot}/dist",
+        "{projectRoot}/src/reference/pages",
+        "{projectRoot}/src/reference/routes"
+      ]
     },
     "lint": {
-      "dependsOn": ["^transpile"]
+      "dependsOn": ["transpile"]
     },
     "test": {
       "dependsOn": ["^transpile"],
       "inputs": [{ "runtime": "node -v" }, "source", "^source"]
-    },
-    "build": {
-      "dependsOn": ["^transpile"]
     }
   },
   "affected": {

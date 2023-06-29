@@ -8,7 +8,7 @@ import { MainPage } from './app'
 import { routes as docRoutes } from './docs/routes'
 import { routes as tokensRoutes } from './tokens/routes'
 import { routes as iconsRoutes } from './icons/routes'
-import { routes as referenceRoutes } from './reference/routes'
+import { routes as referenceRoutes } from './reference/routes/routes'
 
 export const sandboxRoutes: MainPage[] = [
   {
