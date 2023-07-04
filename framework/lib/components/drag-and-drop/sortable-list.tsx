@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import {
   DragOverEvent,
   DragOverlay,
@@ -91,14 +91,6 @@ export function SortableList<T> ({
 
   const identifierItems = useMemo(() => map(createKey, items), [ items ])
 
-  useEffect(() => {
-    onChange(items)
-  }, [ items ])
-
-  useEffect(() => {
-    setItems(sortableItems)
-  }, [ sortableItems ])
-
   const customSensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
@@ -121,8 +113,9 @@ export function SortableList<T> ({
         const oldIndex = indexOf(active.id, prevIds)
         const newIndex = indexOf(over.id, prevIds)
         onMovedItem({ item: prev[oldIndex], oldIndex, newIndex })
-
-        return arrayMove(prev, oldIndex, newIndex)
+        const newItems = arrayMove(prev, oldIndex, newIndex)
+        onChange(newItems)
+        return newItems
       })
     }
   }
