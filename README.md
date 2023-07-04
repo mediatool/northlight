@@ -10,7 +10,7 @@ To start up a local environment of the Northlight UI framework docs:
 2. cd into the directory
 3. run `yarn`
 4. cd into `/docs`
-6. run `yarn dev`
+6. run `yarn nx dev`
 
 This will spin up a local environment at localhost:3008 (or the first available port after that)
 
