@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.9...@northlight/ui@2.0.0) (2023-07-04)
+
+
+* fix(framework)!: do not have internal state in sortable list ([853b5e7](https://github.com/mediatool/northlight/commit/853b5e725eb3acb0cd052947fb31b3f2a47de292))
+
+
+### BREAKING CHANGES
+
+* Consumer will have to hold the sort state themselves
+
+
+
+
+
 ## [1.5.9](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.8...@northlight/ui@1.5.9) (2023-07-04)
 
 
