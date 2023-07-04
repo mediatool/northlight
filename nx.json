@@ -23,6 +23,9 @@
     "build": {
       "dependsOn": ["transpile"]
     },
+    "dev": {
+      "dependsOn": ["transpile"]
+    },
     "transpile": {
       "dependsOn": ["^transpile"],
       "outputs": [
