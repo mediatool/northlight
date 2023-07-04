@@ -50,12 +50,16 @@ import { SortableListProps } from './types'
  * @example (Example)
  * ### With custom component
  * (?
+ * () => {
+ * const [items, setItems] = useState([ { name: 'item1' }, { name: 'item2' }, { name: 'item3' } ])
+ * return (
  * <Stack>
  *
  * <SortableList
-  items={ [ { name: 'item1' }, { name: 'item2' }, { name: 'item3' } ] }
+  items={ items }
   createKey={ (item) => item.name }
   disableDrag={ true }
+  onChange={setItems}
 >
   { ({ name }, listeners, { isOver }) => (
     <HStack>
@@ -65,6 +69,7 @@ import { SortableListProps } from './types'
   ) }
 </SortableList>
 </Stack>
+  )}
  * ?)
 <br />
 If disableDrag=false, then when the user double clicks it will trigger
@@ -75,7 +80,7 @@ the default behaviour of the rendered component instead of the dragging,
  */
 export function SortableList<T> ({
   children,
-  items: sortableItems,
+  items,
   collisionDetection,
   createKey = identity as (t: T) => UniqueIdentifier,
   strategy,
@@ -86,7 +91,6 @@ export function SortableList<T> ({
   dblClickThreshold = 300,
   disableDrag = false,
 }: SortableListProps<T>) {
-  const [ items, setItems ] = useState(sortableItems)
   const [ activeItem, setActiveItem ] = useState<UniqueIdentifier | null>(null)
 
   const identifierItems = useMemo(() => map(createKey, items), [ items ])
@@ -108,15 +112,12 @@ export function SortableList<T> ({
   const handleDragEnd = (event: DragOverEvent) => {
     const { active, over } = event
     if (active && over && active.id !== over.id) {
-      setItems((prev: T[]) => {
-        const prevIds = map(createKey, prev)
-        const oldIndex = indexOf(active.id, prevIds)
-        const newIndex = indexOf(over.id, prevIds)
-        onMovedItem({ item: prev[oldIndex], oldIndex, newIndex })
-        const newItems = arrayMove(prev, oldIndex, newIndex)
-        onChange(newItems)
-        return newItems
-      })
+      const prevIds = map(createKey, items)
+      const oldIndex = indexOf(active.id, prevIds)
+      const newIndex = indexOf(over.id, prevIds)
+      onMovedItem({ item: items[oldIndex], oldIndex, newIndex })
+      const newItems = arrayMove(items, oldIndex, newIndex)
+      onChange(newItems)
     }
   }
 
