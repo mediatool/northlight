@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.8](https://github.com/mediatool/northlight/compare/@northlight/docs@1.1.7...@northlight/docs@1.1.8) (2023-07-04)
+
+
+### Bug Fixes
+
+* configure nx to transpile before dev ([9ed9d7f](https://github.com/mediatool/northlight/commit/9ed9d7f523544af8c7692eb899f6cfc66ec9c72e))
+
+
+
+
+
 ## [1.1.7](https://github.com/mediatool/northlight/compare/@northlight/docs@1.1.6...@northlight/docs@1.1.7) (2023-06-30)
 
 **Note:** Version bump only for package @northlight/docs

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.9](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.8...@northlight/ui@1.5.9) (2023-07-04)
+
+
+### Bug Fixes
+
+* **framework:** fix infinite rerender in sorable list ([bed26f1](https://github.com/mediatool/northlight/commit/bed26f1ff739cfd709b8e1118cda21c7d2990ba3))
+
+
+
+
+
 ## [1.5.8](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.7...@northlight/ui@1.5.8) (2023-06-30)
 
 **Note:** Version bump only for package @northlight/ui
