@@ -17,4 +17,5 @@ export type SwitchFieldProps =
     validate?: RegisterOptions
     isRequired?: boolean
     direction?: StackDirection
+    labelPosition?: 'left' | 'right'
   }
