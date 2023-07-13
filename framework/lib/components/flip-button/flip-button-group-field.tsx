@@ -29,6 +29,7 @@ export const FlipButtonGroupField = ({
   children,
   direction,
   isRequired,
+  iconPlacement = 'left',
   onChange: onChangeCallback = identity,
   validate,
   ...rest
@@ -46,6 +47,7 @@ export const FlipButtonGroupField = ({
         onChange={ (e) => { onChange(e); onChangeCallback(e) } }
         direction={ direction }
         value={ value }
+        iconPlacement={ iconPlacement }
         { ...rest }
       >
         { children }
