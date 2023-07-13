@@ -4,7 +4,7 @@ import { useCheckboxGroupItem } from '@react-aria/checkbox'
 import { SlideFade, useMultiStyleConfig } from '@chakra-ui/react'
 import { useRadio } from '@react-aria/radio'
 import { useFocusRing } from '@react-aria/focus'
-import { merge, omit } from 'ramda'
+import { mergeAll, omit } from 'ramda'
 import { CheckboxGroupState } from '@react-stately/checkbox'
 import { RadioGroupState } from '@react-stately/radio'
 import { mergeProps } from '@react-aria/utils'
@@ -108,6 +108,7 @@ export const FlipButton = (props: FlipButtonProps) => {
     isDisabled = false,
     icon,
     value,
+    iconPlacement = 'left',
     ...rest
   } = props
   const state = useContext(FlipButtonContext)
@@ -163,19 +164,19 @@ export const FlipButton = (props: FlipButtonProps) => {
     : (
       <HStack
         spacing={ isSelected || icon ? 2 : 0 }
-        sx={ merge(button, isFocused ? focusStyles : {}) }
+        sx={ mergeAll([ button, isFocused ? focusStyles : {}, { flexDirection: iconPlacement === 'left' ? 'row' : 'row-reverse' } ]) }
         aria-checked={ isSelected }
         aria-disabled={ isDisabled }
         as="label"
       >
         <input { ...flipButtonProps } />
-        { icon
+        { icon && iconPlacement !== 'none'
           ? (
             <Icon as={ icon || CheckSolid } sx={ buttonIcon } />
-          ) : isSelected && (
-          <SlideFade in={ isSelected }>
-            <Icon as={ icon || CheckSolid } sx={ buttonIcon } />
-          </SlideFade>
+          ) : isSelected && iconPlacement !== 'none' && (
+            <SlideFade in={ isSelected }>
+              <Icon as={ icon || CheckSolid } sx={ buttonIcon } />
+            </SlideFade>
           ) }
         <Text textAlign="center">{ children }</Text>
       </HStack>

@@ -74,6 +74,7 @@ export interface FlipButtonProps {
   icon?: ComponentType<any>
   value: string
   label?: string
+  iconPlacement?: 'left' | 'right' | 'none'
   children?: ((props: CustomFlipButtonProps) => JSX.Element) | string
 }
 
@@ -84,6 +85,7 @@ export interface FlipButtonGroupProps
   children?: React.ReactNode[] | React.ReactNode
   name?: string
   value?: string | string[]
+  iconPlacement?: 'left' | 'right' | 'none'
   /** This enables passing styles directly to the div closes to the flip buttons */
   sx?: CSSObject
 }
@@ -94,4 +96,5 @@ export interface FlipButtonGroupFieldProps extends FlipButtonGroupProps {
   isRequired?: boolean
   validate?: RegisterOptions
   value?: string
+  iconPlacement?: 'left' | 'right' | 'none'
 }
