@@ -24,6 +24,17 @@ import { getComponents } from '../search-bar/get-components'
  * <Select
  *   options={[{ label: 'Option 1', value: '1' }, { label: 'Option 2', value: '2' }]}
  *   onChange={(value, action) => console.log('Selected:', value)}
+ *   isClearable={ true }
+ * />
+ * ?)
+ *
+ * @example (Example)
+ * ## Clearable Select
+ * (?
+ * <Select
+ *   options={[{ label: 'Option 1', value: '1' }, { label: 'Option 2', value: '2' }]}
+ *   onChange={(value, action) => console.log('Selected:', value)}
+ *   isClearable={ true }
  * />
  * ?)
  *
