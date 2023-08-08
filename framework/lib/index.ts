@@ -1,4 +1,6 @@
+export { useInterval } from './hooks/use-interval'
 export * from './components'
+export { useInterval as dndUseInterval } from './components'
 export * from './hooks'
 export * from './theme'
 export * from './types'
