@@ -1,5 +1,5 @@
 import React from 'react'
-import { Code, DateRangePickerField, Divider, Form, HStack, P, Stack } from '@northlight/ui'
+import { Code, DateRangePickerField, Divider, Form, HStack, P, Stack, Text } from '@northlight/ui'
 import { Page } from '../../components'
 
 const DateRangePickerPage = () => (
@@ -30,7 +30,7 @@ const DateRangePickerPage = () => (
             <Divider />
             <P>
               You can pass on custom formatting to date-picker via{ ' ' }
-              <b>dateFormat</b>
+              <Text as="b">dateFormat</Text>
             </P>
             <DateRangePickerField
               name="formattedDate"
@@ -70,14 +70,14 @@ const DateRangePickerPage = () => (
             </HStack>
             <P>
               You can adjust the custom company fiscal year by setting the { ' ' }
-              <b>fiscalStartMonth</b> to the number of the month, counting
-              after January,
-              ex fiscalStartMonth=2 starts the year at March
+              <Text as="b">fiscalStartMonth</Text> and <Text as="b">fiscalStartDay</Text> to the number of the month and the day counting after January,<br />
+              ex: <Code>fiscalStartMonth=2</Code> starts the year at March
             </P>
             <DateRangePickerField
               name="fiscal-date"
               label="Pick a date"
-              fiscalStartMonth={ 4 }
+              fiscalStartMonth={ 2 }
+              fiscalStartDay={ 18 }
             />
             <P>
               Notice that QN changed to FQN and that two options, "this fiscal
@@ -89,7 +89,7 @@ const DateRangePickerPage = () => (
               week day labels, can be either monday or sunday
             </P>
             <P>
-              <b>isClearable</b>
+              <Text as="b">isClearable</Text>
               - A prop that when true shows a cross button
               to the right of the date field
               that resets the date range. It also has a clear button on calendar UI.

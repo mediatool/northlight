@@ -53,7 +53,7 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
     ref
   )
 
-  const { fiscalStartMonth, handleClose, resetDate, isClearable = true } = props
+  const { fiscalStartMonth, fiscalStartDay, handleClose, resetDate, isClearable = true } = props
 
   return (
     <Box { ...calendarProps } ref={ ref } __css={ rangeCalendarContainer }>
@@ -64,6 +64,7 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
             updateVisibleRange={ () => setUpdateRange(true) }
             locale={ locale }
             fiscalStartMonth={ fiscalStartMonth }
+            fiscalStartDay={ fiscalStartDay }
           />
           <Stack>
             <HStack spacing={ 2 } alignSelf="center">

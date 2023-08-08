@@ -41,6 +41,7 @@ export interface DateRangePickerProps
   minValue?: string | undefined
   maxValue?: string | undefined
   fiscalStartMonth?: number
+  fiscalStartDay?: number
   mode?: DatePickerMode
 }
 
@@ -57,6 +58,7 @@ export interface DatePickerFieldProps
   onChange?: (date: DateValue) => void
   isClearable?: boolean
   fiscalStartMonth?: number
+  fiscalStartDay?: number
 }
 
 export interface DateRangePickerFieldProps extends Omit<DatePickerFieldProps, 'onChange'> {

@@ -5,6 +5,7 @@ export interface RangeCalendarProps extends AriaRangeCalendarProps<DateValue> {
   resetDate: () => void
   handleClose: () => void
   fiscalStartMonth: number
+  fiscalStartDay?: number
   isClearable: boolean
 }
 
