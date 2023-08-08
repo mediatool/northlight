@@ -54,17 +54,19 @@ const parseValue = (value: any) => {
  * ?)
  *
  * @example (Example)
- * ### Another example
+ * ## Sophisticated example
+ * The `DateRangePickerField` can have **fiscalStartMonth** and **fiscalStartDay** as a `number`
  * (?
  * <Form initialValues={{date: null}}>
   * <DateRangePickerField
   * name="date"
-  * mode="simple"
+  * mode="advanced"
   * variant="filled"
-  * fiscalStarMonth={3}
+  * fiscalStartMonth={3}
+  * fiscalStartDay={5}
   * dateFormat="mm|dd-yyyy"
   * minValue="2023-01-01"
-  * maxValue="2024-01-01"
+  * maxValue="2028-01-01"
   * />
  * </Form>
  * ?)
@@ -77,6 +79,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     isInvalid = false,
     dateFormat,
     fiscalStartMonth,
+    fiscalStartDay,
     mode = 'advanced',
     variant = 'outline',
     onChange: onChangeCallback = identity,
@@ -182,6 +185,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                 resetDate={ resetDate }
                 handleClose={ handleClose }
                 fiscalStartMonth={ fiscalStartMonth || 0 }
+                fiscalStartDay={ fiscalStartDay || 0 }
                 isClearable={ isClearable }
               />
             ) }
@@ -192,6 +196,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
               resetDate={ resetDate }
               handleClose={ handleClose }
               fiscalStartMonth={ fiscalStartMonth || 0 }
+              fiscalStartDay={ fiscalStartDay || 0 }
               isClearable={ isClearable }
             />
             ) }

@@ -15,12 +15,13 @@ const seperator = `1px solid ${palette.gray['100']}`
 export const QuickSelect = ({
   state,
   fiscalStartMonth = 0,
+  fiscalStartDay = 0,
   updateVisibleRange,
   locale = '',
   height = 'xs',
 }: QuickSelectProps) => {
   const { quickDates, fiscalQuarters } = useMemo(
-    () => getQuickSelectOptions(state, locale, fiscalStartMonth),
+    () => getQuickSelectOptions(state, locale, fiscalStartMonth, fiscalStartDay),
     []
   )
 

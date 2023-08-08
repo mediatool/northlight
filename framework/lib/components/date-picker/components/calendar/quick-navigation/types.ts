@@ -5,6 +5,7 @@ import { ComponentType } from 'react'
 export interface QuickSelectProps {
   state: RangeCalendarState
   fiscalStartMonth: number
+  fiscalStartDay?: number
   updateVisibleRange: () => void
   locale: string
   height?: string

@@ -1,4 +1,5 @@
 import {
+  CalendarDate,
   endOfMonth,
   endOfWeek,
   endOfYear,
@@ -12,9 +13,22 @@ import { RangeCalendarState } from '@react-stately/calendar'
 export const getQuickSelectOptions = (
   state: RangeCalendarState,
   locale: string,
-  fiscalStartMonth: number
+  fiscalStartMonth: number,
+  fiscalStartDay: number
 ) => {
   const thisDay = today(state.timeZone)
+
+  const startOfMonthWithDays = (date: CalendarDate,
+    { months, days }: { months: number, days: number }) => {
+    const start = date.add({ months }).set({ day: days })
+    return start
+  }
+
+  const endOfMonthWithDays = (date: CalendarDate,
+    { months, days }:{ months: number, days: number }) => {
+    const end = date.add({ months }).set({ day: days }).subtract({ days: 1 })
+    return end
+  }
 
   const thisWeek = {
     value: {
@@ -98,11 +112,11 @@ export const getQuickSelectOptions = (
 
   const thisFiscalYear = {
     value: {
-      start: startOfMonth(
-        startOfYear(thisDay).add({ months: fiscalStartMonth })
+      start: startOfMonthWithDays(
+        startOfYear(thisDay), { months: fiscalStartMonth, days: fiscalStartDay }
       ),
-      end: endOfMonth(
-        startOfYear(thisDay).add({ months: fiscalStartMonth + 11 })
+      end: endOfMonthWithDays(
+        startOfYear(thisDay), { months: fiscalStartMonth + 11, days: fiscalStartDay }
       ),
     },
     label: 'This Fiscal Year',
@@ -110,15 +124,13 @@ export const getQuickSelectOptions = (
 
   const lastFiscalYear = {
     value: {
-      start: startOfMonth(
-        startOfYear(thisDay)
-          .add({ months: fiscalStartMonth })
-          .subtract({ years: 1 })
+      start: startOfMonthWithDays(
+        startOfYear(thisDay).subtract({ years: 1 }),
+        { months: fiscalStartMonth, days: fiscalStartDay - 1 }
       ),
-      end: endOfMonth(
-        startOfYear(thisDay)
-          .add({ months: fiscalStartMonth + 11 })
-          .subtract({ years: 1 })
+      end: endOfMonthWithDays(
+        startOfYear(thisDay).subtract({ years: 1 }),
+        { months: fiscalStartMonth + 11, days: fiscalStartDay }
       ),
     },
     label: 'Last Fiscal Year',
@@ -126,11 +138,11 @@ export const getQuickSelectOptions = (
 
   const F1 = {
     value: {
-      start: startOfMonth(
-        startOfYear(thisDay).add({ months: fiscalStartMonth })
+      start: startOfMonthWithDays(
+        startOfYear(thisDay), { months: fiscalStartMonth, days: fiscalStartDay }
       ),
-      end: endOfMonth(
-        startOfYear(thisDay).add({ months: fiscalStartMonth + 2 })
+      end: endOfMonthWithDays(
+        startOfYear(thisDay), { months: fiscalStartMonth + 2, days: fiscalStartDay }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q1' : 'FQ1',
@@ -138,11 +150,11 @@ export const getQuickSelectOptions = (
 
   const F2 = {
     value: {
-      start: startOfMonth(
-        startOfYear(thisDay).add({ months: fiscalStartMonth + 3 })
+      start: startOfMonthWithDays(
+        startOfYear(thisDay), { months: fiscalStartMonth + 3, days: fiscalStartDay }
       ),
-      end: endOfMonth(
-        startOfYear(thisDay).add({ months: fiscalStartMonth + 5 })
+      end: endOfMonthWithDays(
+        startOfYear(thisDay), { months: fiscalStartMonth + 5, days: fiscalStartDay }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q2' : 'FQ2',
@@ -150,11 +162,11 @@ export const getQuickSelectOptions = (
 
   const F3 = {
     value: {
-      start: startOfMonth(
-        startOfYear(thisDay).add({ months: fiscalStartMonth + 6 })
+      start: startOfMonthWithDays(
+        startOfYear(thisDay), { months: fiscalStartMonth + 6, days: fiscalStartDay }
       ),
-      end: endOfMonth(
-        startOfYear(thisDay).add({ months: fiscalStartMonth + 8 })
+      end: endOfMonthWithDays(
+        startOfYear(thisDay), { months: fiscalStartMonth + 8, days: fiscalStartDay }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q3' : 'FQ3',
@@ -162,11 +174,11 @@ export const getQuickSelectOptions = (
 
   const F4 = {
     value: {
-      start: startOfMonth(
-        startOfYear(thisDay).add({ months: fiscalStartMonth + 9 })
+      start: startOfMonthWithDays(
+        startOfYear(thisDay), { months: fiscalStartMonth + 9, days: fiscalStartDay }
       ),
-      end: endOfMonth(
-        startOfYear(thisDay).add({ months: fiscalStartMonth + 11 })
+      end: endOfMonthWithDays(
+        startOfYear(thisDay), { months: fiscalStartMonth + 11, days: fiscalStartDay }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q4' : 'FQ4',
