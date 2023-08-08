@@ -14,9 +14,9 @@ export const useSelectCallbacks = <T extends BasicOption>({
 
   const handleChange = (val: MultiValue<T> | SingleValue<T>, event: ActionMeta<T>) => {
     onChange(val, event)
-    if (!isMulti && !isNil(value)) {
+    if (!isMulti && !isNil(val)) {
       onAdd((val as T).value)
-    } else if ((val as T[]).length > (items.current as T[]).length) {
+    } else if (!isNil(val) && ((val as T[]).length > (items.current as T[]).length)) {
       onAdd(last(val as T[])?.value)
     } else {
       const removedItems = map(
