@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.0.0...@northlight/ui@2.1.0) (2023-08-09)
+
+
+### Features
+
+* **framework:** add hooks for debounce, interval and loading message ([29e39fd](https://github.com/mediatool/northlight/commit/29e39fdbd737b3b0d56a8b3f6c5695d5e7c8b4fb))
+
+
+
+
+
 # [2.0.0](https://github.com/mediatool/northlight/compare/@northlight/ui@1.5.9...@northlight/ui@2.0.0) (2023-07-04)
 
 
