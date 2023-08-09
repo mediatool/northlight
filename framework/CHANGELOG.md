@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.1.0...@northlight/ui@2.1.1) (2023-08-09)
+
+
+### Bug Fixes
+
+* **framework:** export useInterval from dnd/utilities ([e3cf78e](https://github.com/mediatool/northlight/commit/e3cf78ebb098914893497a82fcc2dbc7031edcaf))
+
+
+
+
+
 # [2.1.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.0.0...@northlight/ui@2.1.0) (2023-08-09)
 
 
