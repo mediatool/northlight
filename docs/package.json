@@ -10,6 +10,7 @@
     "dev": "yarn start",
     "build": "vite build",
     "transpile": "node src/reference/utils/generate-doc.mjs",
+    "transpile:watch": "run-when-changed --watch \"../framework/lib/**/*.tsx\" --exec \"node src/reference/utils/rebuild-page.mjs %s \"",
     "lint": "yarn tsc --noEmit && eslint --ext ts,tsx src"
   },
   "devDependencies": {
@@ -19,7 +20,8 @@
     "@types/prettier": "^2.7.2",
     "@types/react": "^18.0.37",
     "@vitejs/plugin-react": "^4.1.0",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "run-when-changed": "^2.1.0"
   },
   "dependencies": {
     "@chakra-ui/clickable": "^2.1.0",
