@@ -3,6 +3,7 @@ import {
   ControllerRenderProps,
   FieldError,
   FieldErrorsImpl,
+  FieldPath,
   FieldValues,
   Merge,
   UseFormReturn as RHFUseFormReturn,
@@ -23,8 +24,11 @@ type CustomSubmitHandler<TFieldValues extends FieldValues> = (
 
 export type SetValueOptionsType = Maybe<SetValueConfig>
 
-export interface FieldProps {
-  name: string
+export interface FieldProps<
+  FormBody extends FieldValues = FieldValues,
+  FieldName extends FieldPath<FormBody> = FieldPath<FormBody>
+> {
+  name: FieldName
   /** Label displayed as text beside or under/over
    * (depending on direction prop) over children. Recommended for accesibility */
   label?: string
@@ -42,9 +46,9 @@ export interface FieldProps {
    * */
   validate?: RegisterOptions
   children: (
-    field: ControllerRenderProps<FieldValues, string>,
-    methods: UseFormReturn<FieldValues>
-  ) => JSX.Element | JSX.Element
+    field: ControllerRenderProps<FormBody, FieldName>,
+    methods: UseFormReturn<FormBody>
+  ) => JSX.Element
 }
 
 export interface FormProps<FormValues extends FieldValues> {

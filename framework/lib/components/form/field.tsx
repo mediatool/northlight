@@ -1,5 +1,5 @@
 import React from 'react'
-import { Controller } from 'react-hook-form'
+import { Controller, FieldPath, FieldValues } from 'react-hook-form'
 import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { Stack } from '../stack'
 import { FieldProps } from './types'
@@ -62,7 +62,10 @@ import { getFieldError } from '../../utils'
  * ?)
  *
  */
-export function Field ({
+export function Field<
+  FormBody extends FieldValues = FieldValues,
+  FieldName extends FieldPath<FormBody> = FieldPath<FormBody>
+> ({
   name,
   label,
   children,
@@ -70,13 +73,13 @@ export function Field ({
   isRequired = false,
   noLabelConnection = false,
   validate,
-}: FieldProps) {
-  const methods = useFormContext()
+}: FieldProps<FormBody, FieldName>) {
+  const methods = useFormContext<FormBody>()
   const {
     control,
     formState: { errors },
   } = methods
-  const fieldError = getFieldError(name, errors)
+  const fieldError = getFieldError<FormBody>(name, errors)
 
   return (
     <FormControl isInvalid={ !!fieldError } isRequired={ isRequired }>
