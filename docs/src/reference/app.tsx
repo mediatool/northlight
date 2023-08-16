@@ -52,8 +52,8 @@ export default function ContributePage () {
             from it, also export from components/index.ts
           </P>
           <P>Write documentation using JsDoc Comments</P>
-          <P>Run yarn build-docs </P>
-          <P>Run yarn nx demo to view your component and double check</P>
+          <P>Run yarn transpile </P>
+          <P>Run yarn dev to view your component and double check</P>
           <P>Push!</P>
         </StepStack>
       </Stack>
@@ -61,8 +61,8 @@ export default function ContributePage () {
         <HStack alignItems="flex-start">
           <Icon as={ BellSolid } color="icon.toast.info" boxSize={ 6 } />
           <Stack spacing={ 0 } alignItems="flex-start">
-            <Label size="md">yarn watch-docs</Label>
-            <P>Runt this command to rebuild reference docs pages on save</P>
+            <Label size="md">yarn transpile:docs</Label>
+            <P>Run this command to rebuild reference docs pages on save</P>
           </Stack>
         </HStack>
       </Alert>
