@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.1.1...@northlight/ui@2.2.0) (2023-08-16)
+
+
+### Bug Fixes
+
+* **framework:** value passed to onChange of use-select-callback ([0ce1add](https://github.com/mediatool/northlight/commit/0ce1add8de378f116906acae7792e461279ca76f))
+
+
+### Features
+
+* **framework:** add show/hide components ([871537c](https://github.com/mediatool/northlight/commit/871537c1a82dad11f336569fc04ac6972d7d1acf))
+
+
+
+
+
 ## [2.1.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.1.0...@northlight/ui@2.1.1) (2023-08-09)
 
 
