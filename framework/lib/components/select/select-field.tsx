@@ -65,8 +65,8 @@ export function SelectField<T extends Option> ({
             variant="danger"
             size="sm"
             fontSize="xs"
-            hidden={ value === '' || !isClearable }
-            onClick={ onChange }
+            hidden={ value === undefined || !isClearable }
+            onClick={ () => { onChange(undefined) } }
             icon={ <Icon as={ XCloseSolid } /> }
           />
         </HStack>
