@@ -39,13 +39,13 @@ export interface SelectProps<T>
   customOption?: ((option: T) => JSX.Element) | null
 }
 
-export type SelectFieldProps<T> = Omit<SelectProps<T>, 'onChange'> &
-InputFieldProps & {
-  onChange?: (val: T | T[], event: ActionMeta<T>) => void
+export type SelectFieldProps<T, K extends boolean = false> = Omit<SelectProps<T>, 'onChange' | 'isMulti'> &
+Omit<InputFieldProps, 'isMulti'> & {
+  onChange?: (val: K extends true ? T[] : T, event: ActionMeta<T>) => void
   direction?: StackDirection
   name: string
   label: string
   validate?: RegisterOptions
   isRequired?: boolean
-  isMulti?: boolean
+  isMulti?: K
 }
