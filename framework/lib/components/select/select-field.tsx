@@ -10,7 +10,7 @@ import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
 import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 
-export function SelectField<T extends Option> ({
+export function SelectField<T extends Option, K extends boolean = false> ({
   name,
   label,
   options,
@@ -23,7 +23,7 @@ export function SelectField<T extends Option> ({
   inputLeftElement,
   inputRightElement,
   ...rest
-}: SelectFieldProps<T>) {
+}: SelectFieldProps<T, K>) {
   return (
     <Field
       name={ name }
@@ -49,7 +49,7 @@ export function SelectField<T extends Option> ({
                     ? values.map((item: any) => item.value)
                     : values.value
                 )
-                onChangeCallback(values as T | T[], event)
+                onChangeCallback(values as K extends true ? T[] : T, event)
               } }
               value={
               value
