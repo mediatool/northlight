@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.2.1...@northlight/ui@2.3.0) (2023-08-18)
+
+
+### Features
+
+* **framework:** add usescrolltobottom hook ([d0e8769](https://github.com/mediatool/northlight/commit/d0e87699142e4019604040ee5ce7a0316d4136bf))
+
+
+
+
+
 ## [2.2.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.2.0...@northlight/ui@2.2.1) (2023-08-17)
 
 
