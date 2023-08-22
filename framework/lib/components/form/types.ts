@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import {
+  Control,
   ControllerRenderProps,
   FieldError,
   FieldErrorsImpl,
@@ -25,8 +26,8 @@ type CustomSubmitHandler<TFieldValues extends FieldValues> = (
 export type SetValueOptionsType = Maybe<SetValueConfig>
 
 export interface FieldProps<
-  FormBody extends FieldValues = FieldValues,
-  FieldName extends FieldPath<FormBody> = FieldPath<FormBody>
+  FormValues extends FieldValues = FieldValues,
+  FieldName extends FieldPath<FormValues> = FieldPath<FormValues>
 > {
   name: FieldName
   /** Label displayed as text beside or under/over
@@ -45,9 +46,14 @@ export interface FieldProps<
    * for more information view https://react-hook-form.com/api/useform/register/ docs. (Whatever you put into the validate object will be put as the second options arguments on the react hook form register method)
    * */
   validate?: RegisterOptions
+  /**
+  * The value is taken from the formContext by default,
+  * but may be manually specified to ensure field type inference.
+  * */
+  control?: Control<FormValues>
   children: (
-    field: ControllerRenderProps<FormBody, FieldName>,
-    methods: UseFormReturn<FormBody>
+    field: ControllerRenderProps<FormValues, FieldName>,
+    methods: UseFormReturn<FormValues>
   ) => JSX.Element
 }
 
