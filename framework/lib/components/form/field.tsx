@@ -61,10 +61,45 @@ import { getFieldError } from '../../utils'
  * }
  * ?)
  *
+ * @example (Example)
+ * ## Type-safety
+ * There are multiple ways to provide types for
+ * the field callback values. To ensure that each
+ * component within the field receives the correct
+ * value, it's essential to make the field aware
+ * of the form state values. When the Field component
+ * does not receive any types, the "value" callback
+ * argument will have the type of "any".
+ * <br /><br />
+ * ### Passing down the control prop (Recommended)
+ * (?
+ * <Form initialValues={{username: 'Alex'}}>
+ * {
+ * ({ control }) => {
+ * <Box p="2">
+ * <Field name="username" label="Input name" control={ control }>
+ * {({value, onChange}) => ( // "value" has type of "string"
+ * <Input value={value} onChange={onChange} />
+ * )}
+ * </Field>
+ * </Box>
+ * }
+ * }
+ * </Form>
+ * ?)
+ * <br /><br />
+ * ### Specifying generic arguments
+ * You can also specify generic arguments on the Field
+ * component to ensure that "value" has a valid type.
+ * The passed generic type combined with the valid
+ * "name" property ensures that "value" has the expected
+ * type received from the generic type:
+ * `<Field<MyFormBody> name="username">...</Field>`
  */
+
 export function Field<
-  FormBody extends FieldValues = FieldValues,
-  FieldName extends FieldPath<FormBody> = FieldPath<FormBody>
+  FormValues extends FieldValues = FieldValues,
+  FieldName extends FieldPath<FormValues> = FieldPath<FormValues>
 > ({
   name,
   label,
@@ -73,13 +108,13 @@ export function Field<
   isRequired = false,
   noLabelConnection = false,
   validate,
-}: FieldProps<FormBody, FieldName>) {
-  const methods = useFormContext<FormBody>()
-  const {
-    control,
-    formState: { errors },
-  } = methods
-  const fieldError = getFieldError<FormBody>(name, errors)
+  control: passedControl,
+}: FieldProps<FormValues, FieldName>) {
+  const methods = useFormContext<FormValues>()
+  const { formState: { errors } } = methods
+  const control = passedControl ?? methods.control
+
+  const fieldError = getFieldError<FormValues>(name, errors)
 
   return (
     <FormControl isInvalid={ !!fieldError } isRequired={ isRequired }>
