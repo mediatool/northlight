@@ -117,6 +117,7 @@ export const Form = forwardRef(<FormValues extends FieldValues>({
   methods = undefined,
   enableReinitialize = false,
   shouldTrim = true,
+  innerFormStyle = {},
   ...rest
 }: FormProps<FormValues>, ref: React.Ref<UseFormReturn<FormValues>>) => {
   const customResolver: Resolver<FormValues, any> = (
@@ -167,7 +168,7 @@ export const Form = forwardRef(<FormValues extends FieldValues>({
 
   return (
     <FormProvider { ...newMethods } { ...rest }>
-      <form style={ { width: '100%' } } onSubmit={ handleSubmit }>
+      <form style={ { width: '100%', ...innerFormStyle } } onSubmit={ handleSubmit }>
         { typeof children === 'function' ? children(newMethods) : children }
       </form>
     </FormProvider>

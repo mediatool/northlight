@@ -87,6 +87,7 @@ export interface FormProps<FormValues extends FieldValues> {
   children:
   | ((methods: UseFormReturn<FormValues>) => ReactNode)
   | ReactNode
+  innerFormStyle?: any
 }
 
 export type FieldErrorType<T extends FieldValues> =
