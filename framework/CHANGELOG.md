@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.2.1...@northlight/ui@2.4.0) (2023-08-23)
+
+
+### Bug Fixes
+
+* **framework:** remove clearable from first select example ([b8c5068](https://github.com/mediatool/northlight/commit/b8c5068916082a1280bc0d6c4823b58b38435d60))
+
+
+### Features
+
+* **framework:** add usescrolltobottom hook ([d0e8769](https://github.com/mediatool/northlight/commit/d0e87699142e4019604040ee5ce7a0316d4136bf))
+
+
+
+
+
 # [2.3.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.2.1...@northlight/ui@2.3.0) (2023-08-18)
 
 
