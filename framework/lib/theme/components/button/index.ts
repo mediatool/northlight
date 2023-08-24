@@ -84,6 +84,22 @@ export const Button: ComponentSingleStyleConfig = {
         bgColor: color.background.button['brand-active'],
       },
     }),
+    brandSubdued: ({ theme: { colors: color } }) => ({
+      color: color.text.button.link,
+      bgColor: color.background.button.ghost,
+      _hover: {
+        bg: color.background.button.brand,
+        color: color.text.inverted,
+        _disabled: {
+          bgColor: color.background.button.ghost,
+          color: color.text.button.link,
+        },
+      },
+      _active: {
+        bg: color.background.button['brand-hover'],
+        color: color.text.inverted,
+      },
+    }),
     link: ({ theme: { colors: color } }) => ({
       textDecoration: 'underline',
       color: color.text.button.link,
