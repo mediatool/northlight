@@ -66,7 +66,8 @@
     "react-router-dom": "5.2.0",
     "react-virtualized": "^9.22.3",
     "react-virtualized-auto-sizer": "^1.0.7",
-    "react-window": "^1.8.8"
+    "react-window": "^1.8.8",
+    "sinon": "^15.2.0"
   },
   "devDependencies": {
     "@mediatool/frontend-tools": "^1.2.2",
