@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.4.1...@northlight/ui@2.5.0) (2023-08-25)
+
+
+### Features
+
+* **framework:** re-export link box alongside overlay ([19f8834](https://github.com/mediatool/northlight/commit/19f88341293bc508d83ecad46fde215881ab2aa6))
+
+
+
+
+
 ## [2.4.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.4.0...@northlight/ui@2.4.1) (2023-08-23)
 
 **Note:** Version bump only for package @northlight/ui
