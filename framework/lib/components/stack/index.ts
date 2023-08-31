@@ -4,3 +4,4 @@ export {
   VStack,
   StackDivider,
 } from '@chakra-ui/react'
+export type { StackProps } from '@chakra-ui/react'
