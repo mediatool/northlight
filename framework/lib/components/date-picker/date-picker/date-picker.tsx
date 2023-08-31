@@ -108,7 +108,7 @@ export const DatePicker = (props: DatePickerProps) => {
                 />
               </Box>
             </StyledField>
-            <InputRightElement>
+            <InputRightElement zIndex={ 0 }>
               <Trigger
                 { ...buttonProps }
                 isDisabled={ isDisabled }
