@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.5.0...@northlight/ui@2.7.0) (2023-09-01)
+
+
+### Bug Fixes
+
+* **framework:** change selectfieldtype ([34b7e8e](https://github.com/mediatool/northlight/commit/34b7e8e1d7873bc88088d10b3b3d5878513bb3a9))
+
+
+### Features
+
+* **framework:** add outside click hook ([8bc7437](https://github.com/mediatool/northlight/commit/8bc7437fea735015d27a00ec3a56173759d3159a))
+
+
+
+
+
 # [2.6.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.5.0...@northlight/ui@2.6.0) (2023-08-29)
 
 
