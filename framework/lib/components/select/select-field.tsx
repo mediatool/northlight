@@ -1,5 +1,4 @@
 import React from 'react'
-import { FieldValues } from 'react-hook-form'
 import { XCloseSolid } from '@northlight/icons'
 import { identity } from 'ramda'
 import { Option, SelectFieldProps } from './types'
@@ -43,11 +42,11 @@ export function SelectField<T extends Option, K extends boolean = false> ({
               name={ name }
               options={ options }
               isMulti={ isMulti }
-              onChange={ (values: FieldValues, event) => {
+              onChange={ (values, event) => {
                 onChange(
                   isMulti
-                    ? values.map((item: any) => item.value)
-                    : values.value
+                    ? (values as T[]).map((item: any) => item.value)
+                    : (values as T).value
                 )
                 onChangeCallback(values as K extends true ? T[] : T, event)
               } }

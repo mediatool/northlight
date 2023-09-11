@@ -3,6 +3,8 @@ import {
   Props as ChakraReactSelectProps,
   GroupBase,
   MenuListProps,
+  MultiValue,
+  SingleValue,
 } from 'chakra-react-select'
 import { StackDirection } from '@chakra-ui/react'
 import { ComponentType } from 'react'
@@ -23,8 +25,8 @@ export interface SelectProps<T>
   /** Whatever is currently selected by the select will be controlled by value prop */
   value?: Option | Option[]
   /** Take a look at the second argument, the event,
-   *  for info as to which specific elmeent was added */
-  onChange?: (val: any, event: ActionMeta<T>) => void
+   *  for info as to which specific element was added */
+  onChange?: (option: MultiValue<T> | SingleValue<T>, event: ActionMeta<T>) => void
   onAdd?: (val: unknown) => void
   onRemove?: (val: unknown) => void
   /** Used for accessibility */
