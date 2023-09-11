@@ -1,5 +1,5 @@
 import React from 'react'
-import { identity } from 'ramda'
+import { identity, isNil } from 'ramda'
 import { TextFieldProps } from './types'
 import { Input } from '../input'
 import { Field } from '../form'
@@ -31,7 +31,11 @@ export const TextField = ({
     name={ name }
     label={ label }
     isRequired={ isRequired }
-    validate={ validate }
+    validate={
+      isNil(validate) && isRequired
+        ? { validate: (value: string) => !!value.trim() }
+        : validate
+    }
     direction={ direction }
   >
     { ({ onChange, value }) => (
