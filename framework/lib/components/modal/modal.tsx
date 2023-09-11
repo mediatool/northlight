@@ -11,7 +11,7 @@ import { ModalProps } from './types'
  * @see {@link https://northlight.dev/reference/modal}
  *
  * */
-export const Modal = ({
+export const ModalBase = ({
   isCentered = true,
   children,
   ...rest
@@ -28,4 +28,14 @@ export const Modal = ({
       { children }
     </ModalContent>
   </ChakraModal>
+)
+
+export const Modal = ({
+  stayMountedOnClose = false,
+  isOpen,
+  ...rest
+}: ModalProps) => (
+  <>
+    { (stayMountedOnClose || isOpen) && <ModalBase isOpen={ isOpen } { ...rest } /> }
+  </>
 )
