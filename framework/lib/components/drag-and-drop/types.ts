@@ -1,6 +1,7 @@
 import { ComponentType } from 'react'
 import {
   CollisionDetection,
+  Modifiers,
   SensorDescriptor,
   SensorOptions,
   UniqueIdentifier,
@@ -63,6 +64,8 @@ export interface SortableListProps<T> {
   disableDrag?: boolean
   /** callback, passes the dragged item and it's old / new index after a drag, */
   onMovedItem?: ({ item, oldIndex, newIndex }: MovedItemType<T>) => void
+  /** Read: https://docs.dndkit.com/api-documentation/modifiers#restricting-motion-to-an-axis */
+  modifiers?: Modifiers
 }
 
 export interface MultiSortProps<itemKeys extends string | number | symbol> {

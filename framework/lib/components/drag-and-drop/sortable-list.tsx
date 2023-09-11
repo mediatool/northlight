@@ -90,6 +90,7 @@ export function SortableList<T> ({
   sensors,
   dblClickThreshold = 300,
   disableDrag = false,
+  modifiers,
 }: SortableListProps<T>) {
   const [ activeItem, setActiveItem ] = useState<UniqueIdentifier | null>(null)
 
@@ -127,6 +128,7 @@ export function SortableList<T> ({
       collisionDetection={ collisionDetection || rectIntersection }
       onDragStart={ handleDragStart }
       onDragEnd={ handleDragEnd }
+      modifiers={ modifiers }
     >
       <Sortable
         items={ identifierItems }
@@ -142,9 +144,11 @@ export function SortableList<T> ({
               dblClickThreshold={ dblClickThreshold }
               disableDrag={ disableDrag }
             >
-              { (listeners, props) => (
-                typeof children === 'function' ? children(item, listeners, props) : children
-              ) }
+              { (listeners, props) =>
+                (typeof children === 'function'
+                  ? children(item, listeners, props)
+                  : children)
+              }
             </SortableItem>
           )
         }) }
