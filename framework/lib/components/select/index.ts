@@ -8,3 +8,4 @@ export {
 export * from './select'
 export * from './select-field'
 export * from './types'
+export * from './get-matching-value'

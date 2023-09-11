@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Ref, forwardRef, useMemo, useRef } from 'react'
+import React, { Ref, forwardRef, useMemo, useRef } from 'react'
 import {
   Select as ChakraReactSelect,
   GroupBase,
@@ -11,6 +11,7 @@ import { Option, SelectProps } from './types'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 import { useSelectCallbacks } from '../../hooks'
 import { getComponents } from '../search-bar/get-components'
+import { getMatchingValue } from './get-matching-value'
 
 /**
  * Select component that provides a customizable and accessible select input.
@@ -152,7 +153,6 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
 }: SelectProps<T, K>,
   ref: Ref<SelectInstance<T, K, GroupBase<T>>>
 ) => {
-  const CustomSelect = ChakraReactSelect as FunctionComponent<SelectProps<T, K>>
   const handleChange = useSelectCallbacks<T, K>({
     onChange,
     onAdd,
@@ -178,7 +178,7 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
 
   return (
     <Box w="full" data-testid={ testId }>
-      <CustomSelect
+      <ChakraReactSelect
         isMulti={ isMulti }
         options={ renderedOptions }
         useBasicStyles={ true }
@@ -190,7 +190,7 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
         chakraStyles={ customSelectStyles }
         isLoading={ isLoading }
         { ...(isLoading && { components: { MenuList: loadingList } }) }
-        value={ value }
+        value={ getMatchingValue(value, options) }
         customOption={ customOption }
         customTag={ customTag }
         icon={ icon }
