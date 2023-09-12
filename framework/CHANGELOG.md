@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.8.0...@northlight/ui@2.9.0) (2023-09-12)
+
+
+### Bug Fixes
+
+* **framework:** infer isMulti select onChange type ([74eaaf5](https://github.com/mediatool/northlight/commit/74eaaf584151382db4c8e322350e32b5c600fdd1))
+
+
+### Features
+
+* **framework:** add hook for returning users screen size ([3426465](https://github.com/mediatool/northlight/commit/3426465850d0dfb9c5bd9ae5b5c66c7beba90be2))
+
+
+
+
+
 # [2.8.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.7.1...@northlight/ui@2.8.0) (2023-09-12)
 
 
