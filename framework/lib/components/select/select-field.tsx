@@ -38,7 +38,7 @@ export function SelectField<T extends Option, K extends boolean = false> ({
             inputLeftElement={ inputLeftElement }
             inputRightElement={ inputRightElement }
           >
-            <Select<T>
+            <Select<T, K>
               name={ name }
               options={ options }
               isMulti={ isMulti }

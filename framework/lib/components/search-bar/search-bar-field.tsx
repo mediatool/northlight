@@ -10,7 +10,7 @@ import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
 import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 
-export const SearchBarField = <T extends SearchBarOptionType> ({
+export const SearchBarField = <T extends SearchBarOptionType, K extends boolean = false> ({
   name,
   label,
   direction = 'column',
@@ -22,7 +22,7 @@ export const SearchBarField = <T extends SearchBarOptionType> ({
   inputLeftElement,
   inputRightElement,
   ...rest
-}: SearchBarFieldProps<T>) => (
+}: SearchBarFieldProps<T, K>) => (
   <Field
     name={ name }
     label={ label }

@@ -19,7 +19,7 @@ export type CustomElementType<T extends SearchBarOptionType> = ((
   props: T
 ) => JSX.Element)
 | null
-export interface SearchBarProps<T extends SearchBarOptionType>
+export interface SearchBarProps<T extends SearchBarOptionType, K extends boolean = false>
   extends Omit<
   ChakraReactSelectProps<T, boolean, GroupBase<T>>,
   'onChange' | 'value'
@@ -35,7 +35,7 @@ export interface SearchBarProps<T extends SearchBarOptionType>
   closeMenuonSelect?: boolean
   defaultOptions?: T[]
   sx?: ChakraStylesConfig<any>
-  isMulti?: boolean
+  isMulti?: K
   customOption?: CustomElementType<T>
   customTag?: CustomElementType<T>
   loadOptions?: ((query: string) => Promise<T[]>) | null
@@ -43,7 +43,7 @@ export interface SearchBarProps<T extends SearchBarOptionType>
   icon?: ComponentType<any>
 }
 
-export interface SearchBarFieldProps<T extends SearchBarOptionType> extends Omit<SearchBarProps<T>, 'onChange'>, InputFieldProps {
+export interface SearchBarFieldProps<T extends SearchBarOptionType, K extends boolean = false> extends Omit<SearchBarProps<T, K>, 'onChange'>, InputFieldProps {
   onChange?: (val: T | T[], event: ActionMeta<T>) => void
   direction?: StackDirection
   name: string
