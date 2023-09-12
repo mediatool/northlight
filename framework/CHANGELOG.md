@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.7.1...@northlight/ui@2.8.0) (2023-09-12)
+
+
+### Bug Fixes
+
+* **framework:** add event to callback in useoutsiderectclick ([65f15e5](https://github.com/mediatool/northlight/commit/65f15e56b6bca424396921ba8d39263f2a329f8a))
+* **framework:** add leftIcon prop to select ([f565071](https://github.com/mediatool/northlight/commit/f56507159f392fac4eca52139760fd4f50dbe0da))
+* **framework:** change type of val in select onChange ([9b84b12](https://github.com/mediatool/northlight/commit/9b84b129fbaa8d790335f67aec481cad96f4abd5))
+* **framework:** do not allow blank space if isRequired true TextField ([ed16b6c](https://github.com/mediatool/northlight/commit/ed16b6ca51fcdbd66d6a49204c8526adc3a49cf6))
+* **framework:** made modal unmount on close ([218a1a7](https://github.com/mediatool/northlight/commit/218a1a7df5184337076bb8ef42ce931fa10af836))
+
+
+### Features
+
+* **framework:** added modifiers prop to sortable list ([9f90739](https://github.com/mediatool/northlight/commit/9f90739995cf00820f9ea1c8aaf165fa396621e0))
+
+
+
+
+
 ## [2.7.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.6.0...@northlight/ui@2.7.1) (2023-09-01)
 
 **Note:** Version bump only for package @northlight/ui
