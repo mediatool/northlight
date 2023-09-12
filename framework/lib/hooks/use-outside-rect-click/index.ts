@@ -4,7 +4,7 @@ import { MutableRefObject, useEffect, useRef } from 'react'
 const isBetween = (point: number, min: number, max: number) => (point >= min && point <= max)
 
 export const useOutsideRectClick =
-(ref: MutableRefObject<HTMLElement | null>, callback: () => void) => {
+(ref: MutableRefObject<HTMLElement | null>, callback: (event: MouseEvent | TouchEvent) => void) => {
   const stateRef = useRef({
     isPointerDown: false,
     ignoreEmulatedMouseEvents: false,
@@ -39,7 +39,7 @@ export const useOutsideRectClick =
       const isInBound = isBetween(clientX, left, right) && isBetween(clientY, top, bottom)
 
       if (isInBound) return
-      callback()
+      callback(event)
     }
 
     const onPointerDown: any = () => {
