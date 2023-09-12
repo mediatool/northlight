@@ -12,7 +12,7 @@ import {
   SetValueConfig,
   UseFormProps,
 } from 'react-hook-form'
-import { StackDirection } from '@chakra-ui/react'
+import { StackDirection, StackProps } from '@chakra-ui/react'
 
 export type UseFormReturn<T extends FieldValues> = RHFUseFormReturn<T>
 
@@ -28,7 +28,7 @@ export type SetValueOptionsType = Maybe<SetValueConfig>
 export interface FieldProps<
   FormValues extends FieldValues = FieldValues,
   FieldName extends FieldPath<FormValues> = FieldPath<FormValues>
-> {
+> extends Omit<StackProps, 'children'> {
   name: FieldName
   /** Label displayed as text beside or under/over
    * (depending on direction prop) over children. Recommended for accesibility */

@@ -109,6 +109,7 @@ export function Field<
   noLabelConnection = false,
   validate,
   control: passedControl,
+  ...rest
 }: FieldProps<FormValues, FieldName>) {
   const methods = useFormContext<FormValues>()
   const { formState: { errors } } = methods
@@ -122,6 +123,7 @@ export function Field<
         spacing="auto"
         direction={ direction }
         alignItems={ direction === 'column' ? 'stretch' : 'center' }
+        { ...rest }
       >
         { label && (
           <FormLabel htmlFor={ noLabelConnection ? undefined : name } mb={ 1 }>
