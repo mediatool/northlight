@@ -6,15 +6,15 @@ import {
   SingleValue,
 } from 'chakra-react-select'
 
-export interface UseSelectCallbacksProps<T>
+export interface UseSelectCallbacksProps<T, K extends boolean = false>
   extends Omit<
   ChakraReactSelectProps<T, boolean, GroupBase<T>>,
   'onChange' | 'value'
   > {
-  onChange: (val: MultiValue<T> | SingleValue<T>, event: ActionMeta<T>) => void
+  onChange: (option: K extends true ? MultiValue<T> : SingleValue<T>, event: ActionMeta<T>) => void
   onAdd: (val: unknown) => void
   onRemove: (val: unknown) => void
-  isMulti: boolean
+  isMulti?: boolean
   value: T | T[]
 }
 export interface BasicOption {

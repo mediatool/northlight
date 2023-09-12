@@ -134,9 +134,9 @@ render(<CustomSelect />);
  * />
  * ?)
 */
-export function Select<T extends Option> ({
+export function Select<T extends Option, K extends boolean = false> ({
   options,
-  isMulti = false,
+  isMulti,
   onChange = identity,
   onAdd = identity,
   onRemove = identity,
@@ -148,9 +148,9 @@ export function Select<T extends Option> ({
   value,
   icon,
   ...rest
-}: SelectProps<T>) {
-  const CustomSelect = ChakraReactSelect as FunctionComponent<SelectProps<T>>
-  const handleChange = useSelectCallbacks<T>({
+}: SelectProps<T, K>) {
+  const CustomSelect = ChakraReactSelect as FunctionComponent<SelectProps<T, K>>
+  const handleChange = useSelectCallbacks<T, K>({
     onChange,
     onAdd,
     onRemove,

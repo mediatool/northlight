@@ -15,9 +15,9 @@ import { SearchBarOptionType, SearchBarProps } from './types'
 import { getComponents } from './get-components'
 
 export const SearchBar = forwardRef(
-  <T extends SearchBarOptionType>({
+  <T extends SearchBarOptionType, K extends boolean = false>({
     defaultOptions = [],
-    isMulti = false,
+    isMulti,
     customOption = null,
     customTag = null,
     sx = {},
@@ -33,8 +33,8 @@ export const SearchBar = forwardRef(
     onSearchInputChange = identity,
     icon = SearchDuo,
     ...rest
-  }: SearchBarProps<T>,
-    ref: React.Ref<SelectInstance<T, boolean, GroupBase<T>>>
+  }: SearchBarProps<T, K>,
+    ref: React.Ref<SelectInstance<T, K, GroupBase<T>>>
   ) => {
     const [ filtered, setFiltered ] = useState(defaultOptions)
     const [ filterInput, setFilterInput ] = useState('')
@@ -42,7 +42,7 @@ export const SearchBar = forwardRef(
       () => createDebounceFunctionInstance(debouncedWaitTime),
       [ debouncedWaitTime ]
     )
-    const handleChange = useSelectCallbacks<T>({
+    const handleChange = useSelectCallbacks<T, K>({
       onChange,
       onAdd,
       onRemove,
@@ -89,7 +89,7 @@ export const SearchBar = forwardRef(
 
     return (
       <Box w="full" data-testid={ testId }>
-        <AsyncSelect
+        <AsyncSelect<T, K>
           cacheOptions={ true }
           defaultOptions={ filtered }
           loadOptions={ loadOptions }
