@@ -1,10 +1,28 @@
-import { isNil } from 'ramda'
+import { any, isNil } from 'ramda'
 import { MutableRefObject, useEffect, useRef } from 'react'
 
 const isBetween = (point: number, min: number, max: number) => (point >= min && point <= max)
 
+const isInBound = (
+  clientX: number,
+  clientY: number,
+  ref: MutableRefObject<HTMLElement | null>
+) => {
+  if (isNil(ref.current)) return false
+  const {
+    top,
+    right,
+    left,
+    bottom,
+  } = ref.current.getBoundingClientRect()
+  return isBetween(clientX, left, right) && isBetween(clientY, top, bottom)
+}
+
 export const useOutsideRectClick =
-(ref: MutableRefObject<HTMLElement | null>, callback: () => void) => {
+(
+  ref: MutableRefObject<HTMLElement | null>,
+  callback: () => void,
+  ignoredRefs: MutableRefObject<HTMLElement>[] = []) => {
   const stateRef = useRef({
     isPointerDown: false,
     ignoreEmulatedMouseEvents: false,
@@ -14,8 +32,8 @@ export const useOutsideRectClick =
 
   useEffect(() => {
     const handleMouseClick = (event: MouseEvent | TouchEvent) => {
-      let clientX
-      let clientY
+      let clientX: number
+      let clientY: number
 
       if (event instanceof MouseEvent) {
         clientX = event.clientX
@@ -23,22 +41,17 @@ export const useOutsideRectClick =
       } else if (event instanceof TouchEvent && event.changedTouches[0]) {
         clientX = event.changedTouches[0].clientX
         clientY = event.changedTouches[0].clientY
-      }
+      } else return
 
       if (isNil(clientX) || isNil(clientY)) return
 
       if (isNil(ref?.current)) return
 
-      const {
-        top,
-        right,
-        left,
-        bottom,
-      } = ref.current.getBoundingClientRect()
+      if (any(
+        (ignoredRef) => isInBound(clientX, clientY, ignoredRef),
+        ignoredRefs)) return
 
-      const isInBound = isBetween(clientX, left, right) && isBetween(clientY, top, bottom)
-
-      if (isInBound) return
+      if (isInBound(clientX, clientY, ref)) return
       callback()
     }
 
