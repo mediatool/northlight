@@ -9,6 +9,10 @@ export interface NumberInputProps extends ChakraNumberInputProps {
   onChange?: (...event: any[]) => void
   onlyAcceptPercentage?: boolean
   onInputChange?: (input: string) => void
+  /** If true it will show arrows on far right of number input that when clicked can
+   * increment and decrement the number value.
+   */
+  enableStepperArrows?: boolean
 }
 
 export type NumberInputFieldProps =
