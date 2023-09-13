@@ -1,32 +1,118 @@
-import React from 'react'
+import React, { ComponentType } from 'react'
+import { identity } from 'ramda'
+import {
+  InputAttributes,
+  NumberFormatValues,
+  NumericFormat,
+  SourceInfo,
+} from 'react-number-format'
 import { Input } from '../input'
 import { FormattedNumberInputProps } from './types'
 
+const presetMap = {
+  eu: {
+    thousandSeparator: ' ',
+    decimalSeparator: ',',
+  },
+  us: {
+    thousandSeparator: ',',
+    decimalSeparator: '.',
+  },
+  nor: {
+    thousandSeparator: '.',
+    decimalSeparator: ',',
+  },
+}
+
+/**
+ * @see {@link https://northlight.dev/reference/formatted-number-input-field}
+  @example (Example)
+ * The formatted number input is built uppon react-number-format
+ * It formats numbers by adjusting thousand and decimal separators
+ * ex : 22345351.34234 => 222 453 51,34234
+ * It comes with three presets: eu, us and nor.
+ * These have the following separators:
+  (?
+    <FormattedNumberInput
+      preset="us"
+      onChange={(values) => console.log(values.floatValue)}
+      isPercentage={true}
+      max={1E9}
+      min={0}
+    />
+  ?)
+
+  @example (Example)
+  ### Nor preset
+  (?
+    <FormattedNumberInput
+      preset="nor"
+      onChange={(values) => console.log(values.floatValue)}
+      value={320341345102.34134}
+      numberOfDecimals={5}
+    />
+  ?)
+
+  @example (Example)
+  ### Eu preset
+  (?
+    <FormattedNumberInput
+      preset="eu"
+      onChange={(values) => console.log(values.floatValue)}
+      value={320341345102.34134}
+      numberOfDecimals={5}
+    />
+  ?)
+
+ */
 export const FormattedNumberInput = ({
-  onChange,
-  formatter,
+  preset = 'eu',
+  isPercentage = false,
+  onChange = identity,
+  value,
+  numberOfDecimals = 2,
+  max = Infinity,
+  min = -Infinity,
   ...rest
 }: FormattedNumberInputProps) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { target: { value } } = e
-    const unFormattedValue = value === ''
-      ? value
-      : formatter.unFormat(value)
+  const props = presetMap[preset]
 
-    onChange?.(unFormattedValue)
+  const onValueChangeHandler = (
+    values: NumberFormatValues,
+    sourceInfo: SourceInfo
+  ) => {
+    onChange(
+      {
+        ...values,
+        floatValue:
+          values.floatValue && isPercentage
+            ? parseFloat((values.floatValue / 100).toFixed(numberOfDecimals))
+            : values.floatValue,
+      },
+      sourceInfo
+    )
   }
 
-  const value = rest.value ?? ''
-
-  const formattedValue = value === ''
-    ? value
-    : formatter.format(value)
-
   return (
-    <Input
+    <NumericFormat
+      allowLeadingZeros={ true }
+      customInput={ Input as ComponentType<InputAttributes> }
+      max={ 100 }
+      min={ 0 }
+      onValueChange={ onValueChangeHandler }
+      decimalScale={ numberOfDecimals }
+      value={
+        isPercentage
+          ? parseFloat((parseFloat(`${value ?? 0}`) * 100).toFixed(numberOfDecimals))
+          : value
+      }
+      suffix={ isPercentage ? '%' : '' }
+      isAllowed={ (values) => {
+        const { floatValue } = values
+        return Boolean(floatValue && (floatValue < max) && (floatValue > min))
+      } }
+      { ...props }
       { ...rest }
-      value={ formattedValue }
-      onChange={ handleChange }
     />
   )
 }
