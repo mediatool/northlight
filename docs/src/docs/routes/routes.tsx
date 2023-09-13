@@ -74,11 +74,6 @@ export const routes: Page[] = [
       component: () => import('../pages/progress-bar-page'),
     },
     {
-      title: 'Formatted Number Input',
-      path: '/formatted-number-input',
-      component: () => import('../pages/formatted-number-input-page'),
-    },
-    {
       title: 'Number Input',
       path: '/number-input',
       component: () => import('../pages/number-input-page'),
