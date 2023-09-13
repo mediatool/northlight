@@ -163,7 +163,7 @@ export const FlipButton = (props: FlipButtonProps) => {
     })
     : (
       <HStack
-        spacing={ isSelected || icon ? 2 : 0 }
+        spacing={ (isSelected && iconPlacement !== 'none') || icon ? 2 : 0 }
         sx={ mergeAll([ button, isFocused ? focusStyles : {}, { flexDirection: iconPlacement === 'left' ? 'row' : 'row-reverse' } ]) }
         aria-checked={ isSelected }
         aria-disabled={ isDisabled }
