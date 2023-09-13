@@ -1,5 +1,4 @@
 export {
-  Table,
   Thead,
   Tbody,
   Tfoot,
@@ -9,3 +8,5 @@ export {
   TableCaption,
   TableContainer,
 } from '@chakra-ui/react'
+export * from './table'
+export * from './types'
