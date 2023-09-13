@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.9.0...@northlight/ui@2.9.1) (2023-09-13)
+
+
+### Bug Fixes
+
+* **framework:** center text in flip button label ([defd5cc](https://github.com/mediatool/northlight/commit/defd5cc9fc0486e9f6064dda887148239b240f7b))
+* **framework:** expose styling props for Field ([ff8340b](https://github.com/mediatool/northlight/commit/ff8340b161b69a8662bf98bb2d5e95a06e2992e1))
+
+
+
+
+
 # [2.9.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.8.0...@northlight/ui@2.9.0) (2023-09-12)
 
 
