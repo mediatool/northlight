@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.9.1...@northlight/ui@2.9.2) (2023-09-13)
+
+
+### Bug Fixes
+
+* **framework:** fix broken search bar northlight docs ([84dffbc](https://github.com/mediatool/northlight/commit/84dffbcceb4f209d362e0946503b6fd70ed2cdfe))
+
+
+
+
+
 ## [2.9.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.9.0...@northlight/ui@2.9.1) (2023-09-13)
 
 
