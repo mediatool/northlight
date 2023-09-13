@@ -15,15 +15,17 @@ import { advancedParseFloat } from './advanced-parse-float'
  * @example
  * (?
  * <Box p="3">
- * <NumberInput max={100} min={0} step={3} onlyAcceptPercentage={true} />
+ * <NumberInput max={100} min={0} step={3} onlyAcceptPercentage={true} enableStepperArrows={true}/>
  * </Box>
  * ?)
+ *
  */
 export const NumberInput = ({
   variant = 'default',
   size = 'md',
   onChange = identity,
   onInputChange = identity,
+  enableStepperArrows = false,
   name,
   onlyAcceptPercentage = false,
   ...rest
@@ -56,7 +58,9 @@ export const NumberInput = ({
       { ...rest }
     >
       <NumberInputField onChange={ handleChange } />
+      { enableStepperArrows && (
       <NumberInputStepper includePercentage={ onlyAcceptPercentage } />
+      ) }
     </ChakraNumberInput>
   )
 }
