@@ -158,7 +158,7 @@ export function Select<T extends Option, K extends boolean = false> ({
     value: is(Array, value) ? (value as T[]) : [],
   })
 
-  const customComponents = getComponents<T>()
+  const customComponents = getComponents<T>({ defaultControl: false })
 
   const prevOptions = useRef<OptionsOrGroups<T, GroupBase<T>> | undefined>(
     options
