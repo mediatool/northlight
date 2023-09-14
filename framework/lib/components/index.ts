@@ -1,4 +1,5 @@
 export * from './accordion'
+export * from './tags-input'
 export * from './organization-logo'
 export * from './alert'
 export * from './alert-dialog'
