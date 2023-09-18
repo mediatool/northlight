@@ -163,7 +163,7 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
               <TabPanels>
                 { !isEmpty(codeExamples) && (
                   <TabPanel w={ DOCS_WIDTH }>
-                    <Stack spacing="8">
+                    <Stack spacing="8" px="2">
                       { codeExamples.map((example, i) => (
                         <Stack spacing="2">
                           <Link
