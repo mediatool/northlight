@@ -12,6 +12,7 @@ export const Avatar: ComponentMultiStyleConfig = {
       },
       text: {
         lineHeight: sizing.avatar['2xs'],
+        fontSize: '3xs',
       },
     }),
     xs: ({ theme: { sizes: sizing } }) => ({
@@ -21,6 +22,7 @@ export const Avatar: ComponentMultiStyleConfig = {
       },
       text: {
         lineHeight: sizing.avatar.xs,
+        fontSize: 'xs',
       },
     }),
     sm: ({ theme: { sizes: sizing } }) => ({
@@ -30,6 +32,7 @@ export const Avatar: ComponentMultiStyleConfig = {
       },
       text: {
         lineHeight: sizing.avatar.sm,
+        fontSize: 'sm',
       },
       icon: {
         boxSize: sizing.avatar.sm,
@@ -42,6 +45,7 @@ export const Avatar: ComponentMultiStyleConfig = {
       },
       text: {
         lineHeight: sizing.avatar.md,
+        fontSize: 'md',
       },
       icon: {
         boxSize: sizing.avatar.md,
@@ -54,6 +58,7 @@ export const Avatar: ComponentMultiStyleConfig = {
       },
       text: {
         lineHeight: sizing.avatar.lg,
+        fontSize: 'lg',
       },
       icon: {
         boxSize: sizing.avatar.lg,
@@ -66,6 +71,7 @@ export const Avatar: ComponentMultiStyleConfig = {
       },
       text: {
         lineHeight: sizing.avatar.xl,
+        fontSize: '2xl',
       },
     }),
     '2xl': ({ theme: { sizes: sizing } }) => ({
@@ -75,6 +81,7 @@ export const Avatar: ComponentMultiStyleConfig = {
       },
       text: {
         lineHeight: sizing.avatar['2xl'],
+        fontSize: '4xl',
       },
     }),
 
