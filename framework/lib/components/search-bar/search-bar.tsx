@@ -49,7 +49,11 @@ export const SearchBar = forwardRef(
       isMulti,
       value: is(Array, value) ? value as T[] : [],
     })
-    const customComponents = getComponents<T>({ defaultControl: true })
+
+    const customComponents = useMemo(
+      () => getComponents<T>(),
+      []
+    )
 
     const simpleFilter = (query: string) => (
       filter(

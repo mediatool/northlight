@@ -11,35 +11,7 @@ import { HStack } from '../stack'
 import { Icon } from '../icon'
 import { SearchBarOptionType } from './types'
 
-interface GetComponentsProps {
-  defaultControl?: boolean
-}
-
-export function getComponents<T extends SearchBarOptionType> ({
-  defaultControl = true,
-}: GetComponentsProps) {
-  const control = defaultControl
-    ? {}
-    : {
-      Control: ({
-        children,
-        ...props
-      }: ControlProps<T, boolean, GroupBase<T>>) =>
-        (props.selectProps.leftIcon ? (
-          <chakraComponents.Control { ...props }>
-            <HStack w="full" pl="2">
-              <Icon as={ props.selectProps.leftIcon } />
-              <HStack w="full" justify="space-between">
-                { children }
-              </HStack>
-            </HStack>
-          </chakraComponents.Control>
-        ) : (
-          <chakraComponents.Control { ...props }>
-            { children }
-          </chakraComponents.Control>
-        )),
-    }
+export function getComponents<T extends SearchBarOptionType> () {
   return {
     DropdownIndicator: (props: DropdownIndicatorProps<T>) =>
       (props.selectProps.icon ? (
@@ -67,6 +39,23 @@ export function getComponents<T extends SearchBarOptionType> ({
       ) : (
         <chakraComponents.MultiValueContainer { ...props } />
       )),
-    ...control,
+    Control: ({
+      children,
+      ...props
+    }: ControlProps<T, boolean, GroupBase<T>>) =>
+      (props.selectProps.leftIcon ? (
+        <chakraComponents.Control { ...props }>
+          <HStack w="full" pl="2">
+            <Icon as={ props.selectProps.leftIcon } />
+            <HStack w="full" justify="space-between">
+              { children }
+            </HStack>
+          </HStack>
+        </chakraComponents.Control>
+      ) : (
+        <chakraComponents.Control { ...props }>
+          { children }
+        </chakraComponents.Control>
+      )),
   }
 }
