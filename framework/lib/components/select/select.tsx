@@ -134,6 +134,7 @@ render(<CustomSelect />);
  * />
  * ?)
 */
+
 export function Select<T extends Option, K extends boolean = false> ({
   options,
   isMulti,
@@ -158,7 +159,10 @@ export function Select<T extends Option, K extends boolean = false> ({
     value: is(Array, value) ? (value as T[]) : [],
   })
 
-  const customComponents = getComponents<T>({ defaultControl: false })
+  const customComponents = useMemo(
+    () => getComponents<T>(),
+    []
+  )
 
   const prevOptions = useRef<OptionsOrGroups<T, GroupBase<T>> | undefined>(
     options
