@@ -4,10 +4,11 @@ import {
   GroupBase,
   MenuListProps,
   MultiValue,
+  SelectInstance,
   SingleValue,
 } from 'chakra-react-select'
 import { StackDirection } from '@chakra-ui/react'
-import { ComponentType } from 'react'
+import { ComponentType, Ref } from 'react'
 import { RegisterOptions } from 'react-hook-form'
 import { InputFieldProps } from '../../types'
 
@@ -17,9 +18,9 @@ export interface Option {
   value: string
 }
 
-export interface SelectProps<T, K>
+export interface SelectProps<T, K extends boolean>
   extends Omit<
-  ChakraReactSelectProps<T, boolean, GroupBase<T>>,
+  ChakraReactSelectProps<T, K, GroupBase<T>>,
   'onChange' | 'value' | 'isMulti'
   > {
   /** Whatever is currently selected by the select will be controlled by value prop */
@@ -34,7 +35,7 @@ export interface SelectProps<T, K>
   size?: Size
   'data-testid'?: string
   loadingList?:
-  | ComponentType<MenuListProps<T, boolean, GroupBase<T>>>
+  | ComponentType<MenuListProps<T, K, GroupBase<T>>>
   | undefined
   /** Custom icon that will be put to the faremost right of the component */
   icon?: ComponentType<any>
@@ -42,6 +43,7 @@ export interface SelectProps<T, K>
   leftIcon?: ComponentType<any>
   customOption?: ((option: T) => JSX.Element) | null
   isMulti?: K
+  ref?: Ref<SelectInstance<T, K, GroupBase<T>>>
 }
 
 export type SelectFieldProps<T, K extends boolean = false> = SelectProps<T, K> &
