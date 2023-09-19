@@ -1,8 +1,9 @@
-import React, { FunctionComponent, useMemo, useRef } from 'react'
+import React, { FunctionComponent, Ref, forwardRef, useMemo, useRef } from 'react'
 import {
   Select as ChakraReactSelect,
   GroupBase,
   OptionsOrGroups,
+  SelectInstance,
 } from 'chakra-react-select'
 import { Box } from '@chakra-ui/react'
 import { equals, identity, is } from 'ramda'
@@ -134,8 +135,7 @@ render(<CustomSelect />);
  * />
  * ?)
 */
-
-export function Select<T extends Option, K extends boolean = false> ({
+export const Select = forwardRef(<T extends Option, K extends boolean = false>({
   options,
   isMulti,
   onChange = identity,
@@ -149,7 +149,9 @@ export function Select<T extends Option, K extends boolean = false> ({
   value,
   icon,
   ...rest
-}: SelectProps<T, K>) {
+}: SelectProps<T, K>,
+  ref: Ref<SelectInstance<T, K, GroupBase<T>>>
+) => {
   const CustomSelect = ChakraReactSelect as FunctionComponent<SelectProps<T, K>>
   const handleChange = useSelectCallbacks<T, K>({
     onChange,
@@ -193,8 +195,9 @@ export function Select<T extends Option, K extends boolean = false> ({
         customTag={ customTag }
         icon={ icon }
         components={ customComponents }
+        ref={ ref }
         { ...rest }
       />
     </Box>
   )
-}
+})
