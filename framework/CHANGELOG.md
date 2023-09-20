@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.9.2...@northlight/ui@2.10.0) (2023-09-20)
+
+
+### Bug Fixes
+
+* **framework:** add forward ref to select component ([a9621b3](https://github.com/mediatool/northlight/commit/a9621b3fcc4829e2ab287a476e0403abd5e84b7e))
+* **framework:** added rounded table variant ([715c418](https://github.com/mediatool/northlight/commit/715c418a034dca79facc4a74eb1ce2c916922573))
+* **framework:** made number input stepper arrows optional ([8210650](https://github.com/mediatool/northlight/commit/8210650a55d60116f5ac287bbcdb42f020612530))
+* **framework:** shrink avatar font sizes ([3bf9203](https://github.com/mediatool/northlight/commit/3bf920345d73e39be2ccc5f5b525841690119023))
+* **framework:** wrap getComponents in useMemo ([5a605f8](https://github.com/mediatool/northlight/commit/5a605f83d67d319c6ac01bb02b0c1320f64b9431)), closes [/github.com/JedWatson/react-select/issues/4845#issuecomment-1665190832](https://github.com//github.com/JedWatson/react-select/issues/4845/issues/issuecomment-1665190832)
+
+
+### Features
+
+* **framework:** add did update effect hook ([53f76ad](https://github.com/mediatool/northlight/commit/53f76ad1e0bdcee3b6ea1ee27019b0a75376b483))
+
+
+
+
+
 ## [2.9.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.9.1...@northlight/ui@2.9.2) (2023-09-13)
 
 

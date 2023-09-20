@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.25](https://github.com/mediatool/northlight/compare/@northlight/docs@1.1.24...@northlight/docs@1.1.25) (2023-09-20)
+
+
+### Bug Fixes
+
+* **framework:** add some padding ([a1e5388](https://github.com/mediatool/northlight/commit/a1e53884e03ec911be75182bb146a856aed2d76d))
+
+
+
+
+
 ## [1.1.24](https://github.com/mediatool/northlight/compare/@northlight/docs@1.1.23...@northlight/docs@1.1.24) (2023-09-13)
 
 **Note:** Version bump only for package @northlight/docs
