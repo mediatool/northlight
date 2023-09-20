@@ -2,19 +2,15 @@ import React, {
   FunctionComponent,
   KeyboardEvent,
   useEffect,
-  useMemo,
-  useRef,
   useState,
 } from 'react'
 import {
   ActionMeta,
   CreatableSelect,
-  GroupBase,
   InputActionMeta,
   MultiValue,
-  OptionsOrGroups,
 } from 'chakra-react-select'
-import { equals, identity } from 'ramda'
+import { any, append, identity, init, isEmpty } from 'ramda'
 import { Box } from '../box'
 import { useToken } from '../../hooks'
 import { TagsInputProps } from './types'
@@ -65,63 +61,57 @@ export function TagsInput<T extends Option> ({
   }
 
   const isValidNewOption = (input: string, availableOptions: MultiValue<T>) => {
-    const optionAlreadyExists = availableOptions.some(
-      (option) => option.value === input
+    const optionAlreadyExists = any(
+      (option) => option.value === input,
+      availableOptions
     )
-    return input !== '' && !optionAlreadyExists
+    return !isEmpty(input) && !optionAlreadyExists
   }
 
   const addNewOption = (newOption: T) => {
     onChange(selectedOptions, { action: 'select-option', option: newOption })
-    setSelectedOptions((prev) => [ ...prev, newOption ])
+    setSelectedOptions(append(newOption))
   }
 
-  const handleInputChange = (newInput: string, { action }: InputActionMeta) => {
+  const isInputChangeValid = (newInput: string, event: InputActionMeta) =>
+    isValidNewOption(newInput, selectedOptions) &&
+    newInput !== '' &&
+    newInput !== ',' &&
+    newInput.endsWith(',') &&
+    event.action !== 'input-blur'
+
+  const clearInput = () => {
+    setInputValue('')
+  }
+
+  const handleInputChange = (newInput: string, event: InputActionMeta) => {
     setInputValue(newInput)
-    if (
-      !isValidNewOption(newInput, selectedOptions) ||
-      newInput === '' ||
-      newInput === ',' ||
-      !newInput.endsWith(',') ||
-      action === 'input-blur'
-    ) {
-      return
-    }
+    if (!isInputChangeValid(newInput, event)) return
     const newOption: Option = {
-      value: newInput,
-      label: newInput.slice(0, -1),
+      value: init(newInput),
+      label: init(newInput).slice(0, -1),
     }
     addNewOption(newOption as T)
-    setInputValue('')
+    clearInput()
   }
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (
       !isValidNewOption(inputValue, selectedOptions) &&
-      inputValue !== '' &&
+      !isEmpty(inputValue) &&
       event.key !== ' '
     ) {
-      setInputValue('')
+      clearInput()
       event.preventDefault()
       return
     }
-    if ((event.key === 'Enter' || event.key === 'Tab') && inputValue !== '') {
+    if ((event.key === 'Enter' || event.key === 'Tab') && !isEmpty(inputValue)) {
       const newOption: Option = { value: inputValue, label: inputValue }
       addNewOption(newOption as T)
-      setInputValue('')
+      clearInput()
       event.preventDefault()
     }
   }
-
-  const prevOptions = useRef<OptionsOrGroups<T, GroupBase<T>> | undefined>(
-    options
-  )
-  const renderedOptions = useMemo(() => {
-    if (!equals(prevOptions.current, options)) {
-      prevOptions.current = options
-    }
-    return prevOptions.current
-  }, [ options ])
 
   const handleFocus = () => {
     setIsFocused(true)
@@ -136,7 +126,7 @@ export function TagsInput<T extends Option> ({
         isMulti={ true }
         menuPortalTarget={ document.body }
         placeholder="Type something and press Enter or comma..."
-        options={ renderedOptions }
+        options={ options }
         useBasicStyles={ true }
         closeMenuOnSelect={ false }
         hideSelectedOptions={ false }
