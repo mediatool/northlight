@@ -7,9 +7,14 @@ import {
   SourceInfo,
 } from 'react-number-format'
 import { Input } from '../input'
-import { FormattedNumberInputProps } from './types'
+import {
+  FormattedNumberInputPreset,
+  FormattedNumberInputProps,
+  PresetOptions,
+} from './types'
+import { roundToPrecision } from './round-to-precision'
 
-const presetMap = {
+const presetMap: Record<FormattedNumberInputPreset, PresetOptions> = {
   eu: {
     thousandSeparator: ' ',
     decimalSeparator: ',',
@@ -86,7 +91,7 @@ export const FormattedNumberInput = ({
         ...values,
         floatValue:
           values.floatValue && isPercentage
-            ? parseFloat((values.floatValue / 100).toFixed(numberOfDecimals))
+            ? roundToPrecision(values.floatValue / 100, numberOfDecimals)
             : values.floatValue,
       },
       sourceInfo
@@ -103,13 +108,13 @@ export const FormattedNumberInput = ({
       decimalScale={ numberOfDecimals }
       value={
         isPercentage
-          ? parseFloat((parseFloat(`${value ?? 0}`) * 100).toFixed(numberOfDecimals))
+          ? roundToPrecision(parseFloat(`${value ?? 0}`) * 100, numberOfDecimals)
           : value
       }
       suffix={ isPercentage ? '%' : '' }
       isAllowed={ (values) => {
         const { floatValue } = values
-        return Boolean(floatValue && (floatValue < max) && (floatValue > min))
+        return floatValue ? floatValue < max && floatValue > min : false
       } }
       { ...props }
       { ...rest }

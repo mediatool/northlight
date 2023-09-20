@@ -29,9 +29,15 @@ InputMaskProps & {
   maskPlaceholder?: string
 }
 
+export type FormattedNumberInputPreset = 'eu' | 'us' | 'nor'
+export interface PresetOptions {
+  thousandSeparator: string
+  decimalSeparator: string
+}
+
 export interface FormattedNumberInputProps extends Omit<NumericFormatProps, 'onChange'> {
   /** Changes thousand and decimal separators */
-  preset?: 'eu' | 'us' | 'nor'
+  preset?: FormattedNumberInputPreset
   /** Gives you back an object, see https://s-yadav.github.io/react-number-format/docs/quirks */
   onChange?: NumericFormatProps['onValueChange']
   /** Will format number UI as percentage, but return as decimal value */
@@ -40,7 +46,7 @@ export interface FormattedNumberInputProps extends Omit<NumericFormatProps, 'onC
   numberOfDecimals?: number
 }
 
-export type FormattedNumberInputFieldProps = FormattedNumberInputProps & {
+export interface FormattedNumberInputFieldProps extends FormattedNumberInputProps {
   name: string
   label: string
   validate?: RegisterOptions
