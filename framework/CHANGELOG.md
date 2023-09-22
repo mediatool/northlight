@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.10.0...@northlight/ui@2.10.1) (2023-09-22)
+
+
+### Bug Fixes
+
+* **framework:** add missing table props ([d6b0bb1](https://github.com/mediatool/northlight/commit/d6b0bb14cc0d073a95d330175cc8d5dc5a4fddef))
+
+
+
+
+
 # [2.10.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.9.2...@northlight/ui@2.10.0) (2023-09-20)
 
 
