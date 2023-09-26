@@ -14,7 +14,7 @@ import {
   TextField,
   useFormContext,
   useWatch,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 const PageOneFields = () => (
   <Stack spacing={ 8 }>

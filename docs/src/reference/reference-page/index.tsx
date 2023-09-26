@@ -29,7 +29,7 @@ import {
   TabPanels,
   Tabs,
   VStack,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { useIsRightSidebarVisible } from '../../app/use-is-right-side-bar-visible'
 import { CodeEditor } from '../../app/components/code-editor'
 import { MarkdownPreview } from '../../app/components/markdown-preview'

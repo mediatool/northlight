@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Box, Heading, Stack } from '@northlight/ui'
+import { Box, Heading, Stack } from '@northlight/ui/ts'
 
 interface Props {
   title: ReactNode

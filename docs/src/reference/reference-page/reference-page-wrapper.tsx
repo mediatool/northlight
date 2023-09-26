@@ -14,7 +14,7 @@ import {
   P,
   Stack,
   VStack,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 interface Props {
   title: ReactNode

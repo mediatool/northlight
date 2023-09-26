@@ -5,7 +5,7 @@ import {
   Icon,
   Label,
   Stack,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 export interface MenuItemProps {
   path: string

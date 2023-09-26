@@ -14,7 +14,7 @@ import {
   TextField,
   useFieldArray,
   useFormContext,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 export const PageTwo = () => {
   const { fields, append, remove, move } = useFieldArray({ name: 'todo-list' })

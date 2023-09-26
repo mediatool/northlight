@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { SimpleGrid } from '@northlight/ui'
+import { SimpleGrid } from '@northlight/ui/ts'
 
 interface Props {
   children: ReactElement[]

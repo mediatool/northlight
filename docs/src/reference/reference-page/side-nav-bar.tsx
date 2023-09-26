@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Capitalized, Stack } from '@northlight/ui'
+import { Capitalized, Stack } from '@northlight/ui/ts'
 import { NavSideLink } from '../../app/components/nav-side-link'
 
 interface SideNavBarProps {

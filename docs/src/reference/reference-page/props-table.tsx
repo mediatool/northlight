@@ -21,7 +21,7 @@ import {
   Stack,
   getContrastColor,
   useDisclosure,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 export interface FileLink {
   fileName: string

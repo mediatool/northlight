@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Heading } from '@northlight/ui'
+import { Heading } from '@northlight/ui/ts'
 import { ChakraDocsLink } from '../chakra-docs-link'
 
 interface Props {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Code, DateRangePickerField, Divider, Form, HStack, P, Stack, Text } from '@northlight/ui'
+import { Code, DateRangePickerField, Divider, Form, HStack, P, Stack, Text } from '@northlight/ui/ts'
 import { Page } from '../../components'
 
 const DateRangePickerPage = () => (

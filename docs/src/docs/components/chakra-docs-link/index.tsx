@@ -1,6 +1,6 @@
 import React from 'react'
 import { LinkProps } from '@chakra-ui/react'
-import { Link } from '@northlight/ui'
+import { Link } from '@northlight/ui/ts'
 
 type Props = {
   slug: string

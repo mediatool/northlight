@@ -5,7 +5,7 @@ import {
   ClipboardInput,
   Icon,
   Stack,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { IconComponent } from '../../utils/types'
 
 export const IconCard = ({ label, component }: IconComponent) => (

@@ -4,7 +4,7 @@ import {
   HStack,
   Icon,
   Text,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { RouteOption } from '../../types'
 
 export const ComponentPageLink = ({ label }: RouteOption) => (

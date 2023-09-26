@@ -5,7 +5,7 @@ import {
   ProgressBar,
   Stack,
   Text,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 let buffer: any = null

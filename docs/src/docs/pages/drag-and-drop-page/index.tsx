@@ -1,5 +1,5 @@
 import React from 'react'
-import { Code, Heading, Link, Stack, Text } from '@northlight/ui'
+import { Code, Heading, Link, Stack, Text } from '@northlight/ui/ts'
 import { Page } from '../../components'
 
 const DragAndDropPage = () => (

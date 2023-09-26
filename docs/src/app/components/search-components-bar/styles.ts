@@ -1,6 +1,6 @@
 import { ChakraStylesConfig } from 'chakra-react-select'
 import { palette } from '@northlight/tokens'
-import { getContrastColor } from '@northlight/ui'
+import { getContrastColor } from '@northlight/ui/ts'
 
 export const searchComponentsBarStyles: ChakraStylesConfig = {
   loadingIndicator: () => ({ display: 'none' }),

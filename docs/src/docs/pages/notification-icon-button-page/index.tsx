@@ -14,7 +14,7 @@ import {
   Stack,
   Text,
   Tooltip,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { Page } from '../../components'
 
 const NotificationIconButtonPage = () => (

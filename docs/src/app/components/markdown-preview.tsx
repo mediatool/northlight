@@ -29,7 +29,7 @@ import {
   Thead,
   Tr,
   UnorderedList,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 export const MarkdownPreview: typeof Markdown = (props) => (
   <Markdown

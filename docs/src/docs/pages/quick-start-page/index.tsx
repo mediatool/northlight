@@ -10,7 +10,7 @@ import {
   P,
   Stack,
   StepStack,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 export default function QuickStart () {
   return (

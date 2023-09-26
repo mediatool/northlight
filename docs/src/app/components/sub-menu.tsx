@@ -5,7 +5,7 @@ import {
   Switch,
   useLocation,
 } from 'react-router-dom'
-import { Stack } from '@northlight/ui'
+import { Stack } from '@northlight/ui/ts'
 import { MainPage } from '../types'
 
 import { NavSideLink } from './nav-side-link'

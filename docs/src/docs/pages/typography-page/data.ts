@@ -16,7 +16,7 @@ import {
   Small,
   StylizedType,
   Tiny,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 interface Typography<T> {
   element: string

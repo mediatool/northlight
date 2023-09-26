@@ -6,7 +6,7 @@ import {
   Stack,
   Text,
   useDisclosure,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { FormOne } from './form-one'
 import { FormTwo } from './form-two'
 import { Page } from '../../components'

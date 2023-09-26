@@ -11,7 +11,8 @@
       "types": "./dist/es/northlight.d.mts",
       "import": "./dist/es/northlight.mjs",
       "require": "./dist/umd/northlight.js"
-    }
+    },
+    "./ts": "./lib/index.ts"
   },
   "main": "./dist/es/northlight.mjs",
   "types": "./dist/ts/types.d.ts",

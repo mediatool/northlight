@@ -10,7 +10,7 @@ import {
   Image,
   P,
   Stack,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { DefaultPageSubtitle, Page } from '../../components'
 import { darthVader } from '../../../assets/png/index'
 

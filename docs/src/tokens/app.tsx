@@ -8,7 +8,7 @@ import {
   P,
   Stack,
   UnorderedList,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 export default function Tokens () {
   return (

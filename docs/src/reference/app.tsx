@@ -15,7 +15,7 @@ import {
   Stack,
   StepStack,
   UnorderedList,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 export default function ContributePage () {
   return (

@@ -11,7 +11,7 @@ import {
   SplitPane,
   Stack,
   VStack,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { Page } from '../../components'
 
 const SplitPage = () => {

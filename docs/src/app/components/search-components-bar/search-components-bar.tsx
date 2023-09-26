@@ -8,7 +8,7 @@ import {
   SearchBar,
   Stack,
   useDisclosure,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 import { RouteOption, SearchBarComponentsBarProps } from '../../types'
 

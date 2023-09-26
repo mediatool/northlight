@@ -53,7 +53,7 @@ import {
   Tiny,
   VStack,
   highlight,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import paolo from './images/paolo.png'
 import sebbe from './images/sebbe.png'
 import iliya from './images/iliya.png'

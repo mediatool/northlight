@@ -20,7 +20,7 @@ import {
   MediatoolThemeProvider,
   Stack,
   tottTheme,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { CalendarProvider, I18nProvider, UserProvider } from './context'
 import { MainPage } from './types'
 import { MainMenu, SearchComponentsBar, SubMenu } from './components'

@@ -14,7 +14,7 @@ import {
   TextField,
   UseFormReturn,
   VStack,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { Page } from '../../components'
 
 const validation = (values: any) => {
@@ -143,7 +143,7 @@ const FormPage = () => {
         </P>
         <P>Example: </P>
         <Code w="max-content" display="block" whiteSpace="pre">
-          { `import { UseFormReturn } from '@northlight/ui'
+          { `import { UseFormReturn } from '@northlight/ui/ts'
 
 const initialValues = { firstName: '' } 
 const formMethods = useRef<UseFormReturn<typeof initialValues>>(null)
@@ -219,7 +219,7 @@ const getNewName = () => {
             <Blockquote>Example 2</Blockquote>
             <P>This accomplishes the same thing but with methods prop</P>
             <Code w="max-content" display="block" whiteSpace="pre">
-              { `import { useForm } from '@northlight/ui'
+              { `import { useForm } from '@northlight/ui/ts'
 const validation = (values: any) => {
   const errors: any = {}
   if (values.firstName === 'admin') {

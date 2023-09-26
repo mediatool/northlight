@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link as NavLink } from 'react-router-dom'
 import { BrightnessDuo, BrightnessSolid, SmileyDuo } from '@northlight/icons'
-import { Card, CardBody, CardFooter, CardHeader, Center, Code, Divider, H1, H3, Heading, Icon, Link, P, SimpleGrid, Spacer, Stack, Text } from '@northlight/ui'
+import { Card, CardBody, CardFooter, CardHeader, Center, Code, Divider, H1, H3, Heading, Icon, Link, P, SimpleGrid, Spacer, Stack, Text } from '@northlight/ui/ts'
 
 const Icons = () => (
   <Stack p={ 4 } spacing={ 4 } bgColor="background.default" height="auto">

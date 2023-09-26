@@ -12,7 +12,7 @@ import {
   SearchBar,
   Stack,
   Tag,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { Page } from '../../components'
 
 type Option = {
@@ -102,7 +102,7 @@ const SearchBarPage = () => (
         <P>
           <b>loadOptions</b> an async function that returns a promise with the
           options based on a search query. (Should be of type
-          SearchBarOptionType which can be imported from '@northlight/ui')
+          SearchBarOptionType which can be imported from '@northlight/ui/ts')
         </P>
         <P>
           <b>defaultOptions</b>, an array of the options to be loaded by default

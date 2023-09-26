@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { RefreshDataSolid } from '@northlight/icons'
 import { keyframes } from '@emotion/react'
-import { Box, Icon, IconButton, Tooltip } from '@northlight/ui'
+import { Box, Icon, IconButton, Tooltip } from '@northlight/ui/ts'
 import { Tokens } from '../../utils/types'
 
 interface Props {

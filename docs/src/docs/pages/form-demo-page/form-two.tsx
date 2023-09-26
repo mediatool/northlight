@@ -13,7 +13,7 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { PageOne } from './page-one'
 import { PageTwo } from './page-two'
 import { PageThree } from './page-three'

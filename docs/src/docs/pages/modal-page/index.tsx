@@ -16,7 +16,7 @@ import {
   Text,
   UnorderedList,
   useDisclosure,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const ModalPage = () => {

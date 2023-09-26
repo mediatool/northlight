@@ -10,7 +10,7 @@ import {
   Text,
   VStack,
   getContrastColor,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 import { Page } from '../../components'
 

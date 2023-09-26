@@ -5,7 +5,7 @@ import {
   LinkOverlay,
   P,
   useCurrentTheme,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 interface CustomNavLinkProps {
   linkName: string

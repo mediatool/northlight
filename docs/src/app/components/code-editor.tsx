@@ -16,8 +16,8 @@ import {
   Stack,
   Tooltip,
   useClipboard,
-} from '@northlight/ui'
-import * as uiLib from '@northlight/ui'
+} from '@northlight/ui/ts'
+import * as uiLib from '@northlight/ui/ts'
 import { paleNight } from './code-editor-theme'
 
 interface CodeEditorProps {

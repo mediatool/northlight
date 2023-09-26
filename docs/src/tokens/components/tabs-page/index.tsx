@@ -1,6 +1,6 @@
 import React from 'react'
 import { map } from 'ramda'
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@northlight/ui'
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@northlight/ui/ts'
 import { TokensSet } from '../../utils/types'
 import { Visualizer } from '../visualizer'
 

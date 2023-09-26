@@ -13,7 +13,7 @@ import {
   Thead,
   Tr,
   highlight,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { Page } from '../../components'
 import { Body, Headings, Labels, Stylized, TableHead } from './data'
 import illustration from './typography-instructional.png'

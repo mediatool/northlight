@@ -12,7 +12,7 @@ import {
   MultiFileUploader,
   P,
   Stack,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { Page } from '../../components'
 import diagram from '../../images/multi-file-uploading-chain.jpg'
 

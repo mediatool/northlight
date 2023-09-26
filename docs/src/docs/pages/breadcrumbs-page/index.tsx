@@ -4,7 +4,7 @@ import {
   BreadcrumbLink,
   Breadcrumbs,
   Text,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const crumbs = [

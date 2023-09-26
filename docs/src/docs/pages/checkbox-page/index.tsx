@@ -9,7 +9,7 @@ import {
   HStack,
   Stack,
   Text,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 const CheckboxPage = () => (

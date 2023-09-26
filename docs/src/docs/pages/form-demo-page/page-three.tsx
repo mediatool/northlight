@@ -4,7 +4,7 @@ import {
   FastGrid,
   Heading,
   TextField,
-} from '@northlight/ui'
+} from '@northlight/ui/ts'
 
 const getCell = (rowIndex: number, columnIndex: number) => {
   if (rowIndex === 0 && columnIndex === 0) return ''
