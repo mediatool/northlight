@@ -1,4 +1,5 @@
 import { expect } from 'chai'
+import { describe, it } from 'mocha'
 import { isFileImage } from '../../../../lib/components/file-picker/utils'
 
 describe('isFileImage', () => {
