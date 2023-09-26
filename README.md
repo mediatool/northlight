@@ -6,13 +6,13 @@ Northlight is an open source UI framework built by Mediatool. It is based on Cha
 
 To start up a local environment of the Northlight UI framework docs:
 
-1. Clone this repository
-2. cd into the directory
-3. run `yarn`
-4. cd into `/docs`
-6. run `yarn nx dev`
+1) Clone the repository.
+2) Navigate into the root directory.
+3) Run `yarn`.
+4) Open one teminal, navigate to the /docs directory, and run `yarn nx dev`.
+5) Open another terminal, navigate to the /framework directory, and `yarn watch`.
 
-This will spin up a local environment at localhost:3008 (or the first available port after that)
+This will spin up a local environment at [localhost:5173](http://localhost:5173) (or the first available port after that).
 
 ## Usage
 
