@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react'
 import {
-  DeepPartial,
+  DefaultValues,
   FieldValues,
   FormProvider,
   Resolver,
@@ -132,7 +132,7 @@ export const Form = forwardRef(<FormValues extends FieldValues>({
   const newMethods =
     methods ||
     useForm<FormValues>({
-      defaultValues: initialValues as DeepPartial<FormValues>,
+      defaultValues: initialValues as DefaultValues<FormValues>,
       resolver: validate ? customResolver : undefined,
       ...formSettings,
     })

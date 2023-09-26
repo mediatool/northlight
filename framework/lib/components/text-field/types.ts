@@ -35,7 +35,9 @@ export interface PresetOptions {
   decimalSeparator: string
 }
 
-export interface FormattedNumberInputProps extends Omit<NumericFormatProps, 'onChange'> {
+export interface FormattedNumberInputProps extends Omit<NumericFormatProps, 'onChange' | 'max' | 'min'> {
+  max?: number
+  min?: number
   /** Changes thousand and decimal separators */
   preset?: FormattedNumberInputPreset
   /** Gives you back an object, see https://s-yadav.github.io/react-number-format/docs/quirks */

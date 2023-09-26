@@ -16,7 +16,7 @@
     "transform": "yarn token-transformer lib/tokens.json dist/sets/tott/global.json global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/tott/tott.json global,tott global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/tott/tott-components.json global,tott,components global,tott && yarn token-transformer lib/tokens.json dist/sets/webapp/global.json global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/webapp/webapp.json global,webapp global --resolveReferences=false && yarn token-transformer lib/tokens.json dist/sets/webapp/webapp-components.json global,webapp,components global,webapp",
     "transpile": "yarn transform && node scripts/sd-build.js && yarn rollup -c",
     "clean": "rm -rf dist",
-    "lint": "eslint --ext ts,js scripts/*.* *.ts *.js",
+    "lint": "eslint --ext ts,js scripts/*.* *.ts *.cjs",
     "prepublishOnly": "yarn clean && yarn transpile",
     "test": "echo testless"
   },

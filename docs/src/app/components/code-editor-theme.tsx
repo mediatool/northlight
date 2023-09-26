@@ -1,6 +1,6 @@
-import PrismTheme from 'prism-react-renderer/themes/*'
+import type { PrismTheme } from 'prism-react-renderer'
 
-export const paleNight: typeof PrismTheme = {
+export const paleNight: PrismTheme = {
   plain: {
     color: '#bfc7d5',
     backgroundColor: '#292d3e',
