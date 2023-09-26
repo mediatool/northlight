@@ -6,8 +6,5 @@
     "lib/**/*.ts",
     "test/**/*.tsx",
     "test/**/*.ts",
-  ],
-  "compilerOptions": {
-    "types": [ "mocha" ]
-  }
+  ]
 }

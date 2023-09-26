@@ -1,4 +1,5 @@
 import React from 'react'
+import { describe, it } from 'mocha'
 import { assert, expect } from 'chai'
 import { render, screen } from '@testing-library/react'
 import { Avatar } from '../../../../lib/components'

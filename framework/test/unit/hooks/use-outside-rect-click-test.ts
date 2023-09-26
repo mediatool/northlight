@@ -1,4 +1,5 @@
 import { act, fireEvent, renderHook } from '@testing-library/react'
+import { beforeEach, describe, it } from 'mocha'
 import { assert } from 'chai'
 import { useOutsideRectClick } from '../../../lib/hooks/use-outside-rect-click'
 

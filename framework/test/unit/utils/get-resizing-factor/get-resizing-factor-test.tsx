@@ -1,4 +1,5 @@
 import { expect } from 'chai'
+import { describe, it } from 'mocha'
 import { getResizingFactor } from '../../../../lib/components/file-picker/utils'
 
 describe('getResizingFactor', () => {

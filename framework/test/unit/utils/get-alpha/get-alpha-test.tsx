@@ -1,4 +1,5 @@
 import React from 'react'
+import { describe, it } from 'mocha'
 import { expect } from 'chai'
 import { render } from '@testing-library/react'
 import { MediatoolThemeProvider, VisuallyHidden, addAlpha, theme } from '../../../../lib'

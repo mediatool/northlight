@@ -1,4 +1,5 @@
 import { expect } from 'chai'
+import { describe, it } from 'mocha'
 import { palette } from '@northlight/tokens'
 import { getShades } from '../../../../lib'
 
