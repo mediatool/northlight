@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { identity, isNil } from 'ramda'
-import { NumberInputFieldProps } from './types'
+import { NumberInputFieldProps } from './types.ts'
 import { Field } from '../form'
-import { NumberInput } from './number-input'
-import { advancedParseFloat } from './advanced-parse-float'
+import { NumberInput } from './number-input.tsx'
+import { advancedParseFloat } from './advanced-parse-float.ts'
 import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 
 /**

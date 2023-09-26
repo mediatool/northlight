@@ -1,6 +1,6 @@
 import React, { Children } from 'react'
 import { T } from 'ramda'
-import { passPropsToChild } from './pass-props-to-child'
+import { passPropsToChild } from './pass-props-to-child.ts'
 
 export const getChildrenWithProps = (
   children: React.ReactNode | React.ReactNode[],

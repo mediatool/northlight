@@ -6,7 +6,7 @@ import {
   ModalHeader,
 } from '../modal'
 import { Button } from '../button'
-import { ConfirmDeleteModalProps } from './types'
+import { ConfirmDeleteModalProps } from './types.ts'
 
 export const ConfirmDeleteModal = ({
   isOpen,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Spinner as ChakraSpinner } from '@chakra-ui/react'
-import { SpinnerProps } from './types'
+import { SpinnerProps } from './types.ts'
 
 /**
  * Loading indicator

@@ -10,8 +10,8 @@ import {
 } from '@dnd-kit/core'
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import { indexOf, insert, keys, remove } from 'ramda'
-import { DragAndDrop } from './drag-and-drop'
-import { MultiItemType, MultiSortProps } from './types'
+import { DragAndDrop } from './drag-and-drop.tsx'
+import { MultiItemType, MultiSortProps } from './types.ts'
 
 /**
  * Util component for sorting items in two dimensions(container and order in container)

@@ -3,7 +3,7 @@ import { RadioGroupProps, RadioGroupState, useRadioGroupState } from '@react-sta
 import { CheckboxGroupProps, CheckboxGroupState, useCheckboxGroupState } from '@react-stately/checkbox'
 import { AriaCheckboxGroupProps, useCheckboxGroup } from '@react-aria/checkbox'
 import { AriaRadioGroupProps, useRadioGroup } from '@react-aria/radio'
-import { FlipButtonGroupProps } from './types'
+import { FlipButtonGroupProps } from './types.ts'
 
 export const FlipButtonContext = createContext<CheckboxGroupState | RadioGroupState | null>(null)
 

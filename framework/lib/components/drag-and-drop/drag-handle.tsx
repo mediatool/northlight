@@ -1,7 +1,7 @@
 import React from 'react'
 import { DragDuo } from '@northlight/icons'
 import { Icon } from '../icon'
-import { DragHandleProps } from './types'
+import { DragHandleProps } from './types.ts'
 
 /**
  * Util component to display drag handle icon

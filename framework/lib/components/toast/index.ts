@@ -1,3 +1,3 @@
-export * from './toast'
-export * from './types'
-export * from './use-toast'
+export * from './toast.tsx'
+export * from './types.ts'
+export * from './use-toast.tsx'

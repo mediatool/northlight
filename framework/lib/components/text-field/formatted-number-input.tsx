@@ -11,8 +11,8 @@ import {
   FormattedNumberInputPreset,
   FormattedNumberInputProps,
   PresetOptions,
-} from './types'
-import { roundToPrecision } from './round-to-precision'
+} from './types.ts'
+import { roundToPrecision } from './round-to-precision.ts'
 
 const presetMap: Record<FormattedNumberInputPreset, PresetOptions> = {
   eu: {

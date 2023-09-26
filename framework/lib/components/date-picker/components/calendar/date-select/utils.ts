@@ -1,5 +1,5 @@
 import { useDateFormatter } from '@react-aria/i18n'
-import { UseYearsCalendarProps, UseYearsRangeCalendarProps, YearValue } from './types'
+import { UseYearsCalendarProps, UseYearsRangeCalendarProps, YearValue } from './types.ts'
 
 export const useYearsCalendar = ({
   state,

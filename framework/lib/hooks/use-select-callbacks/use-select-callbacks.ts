@@ -1,7 +1,7 @@
 import { ActionMeta, MultiValue, SingleValue } from 'chakra-react-select'
 import { difference, isNil, last, map, prop } from 'ramda'
 import { useRef } from 'react'
-import { BasicOption, UseSelectCallbacksProps } from './types'
+import { BasicOption, UseSelectCallbacksProps } from './types.ts'
 
 export const useSelectCallbacks = <
   T extends BasicOption,

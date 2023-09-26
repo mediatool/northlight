@@ -1,5 +1,5 @@
 import { useFormContext } from '../../hooks'
-import { SetValueOptionsType } from './types'
+import { SetValueOptionsType } from './types.ts'
 
 export const useSetValueRefreshed = () => {
   const { setValue, watch } = useFormContext()

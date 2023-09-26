@@ -1,7 +1,7 @@
 import React from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/system'
 import { Flex } from '../flex'
-import { ToolboxContentProps } from './types'
+import { ToolboxContentProps } from './types.ts'
 
 /**
  * Main content of toolbox drawer

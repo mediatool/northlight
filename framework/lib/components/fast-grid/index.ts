@@ -1,2 +1,2 @@
-export * from './fast-grid'
-export * from './types'
+export * from './fast-grid.tsx'
+export * from './types.ts'

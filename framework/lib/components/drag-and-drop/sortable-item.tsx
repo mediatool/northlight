@@ -2,9 +2,9 @@ import React, { PointerEvent, cloneElement, isValidElement, useRef } from 'react
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import { Box } from '../box'
-import { DragItem } from './drag-item'
+import { DragItem } from './drag-item.tsx'
 import { ring } from '../../utils'
-import { SortableItemProps } from './types'
+import { SortableItemProps } from './types.ts'
 
 /**
  * Renders a draggable item under sortable context

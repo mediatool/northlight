@@ -1,8 +1,8 @@
 import React from 'react'
 import { identity } from 'ramda'
-import { FormattedNumberInputFieldProps } from './types'
+import { FormattedNumberInputFieldProps } from './types.ts'
 import { Field } from '../form'
-import { FormattedNumberInput } from './formatted-number-input'
+import { FormattedNumberInput } from './formatted-number-input.tsx'
 
 /**
  * The formatted number input component wrapped in a <Field />

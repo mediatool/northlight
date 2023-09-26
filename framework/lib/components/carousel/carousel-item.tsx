@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Center } from '../center'
-import { carouselItemWidth } from './constants'
-import { CarouselItemProps } from './types'
+import { carouselItemWidth } from './constants.ts'
+import { CarouselItemProps } from './types.ts'
 
 const variants = {
   active: { scale: 1.15, opacity: 1 },

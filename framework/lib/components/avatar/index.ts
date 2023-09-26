@@ -1,3 +1,3 @@
-export * from './avatar'
-export * from './avatar-group'
-export * from './types'
+export * from './avatar.tsx'
+export * from './avatar-group.tsx'
+export * from './types.ts'

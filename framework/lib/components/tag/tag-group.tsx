@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { HStack } from '../stack'
 import { OverflowGroup, useOverflowGroup } from '../overflow-group'
-import { TagGroupProps } from './types'
-import { OverflowIndicator as DefaultOverflowIndicator } from './overflow-indicator'
+import { TagGroupProps } from './types.ts'
+import { OverflowIndicator as DefaultOverflowIndicator } from './overflow-indicator.tsx'
 
 /**
  * Used when rending multiple tags in limited container for responsive layout

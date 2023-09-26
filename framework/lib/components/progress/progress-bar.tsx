@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Progress } from '@chakra-ui/react'
 import { VStack } from '../stack'
 import { Small } from '../typography'
-import { formattedTime } from './utils'
+import { formattedTime } from './utils.ts'
 import { Fade } from '../transitions'
-import { ProgressBarProps } from './types'
-import { animationSlideTime, updateTimeThreshold } from './constants'
+import { ProgressBarProps } from './types.ts'
+import { animationSlideTime, updateTimeThreshold } from './constants.ts'
 
 /**
  * @see {@link https:/northlight/reference/progress-bar}

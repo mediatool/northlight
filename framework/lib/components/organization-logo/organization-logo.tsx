@@ -1,6 +1,6 @@
 import React from 'react'
 import { chakra, useMultiStyleConfig } from '@chakra-ui/react'
-import { OrganizationLogoProps } from './types'
+import { OrganizationLogoProps } from './types.ts'
 
 /**
  * @see {@link https://northlight.dev/reference/organization-logo}

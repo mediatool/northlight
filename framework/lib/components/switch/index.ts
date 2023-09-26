@@ -1,3 +1,3 @@
-export * from './switch'
-export * from './switch-field'
-export * from './types'
+export * from './switch.tsx'
+export * from './switch-field.tsx'
+export * from './types.ts'

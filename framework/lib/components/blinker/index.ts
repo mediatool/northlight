@@ -1,2 +1,2 @@
-export * from './blinker'
-export * from './types'
+export * from './blinker.tsx'
+export * from './types.ts'

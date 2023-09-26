@@ -1,7 +1,7 @@
 import React, { LegacyRef, forwardRef } from 'react'
 import { VariableSizeList } from 'react-window'
 import AutoSizer from 'react-virtualized-auto-sizer'
-import { FastListProps } from './types'
+import { FastListProps } from './types.ts'
 
 /**
  * Wrapper that renders children in a virtualized stacked layout

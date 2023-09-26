@@ -1,2 +1,2 @@
-export * from './mediatool-theme-provider'
-export * from './types'
+export * from './mediatool-theme-provider.tsx'
+export * from './types.ts'

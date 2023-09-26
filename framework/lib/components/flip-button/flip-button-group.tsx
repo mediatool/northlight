@@ -2,8 +2,8 @@ import React, { Children, cloneElement, isValidElement } from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { omit } from 'ramda'
 import { Stack } from '../stack'
-import { FlipButtonGroupProps } from './types'
-import { FlipButtonContext, useFlipButton } from './utils'
+import { FlipButtonGroupProps } from './types.ts'
+import { FlipButtonContext, useFlipButton } from './utils.ts'
 
 /**
  * Provides context to FlipButton

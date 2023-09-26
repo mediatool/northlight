@@ -4,7 +4,7 @@ import {
   forwardRef,
   useStyleConfig,
 } from '@chakra-ui/react'
-import { IconProps } from './types'
+import { IconProps } from './types.ts'
 
 /**
  * Pass down any icon from northlight/icons via as prop

@@ -9,7 +9,7 @@ import { Button } from '../button'
 import { Slider, SliderFilledTrack, SliderThumb, SliderTrack } from '../slider'
 import { Modal, ModalBody, ModalFooter, ModalHeader } from '../modal'
 import { FormLabel } from '../form-control'
-import { FileEditorModalProps } from './types'
+import { FileEditorModalProps } from './types.ts'
 
 export const FileEditorModal = forwardRef(({
   fileName,

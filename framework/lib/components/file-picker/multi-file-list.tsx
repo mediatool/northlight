@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { any, identity, map } from 'ramda'
-import { FileItem } from './file-item'
+import { FileItem } from './file-item.tsx'
 import { Stack } from '../stack'
-import { createPreviewFileObject, getNewUploadingFiles, isFile, isOverflowing } from './utils'
-import { FileFormat, MultiFileListProps } from './types'
-import { defaultEditOptions } from './constants'
+import { createPreviewFileObject, getNewUploadingFiles, isFile, isOverflowing } from './utils.ts'
+import { FileFormat, MultiFileListProps } from './types.ts'
+import { defaultEditOptions } from './constants.ts'
 
 /**
  * Show list of files, their uploading progress as well as options to edit/delete them

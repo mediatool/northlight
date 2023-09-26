@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { Input, InputGroup, InputLeftElement, InputRightElement } from '../input'
 import { EditableInput as ChakraEditableInput, Editable, EditablePreview } from '../editable'
-import { EditableProps } from './types'
-import { EditableControls } from './editable-controls'
+import { EditableProps } from './types.ts'
+import { EditableControls } from './editable-controls.tsx'
 
 /**
  * Used to safely modify text with default or previousely set value

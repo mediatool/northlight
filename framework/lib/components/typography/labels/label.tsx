@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormLabel, VisuallyHidden, useStyleConfig } from '@chakra-ui/react'
-import { LabelProps } from './types'
+import { LabelProps } from './types.ts'
 
 /**
  * One of the stylized typography components

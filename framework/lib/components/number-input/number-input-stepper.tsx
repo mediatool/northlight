@@ -10,7 +10,7 @@ import { HStack } from '../stack'
 import { Divider } from '../divider'
 import { P } from '../typography'
 import { Center } from '../center'
-import { NumberInputStepperProps } from './types'
+import { NumberInputStepperProps } from './types.ts'
 
 export const NumberInputStepper = ({
   includePercentage = false,

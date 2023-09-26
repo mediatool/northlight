@@ -1,7 +1,7 @@
 import React, { LegacyRef, forwardRef } from 'react'
 import { VariableSizeGrid } from 'react-window'
 import AutoSizer from 'react-virtualized-auto-sizer'
-import { FastGridProps } from './types'
+import { FastGridProps } from './types.ts'
 
 /**
  * Wrapper that renders children in a virtualized html grid layout

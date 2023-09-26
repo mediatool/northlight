@@ -9,13 +9,13 @@ import {
   test,
   trim,
 } from 'ramda'
-import { imageLazyThreshold } from './constants'
+import { imageLazyThreshold } from './constants.ts'
 import {
   FileFormat,
   FileWithSizeAndType,
   FileWithSrcNameType,
   FileWithType,
-} from './types'
+} from './types.ts'
 
 export const getResizingFactor = (
   imgWidth: number,

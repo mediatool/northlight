@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { CalendarDuo } from '@northlight/icons'
 import { useButton } from '@react-aria/button'
 import { Button } from '../../../button'
-import { TriggerProps } from './types'
+import { TriggerProps } from './types.ts'
 import { Icon } from '../../../icon'
 
 export const Trigger = (props: TriggerProps) => {

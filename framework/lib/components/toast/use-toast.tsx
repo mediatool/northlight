@@ -1,7 +1,7 @@
 import React from 'react'
 import { useToast as useChakraToast } from '@chakra-ui/react'
-import { Toast } from './toast'
-import { UseToastOptions } from './types'
+import { Toast } from './toast.tsx'
+import { UseToastOptions } from './types.ts'
 
 /**
  * This hook returns a toast function that when called will popup a toast

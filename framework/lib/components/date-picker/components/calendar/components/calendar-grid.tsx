@@ -4,9 +4,9 @@ import { useCalendarGrid } from '@react-aria/calendar'
 import { getWeeksInMonth } from '@internationalized/date'
 import { times } from 'ramda'
 import { Table, Tbody, Thead, Tr } from '../../../../table'
-import { CalendarCell } from './calendar-cell'
-import { CalendarGridProps } from './types'
-import { DayLabels } from './day-labels'
+import { CalendarCell } from './calendar-cell.tsx'
+import { CalendarGridProps } from './types.ts'
+import { DayLabels } from './day-labels.tsx'
 
 export const CalendarGrid = memo(
   ({ state, locale, ...rest }: CalendarGridProps) => {

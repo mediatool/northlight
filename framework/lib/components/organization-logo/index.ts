@@ -1,2 +1,2 @@
-export * from './organization-logo'
-export * from './types'
+export * from './organization-logo.tsx'
+export * from './types.ts'

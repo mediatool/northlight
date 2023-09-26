@@ -13,12 +13,12 @@ import {
   isValidFile,
   onlyAcceptsImages,
   readableFileSize,
-} from './utils'
+} from './utils.ts'
 import { Clickable } from '../clickable'
 import { HStack, Stack } from '../stack'
 import { Lead, P } from '../typography'
-import { fiveHundredMB } from './constants'
-import { FileFormat, MultiFileUploaderProps } from './types'
+import { fiveHundredMB } from './constants.ts'
+import { FileFormat, MultiFileUploaderProps } from './types.ts'
 import { useCurrentTheme } from '../../utils'
 
 /**

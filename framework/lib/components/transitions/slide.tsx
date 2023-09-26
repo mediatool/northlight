@@ -1,8 +1,8 @@
 import React from 'react'
 import { Slide as ChakraSlide } from '@chakra-ui/react'
 import { identity } from 'ramda'
-import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils'
-import { SlideProps } from './types'
+import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils.ts'
+import { SlideProps } from './types.ts'
 
 export const Slide = ({
   children,

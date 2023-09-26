@@ -1,8 +1,8 @@
 import React from 'react'
 import { identity } from 'ramda'
 import { Field } from '../form'
-import { FlipButtonGroup } from './flip-button-group'
-import { FlipButtonGroupFieldProps } from './types'
+import { FlipButtonGroup } from './flip-button-group.tsx'
+import { FlipButtonGroupFieldProps } from './types.ts'
 
 /**
  * The FlipButtonGroup component wrapped in a <Field />

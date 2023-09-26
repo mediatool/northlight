@@ -4,9 +4,9 @@ import { useCalendarGrid } from '@react-aria/calendar'
 import { endOfMonth, getWeeksInMonth } from '@internationalized/date'
 import { times } from 'ramda'
 import { Box } from '../../../../box'
-import { DayLabels } from './day-labels'
-import { RangeCell } from './range-cell'
-import { RangeCalendarGridProps } from './types'
+import { DayLabels } from './day-labels.tsx'
+import { RangeCell } from './range-cell.tsx'
+import { RangeCalendarGridProps } from './types.ts'
 
 export const RangeCalendarGrid = ({ state, locale, offset = {} }: RangeCalendarGridProps) => {
   const startDate = state.visibleRange.start.add(offset)

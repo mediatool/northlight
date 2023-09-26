@@ -1,8 +1,8 @@
 import React from 'react'
 import { identity } from 'ramda'
-import { RadioFieldGroupProps } from './types'
+import { RadioFieldGroupProps } from './types.ts'
 import { Field } from '../form'
-import { RadioGroup } from './radio-group'
+import { RadioGroup } from './radio-group.tsx'
 import { Box } from '../box'
 
 /**

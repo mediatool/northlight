@@ -1,6 +1,6 @@
 import React from 'react'
 import { Heading, useStyleConfig } from '@chakra-ui/react'
-import { HeadingProps } from './types'
+import { HeadingProps } from './types.ts'
 
 /**
  * @see {@link https://northlight.dev/reference/h3}

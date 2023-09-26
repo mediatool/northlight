@@ -1,3 +1,3 @@
-export * from './search-bar'
-export * from './search-bar-field'
-export * from './types'
+export * from './search-bar.tsx'
+export * from './search-bar-field.tsx'
+export * from './types.ts'

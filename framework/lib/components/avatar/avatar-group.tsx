@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { HStack } from '../stack'
-import { AvatarGroupProps } from './types'
+import { AvatarGroupProps } from './types.ts'
 import { Small } from '../typography'
 import { OverflowGroup } from '../overflow-group'
 

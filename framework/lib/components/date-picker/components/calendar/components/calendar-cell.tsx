@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { chakra } from '@chakra-ui/react'
 import { useCalendarCell } from '@react-aria/calendar'
 import { isSameMonth, today } from '@internationalized/date'
-import { CalendarCellProps } from './types'
+import { CalendarCellProps } from './types.ts'
 import { Button } from '../../../../button'
 
 export const CalendarCell = ({

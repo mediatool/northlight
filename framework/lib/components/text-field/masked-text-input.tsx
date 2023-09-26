@@ -1,7 +1,7 @@
 import React from 'react'
 import InputMask from 'react-input-mask'
 import { Input } from '../input'
-import { MaskedTextInputProps } from './types'
+import { MaskedTextInputProps } from './types.ts'
 
 //! Overload error in @types/react-input-mask, overwriting faulty types as unknown as any
 const CustomInput = InputMask as unknown as any

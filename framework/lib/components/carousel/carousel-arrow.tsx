@@ -4,7 +4,7 @@ import { useMultiStyleConfig } from '@chakra-ui/react'
 import { Center } from '../center'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
-import { CarouselArrowProps } from './types'
+import { CarouselArrowProps } from './types.ts'
 
 export const CarouselArrow = ({
   onClick,

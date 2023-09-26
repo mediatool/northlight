@@ -1,6 +1,6 @@
 import React from 'react'
 import { PinInput as ChakraPinInput } from '@chakra-ui/react'
-import { PinInputProps } from './types'
+import { PinInputProps } from './types.ts'
 
 /**
  * For entering numbers in ex two factor authentication

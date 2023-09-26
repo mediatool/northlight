@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { findIndex, identity, insert, isEmpty, isNil, remove } from 'ramda'
-import { MultiFileList } from './multi-file-list'
-import { createPreviewFileObject } from './utils'
-import { MultiFileUploader } from './multi-file-uploader'
+import { MultiFileList } from './multi-file-list.tsx'
+import { createPreviewFileObject } from './utils.ts'
+import { MultiFileUploader } from './multi-file-uploader.tsx'
 import { Stack } from '../stack'
-import { defaultEditOptions, fiveHundredMB } from './constants'
-import { FileFormat, MultiFilePickerProps } from './types'
+import { defaultEditOptions, fiveHundredMB } from './constants.ts'
+import { FileFormat, MultiFilePickerProps } from './types.ts'
 
 /**
  * Lets user import file of any type as Javascript File Object

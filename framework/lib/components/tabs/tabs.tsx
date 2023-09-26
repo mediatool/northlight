@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tabs as ChakraTabs } from '@chakra-ui/react'
-import { TabsProps } from './types'
+import { TabsProps } from './types.ts'
 
 /**
  * Context provider for tabs tabs

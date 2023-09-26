@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStyleConfig } from '@chakra-ui/react'
 import { Box } from '../box'
-import { BlinkerProps } from './types'
+import { BlinkerProps } from './types.ts'
 
 /**
  * Status indicator of some sorts

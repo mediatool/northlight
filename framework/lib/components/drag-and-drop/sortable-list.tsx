@@ -15,11 +15,11 @@ import {
   sortableKeyboardCoordinates,
 } from '@dnd-kit/sortable'
 import { identity, indexOf, map } from 'ramda'
-import { DragAndDrop } from './drag-and-drop'
-import { Sortable } from './sortable'
-import { SortableItem } from './sortable-item'
-import { DragItem } from './drag-item'
-import { SortableListProps } from './types'
+import { DragAndDrop } from './drag-and-drop.tsx'
+import { Sortable } from './sortable.tsx'
+import { SortableItem } from './sortable-item.tsx'
+import { DragItem } from './drag-item.tsx'
+import { SortableListProps } from './types.ts'
 
 /**
  * Util component to render sortable items under sortable context

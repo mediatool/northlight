@@ -1,8 +1,8 @@
 import React from 'react'
 import { rectSortingStrategy } from '@dnd-kit/sortable'
-import { Sortable } from './sortable'
-import { SortableItem } from './sortable-item'
-import { SortableContainerProps } from './types'
+import { Sortable } from './sortable.tsx'
+import { SortableItem } from './sortable-item.tsx'
+import { SortableContainerProps } from './types.ts'
 
 /**
  * Used with multi sort to render a sortable list inside a droppable

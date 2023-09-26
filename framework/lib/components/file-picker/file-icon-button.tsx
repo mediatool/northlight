@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
-import { FileIconButtonProps } from './types'
+import { FileIconButtonProps } from './types.ts'
 
 export const FileIconButton = ({
   icon,

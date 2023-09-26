@@ -1,8 +1,8 @@
 import React from 'react'
 import { Collapse as ChakraCollapse } from '@chakra-ui/react'
 import { identity } from 'ramda'
-import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils'
-import { CollapseProps } from './types'
+import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils.ts'
+import { CollapseProps } from './types.ts'
 
 /**
  * Simple transition to hide/show content

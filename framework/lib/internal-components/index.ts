@@ -1,1 +1,1 @@
-export * from './input-group-wrapper'
+export * from './input-group-wrapper/index.ts'

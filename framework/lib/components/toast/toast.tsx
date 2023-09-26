@@ -1,7 +1,7 @@
 import React from 'react'
 import { Alert as ChakraAlert } from '@chakra-ui/react'
 import { toastIconMap } from '../types'
-import { ToastProps } from './types'
+import { ToastProps } from './types.ts'
 import { Icon } from '../icon'
 import { HStack, Stack } from '../stack'
 import { CloseButton } from '../close-button'

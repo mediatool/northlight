@@ -2,7 +2,7 @@ import React from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/system'
 import { CloseButton } from '../close-button'
 import { Flex } from '../flex'
-import { ToolboxHeaderProps } from './types'
+import { ToolboxHeaderProps } from './types.ts'
 import { H3 } from '../typography'
 
 /**

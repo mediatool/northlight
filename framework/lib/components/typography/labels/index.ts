@@ -1,2 +1,2 @@
-export * from './label'
-export * from './types'
+export * from './label.tsx'
+export * from './types.ts'

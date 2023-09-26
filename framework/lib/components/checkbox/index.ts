@@ -1,6 +1,6 @@
 export {
   CheckboxGroup,
 } from '@chakra-ui/react'
-export * from './checkbox'
-export * from './checkbox-field'
-export * from './types'
+export * from './checkbox.tsx'
+export * from './checkbox-field.tsx'
+export * from './types.ts'

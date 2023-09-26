@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text as ChakraText, useStyleConfig } from '@chakra-ui/react'
-import { PProps } from './types'
+import { PProps } from './types.ts'
 
 /**
  * @see {@link https://northlight.dev/reference/p}

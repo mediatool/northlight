@@ -1,1 +1,1 @@
-export { createDebounceFunctionInstance } from './create-debounce-function-instance'
+export { createDebounceFunctionInstance } from './create-debounce-function-instance.ts'

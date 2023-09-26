@@ -2,7 +2,7 @@ import { ComponentType } from 'react'
 import {
   GroupBase,
 } from 'chakra-react-select'
-import { CustomElementType, SearchBarOptionType } from './components/search-bar'
+import { CustomElementType, SearchBarOptionType } from './components/search-bar/index.ts'
 
 declare module 'react-select/dist/declarations/src/Select' {
   export interface Props<

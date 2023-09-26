@@ -2,7 +2,7 @@ import React from 'react'
 import { Controller, FieldPath, FieldValues } from 'react-hook-form'
 import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { Stack } from '../stack'
-import { FieldProps } from './types'
+import { FieldProps } from './types.ts'
 import { useFormContext } from '../../hooks'
 import { getFieldError } from '../../utils'
 

@@ -1,3 +1,3 @@
-export * from './textarea'
-export * from './textarea-field'
-export * from './types'
+export * from './textarea.tsx'
+export * from './textarea-field.tsx'
+export * from './types.ts'

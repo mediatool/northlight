@@ -10,12 +10,12 @@ import {
 } from '@northlight/icons'
 import { identity } from 'ramda'
 import AvatarEditor from 'react-avatar-editor'
-import { FileEditorModal } from './file-editor-modal'
-import { ConfirmDeleteModal } from './confirm-delete-modal'
+import { FileEditorModal } from './file-editor-modal.tsx'
+import { ConfirmDeleteModal } from './confirm-delete-modal.tsx'
 import { Icon } from '../icon'
 import { Lead, P } from '../typography'
 import { HStack, Stack } from '../stack'
-import { FilePickerProps } from './types'
+import { FilePickerProps } from './types.ts'
 import { Input } from '../input'
 import { Box } from '../box'
 import { ProgressBar } from '../progress'
@@ -32,9 +32,9 @@ import {
   isValidFile,
   onlyAcceptsImages,
   readableFileSize,
-} from './utils'
-import { FileIconButton } from './file-icon-button'
-import { defaultEditOptions, fiveHundredMB } from './constants'
+} from './utils.ts'
+import { FileIconButton } from './file-icon-button.tsx'
+import { defaultEditOptions, fiveHundredMB } from './constants.ts'
 import { useCurrentTheme } from '../../utils'
 
 /**

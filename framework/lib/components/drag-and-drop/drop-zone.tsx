@@ -1,8 +1,8 @@
 import React from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { Stack } from '../stack'
-import { Droppable } from './droppable'
-import { DropZoneProps } from './types'
+import { Droppable } from './droppable.tsx'
+import { DropZoneProps } from './types.ts'
 
 /**
  * Prestyled droppable area to drop draggable components,

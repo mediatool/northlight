@@ -1,6 +1,6 @@
 import React from 'react'
 import { useToken } from '@chakra-ui/system'
-import { StepStackProps } from './types'
+import { StepStackProps } from './types.ts'
 import { getChildrenWithProps } from '../../utils'
 import { HStack, Stack } from '../stack'
 import { Divider } from '../divider'

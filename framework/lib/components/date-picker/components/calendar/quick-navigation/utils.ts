@@ -1,5 +1,5 @@
 import { RangeCalendarState } from '@react-stately/calendar'
-import { DateRangeValue } from './types'
+import { DateRangeValue } from './types.ts'
 
 export const validRange = (date: DateRangeValue, state: RangeCalendarState) =>
   !date || (

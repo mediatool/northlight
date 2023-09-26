@@ -2,7 +2,7 @@ import React, { forwardRef, useState } from 'react'
 import { Box, useMultiStyleConfig } from '@chakra-ui/react'
 import { Blinker } from '../blinker'
 import { IconButton } from '../icon-button'
-import { NotificationIconButtonProps } from './types'
+import { NotificationIconButtonProps } from './types.ts'
 
 /**
  * A custom component that composes the IconButton and Blinker components.

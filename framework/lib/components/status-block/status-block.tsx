@@ -1,8 +1,8 @@
 import React from 'react'
 import { Icon } from '@chakra-ui/react'
 import { Tag, TagLabel, TagLeftIcon } from '../tag'
-import { blockVariantMap } from './block-variant-map'
-import { StatusBlockProps, statusIconMap } from './types'
+import { blockVariantMap } from './block-variant-map.ts'
+import { StatusBlockProps, statusIconMap } from './types.ts'
 
 /**
  * Used as status indicator

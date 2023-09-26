@@ -1,2 +1,2 @@
-export * from './p'
-export * from './types'
+export * from './p.tsx'
+export * from './types.ts'

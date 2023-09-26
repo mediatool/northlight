@@ -1,6 +1,6 @@
 import React from 'react'
 import { Select, useMultiStyleConfig } from '@chakra-ui/react'
-import { YearSelectProps } from './types'
+import { YearSelectProps } from './types.ts'
 
 export const YearSelect = ({
   onChange,

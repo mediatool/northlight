@@ -6,7 +6,7 @@ import { Flex } from '../flex'
 import { Slide } from '../transitions'
 import { Box } from '../box'
 import { Portal } from '../portal'
-import { ToolboxProps } from './types'
+import { ToolboxProps } from './types.ts'
 import { getChildrenWithProps } from '../../utils'
 
 /**

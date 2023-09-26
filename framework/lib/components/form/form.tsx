@@ -8,8 +8,8 @@ import {
   useForm,
 } from 'react-hook-form'
 import { always, equals } from 'ramda'
-import { FormProps } from './types'
-import { trimFormValues } from './trim-form-values'
+import { FormProps } from './types.ts'
+import { trimFormValues } from './trim-form-values.ts'
 
 /**
  * The context provider for handling state of components wrapped in field

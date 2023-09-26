@@ -1,2 +1,2 @@
-export * from './fast-list'
-export * from './types'
+export * from './fast-list.tsx'
+export * from './types.ts'

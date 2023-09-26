@@ -2,7 +2,7 @@ import React from 'react'
 import { useDroppable } from '@dnd-kit/core'
 import { Box } from '../box'
 import { Center } from '../center'
-import { DroppableProps } from './types'
+import { DroppableProps } from './types.ts'
 
 /**
  * Wrapper where you can style a container to place draggable elements

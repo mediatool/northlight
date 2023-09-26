@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react'
-import { YearSelect } from './year-select'
-import { useYearsCalendar } from './utils'
-import { YearSelectCalendarProps } from './types'
+import { YearSelect } from './year-select.tsx'
+import { useYearsCalendar } from './utils.ts'
+import { YearSelectCalendarProps } from './types.ts'
 
 export const YearSelectCalendar = ({ state }: YearSelectCalendarProps) => {
   const { years } = useYearsCalendar({ state })

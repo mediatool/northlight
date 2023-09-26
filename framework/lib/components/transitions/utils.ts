@@ -6,8 +6,8 @@ import {
   DurationType,
   OffsetType,
   TransitionDirection,
-} from './types'
-import { defaultFadeDelay, defaultOffset } from './constants'
+} from './types.ts'
+import { defaultFadeDelay, defaultOffset } from './constants.ts'
 
 const unFocusStyles = { tabIndex: '-1' }
 export const getChildrenWithFocus = (

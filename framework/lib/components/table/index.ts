@@ -18,5 +18,5 @@ export type {
   TableHeadProps,
   TableRowProps,
 } from '@chakra-ui/react'
-export * from './table'
-export * from './types'
+export * from './table.tsx'
+export * from './types.ts'

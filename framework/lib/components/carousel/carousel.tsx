@@ -5,10 +5,10 @@ import { useMultiStyleConfig } from '@chakra-ui/react'
 import { Box } from '../box'
 import { HStack } from '../stack'
 import { Radio, RadioGroup } from '../radio'
-import { CarouselItem } from './carousel-item'
-import { CarouselArrow } from './carousel-arrow'
-import { carouselItemSpacing, carouselItemWidth } from './constants'
-import { CarouselProps } from './types'
+import { CarouselItem } from './carousel-item.tsx'
+import { CarouselArrow } from './carousel-arrow.tsx'
+import { carouselItemSpacing, carouselItemWidth } from './constants.ts'
+import { CarouselProps } from './types.ts'
 
 /**
  * Easiely one of the fanciest components, horizontal carousel wrapper for anything

@@ -1,2 +1,2 @@
-export * from './icon'
-export * from './types'
+export * from './icon.tsx'
+export * from './types.ts'

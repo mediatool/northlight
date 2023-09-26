@@ -3,7 +3,7 @@ import { Tab as ChakraStep, useMultiStyleConfig } from '@chakra-ui/react'
 import { Capitalized, Lead } from '../typography'
 import { Flex } from '../flex'
 import { ring } from '../../utils'
-import { StepProps } from './types'
+import { StepProps } from './types.ts'
 
 /**
  * Renders a step in a step list

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { identity } from 'ramda'
 import { Field } from '../form'
-import { FilePicker } from './file-picker'
-import { toBase64 } from './utils'
-import { FilePickerFieldProps } from './types'
+import { FilePicker } from './file-picker.tsx'
+import { toBase64 } from './utils.ts'
+import { FilePickerFieldProps } from './types.ts'
 
 /**
  * The file picker component wrapped in a <Field />

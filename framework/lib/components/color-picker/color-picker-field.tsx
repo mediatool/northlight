@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field } from '../form'
-import { ColorPicker } from './color-picker'
-import { ColorPickerFieldProps } from './types'
+import { ColorPicker } from './color-picker.tsx'
+import { ColorPickerFieldProps } from './types.ts'
 
 /**
  * The <ColorPicker /> component wrapped in a <Field />

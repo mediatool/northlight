@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormLabelProps } from './types'
+import { FormLabelProps } from './types.ts'
 import { Label } from '../typography'
 
 /**

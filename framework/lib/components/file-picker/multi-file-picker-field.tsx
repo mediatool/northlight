@@ -1,9 +1,9 @@
 import React from 'react'
 import { concat, findIndex, identity, isEmpty, map, remove } from 'ramda'
 import { Field } from '../form'
-import { MultiFilePicker } from './multi-file-picker'
-import { createFileObjectFromSrc, isFile, toBase64 } from './utils'
-import { FileFormat, MultiFilePickerFieldProps } from './types'
+import { MultiFilePicker } from './multi-file-picker.tsx'
+import { createFileObjectFromSrc, isFile, toBase64 } from './utils.ts'
+import { FileFormat, MultiFilePickerFieldProps } from './types.ts'
 
 /**
  * The multi file picker component wrapped in a <Field />

@@ -1,2 +1,2 @@
-export * from './status-pin'
-export * from './types'
+export * from './status-pin.tsx'
+export * from './types.ts'

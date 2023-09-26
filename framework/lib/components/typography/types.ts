@@ -1,6 +1,6 @@
 import { Heading, Text } from '@chakra-ui/react'
-import { P } from './body'
-import { Label } from './labels'
+import { P } from './body/index.ts'
+import { Label } from './labels/index.ts'
 
 export type HeadingType = typeof Heading
 export type BodyType = typeof P

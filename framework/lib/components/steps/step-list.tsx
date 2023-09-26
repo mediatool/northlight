@@ -1,6 +1,6 @@
 import React, { Children } from 'react'
 import { TabList as ChakraStepList, useStyleConfig } from '@chakra-ui/react'
-import { StepListProps } from './types'
+import { StepListProps } from './types.ts'
 
 /**
  * Used to render a navigational list of steps

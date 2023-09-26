@@ -1,6 +1,6 @@
 import React from 'react'
-import { OverflowIndicatorProps } from './types'
-import { Tag } from './tag'
+import { OverflowIndicatorProps } from './types.ts'
+import { Tag } from './tag.tsx'
 
 export const OverflowIndicator = ({
   nbrRemainingTags,

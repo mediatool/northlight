@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Select, useMultiStyleConfig } from '@chakra-ui/react'
 import { months } from '../constants'
-import { MonthSelectProps } from './types'
+import { MonthSelectProps } from './types.ts'
 
 export const MonthSelect = ({
   state,

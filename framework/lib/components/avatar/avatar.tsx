@@ -4,8 +4,8 @@ import { BusinessContactDuo, UserSquareDuo } from '@northlight/icons'
 import { Icon } from '../icon'
 import { Box } from '../box'
 import { getInitials } from '../../utils'
-import { AvatarProps } from './types'
-import { AvatarBadge } from './avatar-badge'
+import { AvatarProps } from './types.ts'
+import { AvatarBadge } from './avatar-badge.tsx'
 
 /**
  * @see AvatarGroup

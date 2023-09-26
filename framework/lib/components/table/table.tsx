@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table as ChakraTable } from '@chakra-ui/react'
-import { TableProps } from './types'
+import { TableProps } from './types.ts'
 
 /**
  * @see {@link https://northlight.dev/reference/table}

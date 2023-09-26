@@ -1,2 +1,2 @@
-export * from './input-group-wrapper'
-export * from './types'
+export * from './input-group-wrapper.tsx'
+export * from './types.ts'

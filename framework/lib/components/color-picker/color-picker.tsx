@@ -8,9 +8,9 @@ import { Stack } from '../stack'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
 import { Box } from '../box'
-import { ColorPickerProps } from './types'
-import { ColorButton } from './color-button'
-import { columns, defaultColors, paletteColors } from './constants'
+import { ColorPickerProps } from './types.ts'
+import { ColorButton } from './color-button.tsx'
+import { columns, defaultColors, paletteColors } from './constants.ts'
 import {
   Popover,
   PopoverBody,
@@ -18,7 +18,7 @@ import {
   PopoverHeader,
   PopoverTrigger,
 } from '../popover'
-import { ColorsExpandButton } from './colors-expand-button'
+import { ColorsExpandButton } from './colors-expand-button.tsx'
 
 /**
  * Dropdown menu where user can select hex value

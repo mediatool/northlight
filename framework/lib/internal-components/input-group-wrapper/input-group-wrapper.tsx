@@ -1,7 +1,7 @@
 import React from 'react'
 import { all, isNil, not } from 'ramda'
 import { InputGroup } from '../../components/input'
-import { InputGroupWrapperProps } from './types'
+import { InputGroupWrapperProps } from './types.ts'
 
 export const InputGroupWrapper = ({
   inputLeftElement,

@@ -1,2 +1,2 @@
-export * from './icon-button'
-export * from './types'
+export * from './icon-button.tsx'
+export * from './types.ts'

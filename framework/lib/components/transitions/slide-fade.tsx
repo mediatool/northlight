@@ -1,9 +1,9 @@
 import React from 'react'
 import { SlideFade as ChakraSlideFade } from '@chakra-ui/react'
 import { identity } from 'ramda'
-import { getChildrenWithFocus, getDuration, getOffsets, useDelay, useHiddenDisplay } from './utils'
-import { SlideFadeProps } from './types'
-import { defaultOffset } from './constants'
+import { getChildrenWithFocus, getDuration, getOffsets, useDelay, useHiddenDisplay } from './utils.ts'
+import { SlideFadeProps } from './types.ts'
+import { defaultOffset } from './constants.ts'
 
 export const SlideFade = ({
   children,

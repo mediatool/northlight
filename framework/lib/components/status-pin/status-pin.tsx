@@ -1,8 +1,8 @@
 import React from 'react'
 import { Circle } from '../circle'
-import { pinVariantMap } from './pin-variant-map'
-import { pinSizeMap } from './pin-size-map'
-import { StatusPinProps } from './types'
+import { pinVariantMap } from './pin-variant-map.ts'
+import { pinSizeMap } from './pin-size-map.ts'
+import { StatusPinProps } from './types.ts'
 
 /**
  * @see StatusBlock

@@ -7,7 +7,7 @@ import {
 import { toastIconMap } from '../types'
 import { Icon } from '../icon'
 import { VStack } from '../stack'
-import { AsyncErrorProps } from './types'
+import { AsyncErrorProps } from './types.ts'
 
 /**
  * @see {@link https://northlight.dev/reference/async-error}

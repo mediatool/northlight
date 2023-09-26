@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { Tag as ChakraTag } from '@chakra-ui/react'
-import { TagProps } from './types'
+import { TagProps } from './types.ts'
 
 /**
  * @see TagGroup

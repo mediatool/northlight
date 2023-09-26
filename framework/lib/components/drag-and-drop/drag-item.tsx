@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import { DotsMatrixSolid } from '@northlight/icons'
 import { Tag, TagLabel, TagRightIcon } from '../tag'
 import { Icon } from '../icon'
-import { DragItemProps } from './types'
+import { DragItemProps } from './types.ts'
 
 /**
  * Default draggable item none other provided in SortableList and MultiSort.

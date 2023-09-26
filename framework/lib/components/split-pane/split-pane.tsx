@@ -1,6 +1,6 @@
 import React, { cloneElement, useCallback, useRef } from 'react'
 import { Grid, useStyleConfig } from '@chakra-ui/react'
-import { SplitPaneProps } from './types'
+import { SplitPaneProps } from './types.ts'
 
 /**
  * Used for split screen layouts

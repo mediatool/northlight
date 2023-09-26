@@ -1,5 +1,5 @@
 export {
   ButtonGroup,
 } from '@chakra-ui/react'
-export * from './button'
-export * from './types'
+export * from './button.tsx'
+export * from './types.ts'

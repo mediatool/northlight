@@ -4,9 +4,9 @@ import {
   NumberInputField,
 } from '@chakra-ui/react'
 import { defaultTo, identity, path } from 'ramda'
-import { NumberInputStepper } from './number-input-stepper'
-import { NumberInputProps } from './types'
-import { advancedParseFloat } from './advanced-parse-float'
+import { NumberInputStepper } from './number-input-stepper.tsx'
+import { NumberInputProps } from './types.ts'
+import { advancedParseFloat } from './advanced-parse-float.ts'
 
 /**
  * Basic accessible input that only allows numbers, with support for arrow keys,

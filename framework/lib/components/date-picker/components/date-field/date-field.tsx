@@ -5,9 +5,9 @@ import { createCalendar } from '@internationalized/date'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { find, split } from 'ramda'
 import { Box } from '../../../box'
-import { DateSegment } from './date-segment'
-import { DateFieldProps, DateSegmentType } from './types'
-import { delimeterIncluded, formatQuery } from './utils'
+import { DateSegment } from './date-segment.tsx'
+import { DateFieldProps, DateSegmentType } from './types.ts'
+import { delimeterIncluded, formatQuery } from './utils.ts'
 
 export const DateField = (props: DateFieldProps) => {
   const ref = useRef<HTMLInputElement>(null)

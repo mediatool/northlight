@@ -1,2 +1,2 @@
-export * from './status-block'
-export * from './types'
+export * from './status-block.tsx'
+export * from './types.ts'

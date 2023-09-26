@@ -1,8 +1,8 @@
 import React from 'react'
 import { identity } from 'ramda'
-import { TextareaFieldProps } from './types'
+import { TextareaFieldProps } from './types.ts'
 import { Field } from '../form'
-import { Textarea } from './textarea'
+import { Textarea } from './textarea.tsx'
 
 export const TextareaField = ({
   name,

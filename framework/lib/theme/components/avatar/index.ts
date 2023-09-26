@@ -1,6 +1,6 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 import { getContrastColor } from '../../../utils'
-import { getAvatarBgColor } from './get-avatar-bg-color'
+import { getAvatarBgColor } from './get-avatar-bg-color.ts'
 
 export const Avatar: ComponentMultiStyleConfig = {
   parts: [ 'container', 'text', 'badge', 'icon' ],

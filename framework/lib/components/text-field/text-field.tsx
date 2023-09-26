@@ -1,6 +1,6 @@
 import React from 'react'
 import { identity, isNil } from 'ramda'
-import { TextFieldProps } from './types'
+import { TextFieldProps } from './types.ts'
 import { Input } from '../input'
 import { Field } from '../form'
 import { InputGroupWrapper } from '../../internal-components/input-group-wrapper'

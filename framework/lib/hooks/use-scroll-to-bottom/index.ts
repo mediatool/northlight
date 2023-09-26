@@ -1,5 +1,5 @@
 import { RefObject, useEffect } from 'react'
-import { smoothScrollToBottom } from './utils/smooth-scroll-to-bottom'
+import { smoothScrollToBottom } from './utils/smooth-scroll-to-bottom.ts'
 
 export interface Message {
   content: string

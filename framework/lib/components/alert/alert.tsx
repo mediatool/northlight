@@ -1,6 +1,6 @@
 import React from 'react'
 import { Alert as ChakraAlert } from '@chakra-ui/react'
-import { AlertProps } from './types'
+import { AlertProps } from './types.ts'
 
 export const Alert = ({
   variant = 'success',

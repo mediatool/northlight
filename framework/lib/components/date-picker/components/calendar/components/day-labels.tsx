@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import { chakra, useMultiStyleConfig } from '@chakra-ui/system'
-import { DayLabelsProps } from './types'
+import { DayLabelsProps } from './types.ts'
 
 export const DayLabels = memo(({
   weekDays,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tabs as ChakraSteps } from '@chakra-ui/react'
-import { StepsProps } from './types'
+import { StepsProps } from './types.ts'
 
 /**
  * Context provider for steps tabs

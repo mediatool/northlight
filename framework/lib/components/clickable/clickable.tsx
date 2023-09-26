@@ -3,7 +3,7 @@ import { Link, chakra } from '@chakra-ui/react'
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { useClickable } from '@chakra-ui/clickable'
 import { isNil } from 'ramda'
-import { ClickableProps } from './types'
+import { ClickableProps } from './types.ts'
 import { ring } from '../../utils'
 
 /**

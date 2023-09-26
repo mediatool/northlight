@@ -2,8 +2,8 @@ import React, { cloneElement, isValidElement } from 'react'
 import { useDraggable } from '@dnd-kit/core'
 import { CSS } from '@dnd-kit/utilities'
 import { Box } from '../box'
-import { DraggableProps } from './types'
-import { DragItem } from './drag-item'
+import { DraggableProps } from './types.ts'
+import { DragItem } from './drag-item.tsx'
 import { ring } from '../../utils'
 
 /**

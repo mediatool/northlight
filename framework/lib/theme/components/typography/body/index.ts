@@ -1,1 +1,1 @@
-export * from './p'
+export * from './p.ts'

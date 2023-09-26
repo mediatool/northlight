@@ -1,10 +1,10 @@
 import React from 'react'
 import { any } from 'ramda'
 import { HStack } from '../../../../stack'
-import { MoveButton } from './move-button'
+import { MoveButton } from './move-button.tsx'
 import { Icon } from '../../../../icon'
-import { validRange } from './utils'
-import { ButtonRowProps } from './types'
+import { validRange } from './utils.ts'
+import { ButtonRowProps } from './types.ts'
 
 export const ButtonRow = ({
   dates,

@@ -11,8 +11,8 @@ import { Clickable } from '../../../../clickable'
 import { SlideFade } from '../../../../transitions'
 import { HStack, Stack } from '../../../../stack'
 import { Icon } from '../../../../icon'
-import { ButtonRow } from './button-row'
-import { AdjustRangeProps, Date, DateRangeValue, MoveDateByType } from './types'
+import { ButtonRow } from './button-row.tsx'
+import { AdjustRangeProps, Date, DateRangeValue, MoveDateByType } from './types.ts'
 
 export const AdjustRange = ({ state, adjust = 'start' }: AdjustRangeProps) => {
   const [ isOpen, setIsOpen ] = useState(false)

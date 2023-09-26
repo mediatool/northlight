@@ -1,6 +1,6 @@
 import React from 'react'
 import { chakra, useMultiStyleConfig } from '@chakra-ui/react'
-import { AvatarBadgeProps } from './types'
+import { AvatarBadgeProps } from './types.ts'
 
 /**
  * Specific component meant to be used with <Avatar /> to display notification

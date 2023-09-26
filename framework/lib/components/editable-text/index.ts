@@ -1,2 +1,2 @@
-export * from './editable-text'
-export * from './types'
+export * from './editable-text.tsx'
+export * from './types.ts'

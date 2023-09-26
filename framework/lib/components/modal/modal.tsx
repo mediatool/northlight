@@ -5,7 +5,7 @@ import {
   ModalContent,
   ModalOverlay,
 } from '@chakra-ui/react'
-import { ModalProps } from './types'
+import { ModalProps } from './types.ts'
 
 /**
  * @see {@link https://northlight.dev/reference/modal}

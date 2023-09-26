@@ -5,7 +5,7 @@ import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
 import { Tooltip } from '../tooltip'
 import { Input, InputGroup, InputRightElement } from '../input'
-import { ClipboardInputProps } from './types'
+import { ClipboardInputProps } from './types.ts'
 
 /**
  * Meant to display non editable copiable text

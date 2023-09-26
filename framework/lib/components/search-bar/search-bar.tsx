@@ -8,11 +8,11 @@ import {
 import { filter, identity, is, test, toLower } from 'ramda'
 import { SearchDuo } from '@northlight/icons'
 import { createDebounceFunctionInstance } from '../../utils'
-import { searchBarStyles } from './styles'
+import { searchBarStyles } from './styles.ts'
 import { useSelectCallbacks } from '../../hooks'
 import { Box } from '../box'
-import { SearchBarOptionType, SearchBarProps } from './types'
-import { getComponents } from './get-components'
+import { SearchBarOptionType, SearchBarProps } from './types.ts'
+import { getComponents } from './get-components.tsx'
 
 export const SearchBar = forwardRef(
   <T extends SearchBarOptionType, K extends boolean = false>({

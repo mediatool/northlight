@@ -1,2 +1,2 @@
-export * from './color'
-export * from './toastIconMap'
+export * from './color/index.ts'
+export * from './toastIconMap/index.ts'

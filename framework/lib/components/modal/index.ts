@@ -7,5 +7,5 @@ export {
   ModalCloseButton,
 } from '@chakra-ui/react'
 
-export * from './modal'
-export * from './types'
+export * from './modal.tsx'
+export * from './types.ts'

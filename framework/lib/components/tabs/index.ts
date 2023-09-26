@@ -7,6 +7,6 @@ export {
   useTabs,
 } from '@chakra-ui/react'
 
-export * from './tab-panel'
-export * from './tabs'
-export * from './types'
+export * from './tab-panel.tsx'
+export * from './tabs.tsx'
+export * from './types.ts'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { TabPanel as ChakraTabPanel } from '@chakra-ui/react'
-import { TabPanelProps } from './types'
+import { TabPanelProps } from './types.ts'
 
 /**
  * Used to display content under tabs context

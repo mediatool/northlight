@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { Button as ChakraButton } from '@chakra-ui/react'
-import { ButtonProps } from './types'
+import { ButtonProps } from './types.ts'
 
 /**
  * @see {@link https://northlight.dev/reference/button}

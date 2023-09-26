@@ -1,2 +1,2 @@
-export * from './color'
-export * from './input-field'
+export * from './color/index.ts'
+export * from './input-field/index.ts'

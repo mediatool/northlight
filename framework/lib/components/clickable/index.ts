@@ -1,2 +1,2 @@
-export * from './clickable'
-export * from './types'
+export * from './clickable.tsx'
+export * from './types.ts'

@@ -3,5 +3,5 @@ export {
   AlertTitle,
   AlertDescription,
 } from '@chakra-ui/react'
-export * from './alert'
-export * from './types'
+export * from './alert.tsx'
+export * from './types.ts'

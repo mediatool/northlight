@@ -7,7 +7,7 @@ import {
 } from 'chakra-react-select'
 import { Box } from '@chakra-ui/react'
 import { equals, identity, is } from 'ramda'
-import { Option, SelectProps } from './types'
+import { Option, SelectProps } from './types.ts'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 import { useSelectCallbacks } from '../../hooks'
 import { getComponents } from '../search-bar/get-components'

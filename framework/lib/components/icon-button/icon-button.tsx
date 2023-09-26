@@ -1,6 +1,6 @@
 import React, { cloneElement, forwardRef } from 'react'
 import { IconButton as ChakraIconButton } from '@chakra-ui/react'
-import { IconButtonProps } from './types'
+import { IconButtonProps } from './types.ts'
 
 /**
  * A normal button but renders an icon instead of text

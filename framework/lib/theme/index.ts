@@ -13,9 +13,9 @@ import {
   coreZIndex,
   palette,
 } from '@northlight/tokens'
-import { scrollbarStyles } from './global/scrollbar'
-import * as components from './components'
-import { TottSkin, WebappSkin } from './skins'
+import { scrollbarStyles } from './global/scrollbar.ts'
+import * as components from './components/index.ts'
+import { TottSkin, WebappSkin } from './skins/index.ts'
 
 const overrides: ThemeOverride = {
   config: {

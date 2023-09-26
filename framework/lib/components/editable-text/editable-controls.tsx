@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
-import { EditableControlsProps } from './types'
+import { EditableControlsProps } from './types.ts'
 
 export const EditableControls = ({ size }: EditableControlsProps) => {
   const {

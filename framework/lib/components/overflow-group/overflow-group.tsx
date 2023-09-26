@@ -1,6 +1,6 @@
 import React, { Children, useEffect, useRef, useState } from 'react'
 import { always, dec, defaultTo, gt, identity, ifElse, inc, take } from 'ramda'
-import { OverflowGroupProps } from './types'
+import { OverflowGroupProps } from './types.ts'
 import { getChildrenWithProps } from '../../utils'
 
 const positiveOrZero = ifElse(gt(0), always(0), identity)

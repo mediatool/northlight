@@ -1,2 +1,2 @@
-export * from './spinner'
-export * from './types'
+export * from './spinner.tsx'
+export * from './types.ts'

@@ -5,10 +5,10 @@ import { palette } from '@northlight/tokens'
 import { Flex } from '../../../../flex'
 import { Stack } from '../../../../stack'
 import { Box } from '../../../../box'
-import { DateButton } from './date-button'
-import { validRange } from './utils'
-import { Date, DateRangeValue, QuickSelectProps } from './types'
-import { getQuickSelectOptions } from './get-quick-select-options'
+import { DateButton } from './date-button.tsx'
+import { validRange } from './utils.ts'
+import { Date, DateRangeValue, QuickSelectProps } from './types.ts'
+import { getQuickSelectOptions } from './get-quick-select-options.ts'
 
 const seperator = `1px solid ${palette.gray['100']}`
 

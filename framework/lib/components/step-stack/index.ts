@@ -1,1 +1,1 @@
-export * from './step-stack'
+export * from './step-stack.tsx'

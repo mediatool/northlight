@@ -9,7 +9,7 @@ import {
 } from 'chakra-react-select'
 import { HStack } from '../stack'
 import { Icon } from '../icon'
-import { SearchBarOptionType } from './types'
+import { SearchBarOptionType } from './types.ts'
 
 export function getComponents<T extends SearchBarOptionType> () {
   return {

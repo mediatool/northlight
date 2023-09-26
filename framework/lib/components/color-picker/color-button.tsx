@@ -5,8 +5,8 @@ import { getContrastColor } from '../../utils'
 import { Icon } from '../icon'
 import { IconButton } from '../icon-button'
 import { Box } from '../box'
-import { ColorButtonProps } from './types'
-import { columns } from './constants'
+import { ColorButtonProps } from './types.ts'
+import { columns } from './constants.ts'
 import { useArrowFocus } from '../../hooks'
 
 export const ColorButton = forwardRef(({

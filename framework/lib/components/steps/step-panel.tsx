@@ -1,5 +1,5 @@
 import React from 'react'
-import { StepPanelProps } from './types'
+import { StepPanelProps } from './types.ts'
 import { TabPanel as ChakraStepPanel } from '../tabs'
 
 /**

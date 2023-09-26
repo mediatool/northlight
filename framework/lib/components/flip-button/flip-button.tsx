@@ -8,11 +8,11 @@ import { mergeAll, omit } from 'ramda'
 import { CheckboxGroupState } from '@react-stately/checkbox'
 import { RadioGroupState } from '@react-stately/radio'
 import { mergeProps } from '@react-aria/utils'
-import { FlipButtonContext } from './utils'
+import { FlipButtonContext } from './utils.ts'
 import { HStack } from '../stack'
 import { Icon } from '../icon'
 import { Text } from '../text'
-import { CustomContainerPropsType, CustomFlipButtonPropsType, FlipButtonProps } from './types'
+import { CustomContainerPropsType, CustomFlipButtonPropsType, FlipButtonProps } from './types.ts'
 
 /**
  * Meant to act as a middleman to turn any component into

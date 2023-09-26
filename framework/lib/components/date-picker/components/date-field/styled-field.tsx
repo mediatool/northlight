@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { Box } from '../../../box'
-import { StyledFieldProps } from './types'
+import { StyledFieldProps } from './types.ts'
 
 export const StyledField = forwardRef((
   { isInvalid, isDisabled, children, variant, ...rest }: StyledFieldProps,

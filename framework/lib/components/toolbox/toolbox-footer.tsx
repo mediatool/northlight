@@ -1,7 +1,7 @@
 import { useMultiStyleConfig } from '@chakra-ui/system'
 import React from 'react'
 import { Flex } from '../flex'
-import { ToolboxFooterProps } from './types'
+import { ToolboxFooterProps } from './types.ts'
 
 /**
  * @see Toolbox

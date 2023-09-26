@@ -2,7 +2,7 @@ import React from 'react'
 import { Clickable } from '../../../../clickable'
 import { Label } from '../../../../typography'
 import { Flex } from '../../../../flex'
-import { DateButtonProps } from './types'
+import { DateButtonProps } from './types.ts'
 
 export const DateButton = ({
   isActive,

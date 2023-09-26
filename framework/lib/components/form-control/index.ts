@@ -3,5 +3,5 @@ export {
   FormErrorMessage,
   FormHelperText,
 } from '@chakra-ui/react'
-export * from './form-label'
-export * from './types'
+export * from './form-label.tsx'
+export * from './types.ts'

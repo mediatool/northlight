@@ -3,8 +3,8 @@ import { ChevronDownDuo, ChevronUpDuo } from '@northlight/icons'
 import { useMultiStyleConfig } from '@chakra-ui/react'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
-import { columns } from './constants'
-import { ColorsExpandButtonProps } from './types'
+import { columns } from './constants.ts'
+import { ColorsExpandButtonProps } from './types.ts'
 import { useArrowFocus } from '../../hooks'
 
 export const ColorsExpandButton = ({

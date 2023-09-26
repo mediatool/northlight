@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { chakra } from '@chakra-ui/react'
 import { useCalendarCell } from '@react-aria/calendar'
 import { isSameMonth, today } from '@internationalized/date'
-import { RangeCellProps } from './types'
+import { RangeCellProps } from './types.ts'
 
 export const RangeCell = ({ state, date, currentMonth }: RangeCellProps) => {
   const isOutsideMonth = !isSameMonth(currentMonth, date)

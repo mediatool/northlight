@@ -1,8 +1,8 @@
 import React from 'react'
 import { ScaleFade as ChakraScaleFade } from '@chakra-ui/react'
 import { identity } from 'ramda'
-import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils'
-import { ScaleFadeProps } from './types'
+import { getChildrenWithFocus, getDuration, useDelay, useHiddenDisplay } from './utils.ts'
+import { ScaleFadeProps } from './types.ts'
 
 /**
  * Simple transition to hide/show content
