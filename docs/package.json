@@ -4,6 +4,7 @@
   "main": "index.ts",
   "license": "UNLICENSED",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "yarn vite",
     "dev": "yarn start",
@@ -21,15 +22,15 @@
     "vite": "^4.4.9"
   },
   "dependencies": {
-    "@chakra-ui/clickable": "^2.0.14",
-    "@chakra-ui/react": "^2.5.1",
-    "@chakra-ui/system": "^2.5.1",
-    "@chakra-ui/theme-tools": "^2.0.16",
-    "@emotion/react": "^11.10.6",
+    "@chakra-ui/clickable": "^2.1.0",
+    "@chakra-ui/react": "^2.8.1",
+    "@chakra-ui/system": "^2.6.1",
+    "@chakra-ui/theme-tools": "^2.1.1",
+    "@emotion/react": "^11.11.1",
     "@northlight/icons": "^1.1.1",
     "@northlight/tokens": "^1.0.7",
     "@northlight/ui": "^2.10.1",
-    "@react-aria/i18n": "^3.6.3",
+    "@react-aria/i18n": "^3.8.2",
     "@shopify/react-i18n": "^7.7.2",
     "chakra-react-select": "^4.4.3",
     "fuse.js": "^6.6.2",
@@ -41,7 +42,7 @@
     "react": "^18.1.0",
     "react-docgen-typescript": "^2.2.2",
     "react-dom": "^18.1.0",
-    "react-live": "^4.0.0",
+    "react-live": "^4.1.5",
     "react-router-dom": "^5.0.0"
   }
 }
