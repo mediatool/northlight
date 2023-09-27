@@ -7,7 +7,12 @@ export const routes: Page[] = [
     component: () => import('../pages/core-tokens-page'),
   },
   {
-    title: 'Component and system tokens',
+    title: 'System tokens',
+    path: '/system-tokens',
+    component: () => import('../pages/system-tokens-page'),
+  },
+  {
+    title: 'Component tokens',
     path: '/component-tokens',
     component: () => import('../pages/component-tokens-page'),
   },

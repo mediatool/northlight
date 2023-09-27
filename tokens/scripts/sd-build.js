@@ -9,14 +9,14 @@ const convertToRem = (value) => `${parseFloat(value) / 16}rem`
 SD.registerTransform({
   name: 'borderWidth/rem',
   type: 'value',
-  matcher: (token) => token.attributes.category === 'borderWidth',
+  matcher: (token) => token.path.includes('borderWidth'),
   transformer: (token) => convertToRem(token.original.value),
 })
 
 SD.registerTransform({
   name: 'borderRadius/rem',
   type: 'value',
-  matcher: (token) => token.attributes.category === 'borderRadius',
+  matcher: (token) => token.path.includes('borderRadius'),
   transformer: ({ value }) => (value === 999 ? '999px' : convertToRem(value)),
 })
 
@@ -54,7 +54,7 @@ SD.registerTransform({
 SD.registerTransform({
   name: 'boxShadow/px',
   type: 'value',
-  matcher: (token) => token.attributes.category === 'boxShadow',
+  matcher: (token) => token.path.includes('boxShadow'),
   transformer: (token) => {
     const shadow = isArrayLike(token.value) ? token.value : [ token.value ]
     const value = map((s) => {

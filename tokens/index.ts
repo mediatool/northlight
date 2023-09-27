@@ -1,5 +1,7 @@
-import WebappSkin from './dist/webapp/webapp-components.json'
-import TottSkin from './dist/tott/tott-components.json'
+import WebappComponentsTokensSet from './dist/webapp/webapp-components.json'
+import WebappSystemTokensSet from './dist/webapp/webapp.json'
+import TottComponentsTokensSet from './dist/tott/tott-components.json'
+import TottSysstemTokensSet from './dist/tott/tott.json'
 
 export {
   color as palette,
@@ -15,6 +17,8 @@ export {
 } from './dist/webapp/global.json'
 
 export {
-  WebappSkin,
-  TottSkin,
+  WebappComponentsTokensSet,
+  WebappSystemTokensSet,
+  TottComponentsTokensSet,
+  TottSysstemTokensSet,
 }
