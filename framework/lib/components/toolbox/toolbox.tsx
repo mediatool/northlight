@@ -1,5 +1,5 @@
-import React from 'react'
-import { useMultiStyleConfig } from '@chakra-ui/system'
+import React, { useState } from 'react'
+import { useMultiStyleConfig, useToken } from '@chakra-ui/system'
 import { coreZIndex } from '@northlight/tokens'
 import { FocusScope } from '@react-aria/focus'
 import { Flex } from '../flex'
@@ -8,6 +8,9 @@ import { Box } from '../box'
 import { Portal } from '../portal'
 import { ToolboxProps } from './types'
 import { getChildrenWithProps } from '../../utils'
+
+const clamp = (minValue: number, maxValue: number, value: number) =>
+  Math.min(Math.max(value, minValue), maxValue)
 
 /**
  * Controllable Sidebar drawer
@@ -22,7 +25,7 @@ import { getChildrenWithProps } from '../../utils'
       <Button onClick={ onOpen } w="full">
         Open Toolbox
       </Button>
-      <Toolbox isOpen={ isOpen } onClose={ onClose } size="md">
+      <Toolbox isOpen={ isOpen } onClose={ onClose } size="sm">
         <ToolboxHeader>Title</ToolboxHeader>
         <ToolboxContent>
           <Stack>
@@ -41,18 +44,17 @@ import { getChildrenWithProps } from '../../utils'
  * ?)
  */
 export const Toolbox = ({
+  isResizable = false,
   isOpen = false,
   children,
   direction = 'right',
   shouldPush = false,
-  size = 'md',
-  width,
+  size = 'sm',
   onClose,
   autoFocus = true,
   ...rest
 }: ToolboxProps) => {
   const { container } = useMultiStyleConfig('Toolbox', { size })
-
   const newChildren = getChildrenWithProps(children, { onClose }, (_child, i) => i === 0)
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -62,23 +64,64 @@ export const Toolbox = ({
     }
   }
 
-  const toolboxWidth = (width ?? container.w) as string
+  const getPixelSize = (sizeToken: string) => {
+    const widthInRem = useToken('sizes', sizeToken)
+    return parseFloat(widthInRem) * 16
+  }
+
+  const defaultWidth = getPixelSize(size)
+  const minWidth = getPixelSize('sm')
+  const maxWidth = getPixelSize('2xl')
+
+  const [ adjustableWidth, setAdjustableWidth ] = useState(defaultWidth)
 
   return (
-    <Box w={ toolboxWidth } display={ isOpen && shouldPush ? 'initial' : 'none' }>
+    <Box w={ adjustableWidth } display={ isOpen && shouldPush ? 'initial' : 'none' }>
       <Portal>
         <Slide
           direction={ direction }
           in={ isOpen }
           style={ {
             height: container.h as string,
-            width: toolboxWidth,
+            width: adjustableWidth,
             zIndex: coreZIndex.overlay,
           } }
         >
-          <Flex sx={ { ...container, w: toolboxWidth } } { ...rest } onKeyDown={ handleKeyDown }>
+          <Flex
+            sx={ { ...container, w: adjustableWidth } }
+            onKeyDown={ handleKeyDown }
+            position="relative"
+            overflow="hidden"
+            { ...rest }
+          >
+            <Box
+              cursor={ isResizable ? 'ew-resize' : 'unset' }
+              position="absolute"
+              top={ 0 }
+              left={ 0 }
+              width="10px"
+              height="100%"
+              zIndex={ 2 }
+              userSelect="none"
+              onMouseDown={ (e) => {
+                if (isResizable) {
+                  e.preventDefault()
+                  const startX = e.clientX
+                  const onMouseMove = (event: { clientX: number }) => {
+                    const newWidth = adjustableWidth - (event.clientX - startX)
+                    setAdjustableWidth(clamp(minWidth, maxWidth, newWidth))
+                  }
+                  const onMouseUp = () => {
+                    document.removeEventListener('mousemove', onMouseMove)
+                    document.removeEventListener('mouseup', onMouseUp)
+                  }
+                  document.addEventListener('mousemove', onMouseMove)
+                  document.addEventListener('mouseup', onMouseUp)
+                }
+              } }
+            />
             <FocusScope autoFocus={ autoFocus }>
-              { newChildren }
+              <Box width="full" height="full">{ newChildren }</Box>
             </FocusScope>
           </Flex>
         </Slide>
