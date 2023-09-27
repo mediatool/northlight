@@ -1,6 +1,7 @@
 import { FlexProps } from '@chakra-ui/react'
 
 export interface ToolboxProps extends Omit<FlexProps, 'direction'> {
+  isResizable?: boolean
   isOpen: boolean
   /** where the toolbox pops in from */
   direction?: 'right' | 'left'
