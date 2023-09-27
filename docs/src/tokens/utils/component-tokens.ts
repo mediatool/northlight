@@ -2,7 +2,7 @@ import {
   WebappSkin,
   typography,
 } from '@northlight/tokens'
-import { TokensSet } from './types'
+import { TokensSet } from './types.ts'
 
 const { color, sizing, spacing, opacity, borderRadius, borderWidth } = WebappSkin
 

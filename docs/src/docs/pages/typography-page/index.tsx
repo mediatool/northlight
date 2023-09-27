@@ -15,7 +15,7 @@ import {
   highlight,
 } from '@northlight/ui/ts'
 import { Page } from '../../components'
-import { Body, Headings, Labels, Stylized, TableHead } from './data'
+import { Body, Headings, Labels, Stylized, TableHead } from './data.ts'
 import illustration from './typography-instructional.png'
 
 const TableHeadings = () => (

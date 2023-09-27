@@ -14,10 +14,10 @@ import {
   TabPanels,
   Tabs,
 } from '@northlight/ui/ts'
-import { PageOne } from './page-one'
-import { PageTwo } from './page-two'
-import { PageThree } from './page-three'
-import { validation } from './validation'
+import { PageOne } from './page-one.tsx'
+import { PageTwo } from './page-two.tsx'
+import { PageThree } from './page-three.tsx'
+import { validation } from './validation.ts'
 
 type FormOneProps = {
   isOpen: boolean

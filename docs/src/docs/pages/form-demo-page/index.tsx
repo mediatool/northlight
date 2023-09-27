@@ -7,8 +7,8 @@ import {
   Text,
   useDisclosure,
 } from '@northlight/ui/ts'
-import { FormOne } from './form-one'
-import { FormTwo } from './form-two'
+import { FormOne } from './form-one.tsx'
+import { FormTwo } from './form-two.tsx'
 import { Page } from '../../components'
 
 const FormExample = () => {

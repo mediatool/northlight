@@ -1,6 +1,6 @@
 import * as mediatoolIcons from '@northlight/icons'
 import { compose, filter, keys, map, prop, test } from 'ramda'
-import { IconComponent, IconVariantType } from './types'
+import { IconComponent, IconVariantType } from './types.ts'
 
 export const useIcons = (iconVariant?: IconVariantType): IconComponent[] => {
   const labels = keys(mediatoolIcons)

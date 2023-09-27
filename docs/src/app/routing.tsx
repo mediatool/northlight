@@ -4,8 +4,8 @@ import {
   Route,
   Switch,
 } from 'react-router-dom'
-import { LazyPage } from './components/lazy-page'
-import { MainPage } from './types'
+import { LazyPage } from './components/lazy-page.tsx'
+import { MainPage } from './types.ts'
 
 interface RoutingProps {
   routes: MainPage[]

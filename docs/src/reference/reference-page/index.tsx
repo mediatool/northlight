@@ -33,10 +33,10 @@ import {
 import { useIsRightSidebarVisible } from '../../app/use-is-right-side-bar-visible'
 import { CodeEditor } from '../../app/components/code-editor'
 import { MarkdownPreview } from '../../app/components/markdown-preview'
-import { Page } from './reference-page-wrapper'
-import { FileLink, PropsTable } from './props-table'
-import { SplitResult, splitMarkdownAndCode } from './split-markdown-and-code'
-import { SideNavBar } from './side-nav-bar'
+import { Page } from './reference-page-wrapper.tsx'
+import { FileLink, PropsTable } from './props-table.tsx'
+import { SplitResult, splitMarkdownAndCode } from './split-markdown-and-code.ts'
+import { SideNavBar } from './side-nav-bar.tsx'
 
 const formatFileName = (input: string) => input
   .replace(/([A-Z])/g, ' $1')

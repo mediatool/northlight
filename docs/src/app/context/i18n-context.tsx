@@ -1,6 +1,6 @@
 import React, { ReactNode, useMemo } from 'react'
 import { I18nContext, I18nManager } from '@shopify/react-i18n'
-import { useUser } from './user-context'
+import { useUser } from './user-context.tsx'
 
 interface I18nProviderProps {
   children: ReactNode

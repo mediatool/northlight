@@ -12,8 +12,8 @@ import {
 
 import { RouteOption, SearchBarComponentsBarProps } from '../../types'
 
-import { searchComponentsBarStyles } from './styles'
-import { ComponentPageLink } from './component-page-link'
+import { searchComponentsBarStyles } from './styles.ts'
+import { ComponentPageLink } from './component-page-link.tsx'
 
 export const SearchComponentsBar = ({
   routes,

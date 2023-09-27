@@ -1,1 +1,1 @@
-export * from './visualizer'
+export * from './visualizer/index.tsx'

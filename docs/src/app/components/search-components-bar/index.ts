@@ -1,1 +1,1 @@
-export * from './search-components-bar'
+export * from './search-components-bar.tsx'

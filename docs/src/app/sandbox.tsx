@@ -21,11 +21,11 @@ import {
   Stack,
   tottTheme,
 } from '@northlight/ui/ts'
-import { CalendarProvider, I18nProvider, UserProvider } from './context'
-import { MainPage } from './types'
-import { MainMenu, SearchComponentsBar, SubMenu } from './components'
-import { Routing } from './routing'
-import { useIsRightSidebarVisible } from './use-is-right-side-bar-visible'
+import { CalendarProvider, I18nProvider, UserProvider } from './context/index.ts'
+import { MainPage } from './types.ts'
+import { MainMenu, SearchComponentsBar, SubMenu } from './components/index.tsx'
+import { Routing } from './routing.tsx'
+import { useIsRightSidebarVisible } from './use-is-right-side-bar-visible.ts'
 
 export interface SandboxProps {
   routes: MainPage[]

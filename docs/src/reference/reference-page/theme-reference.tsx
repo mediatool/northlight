@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react'
-import ReferencePage from './index'
+import ReferencePage from './index.tsx'
 
 
 const ThemeReferencePage = () => (

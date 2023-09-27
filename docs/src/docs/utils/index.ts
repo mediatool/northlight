@@ -1,1 +1,1 @@
-export * from './array-with-length'
+export * from './array-with-length.ts'

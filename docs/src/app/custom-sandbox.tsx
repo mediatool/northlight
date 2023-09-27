@@ -17,10 +17,10 @@ import {
   Switch,
   tottTheme,
 } from '@northlight/ui/ts'
-import { CalendarProvider, I18nProvider, UserProvider } from './context'
-import { MainPage } from './types'
-import { MainMenu, SearchComponentsBar, SubMenu } from './components'
-import { Routing } from './routing'
+import { CalendarProvider, I18nProvider, UserProvider } from './context/index.ts'
+import { MainPage } from './types.ts'
+import { MainMenu, SearchComponentsBar, SubMenu } from './components/index.tsx'
+import { Routing } from './routing.tsx'
 
 export interface SandboxProps {
   routes: MainPage[]

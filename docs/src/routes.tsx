@@ -4,11 +4,11 @@ import {
   SmileyDuo,
   SquareSetSolid,
 } from '@northlight/icons'
-import { MainPage } from './app'
-import { routes as docRoutes } from './docs/routes'
-import { routes as tokensRoutes } from './tokens/routes'
-import { routes as iconsRoutes } from './icons/routes'
-import { routes as referenceRoutes } from './reference/routes/routes'
+import { MainPage } from './app/index.ts'
+import { routes as docRoutes } from './docs/routes/index.ts'
+import { routes as tokensRoutes } from './tokens/routes/index.ts'
+import { routes as iconsRoutes } from './icons/routes/index.ts'
+import { routes as referenceRoutes } from './reference/routes/routes.tsx'
 
 export const sandboxRoutes: MainPage[] = [
   {

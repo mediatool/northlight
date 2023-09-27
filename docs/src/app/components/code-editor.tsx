@@ -18,7 +18,7 @@ import {
   useClipboard,
 } from '@northlight/ui/ts'
 import * as uiLib from '@northlight/ui/ts'
-import { paleNight } from './code-editor-theme'
+import { paleNight } from './code-editor-theme.tsx'
 
 interface CodeEditorProps {
   code?: string

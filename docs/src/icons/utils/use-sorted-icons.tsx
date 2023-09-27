@@ -2,8 +2,8 @@ import { ChangeEvent, useMemo, useState } from 'react'
 import Fuse from 'fuse.js'
 import { map, prop } from 'ramda'
 import debounce from 'lodash.debounce'
-import { useIcons } from './use-icons'
-import { IconVariantType } from './types'
+import { useIcons } from './use-icons.tsx'
+import { IconVariantType } from './types.ts'
 
 export const useSortedIcons = (iconVariant: IconVariantType) => {
   const icons = useIcons(iconVariant)

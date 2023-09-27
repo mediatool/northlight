@@ -8,7 +8,7 @@ import {
 import { Stack } from '@northlight/ui/ts'
 import { MainPage } from '../types'
 
-import { NavSideLink } from './nav-side-link'
+import { NavSideLink } from './nav-side-link.tsx'
 
 export interface SubMenuItemProps {
   path: string

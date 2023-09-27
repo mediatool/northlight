@@ -1,2 +1,2 @@
-export * from './core-tokens'
-export * from './component-tokens'
+export * from './core-tokens.ts'
+export * from './component-tokens.ts'

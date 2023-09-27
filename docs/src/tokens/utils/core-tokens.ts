@@ -9,7 +9,7 @@ import {
   coreZIndex,
   palette,
 } from '@northlight/tokens'
-import { TokensSet } from './types'
+import { TokensSet } from './types.ts'
 
 export const CoreTokens: TokensSet[] = [
   { name: 'Palette', title: 'core-colors', data: palette },

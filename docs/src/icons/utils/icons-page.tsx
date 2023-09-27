@@ -4,10 +4,10 @@ import { Link as NavLink, Route } from 'react-router-dom'
 import { BrightnessDuo, BrightnessSolid, ChevronLeftDuo } from '@northlight/icons'
 import { Box, H2, H3, HStack, Icon, IconButton, Input, VStack } from '@northlight/ui/ts'
 
-import { IconPageProps } from './types'
+import { IconPageProps } from './types.ts'
 
 import { IconCard, IconsGrid } from '../components'
-import { useSortedIcons } from './use-sorted-icons'
+import { useSortedIcons } from './use-sorted-icons.tsx'
 
 export const IconPage = ({ iconVariant }: IconPageProps) => {
   const { sortedIcons, debouncedHandleChange } = useSortedIcons(iconVariant)
