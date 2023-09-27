@@ -1,16 +1,30 @@
 import { ThemeOverride } from '@chakra-ui/react'
 import {
-  WebappSkin as WebappSkinTokens,
+  WebappComponentsTokensSet,
+  WebappSystemTokensSet,
   typography,
 } from '@northlight/tokens'
 
-export const WebappSkin:ThemeOverride = {
-  colors: WebappSkinTokens.color,
-  sizes: WebappSkinTokens.sizing,
-  space: WebappSkinTokens.spacing,
-  radii: WebappSkinTokens.borderRadius,
-  borders: WebappSkinTokens.borderWidth,
-  opacity: WebappSkinTokens.opacity,
+export const WebappSkin: ThemeOverride = {
+  colors: {
+    ...WebappSystemTokensSet.st.color,
+    ...WebappComponentsTokensSet.color,
+    border: {
+      ...WebappSystemTokensSet.st.color.border,
+      ...WebappComponentsTokensSet.color.border,
+    },
+  },
+  sizes: WebappComponentsTokensSet.sizing,
+  space: WebappComponentsTokensSet.spacing,
+  radii: {
+    ...WebappSystemTokensSet.st.borderRadius,
+    ...WebappComponentsTokensSet.borderRadius,
+  },
+  borders: {
+    ...WebappSystemTokensSet.st.borderWidth,
+    ...WebappComponentsTokensSet.borderWidth,
+  },
+  opacity: WebappComponentsTokensSet.opacity,
   typography,
-  shadows: WebappSkinTokens.boxShadow,
+  shadows: { ...WebappSystemTokensSet.st.boxShadow },
 }

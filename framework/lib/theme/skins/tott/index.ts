@@ -1,16 +1,30 @@
 import { ThemeOverride } from '@chakra-ui/react'
 import {
-  TottSkin as TottSkinTokens,
+  TottComponentsTokensSet,
+  TottSysstemTokensSet,
   typography,
 } from '@northlight/tokens'
 
-export const TottSkin:ThemeOverride = {
-  colors: TottSkinTokens.color,
-  sizes: TottSkinTokens.sizing,
-  space: TottSkinTokens.spacing,
-  radii: TottSkinTokens.borderRadius,
-  borders: TottSkinTokens.borderWidth,
-  opacity: TottSkinTokens.opacity,
-  shadows: TottSkinTokens.boxShadow,
+export const TottSkin: ThemeOverride = {
+  colors: {
+    ...TottSysstemTokensSet.st.color,
+    ...TottComponentsTokensSet.color,
+    border: {
+      ...TottSysstemTokensSet.st.color.border,
+      ...TottComponentsTokensSet.color.border,
+    },
+  },
+  sizes: TottComponentsTokensSet.sizing,
+  space: TottComponentsTokensSet.spacing,
+  radii: {
+    ...TottSysstemTokensSet.st.borderRadius,
+    ...TottComponentsTokensSet.borderRadius,
+  },
+  borders: {
+    ...TottSysstemTokensSet.st.borderWidth,
+    ...TottComponentsTokensSet.borderWidth,
+  },
+  opacity: TottComponentsTokensSet.opacity,
   typography,
+  shadows: { ...TottSysstemTokensSet.st.boxShadow },
 }

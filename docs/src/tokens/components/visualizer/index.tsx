@@ -28,7 +28,7 @@ export const Visualizer = ({ data, title }: Props) => {
     if (ref.current) {
       setTimeout(generateGraph, 250)
     }
-  }, [ ref.current ])
+  }, [ ref.current, data ])
 
   return (
     <Box position="relative" height="full" w="100%">
