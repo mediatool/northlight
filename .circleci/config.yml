@@ -67,3 +67,4 @@ workflows:
               node-version:
                 - '14.20'
                 - '16.20'
+                - '18.18'
