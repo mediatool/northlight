@@ -46,6 +46,8 @@ export interface FormattedNumberInputProps extends Omit<NumericFormatProps, 'onC
   isPercentage?: boolean
   /** Will round up and restrict number of decimals */
   numberOfDecimals?: number
+  inputLeftElement?: React.ReactNode
+  inputRightElement?: React.ReactNode
 }
 
 export interface FormattedNumberInputFieldProps extends FormattedNumberInputProps {
