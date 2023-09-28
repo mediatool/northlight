@@ -1,11 +1,12 @@
-import React, { ComponentType } from 'react'
-import { identity } from 'ramda'
+import React, { ComponentType, useState } from 'react'
+import { identity, isNil } from 'ramda'
 import {
   InputAttributes,
   NumberFormatValues,
   NumericFormat,
   SourceInfo,
 } from 'react-number-format'
+import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 import { Input } from '../input'
 import {
   FormattedNumberInputPreset,
@@ -78,46 +79,65 @@ export const FormattedNumberInput = ({
   numberOfDecimals = 2,
   max = Infinity,
   min = -Infinity,
+  inputLeftElement,
+  inputRightElement,
   ...rest
 }: FormattedNumberInputProps) => {
   const props = presetMap[preset]
+  const [ v, setV ] = useState(value)
+
+  const validateRange = () => {
+    if (isNil(v)) return
+    const vNum = typeof v === 'string' ? parseFloat(v) : v
+    const factor = isPercentage ? 100 : 1
+    if (vNum * factor > max) {
+      const newValue = roundToPrecision(max / factor, numberOfDecimals)
+      setV(newValue)
+    }
+    if (vNum * factor < min) {
+      const newValue = roundToPrecision(min / factor, numberOfDecimals)
+      setV(newValue)
+    }
+  }
 
   const onValueChangeHandler = (
     values: NumberFormatValues,
     sourceInfo: SourceInfo
   ) => {
+    const newFloatValue =
+      values.floatValue && isPercentage
+        ? roundToPrecision(values.floatValue / 100, numberOfDecimals)
+        : values.floatValue
+    setV(newFloatValue)
     onChange(
       {
         ...values,
-        floatValue:
-          values.floatValue && isPercentage
-            ? roundToPrecision(values.floatValue / 100, numberOfDecimals)
-            : values.floatValue,
+        floatValue: newFloatValue,
       },
       sourceInfo
     )
   }
 
   return (
-    <NumericFormat
-      allowLeadingZeros={ true }
-      customInput={ Input as ComponentType<InputAttributes> }
-      max={ 100 }
-      min={ 0 }
-      onValueChange={ onValueChangeHandler }
-      decimalScale={ numberOfDecimals }
-      value={
-        isPercentage
-          ? roundToPrecision(parseFloat(`${value ?? 0}`) * 100, numberOfDecimals)
-          : value
-      }
-      suffix={ isPercentage ? '%' : '' }
-      isAllowed={ (values) => {
-        const { floatValue } = values
-        return floatValue ? floatValue < max && floatValue > min : false
-      } }
-      { ...props }
-      { ...rest }
-    />
+    <InputGroupWrapper
+      inputLeftElement={ inputLeftElement }
+      inputRightElement={ inputRightElement }
+    >
+      <NumericFormat
+        allowLeadingZeros={ true }
+        customInput={ Input as ComponentType<InputAttributes> }
+        onBlur={ validateRange }
+        onValueChange={ onValueChangeHandler }
+        decimalScale={ numberOfDecimals }
+        value={
+          isPercentage
+            ? roundToPrecision(parseFloat(`${v ?? 0}`) * 100, numberOfDecimals)
+            : v
+        }
+        suffix={ isPercentage ? '%' : '' }
+        { ...props }
+        { ...rest }
+      />
+    </InputGroupWrapper>
   )
 }
