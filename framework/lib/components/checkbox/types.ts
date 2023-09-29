@@ -18,5 +18,5 @@ export interface CheckboxFieldProps extends ChakraCheckboxProps {
   variant?: CheckboxVariants
   direction?: StackDirection
   labelPlacement?: 'left' | 'right'
-  labelSize?: '2xs' | 'xs' | 'md' | 'lg'
+  labelSize?: '2xs' | 'xs' | 'sm' | 'md' | 'lg'
 }
