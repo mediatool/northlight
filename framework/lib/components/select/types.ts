@@ -42,6 +42,7 @@ export interface SelectProps<T, K extends boolean>
   /** Custom icon that will be put to the faremost left of the component */
   leftIcon?: ComponentType<any>
   customOption?: ((option: T) => JSX.Element) | null
+  customTag?: ((option: T) => JSX.Element) | null
   isMulti?: K
   ref?: Ref<SelectInstance<T, K, GroupBase<T>>>
 }

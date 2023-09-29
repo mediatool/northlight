@@ -12,7 +12,7 @@ export type ChildrenType = React.ReactNode | React.ReactNode[]
 export type TransitionDirection = 'right' | 'bottom' | 'left' | 'top' | null
 
 /** For fade component */
-export interface FadeProps extends ChakraFadeProps {
+export interface FadeProps extends Omit<ChakraFadeProps, 'children'> {
   /** Sets both enterDuration and exitDuration at same time to same value */
   duration?: DurationType
   enterDuration?: DurationType
@@ -24,14 +24,15 @@ export interface FadeProps extends ChakraFadeProps {
   enterDelay?: number
   exitDelay?: number
   onTransitionComplete?: (isHidden: boolean) => void
+  children: React.ReactNode 
 }
 
-export interface ScaleFadeProps extends FadeProps, Omit<ChakraScaleFadeProps, 'delay'> {}
+export interface ScaleFadeProps extends FadeProps, Omit<ChakraScaleFadeProps, 'delay' | 'children'> {}
 
-export interface SlideProps extends FadeProps, Omit<ChakraSlideProps, 'delay'> {}
-export interface SlideFadeProps extends FadeProps, Omit<ChakraSlideFadeProps, 'delay'> {
+export interface SlideProps extends FadeProps, Omit<ChakraSlideProps, 'delay' | 'children'> {}
+export interface SlideFadeProps extends FadeProps, Omit<ChakraSlideFadeProps, 'delay' | 'children'> {
   direction?: TransitionDirection
   offset?: number
 }
 
-export interface CollapseProps extends FadeProps, Omit<ChakraCollapseProps, 'delay'> {}
+export interface CollapseProps extends FadeProps, Omit<ChakraCollapseProps, 'delay' | 'children'> {}

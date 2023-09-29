@@ -26,7 +26,6 @@ import {
   TextField,
   TextareaField,
 } from '@northlight/ui/ts'
-import { useLocalizedNumberFormatter } from '../formatted-number-input-page/use-localized-number-formatter'
 
 interface Option {
   label: string

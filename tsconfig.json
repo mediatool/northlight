@@ -10,6 +10,7 @@
     "sourceMap": false,
     "noEmit": true,
     "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,

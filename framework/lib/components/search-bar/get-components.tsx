@@ -9,53 +9,64 @@ import {
 } from 'chakra-react-select'
 import { HStack } from '../stack'
 import { Icon } from '../icon'
-import { SearchBarOptionType } from './types.ts'
+import { SearchBarOptionType, CustomElementType } from './types.ts'
 
-export function getComponents<T extends SearchBarOptionType> () {
+type CustomProps = {
+  customOption?: CustomElementType<any>
+  customTag?: CustomElementType<any>
+  icon?: React.ComponentType<any>
+  leftIcon?: React.ComponentType<any>
+}
+
+type ExtendSelectProps<T extends { selectProps: unknown }> = T & {
+  selectProps: T['selectProps'] & CustomProps
+}
+
+export function getComponents<T extends SearchBarOptionType>() {
   return {
-    DropdownIndicator: (props: DropdownIndicatorProps<T>) =>
-      (props.selectProps.icon ? (
-        <chakraComponents.DropdownIndicator { ...props }>
-          <Icon as={ props.selectProps.icon } />
+    DropdownIndicator: (props: ExtendSelectProps<DropdownIndicatorProps<T>>) =>
+      props.selectProps.icon ? (
+        <chakraComponents.DropdownIndicator {...props}>
+          <Icon as={props.selectProps.icon} />
         </chakraComponents.DropdownIndicator>
       ) : (
-        <chakraComponents.DropdownIndicator { ...props } />
-      )),
-    Option: (props: OptionProps<T>) =>
-      (props.selectProps.customOption ? (
-        <chakraComponents.Option { ...props }>
-          { props.selectProps.customOption(props.data) }
+        <chakraComponents.DropdownIndicator {...props} />
+      ),
+    Option: (props: ExtendSelectProps<OptionProps<T>>) =>
+      props.selectProps.customOption ? (
+        <chakraComponents.Option {...props}>
+          {props.selectProps.customOption(props.data)}
         </chakraComponents.Option>
       ) : (
-        <chakraComponents.Option { ...props } />
-      )),
+        <chakraComponents.Option {...props} />
+      ),
     MultiValueContainer: (
-      props: MultiValueGenericProps<T, boolean, GroupBase<T>>
+      props: ExtendSelectProps<MultiValueGenericProps<T, boolean, GroupBase<T>>>
     ) =>
-      (props.selectProps.customTag ? (
-        <chakraComponents.MultiValueContainer { ...props }>
-          { props.selectProps.customTag(props.data) }
+      props.selectProps.customTag ? (
+        <chakraComponents.MultiValueContainer {...props}>
+          {props.selectProps.customTag(props.data)}
         </chakraComponents.MultiValueContainer>
       ) : (
-        <chakraComponents.MultiValueContainer { ...props } />
-      )),
+        <chakraComponents.MultiValueContainer {...props} />
+      ),
     Control: ({
       children,
       ...props
-    }: ControlProps<T, boolean, GroupBase<T>>) =>
-      (props.selectProps.leftIcon ? (
-        <chakraComponents.Control { ...props }>
-          <HStack w="full" pl="2">
-            <Icon as={ props.selectProps.leftIcon } />
-            <HStack w="full" justify="space-between">
-              { children }
+    }: ExtendSelectProps<ControlProps<T, boolean, GroupBase<T>>>) =>
+      props.selectProps.leftIcon ? (
+        <chakraComponents.Control {...props}>
+          <HStack w='full' pl='2'>
+            <Icon as={props.selectProps.leftIcon} />
+            <HStack w='full' justify='space-between'>
+              {children}
             </HStack>
           </HStack>
         </chakraComponents.Control>
       ) : (
-        <chakraComponents.Control { ...props }>
-          { children }
+        <chakraComponents.Control {...props}>
+          {children}
         </chakraComponents.Control>
-      )),
+      ),
   }
 }
