@@ -70,7 +70,7 @@
     "sinon": "^15.2.0"
   },
   "devDependencies": {
-    "@mediatool/frontend-tools": "^1.2.2",
+    "@mediatool/frontend-tools": "^1.3.2",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/chai": "^4.3.4",
