@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.1.26...@northlight/docs@1.2.0) (2023-10-05)
+
+
+### Features
+
+* **framework:** formatted-number-input ([3890950](https://github.com/mediatool/northlight/commit/38909502cce7bcac6c03af29cf98380634b8afd8))
+
+
+
+
+
 ## [1.1.26](https://github.com/mediatool/northlight/compare/@northlight/docs@1.1.25...@northlight/docs@1.1.26) (2023-09-22)
 
 **Note:** Version bump only for package @northlight/docs

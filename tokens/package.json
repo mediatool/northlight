@@ -1,6 +1,6 @@
 {
   "name": "@northlight/tokens",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "license": "UNLICENSED",
   "exports": {
     "types": "./dist/ts/types.d.ts",

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.10.1...@northlight/ui@2.11.0) (2023-10-05)
+
+
+### Bug Fixes
+
+* **framework:** add missing 'sm' to labelSize type ([ddd6dfb](https://github.com/mediatool/northlight/commit/ddd6dfb54ff02b2a7b27a83d782b5266ee61b2cf))
+* **framework:** cleanup formatted-number-input code ([6a3005c](https://github.com/mediatool/northlight/commit/6a3005c4368284b75a17046858f162f47ce11b47))
+
+
+### Features
+
+* **framework:** formatted-number-input ([3890950](https://github.com/mediatool/northlight/commit/38909502cce7bcac6c03af29cf98380634b8afd8))
+
+
+
+
+
 ## [2.10.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.10.0...@northlight/ui@2.10.1) (2023-09-22)
 
 
