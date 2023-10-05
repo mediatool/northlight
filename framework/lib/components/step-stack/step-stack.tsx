@@ -10,13 +10,6 @@ import { Box } from '../box'
   Util wrapper for creating ordered vertical layouts by stack
   @see {@link https://northlight.dev/reference/step-stack}
   @example
-  You can adjust the vertical positioning of the step
-  circles using the <Code>stepCircleAlignment</Code> prop.
-  This prop accept any values that can be used with the alignItems CSS property.
-  If no <Code>stepCircleAlignment</Code> value
-  is passed then the default value of <Code>center</Code> will be used
-  for the <Code>stepCircleAlignment</Code> prop.
-  <br /><br />
   The component takes all the props that a normal stack takes, with the addition of a
   rowHeight prop, which is needed to get the correct height for the grey
   line that goes between the steps. Any valid css height unit, px, rem, %,
