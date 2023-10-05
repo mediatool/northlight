@@ -15,7 +15,7 @@ import { OverflowGroup } from '../overflow-group'
   {[1, 2, 3, 4, 5].map((i) => (
     <Avatar
       name="Anakin Skywalker"
-      image="https://thenerdstash.com/wp-content/uploads/2021/10/Hayden-Christensen-Anakin-Skywalker.jpg"
+      image="src/assets/avatars/trooper.png"
       size="sm"
       variant="rounded"
       key={ i }

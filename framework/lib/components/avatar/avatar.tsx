@@ -14,7 +14,7 @@ import { AvatarBadge } from './avatar-badge'
  * @example (Example)
  * Avatar takes a name and image
  * (?
- * <Avatar name="Anakin Skywalker" image='https://thenerdstash.com/wp-content/uploads/2021/10/Hayden-Christensen-Anakin-Skywalker.jpg' />
+ * <Avatar name="Anakin Skywalker" image='src/assets/avatars/vader.png' />
  * ?)
  *
  * <br />
