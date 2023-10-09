@@ -1,4 +1,4 @@
-import { ActionMeta, MultiValue, SingleValue } from 'chakra-react-select'
+import { ActionMeta, MultiValue, OnChangeValue, SingleValue } from 'chakra-react-select'
 import { difference, isNil, last, map, prop } from 'ramda'
 import { useRef } from 'react'
 import { BasicOption, UseSelectCallbacksProps } from './types.ts'
@@ -16,7 +16,7 @@ export const useSelectCallbacks = <
   const items = useRef<MultiValue<T> | SingleValue<T>>(value)
 
   const handleChange = (
-    val: K extends true ? MultiValue<T> : SingleValue<T>,
+    val: OnChangeValue<T, K>,
     event: ActionMeta<T>
   ) => {
     onChange(val, event)

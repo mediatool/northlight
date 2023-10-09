@@ -108,10 +108,7 @@ export const SearchBar = forwardRef(
           isClearable={ false }
           onInputChange={ resetFiltered }
           inputValue={ filterInput }
-          customOption={ customOption }
-          customTag={ customTag }
-          icon={ icon }
-          components={ customComponents as any }
+          components={ customComponents }
           ref={ ref }
           value={ value }
           { ...rest }

@@ -34,7 +34,8 @@ export const FormTwo = ({ isOpen, onClose }: FormOneProps) => {
     newsletter: false,
     date: '',
     color: '',
-  }
+  } as const
+
   const [ values, setValues ] = useState(initialValues)
 
   return (

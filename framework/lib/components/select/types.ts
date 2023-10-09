@@ -3,9 +3,8 @@ import {
   Props as ChakraReactSelectProps,
   GroupBase,
   MenuListProps,
-  MultiValue,
+  OnChangeValue,
   SelectInstance,
-  SingleValue,
 } from 'chakra-react-select'
 import { StackDirection } from '@chakra-ui/react'
 import { ComponentType, Ref } from 'react'
@@ -27,7 +26,7 @@ export interface SelectProps<T, K extends boolean>
   value?: Option | Option[]
   /** Take a look at the second argument, the event,
    *  for info as to which specific element was added */
-  onChange?: (option: K extends true ? MultiValue<T> : SingleValue<T>, event: ActionMeta<T>) => void
+  onChange?: (option: OnChangeValue<T, K>, event: ActionMeta<T>) => void
   onAdd?: (val: unknown) => void
   onRemove?: (val: unknown) => void
   /** Used for accessibility */

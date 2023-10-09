@@ -162,7 +162,7 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
   })
 
   const customComponents = useMemo(
-    () => getComponents<T>(),
+    () => getComponents<T, K>(),
     []
   )
 

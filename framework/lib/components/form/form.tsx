@@ -1,10 +1,9 @@
-import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react'
+import React, { useEffect, useImperativeHandle, useRef } from 'react'
 import {
   DefaultValues,
   FieldValues,
   FormProvider,
   Resolver,
-  UseFormReturn,
   useForm,
 } from 'react-hook-form'
 import { always, equals } from 'ramda'
@@ -108,7 +107,7 @@ You can move up the form state using a ref as well
 ?)
 
  */
-export const Form = forwardRef(<FormValues extends FieldValues>({
+export const Form = <FormValues extends FieldValues>({
   initialValues,
   onSubmit,
   children,
@@ -118,24 +117,25 @@ export const Form = forwardRef(<FormValues extends FieldValues>({
   enableReinitialize = false,
   shouldTrim = true,
   innerFormStyle = {},
+  ref,
   ...rest
-}: FormProps<FormValues>, ref: React.Ref<UseFormReturn<FormValues>>) => {
+}: FormProps<FormValues>) => {
   const customResolver: Resolver<FormValues, any> = (
     values,
     _context,
     _options
   ) => ({
-    values,
-    errors: validate(values),
-  })
+      values,
+      errors: validate(values),
+    })
 
   const newMethods =
     methods ||
-    useForm<FormValues>({
-      defaultValues: initialValues as DefaultValues<FormValues>,
-      resolver: validate ? customResolver : undefined,
-      ...formSettings,
-    })
+      useForm<FormValues>({
+        defaultValues: initialValues as DefaultValues<FormValues>,
+        resolver: validate ? customResolver : undefined,
+        ...formSettings,
+      })
 
   useImperativeHandle(ref, always(newMethods), [])
 
@@ -173,4 +173,4 @@ export const Form = forwardRef(<FormValues extends FieldValues>({
       </form>
     </FormProvider>
   )
-})
+}

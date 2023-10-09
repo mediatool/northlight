@@ -20,10 +20,7 @@ export type CustomElementType<T extends SearchBarOptionType> = ((
 ) => JSX.Element)
 | null
 export interface SearchBarProps<T extends SearchBarOptionType, K extends boolean = false>
-  extends Omit<
-  ChakraReactSelectProps<T, boolean, GroupBase<T>>,
-  'onChange' | 'value'
-  > {
+  extends Omit<ChakraReactSelectProps<T, boolean, GroupBase<T>>, 'onChange' | 'value'> {
   value?: T | T[]
   onChange?: (val: any, event: ActionMeta<T>) => void
   onAdd?: (val: unknown) => void
