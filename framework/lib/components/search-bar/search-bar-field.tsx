@@ -37,7 +37,7 @@ export const SearchBarField = <T extends SearchBarOptionType, K extends boolean 
           inputLeftElement={ inputLeftElement }
           inputRightElement={ inputRightElement }
         >
-          <SearchBar
+          <SearchBar<T, K>
             name={ name }
             isMulti={ isMulti }
             onChange={ (values: FieldValues, event) => {

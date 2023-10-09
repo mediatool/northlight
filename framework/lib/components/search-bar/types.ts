@@ -5,6 +5,7 @@ import {
   Props as ChakraReactSelectProps,
   ChakraStylesConfig,
   GroupBase,
+  SelectInstance,
 } from 'chakra-react-select'
 import { RegisterOptions } from 'react-hook-form'
 import { InputFieldProps } from '../../types'
@@ -36,6 +37,7 @@ export interface SearchBarProps<T extends SearchBarOptionType, K extends boolean
   customOption?: CustomElementType<T>
   customTag?: CustomElementType<T>
   loadOptions?: ((query: string) => Promise<T[]>) | null
+  ref?: React.Ref<SelectInstance<T, K, GroupBase<T>>>
   onSearchInputChange?: (input: string) => void
   icon?: ComponentType<any>
 }
