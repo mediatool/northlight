@@ -47,7 +47,7 @@ import { ButtonProps } from './types'
  * ?)
  */
 export const Button = forwardRef(
-  ({ variant = 'default', children, ...rest }: ButtonProps, ref: any) => (
+  <As extends React.ElementType = typeof ChakraButton>({ variant = 'default', children, ...rest }: ButtonProps<As>, ref: any) => (
     <ChakraButton variant={ variant } ref={ ref } { ...rest }>
       { children }
     </ChakraButton>
