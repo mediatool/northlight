@@ -9,4 +9,9 @@ export interface StepStackProps extends StackProps {
    * Defaults to "center".
   */
   stepCircleAlignment?: string
+  /** Margin top for circles in pixels.
+   * Useful for nonsymmetrical layouts.
+   * Defaults to 0.
+  */
+  stepCircleMarginTopPx?: number
 }
