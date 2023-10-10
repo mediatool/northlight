@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/mediatool/northlight/compare/@northlight/docs@1.2.0...@northlight/docs@1.2.1) (2023-10-10)
+
+
+### Bug Fixes
+
+* **tokens/framework:** Restructure system/component tokens ([115c5e6](https://github.com/mediatool/northlight/commit/115c5e666a1b9666f7412c4199201e8df3a81bae))
+
+
+
+
+
 # [1.2.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.1.26...@northlight/docs@1.2.0) (2023-10-10)
 
 

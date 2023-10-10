@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.9](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.0.8...@northlight/tokens@1.0.9) (2023-10-10)
+
+
+### Bug Fixes
+
+* **tokens/framework:** Restructure system/component tokens ([115c5e6](https://github.com/mediatool/northlight/commit/115c5e666a1b9666f7412c4199201e8df3a81bae))
+
+
+
+
+
 ## [1.0.8](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.0.7...@northlight/tokens@1.0.8) (2023-10-10)
 
 **Note:** Version bump only for package @northlight/tokens

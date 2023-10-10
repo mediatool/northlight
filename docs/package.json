@@ -1,6 +1,6 @@
 {
   "name": "@northlight/docs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "index.ts",
   "license": "UNLICENSED",
   "private": true,
@@ -28,8 +28,8 @@
     "@chakra-ui/theme-tools": "^2.1.1",
     "@emotion/react": "^11.11.1",
     "@northlight/icons": "^1.1.2",
-    "@northlight/tokens": "^1.0.8",
-    "@northlight/ui": "^2.11.0",
+    "@northlight/tokens": "^1.0.9",
+    "@northlight/ui": "^2.12.0",
     "@react-aria/i18n": "^3.8.2",
     "@shopify/react-i18n": "^7.7.2",
     "chakra-react-select": "^4.4.3",

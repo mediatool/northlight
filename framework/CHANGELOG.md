@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.11.0...@northlight/ui@2.12.0) (2023-10-10)
+
+
+### Bug Fixes
+
+* **framework:** add optional margin to step stack circles ([b9d4ec2](https://github.com/mediatool/northlight/commit/b9d4ec2c8f051fe51e04cc99c6edd6f77673f647))
+* **framework:** allow string based values to select ([261fe74](https://github.com/mediatool/northlight/commit/261fe74d02884df50ec42eabc2481730dc701485))
+* **framework:** cleanup tags-input ([505a057](https://github.com/mediatool/northlight/commit/505a0576a4b48dc4158c0cb21a833ac62daf5a2b))
+* **framework:** support types for "as" component in Button ([042e000](https://github.com/mediatool/northlight/commit/042e000663e8eb0077f51ea29dad24609448baaa))
+* **tokens/framework:** Restructure system/component tokens ([115c5e6](https://github.com/mediatool/northlight/commit/115c5e666a1b9666f7412c4199201e8df3a81bae))
+
+
+### Features
+
+* **framework:** added tags select ([c407f08](https://github.com/mediatool/northlight/commit/c407f083af4fd29f319bf07bbf2bdd5faf889943))
+* **northlight:** make toolbox dragable ([3241faa](https://github.com/mediatool/northlight/commit/3241faa8847ef3ac14463580fa702d31267cd2c5))
+
+
+
+
+
 # [2.11.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.10.1...@northlight/ui@2.11.0) (2023-10-10)
 
 
