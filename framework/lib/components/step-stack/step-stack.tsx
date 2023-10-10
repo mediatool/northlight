@@ -25,18 +25,38 @@ import { Box } from '../box'
   <br />
   ## Example with flex-start stepCircleAlignment prop
   (?
-    <StepStack maxW="sm" spacing="4" rowHeight="10" stepCircleAlignment="flex-start">
+    <StepStack
+      maxW="sm"
+      spacing="4"
+      rowHeight="10"
+      stepCircleAlignment="flex-start"
+      stepCircleMarginTopPx={ 40 }
+    >
       { Array.from({ length: 5 }, (_, i) => i).map((i) => (
-        <Center
-          key={ i }
-          width={ 400 }
-          height={ 100 }
-          borderRadius={ 10 }
-          backgroundColor="blue.500"
-          color="white"
-        >
-          <Text>Step { i + 1 }</Text>
-        </Center>
+        <VStack key={ i }>
+          <Center
+            width={ 400 }
+            height={ 24 }
+            borderRadius={ 10 }
+            backgroundColor="blue.500"
+            color="white"
+          >
+            <VStack spacing="5">
+              <Text>Step { i + 1 }</Text>
+            </VStack>
+          </Center>
+          <Center
+            width={ 400 }
+            height={ 36 }
+            borderRadius={ 10 }
+            backgroundColor="green.500"
+            color="white"
+           >
+            <VStack spacing="5">
+              <Text>Some information</Text>
+            </VStack>
+          </Center>
+        </VStack>
       )) }
     </StepStack>
   ?)
@@ -46,6 +66,7 @@ export const StepStack = ({
   spacing = '4',
   rowHeight = '10',
   stepCircleAlignment = 'center',
+  stepCircleMarginTopPx = 0,
   ...rest
 }: StepStackProps) => {
   const rows = getChildrenWithProps(children, {})
@@ -64,6 +85,7 @@ export const StepStack = ({
                 minW="6"
                 minH="6"
                 zIndex="docked"
+                marginTop={ `${stepCircleMarginTopPx}px` }
               >
                 <Label
                   size="sm"
@@ -82,8 +104,8 @@ export const StepStack = ({
       <Divider
         orientation="vertical"
         left="3"
-        bottom={ `calc(${parsedRowHeight} / 2)` }
-        h={ `calc(100% - ${parsedRowHeight})` }
+        top={ `calc(${parsedRowHeight} / 2 + ${stepCircleMarginTopPx}px)` }
+        h={ `calc(100% - ${parsedRowHeight} - ${stepCircleMarginTopPx}px)` }
         position="absolute"
       />
     </Stack>
