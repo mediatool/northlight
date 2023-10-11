@@ -19,13 +19,13 @@ export default [
       {
         format: 'es',
         sourcemap: true,
-        file: 'dist/es/northlight.mjs',
+        file: 'dist/es/northlight.js',
       },
       {
         format: 'umd',
         name: 'northlight',
         sourcemap: true,
-        file: 'dist/umd/northlight.js',
+        file: 'dist/umd/northlight.cjs',
       },
     ],
   },
@@ -38,7 +38,7 @@ export default [
         format: 'umd',
         name: 'northlight',
         sourcemap: true,
-        file: 'dist/umd/northlight.min.js',
+        file: 'dist/umd/northlight.min.cjs',
       },
     ],
   },
@@ -49,12 +49,9 @@ export default [
     output: [
       {
         format: 'es',
-        file: 'dist/es/northlight.d.mts',
+        file: 'dist/es/northlight.d.ts',
       },
-      {
-        format: 'cjs',
-        file: 'dist/ts/types.d.ts',
-      },
+
     ],
   },
 ]
