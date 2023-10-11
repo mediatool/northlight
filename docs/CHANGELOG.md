@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/mediatool/northlight/compare/@northlight/docs@1.2.2...@northlight/docs@1.2.3) (2023-10-11)
+
+
+### Bug Fixes
+
+* **northlight:** replace used tokens names ([d6560bc](https://github.com/mediatool/northlight/commit/d6560bcd4da859dffc6251efca9597e0e068c0f8))
+
+
+
+
+
 ## [1.2.2](https://github.com/mediatool/northlight/compare/@northlight/docs@1.2.1...@northlight/docs@1.2.2) (2023-10-11)
 
 **Note:** Version bump only for package @northlight/docs

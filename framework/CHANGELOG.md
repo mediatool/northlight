@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.1...@northlight/ui@2.12.2) (2023-10-11)
+
+
+### Bug Fixes
+
+* **northlight:** replace used tokens names ([d6560bc](https://github.com/mediatool/northlight/commit/d6560bcd4da859dffc6251efca9597e0e068c0f8))
+
+
+
+
+
 ## [2.12.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.0...@northlight/ui@2.12.1) (2023-10-11)
 
 
