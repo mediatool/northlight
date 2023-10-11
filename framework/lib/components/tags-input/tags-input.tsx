@@ -44,7 +44,7 @@ export function TagsInput<T extends Option> ({
   value = [],
   ...rest
 }: TagsInputProps<T>) {
-  const [ borderColor ] = useToken('colors.border.select', [ 'focus' ])
+  const [ borderColor ] = useToken('border.select', [ 'focus' ])
   const [ menuIsOpen, setMenuIsOpen ] = useState(false)
   const [ inputValue, setInputValue ] = useState('')
   const [ selectedOptions, setSelectedOptions ] = useState<MultiValue<T>>(value)

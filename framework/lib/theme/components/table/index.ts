@@ -7,9 +7,9 @@ export const Table: ComponentMultiStyleConfig = {
       table: {
         borderSpacing: '0',
         borderCollapse: 'separate',
-        borderRadius: 'st.border.radius.md',
+        borderRadius: 'md',
         borderColor: 'border.default',
-        borderWidth: 'st.border.width.xs',
+        borderWidth: 'xs',
         px: '3',
       },
 
@@ -22,7 +22,7 @@ export const Table: ComponentMultiStyleConfig = {
 
       td: {
         borderColor: 'border.default',
-        borderTopWidth: 'st.border.width.xs',
+        borderTopWidth: 'xs',
       },
     }),
   },

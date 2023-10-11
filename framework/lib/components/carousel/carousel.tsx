@@ -61,7 +61,7 @@ const MyCarousel = () => {
 
     <VStack
     borderColor="border.default"
-    borderWidth="st.border.width.sm" borderStyle="solid" p="2" borderRadius="st.border.radius.lg">
+    borderWidth="sm" borderStyle="solid" p="2" borderRadius="lg">
       <Box w="full" h="sm">
         <Carousel
           showArrows={ false }

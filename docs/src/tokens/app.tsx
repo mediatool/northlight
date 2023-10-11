@@ -50,9 +50,9 @@ export default function Tokens () {
         </UnorderedList>
         <P>
           The component tokens are meant for internal usage inside the library,
-          ex: "color.button.danger.hover". The system tokens, which are also
+          ex: "background.button.default". The system tokens, which are also
           under the component token menu, are prefixed with "st", these can
-          change from theme to theme. Ex: "st.border.radius.md".
+          change from theme to theme. Ex: "md".
         </P>
         <P>
           Global reference tokens are token values which are consistent across all
