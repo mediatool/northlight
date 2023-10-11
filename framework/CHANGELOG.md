@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.0...@northlight/ui@2.12.1) (2023-10-11)
+
+
+### Bug Fixes
+
+* **framework:** adjust file suffixes of transpiled files ([6986eca](https://github.com/mediatool/northlight/commit/6986eca984e0476e1e5645865bce741c872e707d))
+
+
+
+
+
 # [2.12.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.11.0...@northlight/ui@2.12.0) (2023-10-10)
 
 
