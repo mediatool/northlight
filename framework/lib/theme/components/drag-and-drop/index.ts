@@ -5,7 +5,7 @@ export const DragAndDrop: ComponentMultiStyleConfig = {
   parts: [ 'dropZone' ],
   baseStyle: ({ sx }) => ({
     dropZone: merge({
-      borderWidth: 'st.border.width.sm',
+      borderWidth: 'sm',
       borderStyle: 'dashed',
       borderColor: 'border.default',
       padding: '4',

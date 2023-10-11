@@ -34,7 +34,7 @@ import { useCurrentTheme } from '../../utils'
     <Box h="sm">
       <Carousel>
         { images.map((imageSrc) => (
-          <Image src={imageSrc} borderRadius="st.border.radius.md" />
+          <Image src={imageSrc} borderRadius="md" />
         )) }
       </Carousel>
     </Box>

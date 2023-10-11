@@ -33,7 +33,7 @@ import { ring } from '../../utils'
  * <Center
  * boxSize="3xs"
  * boxShadow="xl"
- * borderRadius="st.border.radius.lg"
+ * borderRadius="lg"
  * bgColor="bg.overlayer"
  * >I am draggable</Center>
  * </Draggable>

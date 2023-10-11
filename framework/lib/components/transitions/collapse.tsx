@@ -24,8 +24,8 @@ import { CollapseProps } from './types'
   return (
     <>
        <Button onClick={toggle}>Click Me</Button>
-  <Box borderRadius="st.border.radius.sm"
-  borderWidth="st.border.width.sm" borderColor="border.default">
+  <Box borderRadius="sm"
+  borderWidth="sm" borderColor="border.default">
             <Collapse in={ show}>
   <HStack p="10" bg="bg.filled" rounded="md" >
   <P>

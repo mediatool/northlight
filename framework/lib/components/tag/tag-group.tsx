@@ -13,7 +13,7 @@ import { OverflowIndicator as DefaultOverflowIndicator } from './overflow-indica
  * ##Try resizing the window!
  * (?
   <TagGroup w="full"
-  borderWidth="st.border.width.sm"
+  borderWidth="sm"
   borderColor="border.default"
   borderStyle="solid"
   p="2"

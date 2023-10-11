@@ -23,8 +23,8 @@ import { ScaleFadeProps } from './types'
   return (
     <>
        <Button onClick={toggle}>Render random number</Button>
-  <Box borderRadius="st.border.radius.sm"
-  borderWidth="st.border.width.sm" borderColor="border.default">
+  <Box borderRadius="sm"
+  borderWidth="sm" borderColor="border.default">
             <SlideFade in={ show} exitDuration={1}>
   <HStack p="10" bg="bg.filled" rounded="md" >
   <H3>
