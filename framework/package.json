@@ -8,13 +8,13 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/es/northlight.d.mts",
-      "import": "./dist/es/northlight.mjs",
-      "require": "./dist/umd/northlight.js"
+      "types": "./dist/es/northlight.d.ts",
+      "import": "./dist/es/northlight.js",
+      "require": "./dist/umd/northlight.cjs"
     }
   },
-  "main": "./dist/es/northlight.mjs",
-  "types": "./dist/ts/types.d.ts",
+  "main": "./dist/es/northlight.js",
+  "types": "./dist/es/northlight.d.ts",
   "files": [
     "dist"
   ],
