@@ -156,7 +156,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                 />
               </HStack>
             </StyledField>
-            <InputRightElement>
+            <InputRightElement sx={ { height: '100%', paddingRight: '1' } }>
               <Trigger
                 { ...buttonProps }
                 isDisabled={ isDisabled }
