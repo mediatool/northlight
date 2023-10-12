@@ -18,25 +18,27 @@ export const NumberInputStepper = ({
   <ChakraNumberInputStepper>
     <HStack alignItems="center" h="full">
       { includePercentage && (
-        <Center bgColor="gray.50" borderRadius="md" boxSize="6">
-          <P>%</P>
-        </Center>
+      <Center bgColor="gray.50" borderRadius="md" boxSize="6">
+        <P>%</P>
+      </Center>
       ) }
-      <Divider orientation="vertical" h="50%" />
-      <NumberIncrementStepper border="none">
-        <Icon
-          as={ ChevronUpSolid }
-          color="icon.input-stepper.default"
-          boxSize={ 4 }
-        />
-      </NumberIncrementStepper>
-      <NumberDecrementStepper>
-        <Icon
-          as={ ChevronDownSolid }
-          color="icon.input-stepper.default"
-          boxSize={ 4 }
-        />
-      </NumberDecrementStepper>
+      <HStack alignItems="center" h="full">
+        <Divider orientation="vertical" h="50%" />
+        <NumberIncrementStepper border="none">
+          <Icon
+            as={ ChevronUpSolid }
+            color="icon.input-stepper.default"
+            boxSize={ 4 }
+          />
+        </NumberIncrementStepper>
+        <NumberDecrementStepper>
+          <Icon
+            as={ ChevronDownSolid }
+            color="icon.input-stepper.default"
+            boxSize={ 4 }
+          />
+        </NumberDecrementStepper>
+      </HStack>
     </HStack>
   </ChakraNumberInputStepper>
 )
