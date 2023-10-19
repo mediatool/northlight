@@ -51,7 +51,7 @@ export const getQuickSelectOptions = (
       start: startOfMonth(thisDay),
       end: endOfMonth(thisDay),
     },
-    label: 'This month',
+    label: 'This Month',
   }
 
   const lastMonth = {
@@ -136,6 +136,16 @@ export const getQuickSelectOptions = (
     label: 'Last Fiscal Year',
   }
 
+  const yearToDate = {
+    value: {
+      start: startOfMonthWithDays(
+        startOfYear(thisDay), { months: fiscalStartMonth, days: fiscalStartDay }
+      ),
+      end: thisDay,
+    },
+    label: 'Year to Date',
+  }
+
   const F1 = {
     value: {
       start: startOfMonthWithDays(
@@ -194,6 +204,7 @@ export const getQuickSelectOptions = (
     thisMonth,
     lastMonth,
     thisYear,
+    yearToDate,
     lastYear,
     nextMonth,
     nextThreeMonths,
