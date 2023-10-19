@@ -1,4 +1,5 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { isEmpty, isNil } from 'ramda'
 
 export const EditableText: ComponentMultiStyleConfig = {
   parts: [ 'button', 'icon', 'controls', 'preview', 'input' ],
@@ -61,7 +62,7 @@ export const EditableText: ComponentMultiStyleConfig = {
       },
     }),
   },
-  baseStyle: {
+  baseStyle: ({ value }) => ({
     controls: {
       mr: 1,
     },
@@ -72,9 +73,10 @@ export const EditableText: ComponentMultiStyleConfig = {
       overflow: 'hidden',
       paddingTop: 0,
       paddingBottom: 0,
+      color: isNil(value) || isEmpty(value) ? 'text.subdued' : 'text.default',
     },
     input: {
       fontWeight: 'semibold',
     },
-  },
+  }),
 }

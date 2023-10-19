@@ -43,7 +43,7 @@ export const EditableText = ({
   ...rest
 }: EditableProps) => {
   const [ value, setValue ] = useState(inputValue)
-  const { input, preview } = useMultiStyleConfig('EditableText', { size })
+  const { input, preview } = useMultiStyleConfig('EditableText', { size, value })
 
   useEffect(() => {
     setValue(inputValue)
