@@ -18,7 +18,7 @@ import { Box } from '../box'
   <br /><br />
   ## Simple step stack
   (?
-    <StepStack maxW="sm" spacing="4" rowHeight="10">
+    <StepStack maxW="sm" spacing="4" rowHeight="12">
       { Array.from({length: 5}, (_, i) => i).map((i) => <Input key={ i } />) }
     </StepStack>
   ?)
@@ -71,6 +71,7 @@ export const StepStack = ({
 }: StepStackProps) => {
   const rows = getChildrenWithProps(children, {})
   const parsedRowHeight = useToken('sizes', rowHeight)
+  const parcedSpacing = useToken('space', spacing)
 
   return (
     <Stack spacing={ spacing } position="relative" { ...rest }>
@@ -104,8 +105,8 @@ export const StepStack = ({
       <Divider
         orientation="vertical"
         left="3"
-        top={ `calc(${parsedRowHeight} / 2 + ${stepCircleMarginTopPx}px)` }
-        h={ `calc(100% - ${parsedRowHeight} - ${stepCircleMarginTopPx}px)` }
+        top={ `calc(${parsedRowHeight} / 2 + ${stepCircleMarginTopPx}px - ${parcedSpacing})` }
+        h={ `calc(100%  - ${parsedRowHeight} - ${stepCircleMarginTopPx}px + ${parcedSpacing})` }
         position="absolute"
       />
     </Stack>
