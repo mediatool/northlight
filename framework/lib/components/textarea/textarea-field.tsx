@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { identity } from 'ramda'
 import { TextareaFieldProps } from './types'
 import { Field } from '../form'
 import { Textarea } from './textarea'
 
-export const TextareaField = ({
+export const TextareaField = forwardRef<HTMLDivElement, TextareaFieldProps>(({
   name,
   label,
   isRequired,
@@ -12,13 +12,14 @@ export const TextareaField = ({
   direction,
   onChange: onChangeCallback = identity,
   ...rest
-}: TextareaFieldProps) => (
+}, ref) => (
   <Field
     name={ name }
     label={ label }
     isRequired={ isRequired }
     validate={ validate }
     direction={ direction }
+    ref={ ref }
   >
     { ({ onChange, value }) => (
       <Textarea
@@ -30,4 +31,4 @@ export const TextareaField = ({
       />
     ) }
   </Field>
-)
+))

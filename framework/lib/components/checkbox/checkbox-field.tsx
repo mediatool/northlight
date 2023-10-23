@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { identity } from 'ramda'
 import { CheckboxFieldProps } from './types'
 import { Field } from '../form'
@@ -27,7 +27,7 @@ import { Flex } from '../flex'
  *
  */
 
-export const CheckboxField = ({
+export const CheckboxField = forwardRef<HTMLDivElement, CheckboxFieldProps>(({
   name,
   label,
   variant,
@@ -38,7 +38,7 @@ export const CheckboxField = ({
   labelPlacement = 'left',
   labelSize = 'md',
   ...rest
-}: CheckboxFieldProps) => (
+}, ref) => (
   <Box
     w={ label ? 'full' : 'fit-content' }
     display="inline-flex"
@@ -49,6 +49,7 @@ export const CheckboxField = ({
       isRequired={ isRequired }
       direction={ direction }
       validate={ validate }
+      ref={ ref }
     >
       { ({ onChange, value }) => (
         <Flex
@@ -71,4 +72,4 @@ export const CheckboxField = ({
       ) }
     </Field>
   </Box>
-)
+))

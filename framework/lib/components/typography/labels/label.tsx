@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { FormLabel, VisuallyHidden, useStyleConfig } from '@chakra-ui/react'
 import { LabelProps } from './types'
 
@@ -18,21 +18,22 @@ import { LabelProps } from './types'
  * under the props tab to right should be passed down via **sx**_)
  *
  */
-export const Label = ({
+export const Label = forwardRef<HTMLLabelElement, LabelProps>(({
   children,
   size = 'sm',
   sx = {},
   ...rest
-}: LabelProps) => {
+}, ref) => {
   const styles = useStyleConfig('Label', { sx, size })
 
   return (
     <FormLabel
       sx={ styles }
       requiredIndicator={ <VisuallyHidden /> }
+      ref={ ref }
       { ...rest }
     >
       { children }
     </FormLabel>
   )
-}
+})

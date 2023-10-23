@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { identity } from 'ramda'
 import { DateRangePickerFieldProps, FormBody } from '../types'
 import { Field } from '../../form'
@@ -12,7 +12,7 @@ import { useFormContext } from '../../../hooks'
  * @see {@link https://northlight.dev/reference/date-range-picker-field}
  *
  */
-export const DateRangePickerField = ({
+export const DateRangePickerField = forwardRef<HTMLDivElement, DateRangePickerFieldProps>(({
   name,
   minValue,
   maxValue,
@@ -24,7 +24,7 @@ export const DateRangePickerField = ({
   onChange: onChangeCallback = identity,
   isClearable = true,
   ...rest
-}: DateRangePickerFieldProps) => {
+}, ref) => {
   const { setValue, setError, trigger } = useFormContext<FormBody>()
 
   const handleChange = (dateRange: { startDate: string, endDate: string }) => {
@@ -55,6 +55,7 @@ export const DateRangePickerField = ({
       direction={ direction }
       isRequired={ isRequired }
       validate={ validate }
+      ref={ ref }
     >
       { ({ value, onChange }, { formState: { errors } }) => (
         <DateRangePicker
@@ -73,4 +74,4 @@ export const DateRangePickerField = ({
       ) }
     </Field>
   )
-}
+})

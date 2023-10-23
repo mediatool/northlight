@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { DateValue, parseDate } from '@internationalized/date'
 import { identity } from 'ramda'
 import { DatePickerFieldProps } from '../types'
@@ -29,7 +29,7 @@ import { InputGroupWrapper } from '../../../internal-components/input-group-wrap
  * yyyy-mm-dd on the onSubmit callback on <Form>
  *
  */
-export const DatePickerField = ({
+export const DatePickerField = forwardRef<HTMLDivElement, DatePickerFieldProps>(({
   name,
   minValue,
   maxValue,
@@ -42,7 +42,7 @@ export const DatePickerField = ({
   inputLeftElement,
   inputRightElement,
   ...rest
-}: DatePickerFieldProps) => {
+}, ref) => {
   const { setValue, setError, trigger } = useFormContext()
 
   const handleChange = (date: DateValue) => {
@@ -70,6 +70,7 @@ export const DatePickerField = ({
       direction={ direction }
       isRequired={ isRequired }
       validate={ validate }
+      ref={ ref }
     >
       { ({ value, onChange }, { formState: { errors } }) => (
         <InputGroupWrapper
@@ -93,4 +94,4 @@ export const DatePickerField = ({
     </Field>
 
   )
-}
+})

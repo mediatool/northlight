@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { identity } from 'ramda'
 import { SwitchFieldProps } from './types'
 import { Field } from '../form'
@@ -29,8 +29,7 @@ import { Label } from '../typography'
  * ?)
  *
  */
-
-export const SwitchField = ({
+export const SwitchField = forwardRef<HTMLDivElement, SwitchFieldProps>(({
   name,
   label,
   isRequired,
@@ -40,17 +39,15 @@ export const SwitchField = ({
   labelPlacement = 'right',
   labelSize = 'md',
   ...rest
-}: SwitchFieldProps) => (
-  <Box
-    w={ label ? 'full' : 'fit-content' }
-    display="inline-flex"
-  >
+}, ref) => (
+  <Box w={ label ? 'full' : 'fit-content' } display="inline-flex">
     <Field
       name={ name }
       label=""
       isRequired={ isRequired }
       direction={ direction }
       validate={ validate }
+      ref={ ref }
     >
       { ({ onChange, value }) => (
         <Flex
@@ -74,4 +71,4 @@ export const SwitchField = ({
       ) }
     </Field>
   </Box>
-)
+))

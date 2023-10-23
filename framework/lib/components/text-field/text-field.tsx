@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { identity, isNil } from 'ramda'
 import { TextFieldProps } from './types'
 import { Input } from '../input'
@@ -15,7 +15,7 @@ import { InputGroupWrapper } from '../../internal-components/input-group-wrapper
  *
  *
  */
-export const TextField = ({
+export const TextField = forwardRef<HTMLDivElement, TextFieldProps>(({
   name,
   label,
   as: As = Input,
@@ -26,7 +26,7 @@ export const TextField = ({
   inputLeftElement,
   inputRightElement,
   ...rest
-}: TextFieldProps) => (
+}, ref) => (
   <Field
     name={ name }
     label={ label }
@@ -37,6 +37,7 @@ export const TextField = ({
         : validate
     }
     direction={ direction }
+    ref={ ref }
   >
     { ({ onChange, value }) => (
       <InputGroupWrapper
@@ -57,4 +58,4 @@ export const TextField = ({
       </InputGroupWrapper>
     ) }
   </Field>
-)
+))

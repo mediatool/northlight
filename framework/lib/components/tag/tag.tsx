@@ -20,13 +20,13 @@ import { TagProps } from './types'
  * ?)
  *
 */
-export const Tag = forwardRef(({
+export const Tag = forwardRef<HTMLSpanElement, TagProps>(({
   children,
   variant = 'solid',
   bgColor,
   colorScheme,
   ...rest
-}: TagProps, ref: any) => (
+}, ref) => (
   <ChakraTag
     bgColor={ bgColor }
     colorScheme={ colorScheme }
