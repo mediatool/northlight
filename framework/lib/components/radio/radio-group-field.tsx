@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { identity } from 'ramda'
 import { RadioFieldGroupProps } from './types'
 import { Field } from '../form'
@@ -13,7 +13,7 @@ import { Box } from '../box'
  * @see {@link https://northlight.dev/reference/radio-group-field}
  *
  */
-export const RadioGroupField = ({
+export const RadioGroupField = forwardRef<HTMLDivElement, RadioFieldGroupProps>(({
   name,
   label,
   children,
@@ -22,7 +22,7 @@ export const RadioGroupField = ({
   validate,
   onChange: onChangeCallback = identity,
   ...rest
-}: RadioFieldGroupProps) => (
+}, ref) => (
   <Box w={ label ? 'full' : 'fit-content' }>
     <Field
       name={ name }
@@ -30,6 +30,7 @@ export const RadioGroupField = ({
       direction={ direction }
       isRequired={ isRequired }
       validate={ validate }
+      ref={ ref }
     >
       { ({ onChange, value }) => (
         <RadioGroup
@@ -45,4 +46,4 @@ export const RadioGroupField = ({
       ) }
     </Field>
   </Box>
-)
+))

@@ -18,13 +18,13 @@ import { DragItemProps } from './types'
  * ?)
  *
  */
-export const DragItem = forwardRef(({
+export const DragItem = forwardRef<HTMLSpanElement, DragItemProps>(({
   size = 'md',
   isDragging,
   itemLabel = 'Drag Me',
   bgColor,
   ...rest
-}: DragItemProps, ref) => (
+}, ref) => (
   <Tag
     ref={ ref }
     cursor={ isDragging ? 'grabbing' : 'grab' }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { FormLabelProps } from './types'
 import { Label } from '../typography'
 
@@ -8,10 +8,10 @@ import { Label } from '../typography'
  * @see {@link https://northlight.dev/reference/form-label}
  *
  */
-export const FormLabel = ({
+export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps >(({
   children: label,
   ...rest
-}: FormLabelProps) => (
+}, ref) => (
   <Label
     size="sm"
     sx={ {
@@ -22,7 +22,8 @@ export const FormLabel = ({
     } }
     requiredIndicator={ undefined }
     { ...rest }
+    ref={ ref }
   >
     { label }
   </Label>
-)
+))

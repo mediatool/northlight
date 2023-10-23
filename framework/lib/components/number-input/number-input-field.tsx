@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { identity, isNil } from 'ramda'
 import { NumberInputFieldProps } from './types'
 import { Field } from '../form'
@@ -13,7 +13,7 @@ import { InputGroupWrapper } from '../../internal-components/input-group-wrapper
  * @see {@link https://northlight.dev/reference/number-input-field}
  *
  */
-export const NumberInputField = ({
+export const NumberInputField = forwardRef<HTMLDivElement, NumberInputFieldProps>(({
   name,
   label,
   direction,
@@ -24,7 +24,7 @@ export const NumberInputField = ({
   inputLeftElement,
   inputRightElement,
   ...rest
-}: NumberInputFieldProps) => {
+}, ref) => {
   const formatNumber = (value: number, factor: number) => (
     onlyAcceptPercentage
       ? advancedParseFloat(value * factor)
@@ -38,6 +38,7 @@ export const NumberInputField = ({
       direction={ direction }
       isRequired={ isRequired }
       validate={ validate }
+      ref={ ref }
     >
       { ({ onChange, value }) => {
         const initialValue = isNil(value) || Number.isNaN(parseFloat(value))
@@ -70,4 +71,4 @@ export const NumberInputField = ({
       } }
     </Field>
   )
-}
+})

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Controller, FieldPath, FieldValues } from 'react-hook-form'
 import { FormControl, FormErrorMessage, FormLabel } from '../form-control'
 import { Stack } from '../stack'
@@ -97,20 +97,20 @@ import { getFieldError } from '../../utils'
  * `<Field<MyFormBody> name="username">...</Field>`
  */
 
-export function Field<
+const BaseField = <
   FormValues extends FieldValues = FieldValues,
   FieldName extends FieldPath<FormValues> = FieldPath<FormValues>
 > ({
-  name,
-  label,
-  children,
-  direction = 'column',
-  isRequired = false,
-  noLabelConnection = false,
-  validate,
-  control: passedControl,
-  ...rest
-}: FieldProps<FormValues, FieldName>) {
+    name,
+    label,
+    children,
+    direction = 'column',
+    isRequired = false,
+    noLabelConnection = false,
+    validate,
+    control: passedControl,
+    ...rest
+  }: FieldProps<FormValues, FieldName>, ref: React.Ref<HTMLDivElement>) => {
   const methods = useFormContext<FormValues>()
   const { formState: { errors } } = methods
   const control = passedControl ?? methods.control
@@ -118,7 +118,7 @@ export function Field<
   const fieldError = getFieldError<FormValues>(name, errors)
 
   return (
-    <FormControl isInvalid={ !!fieldError } isRequired={ isRequired }>
+    <FormControl isInvalid={ !!fieldError } isRequired={ isRequired } ref={ ref }>
       <Stack
         spacing="auto"
         direction={ direction }
@@ -143,3 +143,5 @@ export function Field<
     </FormControl>
   )
 }
+
+export const Field = forwardRef(BaseField)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { identity } from 'ramda'
 import { Field } from '../form'
 import { FlipButtonGroup } from './flip-button-group'
@@ -23,7 +23,7 @@ import { FlipButtonGroupFieldProps } from './types'
  * ?)
  *
  */
-export const FlipButtonGroupField = ({
+export const FlipButtonGroupField = forwardRef<HTMLDivElement, FlipButtonGroupFieldProps>(({
   name,
   label,
   children,
@@ -33,13 +33,14 @@ export const FlipButtonGroupField = ({
   onChange: onChangeCallback = identity,
   validate,
   ...rest
-}: FlipButtonGroupFieldProps) => (
+}, ref) => (
   <Field
     name={ name }
     label={ label }
     direction={ direction }
     isRequired={ isRequired }
     validate={ validate }
+    ref={ ref }
   >
     { ({ onChange, value }) => (
       <FlipButtonGroup
@@ -54,4 +55,4 @@ export const FlipButtonGroupField = ({
       </FlipButtonGroup>
     ) }
   </Field>
-)
+))

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { identity } from 'ramda'
 import { FormattedNumberInputFieldProps } from './types'
 import { Field } from '../form'
@@ -21,7 +21,8 @@ import { FormattedNumberInput } from './formatted-number-input'
  * ?)
  *
  */
-export const FormattedNumberInputField = ({
+export const FormattedNumberInputField =
+forwardRef<HTMLDivElement, FormattedNumberInputFieldProps>(({
   name,
   label,
   isRequired,
@@ -29,13 +30,14 @@ export const FormattedNumberInputField = ({
   onChange: onChangeCallback = identity,
   direction = 'row',
   ...rest
-}: FormattedNumberInputFieldProps) => (
+}, ref) => (
   <Field
     name={ name }
     label={ label }
     isRequired={ isRequired }
     direction={ direction }
     validate={ validate }
+    ref={ ref }
   >
     { ({ onChange, value }) => (
       <FormattedNumberInput
@@ -49,4 +51,4 @@ export const FormattedNumberInputField = ({
       />
     ) }
   </Field>
-)
+))

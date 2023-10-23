@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { FieldValues } from 'react-hook-form'
 import { XCloseSolid } from '@northlight/icons'
 import { identity, isEmpty } from 'ramda'
@@ -10,7 +10,7 @@ import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
 import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 
-export const SearchBarField = <T extends SearchBarOptionType, K extends boolean = false> ({
+const BaseSearchBarField = <T extends SearchBarOptionType, K extends boolean = false> ({
   name,
   label,
   direction = 'column',
@@ -22,7 +22,7 @@ export const SearchBarField = <T extends SearchBarOptionType, K extends boolean 
   inputLeftElement,
   inputRightElement,
   ...rest
-}: SearchBarFieldProps<T, K>) => (
+}: SearchBarFieldProps<T, K>, ref: React.Ref<HTMLDivElement>) => (
   <Field
     name={ name }
     label={ label }
@@ -30,6 +30,7 @@ export const SearchBarField = <T extends SearchBarOptionType, K extends boolean 
     isRequired={ isRequired }
     noLabelConnection={ true }
     validate={ validate }
+    ref={ ref }
   >
     { ({ value, onChange }) => (
       <HStack w="full">
@@ -65,3 +66,5 @@ export const SearchBarField = <T extends SearchBarOptionType, K extends boolean 
     ) }
   </Field>
   )
+
+export const SearchBarField = forwardRef(BaseSearchBarField)
