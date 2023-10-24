@@ -14,17 +14,22 @@ import { Label } from '../typography'
  * @see {@link https://northlight.dev/reference/switch-field}
 * @example (Example)
  * ## Basic
+ * Tip:
+ * * For `labelPlacement` you can use `"left" | "right"`
+ * * For `labelSize` you can use `"2xs" | "xs" | "md" | "lg"` or leave it blank
  * (?
  * <Form initialValues={{name: ''}}>
  *  <SwitchField
  *   name="terms"
  *   label="I agree to the Terms & Conditions"
- *   labelPosition="left"
+ *   labelPlacement="right"
+ *   labelSize="md"
  *  />
  * </Form>
  * ?)
  *
  */
+
 export const SwitchField = ({
   name,
   label,
@@ -32,10 +37,14 @@ export const SwitchField = ({
   validate,
   onChange: onChangeCallback = identity,
   direction = 'row',
-  labelPosition = 'right',
+  labelPlacement = 'right',
+  labelSize = 'md',
   ...rest
 }: SwitchFieldProps) => (
-  <Box w={ label ? 'full' : 'fit-content' }>
+  <Box
+    w={ label ? 'full' : 'fit-content' }
+    display="inline-flex"
+  >
     <Field
       name={ name }
       label=""
@@ -45,8 +54,10 @@ export const SwitchField = ({
     >
       { ({ onChange, value }) => (
         <Flex
+          display="inline-flex"
+          alignItems="center"
           gap={ 2 }
-          direction={ labelPosition === 'left' ? 'row-reverse' : 'row' }
+          direction={ labelPlacement === 'left' ? 'row-reverse' : 'row' }
         >
           <Switch
             name={ name }
@@ -58,7 +69,7 @@ export const SwitchField = ({
             data-testid="switch-field-test-id"
             { ...rest }
           />
-          { label && <Label htmlFor={ name }>{ label }</Label> }
+          <Label htmlFor={ name } sx={ { fontWeight: 'normal' } } size={ labelSize }>{ label }</Label>
         </Flex>
       ) }
     </Field>
