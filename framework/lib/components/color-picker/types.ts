@@ -1,4 +1,4 @@
-import { IconButtonProps, StackDirection } from '@chakra-ui/react'
+import { IconButtonProps, PopoverProps, StackDirection } from '@chakra-ui/react'
 import { RegisterOptions } from 'react-hook-form'
 
 type ColorPickerSize = 'sm' | 'md' | 'lg'
@@ -16,6 +16,7 @@ export interface ColorPickerProps
   value?: string | null
   size?: ColorPickerSize
   name?: string
+  popoverProps?: PopoverProps
 }
 
 export type ColorButtonProps = {
