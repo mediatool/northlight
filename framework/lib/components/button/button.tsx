@@ -1,6 +1,14 @@
 import React, { forwardRef } from 'react'
 import { Button as ChakraButton } from '@chakra-ui/react'
+import { Spinner } from '../spinner'
 import { ButtonProps } from './types'
+
+const SpinnerSizeMap = {
+  xs: 'xs',
+  sm: 'sm',
+  md: 'sm',
+  lg: 'md',
+}
 
 /**
  * @see {@link https://northlight.dev/reference/button}
@@ -47,8 +55,21 @@ import { ButtonProps } from './types'
  * ?)
  */
 export const Button = forwardRef(
-  <As extends React.ElementType = typeof ChakraButton>({ variant = 'default', children, ...rest }: ButtonProps<As>, ref: any) => (
-    <ChakraButton variant={ variant } ref={ ref } { ...rest }>
+  <As extends React.ElementType = typeof ChakraButton>(
+    { variant = 'default', children, size = 'md', ...rest }: ButtonProps<As>,
+    ref: any
+  ) => (
+    <ChakraButton
+      variant={ variant }
+      ref={ ref }
+      size={ size }
+      spinner={ (
+        <Spinner
+          size={ SpinnerSizeMap[size] }
+        />
+        ) }
+      { ...rest }
+    >
       { children }
     </ChakraButton>
   )
