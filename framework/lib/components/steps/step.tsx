@@ -14,29 +14,24 @@ import { StepProps } from './types'
  * (? <Step label="Step 1" description="Personal information" /> ?)
  *
  */
-export const Step = ({
-  label,
-  description,
-  ...rest
-}: StepProps) => {
+export const Step = ({ label, description, ...rest }: StepProps) => {
   const {
     step,
     label: labelStyle,
     description: descriptionStyle,
   } = useMultiStyleConfig('Step')
   return (
-    <ChakraStep { ...rest } sx={ step }>
+    <ChakraStep
+      sx={ step }
+      { ...rest }
+    >
       <Flex
         flexDirection="column"
         alignItems="flex-start"
         _groupFocusVisible={ ring }
       >
-        <Capitalized sx={ labelStyle }>
-          { label }
-        </Capitalized>
-        <Lead sx={ descriptionStyle }>
-          { description }
-        </Lead>
+        <Capitalized sx={ labelStyle }>{ label }</Capitalized>
+        <Lead sx={ descriptionStyle }>{ description }</Lead>
       </Flex>
     </ChakraStep>
   )
