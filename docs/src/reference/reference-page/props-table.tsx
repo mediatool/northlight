@@ -111,7 +111,7 @@ export const PropsTable = ({
                     <Link
                       sx={ { color: getContrastColor('bg.tertiary.defualt') } }
                       isExternal={ true }
-                      href={ `https://github.com/mediatool/northlight/tree/master/${propOr('', 'fileName', file)}` }
+                      href={ `https://github.com/mediatool/northlight/blob/master/${propOr('', 'fileName', file)}` }
                     >
                       { fileLink }
                     </Link>

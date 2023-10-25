@@ -1,14 +1,17 @@
 import React, { ChangeEvent, useMemo, useState } from 'react'
 import { ComponentDoc, PropItem } from 'react-docgen-typescript'
 import {
+  compose,
   head,
   isEmpty,
+  isNil,
   last,
   length,
   map,
   prop,
   propOr,
   reject,
+  replace,
   slice,
   sort,
   times,
@@ -83,6 +86,24 @@ const sortPropItems = (a: PropItem, b: PropItem) => {
   if (!isDefinedExternal(a) && isDefinedExternal(b)) return -1
   if (isDefinedExternal(a) && !isDefinedExternal(b)) return 1
   return 0
+}
+
+const transformProp = (propData: PropItem): FileLink | undefined => {
+  const file = head(
+    propOr<never[], PropItem, FileLink[]>(
+      [],
+      'declarations',
+      propData
+    )
+  )
+
+  if (isNil(file)) return file
+  file.fileName = compose(
+    replace('northlight/', ''),
+    replace('repo/', '')
+  )(file.fileName)
+
+  return file
 }
 
 const ReferencePage = ({ data }: ReferencePageProps) => {
@@ -208,13 +229,7 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
                         type={ propData.type }
                         isRequired={ propData.required }
                         description={ propData.description }
-                        file={ head(
-                          propOr<never[], PropItem, FileLink[]>(
-                            [],
-                            'declarations',
-                            propData
-                          )
-                        ) }
+                        file={ transformProp(propData) }
                       />
                     )) }
                   </Stack>
