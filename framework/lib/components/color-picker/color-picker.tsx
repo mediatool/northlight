@@ -50,6 +50,7 @@ export const ColorPicker = ({
   value = null,
   name,
   size = 'md',
+  popoverProps,
   ...rest
 }: ColorPickerProps) => {
   const { isOpen, onToggle, onClose } = useDisclosure()
@@ -117,6 +118,7 @@ export const ColorPicker = ({
         isOpen={ isOpen }
         onClose={ onClose }
         initialFocusRef={ initialFocusRef }
+        { ...popoverProps }
       >
         <PopoverTrigger>
           <IconButton
