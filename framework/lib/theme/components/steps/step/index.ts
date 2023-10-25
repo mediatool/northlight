@@ -21,6 +21,10 @@ export const Step: ComponentMultiStyleConfig = {
         bgColor: color.background.step.hover,
         borderColor: color.border.step.hover,
       },
+      _disabled: {
+        cursor: 'not-allowed',
+        _hover: { borderColor: color.border.step.default },
+      },
       _active: {
         bgColor: color.background.step.active,
       },
