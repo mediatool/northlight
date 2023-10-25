@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { forwardRef, useEffect } from 'react'
 import { useClipboard, useMultiStyleConfig } from '@chakra-ui/react'
 import { CheckDuo, CopyDuo } from '@northlight/icons'
 import { IconButton } from '../icon-button'
@@ -18,12 +18,12 @@ import { ClipboardInputProps } from './types'
  * ?)
  *
  */
-export const ClipboardInput = ({
+export const ClipboardInput = forwardRef<HTMLDivElement, ClipboardInputProps>(({
   size = 'md',
   value,
   'aria-label': ariaLabel,
   ...rest
-}: ClipboardInputProps) => {
+}, ref) => {
   const { hasCopied, onCopy, setValue } = useClipboard(value)
   const { button, icon, tooltip } = useMultiStyleConfig('ClipboardInput', { size })
 
@@ -32,8 +32,9 @@ export const ClipboardInput = ({
   }, [ value ])
 
   return (
-    <InputGroup size={ size } data-testid="clipboard-input-test-id">
+    <InputGroup size={ size } data-testid="clipboard-input-test-id" ref={ ref }>
       <Input
+        textOverflow="ellipsis"
         aria-label={ `Value to copy: ${value}` }
         isReadOnly={ true }
         value={ value }
@@ -61,4 +62,4 @@ export const ClipboardInput = ({
       </InputRightElement>
     </InputGroup>
   )
-}
+})
