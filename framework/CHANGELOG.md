@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.2...@northlight/ui@2.12.3) (2023-10-25)
+
+
+### Bug Fixes
+
+* **framework:** bg color on hover for number-input stepper ([43bb3bd](https://github.com/mediatool/northlight/commit/43bb3bd0ed81099b6dc594edb2f397d5ab868a6a))
+* **framework:** changed placeholder color editabletext ([2f2f4d6](https://github.com/mediatool/northlight/commit/2f2f4d6022e59656e234f79a5f9bc7c6303f1b1d))
+* **framework:** formatted number input bugs fixes ([a83a106](https://github.com/mediatool/northlight/commit/a83a1069bd7bd7aee758ca6c07a5f8096a4ef6a7))
+* **framework:** Select dropdown direction if cant fit in modal ([0a59820](https://github.com/mediatool/northlight/commit/0a59820262378b697f24d34d367bf14f4dfa88fc))
+* **framework:** tooltip not working on multiple components ([cc5c542](https://github.com/mediatool/northlight/commit/cc5c54248de76673f9ac3fa3b1310d32274cb691))
+* **northlight/components:** fix datepicker trigger alignment ([4d7ad2d](https://github.com/mediatool/northlight/commit/4d7ad2d75ecf8240cbb25003b64e5f04e7c8d1f1))
+
+
+
+
+
 ## [2.12.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.1...@northlight/ui@2.12.2) (2023-10-11)
 
 

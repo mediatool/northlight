@@ -1,6 +1,6 @@
 {
   "name": "@northlight/docs",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "main": "index.ts",
   "license": "UNLICENSED",
   "private": true,
@@ -20,8 +20,8 @@
     "@types/prettier": "^2.7.2",
     "@types/react": "^18.0.37",
     "@vitejs/plugin-react": "^4.1.0",
-    "vite": "^4.4.9",
-    "run-when-changed": "^2.1.0"
+    "run-when-changed": "^2.1.0",
+    "vite": "^4.4.9"
   },
   "dependencies": {
     "@chakra-ui/clickable": "^2.1.0",
@@ -31,7 +31,7 @@
     "@emotion/react": "^11.11.1",
     "@northlight/icons": "^1.1.2",
     "@northlight/tokens": "^1.0.10",
-    "@northlight/ui": "^2.12.2",
+    "@northlight/ui": "^2.12.3",
     "@react-aria/i18n": "^3.8.2",
     "@shopify/react-i18n": "^7.7.2",
     "chakra-react-select": "^4.4.3",

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/mediatool/northlight/compare/@northlight/docs@1.2.3...@northlight/docs@1.2.4) (2023-10-25)
+
+
+### Bug Fixes
+
+* **docs:** added back watch-docs as transpile:watch ([c38f619](https://github.com/mediatool/northlight/commit/c38f6197ae2f1f8f2bcd2e28af20daaaa26432e8))
+* **docs:** updated docs ([44a22d8](https://github.com/mediatool/northlight/commit/44a22d80ddf35240784311e594bf1391c17e1bfd))
+
+
+
+
+
 ## [1.2.3](https://github.com/mediatool/northlight/compare/@northlight/docs@1.2.2...@northlight/docs@1.2.3) (2023-10-11)
 
 
