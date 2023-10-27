@@ -36,6 +36,7 @@
     "@shopify/react-i18n": "^7.7.2",
     "chakra-react-select": "^4.4.3",
     "fuse.js": "^6.6.2",
+    "joi": "^17.11.0",
     "lodash.debounce": "^4.0.8",
     "markdown-to-jsx": "^7.2.0",
     "prettier": "^2.8.7",
