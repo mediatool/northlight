@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.3...@northlight/ui@2.12.4) (2023-10-27)
+
+
+### Bug Fixes
+
+* **framework:** change chakra ui spinner to northlight spinner ([781de96](https://github.com/mediatool/northlight/commit/781de968707a8a06703b26951ead9ad030e76783))
+* **framework:** make color picker popover adjustable ([0f950d5](https://github.com/mediatool/northlight/commit/0f950d504d5268e1873830558c4bc19877d5961e))
+* **framework:** make steps properly disabled ([2e5b8c2](https://github.com/mediatool/northlight/commit/2e5b8c2b58645156f96bdea845224050e373054c))
+* **framework:** wrap clipboardinput in forward ref and text overflow ([4cca358](https://github.com/mediatool/northlight/commit/4cca35804c4b3c79c018b4eb44cf05361c1e8307))
+
+
+
+
+
 ## [2.12.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.2...@northlight/ui@2.12.3) (2023-10-25)
 
 
