@@ -13,6 +13,7 @@ import {
   UseFormProps,
 } from 'react-hook-form'
 import { StackDirection, StackProps } from '@chakra-ui/react'
+import { Schema } from 'joi'
 
 export type UseFormReturn<T extends FieldValues> = RHFUseFormReturn<T>
 
@@ -84,6 +85,8 @@ export interface FormProps<FormValues extends FieldValues> {
   /** This will recursively trim all values strings inside the form values,
    *  no matter how nesteed they are */
   shouldTrim?: boolean
+  /** Enter a JSON schema using Joi.object and pass it down here to be used for validation */
+  joiSchema?: Schema
   children:
   | ((methods: UseFormReturn<FormValues>) => ReactNode)
   | ReactNode

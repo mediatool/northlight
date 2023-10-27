@@ -1,4 +1,5 @@
 import React from 'react'
+import Joi from 'joi'
 import { TextSolid } from '@northlight/icons'
 import {
   Avatar,
@@ -81,6 +82,11 @@ const customOption = ({ label }: UserType) => (
   </HStack>
 )
 
+const schema = Joi.object({
+  firstName: Joi.string().required(),
+  lastName: Joi.number().required(),
+})
+
 export const FormOne = () => (
   <Form
     initialValues={ {
@@ -103,6 +109,7 @@ export const FormOne = () => (
       dateRange: '',
     } }
     onSubmit={ () => {} }
+    joiSchema={ schema }
   >
     { ({ watch }) => (
       <Stack spacing={ 3 }>

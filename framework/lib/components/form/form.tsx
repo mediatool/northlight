@@ -8,6 +8,7 @@ import {
   useForm,
 } from 'react-hook-form'
 import { always, equals } from 'ramda'
+import { joiResolver } from '@hookform/resolvers/joi'
 import { FormProps } from './types'
 import { trimFormValues } from './trim-form-values'
 
@@ -43,9 +44,35 @@ import { trimFormValues } from './trim-form-values'
  *  (everything that the useForm hooks returns)
  *
  * @example (Example)
- * ## Moving the form state outside of Form
+ * ## Validation with joi
+ *
+ * You can pass on validation either by using a custom validate
+ * function, by passing html validation directly on a field, or by
+ * using joi schema. joi schema is recommended when possible.
+ *
  * (?
  * +
+
+const joiSchema = Joi.object({
+  username: Joi.string().alphanum().min(3).max(30).required(),
+  password: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
+});
+
+ * const MyForm = () => (
+  <Form initialValues={{name: ''}} joiSchema={joiSchema}>
+  <Stack>
+    <TextField name="username" label="User Name"/>
+    <TextField name="password" label="Password" />
+  </Stack>
+  </Form>
+  )
+ *
+ * render(<MyForm />)
+ * ?)
+ *
+ * @example (Example)
+ * ## Moving the form state outside of Form
+ * (?
 
 //This code could live in the backend
 const submitValuesToBackend = (values) => {
@@ -118,6 +145,7 @@ export const Form = forwardRef(<FormValues extends FieldValues>({
   enableReinitialize = false,
   shouldTrim = true,
   innerFormStyle = {},
+  joiSchema,
   ...rest
 }: FormProps<FormValues>, ref: React.Ref<UseFormReturn<FormValues>>) => {
   const customResolver: Resolver<FormValues, any> = (
@@ -129,11 +157,17 @@ export const Form = forwardRef(<FormValues extends FieldValues>({
     errors: validate(values),
   })
 
+  const getResolver = () => {
+    if (validate) return customResolver
+    if (joiSchema) return joiResolver(joiSchema)
+    return undefined
+  }
+
   const newMethods =
     methods ||
     useForm<FormValues>({
       defaultValues: initialValues as DefaultValues<FormValues>,
-      resolver: validate ? customResolver : undefined,
+      resolver: getResolver(),
       ...formSettings,
     })
 
