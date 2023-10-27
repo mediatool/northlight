@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.4...@northlight/ui@2.12.5) (2023-10-27)
+
+
+### Bug Fixes
+
+* **framework:** add year to date option to date-range-picker ([ac43015](https://github.com/mediatool/northlight/commit/ac430155235f6b22cd1e8c7c4ba38257499aa578))
+
+
+
+
+
 ## [2.12.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.3...@northlight/ui@2.12.4) (2023-10-27)
 
 
