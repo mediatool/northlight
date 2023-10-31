@@ -43,10 +43,10 @@ export function getComponents<T extends SearchBarOptionType> () {
       children,
       ...props
     }: ControlProps<T, boolean, GroupBase<T>>) =>
-      (props.selectProps.leftIcon ? (
+      (props.selectProps.leftComponent ? (
         <chakraComponents.Control { ...props }>
           <HStack w="full" pl="2">
-            <Icon as={ props.selectProps.leftIcon } />
+            { props.selectProps.leftComponent }
             <HStack w="full" justify="space-between">
               { children }
             </HStack>
