@@ -40,8 +40,8 @@ export interface SelectProps<T, K extends boolean>
   | undefined
   /** Custom icon that will be put to the faremost right of the component */
   icon?: ComponentType<any>
-  /** Custom icon that will be put to the faremost left of the component */
-  leftIcon?: ComponentType<any>
+  /** Custom components that will be put to the faremost left of the select input box */
+  leftComponent?: React.ReactNode
   customOption?: ((option: T) => JSX.Element) | null
   isMulti?: K
   ref?: Ref<SelectInstance<T, K, GroupBase<T>>>
