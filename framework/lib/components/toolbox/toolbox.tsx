@@ -71,7 +71,7 @@ export const Toolbox = ({
 
   const defaultWidth = getPixelSize(size)
   const minWidth = getPixelSize('sm')
-  const maxWidth = getPixelSize('2xl')
+  const maxWidth = window.innerWidth
 
   const [ adjustableWidth, setAdjustableWidth ] = useState(defaultWidth)
 
