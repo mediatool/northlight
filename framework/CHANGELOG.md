@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.5...@northlight/ui@2.13.0) (2023-11-01)
+
+
+### Bug Fixes
+
+* **framework:** turn leftIcon into leftComponent ([45eb2ff](https://github.com/mediatool/northlight/commit/45eb2fff3f19d888a4c1adc93db999ceb0fe13a7))
+
+
+### Features
+
+* **framework:** add support for joi ([841cdd5](https://github.com/mediatool/northlight/commit/841cdd54a82a2ab8ca4a6555b932fd11b9f3dd93))
+
+
+
+
+
 ## [2.12.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.4...@northlight/ui@2.12.5) (2023-10-27)
 
 

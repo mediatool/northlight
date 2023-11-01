@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.2.6...@northlight/docs@1.3.0) (2023-11-01)
+
+
+### Bug Fixes
+
+* **docs:** fix broken link since moved northlight package ([f4e1c66](https://github.com/mediatool/northlight/commit/f4e1c66c9d9cee8fd8664b23d1bff09344a33e5b))
+
+
+### Features
+
+* **framework:** add support for joi ([841cdd5](https://github.com/mediatool/northlight/commit/841cdd54a82a2ab8ca4a6555b932fd11b9f3dd93))
+
+
+
+
+
 ## [1.2.6](https://github.com/mediatool/northlight/compare/@northlight/docs@1.2.5...@northlight/docs@1.2.6) (2023-10-27)
 
 **Note:** Version bump only for package @northlight/docs
