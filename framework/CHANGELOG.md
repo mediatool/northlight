@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.13.0...@northlight/ui@2.13.1) (2023-11-01)
+
+
+### Bug Fixes
+
+* **framework:** remove as generic from button ([9ffe168](https://github.com/mediatool/northlight/commit/9ffe168194d5e0909a653bc8004b873dd9be4a31))
+
+
+
+
+
 # [2.13.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.12.5...@northlight/ui@2.13.0) (2023-11-01)
 
 
