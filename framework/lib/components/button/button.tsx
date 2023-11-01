@@ -53,24 +53,33 @@ const SpinnerSizeMap = {
  *
  * render(<ExampleButton/>)
  * ?)
+ *
+ * @example (Example)
+ * Use LinkOverlay to turn the button into a link
+ *
+ * (?
+ * <LinkOverlay as={NavLink} to="/">
+ *  <Button variant="link">Go to home page</Button>
+ * </LinkOverlay>
+ *
+ * ?)
  */
-export const Button = forwardRef(
-  <As extends React.ElementType = typeof ChakraButton>(
-    { variant = 'default', children, size = 'md', ...rest }: ButtonProps<As>,
-    ref: any
-  ) => (
-    <ChakraButton
-      variant={ variant }
-      ref={ ref }
-      size={ size }
-      spinner={ (
-        <Spinner
-          size={ SpinnerSizeMap[size] }
-        />
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((
+  { variant = 'default', children, size = 'md', ...rest },
+  ref
+) => (
+  <ChakraButton
+    variant={ variant }
+    ref={ ref }
+    size={ size }
+    spinner={ (
+      <Spinner
+        size={ SpinnerSizeMap[size] }
+      />
         ) }
-      { ...rest }
-    >
-      { children }
-    </ChakraButton>
-  )
+    { ...rest }
+  >
+    { children }
+  </ChakraButton>
+)
 )

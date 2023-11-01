@@ -19,6 +19,7 @@ import {
 } from '@northlight/ui'
 import * as uiLib from '@northlight/ui'
 import Joi from 'joi'
+import { NavLink } from 'react-router-dom'
 import { paleNight } from './code-editor-theme'
 
 interface CodeEditorProps {
@@ -31,7 +32,7 @@ export const CodeEditor = (props: CodeEditorProps) => {
   const { button, icon, tooltip } = useMultiStyleConfig('ClipboardInput', {
     size: 'md',
   })
-  const scope = { ...uiLib, ...React, ...iconLib, Joi }
+  const scope = { ...uiLib, ...React, ...iconLib, Joi, NavLink }
 
   return (
     <Box
