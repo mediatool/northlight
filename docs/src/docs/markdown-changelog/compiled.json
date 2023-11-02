@@ -1,0 +1,14 @@
+[
+  {
+    "name": "3.md",
+    "content": "# Joi Schema Support Added to Forms\n\nWe're excited to announce that our Northlight now includes support for `joiSchema` in forms! This powerful addition allows for complex validation patterns using Joi, a schema description language and data validator for JavaScript.\n\n--\n\n## Usage\n\nCheck out how to use joi:\n**📘 [Updated Forms Documentation](https://northlight.dev/reference/form)**\n\n\n"
+  },
+  {
+    "name": "2.md",
+    "content": "## Select dropdown direction changes\n\nThe select dropdown is now becoming a drop(up),\nwhere it will automatically adjust direction depending\non if it is on the top or bottom.\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/cuMedREGu5k?si=DTUMnAghQipdaokR\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n\nNote: In case of the select unexpectedly \"throwing up\" instead of down, try to add the containerRef prop or set menuPlacement manually: \n\nhttps://northlight.dev/reference/select\n\n\n"
+  },
+  {
+    "name": "1.md",
+    "content": "# New Formatted Number Input Component\n\nIntroducing the Formatted Number Input component from Northlight – a robust and customizable number field that integrates seamlessly with `react-number-format`. This new component is designed to handle number formatting with ease, making it perfect for international users with its preset formatting options for different regions.\n\n--\n\n## Features\n\n- **Preset Formatting**: Choose from `eu`, `us`, or `nor` to automatically apply the right thousand and decimal separators for different standards.\n- **Percentage Mode**: Easily format values as percentages.\n- **Precision Control**: Specify the number of decimals to round the numbers.\n- **Range Validation**: Set a maximum and minimum value to ensure the input stays within a defined range.\n- **Customization**: Inject left and right elements to the input for a customized UI.\n\n-- \n\n## Usage\nCheck out the docs for formatted number input:\n\n**📘 [Formatted Number Input docs](https://northlight.dev/reference/formatted-number-input)**\n\n"
+  }
+]

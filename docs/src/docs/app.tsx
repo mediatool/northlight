@@ -59,6 +59,13 @@ import sebbe from './images/sebbe.png'
 import iliya from './images/iliya.png'
 import magnus from './images/magnus.png'
 import hanna from './images/hanna.png'
+import { MarkdownPreview } from '../app/components/markdown-preview'
+import changelogContent from './markdown-changelog/compiled.json'
+
+const markdownPreviewContent = changelogContent.reduce((acc, item, index) => {
+  const separator = index === 0 ? '' : '<div style="margin: 2rem 0;"><hr></div>'
+  return `${acc}${separator}${item.content}\n\n`
+}, '')
 
 const DocsApp = () => (
   <Box
@@ -331,6 +338,29 @@ const DocsApp = () => (
       </SimpleGrid>
     </Fade>
 
+    <Card
+      w="70%"
+      mx="auto"
+      bgColor="bg.layer"
+      borderRadius="md"
+      maxH="4xl"
+      overflowY="scroll"
+    >
+      <Stack spacing="4">
+        <Box
+          bgColor="bg.overlayer"
+          borderRadius="md"
+          p="8"
+        >
+          <H1>ChangeLog - News</H1>
+        </Box>
+        <Box p="8">
+          <MarkdownPreview>
+            { markdownPreviewContent }
+          </MarkdownPreview>
+        </Box>
+      </Stack>
+    </Card>
     <Flex
       minWidth="max-content"
       minHeight={ 80 }

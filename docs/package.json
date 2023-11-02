@@ -11,7 +11,8 @@
     "build": "vite build",
     "transpile": "node src/reference/utils/generate-doc.mjs",
     "transpile:watch": "run-when-changed --watch \"../framework/lib/**/*.tsx\" --exec \"node src/reference/utils/rebuild-page.mjs %s \"",
-    "lint": "yarn tsc --noEmit && eslint --ext ts,tsx src"
+    "lint": "yarn tsc --noEmit && eslint --ext ts,tsx src",
+    "transpile-changelog": "node src/docs/markdown-changelog/load-markdown.mjs"
   },
   "devDependencies": {
     "@mediatool/eslint-config-mediatool": "^1.2.0",
