@@ -12,6 +12,8 @@ import { StackDirection } from '@chakra-ui/react'
 import { RegisterOptions } from 'react-hook-form'
 import { InputFieldProps } from '../../types'
 
+export type { SingleValue, MultiValue } from 'chakra-react-select'
+
 type Size = 'sm' | 'md' | 'lg'
 export interface Option {
   label: string
