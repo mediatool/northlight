@@ -58,10 +58,10 @@ const SpinnerSizeMap = {
  * Use LinkOverlay to turn the button into a link
  *
  * (?
- * <LinkOverlay as={NavLink} to="/">
- *  <Button variant="link">Go to home page</Button>
- * </LinkOverlay>
- *
+ * <LinkBox>
+  * <LinkOverlay as={NavLink} to="/" />
+  * <Button variant="link">Go to home page</Button>
+  * </LinkBox>
  * ?)
  */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>((
