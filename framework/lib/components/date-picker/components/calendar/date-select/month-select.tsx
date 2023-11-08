@@ -10,14 +10,12 @@ export const MonthSelect = ({
   const { dateSelect } = useMultiStyleConfig('Calendar')
   const start = state.visibleRange.start.add({ months: offset }).month - 1
   const [ selectedIndex, setSelectedIndex ] = useState(start)
-  const [ isEditing, setIsEditing ] = useState(false)
 
   const moveStartDateBy = (inp: any) => state.visibleRange.start.add(inp)
 
   const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const index = Number(e.target.value)
     setSelectedIndex(index)
-    setIsEditing(false)
     const diff = index - start
     state.setFocusedDate(moveStartDateBy({ months: diff }))
   }
@@ -28,41 +26,26 @@ export const MonthSelect = ({
     )
   }, [ state.visibleRange ])
 
-  const handleKeyDown = (e: any) => {
-    switch (e.key) {
-      case 'ArrowDown':
-      case 'ArrowUp':
-      case ' ':
-        setIsEditing((prev) => !prev)
-        break
-      default:
-        break
-    }
-  }
-
   return (
     <Select
       id="month"
       aria-label="Select Month"
       onChange={ onChange }
-      onClick={ () => setIsEditing((prev) => !prev) }
-      onKeyDown={ handleKeyDown }
       value={ selectedIndex }
       iconSize="0px"
       size="sm"
       variant="unstyled"
       sx={ dateSelect }
       w="max-content"
+      textAlign="center"
     >
-      { isEditing ? (
+      {
         months.map((month, i) => (
           <option key={ month } value={ i }>
             { month }
           </option>
         ))
-      ) : (
-        <option value={ selectedIndex }>{ months[selectedIndex] }</option>
-      ) }
+}
     </Select>
   )
 }
