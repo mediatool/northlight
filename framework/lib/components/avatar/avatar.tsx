@@ -14,13 +14,13 @@ import { AvatarBadge } from './avatar-badge'
  * @example (Example)
  * Avatar takes a name and image
  * (?
- * <Avatar name="Anakin Skywalker" image='src/assets/avatars/vader.png' />
+ * <Avatar name="Darth Vader" image='/vader.png' />
  * ?)
  *
  * <br />
  * If there is no image, it will render the initials of the name along with a random bg color.
  * (?
- * <Avatar name="Anakin Skywalker" />
+ * <Avatar name="Darth Vader" />
  * ?)
  *
  * <br />
