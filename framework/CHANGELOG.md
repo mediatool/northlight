@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.14.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.13.1...@northlight/ui@2.14.0) (2023-11-08)
+
+
+### Bug Fixes
+
+* **docs:** add missing linkbox ([8302296](https://github.com/mediatool/northlight/commit/830229648acbb62daca2d9b45d9d3720bbb438c6))
+* **framework:** export missing select types ([11a6fb2](https://github.com/mediatool/northlight/commit/11a6fb2afbf583cbdf41d18d3d4a441326666983))
+
+
+### Features
+
+* **framework:** add bigger sizes to toolbox ([6e178e0](https://github.com/mediatool/northlight/commit/6e178e05fad1e175a3f02b8432c042b251acef86))
+* **framework:** add delete-button ([0855afc](https://github.com/mediatool/northlight/commit/0855afce53dd11f95f8cb0fed93698fe909b2a57))
+
+
+
+
+
 ## [2.13.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.13.0...@northlight/ui@2.13.1) (2023-11-01)
 
 

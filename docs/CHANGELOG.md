@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.3.1...@northlight/docs@1.4.0) (2023-11-08)
+
+
+### Features
+
+* **docs:** add changelog-news page ([1beba3b](https://github.com/mediatool/northlight/commit/1beba3b57377dcbf7c086c8774b7a3a207aaf843))
+* **docs:** add tokens picker page ([435738f](https://github.com/mediatool/northlight/commit/435738f86b58a3ff94fe82eab25abc4633e07a84))
+
+
+
+
+
 ## [1.3.1](https://github.com/mediatool/northlight/compare/@northlight/docs@1.3.0...@northlight/docs@1.3.1) (2023-11-01)
 
 
