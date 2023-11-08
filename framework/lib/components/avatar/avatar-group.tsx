@@ -14,8 +14,8 @@ import { OverflowGroup } from '../overflow-group'
  * <AvatarGroup max={ 3 }>
   {[1, 2, 3, 4, 5].map((i) => (
     <Avatar
-      name="Anakin Skywalker"
-      image="src/assets/avatars/trooper.png"
+      name="Darth Vader"
+      image="/vader.png"
       size="sm"
       variant="rounded"
       key={ i }
