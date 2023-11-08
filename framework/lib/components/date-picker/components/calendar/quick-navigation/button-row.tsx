@@ -5,6 +5,7 @@ import { MoveButton } from './move-button'
 import { Icon } from '../../../../icon'
 import { validRange } from './utils'
 import { ButtonRowProps } from './types'
+import { Box } from '../../../../box'
 
 export const ButtonRow = ({
   dates,
@@ -21,7 +22,9 @@ export const ButtonRow = ({
     { dates.map(
       (date) =>
         validRange(date.value, state) && (
-          <MoveButton { ...getMethods(date) }>{ date.label }</MoveButton>
+          <Box ml="1" display="inline">
+            <MoveButton { ...getMethods(date) }>{ date.label }</MoveButton>
+          </Box>
         )
     ) }
   </HStack>
