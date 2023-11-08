@@ -5,6 +5,7 @@ import {
   ChevronDownSolid,
   ChevronUpSolid,
 } from '@northlight/icons'
+import { equals } from 'ramda'
 import { CalendarDate } from '@internationalized/date'
 import { Lead, P } from '../../../../typography'
 import { Clickable } from '../../../../clickable'
@@ -166,10 +167,17 @@ export const AdjustRange = ({ state, adjust = 'start' }: AdjustRangeProps) => {
     onClick: updateDate(date.value, false),
   })
 
+  const showAdjust =
+    state.value !== null &&
+    state.highlightedRange !== null &&
+    equals(state.value, state.highlightedRange)
+
   return (
     <Stack
       spacing={ 2 }
-      visibility={ state.value === null ? 'hidden' : 'visible' }
+      visibility={
+        showAdjust ? 'visible' : 'hidden'
+      }
       pt="2"
     >
       <Clickable onClick={ () => setIsOpen((prev) => !prev) }>
@@ -181,7 +189,7 @@ export const AdjustRange = ({ state, adjust = 'start' }: AdjustRangeProps) => {
       <SlideFade in={ isOpen } direction="top" hideDisplay={ true }>
         { adjust === 'start' && (
           <Stack minH="91px">
-            <Lead sx={ { fontSize: '12px' } }>Move date</Lead>
+            <Lead sx={ { fontSize: '12px' } }>Move date by</Lead>
             <ButtonRow
               icon={ ArrowCircleLeftDuo }
               dates={ moveStartBack }
@@ -198,7 +206,7 @@ export const AdjustRange = ({ state, adjust = 'start' }: AdjustRangeProps) => {
         ) }
         { adjust === 'end' && (
           <Stack minH="91px">
-            <Lead sx={ { fontSize: '12px' } }>Move date</Lead>
+            <Lead sx={ { fontSize: '12px' } }>Move date by</Lead>
             <ButtonRow
               icon={ ArrowCircleLeftDuo }
               dates={ moveEndBack }
