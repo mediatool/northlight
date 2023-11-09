@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.14.0...@northlight/ui@2.14.1) (2023-11-09)
+
+
+### Bug Fixes
+
+* **framework:** add some spacing to date picker buttons ([bccb682](https://github.com/mediatool/northlight/commit/bccb682adb2f33b13becc5b555b4bcde659036c3))
+* **framework:** hide adjust menu if range not selected ([abe81e0](https://github.com/mediatool/northlight/commit/abe81e0bc53fb2f7ed44657ce6ee96c450b6f80c))
+* **framework:** month select button not working ([57d6d28](https://github.com/mediatool/northlight/commit/57d6d2842c1badf3ed3f3553a48539702a52f7d4))
+
+
+
+
+
 # [2.14.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.13.1...@northlight/ui@2.14.0) (2023-11-08)
 
 
