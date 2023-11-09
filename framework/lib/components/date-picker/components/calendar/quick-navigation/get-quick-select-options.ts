@@ -152,7 +152,7 @@ export const getQuickSelectOptions = (
         startOfYear(thisDay), { months: fiscalStartMonth, days: fiscalStartDay }
       ),
       end: endOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 2, days: fiscalStartDay }
+        startOfYear(thisDay), { months: fiscalStartMonth + 3, days: fiscalStartDay }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q1' : 'FQ1',
@@ -164,7 +164,7 @@ export const getQuickSelectOptions = (
         startOfYear(thisDay), { months: fiscalStartMonth + 3, days: fiscalStartDay }
       ),
       end: endOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 5, days: fiscalStartDay }
+        startOfYear(thisDay), { months: fiscalStartMonth + 6, days: fiscalStartDay }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q2' : 'FQ2',
@@ -176,7 +176,7 @@ export const getQuickSelectOptions = (
         startOfYear(thisDay), { months: fiscalStartMonth + 6, days: fiscalStartDay }
       ),
       end: endOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 8, days: fiscalStartDay }
+        startOfYear(thisDay), { months: fiscalStartMonth + 9, days: fiscalStartDay }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q3' : 'FQ3',
@@ -188,7 +188,7 @@ export const getQuickSelectOptions = (
         startOfYear(thisDay), { months: fiscalStartMonth + 9, days: fiscalStartDay }
       ),
       end: endOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 11, days: fiscalStartDay }
+        startOfYear(thisDay), { months: fiscalStartMonth + 12, days: fiscalStartDay }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q4' : 'FQ4',
