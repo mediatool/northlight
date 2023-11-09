@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.14.1...@northlight/ui@2.14.2) (2023-11-09)
+
+
+### Bug Fixes
+
+* **framework:** Range picker quick-select quarter off by one month ([3677dc9](https://github.com/mediatool/northlight/commit/3677dc94feccbbd18a84e9090679be28eb4da299))
+
+
+
+
+
 ## [2.14.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.14.0...@northlight/ui@2.14.1) (2023-11-09)
 
 
