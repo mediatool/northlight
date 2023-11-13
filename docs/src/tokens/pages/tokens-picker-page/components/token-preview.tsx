@@ -61,12 +61,12 @@ export const TokenPreview = ({
     case 'space':
       return (
         <HStack spacing={ value }>
-          <Box boxSize="8" bgColor="gray.100" />
-          <Box boxSize="8" bgColor="gray.100" />
+          <Box boxSize="8" bgColor="bg.overlayer" />
+          <Box boxSize="8" bgColor="bg.overlayer" />
         </HStack>
       )
     case 'sizes':
-      return <Box boxSize={ value } bgColor="gray.100" />
+      return <Box boxSize={ value } bgColor="bg.overlayer" />
     case 'fontSize':
       return (
         <Text fontSize={ value }>
