@@ -35,13 +35,23 @@ const TokensPickerPage = () => {
     ],
     myTheme
   )
-  const [ allTokens, setAllTokens ] = useState<Record<string, any>>(categories)
+  const [allTokens, setAllTokens] = useState<Record<string, any>>(categories)
+  const [selectedCategory, setSelectedCategory] = useState<{
+    label: string
+    value: string
+  } | null>(null)
   useEffect(() => {
-    setAllTokens(categories)
-  }, [ myTheme ])
+    setAllTokens(
+      selectedCategory && selectedCategory.value
+        ? {
+            [selectedCategory.value]: categories[selectedCategory.value],
+          }
+        : categories
+    )
+  }, [myTheme])
 
-  const [ query, setQuery ] = useState('')
-  const flattenedTokens = useMemo(() => flattenTokens(allTokens), [ allTokens ])
+  const [query, setQuery] = useState('')
+  const flattenedTokens = useMemo(() => flattenTokens(allTokens), [allTokens])
 
   const fuse = useMemo(
     () =>
@@ -49,7 +59,7 @@ const TokensPickerPage = () => {
         threshold: 0.3,
         minMatchCharLength: 2,
       }),
-    [ flattenedTokens ]
+    [flattenedTokens]
   )
 
   type CategoryOption = {
@@ -72,46 +82,47 @@ const TokensPickerPage = () => {
   const filteredTokens =
     query.length > 1
       ? reduce(
-        (acc: Record<string, any>, curr: { item: string }) => {
-          acc[curr.item] = flattenedTokens[curr.item]
-          return acc
-        },
-        {},
-        fuse.search(query)
-      )
+          (acc: Record<string, any>, curr: { item: string }) => {
+            acc[curr.item] = flattenedTokens[curr.item]
+            return acc
+          },
+          {},
+          fuse.search(query)
+        )
       : flattenedTokens
 
   const formattedTokens = unFlattenTokensTwoLevels(filteredTokens)
 
   const handleCategoryChange = (val: SingleValue<CategoryOption>) => {
+    setSelectedCategory(val)
     setAllTokens(
       isNil(val) ? categories : { [val.value]: categories[val.value] }
     )
   }
 
   return (
-    <Stack w="3xl" spacing="8">
-      <SimpleGrid columns={ 2 } gap="2" py="8">
+    <Stack w='3xl' spacing='8'>
+      <SimpleGrid columns={2} gap='2' py='8'>
         <Input
-          placeholder="Filter"
-          variant="flushed"
-          onChange={ debouncedHandleChange }
+          placeholder='Filter'
+          variant='flushed'
+          onChange={debouncedHandleChange}
         />
         <Select
-          placeholder="Choose category"
-          options={ selectOptions }
-          onChange={ handleCategoryChange }
-          isClearable={ true }
+          placeholder='Choose category'
+          options={selectOptions}
+          onChange={handleCategoryChange}
+          isClearable={true}
         />
       </SimpleGrid>
-      <VStack spacing="12" w="full">
-        { keys(formattedTokens).map((category) => (
+      <VStack spacing='12' w='full'>
+        {keys(formattedTokens).map((category) => (
           <TokenCategory
-            tokenCategory={ category }
-            tokens={ formattedTokens[category] }
-            key={ category }
+            tokenCategory={category}
+            tokens={formattedTokens[category]}
+            key={category}
           />
-        )) }
+        ))}
       </VStack>
     </Stack>
   )
