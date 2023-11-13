@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import Fuse from 'fuse.js'
 import { isNil, keys, pick, reduce } from 'ramda'
 import {
@@ -36,6 +36,10 @@ const TokensPickerPage = () => {
     myTheme
   )
   const [ allTokens, setAllTokens ] = useState<Record<string, any>>(categories)
+  useEffect(() => {
+    setAllTokens(categories)
+  }, [ myTheme ])
+
   const [ query, setQuery ] = useState('')
   const flattenedTokens = useMemo(() => flattenTokens(allTokens), [ allTokens ])
 
