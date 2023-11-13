@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.15.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.14.2...@northlight/ui@2.15.0) (2023-11-13)
+
+
+### Features
+
+* **framework:** add NumVal Typography component ([cdbe689](https://github.com/mediatool/northlight/commit/cdbe689da312c3f0d28dd4251805c3452490ff15))
+
+
+
+
+
 ## [2.14.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.14.1...@northlight/ui@2.14.2) (2023-11-09)
 
 
