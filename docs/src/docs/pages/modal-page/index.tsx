@@ -56,7 +56,7 @@ const ModalPage = () => {
         </Text>
         <Divider />
         <FormControl>
-          <FormLabel>Picka size</FormLabel>
+          <FormLabel>Pick a size</FormLabel>
           <FlipButtonGroup onChange={ handleChange } value={ size }>
             <FlipButton value="xs">Xs</FlipButton>
             <FlipButton value="sm">Sm</FlipButton>

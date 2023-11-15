@@ -11,7 +11,7 @@ const DragAndDropPage = () => (
           Drag and drop is a collection of components, abstracted on top of
           dnd-kit
         </Heading>
-        <Text fontSize="sm" w="40%" lineHeight="3ch">
+        <Text fontSize="sm" lineHeight="3ch">
           It reexports everything from dnd-kit, making for an extensible
           developer experience, whilst also adding some easy to use, common use
           case components
@@ -19,7 +19,7 @@ const DragAndDropPage = () => (
       </>
     ) }
   >
-    <Stack spacing={ 12 } w="40%">
+    <Stack spacing={ 12 }>
       <Text>
         Our drag and drop components are built as an abstraction of dnd-kit,
         please checkout their

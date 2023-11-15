@@ -22,7 +22,7 @@ const NumberInputPage = () => (
       />
     ) }
   >
-    <Stack spacing={ 4 } maxW="40%">
+    <Stack spacing={ 4 }>
       <Text>Mediatool uses 2 number input</Text>
       <HStack>
         <NumberInput />

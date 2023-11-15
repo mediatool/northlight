@@ -17,8 +17,8 @@ export const IconPage = ({ iconVariant }: IconPageProps) => {
         <NavLink to="/icons">
           <IconButton variant="brand" aria-label="Selection" icon={ <Icon as={ ChevronLeftDuo } /> } />
         </NavLink>
-        <Box w="sm">
-          <Input onChange={ debouncedHandleChange } placeholder="Search icons.." />
+        <Box>
+          <Input w={ { base: 'auto', md: 'md' } } onChange={ debouncedHandleChange } placeholder="Search icons.." />
         </Box>
       </HStack>
 

@@ -2,7 +2,9 @@ import React, { useMemo, useState } from 'react'
 import Fuse from 'fuse.js'
 import { isNil, keys, pick, reduce } from 'ramda'
 import {
+  H1,
   Input,
+  P,
   Select,
   SimpleGrid,
   SingleValue,
@@ -86,15 +88,23 @@ const TokensPickerPage = () => {
   }
 
   return (
-    <Stack w="3xl" spacing="8">
-      <SimpleGrid columns={ 2 } gap="2" py="8">
+    <Stack w={ { base: 'full', md: '3xl' } } spacing="8">
+      <Stack>
+        <H1>Design tokens picker</H1>
+        <P>
+          Our design tokens picker streamlines the search and selection process,
+          allowing you to quickly filter and find the exact design tokens you need.
+          It's a handy tool that enhances efficiency and consistency in your design workflow.
+        </P>
+      </Stack>
+      <SimpleGrid columns={ { base: 1, md: 2 } } gap="5" py="8">
         <Input
-          placeholder="Filter"
+          placeholder="Filter design tokens 🌈"
           variant="flushed"
           onChange={ debouncedHandleChange }
         />
         <Select
-          placeholder="Choose category"
+          placeholder="Tokens category"
           options={ selectOptions }
           onChange={ handleCategoryChange }
           isClearable={ true }

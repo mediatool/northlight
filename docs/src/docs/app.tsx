@@ -4,36 +4,33 @@ import { mergeAll } from 'ramda'
 import {
   BrandDuo,
   BusinessContactDuo,
-  ChevronRightDuo,
   ClockDuo,
-  Compohfeatured,
-  Figmahfeatured,
-  Fontshfeatured,
+  Componentsapp,
+  Figmahapp,
+  Fontsapp,
   Hash01Duo,
-  Iconshfeatured,
+  Iconsapp,
   LinkDuo,
   MediatoolLogoSolid,
-  NorthlightLogo,
+  NorthlightLogoXs,
   OctocatW,
-  Principleshfeaturedcs,
+  Principleshapp,
   ShapesDuo,
   StatusPinDuo,
-  Tokenshfeatured,
+  Tokensapp,
 } from '@northlight/icons'
 import {
   Box,
   Button,
-  ButtonGroup,
   Capitalized,
   Card,
   CardBody,
   CardFooter,
-  Center,
-  Divider,
+  CardHeader,
   Fade,
   Flex,
-  H1,
-  H2,
+  Grid,
+  GridItem,
   H3,
   H4,
   HStack,
@@ -43,6 +40,7 @@ import {
   Image,
   Lead,
   Link,
+  LinkBox,
   P,
   SimpleGrid,
   SlideFade,
@@ -50,6 +48,7 @@ import {
   Stat,
   StatLabel,
   StatNumber,
+  Text,
   Tiny,
   VStack,
   highlight,
@@ -67,303 +66,379 @@ const markdownPreviewContent = changelogContent.reduce((acc, item, index) => {
   return `${acc}${separator}${item.content}\n\n`
 }, '')
 
+const people = [
+  {
+    name: 'Magnus',
+    image: magnus,
+    github: 'https://github.com/magnusohlin',
+    slack: '',
+    linkedin: 'https://www.linkedin.com/in/magnus-ohlin-4512652a/',
+  },
+  {
+    name: 'Sebastian',
+    image: sebbe,
+    github: 'https://github.com/SebCodesTheWeb',
+    slack: '',
+    linkedin: 'https://www.linkedin.com/in/sebastian-delgado-frontdev/',
+  },
+  {
+    name: 'Paolo',
+    image: paolo,
+    github: 'https://github.com/PaoloGiraudi',
+    slack: '',
+    linkedin: 'https://www.linkedin.com/in/paologiraudi/',
+  },
+  {
+    name: 'Hanna',
+    image: hanna,
+    github: 'https://github.com/HannaYankouskaya',
+    slack: 'https://mediatool.slack.com',
+    linkedin: '',
+  },
+  {
+    name: 'Ilija',
+    image: iliya,
+    github: 'https://github.com/ilija-',
+    slack: '',
+    linkedin: 'https://www.linkedin.com/in/ilijab/',
+  },
+]
+
 const DocsApp = () => (
-  <Box
-    w="100%"
-    h="100%"
-    p={ 12 }
-    pt="0"
-    overflowY="auto"
-    overflowX="hidden"
-    overscrollBehavior="contain"
-    bgColor="background.default"
-    maxH="90vh"
-  >
-    <HStack
-      sx={ { bgGradient: 'linear(to-b, teal.800, mediatoolBlue.700)' } }
-      borderRadius="md"
-      justifyContent="space-around"
-      height="2xl"
-    >
-      <Flex gap={ 10 }>
-        <Box alignSelf="flex-start" p={ 20 } justifyContent="space-around">
-          <Fade in={ true } enterDelay={ 800 }>
-            <Capitalized
-              sx={ { fontSize: '64px', fontWeight: 'regular', color: 'white' } }
+  <VStack spacing={ 8 } alignItems="center">
+    <Fade in={ true } enterDelay={ 200 }>
+      <Grid
+        templateColumns={ { base: '1fr', md: '1fr 1fr' } }
+        borderRadius="md"
+        height={ { base: 'auto', md: 'md' } }
+        p={ { base: 4, md: 10 } }
+        alignItems="center"
+      >
+        <GridItem
+          display="flex"
+          justifyContent={ { base: 'start', md: 'flex-end' } }
+          alignItems="center"
+          order={ { base: 1, md: 2 } }
+        >
+          <Icon
+            as={ NorthlightLogoXs }
+            boxSize={ { base: '6rem', md: '24rem' } }
+            alignSelf="center"
+            viewBox="0 -2 22 22"
+          />
+        </GridItem>
+        <GridItem order={ { base: 2, md: 1 } }>
+          <Box>
+            <Heading
+              fontSize={ { base: '5xl', md: '6xl' } }
+              fontWeight="bold"
+              color="text.default"
             >
               NORTH
-            </Capitalized>
-            <Capitalized>
               <Highlight
                 query="Light"
-                styles={ mergeAll([
-                  highlight,
-                  {
-                    fontSize: '64px',
-                    bg: 'transparent',
-                    color: 'white',
-                    fontWeigh: 'regular',
-                    rounded: 'false',
-                  },
-                ]) }
-              >
-                Light
-              </Highlight>
-            </Capitalized>
-            <H2 mb={ 6 } sx={ { color: 'white' } }>
-              Design, build, and ship coherent experiences with NORTHLIGHT
-              design system.
-            </H2>
-            <Link
-              as={ ReactRouterLink }
-              to="/guide/quick-start"
-              sx={ { _hover: { textDecoration: 'none' } } }
-            >
-              <Button mt={ 8 } variant="brand" size="lg">
-                Quick Start
-              </Button>
-            </Link>
-            <Link
-              as={ ReactRouterLink }
-              to="/reference"
-              sx={ { _hover: { textDecoration: 'none' } } }
-            >
-              <Button mt={ 8 } variant="ghost" size="lg" color="white">
-                Components Reference
-              </Button>
-            </Link>
-          </Fade>
-        </Box>
-        <Fade in={ true } enterDelay={ 800 }>
-          <Icon
-            as={ NorthlightLogo }
-            boxSize={ 96 }
-            p={ 5 }
-            mt={ 10 }
-            mr={ 20 }
-            alignSelf="flex-end"
-            flexGrow={ 1 }
-          />
-        </Fade>
-      </Flex>
-    </HStack>
-    <VStack pt="16">
-      <H1>Northlight design system</H1>
-      <Box maxW="2xl">
-        <P textAlign="center">
-          Northlight is batteries included opionated open source design system
-          based on Chakra UI developed by Mediatool. The design system is
-          composed of UI components, icons, design tokens and standards meant
-          specifically for Mediatool products. Alongst the creation process we
-          managed to create something special, that made it easy and rapid to
-          develop moderns UI, and we wanted to share it with the community.
-        </P>
-      </Box>
-    </VStack>
-    <Fade in={ true } enterDelay={ 1500 }>
-      <SimpleGrid columns={ 3 } spacingX="40px" spacingY="20px" mt={ 16 }>
-        <Box borderRadius="none" maxHeight={ 280 }>
-          <Flex flexFlow="column" flexGrow={ 1 } maxHeight={ 280 }>
-            <Center mb={ 5 }>
-              <Icon
-                as={ Tokenshfeatured }
-                sx={ {
-                  SVGPreserveAspectRatio: 'none',
-                  width: '100%',
-                  height: 'auto',
+                styles={ {
+                  color: 'brand',
+                  fontWeight: 'inherit',
                 } }
-              />
-            </Center>
-          </Flex>
-          <H3>Design Tokens</H3>
-          <P>
-            Tokens are platform-agnostic variables that represent Mediatool's
-            brand.
-          </P>
-          <Link
+              >
+                LIGHT
+              </Highlight>
+            </Heading>
+            <Text color="text.default" mt={ 6 } fontSize={ { base: 'md', md: 'lg' } }>
+              Design, build, and ship coherent experiences with NORTHLIGHT design system.
+            </Text>
+            <HStack spacing={ 3 } mt={ 5 }>
+              <Link
+                as={ ReactRouterLink }
+                to="/guide/quick-start"
+                _hover={ { textDecoration: 'none' } }
+              >
+                <Button variant="brand" size="md">
+                  Quick Start
+                </Button>
+              </Link>
+              <Link
+                as={ ReactRouterLink }
+                to="/reference"
+                _hover={ { textDecoration: 'none' } }
+              >
+                <Button variant="ghost" size="md">
+                  Components Reference
+                </Button>
+              </Link>
+            </HStack>
+          </Box>
+        </GridItem>
+      </Grid>
+    </Fade>
+    <Fade in={ true } enterDelay={ 500 }>
+      <Box px={ { base: 5 } }>
+        <Card p={ 8 } bgColor="bg.layer">
+          <CardHeader>
+            <Heading size="md">Navigate the celestial realms with Northlight 🚀✨</Heading>
+          </CardHeader>
+          <CardBody>
+            <Text fontSize={ { base: 'md', md: 'md' } } textAlign="left">
+              Northlight is a comprehensive, opinionated open-source design system built
+              by Mediatool. It features a suite of UI components, icons, and design
+              tokens tailored for Mediatool's products. Crafted to streamline modern UI development,
+              Northlight has evolved into a unique tool that we're
+              excited to offer to the wider community
+            </Text>
+          </CardBody>
+        </Card>
+      </Box>
+    </Fade>
+
+    <Box
+      w="full"
+      justifyContent="left"
+      px={ { base: 5 } }
+      mt={ 5 }
+    >
+      <H3>Structure</H3>
+    </Box>
+
+    <Fade in={ true } enterDelay={ 500 }>
+
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        w="full"
+        px={ { base: 5 } }
+      >
+        <SimpleGrid
+          columns={ { base: 1, md: 2, lg: 3 } }
+          spacing={ 5 }
+        >
+          <LinkBox
             as={ ReactRouterLink }
             to="/tokens"
             sx={ { _hover: { textDecoration: 'none' } } }
           >
-            <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>
-              View here
-            </Button>
-          </Link>
-        </Box>
+            <Card
+              maxW="md"
+              bgColor="bg.base"
+              variant="outline"
+            >
+              <CardHeader>
+                <Lead>Design Tokens</Lead>
+              </CardHeader>
+              <CardBody>
+                <Icon
+                  viewBox="0 0 22 7"
+                  as={ Tokensapp }
+                  sx={ {
+                    SVGPreserveAspectRatio: 'none',
+                    width: '100%',
+                    height: 'auto',
+                    objectFit: 'cover',
+                  } }
+                />
+                <P variant="14">
+                  Tokens are platform-agnostic variables that represent Mediatool's
+                  brand
+                </P>
+              </CardBody>
+            </Card>
+          </LinkBox>
 
-        <Box borderRadius="none" maxHeight={ 280 }>
-          <Flex flexFlow="column" flexGrow={ 1 } maxHeight={ 280 }>
-            <Center mb={ 5 }>
-              <Icon
-                as={ Compohfeatured }
-                sx={ {
-                  SVGPreserveAspectRatio: 'none',
-                  width: '100%',
-                  height: 'auto',
-                } }
-              />
-            </Center>
-          </Flex>
-          <H3>Components</H3>
-          <P>
-            Reusable elements and styles, packaged through code for buildin UIs.
-          </P>
-          <Link
+          <LinkBox
             as={ ReactRouterLink }
             to="/reference/accordion"
             sx={ { _hover: { textDecoration: 'none' } } }
           >
-            <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>
-              View here
-            </Button>
-          </Link>
-        </Box>
+            <Card
+              maxW="md"
+              bgColor="bg.base"
+              variant="outline"
+            >
+              <CardHeader>
+                <Lead>Components</Lead>
+              </CardHeader>
+              <CardBody>
+                <Icon
+                  viewBox="-0.9 0.8 22 8"
+                  as={ Componentsapp }
+                  sx={ {
+                    SVGPreserveAspectRatio: 'none',
+                    width: '88%',
+                    height: 'auto',
+                    objectFit: 'cover',
+                  } }
+                />
+                <P variant="14">
+                  Reusable elements and styles, packaged through code for buildin UIs
+                </P>
+              </CardBody>
+            </Card>
+          </LinkBox>
 
-        <Box borderRadius="none" maxHeight={ 280 }>
-          <Flex flexFlow="column" flexGrow={ 1 } maxHeight={ 280 }>
-            <Center mb={ 5 }>
-              <Icon
-                as={ Iconshfeatured }
-                sx={ {
-                  SVGPreserveAspectRatio: 'none',
-                  width: '100%',
-                  height: 'auto',
-                } }
-              />
-            </Center>
-          </Flex>
-          <H3>Icons</H3>
-          <P>
-            Northlight icons and assets with detailed documentation on how to
-            use.
-          </P>
-          <Link
+          <LinkBox
             as={ ReactRouterLink }
             to="/icons"
             sx={ { _hover: { textDecoration: 'none' } } }
           >
-            <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>
-              View here
-            </Button>
-          </Link>
-        </Box>
-      </SimpleGrid>
+            <Card
+              maxW="md"
+              bgColor="bg.base"
+              variant="outline"
+            >
+              <CardHeader>
+                <Lead>Icons</Lead>
+              </CardHeader>
+              <CardBody>
+                <Icon
+                  viewBox="-0.5 0.5 22 7"
+                  as={ Iconsapp }
+                  sx={ {
+                    SVGPreserveAspectRatio: 'none',
+                    width: '100%',
+                    height: 'auto',
+                    objectFit: 'cover',
+                  } }
+                />
+                <P variant="14">
+                  Northlight icons and assets with detailed documentation on how to
+                  use
+                </P>
+              </CardBody>
+            </Card>
+          </LinkBox>
 
-      <SimpleGrid columns={ 3 } spacingX="40px" spacingY="20px" mt={ 52 } mb={ 52 }>
-        <Box borderRadius="none" maxHeight={ 280 }>
-          <Flex flexFlow="column" flexGrow={ 1 } maxHeight={ 280 }>
-            <Center mb={ 5 }>
-              <Icon
-                as={ Fontshfeatured }
-                sx={ {
-                  SVGPreserveAspectRatio: 'none',
-                  width: '100%',
-                  height: 'auto',
-                } }
-              />
-            </Center>
-          </Flex>
-          <H3>Webfonts</H3>
-          <P>
-            Everything you need to present content as clearly and efficiently as
-            possible.
-          </P>
-          <Link
+          <LinkBox
             as={ ReactRouterLink }
             to="/guide/typography"
             sx={ { _hover: { textDecoration: 'none' } } }
           >
-            <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>
-              View here
-            </Button>
-          </Link>
-        </Box>
+            <Card
+              maxW="md"
+              bgColor="bg.base"
+              variant="outline"
+            >
+              <CardHeader>
+                <Lead>Typography</Lead>
+              </CardHeader>
+              <CardBody>
+                <Icon
+                  viewBox="0 0.5 22 8"
+                  as={ Fontsapp }
+                  sx={ {
+                    SVGPreserveAspectRatio: 'none',
+                    width: '88%',
+                    height: 'auto',
+                    objectFit: 'cover',
+                  } }
+                />
+                <P variant="14">
+                  Everything you need to present content as clearly and efficiently as
+                  possible
+                </P>
+              </CardBody>
+            </Card>
+          </LinkBox>
 
-        <Box borderRadius="none" maxHeight={ 280 }>
-          <Flex flexFlow="column" flexGrow={ 1 } maxHeight={ 280 }>
-            <Center mb={ 5 }>
+          <LinkBox sx={ { _hover: { textDecoration: 'none' } } } role="group">
+            <Link
+              href="https://www.figma.com/files/project/63775532"
+              isExternal={ true }
+              _hover={ { textDecoration: 'none' } }
+              _focus={ { boxShadow: 'none' } }
+            >
+              <Card
+                maxW="md"
+                bgColor="bg.base"
+                variant="outline"
+              >
+                <CardHeader>
+                  <Lead>Figma Toolkit</Lead>
+                </CardHeader>
+                <CardBody>
+                  <Icon
+                    viewBox="-1.5 0 25 8"
+                    as={ Figmahapp }
+                    sx={ {
+                      SVGPreserveAspectRatio: 'none',
+                      width: '100%',
+                      height: 'auto',
+                      objectFit: 'cover',
+                    } }
+                  />
+                  <P variant="14">
+                    Prototype and design layouts in Figma using NORTHLIGHT Design
+                    System
+                  </P>
+                </CardBody>
+              </Card>
+            </Link>
+          </LinkBox>
+
+          <Card
+            maxW="md"
+            bgColor="bg.base"
+            variant="outline"
+          >
+            <CardHeader>
+              <Lead>Design principles</Lead>
+            </CardHeader>
+            <CardBody>
               <Icon
-                as={ Figmahfeatured }
+                viewBox="0 0 22 7"
+                as={ Principleshapp }
                 sx={ {
                   SVGPreserveAspectRatio: 'none',
                   width: '100%',
                   height: 'auto',
+                  objectFit: 'cover',
                 } }
               />
-            </Center>
-          </Flex>
-          <H3>Figma Toolkit</H3>
-          <P>
-            Prototype and design layouts in Figma using NORTHLIGHT Design
-            System.
-          </P>
-          <Link
-            href="https://www.figma.com/files/project/63775532"
-            target="_blank"
-            sx={ { _hover: { textDecoration: 'none' } } }
-          >
-            <Button rightIcon={ <ChevronRightDuo /> } variant="ghost" mt={ 5 }>
-              View here
-            </Button>
-          </Link>
-        </Box>
-
-        <Box borderRadius="none" maxHeight={ 280 }>
-          <Flex flexFlow="column" flexGrow={ 1 } maxHeight={ 280 }>
-            <Center mb={ 5 }>
-              <Icon
-                as={ Principleshfeaturedcs }
-                sx={ {
-                  SVGPreserveAspectRatio: 'none',
-                  width: '100%',
-                  height: 'auto',
-                } }
-              />
-            </Center>
-          </Flex>
-          <H3>Design principles</H3>
-          <P>
-            Practical guides and principles for designing and developing
-            experiences.
-          </P>
-          <Button
-            rightIcon={ <ChevronRightDuo /> }
-            variant="ghost"
-            isDisabled={ true }
-            mt={ 5 }
-          >
-            View here
-          </Button>
-        </Box>
-      </SimpleGrid>
+              <P variant="14">
+                Practical guides and principles for designing and developing
+                experiences
+              </P>
+            </CardBody>
+          </Card>
+        </SimpleGrid>
+      </Box>
     </Fade>
 
-    <Card
-      w="70%"
-      mx="auto"
-      bgColor="bg.layer"
-      borderRadius="md"
-      maxH="4xl"
-      overflowY="scroll"
+    <Box
+      sx={ {
+        transform: { base: 'scale(0.9)', md: 'scale(1)' },
+      } }
+      px={ { xl: 5 } }
+      py={ { xl: 10 } }
     >
-      <Stack spacing="4">
-        <Box
-          bgColor="bg.overlayer"
-          borderRadius="md"
-          p="8"
+      <Card variant={ { base: 'elevated', md: 'outline' } }>
+        <CardHeader bgColor="bg.layer">
+          <H4>✨ ChangeLog - News</H4>
+        </CardHeader>
+        <CardBody
+          px={ { base: 5 } }
+          p={ { base: 2, sm: 4, md: 10, lg: 10 } }
+          maxH={ { base: 'sm', md: '2xl', lg: '4xl' } }
+          maxW={ { base: 'sm', md: 'full', lg: 'full' } }
+          overflowY="scroll"
+          bgColor="bg.base"
         >
-          <H1>ChangeLog - News</H1>
-        </Box>
-        <Box p="8">
-          <MarkdownPreview>
+          <MarkdownPreview
+            sx={ {
+              img: {
+                maxWidth: '100%',
+                height: 'auto',
+              },
+            } }
+          >
             { markdownPreviewContent }
           </MarkdownPreview>
-        </Box>
-      </Stack>
-    </Card>
+        </CardBody>
+      </Card>
+    </Box>
+
     <Flex
       minWidth="max-content"
-      minHeight={ 80 }
       alignItems="center"
       borderRadius="md"
       justifyContent="center"
@@ -374,8 +449,8 @@ const DocsApp = () => (
           <Capitalized
             sx={ {
               color: 'inherit',
-              fontSize: '64px',
-              fontWeight: 'regular',
+              fontWeight: 'bold',
+              fontSize: { base: '2xl', md: '6xl' },
               textAlign: 'center',
             } }
           >
@@ -383,380 +458,285 @@ const DocsApp = () => (
           </Capitalized>
           <Capitalized>
             <Highlight
-              query="Light"
+              query="Numbers"
               styles={ mergeAll([
                 highlight,
                 {
-                  fontSize: '64px',
                   bg: 'transparent',
-                  color: 'blue.500',
-                  fontWeigh: 'regular',
-                  rounded: 'false',
+                  color: 'bg.brand.default',
+                  fontWeight: 'bold',
+                  fontSize: { base: '2xl', md: '6xl' },
                 },
               ]) }
             >
-              Light
+              Numbers
             </Highlight>
           </Capitalized>
         </Box>
-        <HStack spacing={ 32 }>
-          <Stat>
-            <Divider />
-            <StatNumber fontSize="56px">87</StatNumber>
-            <StatLabel>Components</StatLabel>
-          </Stat>
-          <Stat>
-            <Divider />
-            <StatNumber fontSize="56px">497</StatNumber>
-            <StatLabel>Tokens</StatLabel>
-          </Stat>
-          <Stat>
-            <Divider />
-            <StatNumber fontSize="56px">1302</StatNumber>
-            <StatLabel>Unit Tests</StatLabel>
-          </Stat>
-          <Stat>
-            <Divider />
-            <StatNumber fontSize="56px">183</StatNumber>
-            <StatLabel>Icons</StatLabel>
-          </Stat>
-        </HStack>
+        <Grid
+          templateColumns={ { base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' } }
+          gap={ 6 }
+        >
+          <GridItem>
+            <Stat>
+              <StatNumber fontSize={ { base: '6xl', md: '8xl' } }>87</StatNumber>
+              <StatLabel>Components</StatLabel>
+            </Stat>
+          </GridItem>
+          <GridItem>
+            <Stat>
+              <StatNumber fontSize={ { base: '6xl', md: '8xl' } }>497</StatNumber>
+              <StatLabel>Tokens</StatLabel>
+            </Stat>
+          </GridItem>
+          <GridItem>
+            <Stat>
+              <StatNumber fontSize={ { base: '6xl', md: '8xl' } }>1302</StatNumber>
+              <StatLabel>Unit Tests</StatLabel>
+            </Stat>
+          </GridItem>
+          <GridItem>
+            <Stat>
+              <StatNumber fontSize={ { base: '6xl', md: '8xl' } }>183</StatNumber>
+              <StatLabel>Icons</StatLabel>
+            </Stat>
+          </GridItem>
+        </Grid>
       </Fade>
     </Flex>
 
-    <Fade in={ true } enterDelay={ 800 }>
-      <H1 mb={ 5 }>Built by Giants</H1>
-      <SimpleGrid
-        spacing={ 4 }
-        templateColumns="repeat(auto-fit, minmax(220px, 1fr))"
+    <Box px={ { base: 5 } }>
+      <Box
+        w="full"
+        justifyContent="left"
+        my={ 5 }
       >
-        <Card
-          maxW="xs"
-          boxShadow="none"
-          borderColor="white"
-          bgColor="transparent"
-        >
-          <CardBody>
-            <Image
-              src={ magnus }
-              alt="Magnus"
-              borderRadius="lg"
-            />
-            <Stack mt="6" spacing="3">
-              <Heading size="md">Magnus</Heading>
-            </Stack>
-          </CardBody>
-          <CardFooter paddingTop="0" bgColor="transparent">
-            <ButtonGroup spacing="2">
-              <Link
-                href="https://github.com/magnusohlin"
-                target="_blank"
-                sx={ { _hover: { textDecoration: 'none' } } }
-              >
-                <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                  Github
-                </Button>
-              </Link>
-              <Link
-                href="https://mediatool.slack.com"
-                target="_blank"
-                sx={ { _hover: { textDecoration: 'none' } } }
-              >
-                <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                  Slack
-                </Button>
-              </Link>
-            </ButtonGroup>
-          </CardFooter>
-        </Card>
+        <H3>Built by Giants</H3>
+      </Box>
+      <Box>
+        <Fade in={ true } enterDelay={ 800 }>
+          <SimpleGrid spacing={ 15 } templateColumns={ { base: 'repeat(2, 1fr)', md: 'repeat(5, 1fr)' } }>
+            { people.map((person) => (
+              <Card variant="unstyled" bgColor="bg.base">
+                <CardHeader>
+                  <Heading
+                    mb={ 2 }
+                    size="sm"
+                    isTruncated={ true }
+                  >
+                    { person.name }
+                  </Heading>
+                </CardHeader>
+                <CardBody>
+                  <Image
+                    src={ person.image }
+                    alt={ person.name }
+                    borderRadius="lg"
+                  />
+                </CardBody>
+                <CardFooter mt={ 4 }>
+                  <Stack spacing={ 2 } direction={ { base: 'column', md: 'row' } }>
+                    <Link href={ person.github } isExternal={ true }>
+                      <Button
+                        size="sm"
+                        leftIcon={ <ShapesDuo /> }
+                        variant="ghost"
+                      >
+                        Github
+                      </Button>
+                    </Link>
+                    { person.linkedin && (
+                    <Link href={ person.linkedin } isExternal={ true }>
+                      <Button
+                        size="sm"
+                        leftIcon={ <LinkDuo /> }
+                        variant="ghost"
+                      >
+                        LinkedIn
+                      </Button>
+                    </Link>
+                    ) }
+                    { person.slack && (
+                    <Link href={ person.slack } isExternal={ true }>
+                      <Button
+                        size="sm"
+                        leftIcon={ <Hash01Duo /> }
+                        variant="ghost"
+                      >
+                        Slack
+                      </Button>
+                    </Link>
+                    ) }
+                  </Stack>
+                </CardFooter>
+              </Card>
+            )) }
+          </SimpleGrid>
+        </Fade>
+      </Box>
+    </Box>
 
-        <Card
-          maxW="xs"
-          boxShadow="none"
-          borderColor="white"
-          bgColor="transparent"
-        >
-          <CardBody>
-            <Image src={ sebbe } alt="Sebastian" borderRadius="lg" />
-            <Stack mt="6" spacing="3">
-              <Heading size="md">Sebe J.</Heading>
-            </Stack>
-          </CardBody>
-          <CardFooter paddingTop="0" bgColor="transparent">
-            <ButtonGroup spacing="2">
-              <Link
-                href="https://github.com/SebCodesTheWeb"
-                target="_blank"
-                sx={ { _hover: { textDecoration: 'none' } } }
-              >
-                <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                  Github
-                </Button>
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/sebastian-delgado-frontdev/"
-                target="_blank"
-                sx={ { _hover: { textDecoration: 'none' } } }
-              >
-                <Button leftIcon={ <LinkDuo /> } variant="ghost">
-                  LinkedIn
-                </Button>
-              </Link>
-            </ButtonGroup>
-          </CardFooter>
-        </Card>
-
-        <Card
-          maxW="xs"
-          boxShadow="none"
-          borderColor="white"
-          bgColor="transparent"
-        >
-          <CardBody>
-            <Image src={ paolo } alt="Paolo" borderRadius="lg" />
-            <Stack mt="6" spacing="3">
-              <Heading size="md">Paolo</Heading>
-            </Stack>
-          </CardBody>
-          <CardFooter paddingTop="0" bgColor="transparent">
-            <ButtonGroup spacing="2">
-              <Link
-                href="https://github.com/PaoloGiraudi"
-                target="_blank"
-                sx={ { _hover: { textDecoration: 'none' } } }
-              >
-                <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                  Github
-                </Button>
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/paologiraudi/"
-                target="_blank"
-                sx={ { _hover: { textDecoration: 'none' } } }
-              >
-                <Button leftIcon={ <LinkDuo /> } variant="ghost">
-                  LinkedIn
-                </Button>
-              </Link>
-            </ButtonGroup>
-          </CardFooter>
-        </Card>
-
-        <Card
-          maxW="xs"
-          boxShadow="none"
-          borderColor="white"
-          bgColor="transparent"
-        >
-          <CardBody>
-            <Image
-              src={ hanna }
-              alt="Hanna"
-              borderRadius="lg"
-            />
-            <Stack mt="6" spacing="3">
-              <Heading size="md">Hanna</Heading>
-            </Stack>
-          </CardBody>
-          <CardFooter paddingTop="0" bgColor="transparent">
-            <ButtonGroup spacing="2">
-              <Link
-                href="/"
-                target="_blank"
-                sx={ { _hover: { textDecoration: 'none' } } }
-              >
-                <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                  Github
-                </Button>
-              </Link>
-              <Link
-                href="https://mediatool.slack.com"
-                target="_blank"
-                sx={ { _hover: { textDecoration: 'none' } } }
-              >
-                <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                  Slack
-                </Button>
-              </Link>
-            </ButtonGroup>
-          </CardFooter>
-        </Card>
-
-        <Card
-          maxW="xs"
-          boxShadow="none"
-          borderColor="white"
-          bgColor="transparent"
-        >
-          <CardBody>
-            <Image
-              src={ iliya }
-              alt="Iliya"
-              borderRadius="lg"
-            />
-            <Stack mt="6" spacing="3">
-              <Heading size="md">Iliya</Heading>
-            </Stack>
-          </CardBody>
-          <CardFooter paddingTop="0" bgColor="transparent">
-            <ButtonGroup spacing="2">
-              <Link
-                href="https://github.com/ilija-"
-                target="_blank"
-                sx={ { _hover: { textDecoration: 'none' } } }
-              >
-                <Button leftIcon={ <ShapesDuo /> } variant="ghost">
-                  Github
-                </Button>
-              </Link>
-              <Link
-                href="https://mediatool.slack.com"
-                target="_blank"
-                sx={ { _hover: { textDecoration: 'none' } } }
-              >
-                <Button leftIcon={ <Hash01Duo /> } variant="ghost">
-                  Slack
-                </Button>
-              </Link>
-            </ButtonGroup>
-          </CardFooter>
-        </Card>
-      </SimpleGrid>
-    </Fade>
-
-    <Flex mt={ 20 }>
-      <Divider />
-    </Flex>
-
-    <Flex
-      minWidth="max-content"
-      minHeight={ 20 }
-      alignItems="center"
-      justifyContent="center"
-      gap="2"
-      mt={ 10 }
+    <Box
+      w="full"
+      justifyContent="left"
+      mt={ 5 }
+      px={ { base: 5 } }
     >
-      <HStack borderColor="white" boxShadow="none" spacing={ 10 }>
-        <H4 as="kbd">We care:</H4>
-        <Box>
-          <HStack>
-            <Icon as={ ClockDuo } color="blue.500" size="lg" />
-            <H4>Blazingly Fast</H4>
-          </HStack>
-        </Box>
-        <Box>
-          <HStack>
-            <Icon as={ BusinessContactDuo } color="orange.500" size="lg" />
-            <H4>AA Accessibility</H4>
-          </HStack>
-        </Box>
-        <Box>
-          <HStack>
-            <Icon as={ BrandDuo } color="purple.500" size="lg" />
-            <H4>Stunning Design</H4>
-          </HStack>
-        </Box>
-        <Box>
-          <HStack>
-            <Icon as={ StatusPinDuo } color="red.500" size="lg" />
-            <H4>Developer Centered</H4>
-          </HStack>
-        </Box>
-      </HStack>
-    </Flex>
+      <H3>We care</H3>
+    </Box>
+
+    <SimpleGrid
+      width="full"
+      columns={ { base: 1, sm: 2, md: 4 } }
+      spacing={ 5 }
+      px={ { base: 5 } }
+    >
+      <Box
+        borderWidth="xs"
+        borderRadius="lg"
+        p={ 4 }
+        boxShadow="none"
+      >
+        <HStack>
+          <Icon
+            as={ ClockDuo }
+            color="bg.brand.default'"
+            boxSize={ 6 }
+          />
+          <Text fontWeight="bold">Blazingly Fast</Text>
+        </HStack>
+      </Box>
+      <Box
+        borderWidth="xs"
+        borderRadius="lg"
+        p={ 4 }
+        boxShadow="none"
+      >
+        <HStack>
+          <Icon
+            as={ BusinessContactDuo }
+            color="orange.500"
+            boxSize={ 6 }
+          />
+          <Text fontWeight="bold">AA Accessibility</Text>
+        </HStack>
+      </Box>
+      <Box
+        borderWidth="xs"
+        borderRadius="lg"
+        p={ 4 }
+        boxShadow="none"
+      >
+        <HStack>
+          <Icon
+            as={ BrandDuo }
+            color="purple.500"
+            boxSize={ 6 }
+          />
+          <Text fontWeight="bold">Stunning Design</Text>
+        </HStack>
+      </Box>
+      <Box
+        borderWidth="xs"
+        borderRadius="lg"
+        p={ 4 }
+        boxShadow="none"
+      >
+        <HStack>
+          <Icon
+            as={ StatusPinDuo }
+            color="red.500"
+            boxSize={ 6 }
+          />
+          <Text fontWeight="bold">Developer Centered</Text>
+        </HStack>
+      </Box>
+    </SimpleGrid>
 
     <VStack
       spacing={ 32 }
       sx={ {
-        backgroundImage: `url(${'https://i.ibb.co/xfwV9rj/northlight-logo.png'})`,
+        backgroundImage: { base: 'none', md: `url(${'https://i.ibb.co/xfwV9rj/northlight-logo.png'})` },
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'top left',
         backgroundSize: '20%',
       } }
+      px={ { base: 5 } }
     >
       <VStack />
-      <SlideFade in={ true } enterDelay={ 1200 }>
-        <VStack spacing={ 32 }>
-          <VStack>
-            <HStack>
-              <Capitalized
-                sx={ {
-                  fontSize: '64px',
-                  fontWeight: 'regular',
-                  textAlign: 'center',
-                } }
+      <VStack spacing={ 20 } w="full">
+        <SlideFade in={ true } enterDelay={ 1200 }>
+          <Grid
+            templateColumns={ { base: '1fr', md: '3fr 2fr' } }
+            gap={ 10 }
+            w="full"
+          >
+            <GridItem colSpan={ { base: 1, md: 1 } }>
+              <Heading
+                fontSize={ { base: '4xl', md: '6xl' } }
+                fontWeight="bold"
+                textAlign={ { base: 'center', md: 'left' } }
               >
                 NORTH
-              </Capitalized>
-              <Capitalized>
                 <Highlight
                   query="Light"
-                  styles={ mergeAll([
-                    highlight,
-                    {
-                      fontSize: '64px',
-                      bg: 'transparent',
-                      color: 'blue.500',
-                      fontWeigh: 'regular',
-                      rounded: 'false',
-                    },
-                  ]) }
+                  styles={ {
+                    fontSize: 'inherit',
+                    bg: 'transparent',
+                    color: 'brand',
+                    fontWeight: 'inherit',
+                    borderRadius: 0,
+                  } }
                 >
-                  Light
+                  LIGHT
                 </Highlight>
-              </Capitalized>
-            </HStack>
-            <HStack justifyContent="space-around">
-              <Flex gap={ 10 }>
-                <Box alignSelf="flex-start" justifyContent="space-around">
-                  <Fade in={ true } enterDelay={ 800 }>
-                    <H2 mb={ 6 }>Want to join the giants ?</H2>
-                    <Box>
-                      We are happy for any contributions, feel free to open a PR
-                      or issue.
-                    </Box>
-                  </Fade>
-                </Box>
-                <Button
-                  mt={ 8 }
-                  leftIcon={ <OctocatW /> }
-                  variant="brand"
-                  size="lg"
-                  onClick={ () =>
-                    window.open('https://github.com/mediatool/northlight')
-                  }
-                >
-                  Contribute on GitHub
-                </Button>
-              </Flex>
-            </HStack>
-          </VStack>
-          <VStack>
-            <Divider mb={ 5 } />
-            <Lead>
-              Developed from the Giants at{ ' ' }
-              <Icon
-                color="blue.500"
-                as={ MediatoolLogoSolid }
-                boxSize={ 5 }
-                ml={ 2 }
-                alignSelf="flex-end"
-                flexGrow={ 1 }
-              />
-            </Lead>
-            <Tiny maxW="100vh" textAlign="center">
-              Northlight UI is not responsible for any possible deaths of users.
-              Northlight UI is not responsible for badly written code.
-              Northlight UI do proudly collect its users data. By installing
-              Northlight UI the developer agrees to all of this requirments as
-              stated above and agrees to give away half their salary to
-              Northlight UI creators as "donations"
-            </Tiny>
-          </VStack>
+              </Heading>
+              <Fade in={ true } enterDelay={ 0.8 }>
+                <Text fontSize="md" textAlign={ { base: 'center', md: 'left' } }>
+                  Want to join the giants? We are happy for any
+                  contributions, feel free to open a PR or issue.
+                </Text>
+              </Fade>
+            </GridItem>
+            <GridItem
+              colSpan={ { base: 1, md: 1 } }
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Button
+                mt={ { base: 8, md: 0 } }
+                leftIcon={ <OctocatW /> }
+                variant="brand"
+                onClick={ () => window.open('https://github.com/mediatool/northlight') }
+              >
+                Contribute on GitHub
+              </Button>
+            </GridItem>
+          </Grid>
+        </SlideFade>
+
+        <VStack py={ 10 }>
+          <Lead>
+            Built by the giants at{ ' ' }
+            <Icon
+              color="bg.brand.default"
+              as={ MediatoolLogoSolid }
+              boxSize={ 5 }
+              ml={ 2 }
+              flexGrow={ 1 }
+            />
+          </Lead>
+          <Tiny textAlign="center">
+            Hop aboard the Northlight UI spaceship—no space suits needed!
+            We're not responsible for any code that goes supernova.
+            Feel like funding our next spacewalk with a slice of your salary?
+            That's one small step for you, one giant leap for our snack budget! 🌌 👨‍🚀 🚀
+          </Tiny>
         </VStack>
-      </SlideFade>
+      </VStack>
     </VStack>
-  </Box>
+  </VStack>
 )
 
 export default DocsApp

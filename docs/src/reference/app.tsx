@@ -19,11 +19,11 @@ import {
 
 export default function ContributePage () {
   return (
-    <Stack p="6" spacing="8" maxW="1000px">
+    <Stack p={ { base: 3, md: 6 } } spacing={ { base: 4, md: 8 } } maxW={ { base: '100%', md: '1000px' } } mx="auto">
       <Stack>
         <H1>Reference</H1>
         <Lead>
-          Under reference all the react components that are expored from the
+          Under reference all the react components that are exported from the
           library are covered
         </Lead>
       </Stack>
@@ -43,7 +43,12 @@ export default function ContributePage () {
         <StepStack>
           <P>
             Write your component under{ ' ' }
-            <Code>
+            <Code
+              p={ 4 }
+              whiteSpace={ { base: 'normal', md: 'pre' } }
+              overflowX={ { base: 'scroll', md: 'initial' } }
+              wordBreak={ { base: 'break-all', md: 'normal' } }
+            >
               northlight/framework/lib/components/component-name/component-name.tsx
             </Code>
           </P>
@@ -80,12 +85,18 @@ export default function ContributePage () {
           to autogenerate documentation pages from jsdoc comments
         </P>
         Example:
-        <Code w="max-content" whiteSpace="pre" display="block">
-          { `/** 
- * Description for component 
- * 
- * @see Select 
- * @see {@link https://northlight.dev/reference/component-name} 
+        <Code
+          p={ 4 }
+          whiteSpace={ { base: 'normal', md: 'pre' } }
+          sx={ { wordWrap: 'break-word' } }
+          display="block"
+          overflowX="auto"
+        >
+          { `/**
+ * Description for component
+ *
+ * @see Select
+ * @see {@link https://northlight.dev/reference/component-name}
 */
 const MyComponent = (props: MyComponentProps) => (
 // code
@@ -117,9 +128,15 @@ const MyComponent = (props: MyComponentProps) => (
       </Stack>
       <Stack>
         <H4>You can also add live code examples</H4>
-        <Code w="max-content" whiteSpace="pre" display="block">
+        <Code
+          p={ 4 }
+          whiteSpace={ { base: 'normal', md: 'pre' } }
+          sx={ { wordWrap: 'break-word' } }
+          display="block"
+          overflowX="auto"
+        >
           { `/**
- * @example 
+ * @example
  * (?
  * <MyComponent />
  * ?)
@@ -149,9 +166,15 @@ const MyComponent = (props: MyComponentProps) => (
           You can either write pure jsx in the code example or write an
           anonymous function:{ ' ' }
         </P>
-        <Code w="max-content" whiteSpace="pre" display="block">
+        <Code
+          p={ 4 }
+          whiteSpace={ { base: 'normal', md: 'pre' } }
+          sx={ { wordWrap: 'break-word' } }
+          display="block"
+          overflowX="auto"
+        >
           { `/**
- * @example 
+ * @example
  * (?
  * () => {
     * const [state, setState ] = useState(0)
@@ -179,9 +202,15 @@ const MyComponent = (props: MyComponentProps) => (
           You can use multiple code examples, then you need to mark them out
           with <b>(Example)</b>
         </P>
-        <Code w="max-content" whiteSpace="pre" display="block">
+        <Code
+          p={ 4 }
+          whiteSpace={ { base: 'normal', md: 'pre' } }
+          sx={ { wordWrap: 'break-word' } }
+          display="block"
+          overflowX="auto"
+        >
           { `/**
- * @example (Example) 
+ * @example (Example)
  * //example 1
  * @example (Example)
  * //example 2
@@ -197,11 +226,17 @@ const MyComponent = (props: MyComponentProps) => (
           You can get more control over which components to render using the
           react render method, then you need to mark it with <b>+</b>{ ' ' }
         </P>
-        <Code w="max-content" whiteSpace="pre" display="block">
+        <Code
+          p={ 4 }
+          whiteSpace={ { base: 'normal', md: 'pre' } }
+          sx={ { wordWrap: 'break-word' } }
+          display="block"
+          overflowX="auto"
+        >
           { `/**
- * @example (Example) 
+ * @example (Example)
  * (?
- * + 
+ * +
  * const SubComponent = () => //code
  * const MainComponent = () => <Box><SubComponent /></Box>
  * render(<MainComponent />)
@@ -228,9 +263,15 @@ const MyComponent = (props: MyComponentProps) => (
           </Link>
           )
         </P>
-        <Code w="max-content" whiteSpace="pre" display="block">
+        <Code
+          p={ 4 }
+          whiteSpace={ { base: 'normal', md: 'pre' } }
+          sx={ { wordWrap: 'break-word' } }
+          display="block"
+          overflowX="auto"
+        >
           { `/**
- * @example (Example) 
+ * @example (Example)
  * ## Header
  * (?
  * +
@@ -251,7 +292,13 @@ const MyComponent = (props: MyComponentProps) => (
           Finally, you can add a description to the props that the components
           takes
         </P>
-        <Code w="max-content" whiteSpace="pre" display="block">
+        <Code
+          p={ 4 }
+          whiteSpace={ { base: 'normal', md: 'pre' } }
+          sx={ { wordWrap: 'break-word' } }
+          display="block"
+          overflowX="auto"
+        >
           { `interface MyComponentProps {
     /** The hideDisplay prop will remove the component from the DOM tree when clicked */
     hideDisplay: boolean

@@ -1,5 +1,14 @@
 import React from 'react'
-import { Code, DateRangePickerField, Divider, Form, HStack, P, Stack, Text } from '@northlight/ui'
+import {
+  Code,
+  DateRangePickerField,
+  Divider,
+  Form,
+  HStack,
+  P,
+  Stack,
+  Text,
+} from '@northlight/ui'
 import { Page } from '../../components'
 
 const DateRangePickerPage = () => (
@@ -7,25 +16,25 @@ const DateRangePickerPage = () => (
     title="Date range picker"
     subtitle="Date Range picker is based on react aria date range picker"
   >
-    <Stack w="lg">
+    <Stack spacing={ { base: 2, md: 4 } }>
       <Form initialValues={ { date: null } } onSubmit={ () => {} }>
         { ({ watch }) => (
-          <Stack spacing={ 4 }>
+          <Stack spacing={ { base: 2, md: 4 } }>
             <P>Mediatool uses 2 date range pickers</P>
-            <HStack spacing="4">
+            <Stack spacing={ { base: 2, md: 4 } } direction={ { base: 'column', md: 'row' } }>
               <Stack spacing="4">
                 <DateRangePickerField name="date" label="Advanced" mode="advanced" />
-                <Code w="max-content">
+                <Code>
                   { '<DateRangePickerField name="date" label="Advanced" mode="advanced"/>' }
                 </Code>
               </Stack>
               <Stack spacing="4">
                 <DateRangePickerField name="date-simple" label="Simple" mode="simple" />
-                <Code w="max-content">
+                <Code>
                   { '<DateRangePickerField name="date-simple" label="Simple" mode="simple"/>' }
                 </Code>
               </Stack>
-            </HStack>
+            </Stack>
             <P>The default is advanced</P>
             <Divider />
             <P>
@@ -64,7 +73,7 @@ const DateRangePickerPage = () => (
             </Code>
             <Divider />
             <P>The date range picker comes in two variants</P>
-            <HStack>
+            <HStack spacing={ { base: 2, md: 4 } } direction={ { base: 'column', md: 'row' } }>
               <DateRangePickerField variant="outline" label="outline" name="outline" />
               <DateRangePickerField variant="filled" label="filled" name="filled" />
             </HStack>
@@ -94,7 +103,7 @@ const DateRangePickerPage = () => (
               to the right of the date field
               that resets the date range. It also has a clear button on calendar UI.
             </P>
-            <HStack>
+            <HStack spacing={ { base: 2, md: 4 } } direction={ { base: 'column', md: 'row' } }>
               <DateRangePickerField
                 name="date-clearable"
                 label="Clearable"
