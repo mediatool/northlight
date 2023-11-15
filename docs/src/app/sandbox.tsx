@@ -1,31 +1,37 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Link as ReactRouterLink } from 'react-router-dom'
-import { head, last } from 'ramda'
+import { head } from 'ramda'
 import {
+  HamburgerDuo,
   LinkDuo,
+  MoonSolid,
   NorthlightLogoXs,
-  Star01Duo,
-  Star01Solid,
+  SunDuo,
 } from '@northlight/icons'
 import {
+  Box,
   Button,
   Capitalized,
-  Center,
-  Grid,
-  GridItem,
+  Divider,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+  Flex,
   HStack,
   Icon,
   IconButton,
   Link,
   MediatoolThemeProvider,
-  Stack,
+  VStack,
   tottTheme,
+  useDisclosure,
 } from '@northlight/ui'
 import { CalendarProvider, I18nProvider, UserProvider } from './context'
 import { MainPage } from './types'
 import { MainMenu, SearchComponentsBar, SubMenu } from './components'
 import { Routing } from './routing'
-import { useIsRightSidebarVisible } from './use-is-right-side-bar-visible'
 
 export interface SandboxProps {
   routes: MainPage[]
@@ -33,11 +39,7 @@ export interface SandboxProps {
 
 export const Sandbox = ({ routes }: SandboxProps) => {
   const [ tott, setTott ] = useState(false)
-  const isRightSidebarVisible = useIsRightSidebarVisible()
-  const currentPage = last(window.location.pathname.split('/'))
-  const isHomePage = currentPage === 'guide' || currentPage === ''
-  const pageProportions =
-    isHomePage || !isRightSidebarVisible ? '20rem auto' : '20rem auto 28rem'
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <MediatoolThemeProvider theme={ tott ? tottTheme : undefined } themeName={ tott ? 'tottTheme' : 'webappTheme' }>
@@ -45,110 +47,148 @@ export const Sandbox = ({ routes }: SandboxProps) => {
         <CalendarProvider>
           <I18nProvider>
             <BrowserRouter>
-              <Center w="full" bgColor="background.default" h="full">
-                <Stack
-                  h="full"
-                  minH="100vh"
-                  color="text.default"
-                  maxW="2560px"
+              <Flex
+                direction="column"
+                h="full"
+                bgColor="background.default"
+                pt={ { base: 5, md: 5 } }
+              >
+                <HStack
+                  direction="row"
                   w="full"
-                  spacing="0"
+                  maxWidth="100vw"
+                  position="fixed"
+                  top="0"
+                  left="0"
+                  bgColor="background.default"
+                  p={ 4 }
+                  zIndex="sticky"
+                  alignItems="center"
+                  justifyContent={ { base: 'flex-start', md: 'center' } }
                 >
-                  <Grid
-                    gridTemplateColumns="20rem auto 28rem"
-                    color="text.default"
-                    w="full"
-                    gap="8"
-                    position="sticky"
-                    top="0"
-                    left="0"
-                    zIndex="banner"
-                    bgColor="background.default"
+                  <IconButton
+                    variant="ghost"
+                    icon={ <Icon as={ HamburgerDuo } /> }
+                    aria-label="Open menu"
+                    onClick={ onOpen }
+                    display={ { base: 'flex', md: 'none' } }
+                  />
+                  <Link
+                    as={ ReactRouterLink }
+                    to="/guide/"
+                    _hover={ { textDecoration: 'none' } }
+                    _focus={ { outline: 'none' } }
                   >
-                    <HStack
-                      alignItems="center"
-                      w="full"
-                      bgColor="bg.layer"
+                    <Box display={ { base: 'none', md: 'flex' } } alignItems="center" minW="xs">
+                      <Icon
+                        as={ NorthlightLogoXs }
+                        boxSize={ 16 }
+                        viewBox="0 0 20 18"
+                      />
+                      <Capitalized>North</Capitalized><Capitalized sx={ { color: 'brand' } }>Light</Capitalized>
+                    </Box>
+                  </Link>
+                  <Box
+                    flexGrow={ 1 }
+                    display={ { base: 'flex', md: 'flex' } }
+                    justifyContent="center"
+                  >
+                    <Box w="full">
+                      <SearchComponentsBar routes={ [ routes[0], routes[1] ] } />
+                    </Box>
+                  </Box>
+                  <Link as={ ReactRouterLink } to="/guide/quick-start" display={ { base: 'none', md: 'flex' } }>
+                    <Button variant="ghost">Start</Button>
+                  </Link>
+                  <Link as={ ReactRouterLink } to="./reference" display={ { base: 'none', md: 'flex' } }>
+                    <Button variant="ghost">Reference</Button>
+                  </Link>
+                  <Link
+                    isExternal={ true }
+                    href="https://github.com/mediatool/northlight"
+                    display={ { base: 'none', md: 'flex' } }
+                  >
+                    <Button
+                      variant="ghost"
+                      rightIcon={ <Icon as={ LinkDuo } /> }
                     >
+                      Contribute
+                    </Button>
+                  </Link>
+                  <IconButton
+                    variant="ghost"
+                    icon={ <Icon as={ tott ? SunDuo : MoonSolid } /> }
+                    aria-label="dark mode"
+                    onClick={ () => setTott(!tott) }
+                    display={ { base: 'flex', md: 'flex' } }
+                  />
+                </HStack>
+
+                <Drawer
+                  isOpen={ isOpen }
+                  placement="left"
+                  onClose={ onClose }
+                >
+                  <DrawerOverlay />
+                  <DrawerContent>
+                    <DrawerHeader sx={ { bgColor: 'background.default' } }>
                       <Link
                         as={ ReactRouterLink }
                         to="/guide/"
-                        sx={ {
-                          _hover: { textDecoration: 'none' },
-                          _focus: { outline: 'none' },
-                        } }
+                        _hover={ { textDecoration: 'none' } }
+                        _focus={ { outline: 'none' } }
                       >
-                        <HStack>
+                        <HStack gap={ 0 }>
                           <Icon
                             as={ NorthlightLogoXs }
-                            pl="4"
                             boxSize={ 16 }
-                            mt="4"
+                            viewBox="0 0 20 18"
                           />
-                          <Capitalized mt="4">Northlight</Capitalized>
+                          <Capitalized>North</Capitalized><Capitalized sx={ { color: 'brand' } }>Light</Capitalized>
                         </HStack>
                       </Link>
-                    </HStack>
-                    <Center w="full">
-                      <SearchComponentsBar
-                        routes={ [ routes[0], routes[1] ] }
-                      />
-                    </Center>
-                    <HStack>
-                      <IconButton
-                        variant="ghost"
-                        icon={ <Icon as={ tott ? Star01Solid : Star01Duo } /> }
-                        aria-label="dark mode"
-                        onClick={ () => setTott(!tott) }
-                      />
-                      <Link as={ ReactRouterLink } to="/guide/quick-start">
-                        <Button variant="ghost">Start</Button>
-                      </Link>
-                      <Link as={ ReactRouterLink } to="./reference">
-                        <Button variant="ghost">Reference</Button>
-                      </Link>
-                      <Link
-                        isExternal={ true }
-                        href=" https://github.com/mediatool/northlight"
-                      >
-                        <Button
-                          variant="ghost"
-                          rightIcon={ <Icon as={ LinkDuo } /> }
-                        >
-                          Contribute
-                        </Button>
-                      </Link>
-                    </HStack>
-                  </Grid>
-                  <Grid
-                    gridTemplateColumns={ pageProportions }
-                    color="text.default"
-                    w="full"
-                    position="relative"
+                    </DrawerHeader>
+                    <DrawerBody sx={ { bgColor: 'background.default' } }>
+                      <MainMenu menuItems={ routes } />
+                      <SubMenu mainRoutes={ routes } />
+                    </DrawerBody>
+                  </DrawerContent>
+                </Drawer>
+
+                <Box
+                  pt={ 16 }
+                  minH="100vh"
+                  w={ { base: '100%', md: 'auto' } }
+                  maxW={ { base: '100vw', md: 'none' } }
+                >
+                  <Box
+                    w={ 80 }
+                    h="100%"
+                    px={ 2 }
+                    overflowY="auto"
+                    position="fixed"
+                    display={ { base: 'none', md: 'block' } }
+                    left="0"
+                    top="100"
+                    zIndex="sticky"
+                    bgColor="bg.base"
                   >
-                    <GridItem>
-                      <Stack
-                        w="20rem"
-                        position="fixed"
-                        bgColor="bg.layer"
-                        p="2"
-                      >
-                        <MainMenu menuItems={ routes } />
-                        <SubMenu mainRoutes={ routes } />
-                      </Stack>
-                    </GridItem>
-                    <GridItem>
-                      <Center>
-                        <Routing
-                          fallback={ head(routes)?.path }
-                          routes={ routes }
-                        />
-                      </Center>
-                    </GridItem>
-                    <GridItem />
-                  </Grid>
-                </Stack>
-              </Center>
+                    <MainMenu menuItems={ routes } />
+                    <Divider my={ 5 } w="92%" />
+                    <SubMenu mainRoutes={ routes } />
+                  </Box>
+
+                  <Flex
+                    pl={ { md: '21rem' } }
+                    pt={ 4 }
+                    w="full"
+                  >
+                    <VStack w="full" px={ { base: 5 } }>
+                      <Routing fallback={ head(routes)?.path } routes={ routes } />
+                    </VStack>
+                  </Flex>
+                </Box>
+              </Flex>
             </BrowserRouter>
           </I18nProvider>
         </CalendarProvider>

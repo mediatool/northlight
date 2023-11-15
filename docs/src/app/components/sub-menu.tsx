@@ -34,11 +34,10 @@ interface SubMenuProps {
 
 export const SubMenu = ({ mainRoutes }: SubMenuProps) => (
   <Stack
+    pr={ 5 }
     color="text.default"
     overflow="auto"
-    h="calc(100vh - 320px)"
-    pr={ 2 }
-    bgColor="bg.layer"
+    h="calc(100vh - 350px)"
     sx={ {
       '::-webkit-scrollbar': { display: 'none' },
       '::-webkit-scrollbar-thumb': { background: 'blue.500' },

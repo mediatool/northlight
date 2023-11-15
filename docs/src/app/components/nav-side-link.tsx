@@ -1,10 +1,8 @@
 import React from 'react'
 import {
   Button,
-  CurrentTheme,
+  Label,
   LinkOverlay,
-  P,
-  useCurrentTheme,
 } from '@northlight/ui'
 
 interface CustomNavLinkProps {
@@ -14,27 +12,19 @@ interface CustomNavLinkProps {
   linkProps: Record<string, unknown>
 }
 
-const getBgColor = (currentTheme: CurrentTheme) => {
-  switch (currentTheme) {
-    case 'webappTheme': return 'blue.100'
-    case 'tottTheme': return 'blue.800'
-    default: return 'bg.filled'
-  }
-}
 export const NavSideLink = ({
   linkName,
   isActive,
   onClick,
   linkProps,
 }: CustomNavLinkProps) => {
-  const currentTheme = useCurrentTheme()
-  const bgColorHover = getBgColor(currentTheme)
   const color = isActive ? 'mono.white' : 'text.default'
 
   return (
     <Button
+      size="sm"
       p="4"
-      _hover={ { bgColor: isActive ? 'bg.brand.default' : bgColorHover } }
+      _hover={ { bgColor: isActive ? 'bg.brand.default' : 'background.button.ghost-hover' } }
       _active={ { bgColor: 'bg.brand.default' } }
       bgColor={ isActive ? 'bg.brand.default' : 'transparent' }
       onClick={ onClick }
@@ -42,7 +32,7 @@ export const NavSideLink = ({
       justifyContent="start"
     >
       <LinkOverlay { ...linkProps }>
-        <P sx={ { color, textAlign: 'left' } }>{ linkName }</P>
+        <Label size="sm" sx={ { color, cursor: 'pointer' } }>{ linkName }</Label>
       </LinkOverlay>
     </Button>
   )

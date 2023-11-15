@@ -70,7 +70,7 @@ export const SearchComponentsBar = ({
   return (
     <Stack w="full">
       <Card w="full">
-        <SearchBar placeholder="Search" onMenuOpen={ onOpen } variant="filled" />
+        <SearchBar placeholder="Search Northlight 💫" onMenuOpen={ onOpen } variant="filled" />
       </Card>
       <Modal
         isOpen={ isOpen }
@@ -91,7 +91,7 @@ export const SearchComponentsBar = ({
           noOptionsMessage={ () => null }
           loadingMessage={ () => null }
           onKeyDown={ handleKeyDown }
-          placeholder="Search for components, icons, styles...⊂(▀¯▀⊂ )"
+          placeholder="Search Northlight 💫"
         />
       </Modal>
     </Stack>

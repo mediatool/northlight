@@ -173,7 +173,12 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
       source={ sourceCodeLink }
       references={ references }
     >
-      <VStack spacing={ 4 } w={ DOCS_WIDTH }>
+      <VStack
+        spacing={ 4 }
+        w={ { base: '100%', md: DOCS_WIDTH } }
+        px={ { base: 5 } }
+        boxSizing="border-box"
+      >
         <Flex justifyContent="space-between">
           <Stack mb={ 4 } spacing={ 4 }>
             <Tabs variant="line" onChange={ setTabIndex } colorScheme="cyan">
@@ -183,7 +188,7 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
               </TabList>
               <TabPanels>
                 { !isEmpty(codeExamples) && (
-                  <TabPanel w={ DOCS_WIDTH }>
+                  <TabPanel w={ { base: '100%', md: DOCS_WIDTH } }>
                     <Stack spacing="8" px="2">
                       { codeExamples.map((example, i) => (
                         <Stack spacing="2">
@@ -213,7 +218,7 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
                     </Stack>
                   </TabPanel>
                 ) }
-                <TabPanel w={ DOCS_WIDTH }>
+                <TabPanel w={ { base: '100%', md: DOCS_WIDTH } }>
                   <Box w="full" p="0a" mb="4">
                     <Input
                       placeholder="Filter"
