@@ -134,7 +134,7 @@ export function SortableList<T> ({
         items={ identifierItems }
         strategy={ strategy || rectSortingStrategy }
       >
-        { items.map((item) => {
+        { items.map((item, index) => {
           const id = createKey(item)
           return (
             <SortableItem
@@ -146,7 +146,7 @@ export function SortableList<T> ({
             >
               { (listeners, props) =>
                 (typeof children === 'function'
-                  ? children(item, listeners, props)
+                  ? children(item, listeners, props, index)
                   : children)
               }
             </SortableItem>

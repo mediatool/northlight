@@ -18,7 +18,8 @@ type ChildrenType<PropType=any, PropTypeTwo=any> =
   | ((
     props: PropType,
     secondProp: PropTypeTwo,
-    thirdProp?: any
+    thirdProp?: any,
+    fourthProp?: number
   ) => JSX.Element | JSX.Element[] | undefined)
   | (JSX.Element | JSX.Element[])
 
