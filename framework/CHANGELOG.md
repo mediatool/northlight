@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.15.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.15.0...@northlight/ui@2.15.1) (2023-11-16)
+
+
+### Bug Fixes
+
+* **framework:** pass down index in sortableList ([1659b72](https://github.com/mediatool/northlight/commit/1659b72708ea9945b1d3d77085bdcc93ebe81b72))
+
+
+
+
+
 # [2.15.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.14.2...@northlight/ui@2.15.0) (2023-11-13)
 
 
