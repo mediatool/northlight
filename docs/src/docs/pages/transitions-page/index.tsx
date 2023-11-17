@@ -48,7 +48,7 @@ const TransitionsPage = () => {
     >
       <Stack spacing={ 4 }>
         <Text>Mediatool uses custom wrappers for simple animations</Text>
-        <Stack mb={ 4 } spacing={ 4 } w="40%">
+        <Stack mb={ 4 } spacing={ 4 } maxW="container.md">
           <Button onClick={ toggleFade(0) }>Click Me</Button>
           <Wrapper>
             <Fade in={ isFade(0) }>

@@ -45,7 +45,7 @@ export const FormTwo = ({ isOpen, onClose }: FormOneProps) => {
     >
       { (methods) => (
         <>
-          <Modal isOpen={ isOpen } onClose={ onClose } size="5xl">
+          <Modal isOpen={ isOpen } onClose={ onClose } size={ { base: 'sm', md: '5xl' } }>
             <Tabs>
               <ModalHeader>
                 <TabList>

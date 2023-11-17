@@ -4,7 +4,6 @@ import {
   DateRangePickerField,
   Divider,
   Form,
-  HStack,
   P,
   Stack,
   Text,
@@ -46,7 +45,7 @@ const DateRangePickerPage = () => (
               label="Formatted date"
               dateFormat="dd.yyyy|mm"
             />
-            <Code w="max-content">
+            <Code w="fit-content">
               {
                   '<DateRangePickerField dateFormat="dd-yyyy|mm" name="formattedDate" label="Formatted date"/>'
                 }
@@ -66,17 +65,17 @@ const DateRangePickerPage = () => (
               Notice how the some menu options are hidden to
               prevent the user from going out the range
             </P>
-            <Code w="max-content">
+            <Code w="fit-content">
               {
                   '<DateRangePickerField name="restrained-date" label="With min and max" minValue="2022-12-01" maxValue="2023-01-23" />'
                 }
             </Code>
             <Divider />
             <P>The date range picker comes in two variants</P>
-            <HStack spacing={ { base: 2, md: 4 } } direction={ { base: 'column', md: 'row' } }>
+            <Stack spacing={ { base: 2, md: 4 } } direction={ { base: 'column', md: 'row' } }>
               <DateRangePickerField variant="outline" label="outline" name="outline" />
               <DateRangePickerField variant="filled" label="filled" name="filled" />
-            </HStack>
+            </Stack>
             <P>
               You can adjust the custom company fiscal year by setting the { ' ' }
               <Text as="b">fiscalStartMonth</Text> and <Text as="b">fiscalStartDay</Text> to the number of the month and the day counting after January,<br />
@@ -92,7 +91,7 @@ const DateRangePickerPage = () => (
               Notice that QN changed to FQN and that two options, "this fiscal
               year" and "last fiscal year" were added
             </P>
-            <Code p={ 4 }>{ JSON.stringify(watch(), null, 2) }</Code>
+            <Code p={ 4 } w="fit-content">{ JSON.stringify(watch(), null, 2) }</Code>
             <P>
               There is also a prop <b>firstDayOfWeek</b>, that adjusts the
               week day labels, can be either monday or sunday
@@ -103,7 +102,7 @@ const DateRangePickerPage = () => (
               to the right of the date field
               that resets the date range. It also has a clear button on calendar UI.
             </P>
-            <HStack spacing={ { base: 2, md: 4 } } direction={ { base: 'column', md: 'row' } }>
+            <Stack spacing={ { base: 2, md: 4 } } direction={ { base: 'column', md: 'row' } }>
               <DateRangePickerField
                 name="date-clearable"
                 label="Clearable"
@@ -115,7 +114,7 @@ const DateRangePickerPage = () => (
                 mode="simple"
                 isClearable={ false }
               />
-            </HStack>
+            </Stack>
           </Stack>
         ) }
       </Form>

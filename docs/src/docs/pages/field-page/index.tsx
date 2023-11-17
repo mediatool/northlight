@@ -4,7 +4,7 @@ import { Page } from '../../components'
 
 const FieldPage = () => (
   <Page title="Field" subtitle="Field is a generic field component">
-    <Stack spacing={ 4 } w="40%">
+    <Stack spacing={ 4 } maxW="container.md">
       <Text>
         Mediatool uses 1 generic <strong>{ '<Field>' }</strong> component
       </Text>

@@ -87,7 +87,7 @@ const SearchBarPage = () => (
     subtitle="Search Bar is a reskinned async react select with some extra functionalites and utils"
   >
     <Stack spacing={ 4 }>
-      <Stack mb={ 4 } spacing={ 4 } w="60%">
+      <Stack mb={ 4 } spacing={ 4 } maxW="container.md">
         <SearchBar loadOptions={ loadOptions } isMulti={ true } />
         <Code w="max-content" display="block" whiteSpace="pre">
           { `const loadOptions = async (query: string) => {

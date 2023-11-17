@@ -10,10 +10,10 @@ import {
   UnorderedList,
 } from '@northlight/ui'
 
-export default function Tokens () {
+export default function AboutTokens () {
   return (
     <Stack p="6" spacing="8" maxW="1000px">
-      <H1>Design tokens</H1>
+      <H1>About Design tokens</H1>
       <Stack>
         <Lead>Abstract</Lead>
         <P>
@@ -37,7 +37,7 @@ export default function Tokens () {
           >
             style props
           </Link>
-          . We export multiple themes, as of currenetly theme(light mode) and
+          . We export multiple themes, as of currently webapptheme(light mode) and
           tottTheme(dark mode). You can customize and put together your own
           theme.
         </P>

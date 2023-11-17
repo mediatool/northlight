@@ -24,7 +24,7 @@ const CheckboxPage = () => (
   >
     <Stack spacing={ 4 }>
       <Text>Mediatool uses 2 checkbox <strong>variants</strong></Text>
-      <HStack spacing={ 4 }>
+      <Stack spacing={ 4 } direction={ { base: 'column', md: 'row' } }>
         <Stack>
           <Checkbox variant="default" />
           <Code w="max-content">{ '<Checkbox variant="default" />' }</Code>
@@ -33,11 +33,11 @@ const CheckboxPage = () => (
           <Checkbox variant="rounded" />
           <Code w="max-content">{ '<Checkbox variant="rounded" />' }</Code>
         </Stack>
-      </HStack>
+      </Stack>
       <Text>If you don't specify the variant, it will be <strong>default</strong></Text>
       <Divider />
       <Text>There are 3 additional <strong>states</strong> of the checkbox</Text>
-      <HStack alignItems="flex-start" spacing={ 8 }>
+      <Stack alignItems="flex-start" spacing={ 8 } direction={ { base: 'column', md: 'row' } }>
         <Stack spacing={ 4 }>
           <Text><strong>isDisabled</strong></Text>
           <Checkbox isDisabled={ true } />
@@ -53,7 +53,7 @@ const CheckboxPage = () => (
           <Checkbox isInvalid={ true } />
           <Code w="max-content">{ '<Checkbox isInvalid={ true }/>' }</Code>
         </Stack>
-      </HStack>
+      </Stack>
       <Divider />
       <Text>When you use multiple checkboxes,
         you should use the <strong>CheckboxGroup</strong> tag
@@ -105,7 +105,7 @@ const CheckboxPage = () => (
         <Text>
           It must have a <strong>name</strong> and <strong>label</strong>
         </Text>
-        <Code w="max-content">{ '<CheckboxField name="toggle" label="Click Me!" />' }</Code>
+        <Code>{ '<CheckboxField name="toggle" label="Click Me!" />' }</Code>
         <Text>All the same props from above apply to both
           <strong> Checkbox</strong> and <strong>CheckboxField</strong>
         </Text>

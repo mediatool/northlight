@@ -2,9 +2,9 @@ import { Page } from '../../app'
 
 export const routes: Page[] = [
   {
-    title: 'Tokens Picker',
-    path: '/tokens-picker',
-    component: () => import('../pages/tokens-picker-page'),
+    title: 'About Tokens',
+    path: '/about-tokens',
+    component: () => import('../pages/about-tokens-page'),
   },
   {
     title: 'Global reference tokens',

@@ -2,13 +2,7 @@ import React, { KeyboardEvent, useEffect, useMemo, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import Fuse from 'fuse.js'
 import { chain, defaultTo, map, prop } from 'ramda'
-import {
-  Card,
-  Modal,
-  SearchBar,
-  Stack,
-  useDisclosure,
-} from '@northlight/ui'
+import { Card, Modal, SearchBar, Stack, useDisclosure } from '@northlight/ui'
 
 import { RouteOption, SearchBarComponentsBarProps } from '../../types'
 
@@ -70,12 +64,16 @@ export const SearchComponentsBar = ({
   return (
     <Stack w="full">
       <Card w="full">
-        <SearchBar placeholder="Search Northlight 💫" onMenuOpen={ onOpen } variant="filled" />
+        <SearchBar
+          placeholder="Search Northlight 💫"
+          onMenuOpen={ onOpen }
+          variant="filled"
+        />
       </Card>
       <Modal
         isOpen={ isOpen }
         onClose={ onClose }
-        size="4xl"
+        size={ { base: 'sm', md: '4xl' } }
         autoFocus={ true }
         isCentered={ false }
         initialFocusRef={ ref }

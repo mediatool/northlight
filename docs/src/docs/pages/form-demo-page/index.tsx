@@ -2,7 +2,6 @@ import React from 'react'
 import {
   Button,
   Heading,
-  SimpleGrid,
   Stack,
   Text,
   useDisclosure,
@@ -25,22 +24,24 @@ const FormExample = () => {
         </Text>
       ) }
     >
-      <SimpleGrid
+      <Stack
         w="80%"
-        columns={ 2 }
         gap={ 16 }
         alignItems="start"
+        direction={ { base: 'column', md: 'row' } }
+        overflowY="auto"
+        h="full"
       >
-        <Stack spacing={ 8 }>
+        <Stack spacing={ 8 } w="full">
           <Heading size="lg">Example 1</Heading>
           <FormOne />
         </Stack>
-        <Stack spacing={ 8 }>
+        <Stack spacing={ 8 } h="full" minH="container.sm">
           <Heading size="lg">Example 2</Heading>
           <Button onClick={ onOpen }>Change Settings</Button>
           <FormTwo isOpen={ isOpen } onClose={ onClose } />
         </Stack>
-      </SimpleGrid>
+      </Stack>
     </Page>
   )
 }

@@ -12,6 +12,8 @@ export const getTokenType = (
 ): string | null => {
   if (isValidColor(value)) return 'color'
   switch (category) {
+    case 'colors':
+      return 'color'
     case 'shadows':
       return 'boxShadow'
     case 'radii':

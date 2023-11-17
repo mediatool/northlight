@@ -29,7 +29,7 @@ export const sandboxRoutes: MainPage[] = [
     title: 'Tokens',
     Icon: Dataflow01Duo,
     path: '/tokens',
-    component: () => import('./tokens/app'),
+    component: () => import('./tokens/pages/tokens-picker-page'),
     subItems: tokensRoutes,
   },
   {

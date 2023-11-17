@@ -179,8 +179,8 @@ const ReferencePage = ({ data }: ReferencePageProps) => {
         px={ { base: 5 } }
         boxSizing="border-box"
       >
-        <Flex justifyContent="space-between">
-          <Stack mb={ 4 } spacing={ 4 }>
+        <Flex justifyContent="space-between" w="full">
+          <Stack mb={ 4 } spacing={ 4 } w="full">
             <Tabs variant="line" onChange={ setTabIndex } colorScheme="cyan">
               <TabList mb="8">
                 { !isEmpty(codeExamples) && <Tab>Usage</Tab> }

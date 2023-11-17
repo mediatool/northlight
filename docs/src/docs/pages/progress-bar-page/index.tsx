@@ -34,8 +34,8 @@ const ProgressBarPage = () => {
         />
     ) }
     >
-      <Stack spacing={ 4 }>
-        <Stack mb={ 4 } spacing={ 4 } w="40%">
+      <Stack spacing={ 4 } maxW="container.md">
+        <Stack mb={ 4 } spacing={ 4 }>
           <Text>Mediatool uses a custom progress bar component</Text>
           <ProgressBar loaded={ 0.5 } />
           <Code w="max-content">{ '<ProgressBar loaded={ 0.5 } />' }</Code>
