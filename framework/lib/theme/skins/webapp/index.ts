@@ -9,6 +9,10 @@ export const WebappSkin: ThemeOverride = {
   colors: {
     ...WebappSystemTokensSet.st.color,
     ...WebappComponentsTokensSet.color,
+    text: {
+      ...WebappSystemTokensSet.st.color.text,
+      ...WebappComponentsTokensSet.color.text,
+    },
     border: {
       ...WebappSystemTokensSet.st.color.border,
       ...WebappComponentsTokensSet.color.border,
