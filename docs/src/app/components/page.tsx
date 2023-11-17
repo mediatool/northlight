@@ -27,7 +27,7 @@ export const Page = ({
         <Heading as="h2" size="sm">{ subtitle }</Heading>
       ) : subtitle }
     </Stack>
-    <Box width="100%" mt={ 10 }>
+    <Box width="100%" mt={ 10 } overflowY="auto">
       { children }
     </Box>
   </Box>

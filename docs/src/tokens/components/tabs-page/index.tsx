@@ -13,11 +13,13 @@ const TabsPage = ({ dataSet }: Props) => (
     <TabList
       p={ 1 }
       position="absolute"
-      zIndex="maxnus"
+      zIndex="overlay"
       top={ 10 }
       right={ 4 }
       background="mono.black"
       borderRadius="full"
+      maxW="70%"
+      overflowX="scroll"
     >
       { map(({ name }) => (
         <Tab key={ name }>{ name }</Tab>

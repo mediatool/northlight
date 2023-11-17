@@ -51,7 +51,7 @@ const FormPage = () => {
         </>
     ) }
     >
-      <Stack spacing={ 4 } w="60%">
+      <Stack spacing={ 4 } w="container.lg" maxW="100%">
         <H2>
           Our forms are built on{ ' ' }
           <Link

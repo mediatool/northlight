@@ -98,7 +98,7 @@ const FilePickerPage = () => {
       subtitle="File Picker is one of the most complex and sophisticated constructions of art to date known"
     >
       <Stack spacing={ 4 }>
-        <Stack mb={ 4 } spacing={ 4 } w="60%">
+        <Stack mb={ 4 } spacing={ 4 } w="100%" maxW="container.md">
           <P>Mediatool uses a custom single file picker component</P>
           <FilePicker />
           <Code w="max-content">{ '<FilePicker />' }</Code>
@@ -132,7 +132,7 @@ const FilePickerPage = () => {
           <P>
             File Picker can also be used in the <b>{ '<Form/>' }</b> context
           </P>
-          <Code w="max-content">
+          <Code w="fit-content">
             { '<FilePickerField name="image" label="Select image"/>' }
           </Code>
           <P>

@@ -31,7 +31,7 @@ export const Page = ({
   source,
   references,
 }: Props) => (
-  <Box
+  <Stack
     h="100%"
     overflowY="auto"
     overscrollBehavior="contain"
@@ -39,45 +39,49 @@ export const Page = ({
     color="text.default"
     pb="10rem"
     pt="4"
+    w="full"
   >
-    <Stack spacing={ 2 } maxW="xl">
-      <Heading as="h1" size="lg">
-        { title }
-      </Heading>
-      { typeof subtitle === 'string' ? (
-        <Heading as="h2" size="sm">
-          { subtitle }
+    <VStack w="100%">
+      <Stack spacing={ 2 } w={ { base: 'full', md: '50vw' } }>
+        <Heading as="h1" size="lg">
+          { title }
         </Heading>
-      ) : (
-        subtitle
-      ) }
-      <HStack>
-        { !isNil(source) && !isEmpty(source) && (
-        <Box w="fit-content">
-          <Link href={ source } isExternal={ true }>
-            <Button size="sm" variant="ghost">
-              <Flex gap="2" alignItems="center">
-                <P variant="14">Source</P>
-                <Icon as={ LinkDuo } size="sm" />
-              </Flex>
-            </Button>
-          </Link>
-        </Box>
+        { typeof subtitle === 'string' ? (
+          <Heading as="h2" size="sm">
+            { subtitle }
+          </Heading>
+        ) : (
+          subtitle
         ) }
-        { !isEmpty(references) && !isNil(references) && (
-        <>
-          <P>See also: </P>
-          { references?.map((reference) => (
-            <Link to={ `/reference/${reference}` } as={ NavLink }>
-              <Badge>{ reference }</Badge>
+        <HStack w="full" overflowX="auto">
+          { !isNil(source) && !isEmpty(source) && (
+          <Box w="fit-content">
+            <Link href={ source } isExternal={ true }>
+              <Button size="sm" variant="ghost">
+                <Flex gap="2" alignItems="center">
+                  <P variant="14">Source</P>
+                  <Icon as={ LinkDuo } size="sm" />
+                </Flex>
+              </Button>
             </Link>
-          )) }
-        </>
-        ) }
-      </HStack>
-    </Stack>
-    <VStack width="100%" mt={ 10 }>
+          </Box>
+          ) }
+          { !isEmpty(references) && !isNil(references) && (
+          <>
+            <P whiteSpace="nowrap">See also: </P>
+            { references?.map((reference) => (
+              <Link to={ `/reference/${reference}` } as={ NavLink }>
+                <Badge>{ reference }</Badge>
+              </Link>
+            )) }
+          </>
+          ) }
+        </HStack>
+      </Stack>
+
+    </VStack>
+    <VStack width="100%" mt={ 10 } overflowY="scroll">
       { children }
     </VStack>
-  </Box>
+  </Stack>
 )

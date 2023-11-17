@@ -22,7 +22,7 @@ const NotificationIconButtonPage = () => (
     title="Notification Icon Button"
     subtitle="A custom component that composes the IconButton and Blinker components. The notification blinker blinks on hover."
   >
-    <Stack spacing={ 4 }>
+    <Stack spacing={ 4 } maxW="container.md">
       <Text>It can use the 6 icon button <strong>variants</strong> (hover to display):</Text>
       <HStack spacing={ 4 }>
         <Tooltip label="Default" placement="bottom">
@@ -74,7 +74,7 @@ const NotificationIconButtonPage = () => (
         </Tooltip>
       </HStack>
       <Text>If you don't specify the variant, it will be <strong>default</strong></Text>
-      <Code w="max-content">{ '<NotificationIconButton variant="brand" aria-label="conversations" icon={ <Icon as={ ConversationDuo } /> } hasNotification={ true } />' }</Code>
+      <Code w="fit-content">{ '<NotificationIconButton variant="brand" aria-label="conversations" icon={ <Icon as={ ConversationDuo } /> } hasNotification={ true } />' }</Code>
       <Divider />
       <Text>They can be used in 4 <strong>sizes</strong>: </Text>
       <HStack spacing={ 4 }>
@@ -112,7 +112,7 @@ const NotificationIconButtonPage = () => (
         </Tooltip>
       </HStack>
       <Text>If you don't specify the size, it will be <strong>md</strong></Text>
-      <Code w="max-content">{ '<NotificationIconButton size="lg" aria-label="options" icon={ <Icon as={ CircleDuo } /> } hasNotification={ true } />' }</Code>
+      <Code w="fit-content">{ '<NotificationIconButton size="lg" aria-label="options" icon={ <Icon as={ CircleDuo } /> } hasNotification={ true } />' }</Code>
       <Divider />
       <Text>They have the ability to show the notification blinker or not: </Text>
       <HStack spacing={ 4 }>
@@ -125,7 +125,7 @@ const NotificationIconButtonPage = () => (
       <Text>
         If you don't specify <Code>hasNotification</Code> it will default to <strong>false</strong>:
       </Text>
-      <Code w="max-content">{ '<NotificationIconButton aria-label="create" icon={ <Icon as={ ConversationDuo } /> } hasNotification={ false } />' }</Code>
+      <Code w="fit-content">{ '<NotificationIconButton aria-label="create" icon={ <Icon as={ ConversationDuo } /> } hasNotification={ false } />' }</Code>
       <Divider />
       <Text>It is possible to specify the blinker color:</Text>
       <HStack spacing={ 4 }>
@@ -140,7 +140,7 @@ const NotificationIconButtonPage = () => (
         If you don't specify <Code>blinkerColor</Code><span> </span>
         it will default to <strong>green.500</strong>:
       </Text>
-      <Code w="max-content">{ '<NotificationIconButton aria-label="create" icon={ <Icon as={ ConversationDuo } /> } hasNotification={ true } blinkerColor="red.500" />' }</Code>
+      <Code w="fit-content">{ '<NotificationIconButton aria-label="create" icon={ <Icon as={ ConversationDuo } /> } hasNotification={ true } blinkerColor="red.500" />' }</Code>
     </Stack>
   </Page>
 )

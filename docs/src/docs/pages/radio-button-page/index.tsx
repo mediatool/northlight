@@ -29,7 +29,7 @@ const RadioButtonPage = () => (
         <Code w="max-content">{ '<Radio />' }</Code>
       </Stack>
       <Text>There are 3 additional <strong>states</strong> of the radio button component:</Text>
-      <HStack alignItems="flex-start" spacing={ 8 }>
+      <Stack alignItems="flex-start" spacing={ 8 } direction={ { base: 'column', md: 'row' } }>
         <Stack spacing={ 4 }>
           <Text><strong>isDisabled:</strong></Text>
           <Radio isDisabled={ true } />
@@ -45,7 +45,7 @@ const RadioButtonPage = () => (
           <Radio isInvalid={ true } />
           <Code w="max-content">{ '<Radio isInvalid={ true } />' }</Code>
         </Stack>
-      </HStack>
+      </Stack>
       <Divider />
       <Text>When you use multiple radio buttons, you should use
         the <strong>RadioGroup</strong> tag, to switch between them.

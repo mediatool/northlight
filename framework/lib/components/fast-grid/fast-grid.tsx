@@ -11,7 +11,7 @@ import { FastGridProps } from './types'
  * @example (Example)
  * ## Simple example
  * (?
- *       <Box h="500px" w="500px" border="1px solid gray" p={ 4 } borderRadius={ 4 }>
+ *       <Box h="500px" w="full" border="1px solid gray" p={ 4 } borderRadius={ 4 }>
         <FastGrid
           columns={ 10000 }
           rows={ 10000 }

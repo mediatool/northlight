@@ -8,7 +8,7 @@ interface Props {
 export const IconsGrid = ({ children }: Props) => (
   <SimpleGrid
     p={ 6 }
-    columns={ 4 }
+    columns={ { base: 1, md: 4 } }
     w="100%"
     maxW={ 1400 }
     gap={ 4 }

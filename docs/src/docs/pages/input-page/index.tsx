@@ -38,7 +38,7 @@ const InputPage = () => (
         />
       </VStack>
       <Text>If you don't specify the variant, it will be <strong>outline</strong></Text>
-      <Code w="max-content">{ '<Input variant="outline" placeholder="Outline" />' }</Code>
+      <Code w="fit-content">{ '<Input variant="outline" placeholder="Outline" />' }</Code>
       <Divider />
       <Text>They can be used in 4 <strong>sizes</strong>: </Text>
       <VStack maxWidth="400px" spacing={ 4 }>
@@ -64,7 +64,7 @@ const InputPage = () => (
         />
       </VStack>
       <Text>If you don't specify the size, it will be <strong>md</strong></Text>
-      <Code w="max-content">{ '<Input variant="filled" size="lg" placeholder="lg" />' }</Code>
+      <Code w="fit-content">{ '<Input variant="filled" size="lg" placeholder="lg" />' }</Code>
       <Divider />
       <Text>The input states are: </Text>
       <VStack maxWidth="400px" spacing={ 4 }>
@@ -88,7 +88,7 @@ const InputPage = () => (
           placeholder="isDisabled"
         />
       </VStack>
-      <Code w="max-content">{ '<Input variant="filled" isDisabled={true} placeholder="isDiabled" />' }</Code>
+      <Code w="fit-content">{ '<Input variant="filled" isDisabled={true} placeholder="isDiabled" />' }</Code>
       <Divider />
       <Text>It is possible to add an addon to the input </Text>
       <VStack maxWidth="400px" spacing={ 4 }>

@@ -24,44 +24,44 @@ const NumberInputPage = () => (
   >
     <Stack spacing={ 4 }>
       <Text>Mediatool uses 2 number input</Text>
-      <HStack>
+      <Stack direction={ { base: 'column', md: 'row' } }>
         <NumberInput />
         <NumberInput onlyAcceptPercentage={ true } />
-      </HStack>
+      </Stack>
       <P>
         The right number input example, only accepts percentages as input via{ ' ' }
         <b>onlyAcceptPercentage</b> prop, { ' ' }
         This let's the user input a value between 0, 100. And parses
         it as a decimal number before calling the onChange callback.
       </P>
-      <Code w="max-content">{ '<NumberInput />' }</Code>
+      <Code w="fit-content">{ '<NumberInput />' }</Code>
       <Divider />
       <Text>
         There are 3 additional <strong>states</strong> of the number input
       </Text>
-      <HStack alignItems="flex-start" spacing={ 8 }>
+      <Stack alignItems="flex-start" spacing={ 8 } direction={ { base: 'column', md: 'row' } }>
         <Stack spacing={ 4 }>
           <Text>
             <strong>isDisabled</strong>
           </Text>
           <NumberInput isDisabled={ true } />
-          <Code w="max-content">{ '<NumberInput isDisabled={ true }/>' }</Code>
+          <Code w="fit-content">{ '<NumberInput isDisabled={ true }/>' }</Code>
         </Stack>
         <Stack spacing={ 4 }>
           <Text>
             <strong>isInvalid</strong>
           </Text>
           <NumberInput isInvalid={ true } />
-          <Code w="max-content">{ '<NumberInput isInvalid={ true }/>' }</Code>
+          <Code w="fit-content">{ '<NumberInput isInvalid={ true }/>' }</Code>
         </Stack>
         <Stack spacing={ 4 }>
           <Text>
             <strong>isReadOnly</strong>
           </Text>
           <NumberInput isReadOnly={ true } value="isReadOnly" />
-          <Code w="max-content">{ '<NumberInput isReadOnly={ true }/>' }</Code>
+          <Code w="fit-content">{ '<NumberInput isReadOnly={ true }/>' }</Code>
         </Stack>
-      </HStack>
+      </Stack>
       <Divider />
       <Text>
         You can adjust the <strong>min</strong> and <strong>max</strong>
@@ -69,7 +69,7 @@ const NumberInputPage = () => (
       <HStack>
         <NumberInput min={ 1 } max={ 5 } defaultValue={ 1 } />
       </HStack>
-      <Code w="max-content">
+      <Code w="fit-content">
         { '<NumberInput min={ 1 } max={ 5 } defaultValue={ 1 } />' }
       </Code>
       <Text>
@@ -78,7 +78,7 @@ const NumberInputPage = () => (
       <HStack>
         <NumberInput step={ 0.5 } defaultValue={ 0 } />
       </HStack>
-      <Code w="max-content">
+      <Code w="fit-content">
         { '<NumberInput step={ 0.5 } defaultValue={ 0 }/>' }
       </Code>
       <Text>
@@ -88,18 +88,18 @@ const NumberInputPage = () => (
       <HStack>
         <NumberInput precision={ 5 } defaultValue={ 1 } />
       </HStack>
-      <Code w="max-content">
+      <Code w="fit-content">
         { '<NumberInput precision={ 5 } defaultValue={ 1 }/>' }
       </Code>
       <Divider />
       <Text>
         It can be used in 3 <strong>sizes</strong>
       </Text>
-      <HStack spacing={ 4 }>
+      <Stack spacing={ 4 } direction={ { base: 'column', md: 'row' } }>
         <NumberInput size="sm" value="sm" />
         <NumberInput size="md" value="md" />
         <NumberInput size="lg" value="lg" />
-      </HStack>
+      </Stack>
       <Text>
         If you don't specify a size it wil be <strong>md</strong>
       </Text>
@@ -116,7 +116,7 @@ const NumberInputPage = () => (
           <Text>
             It must have <strong>name</strong> and a <strong>label</strong>
           </Text>
-          <Code w="max-content">
+          <Code w="fit-content">
             { '<NumberInputField name="age" label="How old are you" />' }
           </Code>
           <Text>
