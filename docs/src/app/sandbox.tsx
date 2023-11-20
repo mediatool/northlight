@@ -94,7 +94,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     justifyContent="center"
                   >
                     <Box w="full">
-                      <SearchComponentsBar routes={ [ routes[0], routes[1] ] } />
+                      <SearchComponentsBar routes={ routes } />
                     </Box>
                   </Box>
                   <Link as={ ReactRouterLink } to="/guide/quick-start" display={ { base: 'none', md: 'flex' } }>

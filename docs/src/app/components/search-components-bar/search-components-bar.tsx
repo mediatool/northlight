@@ -1,7 +1,7 @@
 import React, { KeyboardEvent, useEffect, useMemo, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import Fuse from 'fuse.js'
-import { chain, defaultTo, map, prop } from 'ramda'
+import { chain, concat, defaultTo, map, prop } from 'ramda'
 import { Card, Modal, SearchBar, Stack, useDisclosure } from '@northlight/ui'
 
 import { RouteOption, SearchBarComponentsBarProps } from '../../types'
@@ -29,13 +29,19 @@ export const SearchComponentsBar = ({
     }
   }, [])
 
-  const options = chain(
-    (route) =>
-      defaultTo([], route.subItems).map((subRoute) => ({
-        value: `${route.path}${subRoute.path}`,
-        label: `${route.title} ${subRoute.title}`,
-      })),
-    routes
+  const options = concat(
+    chain(
+      (route) =>
+        defaultTo([], route.subItems).map((subRoute) => ({
+          value: `${route.path}${subRoute.path}`,
+          label: `${route.title} – ${subRoute.title}`,
+        })),
+      routes
+    ),
+    routes.map((route) => ({
+      value: `${route.path}`,
+      label: `${route.title}`,
+    }))
   )
 
   const fuse = useMemo(
