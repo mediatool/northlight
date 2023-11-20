@@ -1,4 +1,3 @@
-import { ComponentType, Ref, RefObject } from 'react'
 import {
   ActionMeta,
   Props as ChakraReactSelectProps,
@@ -9,6 +8,7 @@ import {
   SingleValue,
 } from 'chakra-react-select'
 import { StackDirection } from '@chakra-ui/react'
+import { ComponentType, Ref } from 'react'
 import { RegisterOptions } from 'react-hook-form'
 import { InputFieldProps } from '../../types'
 
@@ -47,15 +47,6 @@ export interface SelectProps<T, K extends boolean>
   customOption?: ((option: T) => JSX.Element) | null
   isMulti?: K
   ref?: Ref<SelectInstance<T, K, GroupBase<T>>>
-  /** Points to the container that the select refers to when deciding where to fit menu.
-   * E.g if you render the select in a modal you may want to sent
-   *  containerRef equal to a ref pointing to that modal,
-   *  because in that case the select dropdown change placement to try and stay within the modal */
-  containerRef?: UseAdaptiveMenuPlacementProps['containerRef']
-  /** The min height that will be reserveed for the select dropdown, used to determine wheter to put
-   * dropdown on top of or bottom of select
-  */
-  dropdownMinHeightPx?: number
 }
 
 export type SelectFieldProps<T, K extends boolean = false> = SelectProps<T, K> &
@@ -65,9 +56,4 @@ Omit<InputFieldProps, 'isMulti'> & {
   label: string
   validate?: RegisterOptions
   isRequired?: boolean
-}
-
-export interface UseAdaptiveMenuPlacementProps {
-  dropdownHeightPx: number
-  containerRef?: RefObject<HTMLDivElement>
 }

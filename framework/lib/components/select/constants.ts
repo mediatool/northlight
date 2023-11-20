@@ -1,4 +1,0 @@
-export const DROPDOWN_MAX_HEIGHT = 300
-export const DROPDOWN_MIN_HEIGHT = 55
-export const DROPDOWN_OPTION_HEIGHT = 37
-export const DROPDOWN_PADDING = 30
