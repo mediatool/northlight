@@ -34,6 +34,7 @@ const TokensPickerPage = () => {
       'fonts',
       'letterSpacings',
       'lineHeights',
+      'zIndices',
     ],
     myTheme
   )
