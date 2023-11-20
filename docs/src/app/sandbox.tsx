@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserRouter, Link as ReactRouterLink } from 'react-router-dom'
 import { head } from 'ramda'
 import {
@@ -32,13 +32,14 @@ import { CalendarProvider, I18nProvider, UserProvider } from './context'
 import { MainPage } from './types'
 import { MainMenu, SearchComponentsBar, SubMenu } from './components'
 import { Routing } from './routing'
+import { useLocalStorageState } from './use-local-storage-state'
 
 export interface SandboxProps {
   routes: MainPage[]
 }
 
 export const Sandbox = ({ routes }: SandboxProps) => {
-  const [ tott, setTott ] = useState(false)
+  const [ tott, setTott ] = useLocalStorageState<boolean>(false, 'tottMode')
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
