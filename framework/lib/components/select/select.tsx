@@ -6,14 +6,12 @@ import {
   SelectInstance,
 } from 'chakra-react-select'
 import { Box } from '@chakra-ui/react'
-import { equals, identity, is, length } from 'ramda'
+import { equals, identity, is } from 'ramda'
 import { Option, SelectProps } from './types'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 import { useSelectCallbacks } from '../../hooks'
 import { getComponents } from '../search-bar/get-components'
 import { getMatchingValue } from './get-matching-value'
-import { useAdaptiveMenuPlacement } from './use-adaptive-menu-placement'
-import { DROPDOWN_MAX_HEIGHT, DROPDOWN_MIN_HEIGHT, DROPDOWN_OPTION_HEIGHT, DROPDOWN_PADDING } from './constants'
 
 /**
  * Select component that provides a customizable and accessible select input.
@@ -151,8 +149,6 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
   customTag = null,
   value,
   icon,
-  containerRef,
-  dropdownMinHeightPx = DROPDOWN_MIN_HEIGHT,
   ...rest
 }: SelectProps<T, K>,
   ref: Ref<SelectInstance<T, K, GroupBase<T>>>
@@ -180,21 +176,8 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
     return prevOptions.current
   }, [ options ])
 
-  const dropdownHeightPx = Math.max(
-    Math.min(
-      length(options || []) * DROPDOWN_OPTION_HEIGHT + DROPDOWN_PADDING,
-      DROPDOWN_MAX_HEIGHT
-    ),
-    dropdownMinHeightPx
-  )
-
-  const { selectContainerRef, menuPlacement } = useAdaptiveMenuPlacement({
-    dropdownHeightPx,
-    containerRef,
-  })
-
   return (
-    <Box w="full" data-testid={ testId } data-role="select-container" ref={ selectContainerRef }>
+    <Box w="full" data-testid={ testId }>
       <ChakraReactSelect
         isMulti={ isMulti }
         options={ renderedOptions }
@@ -211,7 +194,6 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
         customOption={ customOption }
         customTag={ customTag }
         icon={ icon }
-        menuPlacement={ menuPlacement }
         components={ customComponents }
         ref={ ref }
         { ...rest }
