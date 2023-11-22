@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.1.3...@northlight/icons@1.3.0) (2023-11-22)
+
+
+### Features
+
+* **norhtlight/icons:** new Nav folder settings icons ([00be660](https://github.com/mediatool/northlight/commit/00be660f24dc3e9947ab0a327f34dc2f64c00842))
+
+
+
+
+
 # [1.2.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.1.3...@northlight/icons@1.2.0) (2023-11-22)
 
 

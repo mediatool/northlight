@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.15.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.15.2...@northlight/ui@2.15.4) (2023-11-22)
+
+
+### Bug Fixes
+
+* **tokens:** Edited names of font/text color tokens ([f13b275](https://github.com/mediatool/northlight/commit/f13b275dc3842c80b30ebc8a9ae10c31c057e399))
+
+
+### Reverts
+
+* Revert "fix(framework): Select dropdown direction if cant fit in modal" ([6104d64](https://github.com/mediatool/northlight/commit/6104d6408d436ec173bda626ce54d339198b4c97))
+
+
+
+
+
 ## [2.15.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.15.2...@northlight/ui@2.15.3) (2023-11-22)
 
 

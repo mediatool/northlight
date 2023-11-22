@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.0.10...@northlight/tokens@1.2.0) (2023-11-22)
+
+
+### Bug Fixes
+
+* **tokens:** Edited names of font/text color tokens ([f13b275](https://github.com/mediatool/northlight/commit/f13b275dc3842c80b30ebc8a9ae10c31c057e399))
+
+
+### Features
+
+* **tokens:** Created color tokens for table row states ([a0fa6ce](https://github.com/mediatool/northlight/commit/a0fa6ce10eeaba632e9490f8bbbd09a5b519da7c))
+
+
+
+
+
 # [1.1.0](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.0.10...@northlight/tokens@1.1.0) (2023-11-22)
 
 
