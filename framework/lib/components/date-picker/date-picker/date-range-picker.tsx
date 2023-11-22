@@ -16,7 +16,6 @@ import { DateField, StyledField, Trigger } from '../components/date-field'
 import { IconButton } from '../../icon-button'
 import { InputGroup, InputRightElement } from '../../input'
 import { Icon } from '../../icon'
-import { SimpleRangeCalendar } from '../components/calendar/simple-range-calendar'
 import { isValidDateRange } from '../date-picker-field/utils'
 
 const parseValue = (value: any) => {
@@ -39,7 +38,7 @@ const parseValue = (value: any) => {
  * field for appropiate use)
  * (?
  * <Form initialValues={{date: null}}>
-  * <DateRangePickerField name="date"/>
+ * <DateRangePickerField name="date"/>
  * </Form>
  * ?)
  *
@@ -49,7 +48,7 @@ const parseValue = (value: any) => {
  * for which we call advance, this one is a simpler version with the same core functionality:
  * (?
  * <Form initialValues={{date: null}}>
-  * <DateRangePickerField name="date" mode="simple"/>
+ * <DateRangePickerField name="date" />
  * </Form>
  * ?)
  *
@@ -58,16 +57,16 @@ const parseValue = (value: any) => {
  * The `DateRangePickerField` can have **fiscalStartMonth** and **fiscalStartDay** as a `number`
  * (?
  * <Form initialValues={{date: null}}>
-  * <DateRangePickerField
-  * name="date"
-  * mode="advanced"
-  * variant="filled"
-  * fiscalStartMonth={3}
-  * fiscalStartDay={5}
-  * dateFormat="mm|dd-yyyy"
-  * minValue="2023-01-01"
-  * maxValue="2028-01-01"
-  * />
+ * <DateRangePickerField
+ * name="date"
+ * mode="advanced"
+ * variant="filled"
+ * fiscalStartMonth={3}
+ * fiscalStartDay={5}
+ * dateFormat="mm|dd-yyyy"
+ * minValue="2023-01-01"
+ * maxValue="2028-01-01"
+ * />
  * </Form>
  * ?)
  */
@@ -80,7 +79,6 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     dateFormat,
     fiscalStartMonth,
     fiscalStartDay,
-    mode = 'advanced',
     variant = 'outline',
     onChange: onChangeCallback = identity,
     value,
@@ -96,9 +94,9 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
         endDate: date?.end.toString(),
       })
     },
-    value: parseValue(value) as ({ start: DateValue, end: DateValue }),
-    minValue: isNil(minValue) ? undefined : parseDate(minValue) as DateValue,
-    maxValue: isNil(maxValue) ? undefined : parseDate(maxValue) as DateValue,
+    value: parseValue(value) as { start: DateValue, end: DateValue },
+    minValue: isNil(minValue) ? undefined : (parseDate(minValue) as DateValue),
+    maxValue: isNil(maxValue) ? undefined : (parseDate(maxValue) as DateValue),
   }
 
   const state = useDateRangePickerState({
@@ -140,20 +138,15 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       <PopoverAnchor>
         <HStack>
           <InputGroup { ...groupProps } ref={ ref } __css={ group }>
-            <StyledField isDisabled={ isDisabled } isInvalid={ isInvalid } variant={ variant }>
-              <HStack
-                paddingInlineStart="1a"
-                paddingInlineEnd={ 10 }
-              >
-                <DateField
-                  { ...startFieldProps }
-                  dateFormat={ dateFormat }
-                />
+            <StyledField
+              isDisabled={ isDisabled }
+              isInvalid={ isInvalid }
+              variant={ variant }
+            >
+              <HStack paddingInlineStart="1a" paddingInlineEnd={ 10 }>
+                <DateField { ...startFieldProps } dateFormat={ dateFormat } />
                 <P>-</P>
-                <DateField
-                  { ...endFieldProps }
-                  dateFormat={ dateFormat }
-                />
+                <DateField { ...endFieldProps } dateFormat={ dateFormat } />
               </HStack>
             </StyledField>
             <InputRightElement sx={ { height: '100%', paddingRight: '1' } }>
@@ -179,18 +172,6 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       { state.isOpen && (
         <PopoverContent { ...dialogProps } ref={ ref } w="max-content">
           <FocusScope contain={ true } restoreFocus={ true }>
-            { mode === 'simple' && (
-              <SimpleRangeCalendar
-                { ...calendarProps }
-                resetDate={ resetDate }
-                handleClose={ handleClose }
-                fiscalStartMonth={ fiscalStartMonth || 0 }
-                fiscalStartDay={ fiscalStartDay || 0 }
-                isClearable={ isClearable }
-              />
-            ) }
-            {
-            mode === 'advanced' && (
             <RangeCalendar
               { ...calendarProps }
               resetDate={ resetDate }
@@ -199,7 +180,6 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
               fiscalStartDay={ fiscalStartDay || 0 }
               isClearable={ isClearable }
             />
-            ) }
           </FocusScope>
         </PopoverContent>
       ) }

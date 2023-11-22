@@ -1,111 +1,122 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { GregorianCalendar } from '@internationalized/date'
-import { useLocale } from '@react-aria/i18n'
-import { useRangeCalendarState } from '@react-stately/calendar'
-import { useRangeCalendar } from '@react-aria/calendar'
+import React, { useRef } from 'react'
 import { useMultiStyleConfig } from '@chakra-ui/react'
-import { ChevronLeftSolid, ChevronRightSolid, ChevronSelectorVerticalSolid } from '@northlight/icons'
+import { identity } from 'ramda'
+import { useLocale } from '@react-aria/i18n'
+import { useCalendarState } from '@react-stately/calendar'
+import { CalendarDate, GregorianCalendar } from '@internationalized/date'
 import { RangeCalendarProps } from './types'
 import { Button } from '../../../button'
 import { Label } from '../../../typography'
-import { AdjustRange } from './quick-navigation/adjust-range'
 import { Flex } from '../../../flex'
 import { Box } from '../../../box'
-import { MonthButton } from './components'
+import { StandaloneCalendarGrid } from './components'
 import { HStack, Stack } from '../../../stack'
-import { Icon } from '../../../icon'
-import { RangeCalendarGrid } from './components/range-grid'
+import { DateRangeValue } from './quick-navigation/types'
 import { QuickSelect } from './quick-navigation/quick-select'
-import { months } from './constants'
-import { MonthSelect } from './date-select/month-select'
-import { YearSelectRangeCalendar } from './date-select'
+
+const focusRing = {
+  borderWidth: 'xs',
+  borderRadius: 'md',
+  borderColor: 'border.brand.hover',
+  borderStyle: 'solid',
+}
 
 export const RangeCalendar = (props: RangeCalendarProps) => {
+  const {
+    onChange: setRange = identity,
+    value,
+    handleClose,
+    resetDate,
+    isClearable = true,
+    fiscalStartMonth,
+    fiscalStartDay,
+    minValue,
+    maxValue,
+  } = props
+
   const { locale } = useLocale()
-
-  /*
-    when setting custom focusedDate with visibleDuration > 1
-    it does not update visibleRange accordingly,
-    this boolean updateRange switches value of visibleDuration to 1,
-    to compute visibleRange accurately, and then switch back to update UI
-  */
-  const [ updateRange, setUpdateRange ] = useState(false)
-
-  const state = useRangeCalendarState({
-    ...props,
-    visibleDuration: { months: updateRange ? 1 : 2 },
-    locale,
-    createCalendar: () => new GregorianCalendar(),
-  })
-
-  useEffect(() => {
-    if (updateRange) {
-      setUpdateRange(false)
-    }
-  }, [ updateRange ])
 
   const ref = useRef<HTMLDivElement>(null)
   const { rangeCalendarContainer } = useMultiStyleConfig('Calendar')
 
-  const { calendarProps, prevButtonProps, nextButtonProps } = useRangeCalendar(
-    props,
-    state,
-    ref
-  )
+  const calendarOneState = useCalendarState({
+    value: value && value.start ? value.start : null,
+    minValue,
+    maxValue,
+    onChange: (newVal) => {
+      setRange({
+        end: value && value.end && newVal <= value.end ? value.end : newVal,
+        start: newVal,
+      })
+    },
+    locale,
+    createCalendar: () => new GregorianCalendar(),
+  })
 
-  const { fiscalStartMonth, fiscalStartDay, handleClose, resetDate, isClearable = true } = props
+  const calendarTwoState = useCalendarState({
+    value: value && value.end ? value.end : null,
+    minValue,
+    maxValue,
+    onChange: (newVal) => {
+      setRange({
+        start: value && value.end && value.start <= newVal ? value.start : newVal,
+        end: newVal,
+      })
+    },
+    locale,
+    createCalendar: () => new GregorianCalendar(),
+  })
+
+  const focusDateRange = (dateRange: DateRangeValue) => {
+    if (dateRange && dateRange.start && dateRange.end) {
+      calendarOneState.setFocusedDate(dateRange.start as CalendarDate)
+      calendarTwoState.setFocusedDate(dateRange.end as CalendarDate)
+    }
+  }
+
+  const state = {
+    setValue: setRange,
+    setFocusedDateRange: focusDateRange,
+    value,
+    timeZone: calendarOneState.timeZone,
+    minValue,
+    maxValue,
+  }
+
+  const focusedStartMonthProps = value && value.start ? {} : focusRing
 
   return (
-    <Box { ...calendarProps } ref={ ref } __css={ rangeCalendarContainer }>
+    <Box ref={ ref } __css={ rangeCalendarContainer }>
       <Stack>
         <Flex gap={ 4 }>
           <QuickSelect
             state={ state }
-            updateVisibleRange={ () => setUpdateRange(true) }
             locale={ locale }
             fiscalStartMonth={ fiscalStartMonth }
             fiscalStartDay={ fiscalStartDay }
           />
           <Stack>
-            <HStack spacing={ 2 } alignSelf="center">
-              <MonthButton { ...prevButtonProps }>
-                <Icon as={ ChevronLeftSolid } boxSize={ 4 } />
-              </MonthButton>
-              <Box w="52">
-                <Label textAlign="center">
-                  { months[state.visibleRange.start.month - 1] } -{ ' ' }
-                  { months[state.visibleRange.start.month] }
-                  { ' ' }
-                  { state.visibleRange.end.year }
-                </Label>
-              </Box>
-              <MonthButton { ...nextButtonProps }>
-                <Icon as={ ChevronRightSolid } boxSize={ 4 } />
-              </MonthButton>
-            </HStack>
-            <HStack alignItems="start" spacing={ 4 }>
-              <Stack>
-                <HStack alignSelf="center" spacing="0a">
-                  <MonthSelect state={ state } offset={ 0 } />
-                  <YearSelectRangeCalendar state={ state } offset={ 0 } />
-                  <Icon as={ ChevronSelectorVerticalSolid } size="xs" fontWeight="bold" />
-                </HStack>
-                <RangeCalendarGrid state={ state } locale={ locale } />
-                <AdjustRange state={ state } adjust="start" />
+            <HStack alignItems="start" spacing={ 8 } h="full" pt="2">
+              <Stack h="full" { ...focusedStartMonthProps }>
+                <Box p="2">
+                  <Label size="xs">Start date:</Label>
+                  <StandaloneCalendarGrid
+                    state={ calendarOneState }
+                    range={ value }
+                  />
+                </Box>
               </Stack>
-              <Stack>
-                <HStack alignSelf="center" spacing="0a">
-                  <MonthSelect state={ state } offset={ 1 } />
-                  <YearSelectRangeCalendar state={ state } offset={ 1 } />
-                  <Icon as={ ChevronSelectorVerticalSolid } size="xs" fontWeight="bold" />
-                </HStack>
-                <RangeCalendarGrid
-                  state={ state }
-                  offset={ { months: 1 } }
-                  locale={ locale }
-                />
-                <AdjustRange state={ state } adjust="end" />
-                <HStack alignSelf="end" pt="2">
+              <Stack h="full" justify="space-between">
+                <Stack opacity={ value && value.start ? '1' : '0.4' }>
+                  <Box p="2">
+                    <Label size="xs">End date:</Label>
+                    <StandaloneCalendarGrid
+                      state={ calendarTwoState }
+                      range={ value }
+                    />
+                  </Box>
+                </Stack>
+                <HStack pt="2" alignSelf="end">
                   { isClearable && (
                     <Button onClick={ resetDate } variant="ghost" size="sm">
                       Clear

@@ -1,10 +1,9 @@
 import { CalendarDate } from '@internationalized/date'
-import { CalendarState, RangeCalendarState } from '@react-stately/calendar'
+import { CalendarState } from '@react-stately/calendar'
 import { ChangeEventHandler } from 'react'
 
 export interface MonthSelectProps {
-  state: RangeCalendarState
-  offset: number
+  state: CalendarState
 }
 
 export interface YearSelectCalendarProps {

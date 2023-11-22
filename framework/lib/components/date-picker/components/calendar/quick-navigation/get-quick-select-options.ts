@@ -8,10 +8,10 @@ import {
   startOfYear,
   today,
 } from '@internationalized/date'
-import { RangeCalendarState } from '@react-stately/calendar'
+import { QuickSelectState } from './types'
 
 export const getQuickSelectOptions = (
-  state: RangeCalendarState,
+  state: QuickSelectState,
   locale: string,
   fiscalStartMonth: number,
   fiscalStartDay: number

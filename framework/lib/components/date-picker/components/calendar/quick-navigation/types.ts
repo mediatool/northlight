@@ -2,11 +2,23 @@ import { CalendarDate, DateValue } from '@internationalized/date'
 import { RangeCalendarState } from '@react-stately/calendar'
 import { ComponentType } from 'react'
 
+type DateRange = {
+  start: DateValue
+  end: DateValue
+}
+
+export interface QuickSelectState {
+  setValue: (value: DateRange) => void
+  setFocusedDateRange: (value: DateRangeValue) => void
+  value: DateRange | null | undefined
+  timeZone: string
+  minValue: DateValue | undefined
+  maxValue: DateValue | undefined
+}
 export interface QuickSelectProps {
-  state: RangeCalendarState
+  state: QuickSelectState
   fiscalStartMonth: number
   fiscalStartDay?: number
-  updateVisibleRange: () => void
   locale: string
   height?: string
 }

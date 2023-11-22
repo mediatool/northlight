@@ -27,8 +27,6 @@ interface DatePickerSettings {
   variant?: 'outline' | 'filled'
 }
 
-type DatePickerMode = 'simple' | 'advanced'
-
 export interface DatePickerProps
   extends AriaDatePickerProps<DateValue>,
   DatePickerSettings {}
@@ -42,7 +40,6 @@ export interface DateRangePickerProps
   maxValue?: string | undefined
   fiscalStartMonth?: number
   fiscalStartDay?: number
-  mode?: DatePickerMode
 }
 
 export interface DatePickerFieldProps
@@ -63,7 +60,6 @@ export interface DatePickerFieldProps
 
 export interface DateRangePickerFieldProps extends Omit<DatePickerFieldProps, 'onChange'> {
   onChange?: (date: null | DateRange) => void
-  mode?: DatePickerMode
 }
 
 export type FormBody = Record<string, DateRange>
