@@ -22,15 +22,15 @@ const DateRangePickerPage = () => (
             <P>Mediatool uses 2 date range pickers</P>
             <Stack spacing={ { base: 2, md: 4 } } direction={ { base: 'column', md: 'row' } }>
               <Stack spacing="4">
-                <DateRangePickerField name="date" label="Advanced" mode="advanced" />
+                <DateRangePickerField name="date" label="Advanced" />
                 <Code>
                   { '<DateRangePickerField name="date" label="Advanced" mode="advanced"/>' }
                 </Code>
               </Stack>
               <Stack spacing="4">
-                <DateRangePickerField name="date-simple" label="Simple" mode="simple" />
+                <DateRangePickerField name="date-simple" label="Simple" />
                 <Code>
-                  { '<DateRangePickerField name="date-simple" label="Simple" mode="simple"/>' }
+                  { '<DateRangePickerField name="date-simple" label="Simple" />' }
                 </Code>
               </Stack>
             </Stack>
@@ -106,12 +106,10 @@ const DateRangePickerPage = () => (
               <DateRangePickerField
                 name="date-clearable"
                 label="Clearable"
-                mode="simple"
               />
               <DateRangePickerField
                 name="date-not-clearable"
                 label="Not clearable"
-                mode="simple"
                 isClearable={ false }
               />
             </Stack>

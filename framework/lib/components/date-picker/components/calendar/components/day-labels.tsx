@@ -10,6 +10,7 @@ export const DayLabels = memo(({
 
   return (
     <chakra.tr>
+      <chakra.th />
       { weekDaysWithIds.map(({ label, _id }) => (
         <chakra.th key={ _id } __css={ dayLabel }>
           { label }

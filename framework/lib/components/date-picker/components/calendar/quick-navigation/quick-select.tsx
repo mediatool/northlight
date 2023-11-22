@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react'
-import { CalendarDate } from '@internationalized/date'
 import { any, equals, map } from 'ramda'
 import { palette } from '@northlight/tokens'
 import { Flex } from '../../../../flex'
@@ -16,9 +15,8 @@ export const QuickSelect = ({
   state,
   fiscalStartMonth = 0,
   fiscalStartDay = 0,
-  updateVisibleRange,
   locale = '',
-  height = 'xs',
+  height = '2xs',
 }: QuickSelectProps) => {
   const { quickDates, fiscalQuarters } = useMemo(
     () => getQuickSelectOptions(state, locale, fiscalStartMonth, fiscalStartDay),
@@ -28,8 +26,7 @@ export const QuickSelect = ({
   const updateDate = (newDate: DateRangeValue) => () => {
     if (newDate) {
       state.setValue(newDate)
-      state.setFocusedDate(newDate.start as CalendarDate)
-      updateVisibleRange()
+      state.setFocusedDateRange(newDate)
     }
   }
 
