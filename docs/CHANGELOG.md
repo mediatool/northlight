@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.6](https://github.com/mediatool/northlight/compare/@northlight/docs@1.4.5...@northlight/docs@1.4.6) (2023-11-22)
+
+
+### Bug Fixes
+
+* **docs:** add missing routes to search bar ([2c29901](https://github.com/mediatool/northlight/commit/2c299015315054d57751d3fe11fe009610f017d0))
+* **docs:** add missing zIndices token to table ([66ffc70](https://github.com/mediatool/northlight/commit/66ffc70a4e341c1b99ae4679083d9fdb63476918))
+
+
+
+
+
 ## [1.4.5](https://github.com/mediatool/northlight/compare/@northlight/docs@1.4.4...@northlight/docs@1.4.5) (2023-11-17)
 
 **Note:** Version bump only for package @northlight/docs
