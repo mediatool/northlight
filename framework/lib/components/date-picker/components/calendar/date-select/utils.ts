@@ -19,12 +19,11 @@ export const useYearsCalendar = ({
 
 export const useYearsRangeCalendar = ({
   state,
-  offset,
 }: UseYearsRangeCalendarProps) => {
   const years: YearValue[] = []
 
   for (let i = -10; i < 10; i += 1) {
-    const date = state.visibleRange.start.add({ years: i, months: offset })
+    const date = state.visibleRange.start.add({ years: i })
     years.push({
       value: date,
       formatted: `${date.year}`,

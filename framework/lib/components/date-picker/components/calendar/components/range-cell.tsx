@@ -2,20 +2,34 @@ import React, { useRef } from 'react'
 import { chakra } from '@chakra-ui/react'
 import { useCalendarCell } from '@react-aria/calendar'
 import { isSameMonth, today } from '@internationalized/date'
+import { equals } from 'ramda'
 import { RangeCellProps } from './types'
 
-export const RangeCell = ({ state, date, currentMonth }: RangeCellProps) => {
+export const RangeCell = ({
+  state,
+  date,
+  currentMonth,
+  range,
+}: RangeCellProps) => {
   const isOutsideMonth = !isSameMonth(currentMonth, date)
   if (isOutsideMonth) return <chakra.td />
 
   const ref = useRef<HTMLButtonElement>(null)
-  const { cellProps, buttonProps, isSelected, formattedDate } = useCalendarCell(
-    { date },
-    state,
-    ref
-  )
+  const {
+    cellProps,
+    buttonProps,
+    isSelected: baseIsSelected,
+    formattedDate,
+  } = useCalendarCell({ date }, state, ref)
 
   const isToday = date.compare(today(state.timeZone)) === 0
+
+  const isHighlighted = range && date < range.end && date > range.start
+
+  const isSelected =
+    range &&
+    !isHighlighted &&
+    (equals(date, range.start) || equals(date, range.end))
 
   return (
     <chakra.td { ...cellProps }>
@@ -24,18 +38,19 @@ export const RangeCell = ({ state, date, currentMonth }: RangeCellProps) => {
         type="button"
         ref={ ref }
         borderRadius="xs"
-        bgColor={ isSelected ? 'blue.500' : 'transparent' }
+        bgColor={
+          isHighlighted ? 'brand-alt' : isSelected ? 'blue.500' : 'transparent'
+        }
         color={ isSelected ? 'text.inverted' : 'text.default' }
         fontSize="sm"
         ring={ isToday && !isSelected ? '1px' : '0px' }
         ringColor="blue.500"
-        mx="-0a"
+        mx="-1px"
         my="0a"
-        zIndex="docked"
-        transition="none"
         w="8"
         h="8"
         fontWeight="medium"
+        opacity={ isSelected && !baseIsSelected ? '0.4' : '1' }
         _focusVisible={ {
           outline: 'none',
           ring: '2px',

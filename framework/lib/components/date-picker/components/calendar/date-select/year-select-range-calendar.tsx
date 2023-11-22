@@ -5,9 +5,8 @@ import { YearSelectRangeCalendarProps } from './types'
 
 export const YearSelectRangeCalendar = ({
   state,
-  offset,
 }: YearSelectRangeCalendarProps) => {
-  const { years } = useYearsRangeCalendar({ state, offset })
+  const { years } = useYearsRangeCalendar({ state })
   const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const index = Number(e.target.value)
     const date = years[index].value
