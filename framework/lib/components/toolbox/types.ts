@@ -13,6 +13,8 @@ export interface ToolboxProps extends Omit<FlexProps, 'direction'> {
   onClose: () => void
   /** if true focuses on the first element in the toolboxcontent. */
   autoFocus?: boolean
+  /** limit the sizing of the toolbox */
+  resizeLimit?: 'half' | 'full'
 }
 
 export interface ToolboxHeaderProps extends FlexProps {

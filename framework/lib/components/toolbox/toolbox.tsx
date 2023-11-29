@@ -25,7 +25,13 @@ const clamp = (minValue: number, maxValue: number, value: number) =>
       <Button onClick={ onOpen } w="full">
         Open Toolbox
       </Button>
-      <Toolbox isOpen={ isOpen } onClose={ onClose } size="sm">
+      <Toolbox
+      isOpen={ isOpen }
+      isResizable={ true }
+      onClose={ onClose }
+      size="sm"
+      resizeLimit="half"
+      >
         <ToolboxHeader>Title</ToolboxHeader>
         <ToolboxContent>
           <Stack>
@@ -52,6 +58,7 @@ export const Toolbox = ({
   size = 'sm',
   onClose,
   autoFocus = true,
+  resizeLimit = 'full',
   ...rest
 }: ToolboxProps) => {
   const { container } = useMultiStyleConfig('Toolbox', { size })
@@ -69,9 +76,15 @@ export const Toolbox = ({
     return parseFloat(widthInRem) * 16
   }
 
+  const hoverAndActiveStyles = {
+    borderLeft: 'lg',
+    borderLeftStyle: 'solid',
+    borderLeftColor: 'bg.brand.default',
+  }
+
   const defaultWidth = getPixelSize(size)
   const minWidth = getPixelSize('sm')
-  const maxWidth = window.innerWidth
+  const maxWidth = resizeLimit === 'half' ? 0.5 * window.innerWidth : window.innerWidth
 
   const [ adjustableWidth, setAdjustableWidth ] = useState(defaultWidth)
 
@@ -94,8 +107,12 @@ export const Toolbox = ({
             overflow="hidden"
             { ...rest }
           >
+            { isResizable && (
             <Box
-              cursor={ isResizable ? 'ew-resize' : 'unset' }
+              cursor="col-resize"
+              _hover={ hoverAndActiveStyles }
+              _active={ hoverAndActiveStyles }
+              sx={ { transition: 'border 250ms linear' } }
               position="absolute"
               top={ 0 }
               left={ 0 }
@@ -104,22 +121,23 @@ export const Toolbox = ({
               zIndex={ 2 }
               userSelect="none"
               onMouseDown={ (e) => {
-                if (isResizable) {
-                  e.preventDefault()
-                  const startX = e.clientX
-                  const onMouseMove = (event: { clientX: number }) => {
-                    const newWidth = adjustableWidth - (event.clientX - startX)
-                    setAdjustableWidth(clamp(minWidth, maxWidth, newWidth))
-                  }
-                  const onMouseUp = () => {
-                    document.removeEventListener('mousemove', onMouseMove)
-                    document.removeEventListener('mouseup', onMouseUp)
-                  }
-                  document.addEventListener('mousemove', onMouseMove)
-                  document.addEventListener('mouseup', onMouseUp)
+                e.preventDefault()
+                const startX = e.clientX
+                const onMouseMove = (event: { clientX: number }) => {
+                  const newWidth = direction === 'left'
+                    ? adjustableWidth + (event.clientX - startX)
+                    : adjustableWidth - (event.clientX - startX)
+                  setAdjustableWidth(clamp(minWidth, maxWidth, newWidth))
                 }
+                const onMouseUp = () => {
+                  document.removeEventListener('mousemove', onMouseMove)
+                  document.removeEventListener('mouseup', onMouseUp)
+                }
+                document.addEventListener('mousemove', onMouseMove)
+                document.addEventListener('mouseup', onMouseUp)
               } }
             />
+            ) }
             <FocusScope autoFocus={ autoFocus }>
               <Box width="full" height="full">{ newChildren }</Box>
             </FocusScope>
