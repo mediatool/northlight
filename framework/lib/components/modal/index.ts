@@ -3,9 +3,9 @@ export {
   ModalContent,
   ModalHeader,
   ModalFooter,
-  ModalBody,
   ModalCloseButton,
 } from '@chakra-ui/react'
 
 export * from './modal'
 export * from './types'
+export * from './modal-body'
