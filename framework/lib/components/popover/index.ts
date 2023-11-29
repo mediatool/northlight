@@ -1,5 +1,4 @@
 export {
-  Popover,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
@@ -9,3 +8,4 @@ export {
   PopoverAnchor,
   PopoverCloseButton,
 } from '@chakra-ui/react'
+export * from './popover'
