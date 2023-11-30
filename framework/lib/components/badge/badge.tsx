@@ -7,23 +7,24 @@ import { BadgeProps, Badge as ChakraBadge } from '@chakra-ui/react'
  *
  * @example
  * (?
- * <Stack>
-    <HStack spacing={ 4 }>
-      <Badge>Default badge</Badge>
-      <Badge variant="outline">Outline badge</Badge>
-      <Badge variant="subtle">Subtle badge</Badge>
-    </HStack>
-    <HStack spacing={ 4 } mt={ 4 }>
-      <Badge variant="solid" colorScheme="mediatoolBlue">Solid badge</Badge>
-      <Badge variant="outline" colorScheme="mediatoolBlue">Outline badge</Badge>
-      <Badge variant="subtle" colorScheme="mediatoolBlue">Subtle badge</Badge>
-    </HStack>
-    <HStack spacing={ 4 } mt={ 4 }>
-      <Badge variant="solid" colorScheme="red">Solid badge</Badge>
-      <Badge variant="outline" colorScheme="red">Outline badge</Badge>
-      <Badge variant="subtle" colorScheme="red">Subtle badge</Badge>
-    </HStack>
-  </Stack>
+ * +
+ * const colors = ["gray", "mediatoolBlue", "blue", "red", "green",
+ * "orange", "yellow", "teal", "purple", "pink"]
+ * const variants = ["solid", "outline", "subtle"]
+ * const Example = () => {
+ *     return <Stack>
+ *         { colors.map((color) => (
+ *         <HStack spacing={ 4 }>
+ *          {
+ *              variants.map((variant) => (
+ *                    <Badge colorScheme={color} variant={variant}>{variant} Badge</Badge>
+ *              ))
+ *          }
+ *         </HStack>
+ *         ))}
+ *     </Stack>
+ * }
+ * render(<Example/>)
  * ?)
  */
 export const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => (
