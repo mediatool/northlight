@@ -12,7 +12,7 @@ const getColorPicker = (customProps = {}) => {
   const props = {
     ...customProps,
   }
-  return <ColorPicker { ...props } />
+  return <ColorPicker popoverProps={ { isLazy: false } } { ...props } />
 }
 
 const getComponent = () => screen.getByTestId('color-picker-test-id')
