@@ -33,4 +33,5 @@ export type NumberInputFieldProps =
 
 export interface NumberInputStepperProps {
   includePercentage?: boolean
+  enableStepperArrows?: boolean
 }

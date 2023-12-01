@@ -58,9 +58,10 @@ export const NumberInput = ({
       { ...rest }
     >
       <NumberInputField onChange={ handleChange } />
-      { enableStepperArrows && (
-      <NumberInputStepper includePercentage={ onlyAcceptPercentage } />
-      ) }
+      <NumberInputStepper
+        includePercentage={ onlyAcceptPercentage }
+        enableStepperArrows={ enableStepperArrows }
+      />
     </ChakraNumberInput>
   )
 }
