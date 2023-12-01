@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.16.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.15.4...@northlight/ui@2.16.0) (2023-12-01)
+
+
+### Bug Fixes
+
+* **framework:** add import React to popover ([7db8c2f](https://github.com/mediatool/northlight/commit/7db8c2fe5d0dab3296690e05414bf3c191b996fd))
+* **framework:** adjust color-picker-test ([e11014b](https://github.com/mediatool/northlight/commit/e11014b39a01cc32841280439387ecdf6a4acf7c))
+* **framework:** deafult popover isLazy to true ([cbbad49](https://github.com/mediatool/northlight/commit/cbbad49027da69d1609b70a4a191dad874b4fd95))
+* **framework:** set minH and maxH ([ec5d601](https://github.com/mediatool/northlight/commit/ec5d601ece4a5f8d1a0ffad2b10f72024fb02291))
+
+
+### Features
+
+* **framework:** add replacePreviousToast prop ([b02aba3](https://github.com/mediatool/northlight/commit/b02aba39b59ad7957ac49a5297feb09fbf0d160e))
+
+
+
+
+
 ## [2.15.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.15.2...@northlight/ui@2.15.4) (2023-11-22)
 
 
