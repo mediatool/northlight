@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.0...@northlight/icons@1.3.1) (2023-12-01)
+
+
+### Bug Fixes
+
+* **icons:** update sizing on statusPinIcons ([a584c6e](https://github.com/mediatool/northlight/commit/a584c6e062fd0d5f1ec383e655f526d3438259fc))
+
+
+
+
+
 # [1.3.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.1.3...@northlight/icons@1.3.0) (2023-11-22)
 
 

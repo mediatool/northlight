@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.2.0...@northlight/tokens@1.3.0) (2023-12-01)
+
+
+### Features
+
+* **tokens:** new tokens for chart color sequence ([880619d](https://github.com/mediatool/northlight/commit/880619d30fbb0fc92f3bdaa769cdebb989316a38))
+
+
+
+
+
 # [1.2.0](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.0.10...@northlight/tokens@1.2.0) (2023-11-22)
 
 
