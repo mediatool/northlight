@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { BadgeProps, Badge as ChakraBadge } from '@chakra-ui/react'
 
 /**
@@ -26,6 +26,6 @@ import { BadgeProps, Badge as ChakraBadge } from '@chakra-ui/react'
   </Stack>
  * ?)
  */
-export const Badge = (props: BadgeProps) => (
-  <ChakraBadge { ...props } />
-)
+export const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => (
+  <ChakraBadge ref={ ref } { ...props } />
+))
