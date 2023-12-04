@@ -1,3 +1,1 @@
-export {
-  Tooltip,
-} from '@chakra-ui/react'
+export * from './tooltip'
