@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.17.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.15.4...@northlight/ui@2.17.0) (2023-12-05)
+
+
+### Bug Fixes
+
+* **docs:** move static assets to public folder ([4b04165](https://github.com/mediatool/northlight/commit/4b041655ebbcfe22c00d98c3e6c14ffab76ea18d))
+* **framework:** add import React to popover ([7db8c2f](https://github.com/mediatool/northlight/commit/7db8c2fe5d0dab3296690e05414bf3c191b996fd))
+* **framework:** adjust color-picker-test ([e11014b](https://github.com/mediatool/northlight/commit/e11014b39a01cc32841280439387ecdf6a4acf7c))
+* **framework:** deafult popover isLazy to true ([cbbad49](https://github.com/mediatool/northlight/commit/cbbad49027da69d1609b70a4a191dad874b4fd95))
+* **framework:** fix percentage sign not showing ([0d84e87](https://github.com/mediatool/northlight/commit/0d84e8778137a082d24d424a17960265988fa512))
+* **framework:** forward ref on badge ([720158a](https://github.com/mediatool/northlight/commit/720158a01be7ddfbdb646981e70227fd0696fa7b))
+* **framework:** set minH and maxH ([ec5d601](https://github.com/mediatool/northlight/commit/ec5d601ece4a5f8d1a0ffad2b10f72024fb02291))
+
+
+### Features
+
+* **framework:** add replacePreviousToast prop ([b02aba3](https://github.com/mediatool/northlight/commit/b02aba39b59ad7957ac49a5297feb09fbf0d160e))
+* **framework:** add tooltip variants ([82c4a79](https://github.com/mediatool/northlight/commit/82c4a7960dbfb5a94eb2dcd6dc4dc6d27e210152))
+
+
+
+
+
 # [2.16.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.15.4...@northlight/ui@2.16.0) (2023-12-01)
 
 
