@@ -124,6 +124,23 @@ export const FlipButton: ComponentMultiStyleConfig = {
         },
       },
     }),
+    ai: ({ theme: { colors: color }, sx }) => ({
+      container: merge({
+        bgColor: color.background['flip-button']['default-deselected-brand'],
+      }, sx),
+      button: {
+        bgColor: 'transparent',
+        _hover: {
+          bgColor: 'transparent',
+        },
+        _checked: {
+          bgColor: color.bg.ai.default,
+          _hover: {
+            bgColor: color.bg.ai.default,
+          },
+        },
+      },
+    }),
   },
   defaultProps: {
     size: 'md',

@@ -27,7 +27,7 @@ const SpinnerSizeMap = {
  * @example (Example)
  * (?
  * +
- * const variants = ['link', 'success', 'default', 'danger', 'brand', 'ghost']
+ * const variants = ['link', 'success', 'default', 'danger', 'brand', 'ghost', 'ai']
  *
  * const ExampleButton = () => {
  *  const [currentVariant, setCurrentVariant ] = useState(0)
@@ -36,7 +36,7 @@ const SpinnerSizeMap = {
  * const handleClick = () => {
  * setIsLoading(true)
  * setTimeout(() => {
- * setCurrentVariant((prev) => prev === 5 ? 0 : prev + 1)
+ * setCurrentVariant((prev) => prev === variants.length - 1 ? 0 : prev + 1)
  * setIsLoading(false)
  * }, 300)
  *

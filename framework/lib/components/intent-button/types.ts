@@ -7,8 +7,10 @@ export interface IntentButtonProps {
   onTimeout?: () => void
   tooltipText?: string
   'aria-label'?: string
+  ringColor?: string
 }
 
 export interface TimeoutProgressCircleProps extends StackProps {
   progress: number
+  ringColor: string
 }

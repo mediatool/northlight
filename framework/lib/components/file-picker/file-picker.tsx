@@ -60,6 +60,7 @@ export const FilePicker = ({
   loadWithSpinner = false,
   confirmDelete = false,
   editFileOptions = defaultEditOptions,
+  ...rest
 }: FilePickerProps) => {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const imageEditorRef = useRef<AvatarEditor>(null)
@@ -97,6 +98,7 @@ export const FilePicker = ({
     hasLoaded,
     isInvalid,
     currentTheme,
+    ...rest,
   })
 
   useEffect(() => {
