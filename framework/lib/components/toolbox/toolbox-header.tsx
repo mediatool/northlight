@@ -3,7 +3,7 @@ import { useMultiStyleConfig } from '@chakra-ui/system'
 import { CloseButton } from '../close-button'
 import { Flex } from '../flex'
 import { ToolboxHeaderProps } from './types'
-import { H3 } from '../typography'
+import { H4 } from '../typography'
 
 /**
  * @see Toolbox
@@ -19,7 +19,7 @@ export const ToolboxHeader = ({
 
   return (
     <Flex sx={ header } { ...rest }>
-      { typeof children === 'string' ? <H3>{ children }</H3> : children }
+      { typeof children === 'string' ? <H4>{ children }</H4> : children }
       <CloseButton
         aria-label="Close toolbox"
         position="fixed"
