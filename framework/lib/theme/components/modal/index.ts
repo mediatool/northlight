@@ -13,7 +13,7 @@ export const Modal: ComponentMultiStyleConfig = {
   },
   baseStyle: ({ theme }) => {
     const {
-      typography: { headings: { h3 } },
+      typography: { headings: { h4 } },
     } = theme
     return ({
       overlay: {
@@ -29,7 +29,7 @@ export const Modal: ComponentMultiStyleConfig = {
         borderRadius: 'modal.dialog',
       },
       header: {
-        fontSize: h3.fontSize,
+        fontSize: h4.fontSize,
         paddingTop: 'paddingTop.modal.header',
         paddingBottom: 'paddingBottom.modal.header',
         border: 'modal.header',

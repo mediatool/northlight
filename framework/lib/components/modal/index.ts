@@ -9,3 +9,4 @@ export {
 export * from './modal'
 export * from './types'
 export * from './modal-body'
+export * from './modal-base'
