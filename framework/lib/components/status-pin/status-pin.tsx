@@ -9,7 +9,25 @@ import { StatusPinProps } from './types'
  * @see {@link https://northlight/reference/status-pin}
  *
  * @example
- * (? <StatusPin variant="green" /> ?)
+ * (?
+ * +
+ * const variants = ["running", "inProgress", "notExecuted", "rejected"]
+ * const sizes = ["sm", "md", "lg"]
+ * const Example = () => {
+ *     return <Stack>
+ *         { sizes.map((size) => (
+ *         <HStack spacing={ 4 }>
+ *             {
+ *                 variants.map((variant) => (
+ *                 <StatusPin variant={variant} size={size} />
+ *                 ))
+ *             }
+ *             </HStack>
+ *         ))}
+ *         </Stack>
+ * }
+ * render(<Example/>)
+ * ?)
  *
  */
 export const StatusPin = ({ size = 'md', variant }: StatusPinProps) => {
