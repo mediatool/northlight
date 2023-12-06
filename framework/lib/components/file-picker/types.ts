@@ -50,6 +50,7 @@ export interface FilePickerProps {
   maxFileSize?: number
   value?: string | null
   loadWithSpinner?: boolean
+  variant?: 'ai'
   /** Will upon a popup modal for the user to click another button to triggr delte callback */
   confirmDelete?: boolean
   editFileOptions?: EditFileOptionsType
@@ -76,10 +77,12 @@ export interface MultiFilePickerProps<T extends FileFormat> extends Omit<FilePic
   enablePreLoad?: boolean
   enableSmartLoad?: boolean
   confirmDelete?: boolean
+  variant?: 'ai'
 }
 
 export interface MultiFileUploaderProps<T extends FileFormat> {
   /** Ex: acceptFormat="'acceptFormat="video/*, .jpg" */
+  variant?: 'ai'
   acceptFormat?: string
   compression?: CompressionType
   maxFileSize?: number

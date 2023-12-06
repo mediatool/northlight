@@ -43,6 +43,16 @@ const getInvalidColorStyles = (isInvalid: boolean, isImage = true, currentTheme:
   },
 })
 
+const getAiColorStyles = (isInvalid: boolean, isImage = true) => ({
+  borderColor: isInvalid ? 'red.500' : 'gray.300',
+  bgColor: isInvalid && 'red.50',
+  animation: isInvalid && `500ms ${shakeAnimation} ease`,
+  _hover: isImage && {
+    bgColor: isInvalid ? 'red.50' : 'bg.filled',
+    borderColor: isInvalid ? 'red.500' : 'border.ai',
+  },
+})
+
 export const FilePicker: ComponentMultiStyleConfig = {
   parts: [ 'filePicker', 'fileItem', 'multiFilePicker' ],
   baseStyle: ({ theme: { sizes, colors }, hasLoaded, isImage, isInvalid, currentTheme }) => ({
@@ -86,4 +96,15 @@ export const FilePicker: ComponentMultiStyleConfig = {
       minHeight: '20',
     },
   }),
+  variants: {
+    ai: ({ isInvalid }) => ({
+      filePicker: {
+        ...getAiColorStyles(isInvalid),
+      },
+      multiFilePicker: {
+        ...getAiColorStyles(isInvalid),
+      },
+    }),
+
+  },
 }

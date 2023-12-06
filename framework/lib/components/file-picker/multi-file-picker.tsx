@@ -32,6 +32,7 @@ export function MultiFilePicker<T extends FileFormat> ({
   enablePreLoad = true,
   enableSmartLoad = true,
   editFileOptions = defaultEditOptions,
+  variant,
 }: MultiFilePickerProps<T>) {
   const [ bufferFiles, setBufferFiles ] = useState<T[]>([])
   const [ previewFiles, setPreviewFiles ] = useState<T[]>([])
@@ -71,6 +72,7 @@ export function MultiFilePicker<T extends FileFormat> ({
         addFilesToQueue={ updateQueuedFiles }
         updatePreviewFiles={ setPreviewFiles }
         maxFileSize={ maxFileSize }
+        variant={ variant }
       />
       <MultiFileList
         files={ files || previewFiles }

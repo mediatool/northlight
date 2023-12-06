@@ -40,6 +40,12 @@ export const Tag: ComponentMultiStyleConfig = {
         color: 'text.default',
       },
     }),
+    ai: {
+      container: {
+        bgColor: 'bg.ai.default',
+        color: 'text.inverted',
+      },
+    },
   },
   defaultProps: {
     size: 'md',

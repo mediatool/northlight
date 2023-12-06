@@ -163,5 +163,59 @@ export const Input: ComponentMultiStyleConfig = {
         },
       },
     }),
+    ai: ({ theme: {
+      colors: color,
+      space: spacing,
+      radii: borderRadius,
+      borders: borderWidth,
+      opacity,
+    } }) => ({
+      field: {
+        paddingInlineStart: spacing['padding-inline'].input.default,
+        paddingInlineEnd: spacing['padding-inline'].input.default,
+        bgColor: color.background.input['outline-default'],
+        borderRadius: borderRadius.input.outline,
+        borderWidth: borderWidth.input.default,
+        borderColor: color.border.input.default,
+        _readOnly: {
+          _focusVisible: {
+            borderColor: color.border.input.readonly,
+          },
+          _hover: {
+            borderColor: color.border.input.readonly,
+          },
+        },
+        _focusVisible: {
+          bgColor: color.background.input['outline-focus'],
+          _hover: {
+            boxShadow: `0 0 0 1px ${color.border.ai}`,
+            borderColor: color.border.ai,
+          },
+          _invalid: {
+            boxShadow: `0 0 0 1px ${color.border.input.error}`,
+            bgColor: color.background.input['outline-error'],
+            borderColor: color.border.input.error,
+          },
+        },
+        _hover: {
+          bgColor: color.background.input['outline-hover'],
+          borderColor: color.border.input['default-hover'],
+        },
+        _invalid: {
+          bgColor: color.background.input['outline-error'],
+          borderColor: color.border.input.error,
+        },
+        _disabled: {
+          bgColor: color.background.input['outline-disabled'],
+          borderColor: color.border.input.disabled,
+          opacity: opacity.input.disabled,
+        },
+      },
+      addon: {
+        border: 'none',
+        background: 'none',
+        color: color.text.default,
+      },
+    }),
   },
 }

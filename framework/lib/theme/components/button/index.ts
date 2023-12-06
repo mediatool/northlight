@@ -126,6 +126,35 @@ export const Button: ComponentSingleStyleConfig = {
         bgColor: color.background.button['ghost-active'],
       },
     }),
+    ai: ({ theme: { colors: color } }) => ({
+      color: color.text.inverted,
+      bgColor: color.bg.ai.default,
+      _hover: {
+        bgColor: color.bg.ai.hover,
+        _disabled: {
+          bgColor: color.bg.ai.default,
+        },
+      },
+      _active: {
+        bgColor: color.bg.ai.active,
+      },
+    }),
+    aiSubdued: ({ theme: { colors: color } }) => ({
+      color: color.ai,
+      bgColor: color.background.button.ghost,
+      _hover: {
+        bg: color.bg.ai.default,
+        color: color.text.inverted,
+        _disabled: {
+          bgColor: color.background.button.ghost,
+          color: color.ai,
+        },
+      },
+      _active: {
+        bg: color.bg.ai.hover,
+        color: color.text.inverted,
+      },
+    }),
   },
   defaultProps: {
     size: 'md',

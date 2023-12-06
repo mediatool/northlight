@@ -5,6 +5,7 @@ import { TimeoutProgressCircleProps } from './types'
 
 export const TimeoutProgressCircle = ({
   progress,
+  ringColor = 'border.error',
   ...rest
 }: TimeoutProgressCircleProps) => {
   const RADIUS = 22
@@ -36,7 +37,7 @@ export const TimeoutProgressCircle = ({
         cy={ SVG_SIZE / 2 }
         r={ RADIUS }
         fill="transparent"
-        stroke="border.error"
+        stroke={ ringColor }
         strokeWidth={ STROKE_WIDTH }
         strokeDasharray={ CIRCUMFERENCE }
         strokeDashoffset={ strokeDashoffset }

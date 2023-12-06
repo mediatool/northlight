@@ -18,5 +18,19 @@ export const Tabs: ComponentMultiStyleConfig = {
         },
       },
     }),
+    ai: ({ theme: { colors: color } }) => ({
+      tab: {
+        borderRadius: 999,
+        _selected: {
+          bgColor: color.bg.ai.default,
+          color: color.text.inverted,
+        },
+        _focusVisible: {
+          ring: '2px',
+          ringColor: color.border.wcag,
+          ringOffset: '1px',
+        },
+      },
+    }),
   },
 }

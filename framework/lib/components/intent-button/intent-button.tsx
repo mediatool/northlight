@@ -39,6 +39,7 @@ import { IconButton } from '../icon-button'
 export const IntentButton = ({
   icon = TrashDuo,
   timeout = 1000,
+  ringColor = 'border.error',
   onTimeout = () => {},
   tooltipText = 'Hold to Delete',
   'aria-label': ariaLabel = 'confirm delete',
@@ -102,6 +103,7 @@ export const IntentButton = ({
         />
         { isHovering && (
           <TimeoutProgressCircle
+            ringColor={ ringColor }
             progress={ progress }
             position="absolute"
             top="0"

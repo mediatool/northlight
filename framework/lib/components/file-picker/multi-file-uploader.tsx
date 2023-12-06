@@ -59,11 +59,12 @@ export function MultiFileUploader<T extends FileFormat> ({
   addFilesToQueue = identity,
   updatePreviewFiles = identity,
   maxFileSize = fiveHundredMB,
+  ...rest
 }: MultiFileUploaderProps<T>) {
   const inputRef = useRef<HTMLInputElement>(null)
   const [ isInvalid, setIsInvalid ] = useState(false)
   const currentTheme = useCurrentTheme()
-  const { multiFilePicker } = useMultiStyleConfig('FilePicker', { isInvalid, currentTheme })
+  const { multiFilePicker } = useMultiStyleConfig('FilePicker', { isInvalid, currentTheme, ...rest })
   const [ active, setActive ] = useState(false)
   const [ errorMessage, setErrorMessage ] = useState('')
 
