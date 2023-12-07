@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.18.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.18.1...@northlight/ui@2.18.2) (2023-12-07)
+
+
+### Bug Fixes
+
+* add ai type to buttonvariants ([7f6a7ad](https://github.com/mediatool/northlight/commit/7f6a7ad6f8cf12dbc1f6003b0d54d4278b92b1bf))
+
+
+
+
+
 ## [2.18.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.18.0...@northlight/ui@2.18.1) (2023-12-07)
 
 **Note:** Version bump only for package @northlight/ui
