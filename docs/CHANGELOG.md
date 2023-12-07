@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.10](https://github.com/mediatool/northlight/compare/@northlight/docs@1.4.9...@northlight/docs@1.4.10) (2023-12-07)
+
+
+### Bug Fixes
+
+* **docs:** persist tottMode through localStorage ([91f5839](https://github.com/mediatool/northlight/commit/91f58394c265c3240f56b72b28cb22c587eb6cf2))
+
+
+
+
+
 ## [1.4.9](https://github.com/mediatool/northlight/compare/@northlight/docs@1.4.7...@northlight/docs@1.4.9) (2023-12-05)
 
 

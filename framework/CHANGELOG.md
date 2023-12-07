@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.18.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.17.0...@northlight/ui@2.18.0) (2023-12-07)
+
+
+### Features
+
+* **framework:** add ai variants to respective component ([55e218f](https://github.com/mediatool/northlight/commit/55e218fd242fe28329380d9cdb37eafb949179e9))
+
+
+
+
+
 # [2.17.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.15.4...@northlight/ui@2.17.0) (2023-12-05)
 
 
