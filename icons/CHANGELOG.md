@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.3](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.2...@northlight/icons@1.3.3) (2023-12-07)
+
+
+### Bug Fixes
+
+* **norhtlight/icons:** botIcon fix ([e119ab5](https://github.com/mediatool/northlight/commit/e119ab5e5f4a377fe97dbb5adf4b43675c497bb3))
+
+
+
+
+
 ## [1.3.2](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.0...@northlight/icons@1.3.2) (2023-12-05)
 
 
