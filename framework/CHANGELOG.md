@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.19.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.18.3...@northlight/ui@2.19.0) (2023-12-14)
+
+
+### Features
+
+* **framework:** rewrite date-range-picker ([e896a72](https://github.com/mediatool/northlight/commit/e896a72e05d9a78dc5f1df4d68ea83fc51be2058))
+
+
+
+
+
 ## [2.18.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.18.2...@northlight/ui@2.18.3) (2023-12-12)
 
 **Note:** Version bump only for package @northlight/ui

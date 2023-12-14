@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.4.13...@northlight/docs@1.5.0) (2023-12-14)
+
+
+### Features
+
+* **framework:** rewrite date-range-picker ([e896a72](https://github.com/mediatool/northlight/commit/e896a72e05d9a78dc5f1df4d68ea83fc51be2058))
+
+
+
+
+
 ## [1.4.13](https://github.com/mediatool/northlight/compare/@northlight/docs@1.4.12...@northlight/docs@1.4.13) (2023-12-12)
 
 **Note:** Version bump only for package @northlight/docs
