@@ -7,22 +7,38 @@ import {
   Collapse,
   Divider,
   Fade,
+  Flex,
   Link,
   P,
+  ResizeHandle,
   ScaleFade,
   Slide,
   SlideFade,
   Stack,
   Text,
+  useResizeWidth,
 } from '@northlight/ui'
-
 import { DefaultPageSubtitle, Page } from '../../components'
 
-const FadeInBox = ({ name, ...rest }: any) => (
-  <Box p="10" color="white" bg="teal.500" rounded="md" { ...rest }>
-    { name }
-  </Box>
-)
+const FadeInBox = ({ name, ...rest }: any) => {
+  const { adjustableWidth, resizeProps } = useResizeWidth({ defaultWidthPx: 200 })
+
+  return (
+    <Flex>
+      <Box
+        p="10"
+        color="white"
+        bg="teal.500"
+        w={ adjustableWidth }
+        overflow="hidden"
+        { ...rest }
+      >
+        { name }
+      </Box>
+      <ResizeHandle { ...resizeProps } color="teal.500" />
+    </Flex>
+  )
+}
 
 const Wrapper = ({ children }: { children: JSX.Element }) => (
   <Box rounded="md" borderWidth="1px" borderColor={ palette.gray['500'] }>
