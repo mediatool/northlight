@@ -12,6 +12,7 @@ import { customSelectStyles } from '../../theme/components/select/custom-select'
 import { useSelectCallbacks } from '../../hooks'
 import { getComponents } from '../search-bar/get-components'
 import { getMatchingValue } from './get-matching-value'
+import { theme } from '../../theme'
 
 /**
  * Select component that provides a customizable and accessible select input.
@@ -196,6 +197,8 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
         icon={ icon }
         components={ customComponents }
         ref={ ref }
+        menuPortalTarget={ document.body }
+        styles={ { menuPortal: (base) => ({ ...base, zIndex: theme.zIndices.popover }) } }
         { ...rest }
       />
     </Box>
