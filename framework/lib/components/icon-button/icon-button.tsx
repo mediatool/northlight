@@ -32,7 +32,7 @@ export const IconButton = forwardRef(({
   ...rest
 }: IconButtonProps, ref: any) => {
   const IconComponent = icon ?? children as JSX.Element
-  const IconWithSize = cloneElement(IconComponent, { size: rest.size })
+  const IconWithSize = cloneElement(IconComponent, { size: IconComponent.props.size ?? rest.size })
   return (
     <ChakraIconButton
       variant={ variant }
