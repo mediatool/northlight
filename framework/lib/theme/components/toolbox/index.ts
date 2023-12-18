@@ -5,7 +5,6 @@ export const Toolbox: ComponentMultiStyleConfig = {
   baseStyle: ({ theme: { sizes: sizing } }) => ({
     container: {
       position: 'relative',
-      flexDirection: 'column',
       bg: 'text.inverted',
       h: '100vh',
       borderLeftWidth: '1px',
