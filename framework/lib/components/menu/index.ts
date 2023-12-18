@@ -1,5 +1,4 @@
 export {
-  Menu,
   MenuList,
   MenuButton,
   MenuItem,
@@ -10,3 +9,4 @@ export {
   MenuItemOption,
   MenuCommand,
 } from '@chakra-ui/react'
+export * from './menu'
