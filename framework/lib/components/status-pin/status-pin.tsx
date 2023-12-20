@@ -30,7 +30,7 @@ import { StatusPinProps } from './types'
  * ?)
  *
  */
-export const StatusPin = ({ size = 'md', variant }: StatusPinProps) => {
+export const StatusPin = ({ size = 'md', variant, ...rest }: StatusPinProps) => {
   const pinColor = pinVariantMap[variant]
   const pinSizeTuple = pinSizeMap[size]
   const [ outerSize, innerSize ] = pinSizeTuple
@@ -41,6 +41,7 @@ export const StatusPin = ({ size = 'md', variant }: StatusPinProps) => {
       bg="white"
       borderWidth="1px"
       borderColor={ pinColor }
+      { ...rest }
     >
       <Circle
         size={ innerSize }

@@ -26,11 +26,13 @@ type ChildrenType<PropType=any, PropTypeTwo=any> =
 export type MultiItemType<itemKeys extends string | number | symbol> = Record<itemKeys, string[]>
 export interface DroppableProps extends UseDroppableArguments {
   children?: ((props: any) => JSX.Element | JSX.Element[]) | (JSX.Element | JSX.Element[])
+  'data-testid'?: string
 }
 export interface DraggableProps extends UseDraggableArguments {
   itemLabel?: string
   children?: ChildrenType<ListenersType>
   disableDrag?: boolean
+  'data-testid'?: string
 }
 
 export interface SortableItemProps extends UseSortableArguments {
@@ -38,6 +40,7 @@ export interface SortableItemProps extends UseSortableArguments {
   itemLabel?: UniqueIdentifier
   dblClickThreshold?: number
   disableDrag?: boolean
+  'data-testid'?: string
 }
 
 type MovedItemType<T> = {

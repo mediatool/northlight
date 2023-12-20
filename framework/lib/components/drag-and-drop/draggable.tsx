@@ -48,6 +48,7 @@ export const Draggable = ({
   itemLabel,
   children,
   disableDrag = false,
+  'data-testid': dataTestId,
   ...rest
 }: DraggableProps) => {
   const {
@@ -80,6 +81,7 @@ export const Draggable = ({
       _focusVisible={ ring }
       tabIndex={ disableDrag ? -1 : 0 }
       w="max-content"
+      data-testid={ dataTestId }
       { ...dragEventListeners }
     >
       { typeof childrenWithDragCursor === 'function'

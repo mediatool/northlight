@@ -197,7 +197,7 @@ export const FilePicker = ({
   }
 
   return (
-    <Stack maxW={ filePicker.width as number }>
+    <Stack maxW={ filePicker.width as number } { ...rest }>
       <Clickable
         onClick={ handleOnClick }
         onDrop={ handleDrop }

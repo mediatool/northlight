@@ -40,12 +40,16 @@ import { DroppableProps } from './types'
  * ?)
  *
  */
-export const Droppable = ({ children, ...rest }: DroppableProps) => {
+export const Droppable = ({
+  children,
+  'data-testid': testId,
+  ...rest
+}: DroppableProps) => {
   const { setNodeRef, ...props } = useDroppable({
     ...rest,
   })
   return (
-    <Box ref={ setNodeRef }>
+    <Box ref={ setNodeRef } data-testid={ testId }>
       { typeof children === 'function'
         ? children(props)
         : children || <Center>Drop here</Center> }

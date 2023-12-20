@@ -27,6 +27,7 @@ export const OrganizationLogo = ({
     <chakra.div
       __css={ container }
       data-testid="organization-logo-test-id"
+      { ...rest }
     >
       { image ? (
         <chakra.img

@@ -43,6 +43,7 @@ export const IntentButton = ({
   onTimeout = () => {},
   tooltipText = 'Hold to Delete',
   'aria-label': ariaLabel = 'confirm delete',
+  ...rest
 }: IntentButtonProps) => {
   const [ progress, setProgress ] = useState(0)
   const [ isHovering, setIsHovering ] = useState(false)
@@ -94,6 +95,7 @@ export const IntentButton = ({
         onMouseEnter={ handleMouseEnter }
         boxSize="50px"
         opacity={ `${(100 - progress) / 100}` }
+        { ...rest }
       >
         <IconButton
           icon={ <Icon as={ icon } /> }

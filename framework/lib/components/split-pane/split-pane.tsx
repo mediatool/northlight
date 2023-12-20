@@ -15,6 +15,7 @@ export const SplitPane = ({
   isOpen,
   minLeftWidth = 25,
   minRightWidth = 50,
+  ...rest
 }: SplitPaneProps) => {
   const dividerRef = useRef<HTMLDivElement | null>(null)
 
@@ -64,6 +65,7 @@ export const SplitPane = ({
     <Grid
       sx={ containerStyle }
       onPointerDown={ mouseDownHandler }
+      { ...rest }
     >
       { children[0] }
       { isOpen && cloneElement(children[1], { ref: dividerRef }) }
