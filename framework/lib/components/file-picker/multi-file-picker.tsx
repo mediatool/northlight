@@ -33,6 +33,7 @@ export function MultiFilePicker<T extends FileFormat> ({
   enableSmartLoad = true,
   editFileOptions = defaultEditOptions,
   variant,
+  ...rest
 }: MultiFilePickerProps<T>) {
   const [ bufferFiles, setBufferFiles ] = useState<T[]>([])
   const [ previewFiles, setPreviewFiles ] = useState<T[]>([])
@@ -64,6 +65,7 @@ export function MultiFilePicker<T extends FileFormat> ({
       spacing={ 4 }
       maxW="inherit"
       maxH="inherit"
+      { ...rest }
     >
       <MultiFileUploader
         acceptFormat={ acceptFormat }

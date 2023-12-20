@@ -10,7 +10,7 @@ import { StatusBlockProps, statusIconMap } from './types'
  * @example
  * (? <StatusBlock variant="approved" /> ?)
  */
-export const StatusBlock = ({ variant }: StatusBlockProps) => {
+export const StatusBlock = ({ variant, ...rest }: StatusBlockProps) => {
   const [ bgColor, contentColor ] = blockVariantMap[variant]
 
   return (
@@ -21,6 +21,7 @@ export const StatusBlock = ({ variant }: StatusBlockProps) => {
       bgColor={ bgColor }
       color={ contentColor }
       borderRadius={ 4 }
+      { ...rest }
     >
       <TagLeftIcon>
         <Icon as={ statusIconMap[variant] } />

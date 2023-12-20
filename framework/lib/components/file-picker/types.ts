@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { IconButtonProps, StackDirection } from '@chakra-ui/react'
+import { BoxProps, IconButtonProps, StackDirection, StackProps } from '@chakra-ui/react'
 import { RegisterOptions } from 'react-hook-form'
 import { ModalProps } from '../modal/types'
 import { ButtonVariants } from '../button/types'
@@ -40,7 +40,7 @@ export type ModalBooleans = {
   confirmDelete?: boolean
   canEditFileName?: boolean
 }
-export interface FilePickerProps {
+export interface FilePickerProps extends Omit<StackProps, 'onChange'> {
   /** Ex: acceptFormat="'acceptFormat="video/*, .jpg" */
   acceptFormat?: string
   onChange?: (image: File | null) => void
@@ -68,7 +68,7 @@ export interface FilePickerFieldProps extends Omit<FilePickerProps, 'onChange'> 
 export interface MultiFilePickerFieldProps extends Omit<FilePickerFieldProps, 'onChange'> {
   onChange?: (File: string[]) => void
 }
-export interface MultiFilePickerProps<T extends FileFormat> extends Omit<FilePickerProps, 'onChange'> {
+export interface MultiFilePickerProps<T extends FileFormat> extends Omit<FilePickerProps, 'onChange'>, Omit<StackProps, 'onChange'> {
   onChange?: (files: File[]) => void
   compression?: CompressionType
   files?: T[] | null
@@ -80,7 +80,7 @@ export interface MultiFilePickerProps<T extends FileFormat> extends Omit<FilePic
   variant?: 'ai'
 }
 
-export interface MultiFileUploaderProps<T extends FileFormat> {
+export interface MultiFileUploaderProps<T extends FileFormat> extends Omit<BoxProps, 'onChange'> {
   /** Ex: acceptFormat="'acceptFormat="video/*, .jpg" */
   variant?: 'ai'
   acceptFormat?: string
@@ -91,7 +91,7 @@ export interface MultiFileUploaderProps<T extends FileFormat> {
   updatePreviewFiles?: (files: any[]) => void
   onChange?: (files: File[]) => void
 }
-export interface MultiFileListProps<T extends FileFormat> {
+export interface MultiFileListProps<T extends FileFormat> extends Omit<StackProps, 'onChange'> {
   files?: T[]
   uploadingFiles?: T[]
   deleteFile?: (file: T | FileFormat) => void

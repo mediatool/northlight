@@ -1,7 +1,7 @@
-import { StackProps } from '@chakra-ui/react'
+import { CenterProps, StackProps } from '@chakra-ui/react'
 import { ComponentType } from 'react'
 
-export interface IntentButtonProps {
+export interface IntentButtonProps extends CenterProps {
   icon?: ComponentType<any>
   timeout?: number
   onTimeout?: () => void

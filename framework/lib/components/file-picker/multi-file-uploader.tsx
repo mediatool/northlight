@@ -139,7 +139,7 @@ export function MultiFileUploader<T extends FileFormat> ({
       onMouseEnter={ toggleHover }
       onMouseLeave={ toggleHover }
     >
-      <Box sx={ multiFilePicker }>
+      <Box sx={ multiFilePicker } { ...rest }>
         <Stack
           alignItems="center"
           justifyContent="center"

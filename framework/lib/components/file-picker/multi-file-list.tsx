@@ -22,6 +22,7 @@ export function MultiFileList<T extends FileFormat> ({
   confirmDelete,
   editFileOptions = defaultEditOptions,
   enableSmartLoad = true,
+  ...rest
 }: MultiFileListProps<T>) {
   const [ uploadingFilesReference, setUploadingFilesReference ] = useState(uploadingFiles)
   const [ overflowing, setOverflowing ] = useState(false)
@@ -58,6 +59,7 @@ export function MultiFileList<T extends FileFormat> ({
       maxH="sm"
       pr={ overflowing ? 2 : 0 }
       overflowY="auto"
+      { ...rest }
     >
       { uploadingFilesReference && map((file) => (
         <FileItem

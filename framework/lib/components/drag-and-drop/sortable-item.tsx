@@ -20,6 +20,7 @@ export const SortableItem = ({
   dblClickThreshold = 300,
   children,
   disableDrag = false,
+  'data-testid': dataTestId,
   ...rest
 }: SortableItemProps) => {
   const {
@@ -81,6 +82,7 @@ export const SortableItem = ({
       _focusVisible={ ring }
       tabIndex={ disableDrag ? -1 : 0 }
       borderRadius="tag.default"
+      data-testid={ dataTestId }
       { ...dragEventListeners }
     >
       { (
