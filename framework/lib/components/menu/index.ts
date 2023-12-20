@@ -10,3 +10,4 @@ export {
   MenuCommand,
 } from '@chakra-ui/react'
 export * from './menu'
+export * from './types'
