@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.20.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.19.0...@northlight/ui@2.20.0) (2023-12-21)
+
+
+### Bug Fixes
+
+* **framework:** add padding to menu compoennt ([41c4a45](https://github.com/mediatool/northlight/commit/41c4a458b5d7f2865cd42e0cc37451b71da33ae4))
+* **framework:** do not override icon size ([7304106](https://github.com/mediatool/northlight/commit/7304106b4081ee09b206ca852fecb6e2ffdba230))
+* **framework:** render select in portal by default ([72595fa](https://github.com/mediatool/northlight/commit/72595fa82d376cfea47cc156609ef4a4beaa3563))
+* **framework:** rewrote toolbox to use new hook ([634f8bb](https://github.com/mediatool/northlight/commit/634f8bbf5a6d51bbf7f033124432f33e930b76b7))
+
+
+### Features
+
+* **framework:** added clamp util ([8e2a795](https://github.com/mediatool/northlight/commit/8e2a795d478f5db00d242e94966007f17dd9a972))
+* **framework:** added ResizeHandle ([9a6b573](https://github.com/mediatool/northlight/commit/9a6b573c2e61ee44fa3b6c50e813bb63f7c9ee68))
+* **framework:** useResizeWidth hook ([a3d8ea8](https://github.com/mediatool/northlight/commit/a3d8ea84b0554f75fcf6833b534505ce8c6c0ef4))
+
+
+
+
+
 # [2.19.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.18.3...@northlight/ui@2.19.0) (2023-12-14)
 
 

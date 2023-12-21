@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.5](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.4...@northlight/icons@1.3.5) (2023-12-21)
+
+
+### Bug Fixes
+
+* **norhtlight/icons:** stages iconviewBox fix ([612b0c7](https://github.com/mediatool/northlight/commit/612b0c72a20538168b84366e19e53372bd404d53))
+* **northlight:** viewbox svg fix for mediatool logo icons ([95a3fbe](https://github.com/mediatool/northlight/commit/95a3fbe336551e1f4ff5288115854621afd48e3a))
+
+
+
+
+
 ## [1.3.4](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.3...@northlight/icons@1.3.4) (2023-12-12)
 
 **Note:** Version bump only for package @northlight/icons

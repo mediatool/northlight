@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.4.0...@northlight/tokens@1.4.1) (2023-12-21)
+
+
+### Bug Fixes
+
+* **northlight:** edited tokens for bottom and top paddings in the modal header from 1 rem to 1.25 rem to keep the close button centered ([a415ed5](https://github.com/mediatool/northlight/commit/a415ed549fa7d6b69a615a345529e5fa574528ae))
+
+
+
+
+
 # [1.4.0](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.2.0...@northlight/tokens@1.4.0) (2023-12-05)
 
 

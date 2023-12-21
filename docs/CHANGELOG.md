@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.5.0...@northlight/docs@1.6.0) (2023-12-21)
+
+
+### Features
+
+* **docs:** example of resizable slidefade ([bdb14d4](https://github.com/mediatool/northlight/commit/bdb14d4e942861b93438e7b03a81534b1fb4a267))
+
+
+
+
+
 # [1.5.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.4.13...@northlight/docs@1.5.0) (2023-12-14)
 
 
