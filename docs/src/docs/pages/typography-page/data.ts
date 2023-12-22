@@ -8,7 +8,6 @@ import {
   H4,
   H5,
   H6,
-  HeadingType,
   Label,
   LabelType,
   Lead,
@@ -28,7 +27,7 @@ interface Typography<T> {
 
 export const TableHead = [ 'Html tag', 'Demo', 'Code' ]
 
-export const Headings: Typography<HeadingType>[] = [
+export const Headings: Typography<typeof H1>[] = [
   { element: 'h1', component: H1, code: '<H1>Your text</H1>' },
   { element: 'h2', component: H2, code: '<H2>Your text</H2>' },
   { element: 'h3', component: H3, code: '<H3>Your text</H3>' },

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Heading, useStyleConfig } from '@chakra-ui/react'
 import { HeadingProps } from './types'
 
@@ -9,20 +9,21 @@ import { HeadingProps } from './types'
  * <H3>Heading 3</H3>
  * ?)
  */
-export const H3 = ({
+export const H3 = forwardRef<HTMLHeadingElement, HeadingProps>(({
   children,
   sx = {},
   ...rest
-}: HeadingProps) => {
+}, ref) => {
   const styles = useStyleConfig('H3', { sx })
 
   return (
     <Heading
       as="h3"
       sx={ styles }
+      ref={ ref }
       { ...rest }
     >
       { children }
     </Heading>
   )
-}
+})
