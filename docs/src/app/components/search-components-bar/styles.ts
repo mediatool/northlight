@@ -41,9 +41,10 @@ export const searchComponentsBarStyles: ChakraStylesConfig = {
       ring: '2px',
       ringColor: 'border.wcag',
       ringOffset: '1px',
+      color: 'text.inverted',
     }
 
-    const bgColor = isFocused ? 'bg.brand.hover' : 'bg.filled'
+    const bgColor = isFocused ? 'bg.brand.default' : 'bg.filled'
     const color = getContrastColor(bgColor)
 
     return {
@@ -58,6 +59,14 @@ export const searchComponentsBarStyles: ChakraStylesConfig = {
       color,
       fontWeight: 'semibold',
       ...focusRing,
+      _hover: {
+        bgColor: 'bg.brand.default',
+        color: 'text.inverted',
+      },
+      _active: {
+        bgColor: 'bg.brand.default',
+        color: 'text.inverted',
+      },
     }
   },
 }
