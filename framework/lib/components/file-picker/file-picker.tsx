@@ -18,7 +18,7 @@ import { HStack, Stack } from '../stack'
 import { FilePickerProps } from './types'
 import { Input } from '../input'
 import { Box } from '../box'
-import { ProgressBar } from '../progress'
+import { LoadingBar } from '../progress'
 import { Spinner } from '../spinner'
 import { Image } from '../image'
 import { Clickable } from '../clickable'
@@ -287,7 +287,7 @@ export const FilePicker = ({
             <Box display={ isLoading ? 'block' : 'none' } pt={ 1 }>
               { loadWithSpinner
                 ? <Spinner />
-                : <ProgressBar loaded={ uploaded } />
+                : <LoadingBar loaded={ uploaded } />
           }
             </Box>
           </Stack>

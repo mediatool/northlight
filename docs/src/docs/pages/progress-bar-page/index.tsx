@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import {
   Button,
   Code,
-  ProgressBar,
+  LoadingBar,
   Stack,
   Text,
 } from '@northlight/ui'
 import { DefaultPageSubtitle, Page } from '../../components'
 
 let buffer: any = null
-const ProgressBarPage = () => {
+const LoadingBarPage = () => {
   const [ progress, setProgress ] = useState(0)
   if (progress > 1 && buffer) {
     clearInterval(buffer)
@@ -37,18 +37,18 @@ const ProgressBarPage = () => {
       <Stack spacing={ 4 } maxW="container.md">
         <Stack mb={ 4 } spacing={ 4 }>
           <Text>Mediatool uses a custom progress bar component</Text>
-          <ProgressBar loaded={ 0.5 } />
-          <Code w="max-content">{ '<ProgressBar loaded={ 0.5 } />' }</Code>
+          <LoadingBar loaded={ 0.5 } />
+          <Code w="max-content">{ '<LoadingBar loaded={ 0.5 } />' }</Code>
           <Text>
             It takes a <b>loaded</b> prop which is a decimal between 0 and 1 indicating
             the percentage of how much has loaded
           </Text>
-          <ProgressBar loaded={ progress } />
+          <LoadingBar loaded={ progress } />
           <Button onClick={ handleClick }>Start Loading</Button>
           <Code w="max-content" display="block" whiteSpace="pre">
             { `setInterval(() => setProgress((prev) => prev + Math.random() * 0.1), Math.random() * 300 + 200)
 
-<ProgressBar loaded={ progress }` }
+<LoadingBar loaded={ progress }` }
           </Code>
           <Text>
             By default, the progress bar will completely disappear from the DOM
@@ -64,4 +64,4 @@ const ProgressBarPage = () => {
   )
 }
 
-export default ProgressBarPage
+export default LoadingBarPage
