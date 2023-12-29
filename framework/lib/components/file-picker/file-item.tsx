@@ -12,7 +12,7 @@ import { Box } from '../box'
 import { Image as ChakraImage } from '../image'
 import { useDisclosure } from '../../hooks'
 import { CloseButton } from '../close-button'
-import { ProgressBar } from '../progress'
+import { LoadingBar } from '../progress'
 import { ConfirmDeleteModal } from './confirm-delete-modal'
 import { FileEditorModal } from './file-editor-modal'
 import { FileIconButton } from './file-icon-button'
@@ -178,7 +178,7 @@ export function FileItem<T extends FileFormat> ({
           mt="-2"
           display={ file.isUploading ? 'block' : 'none' }
         >
-          <ProgressBar
+          <LoadingBar
             loaded={ file.size ? (file?.uploaded || 0) / file.size : 0 }
             onLoadEnd={ () => setHasLoaded(true) }
           />
