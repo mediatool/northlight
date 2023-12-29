@@ -39,6 +39,7 @@ export const Button: ComponentSingleStyleConfig = {
   variants: {
     default: ({ theme: { colors: color } }) => ({
       bgColor: color.background.button.default,
+      color: color.text.button.default,
       _hover: {
         bgColor: color.background.button['default-hover'],
       },
@@ -61,6 +62,7 @@ export const Button: ComponentSingleStyleConfig = {
     }),
     success: ({ theme: { colors: color } }) => ({
       bgColor: color.background.button.success,
+      color: color.text.button.success,
       _hover: {
         bg: color.background.button['success-hover'],
         _disabled: {
@@ -111,6 +113,15 @@ export const Button: ComponentSingleStyleConfig = {
       _active: {
         color: color.text.button['link-hover'],
         bgColor: color.background.button['link-active'],
+      },
+    }),
+    outline: ({ theme: { colors: color } }) => ({
+      color: color.text.default,
+      _hover: {
+        bg: color.background.button['ghost-hover'],
+      },
+      _active: {
+        bg: color.background.button['ghost-active'],
       },
     }),
     ghost: ({ theme: { colors: color } }) => ({
