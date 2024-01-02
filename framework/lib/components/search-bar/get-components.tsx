@@ -3,16 +3,25 @@ import {
   ControlProps,
   DropdownIndicatorProps,
   GroupBase,
+  MenuProps,
   MultiValueGenericProps,
   OptionProps,
   chakraComponents,
 } from 'chakra-react-select'
+import { Box } from '../box'
 import { HStack } from '../stack'
 import { Icon } from '../icon'
 import { SearchBarOptionType } from './types'
 
 export function getComponents<T extends SearchBarOptionType> () {
   return {
+    Menu: (props: MenuProps<T>) => (
+      <Box data-testid="select-menu-wrapper-test-id">
+        <chakraComponents.Menu { ...props }>
+          { props.children }
+        </chakraComponents.Menu>
+      </Box>
+    ),
     DropdownIndicator: (props: DropdownIndicatorProps<T>) =>
       (props.selectProps.icon ? (
         <chakraComponents.DropdownIndicator { ...props }>
@@ -39,10 +48,7 @@ export function getComponents<T extends SearchBarOptionType> () {
       ) : (
         <chakraComponents.MultiValueContainer { ...props } />
       )),
-    Control: ({
-      children,
-      ...props
-    }: ControlProps<T, boolean, GroupBase<T>>) =>
+    Control: ({ children, ...props }: ControlProps<T, boolean, GroupBase<T>>) =>
       (props.selectProps.leftComponent ? (
         <chakraComponents.Control { ...props }>
           <HStack w="full" pl="2">
