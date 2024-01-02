@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {
   DragOverEvent,
   KeyboardSensor,
@@ -11,7 +11,7 @@ import {
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import { indexOf, insert, keys, remove } from 'ramda'
 import { DragAndDrop } from './drag-and-drop'
-import { MultiItemType, MultiSortProps } from './types'
+import { MultiSortProps } from './types'
 
 /**
  * Util component for sorting items in two dimensions(container and order in container)
@@ -86,13 +86,12 @@ import { MultiItemType, MultiSortProps } from './types'
 SortableContainer is a wrapper for a <Sortable /> with a sortable item
  * */
 export function MultiSort<itemKeys extends string | number | symbol> ({
-  items: sortableItems,
+  items,
   onChange = () => {},
   children,
   collisionDetection,
   sensors,
 }: MultiSortProps<itemKeys>) {
-  const [ items, setItems ] = useState<MultiItemType<itemKeys>>(sortableItems)
   const [ activeItem, setActiveItem ] = useState<UniqueIdentifier | null>(null)
 
   const moveBetweenContainers = (
@@ -106,13 +105,6 @@ export function MultiSort<itemKeys extends string | number | symbol> ({
     [activeContainerName]: remove(activeIndex, 1, items[activeContainerName]),
     [overContainerName]: insert(overIndex, item, items[overContainerName]),
   })
-
-  useEffect(() => {
-    onChange(items)
-  }, [ items ])
-  useEffect(() => {
-    setItems(sortableItems)
-  }, [ sortableItems ])
 
   const customSensors = useSensors(
     useSensor(PointerSensor),
@@ -152,49 +144,44 @@ export function MultiSort<itemKeys extends string | number | symbol> ({
         activeContainerName === overContainerName
       )
     ) {
-      setItems((prev: MultiItemType<itemKeys>) => {
-        const activeIndex = indexOf(id, prev[activeContainerName])
-        const overIndex = indexOf(overId, prev[overContainerName])
-        return moveBetweenContainers(
-          activeContainerName,
-          activeIndex,
-          overContainerName,
-          overIndex,
-          id as string
-        )
-      })
+      const activeIndex = indexOf(id, items[activeContainerName])
+      const overIndex = indexOf(overId, items[overContainerName])
+      onChange(moveBetweenContainers(
+        activeContainerName,
+        activeIndex,
+        overContainerName,
+        overIndex,
+        id as string
+      ))
     }
   }
 
   const handleDragEnd = (e: DragOverEvent) => {
     const { activeContainerName, overContainerName, id, overId, active } = getContainers(e)
 
-    setItems((prev: MultiItemType<itemKeys>) => {
-      if (!activeContainerName || !overContainerName) return prev
-      const activeIndex = indexOf(id, prev[activeContainerName])
-      const overIndex = indexOf(overId, prev[overContainerName])
-      let newItems
-      if (activeContainerName === overContainerName) {
-        newItems = {
-          ...prev,
-          [overContainerName]: arrayMove(
-            prev[overContainerName],
-            activeIndex,
-            overIndex
-          ),
-        }
-      } else {
-        newItems = moveBetweenContainers(
-          activeContainerName,
-          activeIndex,
-          overContainerName,
-          overIndex,
-          active?.id as string
-        )
-      }
+    if (!activeContainerName || !overContainerName) return
 
-      return newItems
-    })
+    const activeIndex = indexOf(id, items[activeContainerName])
+    const overIndex = indexOf(overId, items[overContainerName])
+
+    if (activeContainerName === overContainerName) {
+      onChange({
+        ...items,
+        [overContainerName]: arrayMove(
+          items[overContainerName],
+          activeIndex,
+          overIndex
+        ),
+      })
+    } else {
+      onChange(moveBetweenContainers(
+        activeContainerName,
+        activeIndex,
+        overContainerName,
+        overIndex,
+        active?.id as string
+      ))
+    }
   }
 
   return (
