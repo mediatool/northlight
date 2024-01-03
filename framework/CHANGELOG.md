@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.21.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.20.1...@northlight/ui@2.21.0) (2024-01-03)
+
+
+### Features
+
+* **framework:** add badge and tag ([78bf8ce](https://github.com/mediatool/northlight/commit/78bf8ce9c14e8721bfcb187e6635fd26298ff6bc))
+
+
+
+
+
 ## [2.20.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.20.0...@northlight/ui@2.20.1) (2024-01-03)
 
 

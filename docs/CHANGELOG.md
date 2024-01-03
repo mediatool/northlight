@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.6.1...@northlight/docs@1.7.0) (2024-01-03)
+
+
+### Features
+
+* **framework:** add badge and tag ([78bf8ce](https://github.com/mediatool/northlight/commit/78bf8ce9c14e8721bfcb187e6635fd26298ff6bc))
+
+
+
+
+
 ## [1.6.1](https://github.com/mediatool/northlight/compare/@northlight/docs@1.6.0...@northlight/docs@1.6.1) (2024-01-03)
 
 
