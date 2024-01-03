@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/mediatool/northlight/compare/@northlight/docs@1.6.0...@northlight/docs@1.6.1) (2024-01-03)
+
+
+### Bug Fixes
+
+* **framework:** add forwardRef to headings components ([a642da5](https://github.com/mediatool/northlight/commit/a642da58bef5ab57b4a996591e27e7ca482104e3))
+
+
+
+
+
 # [1.6.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.5.0...@northlight/docs@1.6.0) (2023-12-21)
 
 

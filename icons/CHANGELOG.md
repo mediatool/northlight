@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.6](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.5...@northlight/icons@1.3.6) (2024-01-03)
+
+
+### Bug Fixes
+
+* **norhtlight:** icons structure modification ([a50cb7b](https://github.com/mediatool/northlight/commit/a50cb7ba4ac55e015a689b74fb3610143a27b2f5))
+
+
+
+
+
 ## [1.3.5](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.4...@northlight/icons@1.3.5) (2023-12-21)
 
 

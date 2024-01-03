@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.4.1...@northlight/tokens@1.4.2) (2024-01-03)
+
+**Note:** Version bump only for package @northlight/tokens
+
+
+
+
+
 ## [1.4.1](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.4.0...@northlight/tokens@1.4.1) (2023-12-21)
 
 

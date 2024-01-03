@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.20.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.20.0...@northlight/ui@2.20.1) (2024-01-03)
+
+
+### Bug Fixes
+
+* **framework:** add custom test-id to select menu component ([48a5f27](https://github.com/mediatool/northlight/commit/48a5f2729722dec2d341116bbc0eafb7358861c5))
+* **framework:** add forwardRef to headings components ([a642da5](https://github.com/mediatool/northlight/commit/a642da58bef5ab57b4a996591e27e7ca482104e3))
+* **framework:** fix multi sort infinite re-render bug ([fe272a4](https://github.com/mediatool/northlight/commit/fe272a4d016179bbbee70eb76952d3f24cd83ca8))
+
+
+
+
+
 # [2.20.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.19.0...@northlight/ui@2.20.0) (2023-12-21)
 
 
