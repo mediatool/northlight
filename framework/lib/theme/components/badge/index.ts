@@ -1,4 +1,5 @@
-import { ComponentSingleStyleConfig } from '@chakra-ui/react'
+import { ComponentSingleStyleConfig, useToken } from '@chakra-ui/react'
+import { getContrastColor } from '../../../utils'
 
 export const Badge: ComponentSingleStyleConfig = {
   baseStyle: ({ colorScheme, theme: { colors } }) => {
@@ -19,11 +20,10 @@ export const Badge: ComponentSingleStyleConfig = {
       const bgColor = colorScheme === 'mediatoolBlue'
         ? colors[colorScheme][500]
         : colors[colorScheme] && colors[colorScheme][500]
-      const textColor = colorScheme === 'yellow' ? 'mono.black' : 'mono.white'
 
       return {
         bgColor,
-        color: textColor,
+        color: getContrastColor(bgColor ?? useToken('colors', colorScheme)),
       }
     },
     outline: ({ colorScheme, theme: { colors } }) => {
