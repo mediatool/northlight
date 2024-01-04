@@ -1,4 +1,5 @@
-import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { ComponentMultiStyleConfig, useToken } from '@chakra-ui/react'
+import { getContrastColor } from '../../../utils'
 
 export const Tag: ComponentMultiStyleConfig = {
   parts: [ 'container' ],
@@ -25,17 +26,21 @@ export const Tag: ComponentMultiStyleConfig = {
     },
   },
   variants: {
-    solid: ({ theme: { colors }, colorScheme }) => ({
+    solid: ({ theme: { colors, bgColor }, colorScheme }) => ({
       container: {
-        bgColor: colors[colorScheme] && colors[colorScheme][500]
-          ? colors[colorScheme][500] : colorScheme,
-        color: colorScheme === 'yellow' ? 'mono.black' : 'mono.white',
+        bgColor:
+          colors[colorScheme] && colors[colorScheme][500]
+            ? colors[colorScheme][500]
+            : colorScheme,
+        color: getContrastColor(bgColor ?? useToken('colors', colorScheme)),
       },
     }),
     subtle: ({ theme: { colors }, colorScheme }) => ({
       container: {
-        bgColor: colors[colorScheme] && colors[colorScheme][100]
-          ? colors[colorScheme][100] : colorScheme,
+        bgColor:
+          colors[colorScheme] && colors[colorScheme][100]
+            ? colors[colorScheme][100]
+            : colorScheme,
         color: 'mono.black',
       },
     }),
