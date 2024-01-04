@@ -39,7 +39,6 @@ export const Button: ComponentSingleStyleConfig = {
   variants: {
     default: ({ theme: { colors: color } }) => ({
       bgColor: color.background.button.default,
-      color: color.text.button.default,
       _hover: {
         bgColor: color.background.button['default-hover'],
       },
