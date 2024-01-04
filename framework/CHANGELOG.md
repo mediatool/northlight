@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.20.1...@northlight/ui@2.22.0) (2024-01-04)
+
+
+### Bug Fixes
+
+* **framework:** broken tokens ([b6aa606](https://github.com/mediatool/northlight/commit/b6aa6062fda2b1127db56c0b829b44ac8794116a))
+* **framework:** fix broken token colors ([3792727](https://github.com/mediatool/northlight/commit/379272743cbc4d68847ebe679cd56cb0ca09ca9c))
+
+
+### Features
+
+* **framework:** add badge and tag ([78bf8ce](https://github.com/mediatool/northlight/commit/78bf8ce9c14e8721bfcb187e6635fd26298ff6bc))
+
+
+
+
+
 # [2.21.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.20.1...@northlight/ui@2.21.0) (2024-01-03)
 
 
