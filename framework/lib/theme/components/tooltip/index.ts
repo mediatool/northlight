@@ -16,13 +16,23 @@ export const Tooltip: ComponentSingleStyleConfig = {
     [$arrowBg.variable]: color.background.tooltip.default,
   }),
   variants: {
+    light: ({ theme: { colors: color, borders } }) => ({
+      color: color.text.over.success,
+      border: `
+        ${color.border.default} 
+        ${borders['1px']}
+        `,
+      bgColor: color.bg.base,
+      [$arrowBg.variable]: color.bg.base,
+      [$arrowBorder.variable]: color.border.default,
+    }),
     success: ({ theme: { colors: color } }) => ({
-      color: color.text.default,
+      color: color.text.over.success,
       bgColor: 'success-alt',
       [$arrowBg.variable]: color['success-alt'],
     }),
     info: ({ theme: { colors: color } }) => ({
-      color: color.text.default,
+      color: color.text.over.brand,
       bgColor: 'brand-alt',
       [$arrowBg.variable]: color['brand-alt'],
     }),
@@ -35,15 +45,20 @@ export const Tooltip: ComponentSingleStyleConfig = {
       borderStyle: 'solid',
       [$arrowBg.variable]: color.bg.base,
     }),
+    warning: ({ theme: { colors: color } }) => ({
+      color: color.text.over.info,
+      bgColor: color['info-alt'],
+      [$arrowBg.variable]: color['info-alt'],
+    }),
     danger: ({ theme: { colors: color } }) => ({
-      color: color.text.default,
+      color: color.text.over.error,
       bgColor: color['destructive-alt'],
       [$arrowBg.variable]: color['destructive-alt'],
     }),
-    warning: ({ theme: { colors: color } }) => ({
-      color: color.text.default,
-      bgColor: color['info-alt'],
-      [$arrowBg.variable]: color['info-alt'],
+    ai: ({ theme: { colors: color } }) => ({
+      color: color.text.inverted,
+      bgColor: color.bg.ai.default,
+      [$arrowBg.variable]: color.bg.ai.default,
     }),
   },
 }
