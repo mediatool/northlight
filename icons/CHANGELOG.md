@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.7](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.6...@northlight/icons@1.3.7) (2024-01-15)
+
+
+### Bug Fixes
+
+* **northlight:** mediaToolDuo icon stroke update ([ff4fe63](https://github.com/mediatool/northlight/commit/ff4fe637ef64c72734542cab665d499be6dc17ba))
+
+
+
+
+
 ## [1.3.6](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.5...@northlight/icons@1.3.6) (2024-01-03)
 
 
