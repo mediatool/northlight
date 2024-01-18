@@ -114,7 +114,7 @@ export const FlipButton = (props: FlipButtonProps) => {
   const state = useContext(FlipButtonContext)
   const ref = useRef(null)
 
-  const propsWithoutChildren = omit([ 'children' ], props)
+  const propsWithoutChildren = omit([ 'children' ], { ...props, 'aria-label': `${isMulti ? 'Checkbox' : 'Radio'}-input for ${value}` })
   const { inputProps } = isMulti
     ? useCheckboxGroupItem(propsWithoutChildren, state as CheckboxGroupState, ref)
     : useRadio(propsWithoutChildren, state as RadioGroupState, ref)
