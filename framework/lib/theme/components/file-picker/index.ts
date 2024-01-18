@@ -61,7 +61,7 @@ export const FilePicker: ComponentMultiStyleConfig = {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      width: '44',
+      width: 'full',
       height: '40',
       textAlign: 'center',
       position: 'relative',
