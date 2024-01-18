@@ -16,10 +16,12 @@ import { Label, P } from '../typography'
  * (?
  *
         <HStack spacing={ 4 }>
+          <Toast variant="default" title="default" />
           <Toast variant="success" title="success" />
           <Toast variant="warning" title="warning" />
-          <Toast variant="info" title="info" />
           <Toast variant="error" title="error" />
+          <Toast variant="info" title="info" />
+          <Toast variant="ai" title="mtGPT" />
         </HStack>
  * ?)
  *
@@ -30,27 +32,36 @@ export const Toast = ({
   description = '',
   onClose,
   ...rest
-}: ToastProps) => (
-  <ChakraAlert
-    variant={ variant }
-    data-testid="toast-test"
-    { ...rest }
-  >
-    <HStack alignItems="flex-start">
-      <Icon as={ toastIconMap[variant] } color={ `icon.toast.${variant}` } boxSize={ 6 } />
-      <Stack spacing={ 0 } alignItems="flex-start">
-        { title && <Label size="md">{ title }</Label> }
-        { description && (
-          <P>{ description }</P>
+}: ToastProps) => {
+  const icon = toastIconMap[variant]
+
+  return (
+    <ChakraAlert
+      variant={ variant }
+      data-testid="toast-test"
+      { ...rest }
+    >
+      <HStack alignItems="flex-start">
+        { icon && (
+        <Icon
+          as={ icon }
+          color={ `icon.toast.${variant}` }
+          boxSize={ 6 }
+        />
         ) }
-      </Stack>
-      <CloseButton
-        size="sm"
-        onClick={ onClose }
-        position="absolute"
-        insetEnd={ 1 }
-        top={ 1 }
-      />
-    </HStack>
-  </ChakraAlert>
-)
+        <Stack spacing={ 0 } alignItems="flex-start">
+          { title && <Label size="md">{ title }</Label> }
+          { description && <P>{ description }</P> }
+        </Stack>
+
+        <CloseButton
+          size="sm"
+          onClick={ onClose }
+          position="absolute"
+          insetEnd={ 1 }
+          top={ 1 }
+        />
+      </HStack>
+    </ChakraAlert>
+  )
+}

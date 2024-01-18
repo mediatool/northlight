@@ -37,5 +37,26 @@ export const Alert: ComponentMultiStyleConfig = {
         color: color.text.toast.error,
       },
     }),
+    ai: ({ theme: { colors: color } }) => ({
+      container: {
+        bgColor: color.bg.ai.default,
+        color: color.text.inverted,
+      },
+    }),
+    default: ({ theme: { colors: color } }) => ({
+      container: {
+        bgColor: color.bg.layer,
+        color: color.text.default,
+      },
+    }),
+    ghost: ({ theme: { colors: color } }) => ({
+      container: {
+        bgColor: color.bg.base,
+        color: color.text.default,
+        borderWidth: 'xs',
+        borderColor: color.border.default,
+        borderStyle: 'solid',
+      },
+    }),
   },
 }

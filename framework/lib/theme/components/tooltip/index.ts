@@ -16,28 +16,24 @@ export const Tooltip: ComponentSingleStyleConfig = {
     [$arrowBg.variable]: color.background.tooltip.default,
   }),
   variants: {
-    light: ({ theme: { colors: color, borders } }) => ({
-      color: color.text.over.success,
-      border: `
-        ${color.border.default} 
-        ${borders['1px']}
-        `,
-      bgColor: color.bg.base,
-      [$arrowBg.variable]: color.bg.base,
-      [$arrowBorder.variable]: color.border.default,
+    default: ({ theme: { colors: color } }) => ({
+      bgColor: 'bg.tertiary.default',
+      color: color.text.inverted,
+      [$arrowBg.variable]: color.bg.tertiary.default,
+      [$arrowBorder.variable]: color.bg.tertiary.default,
     }),
     success: ({ theme: { colors: color } }) => ({
-      color: color.text.over.success,
+      color: 'text.over.success',
       bgColor: 'success-alt',
       [$arrowBg.variable]: color['success-alt'],
     }),
     info: ({ theme: { colors: color } }) => ({
-      color: color.text.over.brand,
+      color: 'text.over.brand',
       bgColor: 'brand-alt',
       [$arrowBg.variable]: color['brand-alt'],
     }),
     ghost: ({ theme: { colors: color } }) => ({
-      color: color.text.default,
+      color: 'text.default',
       bgColor: color.bg.base,
       borderWidth: 'xs',
       borderColor: color.border.default,
@@ -46,19 +42,19 @@ export const Tooltip: ComponentSingleStyleConfig = {
       [$arrowBg.variable]: color.bg.base,
     }),
     warning: ({ theme: { colors: color } }) => ({
-      color: color.text.over.info,
+      color: 'text.over.warning',
       bgColor: color['info-alt'],
       [$arrowBg.variable]: color['info-alt'],
     }),
     danger: ({ theme: { colors: color } }) => ({
-      color: color.text.over.error,
+      color: 'text.over.error',
       bgColor: color['destructive-alt'],
       [$arrowBg.variable]: color['destructive-alt'],
     }),
     ai: ({ theme: { colors: color } }) => ({
-      color: color.text.inverted,
       bgColor: color.bg.ai.default,
       [$arrowBg.variable]: color.bg.ai.default,
+
     }),
   },
 }

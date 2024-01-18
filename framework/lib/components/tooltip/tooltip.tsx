@@ -2,17 +2,13 @@ import React from 'react'
 import {
   Tooltip as ChakraTooltip,
   HStack,
-  TooltipProps,
   VStack,
 } from '@chakra-ui/react'
-import { Label } from '../typography'
+import { Label, P } from '../typography'
 import { Icon } from '../icon'
 import { AlertVariants } from '../alert'
-import { toastIconMap } from '../types'
-
-export type OurTooltipProps = TooltipProps & {
-  description?: string
-}
+import { toastIconMap } from '../types/toastIconMap'
+import { OurTooltipProps } from './types'
 
 /**
  * A tooltip is a brief, informative message that appears when a user interacts with an element.
@@ -21,16 +17,17 @@ export type OurTooltipProps = TooltipProps & {
  * @example
  * (?
  * <HStack>
- *    <Tooltip label="Here’s a regular tooltip with some text
+ *    <Tooltip
+ *      description="Here’s a regular tooltip with some with icon
  *      inside of it that’s supposed to be substantially large.">
- *      <Badge>Default</Badge>
+ *      <Badge>ICON</Badge>
  *    </Tooltip>
  *    <Tooltip
- *       variant="light"
- *       description="Here’s a regular tooltip with some text
+ *       hasIcon={ false }
+ *       description="Here’s a regular tooltip with some text without icon
  *      inside of it that’s supposed to be substantially large."
  *    >
- *      <Badge>Light</Badge>
+ *      <Badge>NOICON</Badge>
  *    </Tooltip>
  * </HStack>
  * ?)
@@ -107,7 +104,7 @@ export type OurTooltipProps = TooltipProps & {
  *        <Tooltip
  *          variant="ai"
  *          description="This is an AI message">
- *        <Badge>AI</Badge>
+ *        <Badge colorScheme="teal" variant="subtle">AI</Badge>
  *        </Tooltip>
  *        <Tooltip
  *          variant="ai"
@@ -115,50 +112,61 @@ export type OurTooltipProps = TooltipProps & {
  *          description="This is an AI message with a title and an icon
  *          that’s supposed to be substantially large."
  *          >
- *          <Badge>AI</Badge>
+ *          <Badge colorScheme="teal" variant="subtle">AI</Badge>
+ *        </Tooltip>
+ *      </VStack>
+ *      <VStack>
+ *        <Tooltip
+ *          variant="ghost"
+ *          description="This is an clean message">
+ *        <Badge>Ghost</Badge>
+ *        </Tooltip>
+ *        <Tooltip
+ *          variant="ghost"
+ *          title="Please check fields"
+ *          description="This is an clean message with a title and an icon
+ *          that’s supposed to be substantially large."
+ *          >
+ *          <Badge>Ghost</Badge>
  *        </Tooltip>
  *      </VStack>
  * </HStack>
  * ?)
  */
 
-export const Tooltip = ({
+export const Tooltip: React.FC<OurTooltipProps> = ({
   variant = 'default',
   hasArrow = true,
   title = '',
   description = '',
+  hasIcon = 'true',
   ...rest
-}: OurTooltipProps) => {
-  const iconVariant = variant as AlertVariants
-  // const iconVariant = variant as TooltipIconVariants
+}) => {
+  const iconVariant: AlertVariants = variant as AlertVariants
+  const icon = toastIconMap[iconVariant]
 
   const TooltipContent = (
     <HStack alignItems="flex-start">
-      { title !== '' && iconVariant in toastIconMap ? (
-        <VStack spacing={ 0 } alignItems="flex-start">
-          <HStack>
-            <Icon
-              as={ toastIconMap[iconVariant] }
-              color={ `icon.toast.${iconVariant}` }
-            />
-            <Label size="md">{ title }</Label>
-          </HStack>
-          <Label sx={ { fontWeight: 400 } }>{ description }</Label>
-        </VStack>
-      )
-        : (
-          <Label variant="14">{ description }</Label>
-        ) }
+      { hasIcon && <Icon as={ icon } color={ `icon.toast.${iconVariant}` } /> }
+      <VStack spacing={ 0 } alignItems="flex-start">
+        <Label size="sm">{ title }</Label>
+        <P
+          variant="14"
+          sx={ {
+            color: !variant || variant === 'ai' || variant === 'default' ? 'text.inverted' : undefined,
+          } }
+        >
+          { description }
+        </P>
+      </VStack>
     </HStack>
   )
-
   return (
     <ChakraTooltip
-      variant={ variant }
       hasArrow={ hasArrow }
-      title={ title }
-      description={ description }
-      label={ title !== '' ? TooltipContent : description }
+      hasIcon={ hasIcon }
+      label={ title || description ? TooltipContent : undefined }
+      variant={ variant }
       { ...rest }
     />
   )
