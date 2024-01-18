@@ -1,7 +1,7 @@
 import WebappComponentsTokensSet from './dist/webapp/webapp-components.json'
 import WebappSystemTokensSet from './dist/webapp/webapp.json'
 import TottComponentsTokensSet from './dist/tott/tott-components.json'
-import TottSysstemTokensSet from './dist/tott/tott.json'
+import TottSystemTokensSet from './dist/tott/tott.json'
 
 export {
   color as palette,
@@ -20,5 +20,5 @@ export {
   WebappComponentsTokensSet,
   WebappSystemTokensSet,
   TottComponentsTokensSet,
-  TottSysstemTokensSet,
+  TottSystemTokensSet,
 }
