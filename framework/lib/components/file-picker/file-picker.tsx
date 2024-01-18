@@ -305,7 +305,7 @@ export const FilePicker = ({
               justifyContent="center"
               bgColor="bg.layer"
               borderRadius={ 6 }
-              width="90%"
+              width="44"
               py={ 2 }
             >
               { editFileOptions.canEdit && (
