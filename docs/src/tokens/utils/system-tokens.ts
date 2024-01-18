@@ -1,5 +1,5 @@
 import {
-  TottSysstemTokensSet,
+  TottSystemTokensSet,
   WebappSystemTokensSet,
   typography,
 } from '@northlight/tokens'
@@ -12,7 +12,7 @@ const getThemeSet = (theme: CurrentTheme) => {
     case 'webappTheme':
       return WebappSystemTokensSet
     case 'tottTheme':
-      return TottSysstemTokensSet
+      return TottSystemTokensSet
     default:
       return WebappSystemTokensSet
   }
