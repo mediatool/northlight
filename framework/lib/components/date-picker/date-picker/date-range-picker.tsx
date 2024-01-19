@@ -12,6 +12,7 @@ import { P } from '../../typography'
 import { HStack } from '../../stack'
 import { DateRangePickerProps } from '../types'
 import { Popover, PopoverAnchor, PopoverContent } from '../../popover'
+import { Portal } from '../../portal'
 import { DateField, StyledField, Trigger } from '../components/date-field'
 import { IconButton } from '../../icon-button'
 import { InputGroup, InputRightElement } from '../../input'
@@ -169,7 +170,8 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
           />
         </HStack>
       </PopoverAnchor>
-      { state.isOpen && (
+      <Portal>
+        { state.isOpen && (
         <PopoverContent { ...dialogProps } ref={ ref } w="max-content">
           <FocusScope contain={ true } restoreFocus={ true }>
             <RangeCalendar
@@ -182,7 +184,8 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
             />
           </FocusScope>
         </PopoverContent>
-      ) }
+        ) }
+      </Portal>
     </Popover>
   )
 }
