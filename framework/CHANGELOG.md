@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.22.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.22.1...@northlight/ui@2.22.2) (2024-01-24)
+
+
+### Bug Fixes
+
+* **framework:** aria-label issue flip button ([7991eb7](https://github.com/mediatool/northlight/commit/7991eb76e8f6162e158fa086eddb7c645415b045))
+* **framework:** data-testid suppport for all components ([345698b](https://github.com/mediatool/northlight/commit/345698b2d48caa1eb5d76f594405c59f684804e3))
+* **framework:** extra isMultiCheck to avoid error ([03398b7](https://github.com/mediatool/northlight/commit/03398b7fa5d720690de84895018b9a18ceabb030))
+* **framework:** fix mispelling ([e36b574](https://github.com/mediatool/northlight/commit/e36b574566488eb35df6e70ae313153c016be259))
+* **framework:** make file picker full width by default ([d808f95](https://github.com/mediatool/northlight/commit/d808f9506ea766acd8fa0db4cc0cbc269b2da791))
+
+
+
+
+
 ## [2.22.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.22.0...@northlight/ui@2.22.1) (2024-01-15)
 
 **Note:** Version bump only for package @northlight/ui

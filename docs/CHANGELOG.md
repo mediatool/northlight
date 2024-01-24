@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.2](https://github.com/mediatool/northlight/compare/@northlight/docs@1.8.1...@northlight/docs@1.8.2) (2024-01-24)
+
+
+### Bug Fixes
+
+* **framework:** fix mispelling ([e36b574](https://github.com/mediatool/northlight/commit/e36b574566488eb35df6e70ae313153c016be259))
+
+
+
+
+
 ## [1.8.1](https://github.com/mediatool/northlight/compare/@northlight/docs@1.8.0...@northlight/docs@1.8.1) (2024-01-15)
 
 **Note:** Version bump only for package @northlight/docs

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.7...@northlight/icons@1.4.0) (2024-01-24)
+
+
+### Features
+
+* **northlight/icons:** new icons, minimize, play and pause ([6143974](https://github.com/mediatool/northlight/commit/614397454e32c40e585dd8cfc36d042bc3aa3f7c))
+
+
+
+
+
 ## [1.3.7](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.6...@northlight/icons@1.3.7) (2024-01-15)
 
 
