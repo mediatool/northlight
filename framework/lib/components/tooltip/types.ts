@@ -4,6 +4,6 @@ export type TooltipVariants = 'success' | 'warning' | 'error' | 'info' | 'danger
 
 export interface OurTooltipProps extends ChakraTooltipProps {
   variant?: TooltipVariants
-  description?: string
+  description?: React.ReactNode
   hasIcon?: boolean
 }
