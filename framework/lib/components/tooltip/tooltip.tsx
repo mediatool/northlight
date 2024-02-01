@@ -29,6 +29,29 @@ import { OurTooltipProps } from './types'
  *    >
  *      <Badge>NOICON</Badge>
  *    </Tooltip>
+ *    <Tooltip
+ *      hasIcon={ false }
+ *      description={
+ *        <Box>
+ *          <Text>
+ *            Some text
+ *          </Text>
+ *          <UnorderedList>
+ *            <ListItem>
+ *              List item 1
+ *            </ListItem>
+ *            <ListItem>
+ *              List item 2
+ *            </ListItem>
+ *            <ListItem>
+ *              List item 3
+ *            </ListItem>
+ *          </UnorderedList>
+ *        </Box>
+ *      }
+ *    >
+ *      <Badge>With JSX content</Badge>
+ *    </Tooltip>
  * </HStack>
  * ?)
  *
