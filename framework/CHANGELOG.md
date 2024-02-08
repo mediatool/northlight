@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.23.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.22.2...@northlight/ui@2.23.0) (2024-02-08)
+
+
+### Bug Fixes
+
+* **framework:** add jsx to tooltip type ([ee12a7a](https://github.com/mediatool/northlight/commit/ee12a7a881e3fd34c4f3f78a8a29f81d018c885b))
+
+
+### Features
+
+* **lib:** added createable select dropdown ([6fea18c](https://github.com/mediatool/northlight/commit/6fea18c82176dd3753758e1c2b47bac6da92d26e))
+
+
+
+
+
 ## [2.22.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.22.1...@northlight/ui@2.22.2) (2024-01-24)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.4.0...@northlight/icons@1.5.0) (2024-02-08)
+
+
+### Features
+
+* **northlight/icons:** fileCSV icon ([cb4d78a](https://github.com/mediatool/northlight/commit/cb4d78ad23d8e303bd642bc152e9134e1443626b))
+* **northlight/icons:** new document icons ([109bc3b](https://github.com/mediatool/northlight/commit/109bc3baf9337e258da2f5f7b2dec1e6eaddb49e))
+
+
+
+
+
 # [1.4.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.3.7...@northlight/icons@1.4.0) (2024-01-24)
 
 
