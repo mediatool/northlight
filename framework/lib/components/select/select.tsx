@@ -148,6 +148,7 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
   'data-testid': testId,
   customOption = null,
   customTag = null,
+  isClearable = false,
   value,
   icon,
   ...rest
@@ -185,7 +186,7 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
         useBasicStyles={ true }
         closeMenuOnSelect={ !isMulti }
         hideSelectedOptions={ false }
-        isClearable={ false }
+        isClearable={ isClearable }
         onChange={ handleChange }
         selectedOptionStyle="check"
         chakraStyles={ customSelectStyles }
