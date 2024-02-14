@@ -1,7 +1,9 @@
 import React from 'react'
 import { chakraComponents } from 'chakra-react-select'
 import { PlusSolid } from '@northlight/icons'
-import { Box, Flex, Icon } from '@chakra-ui/react'
+import { Icon } from '../icon'
+import { Box } from '../box'
+import { Flex } from '../flex'
 
 export const customComponents = {
   Option: ({ children, ...props }: any) => (
