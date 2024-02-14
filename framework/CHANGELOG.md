@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.24.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.23.0...@northlight/ui@2.24.0) (2024-02-14)
+
+
+### Features
+
+* **lib:** optional currentoption prop for createable select ([24efccf](https://github.com/mediatool/northlight/commit/24efccf03fb941f41c9e0818a5ea6376e084752a))
+
+
+
+
+
 # [2.23.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.22.2...@northlight/ui@2.23.0) (2024-02-08)
 
 
