@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import { CreatableSelect } from 'chakra-react-select'
-import type { Option } from '@northlight/ui'
+import React, { useMemo, useState } from 'react'
+import { ActionMeta, CreatableSelect } from 'chakra-react-select'
+import type { Option, SingleValue } from '@northlight/ui'
 import { PlusSolid } from '@northlight/icons'
 import { Icon } from '@chakra-ui/react'
+import { customSelectStyles } from '../../theme/components/select/custom-select'
 import type { CreatableSelectDropdownProps, CreationOption } from './types'
 import { customComponents } from './custom-components'
 
@@ -12,31 +13,64 @@ import { customComponents } from './custom-components'
  * @see {@link https://northlight.dev/reference/creatable-select-dropdown}
  *
  * @example (Example)
- * ##Select the best artist
  * (?
  * () => {
  *   const [artist, setArtist] = useState(null);
- *   const options = [
+ *   const [element, setElement] = useState({ label: 'Technique', value: 'technique' })
+ *   const someOptions = [
  *     { label: 'Scooter', value: 'scooter' },
  *     { label: 'Snoop Doggy Dogg', value: 'snoop-dogg' },
  *   ];
  *
- *   const handleOptionChange = (newOption) => {
- *     setArtist(newOption);
- *     // Perform additional actions with the selected or created option
- *   };
+*   const someOtherOptions = [
+ *     { label: 'Vision', value: 'vision' },
+ *     { label: 'Technique', value: 'technique' },
+ *     { label: 'Expression', value: 'expression' }
+ *   ];
  *
  *   return (
- *     <Box align="left">
- *       <CreatableSelectDropdown
- *         standardOptions={options}
- *         onOptionChange={handleOptionChange}
- *         width="300px"
- *       />
- *       { artist && artist.value !== 'Add option...' && (
- *          <H3 py={8}>The best artist is: { artist.label }</H3>
- *        ) }
- *     </Box>
+ *     <VStack gap={10} alignItems={"flex-start"}>
+ *       <Box align="left">
+ *         <H1>Basic example</H1>
+ *         <H3>Select the best artist</H3>
+ *         <CreatableSelectDropdown
+ *           standardOptions={someOptions}
+ *           onOptionChange={setArtist}
+ *           width="300px"
+ *         />
+ *         {artist && artist.value !== 'Add option...' && (
+ *           <H3 py={8}>The best artist is: {artist.label}</H3>
+ *         )}
+ *       </Box>
+ *       <Box align="left">
+ *         <H1>Pre-selected option</H1>
+ *         <H3>What is the quintessential element of an exceptional artisan?</H3>
+ *         <CreatableSelectDropdown
+ *           standardOptions={someOtherOptions}
+ *           onOptionChange={setElement}
+ *           width="300px"
+ *           initialValue="technique"
+ *         />
+ *         {element && element.value !== 'Add option...' && (
+ *           <H3 py={8}>
+ *             {element.value === 'vision' && (
+ *               'The artist\'s vision shapes their creative world.'
+ *             )}
+ *             {element.value === 'technique' && (
+ *               'Technique is the legacy\'s bedrock.'
+ *             )}
+ *             {element.value === 'expression' && (
+ *               'Expression communicates the artist\'s inner voice.'
+ *             )}
+ *             {element.value !== 'vision' &&
+ *                element.value !== 'technique' &&
+ *                element.value !== 'expression' && (
+ *               'Absent the selection of legitimate alternatives.'
+ *              )}
+ *           </H3>
+ *         )}
+ *       </Box>
+ *     </VStack>
  *   );
  * }
  * ?)
@@ -54,8 +88,13 @@ export const CreatableSelectDropdown = ({
   onOptionChange,
   width = '100%',
   variant = 'outline',
+  initialValue = '',
 }: CreatableSelectDropdownProps) => {
-  const [ selectedOption, setSelectedOption ] = useState<Option | null>(null)
+  const initialSelectedOption = useMemo(() => standardOptions.find(
+    (option) => option.value === initialValue) || null, [ ]
+  )
+
+  const [ selectedOption, setSelectedOption ] = useState<Option | null>(initialSelectedOption)
   const [ newOptionText, setNewOptionText ] = useState('')
   const [ newOptionPlaceholder, setNewOptionPlaceholder ] = useState(initialPlaceholder)
   const [ createdOptions, setCreatedOptions ] = useState<Option[]>([])
@@ -84,7 +123,11 @@ export const CreatableSelectDropdown = ({
     return option && typeof option.isCreation === 'string'
   }
 
-  const handleChange = (option: Option | CreationOption | null) => {
+  const handleChange = (
+    newValue: SingleValue<Option>,
+    _actionMeta: ActionMeta<Option>) => {
+    const option = newValue
+
     if (option === null) {
       return
     }
@@ -118,6 +161,7 @@ export const CreatableSelectDropdown = ({
   return (
     <CreatableSelect
       chakraStyles={ {
+        ...customSelectStyles,
         container: (provided) => ({
           ...provided,
           width,
@@ -133,6 +177,7 @@ export const CreatableSelectDropdown = ({
       options={ customOptions }
       value={ selectedOption }
       onChange={ handleChange }
+      isMulti={ false }
       onInputChange={ handleInputChange }
       onKeyDown={ handleKeyDown }
       onCreateOption={ handleCreateOption }
