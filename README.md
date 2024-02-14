@@ -11,6 +11,7 @@ To start up a local environment of the Northlight UI framework docs:
 3) Run `yarn`.
 4) Open one teminal, navigate to the /docs directory, and run `yarn nx dev`.
 5) Open another terminal, navigate to the /framework directory, and `yarn watch`.
+6) Open a third terminal, navigate to the /docs directory and run `yarn transpile:watch`.
 
 This will spin up a local environment at [localhost:5173](http://localhost:5173) (or the first available port after that).
 
