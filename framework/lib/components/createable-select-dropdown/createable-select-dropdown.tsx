@@ -1,11 +1,11 @@
 import React, { useMemo, useState } from 'react'
-import { ActionMeta, CreatableSelect } from 'chakra-react-select'
-import type { Option, SingleValue } from '@northlight/ui'
+import { ActionMeta, CreatableSelect, SingleValue } from 'chakra-react-select'
 import { PlusSolid } from '@northlight/icons'
-import { Icon } from '@chakra-ui/react'
+import { Icon } from '../icon'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 import type { CreatableSelectDropdownProps, CreationOption } from './types'
 import { customComponents } from './custom-components'
+import { Option } from '../select'
 
 /**
  * A dropdown component that allows users to select a value from given options

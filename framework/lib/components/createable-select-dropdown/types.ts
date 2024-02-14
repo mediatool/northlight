@@ -1,5 +1,5 @@
-import type { Option } from '@northlight/ui'
 import { Variant } from 'chakra-react-select/dist/types/types'
+import { Option } from '../select'
 
 export interface CreationOption extends Option {
   isCreation: boolean
