@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.0...@northlight/ui@2.24.1) (2024-02-14)
+
+
+### Bug Fixes
+
+* imports that were wrong ([2b9e28e](https://github.com/mediatool/northlight/commit/2b9e28ea1b8fe59e2afd9e0025805e60f2a501d6))
+
+
+
+
+
 # [2.24.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.23.0...@northlight/ui@2.24.0) (2024-02-14)
 
 
