@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.1...@northlight/ui@2.24.2) (2024-02-15)
+
+
+### Bug Fixes
+
+* **framework:** select is clearable ([d6c5441](https://github.com/mediatool/northlight/commit/d6c54413771d885566ed12c0ac5ce5004042b89a))
+
+
+
+
+
 ## [2.24.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.0...@northlight/ui@2.24.1) (2024-02-14)
 
 
