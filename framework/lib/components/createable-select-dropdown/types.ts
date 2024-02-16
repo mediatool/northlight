@@ -5,12 +5,12 @@ export interface CreationOption extends Option {
   isCreation: boolean
 }
 
-export interface CreatableSelectDropdownProps {
+export interface CreatableSelectDropdownProps<T extends string = string> {
   /**
    * An array of "Option" objects that represents the initial options available in the dropdown.
    * Each "Option" object must have a "label" and a "value" property (both strings).
    */
-  standardOptions: Option[]
+  standardOptions: Option<T>[]
 
   /**
    * A callback function that is called whenever the selected option changes.
@@ -55,5 +55,5 @@ export interface CreatableSelectDropdownProps {
   /**
    * Value of the initially selected option.
    */
-  initialValue?: string
+  initialValue?: T
 }

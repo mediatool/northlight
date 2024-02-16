@@ -15,9 +15,9 @@ import { InputFieldProps } from '../../types'
 export type { SingleValue, MultiValue } from 'chakra-react-select'
 
 type Size = 'sm' | 'md' | 'lg'
-export interface Option {
+export interface Option<T extends string = string> {
   label: string
-  value: string
+  value: T
 }
 
 export interface SelectProps<T, K extends boolean>

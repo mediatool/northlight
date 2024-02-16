@@ -1,11 +1,12 @@
-import React, { useMemo, useState } from 'react'
-import { ActionMeta, CreatableSelect, SingleValue } from 'chakra-react-select'
+import React, { useMemo, useRef, useState } from 'react'
+import { ActionMeta, CreatableSelect } from 'chakra-react-select'
+import type { Option, SingleValue } from '@northlight/ui'
 import { PlusSolid } from '@northlight/icons'
-import { Icon } from '../icon'
+import { Box, Icon, useOutsideClick } from '@chakra-ui/react'
+import { isNil } from 'ramda'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 import type { CreatableSelectDropdownProps, CreationOption } from './types'
 import { customComponents } from './custom-components'
-import { Option } from '../select'
 
 /**
  * A dropdown component that allows users to select a value from given options
@@ -76,7 +77,7 @@ import { Option } from '../select'
  * ?)
  */
 
-export const CreatableSelectDropdown = ({
+export const CreatableSelectDropdown = <T extends string = string> ({
   standardOptions,
   initialPlaceholder = 'Select or create...',
   addOptionPlaceholder = 'Enter text...',
@@ -88,16 +89,36 @@ export const CreatableSelectDropdown = ({
   onOptionChange,
   width = '100%',
   variant = 'outline',
-  initialValue = '',
-}: CreatableSelectDropdownProps) => {
-  const initialSelectedOption = useMemo(() => standardOptions.find(
-    (option) => option.value === initialValue) || null, [ ]
+  initialValue,
+}: CreatableSelectDropdownProps<T>) => {
+  const initialSelectedOption = useMemo(() => {
+    if (isNil(initialValue)) {
+      return null
+    }
+    return standardOptions.find((option) => option.value === initialValue) ?? null
+  }, []
   )
 
-  const [ selectedOption, setSelectedOption ] = useState<Option | null>(initialSelectedOption)
+  const [ selectedOption, setSelectedOption ] =
+    useState<Option | null>(initialSelectedOption)
   const [ newOptionText, setNewOptionText ] = useState('')
   const [ newOptionPlaceholder, setNewOptionPlaceholder ] = useState(initialPlaceholder)
   const [ createdOptions, setCreatedOptions ] = useState<Option[]>([])
+
+  function isCreationOption (option: any): option is CreationOption {
+    return option && typeof option.isCreation === 'boolean'
+  }
+
+  const ref = useRef<HTMLDivElement>(null)
+  useOutsideClick({
+    ref,
+    handler: () => {
+      if (isCreationOption(selectedOption)) {
+        setSelectedOption(initialSelectedOption)
+        setNewOptionPlaceholder(initialPlaceholder)
+      }
+    },
+  })
 
   const handleInputChange = (newValue: string) => {
     setNewOptionText(newValue)
@@ -119,10 +140,6 @@ export const CreatableSelectDropdown = ({
     setNewOptionPlaceholder(initialPlaceholder)
   }
 
-  function isCreationOption (option: any): option is CreationOption {
-    return option && typeof option.isCreation === 'string'
-  }
-
   const handleChange = (
     newValue: SingleValue<Option>,
     _actionMeta: ActionMeta<Option>) => {
@@ -133,11 +150,10 @@ export const CreatableSelectDropdown = ({
     }
     if (isCreationOption(option)) {
       setNewOptionPlaceholder(addOptionPlaceholder)
-      setSelectedOption(null)
     } else {
       setNewOptionPlaceholder(initialPlaceholder)
-      setSelectedOption(option)
     }
+    setSelectedOption(option)
     onOptionChange(option)
   }
 
@@ -159,32 +175,35 @@ export const CreatableSelectDropdown = ({
   ]
 
   return (
-    <CreatableSelect
-      chakraStyles={ {
-        ...customSelectStyles,
-        container: (provided) => ({
-          ...provided,
-          width,
-        }),
-        option: (provided, { isSelected }) => ({
-          ...provided,
-          ...(isSelected && {
-            color: 'black',
+    <Box ref={ ref }>
+      <CreatableSelect
+        chakraStyles={ {
+          ...customSelectStyles,
+          container: (provided) => ({
+            ...provided,
+            width,
           }),
-        }),
-      } }
-      components={ customComponents }
-      options={ customOptions }
-      value={ selectedOption }
-      onChange={ handleChange }
-      isMulti={ false }
-      onInputChange={ handleInputChange }
-      onKeyDown={ handleKeyDown }
-      onCreateOption={ handleCreateOption }
-      placeholder={ newOptionPlaceholder }
-      inputValue={ newOptionText }
-      useBasicStyles={ true }
-      variant={ variant }
-    />
+          option: (provided, { isSelected }) => ({
+            ...provided,
+            ...(isSelected && {
+              color: 'black',
+            }),
+          }),
+        } }
+        components={ customComponents }
+        options={ customOptions }
+        value={ selectedOption }
+        onChange={ handleChange }
+        isMulti={ false }
+        onInputChange={ handleInputChange }
+        onKeyDown={ handleKeyDown }
+        onCreateOption={ handleCreateOption }
+        placeholder={ newOptionPlaceholder }
+        inputValue={ newOptionText }
+        useBasicStyles={ true }
+        variant={ variant }
+      />
+
+    </Box>
   )
 }
