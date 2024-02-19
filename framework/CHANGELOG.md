@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.2...@northlight/ui@2.24.3) (2024-02-19)
+
+
+### Bug Fixes
+
+* **framework-createable-select-dropdown:** reset selection ([e4e95e9](https://github.com/mediatool/northlight/commit/e4e95e9495006e1c4b6b93e371f28de08855577f))
+
+
+
+
+
 ## [2.24.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.1...@northlight/ui@2.24.2) (2024-02-15)
 
 
