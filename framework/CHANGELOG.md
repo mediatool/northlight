@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.3...@northlight/ui@2.24.4) (2024-02-19)
+
+
+### Bug Fixes
+
+* **framework:** change default popover z index ([0f97132](https://github.com/mediatool/northlight/commit/0f97132c53d72380b3efa29c8f3c6d34af67bfa7))
+* **framework:** render date-range-picker in portal by default ([50daf0d](https://github.com/mediatool/northlight/commit/50daf0dc4c38291c9536b45b1e0a62f2f5274c2d))
+
+
+
+
+
 ## [2.24.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.2...@northlight/ui@2.24.3) (2024-02-19)
 
 
