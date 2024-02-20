@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.4...@northlight/ui@2.24.5) (2024-02-20)
+
+
+### Bug Fixes
+
+* **framework:** fiscal year at wrong place ([27179d6](https://github.com/mediatool/northlight/commit/27179d6f2ad4ccb852b0554f3c0e6da2d6a24457))
+
+
+
+
+
 ## [2.24.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.3...@northlight/ui@2.24.4) (2024-02-19)
 
 
