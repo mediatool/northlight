@@ -16,7 +16,9 @@
     "clean": "nx run-many --target=clean --all && nx reset",
     "lint": "nx run-many --target=lint --all",
     "test": "nx run-many --target=test --all",
-    "transpile": "nx run-many --target=transpile --all"
+    "transpile": "nx run-many --target=transpile --all",
+    "ci:version-packages": "changeset version",
+    "ci:publish-packages": "yarn transpile && yarn changeset publish"
   },
   "name": "northlight"
 }
