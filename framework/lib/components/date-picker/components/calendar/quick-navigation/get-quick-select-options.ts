@@ -18,14 +18,18 @@ export const getQuickSelectOptions = (
 ) => {
   const thisDay = today(state.timeZone)
 
-  const startOfMonthWithDays = (date: CalendarDate,
-    { months, days }: { months: number, days: number }) => {
+  const startOfMonthWithDays = (
+    date: CalendarDate,
+    { months, days }: { months: number, days: number }
+  ) => {
     const start = date.add({ months }).set({ day: days })
     return start
   }
 
-  const endOfMonthWithDays = (date: CalendarDate,
-    { months, days }:{ months: number, days: number }) => {
+  const endOfMonthWithDays = (
+    date: CalendarDate,
+    { months, days }: { months: number, days: number }
+  ) => {
     const end = date.add({ months }).set({ day: days }).subtract({ days: 1 })
     return end
   }
@@ -110,13 +114,21 @@ export const getQuickSelectOptions = (
     label: 'Next Year',
   }
 
+  const offsetFiscalYear =
+    thisDay.month < fiscalStartMonth ||
+    (thisDay.month === fiscalStartMonth && thisDay.day < fiscalStartDay)
+      ? 1
+      : 0
+
   const thisFiscalYear = {
     value: {
       start: startOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth, days: fiscalStartDay }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        { months: fiscalStartMonth, days: fiscalStartDay }
       ),
       end: endOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 11, days: fiscalStartDay }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        { months: fiscalStartMonth + 12, days: fiscalStartDay }
       ),
     },
     label: 'This Fiscal Year',
@@ -125,12 +137,18 @@ export const getQuickSelectOptions = (
   const lastFiscalYear = {
     value: {
       start: startOfMonthWithDays(
-        startOfYear(thisDay).subtract({ years: 1 }),
-        { months: fiscalStartMonth, days: fiscalStartDay - 1 }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear + 1 }),
+        {
+          months: fiscalStartMonth,
+          days: fiscalStartDay,
+        }
       ),
       end: endOfMonthWithDays(
-        startOfYear(thisDay).subtract({ years: 1 }),
-        { months: fiscalStartMonth + 11, days: fiscalStartDay }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear + 1 }),
+        {
+          months: fiscalStartMonth + 12,
+          days: fiscalStartDay,
+        }
       ),
     },
     label: 'Last Fiscal Year',
@@ -138,9 +156,10 @@ export const getQuickSelectOptions = (
 
   const yearToDate = {
     value: {
-      start: startOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth, days: fiscalStartDay }
-      ),
+      start: startOfMonthWithDays(startOfYear(thisDay), {
+        months: fiscalStartMonth,
+        days: fiscalStartDay,
+      }),
       end: thisDay,
     },
     label: 'Year to Date',
@@ -149,10 +168,18 @@ export const getQuickSelectOptions = (
   const F1 = {
     value: {
       start: startOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth, days: fiscalStartDay }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth,
+          days: fiscalStartDay,
+        }
       ),
       end: endOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 3, days: fiscalStartDay }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth + 3,
+          days: fiscalStartDay,
+        }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q1' : 'FQ1',
@@ -161,10 +188,18 @@ export const getQuickSelectOptions = (
   const F2 = {
     value: {
       start: startOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 3, days: fiscalStartDay }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth + 3,
+          days: fiscalStartDay,
+        }
       ),
       end: endOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 6, days: fiscalStartDay }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth + 6,
+          days: fiscalStartDay,
+        }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q2' : 'FQ2',
@@ -173,10 +208,18 @@ export const getQuickSelectOptions = (
   const F3 = {
     value: {
       start: startOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 6, days: fiscalStartDay }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth + 6,
+          days: fiscalStartDay,
+        }
       ),
       end: endOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 9, days: fiscalStartDay }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth + 9,
+          days: fiscalStartDay,
+        }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q3' : 'FQ3',
@@ -185,10 +228,18 @@ export const getQuickSelectOptions = (
   const F4 = {
     value: {
       start: startOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 9, days: fiscalStartDay }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth + 9,
+          days: fiscalStartDay,
+        }
       ),
       end: endOfMonthWithDays(
-        startOfYear(thisDay), { months: fiscalStartMonth + 12, days: fiscalStartDay }
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth + 12,
+          days: fiscalStartDay,
+        }
       ),
     },
     label: fiscalStartMonth === 0 ? 'Q4' : 'FQ4',
@@ -196,7 +247,7 @@ export const getQuickSelectOptions = (
 
   const fiscalQuarters = [ F1, F2, F3, F4 ]
   const fiscalYears =
-      fiscalStartMonth === 0 ? [] : [ thisFiscalYear, lastFiscalYear ]
+    fiscalStartMonth === 0 ? [] : [ thisFiscalYear, lastFiscalYear ]
 
   const quickDates = [
     thisWeek,
