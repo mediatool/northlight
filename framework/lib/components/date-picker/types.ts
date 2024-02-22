@@ -40,6 +40,7 @@ export interface DateRangePickerProps
   maxValue?: string | undefined
   fiscalStartMonth?: number
   fiscalStartDay?: number
+  renderInPortal?: boolean
 }
 
 export interface DatePickerFieldProps

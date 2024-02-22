@@ -24,6 +24,19 @@ const parseValue = (value: any) => {
   return { start: parseDate(value.startDate), end: parseDate(value.endDate) }
 }
 
+const PortalWrapper = ({
+  renderInPortal,
+  children,
+}: {
+  renderInPortal: boolean
+  children: React.ReactNode
+}) => {
+  if (renderInPortal) {
+    return <Portal>{ children }</Portal>
+  }
+  return <>{ children }</>
+}
+
 /**
  * Popover to choose date range on format {startDate:' yyyy-mm-dd', endDate: 'yyyy-mm-dd'}
  *
@@ -85,6 +98,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     value,
     minValue = '1994-03-08',
     maxValue,
+    renderInPortal = false,
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -170,22 +184,22 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
           />
         </HStack>
       </PopoverAnchor>
-      <Portal>
+      <PortalWrapper renderInPortal={ renderInPortal }>
         { state.isOpen && (
-        <PopoverContent { ...dialogProps } ref={ ref } w="max-content">
-          <FocusScope contain={ true } restoreFocus={ true }>
-            <RangeCalendar
-              { ...calendarProps }
-              resetDate={ resetDate }
-              handleClose={ handleClose }
-              fiscalStartMonth={ fiscalStartMonth || 0 }
-              fiscalStartDay={ fiscalStartDay || 0 }
-              isClearable={ isClearable }
-            />
-          </FocusScope>
-        </PopoverContent>
+          <PopoverContent { ...dialogProps } ref={ ref } w="max-content">
+            <FocusScope contain={ true } restoreFocus={ true }>
+              <RangeCalendar
+                { ...calendarProps }
+                resetDate={ resetDate }
+                handleClose={ handleClose }
+                fiscalStartMonth={ fiscalStartMonth || 0 }
+                fiscalStartDay={ fiscalStartDay || 0 }
+                isClearable={ isClearable }
+              />
+            </FocusScope>
+          </PopoverContent>
         ) }
-      </Portal>
+      </PortalWrapper>
     </Popover>
   )
 }
