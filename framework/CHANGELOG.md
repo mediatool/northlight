@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.6](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.5...@northlight/ui@2.24.6) (2024-02-22)
+
+
+### Bug Fixes
+
+* **framework:** date-range-picker portal be optional ([1212d6a](https://github.com/mediatool/northlight/commit/1212d6a525fd0c0330bbc5182461957032e80f63))
+
+
+
+
+
 ## [2.24.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.4...@northlight/ui@2.24.5) (2024-02-20)
 
 
