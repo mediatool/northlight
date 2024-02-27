@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.25.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.6...@northlight/ui@2.25.0) (2024-02-27)
+
+
+### Features
+
+* **lib-createable-select-dropdown:** added menuPlacement prop ([bc0ea98](https://github.com/mediatool/northlight/commit/bc0ea9869fa043f8a6758db05fc856488fc58aaa))
+
+
+
+
+
 ## [2.24.6](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.5...@northlight/ui@2.24.6) (2024-02-22)
 
 
