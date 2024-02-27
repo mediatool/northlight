@@ -90,6 +90,7 @@ export const CreatableSelectDropdown = <T extends string = string> ({
   width = '100%',
   variant = 'outline',
   initialValue,
+  menuPlacement = 'bottom',
 }: CreatableSelectDropdownProps<T>) => {
   const initialSelectedOption = useMemo(() => {
     if (isNil(initialValue)) {
@@ -177,6 +178,7 @@ export const CreatableSelectDropdown = <T extends string = string> ({
   return (
     <Box ref={ ref }>
       <CreatableSelect
+        menuPlacement={ menuPlacement }
         chakraStyles={ {
           ...customSelectStyles,
           container: (provided) => ({

@@ -56,4 +56,11 @@ export interface CreatableSelectDropdownProps<T extends string = string> {
    * Value of the initially selected option.
    */
   initialValue?: T
+
+  /**
+   *
+    Default placement of the menu in relation to the control. 'auto'
+    will flip when there isn't enough space below the control. Defaults to "bottom".
+   */
+  menuPlacement?: 'top' | 'bottom' | 'auto'
 }
