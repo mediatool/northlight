@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { XCloseSolid } from '@northlight/icons'
-import { identity } from 'ramda'
+import { equals, identity } from 'ramda'
 import { Option, SelectFieldProps } from './types'
 import { Field } from '../form'
 import { Select } from './select'
@@ -9,20 +9,23 @@ import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
 import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 
-const BaseSelectField = <T extends Option, K extends boolean = false> ({
-  name,
-  label,
-  options,
-  direction = 'column',
-  isMulti,
-  isRequired,
-  validate,
-  isClearable = true,
-  onChange: onChangeCallback = identity,
-  inputLeftElement,
-  inputRightElement,
-  ...rest
-}: SelectFieldProps<T, K>, ref: React.Ref<HTMLDivElement>) => (
+const BaseSelectField = <T extends Option, K extends boolean = false>(
+  {
+    name,
+    label,
+    options,
+    direction = 'column',
+    isMulti,
+    isRequired,
+    validate,
+    isClearable = true,
+    onChange: onChangeCallback = identity,
+    inputLeftElement,
+    inputRightElement,
+    ...rest
+  }: SelectFieldProps<T, K>,
+  ref: React.Ref<HTMLDivElement>
+) => (
   <Field
     name={ name }
     label={ label }
@@ -52,8 +55,15 @@ const BaseSelectField = <T extends Option, K extends boolean = false> ({
             } }
             value={
               value
-                ? options?.flatMap((inner : any) => (inner.options ? inner.options : inner))
-                  .filter((option: any) => value.includes(option.value)) as any
+                ? (options
+                  ?.flatMap((inner: any) =>
+                    (inner.options ? inner.options : inner)
+                  )
+                  .filter((option: any) =>
+                    (isMulti
+                      ? value.includes(option.value)
+                      : equals(value, option.value))
+                  ) as any)
                 : null
             }
             { ...rest }
@@ -65,7 +75,9 @@ const BaseSelectField = <T extends Option, K extends boolean = false> ({
           size="sm"
           fontSize="xs"
           hidden={ value === undefined || !isClearable }
-          onClick={ () => { onChange(undefined) } }
+          onClick={ () => {
+            onChange(undefined)
+          } }
           icon={ <Icon as={ XCloseSolid } /> }
         />
       </HStack>
