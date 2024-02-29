@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.25.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.25.0...@northlight/ui@2.25.1) (2024-02-29)
+
+
+### Bug Fixes
+
+* **framework:** select-field incorrect value ([3af26c4](https://github.com/mediatool/northlight/commit/3af26c434de6a39c61e9962437eb436c3d9631a7))
+
+
+
+
+
 # [2.25.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.24.6...@northlight/ui@2.25.0) (2024-02-27)
 
 
