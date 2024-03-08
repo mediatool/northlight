@@ -38,6 +38,7 @@ import { customComponents } from './custom-components'
  *           standardOptions={someOptions}
  *           onOptionChange={setArtist}
  *           width="300px"
+ *           value={artist ? artist.value : undefined}
  *         />
  *         {artist && artist.value !== 'Add option...' && (
  *           <H3 py={8}>The best artist is: {artist.label}</H3>
@@ -50,7 +51,7 @@ import { customComponents } from './custom-components'
  *           standardOptions={someOtherOptions}
  *           onOptionChange={setElement}
  *           width="300px"
- *           initialValue="technique"
+ *           value={element ? element.value : undefined}
  *         />
  *         {element && element.value !== 'Add option...' && (
  *           <H3 py={8}>
@@ -89,15 +90,18 @@ export const CreatableSelectDropdown = <T extends string = string> ({
   onOptionChange,
   width = '100%',
   variant = 'outline',
-  initialValue,
+  defaultValue,
+  value,
   menuPlacement = 'bottom',
 }: CreatableSelectDropdownProps<T>) => {
   const initialSelectedOption = useMemo(() => {
-    if (isNil(initialValue)) {
-      return null
+    if (!isNil(value)) {
+      return standardOptions.find((option) => option.value === value) ?? null
+    } if (!isNil(defaultValue)) {
+      return standardOptions.find((option) => option.value === defaultValue) ?? null
     }
-    return standardOptions.find((option) => option.value === initialValue) ?? null
-  }, []
+    return null
+  }, [ value ]
   )
 
   const [ selectedOption, setSelectedOption ] =

@@ -55,7 +55,12 @@ export interface CreatableSelectDropdownProps<T extends string = string> {
   /**
    * Value of the initially selected option.
    */
-  initialValue?: T
+  defaultValue?: T
+
+  /**
+   * Selected value.
+   */
+  value?: T
 
   /**
    *
