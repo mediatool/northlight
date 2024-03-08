@@ -53,9 +53,9 @@ export interface CreatableSelectDropdownProps<T extends string = string> {
   variant?: Variant
 
   /**
-   * Value of the initially selected option.
+   * Selected value.
    */
-  initialValue?: T
+  value?: T
 
   /**
    *
