@@ -3,6 +3,7 @@ export {
   AsyncCreatableSelect,
   AsyncSelect,
   CreatableSelect,
+  chakraComponents as selectChakraComponents,
 } from 'chakra-react-select'
 
 export * from './select'
