@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.26.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.25.1...@northlight/ui@2.26.0) (2024-03-08)
+
+
+### Features
+
+* **framework-lib:** made selection controllable from outside ([7aa4148](https://github.com/mediatool/northlight/commit/7aa4148aa01cfb761cfee44007bccd50c33a9295))
+
+
+
+
+
 ## [2.25.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.25.0...@northlight/ui@2.25.1) (2024-02-29)
 
 
