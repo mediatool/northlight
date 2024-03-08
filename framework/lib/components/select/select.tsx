@@ -151,6 +151,7 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
   isClearable = false,
   value,
   icon,
+  components,
   ...rest
 }: SelectProps<T, K>,
   ref: Ref<SelectInstance<T, K, GroupBase<T>>>
@@ -164,7 +165,7 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
   })
 
   const customComponents = useMemo(
-    () => getComponents<T>(),
+    () => getComponents<T>(components),
     []
   )
 
