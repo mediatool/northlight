@@ -29,12 +29,12 @@ export const NumberInput: ComponentMultiStyleConfig = {
     radii: borderRadius,
     borders: borderWidth,
     opacity,
-  }, isReadOnly }) => ({
+  }, isReadOnly, minWidth, minW }) => ({
     root: {
       borderRadius: borderRadius.input.outline,
     },
     field: {
-      minWidth: sizing['44'],
+      minWidth: minWidth ?? minW ?? sizing['44'],
       paddingInlineStart: spacing['padding-inline'].input.default,
       paddingInlineEnd: spacing['padding-inline'].input.default,
       WebkitPaddingStart: spacing['padding-inline'].input.default,
