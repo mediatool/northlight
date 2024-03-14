@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.26.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.26.0...@northlight/ui@2.26.1) (2024-03-14)
+
+
+### Bug Fixes
+
+* **framework:** enable customization of number input minWidth ([65f4380](https://github.com/mediatool/northlight/commit/65f4380f61df378825599ac6bfbfac6d581d1e8e))
+* **framework:** export selectChakraComponents ([557b266](https://github.com/mediatool/northlight/commit/557b266544bc70620d60cae53c3bf6971332f890))
+* **framework:** merge components ([a13f097](https://github.com/mediatool/northlight/commit/a13f097901c3c8295ca3c9d4204c986c785ef436))
+
+
+
+
+
 # [2.26.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.25.1...@northlight/ui@2.26.0) (2024-03-08)
 
 
