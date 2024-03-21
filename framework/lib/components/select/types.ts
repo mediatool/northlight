@@ -18,6 +18,7 @@ type Size = 'sm' | 'md' | 'lg'
 export interface Option<T extends string = string> {
   label: string
   value: T
+  isCreation?: boolean
 }
 
 export interface SelectProps<T, K extends boolean>

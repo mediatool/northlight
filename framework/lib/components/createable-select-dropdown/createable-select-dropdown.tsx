@@ -1,12 +1,13 @@
-import React, { useMemo, useRef, useState } from 'react'
-import { ActionMeta, CreatableSelect } from 'chakra-react-select'
-import type { Option, SingleValue } from '@northlight/ui'
+import React, { useRef, useState } from 'react'
+import { ActionMeta, CreatableSelect, SingleValue } from 'chakra-react-select'
 import { PlusSolid } from '@northlight/icons'
-import { Box, Icon, useOutsideClick } from '@chakra-ui/react'
-import { isNil } from 'ramda'
+import { Box, Icon } from '@chakra-ui/react'
+import { any, isEmpty, toLower, trim } from 'ramda'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 import type { CreatableSelectDropdownProps, CreationOption } from './types'
 import { customComponents } from './custom-components'
+import { EditableText } from '../editable-text'
+import type { Option } from '../select/types'
 
 /**
  * A dropdown component that allows users to select a value from given options
@@ -23,7 +24,7 @@ import { customComponents } from './custom-components'
  *     { label: 'Snoop Doggy Dogg', value: 'snoop-dogg' },
  *   ];
  *
-*   const someOtherOptions = [
+ *   const someOtherOptions = [
  *     { label: 'Vision', value: 'vision' },
  *     { label: 'Technique', value: 'technique' },
  *     { label: 'Expression', value: 'expression' }
@@ -78,95 +79,102 @@ import { customComponents } from './custom-components'
  * ?)
  */
 
-export const CreatableSelectDropdown = <T extends string = string> ({
+const CREATION_OPTION_VALUE = 'add_field'
+
+export const CreatableSelectDropdown = <T extends string = string>({
   standardOptions,
   initialPlaceholder = 'Select or create...',
-  addOptionPlaceholder = 'Enter text...',
+  addOptionPlaceholder = 'Select or create...',
   creationOption = {
-    label: 'Add option...',
-    value: 'Add option...',
+    label: 'Add field',
+    value: CREATION_OPTION_VALUE,
     isCreation: true,
   },
   onOptionChange,
-  width = '100%',
   variant = 'outline',
   defaultValue,
   value,
   menuPlacement = 'bottom',
 }: CreatableSelectDropdownProps<T>) => {
-  const initialSelectedOption = useMemo(() => {
-    if (!isNil(value)) {
-      return standardOptions.find((option) => option.value === value) ?? null
-    } if (!isNil(defaultValue)) {
-      return standardOptions.find((option) => option.value === defaultValue) ?? null
-    }
-    return null
-  }, [ value ]
-  )
+  const [ selectedOption, setSelectedOption ] = useState<Option | null>(() => {
+    const targetValue = value ?? defaultValue ?? null
+    return targetValue
+      ? standardOptions.find((option) => option.value === targetValue) ?? null
+      : null
+  })
 
-  const [ selectedOption, setSelectedOption ] =
-    useState<Option | null>(initialSelectedOption)
-  const [ newOptionText, setNewOptionText ] = useState('')
-  const [ newOptionPlaceholder, setNewOptionPlaceholder ] = useState(initialPlaceholder)
+  const [ newOptionPlaceholder, setNewOptionPlaceholder ] =
+    useState(initialPlaceholder)
   const [ createdOptions, setCreatedOptions ] = useState<Option[]>([])
+  const [ createNewOption, setCreateNewOption ] = useState<boolean>(false)
+  const [ addFieldInputValue, setAddFieldInputValue ] = useState<string>('')
 
   function isCreationOption (option: any): option is CreationOption {
     return option && typeof option.isCreation === 'boolean'
   }
 
   const ref = useRef<HTMLDivElement>(null)
-  useOutsideClick({
-    ref,
-    handler: () => {
-      if (isCreationOption(selectedOption)) {
-        setSelectedOption(initialSelectedOption)
-        setNewOptionPlaceholder(initialPlaceholder)
+
+  const checkIfNewOptionTextExistsInOptions = (
+    string: string,
+    options: Option[]
+  ) => any((option) => toLower(option.value) === string, options)
+
+  const handleCreateOption = (newOptionTextString: string) => {
+    setCreateNewOption(true)
+
+    if (isEmpty(trim(newOptionTextString))) {
+      return
+    }
+
+    const newOptionTextLower = toLower(newOptionTextString)
+
+    const newOptionExistsInStandardOptions =
+      checkIfNewOptionTextExistsInOptions(newOptionTextLower, standardOptions)
+
+    const newOptionExistsInCreatedOptions = checkIfNewOptionTextExistsInOptions(
+      newOptionTextLower,
+      createdOptions
+    )
+
+    if (!newOptionExistsInCreatedOptions && !newOptionExistsInStandardOptions) {
+      const newOption = {
+        label: newOptionTextString,
+        value: newOptionTextString,
       }
-    },
-  })
-
-  const handleInputChange = (newValue: string) => {
-    setNewOptionText(newValue)
-  }
-
-  const handleCreateOption = () => {
-    const newOptionTextLower = newOptionText.toLowerCase()
-    const newOptionExists = standardOptions.some((option) =>
-      option.value.toLowerCase() === newOptionTextLower)
-
-    if (!newOptionExists) {
-      const newOption = { label: newOptionText, value: newOptionText }
-      setCreatedOptions((currentCreatedOptions) => [ ...currentCreatedOptions, newOption ])
+      setCreatedOptions((currentCreatedOptions) => [
+        ...currentCreatedOptions,
+        newOption,
+      ])
       setSelectedOption(newOption)
       onOptionChange(newOption)
     }
-
-    setNewOptionText('')
     setNewOptionPlaceholder(initialPlaceholder)
   }
 
   const handleChange = (
     newValue: SingleValue<Option>,
-    _actionMeta: ActionMeta<Option>) => {
+    _actionMeta: ActionMeta<Option>
+  ) => {
     const option = newValue
 
-    if (option === null) {
+    if (newValue?.isCreation) {
+      setCreateNewOption(true)
+    }
+
+    if (option == null) {
       return
     }
+
     if (isCreationOption(option)) {
       setNewOptionPlaceholder(addOptionPlaceholder)
     } else {
       setNewOptionPlaceholder(initialPlaceholder)
     }
-    setSelectedOption(option)
-    onOptionChange(option)
-  }
-
-  const handleKeyDown = (event: { key: string, preventDefault: () => void }) => {
-    if (event.key === 'Enter' && newOptionText) {
-      handleCreateOption()
-      event.preventDefault()
+    if (option.value !== CREATION_OPTION_VALUE) {
+      setSelectedOption(option)
     }
+    onOptionChange(option)
   }
 
   const combinedOptions = [ ...standardOptions, ...createdOptions ]
@@ -180,36 +188,60 @@ export const CreatableSelectDropdown = <T extends string = string> ({
   ]
 
   return (
-    <Box ref={ ref }>
-      <CreatableSelect
-        menuPlacement={ menuPlacement }
-        chakraStyles={ {
-          ...customSelectStyles,
-          container: (provided) => ({
-            ...provided,
-            width,
-          }),
-          option: (provided, { isSelected }) => ({
-            ...provided,
-            ...(isSelected && {
-              color: 'black',
+    <Box ref={ ref } w="sm" maxW="full">
+      { createNewOption && (
+        <EditableText
+          value={ addFieldInputValue }
+          startWithEditView={ true }
+          onChange={ (v) => {
+            setAddFieldInputValue(v)
+          } }
+          submitOnBlur={ false }
+          onCancel={ () => {
+            setAddFieldInputValue('')
+            setCreateNewOption(false)
+          } }
+          onSubmit={ (v) => {
+            handleCreateOption(v)
+            setCreateNewOption(false)
+          } }
+          variant="brand"
+          sx={ {
+            minWidth: '100%',
+            width: '100%',
+          } }
+        />
+      ) }
+      { !createNewOption && (
+        <CreatableSelect
+          menuPlacement={ menuPlacement }
+          chakraStyles={ {
+            ...customSelectStyles,
+            container: (provided) => ({
+              ...provided,
+              width: '100%',
             }),
-          }),
-        } }
-        components={ customComponents }
-        options={ customOptions }
-        value={ selectedOption }
-        onChange={ handleChange }
-        isMulti={ false }
-        onInputChange={ handleInputChange }
-        onKeyDown={ handleKeyDown }
-        onCreateOption={ handleCreateOption }
-        placeholder={ newOptionPlaceholder }
-        inputValue={ newOptionText }
-        useBasicStyles={ true }
-        variant={ variant }
-      />
-
+            option: (provided, { isSelected }) => ({
+              ...provided,
+              ...(isSelected && {
+                color: 'black',
+              }),
+            }),
+          } }
+          components={ customComponents }
+          options={ customOptions }
+          value={ selectedOption }
+          onChange={ handleChange }
+          isMulti={ false }
+          onCreateOption={ (v) => {
+            setCreateNewOption(true)
+            setAddFieldInputValue(v)
+          } }
+          placeholder={ newOptionPlaceholder }
+          useBasicStyles={ true }
+          variant={ variant }
+        />
+      ) }
     </Box>
   )
 }
