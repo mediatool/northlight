@@ -9,8 +9,21 @@ import {
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
 import { EditableControlsProps } from './types'
+import { ButtonVariants } from '../button/types'
 
-export const EditableControls = ({ size }: EditableControlsProps) => {
+type MapVariantTypes = Record<EditableControlsProps['variant'], ButtonVariants>
+
+const mapEditableVariantsToButtonSubmitVariants: MapVariantTypes = {
+  brand: 'brand',
+  default: 'success',
+}
+
+const mapEditableVariantsToButtonCancelVariants: MapVariantTypes = {
+  brand: 'ghost',
+  default: 'danger',
+}
+
+export const EditableControls = ({ size, variant = 'default' }: EditableControlsProps) => {
   const {
     getSubmitButtonProps,
     getCancelButtonProps,
@@ -28,7 +41,7 @@ export const EditableControls = ({ size }: EditableControlsProps) => {
             <IconButton
               aria-label="Cancel"
               sx={ button }
-              variant="danger"
+              variant={ mapEditableVariantsToButtonCancelVariants[variant] }
               { ...getCancelButtonProps() }
             >
               <Icon sx={ icon } as={ XCloseSolid } />
@@ -36,7 +49,7 @@ export const EditableControls = ({ size }: EditableControlsProps) => {
             <IconButton
               aria-label="Save"
               sx={ button }
-              variant="success"
+              variant={ mapEditableVariantsToButtonSubmitVariants[variant] }
               { ...getSubmitButtonProps() }
             >
               <Icon sx={ icon } as={ CheckDuo } />

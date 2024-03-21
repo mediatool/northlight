@@ -40,6 +40,7 @@ export const EditableText = ({
   value: inputValue,
   onSubmit,
   leftItem,
+  variant = 'default',
   ...rest
 }: EditableProps) => {
   const [ value, setValue ] = useState(inputValue)
@@ -74,7 +75,7 @@ export const EditableText = ({
           sx={ input }
         />
         <InputRightElement sx={ { width: 'min-content' } }>
-          <EditableControls size={ size } />
+          <EditableControls size={ size } variant={ variant } />
         </InputRightElement>
       </InputGroup>
     </Editable>
