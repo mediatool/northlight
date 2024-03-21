@@ -16,6 +16,7 @@ declare module 'react-select/dist/declarations/src/Select' {
     customTag?: CustomElementType<Option>
     icon?: ComponentType<any>
     leftComponent?: React.ReactNode
+    toggleCreateNewOption?: () => void
   }
 }
 
