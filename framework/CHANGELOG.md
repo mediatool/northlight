@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.27.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.26.1...@northlight/ui@2.27.0) (2024-03-25)
+
+
+### Bug Fixes
+
+* **framework:** createableselectdropdown has new add new field option ([ca45ba4](https://github.com/mediatool/northlight/commit/ca45ba4d830d7107e6d881efcc61e1d615a363ec))
+
+
+### Features
+
+* **framework:** add new editabletext variant ([d4a1f15](https://github.com/mediatool/northlight/commit/d4a1f1503586bb5fb28cdd7c4e4c7f45530b59c0))
+
+
+
+
+
 ## [2.26.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.26.0...@northlight/ui@2.26.1) (2024-03-14)
 
 

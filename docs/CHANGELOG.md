@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.15](https://github.com/mediatool/northlight/compare/@northlight/docs@1.8.14...@northlight/docs@1.8.15) (2024-03-25)
+
+**Note:** Version bump only for package @northlight/docs
+
+
+
+
+
 ## [1.8.14](https://github.com/mediatool/northlight/compare/@northlight/docs@1.8.13...@northlight/docs@1.8.14) (2024-03-14)
 
 **Note:** Version bump only for package @northlight/docs
