@@ -58,8 +58,9 @@ export const Toolbox = ({
   onClose,
   autoFocus = true,
   resizeLimit = 'full',
+  zIndex = coreZIndex.overlay,
   ...rest
-}: ToolboxProps) => {
+}: Omit<ToolboxProps, 'zIndex'> & { zIndex: number }) => {
   const { container } = useMultiStyleConfig('Toolbox', { size })
   const newChildren = getChildrenWithProps(
     children,
@@ -103,7 +104,7 @@ export const Toolbox = ({
           style={ {
             height: container.h as string,
             width: adjustableWidth,
-            zIndex: coreZIndex.overlay,
+            zIndex,
           } }
         >
           <Flex
