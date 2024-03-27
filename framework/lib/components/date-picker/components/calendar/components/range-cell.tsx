@@ -46,6 +46,7 @@ export const RangeCell = ({
         ring={ isToday && !isSelected ? '1px' : '0px' }
         ringColor="blue.500"
         mx="-1px"
+        ml={ isToday ? '-2px ' : undefined }
         my="0a"
         w="8"
         h="8"
