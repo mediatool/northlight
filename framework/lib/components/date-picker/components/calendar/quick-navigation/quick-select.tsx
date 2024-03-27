@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { any, equals, map } from 'ramda'
 import { palette } from '@northlight/tokens'
-import { Flex } from '../../../../flex'
+import { Flex, Spacer } from '../../../../flex'
 import { Stack } from '../../../../stack'
 import { Box } from '../../../../box'
 import { DateButton } from './date-button'
@@ -16,7 +16,7 @@ export const QuickSelect = ({
   fiscalStartMonth = 0,
   fiscalStartDay = 0,
   locale = '',
-  height = '2xs',
+  height = '17.5rem',
 }: QuickSelectProps) => {
   const { quickDates, fiscalQuarters } = useMemo(
     () => getQuickSelectOptions(state, locale, fiscalStartMonth, fiscalStartDay),
@@ -44,7 +44,6 @@ export const QuickSelect = ({
         _hover={ { overflowY: 'scroll' } }
         w="36"
         display={ shouldShow(quickDates) ? 'initial' : 'none' }
-        mb="4"
       >
         { map(
           (quickDate) =>
@@ -66,6 +65,7 @@ export const QuickSelect = ({
         borderTop={ seperator }
         display={ shouldShow(fiscalQuarters) ? 'initial' : 'none' }
       />
+      <Spacer />
       <Flex
         justifyContent="space-between"
         w="full"
