@@ -27,7 +27,7 @@ export const MonthSelect = ({ state }: MonthSelectProps) => {
       textAlign="center"
     >
       { months.map((month, i) => (
-        <option value={ i }>
+        <option value={ i } key={ `month-${i as number}` }>
           { month }
         </option>
       )) }
