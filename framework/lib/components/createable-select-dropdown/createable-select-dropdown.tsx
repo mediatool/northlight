@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { ActionMeta, CreatableSelect, SingleValue } from 'chakra-react-select'
 import { PlusSolid } from '@northlight/icons'
 import { Box, Icon } from '@chakra-ui/react'
@@ -95,6 +95,7 @@ export const CreatableSelectDropdown = <T extends string = string>({
   defaultValue,
   value,
   menuPlacement = 'bottom',
+  ...restProps
 }: CreatableSelectDropdownProps<T>) => {
   const [ selectedOption, setSelectedOption ] = useState<Option | null>(() => {
     const targetValue = value ?? defaultValue ?? null
@@ -177,7 +178,10 @@ export const CreatableSelectDropdown = <T extends string = string>({
     onOptionChange(option)
   }
 
-  const combinedOptions = [ ...standardOptions, ...createdOptions ]
+  const combinedOptions = useMemo(
+    () => [ ...standardOptions, ...createdOptions ],
+    [ standardOptions, createdOptions ]
+  )
 
   const customOptions = [
     {
@@ -186,6 +190,15 @@ export const CreatableSelectDropdown = <T extends string = string>({
     },
     ...combinedOptions,
   ]
+
+  useEffect(() => {
+    const newSelectedOption =
+      combinedOptions.find((option) => option.value === value) ?? null
+
+    if (selectedOption?.value !== newSelectedOption?.value) {
+      setSelectedOption(newSelectedOption)
+    }
+  }, [ value, combinedOptions ])
 
   return (
     <Box ref={ ref } w="sm" maxW="full">
@@ -240,6 +253,7 @@ export const CreatableSelectDropdown = <T extends string = string>({
           placeholder={ newOptionPlaceholder }
           useBasicStyles={ true }
           variant={ variant }
+          { ...restProps }
         />
       ) }
     </Box>
