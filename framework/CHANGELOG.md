@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.27.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.27.0...@northlight/ui@2.27.1) (2024-04-03)
+
+
+### Bug Fixes
+
+* **framework): fix(framework:** fix render and props in dropdown ([065f52c](https://github.com/mediatool/northlight/commit/065f52ce84fcf909bdc048a1d273111cfd8fc92f))
+
+
+
+
+
 # [2.27.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.26.1...@northlight/ui@2.27.0) (2024-03-25)
 
 
