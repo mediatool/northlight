@@ -7,8 +7,8 @@ import {
   SelectInstance,
   SingleValue,
 } from 'chakra-react-select'
-import { StackDirection } from '@chakra-ui/react'
-import { ComponentType, Ref } from 'react'
+import { Icon, StackDirection } from '@chakra-ui/react'
+import { ComponentProps, ComponentType, Ref } from 'react'
 import { RegisterOptions } from 'react-hook-form'
 import { InputFieldProps } from '../../types'
 
@@ -19,6 +19,7 @@ export interface Option<T extends string = string> {
   label: string
   value: T
   isCreation?: boolean
+  icon?: ComponentProps<typeof Icon>
 }
 
 export interface SelectProps<T, K extends boolean>

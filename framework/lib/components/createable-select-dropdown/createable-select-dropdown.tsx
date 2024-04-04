@@ -1,11 +1,21 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { ActionMeta, CreatableSelect, SingleValue } from 'chakra-react-select'
+import {
+  ActionMeta,
+  CreatableProps,
+  CreatableSelect,
+  GroupBase,
+  SingleValue,
+} from 'chakra-react-select'
 import { PlusSolid } from '@northlight/icons'
 import { Box, Icon } from '@chakra-ui/react'
 import { any, isEmpty, toLower, trim } from 'ramda'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
-import type { CreatableSelectDropdownProps, CreationOption } from './types'
-import { customComponents } from './custom-components'
+import type {
+  CreatableSelectDropdownProps,
+  CreationOption,
+  CreationOptionValue,
+} from './types'
+import { getCustomComponents } from './custom-components'
 import { EditableText } from '../editable-text'
 import type { Option } from '../select/types'
 
@@ -79,7 +89,7 @@ import type { Option } from '../select/types'
  * ?)
  */
 
-const CREATION_OPTION_VALUE = 'add_field'
+const CREATION_OPTION_VALUE: CreationOptionValue = 'add_field'
 
 export const CreatableSelectDropdown = <T extends string = string>({
   standardOptions,
@@ -97,7 +107,8 @@ export const CreatableSelectDropdown = <T extends string = string>({
   menuPlacement = 'bottom',
   ...restProps
 }: CreatableSelectDropdownProps<T>) => {
-  const [ selectedOption, setSelectedOption ] = useState<Option | null>(() => {
+  const [ selectedOption, setSelectedOption ] =
+  useState<Option<T | CreationOptionValue > | null>(() => {
     const targetValue = value ?? defaultValue ?? null
     return targetValue
       ? standardOptions.find((option) => option.value === targetValue) ?? null
@@ -106,7 +117,7 @@ export const CreatableSelectDropdown = <T extends string = string>({
 
   const [ newOptionPlaceholder, setNewOptionPlaceholder ] =
     useState(initialPlaceholder)
-  const [ createdOptions, setCreatedOptions ] = useState<Option[]>([])
+  const [ createdOptions, setCreatedOptions ] = useState<Option<T>[]>([])
   const [ createNewOption, setCreateNewOption ] = useState<boolean>(false)
   const [ addFieldInputValue, setAddFieldInputValue ] = useState<string>('')
 
@@ -121,7 +132,7 @@ export const CreatableSelectDropdown = <T extends string = string>({
     options: Option[]
   ) => any((option) => toLower(option.value) === string, options)
 
-  const handleCreateOption = (newOptionTextString: string) => {
+  const handleCreateOption = (newOptionTextString: T) => {
     setCreateNewOption(true)
 
     if (isEmpty(trim(newOptionTextString))) {
@@ -154,8 +165,8 @@ export const CreatableSelectDropdown = <T extends string = string>({
   }
 
   const handleChange = (
-    newValue: SingleValue<Option>,
-    _actionMeta: ActionMeta<Option>
+    newValue: SingleValue<Option<T | CreationOptionValue>>,
+    _actionMeta: ActionMeta<Option<T | CreationOptionValue>>
   ) => {
     const option = newValue
 
@@ -179,11 +190,11 @@ export const CreatableSelectDropdown = <T extends string = string>({
   }
 
   const combinedOptions = useMemo(
-    () => [ ...standardOptions, ...createdOptions ],
+    (): Option<T>[] => [ ...standardOptions, ...createdOptions ],
     [ standardOptions, createdOptions ]
   )
 
-  const customOptions = [
+  const customOptions: Option<T | CreationOptionValue>[] = [
     {
       ...creationOption,
       icon: <Icon as={ PlusSolid } color="brand" />,
@@ -215,7 +226,7 @@ export const CreatableSelectDropdown = <T extends string = string>({
             setCreateNewOption(false)
           } }
           onSubmit={ (v) => {
-            handleCreateOption(v)
+            handleCreateOption(v as T)
             setCreateNewOption(false)
           } }
           variant="brand"
@@ -226,7 +237,8 @@ export const CreatableSelectDropdown = <T extends string = string>({
         />
       ) }
       { !createNewOption && (
-        <CreatableSelect
+        <CreatableSelect<Option<T | CreationOptionValue>, false,
+        GroupBase<Option<T | CreationOptionValue>>>
           menuPlacement={ menuPlacement }
           chakraStyles={ {
             ...customSelectStyles,
@@ -241,7 +253,7 @@ export const CreatableSelectDropdown = <T extends string = string>({
               }),
             }),
           } }
-          components={ customComponents }
+          components={ getCustomComponents<T | CreationOptionValue>() }
           options={ customOptions }
           value={ selectedOption }
           onChange={ handleChange }
@@ -253,7 +265,10 @@ export const CreatableSelectDropdown = <T extends string = string>({
           placeholder={ newOptionPlaceholder }
           useBasicStyles={ true }
           variant={ variant }
-          isDisabled={ restProps.isDisabled }
+          { ...(restProps as CreatableProps<
+          Option<T | CreationOptionValue>, false,
+          GroupBase<Option<T | CreationOptionValue>>>
+          ) }
         />
       ) }
     </Box>
