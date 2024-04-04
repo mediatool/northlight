@@ -253,7 +253,7 @@ export const CreatableSelectDropdown = <T extends string = string>({
           placeholder={ newOptionPlaceholder }
           useBasicStyles={ true }
           variant={ variant }
-          { ...restProps }
+          isDisabled={ restProps.isDisabled }
         />
       ) }
     </Box>
