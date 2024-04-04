@@ -68,4 +68,9 @@ export interface CreatableSelectDropdownProps<T extends string = string> {
     will flip when there isn't enough space below the control. Defaults to "bottom".
    */
   menuPlacement?: 'top' | 'bottom' | 'auto'
+
+  /**
+   * If true, the CreatableSelectDropdown will be disabled.
+   */
+  isDisabled?: boolean
 }
