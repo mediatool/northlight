@@ -29,7 +29,7 @@ export const getWeekNumberAtStartOfMonth = (
 
   const totalDaysUntilMonth = daysInMonths
     .slice(1, month)
-    .reduce(add, 0)
+    .reduce(add, 1)
 
   const weekNumber = Math.ceil(totalDaysUntilMonth / 7)
 
