@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.27.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.27.1...@northlight/ui@2.27.2) (2024-04-05)
+
+
+### Bug Fixes
+
+* **framework:** allow to adjust zIndex of toolbox ([a645260](https://github.com/mediatool/northlight/commit/a645260e02d3af0744a382d3316075a9b06866c6))
+* **framework:** fix disabled prop in dropdown ([d59af8c](https://github.com/mediatool/northlight/commit/d59af8c3b1fd5fcb18fd8777439b1595daab6657))
+
+
+
+
+
 ## [2.27.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.27.0...@northlight/ui@2.27.1) (2024-04-03)
 
 
