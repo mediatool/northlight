@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.27.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.27.2...@northlight/ui@2.27.3) (2024-04-05)
+
+
+### Bug Fixes
+
+* **framework:** make zIndex prop optional ([b879938](https://github.com/mediatool/northlight/commit/b8799389724ca05b7ebaaeaa12b74dc416412869))
+
+
+
+
+
 ## [2.27.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.27.1...@northlight/ui@2.27.2) (2024-04-05)
 
 
