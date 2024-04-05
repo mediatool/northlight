@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.27.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.27.3...@northlight/ui@2.27.4) (2024-04-05)
+
+
+### Bug Fixes
+
+* **framework:** fix wrong week numbers in date range picker ([c89aa97](https://github.com/mediatool/northlight/commit/c89aa97354dc3c628558f37288f1081351a2772b))
+
+
+
+
+
 ## [2.27.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.27.2...@northlight/ui@2.27.3) (2024-04-05)
 
 
