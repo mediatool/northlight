@@ -1,6 +1,6 @@
 import { FlexProps } from '@chakra-ui/react'
 
-export interface ToolboxProps extends Omit<FlexProps, 'direction'> {
+export interface ToolboxProps extends Omit<FlexProps, 'direction' | 'zIndex'> {
   isResizable?: boolean
   isOpen: boolean
   /** where the toolbox pops in from */
@@ -15,6 +15,7 @@ export interface ToolboxProps extends Omit<FlexProps, 'direction'> {
   autoFocus?: boolean
   /** limit the sizing of the toolbox */
   resizeLimit?: 'half' | 'full'
+  zIndex?: number
 }
 
 export interface ToolboxHeaderProps extends FlexProps {

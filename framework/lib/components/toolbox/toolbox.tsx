@@ -60,7 +60,7 @@ export const Toolbox = ({
   resizeLimit = 'full',
   zIndex = coreZIndex.overlay,
   ...rest
-}: Omit<ToolboxProps, 'zIndex'> & { zIndex: number }) => {
+}: ToolboxProps) => {
   const { container } = useMultiStyleConfig('Toolbox', { size })
   const newChildren = getChildrenWithProps(
     children,
