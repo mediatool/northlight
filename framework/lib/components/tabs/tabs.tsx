@@ -3,18 +3,45 @@ import { Tabs as ChakraTabs } from '@chakra-ui/react'
 import { TabsProps } from './types'
 
 /**
- * Context provider for tabs tabs
+ * Tabs are used for secondary navigation between groups on the page of the same context.
  * @see TabList
  * @see TabPanels
  * @see {@link https://northlight.dev/reference/tabs}
  * @example
+ * ## Structure
+ * <br />
+ * - **Tabs**: Context provider and state manager for tab components.
+ * - **TabList**: Container for Tab items.
+ * - **Tab**: Interactive label for displaying a TabPanel.
+ * - **TabPanels**: Group wrapper for TabPanel items.
+ * - **TabPanel**: Content area for a Tab.
+ * <br />
+ * <br />
+ * You can render any element within `Tabs`, but `TabList` should only have `Tab` as children,
+ * and `TabPanels` should have `TabPanel` as children. <br />
+ * <br />
+ * `Tabs` expects `TabList` and `TabPanels` as children. The order doesn't matter,
+ * you can have `TabList` at the top, at the bottom, or both.
+ * <br />
+ * <br />
+ *
+ *  ## Usage
+ * <br />
+ * **Tabs** have three main variatns:
+ * `rounded` (default) or no variant, `soft-rounded` and `line`. <br />
+ * Also there are multiple sub-variants: `ai`, `enclosed`, `enclosed-colored` and `unstyled`
+ * <br />
+ * <br />
+ * tip: `enclosed` and `enclosed-colored` can be combined with the `colorScheme=""` prop.
+ * <br />
+ * <br />
  * (?
     <Tabs>
     <Stack spacing="2">
       <TabList>
-        <Tab>One</Tab>
-        <Tab>Two</Tab>
-        <Tab>Three</Tab>
+        <Tab><Icon as={ MediatoolLogoDuo } mr="2" />One</Tab>
+        <Tab><Icon as={ MediatoolLogoDuo } mr="2" />Two</Tab>
+        <Tab><Icon as={ MediatoolLogoDuo } mr="2" />Three</Tab>
       </TabList>
       <TabPanels>
         <TabPanel>
@@ -34,7 +61,7 @@ import { TabsProps } from './types'
  */
 export const Tabs = (({
   children,
-  variant = 'soft-rounded',
+  variant = 'rounded',
   isManual = true,
   ...rest
 }: TabsProps) => (
