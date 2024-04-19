@@ -10,6 +10,7 @@ export const customSelectStyles: ChakraStylesConfig<any> = {
   option: (provided, state) => ({
     ...provided,
     background: state.isFocused && 'background.select.option-focus',
+    overflowWrap: 'anywhere',
     _active: {
       background: 'background.select.option-active',
     },
