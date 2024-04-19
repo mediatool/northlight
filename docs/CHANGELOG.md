@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.8.19...@northlight/docs@1.9.0) (2024-04-19)
+
+
+### Features
+
+* **docs:** update typography docs page ([26ea1d6](https://github.com/mediatool/northlight/commit/26ea1d6fc4a67b31490740823c280ef01324aa18))
+
+
+
+
+
 ## [1.8.19](https://github.com/mediatool/northlight/compare/@northlight/docs@1.8.18...@northlight/docs@1.8.19) (2024-04-05)
 
 **Note:** Version bump only for package @northlight/docs

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.28.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.27.4...@northlight/ui@2.28.0) (2024-04-19)
+
+
+### Bug Fixes
+
+* **norhtlight:** tabs docs and styling update ([9b09fc8](https://github.com/mediatool/northlight/commit/9b09fc830437dbb887aeca271eec630018ce9b73))
+* **northlight-ui:** add overflow wrap anywhere to custom select theme ([f4ea969](https://github.com/mediatool/northlight/commit/f4ea969b16c4a000c45858bb285639dbdc1d8392))
+* **northlight:** default button style update ([603cdd5](https://github.com/mediatool/northlight/commit/603cdd52540debe9ba3863b6d3654d7d3adf0066))
+
+
+### Features
+
+* **docs:** update typography docs page ([26ea1d6](https://github.com/mediatool/northlight/commit/26ea1d6fc4a67b31490740823c280ef01324aa18))
+
+
+
+
+
 ## [2.27.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.27.3...@northlight/ui@2.27.4) (2024-04-05)
 
 
