@@ -8,7 +8,8 @@ import {
 } from 'chakra-react-select'
 import { PlusSolid } from '@northlight/icons'
 import { Box, Icon } from '@chakra-ui/react'
-import { any, isEmpty, toLower, trim } from 'ramda'
+import { any, isEmpty, prop, toLower, trim } from 'ramda'
+import { uniqBy } from 'yafu'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 import type {
   CreatableSelectDropdownProps,
@@ -190,7 +191,7 @@ export const CreatableSelectDropdown = <T extends string = string>({
   }
 
   const combinedOptions = useMemo(
-    (): Option<T>[] => [ ...standardOptions, ...createdOptions ],
+    (): Option<T>[] => uniqBy(prop('value'), [ ...standardOptions, ...createdOptions ]),
     [ standardOptions, createdOptions ]
   )
 
@@ -205,14 +206,17 @@ export const CreatableSelectDropdown = <T extends string = string>({
   useEffect(() => {
     const newSelectedOption =
       combinedOptions.find((option) => option.value === value) ?? null
-
     if (selectedOption?.value !== newSelectedOption?.value) {
       setSelectedOption(newSelectedOption)
     }
   }, [ value, combinedOptions ])
 
   return (
-    <Box ref={ ref } w="sm" maxW="full">
+    <Box
+      ref={ ref }
+      w="full"
+      borderRadius="none"
+    >
       { createNewOption && (
         <EditableText
           value={ addFieldInputValue }

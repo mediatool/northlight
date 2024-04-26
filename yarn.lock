@@ -4460,6 +4460,11 @@
     "@types/babel__core" "^7.20.2"
     react-refresh "^0.14.0"
 
+"@yafu/curry@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@yafu/curry/-/curry-1.3.1.tgz#3cd8ff5ac2bc9a5d7438dc1e97697db08f67b4a5"
+  integrity sha512-PBanlz+MrfAgInzujZkN3Q+mFAzQbY8i2JJAC+PIsJDjBvz3i18t4HL93gbed9e4zeY2MGHChnwFUuoQiK9yKg==
+
 "@yarnpkg/lockfile@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@yarnpkg/lockfile/-/lockfile-1.1.0.tgz#e77a97fbd345b76d83245edcd17d393b1b41fb31"
@@ -11009,6 +11014,13 @@ y18n@^5.0.5:
   version "5.0.8"
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-5.0.8.tgz#7f4934d0f7ca8c56f95314939ddcd2dd91ce1d55"
   integrity sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==
+
+yafu@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/yafu/-/yafu-2.1.4.tgz#a6f93939a961e5a79fd1d2817590cc614218815e"
+  integrity sha512-l2bABISSUDkrHwlrgRozAi1IZfc+00iSBstJRzRm1cPGsRaDT9IXg6l0RlrecnYfvrJRH/ZXxuPJEjnOTkKBJw==
+  dependencies:
+    "@yafu/curry" "^1.3.1"
 
 yallist@^3.0.2:
   version "3.1.1"
