@@ -71,7 +71,8 @@
     "react-virtualized": "^9.22.5",
     "react-virtualized-auto-sizer": "^1.0.20",
     "react-window": "^1.8.9",
-    "sinon": "^15.2.0"
+    "sinon": "^15.2.0",
+    "yafu": "^2.1.4"
   },
   "devDependencies": {
     "@mediatool/frontend-tools": "^1.2.2",
