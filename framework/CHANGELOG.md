@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.28.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.1...@northlight/ui@2.28.2) (2024-05-02)
+
+
+### Bug Fixes
+
+* **framework:** fix width and duplication issue in dropdown ([5c07418](https://github.com/mediatool/northlight/commit/5c07418ca01aa323764108481b5c377fc8d23e51))
+
+
+
+
+
 ## [2.28.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.0...@northlight/ui@2.28.1) (2024-04-22)
 
 **Note:** Version bump only for package @northlight/ui
