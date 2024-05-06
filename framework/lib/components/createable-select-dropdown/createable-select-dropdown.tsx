@@ -186,8 +186,8 @@ export const CreatableSelectDropdown = <T extends string = string>({
     }
     if (option.value !== CREATION_OPTION_VALUE) {
       setSelectedOption(option)
+      onOptionChange(option)
     }
-    onOptionChange(option)
   }
 
   const combinedOptions = useMemo(
