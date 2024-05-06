@@ -7,7 +7,7 @@ import {
   SingleValue,
 } from 'chakra-react-select'
 import { PlusSolid } from '@northlight/icons'
-import { Box, Icon } from '@chakra-ui/react'
+import { Box, Icon, theme } from '@chakra-ui/react'
 import { any, isEmpty, prop, toLower, trim } from 'ramda'
 import { uniqBy } from 'yafu'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
@@ -259,6 +259,8 @@ export const CreatableSelectDropdown = <T extends string = string>({
           } }
           components={ getCustomComponents<T | CreationOptionValue>() }
           options={ customOptions }
+          menuPortalTarget={ document.body }
+          styles={ { menuPortal: (base) => ({ ...base, zIndex: theme.zIndices.popover }) } }
           value={ selectedOption }
           onChange={ handleChange }
           isMulti={ false }
