@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.28.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.3...@northlight/ui@2.28.4) (2024-05-08)
+
+
+### Bug Fixes
+
+* **framework:** fix event issue in dropdown ([b185f53](https://github.com/mediatool/northlight/commit/b185f537c936c5da37845954b6ee12105a64e8de))
+
+
+
+
+
 ## [2.28.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.2...@northlight/ui@2.28.3) (2024-05-06)
 
 
