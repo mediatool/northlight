@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.28.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.4...@northlight/ui@2.28.5) (2024-05-14)
+
+
+### Bug Fixes
+
+* **framework:** add outline and solid variants to button types ([fbd01cc](https://github.com/mediatool/northlight/commit/fbd01cc9f0b5649c14d414015fb03406a5587a10))
+
+
+
+
+
 ## [2.28.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.3...@northlight/ui@2.28.4) (2024-05-08)
 
 
