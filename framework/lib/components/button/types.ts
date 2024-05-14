@@ -9,6 +9,8 @@ export type ButtonVariants =
   | 'link'
   | 'ghost'
   | 'ai'
+  | 'outline'
+  | 'solid'
 
 export type ButtonProps = Omit<ChakraButtonProps, 'as' | 'size'> & {
   variant?: ButtonVariants
