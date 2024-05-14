@@ -27,7 +27,8 @@ const SpinnerSizeMap = {
  * @example (Example)
  * (?
  * +
- * const variants = ['link', 'success', 'default', 'danger', 'brand', 'ghost', 'ai']
+ * const variants = ['link', 'success', 'default', 'danger', 'brand',
+ *  'ghost', 'ai', 'outline', 'brandSubdued', 'solid']
  *
  * const ExampleButton = () => {
  *  const [currentVariant, setCurrentVariant ] = useState(0)
