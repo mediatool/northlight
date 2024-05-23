@@ -99,6 +99,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     minValue = '1994-03-08',
     maxValue,
     renderInPortal = false,
+    firstDayOfWeek,
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -195,6 +196,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                 fiscalStartMonth={ fiscalStartMonth || 0 }
                 fiscalStartDay={ fiscalStartDay || 0 }
                 isClearable={ isClearable }
+                firstDayOfWeek={ firstDayOfWeek }
               />
             </FocusScope>
           </PopoverContent>

@@ -14,6 +14,7 @@ export interface RangeCalendarProps extends AriaRangeCalendarProps<DateValue> {
 export interface CalendarGridProps {
   state: CalendarState
   locale: string
+  firstDayOfWeek: FirstDayOfWeek
 }
 
 export interface RangeCalendarGridProps {
@@ -38,3 +39,5 @@ export interface RangeCellProps {
 export interface DayLabelsProps {
   weekDays: string[]
 }
+
+export type FirstDayOfWeek = 'monday' | 'sunday'

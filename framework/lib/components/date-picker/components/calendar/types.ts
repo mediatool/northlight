@@ -1,5 +1,6 @@
 import { DateValue } from '@internationalized/date'
 import { CalendarProps as AriaCalendarProps, RangeCalendarProps as AriaRangeCalendarProps } from '@react-aria/calendar'
+import { FirstDayOfWeek } from './components/types'
 
 export interface RangeCalendarProps extends AriaRangeCalendarProps<DateValue> {
   resetDate: () => void
@@ -7,6 +8,9 @@ export interface RangeCalendarProps extends AriaRangeCalendarProps<DateValue> {
   fiscalStartMonth: number
   fiscalStartDay?: number
   isClearable: boolean
+  firstDayOfWeek: FirstDayOfWeek
 }
 
-export type CalendarProps = AriaCalendarProps<DateValue>
+export interface CalendarProps extends AriaCalendarProps<DateValue> {
+  firstDayOfWeek: FirstDayOfWeek
+}
