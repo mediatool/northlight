@@ -68,7 +68,10 @@ export const StandaloneCalendarGrid = ({
         </Flex>
         <chakra.table { ...gridProps } sx={ { borderSpacing: '0' } }>
           <chakra.thead { ...headerProps }>
-            <DayLabels weekDays={ weekDays } />
+            <chakra.tr>
+              <chakra.th />
+              <DayLabels weekDays={ weekDays } />
+            </chakra.tr>
           </chakra.thead>
           <chakra.tbody>
             { times((weekIndex) => {

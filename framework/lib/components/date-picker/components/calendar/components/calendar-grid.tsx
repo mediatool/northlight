@@ -19,7 +19,9 @@ export const CalendarGrid = memo(
     return (
       <Table variant="unstyled" { ...gridProps }>
         <Thead { ...headerProps }>
-          <DayLabels weekDays={ weekDays } />
+          <Tr>
+            <DayLabels weekDays={ weekDays } />
+          </Tr>
         </Thead>
         <Tbody>
           { times(
