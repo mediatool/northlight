@@ -14,6 +14,7 @@ import { YearSelectCalendar } from './date-select'
 import { CalendarProps } from './types'
 
 export const Calendar = (props: CalendarProps) => {
+  const { firstDayOfWeek } = props
   const { locale } = useLocale()
   const { container } = useMultiStyleConfig('Calendar')
 
@@ -44,7 +45,11 @@ export const Calendar = (props: CalendarProps) => {
             </MonthButton>
           </HStack>
         </Flex>
-        <CalendarGrid state={ state } locale={ locale } />
+        <CalendarGrid
+          state={ state }
+          locale={ locale }
+          firstDayOfWeek={ firstDayOfWeek }
+        />
       </Stack>
     </Box>
   )

@@ -53,10 +53,10 @@ import { Box } from '../../box'
  * @example (Example)
  * ## Another example
  * (?
-  * <DatePicker
-  * variant="filled"
-  * dateFormat="mm|dd-yyyy"
-  * />
+ * <DatePicker
+ * variant="filled"
+ * dateFormat="mm|dd-yyyy"
+ * />
  * ?)
  *
  */
@@ -69,6 +69,7 @@ export const DatePicker = (props: DatePickerProps) => {
     dateFormat,
     minValue,
     variant = 'outline',
+    firstDayOfWeek = 'monday',
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -97,15 +98,13 @@ export const DatePicker = (props: DatePickerProps) => {
       <PopoverAnchor>
         <HStack minW={ 56 }>
           <InputGroup { ...groupProps } ref={ ref } __css={ group }>
-            <StyledField isDisabled={ isDisabled } isInvalid={ isInvalid } variant={ variant }>
-              <Box
-                paddingInlineStart="1a"
-                paddingInlineEnd={ 10 }
-              >
-                <DateField
-                  { ...fieldProps }
-                  dateFormat={ dateFormat }
-                />
+            <StyledField
+              isDisabled={ isDisabled }
+              isInvalid={ isInvalid }
+              variant={ variant }
+            >
+              <Box paddingInlineStart="1a" paddingInlineEnd={ 10 }>
+                <DateField { ...fieldProps } dateFormat={ dateFormat } />
               </Box>
             </StyledField>
             <InputRightElement
@@ -134,7 +133,7 @@ export const DatePicker = (props: DatePickerProps) => {
       { state.isOpen && (
         <PopoverContent { ...dialogProps } ref={ ref } w={ 64 } border="none">
           <FocusScope contain={ true } restoreFocus={ true }>
-            <Calendar { ...calendarProps } />
+            <Calendar { ...calendarProps } firstDayOfWeek={ firstDayOfWeek } />
           </FocusScope>
         </PopoverContent>
       ) }

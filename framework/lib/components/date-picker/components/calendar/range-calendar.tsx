@@ -32,6 +32,7 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
     fiscalStartDay,
     minValue,
     maxValue,
+    firstDayOfWeek,
   } = props
 
   const { locale } = useLocale()
@@ -59,7 +60,8 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
     maxValue,
     onChange: (newVal) => {
       setRange({
-        start: value && value.end && value.start <= newVal ? value.start : newVal,
+        start:
+          value && value.end && value.start <= newVal ? value.start : newVal,
         end: newVal,
       })
     },
@@ -103,6 +105,7 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
                   <StandaloneCalendarGrid
                     state={ calendarOneState }
                     range={ value }
+                    firstDayOfWeek={ firstDayOfWeek }
                   />
                 </Box>
               </Stack>
@@ -113,6 +116,7 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
                     <StandaloneCalendarGrid
                       state={ calendarTwoState }
                       range={ value }
+                      firstDayOfWeek={ firstDayOfWeek }
                     />
                   </Box>
                 </Stack>

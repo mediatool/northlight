@@ -17,15 +17,19 @@ import { MonthButton } from './month-button'
 import { getWeekNumberAtStartOfMonth } from './get-week-number-start-of-month'
 import { RangeCell } from './range-cell'
 import { DateRangeValue } from '../quick-navigation/types'
+import { FirstDayOfWeek } from './types'
+import { getWeekdays } from './utils'
 
 interface StandaloneCalendarGridProps {
   state: CalendarState
   range: DateRangeValue | undefined
+  firstDayOfWeek: FirstDayOfWeek
 }
 
 export const StandaloneCalendarGrid = ({
   state,
   range,
+  firstDayOfWeek,
   ...rest
 }: StandaloneCalendarGridProps) => {
   const { locale } = useLocale()
@@ -34,7 +38,8 @@ export const StandaloneCalendarGrid = ({
     state
   )
   const startDate = state.visibleRange.start
-  const { gridProps, headerProps, weekDays } = useCalendarGrid(rest, state)
+  const { gridProps, headerProps } = useCalendarGrid(rest, state)
+  const weekDays = getWeekdays(firstDayOfWeek)
   const weeksInMonth = getWeeksInMonth(startDate, locale)
   const weekNumberStart = useMemo(
     () =>
@@ -66,40 +71,35 @@ export const StandaloneCalendarGrid = ({
             <DayLabels weekDays={ weekDays } />
           </chakra.thead>
           <chakra.tbody>
-            { times(
-              (weekIndex) => {
-                const weekNumber = weekNumberStart + weekIndex
+            { times((weekIndex) => {
+              const weekNumber = weekNumberStart + weekIndex
 
-                return (
-                  <chakra.tr key={ weekIndex }>
-                    <chakra.td>
-                      <Small sx={ { color: 'text.subdued' } } pr="2">
-                        w.
-                        { weekNumber > 52
-                          ? weekNumber - 52
-                          : weekNumber }
-                      </Small>
-                    </chakra.td>
-                    { state
-                      .getDatesInWeek(weekIndex, startDate)
-                      .map((date) =>
-                        (date ? (
-                          <RangeCell
-                            key={ date.day }
-                            state={ state }
-                            range={ range }
-                            date={ date }
-                            currentMonth={ startDate }
-                          />
-                        ) : (
-                          <chakra.td />
-                        ))
-                      ) }
-                  </chakra.tr>
-                )
-              },
-              weeksInMonth
-            ) }
+              return (
+                <chakra.tr key={ weekIndex }>
+                  <chakra.td>
+                    <Small sx={ { color: 'text.subdued' } } pr="2">
+                      w.
+                      { weekNumber > 52 ? weekNumber - 52 : weekNumber }
+                    </Small>
+                  </chakra.td>
+                  { state
+                    .getDatesInWeek(weekIndex, startDate)
+                    .map((date) =>
+                      (date ? (
+                        <RangeCell
+                          key={ date.day }
+                          state={ state }
+                          range={ range }
+                          date={ date }
+                          currentMonth={ startDate }
+                        />
+                      ) : (
+                        <chakra.td />
+                      ))
+                    ) }
+                </chakra.tr>
+              )
+            }, weeksInMonth) }
           </chakra.tbody>
         </chakra.table>
       </Stack>
