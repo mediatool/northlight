@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.28.6](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.5...@northlight/ui@2.28.6) (2024-05-24)
+
+
+### Bug Fixes
+
+* **framework:** add striped table variant ([190e542](https://github.com/mediatool/northlight/commit/190e542ae21c52e5b9d450d545cd4fc536b3dfc7))
+* **framework:** Cannot close popover on outside click ([543fa7b](https://github.com/mediatool/northlight/commit/543fa7b188dbd29d41943ab94a2e44f51f473809))
+* **framework:** change spacing in quick select ([f9ddcac](https://github.com/mediatool/northlight/commit/f9ddcacf539942eb4f16e4c7356deaea3ef019ee))
+* **framework:** fix oveflowing daylabels ([4aee0de](https://github.com/mediatool/northlight/commit/4aee0de5895449092b96efe47c88cda1a4381915))
+* **framework:** react key error ([76f3418](https://github.com/mediatool/northlight/commit/76f34186a84858f439451dcd94c72b2bffc1d280))
+* **framework:** remove werid ring around current date ([868a750](https://github.com/mediatool/northlight/commit/868a7505fbc004daea766381018af6954611b678))
+* **framework:** weekdays in english and firstDayOfWeek prop ([ae41073](https://github.com/mediatool/northlight/commit/ae410731dd77b0ca1ea8daedafea8c0b915190d5))
+
+
+
+
+
 ## [2.28.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.4...@northlight/ui@2.28.5) (2024-05-14)
 
 
