@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.3](https://github.com/mediatool/northlight/compare/@northlight/icons@1.5.2...@northlight/icons@1.5.3) (2024-05-31)
+
+**Note:** Version bump only for package @northlight/icons
+
+
+
+
+
 ## [1.5.2](https://github.com/mediatool/northlight/compare/@northlight/icons@1.5.1...@northlight/icons@1.5.2) (2024-04-22)
 
 **Note:** Version bump only for package @northlight/icons
