@@ -8,11 +8,12 @@ export interface ColorPickerProps
   IconButtonProps,
   'onChange' | 'value' | 'aria-label' | 'variant'
   > {
-  onChange?: (value: string) => void
+  onChange?: (value: string | null) => void
   /** This are what color options the user can choose */
   colors?: string[]
   /** This are the extended color options  displayed when clicking the down caret */
   expandedColors?: string[]
+  clearable?: boolean
   value?: string | null
   size?: ColorPickerSize
   name?: string

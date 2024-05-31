@@ -19,6 +19,7 @@ import {
   PopoverTrigger,
 } from '../popover'
 import { ColorsExpandButton } from './colors-expand-button'
+import { Button } from '../button'
 
 /**
  * Dropdown menu where user can select hex value
@@ -45,6 +46,7 @@ import { ColorsExpandButton } from './colors-expand-button'
  */
 export const ColorPicker = ({
   onChange = () => {},
+  clearable = false,
   colors = defaultColors,
   expandedColors = paletteColors,
   value = null,
@@ -112,6 +114,11 @@ export const ColorPicker = ({
     onChange(color)
   }
 
+  const clearSelection = () => {
+    setSelectedColor(null)
+    onChange(null)
+  }
+
   return (
     <Box data-testid="color-picker-test-id">
       <Popover
@@ -136,8 +143,22 @@ export const ColorPicker = ({
             <PopoverHeader
               color="text.default"
               sx={ heading }
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              width="full"
             >
               Pick a color
+              { clearable && trigger.color !== 'unset' && (
+                <Button
+                  size="sm"
+                  h="5"
+                  onClick={ clearSelection }
+                  variant="ghost"
+                >
+                  Clear
+                </Button>
+              ) }
             </PopoverHeader>
             <PopoverBody p={ 0 }>
               <Stack alignItems="center" p={ 0 } spacing={ 0 }>
