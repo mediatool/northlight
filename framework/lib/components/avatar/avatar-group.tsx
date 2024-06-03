@@ -3,6 +3,7 @@ import { HStack } from '../stack'
 import { AvatarGroupProps } from './types'
 import { Small } from '../typography'
 import { OverflowGroup } from '../overflow-group'
+import { getChildrenWithProps } from '../../utils'
 
 /**
  * Used to display a group of users
@@ -32,12 +33,17 @@ export const AvatarGroup = ({
   ...rest
 }: AvatarGroupProps) => {
   const [ nbrRemainingAvatars, setNbrRemainingAvatars ] = useState(0)
+  const childrenWithMargin = getChildrenWithProps(
+    children,
+    { ml: spacing },
+    (_child, idx) => idx > 0
+  )
 
   return (
     <HStack bgColor="background.default" { ...rest }>
-      <HStack spacing={ spacing }>
+      <HStack spacing={ 0 }>
         <OverflowGroup max={ max } onChange={ setNbrRemainingAvatars }>
-          { children }
+          { childrenWithMargin }
         </OverflowGroup>
       </HStack>
       { nbrRemainingAvatars > 0 && (
