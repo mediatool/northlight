@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.28.9](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.8...@northlight/ui@2.28.9) (2024-06-03)
+
+
+### Bug Fixes
+
+* **framework:** avatar group allow negative spacing ([f25b8d8](https://github.com/mediatool/northlight/commit/f25b8d81c2876e4194a808efb4e22c5f14057631))
+
+
+
+
+
 ## [2.28.8](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.7...@northlight/ui@2.28.8) (2024-06-03)
 
 
