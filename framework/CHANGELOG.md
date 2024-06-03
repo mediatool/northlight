@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.28.8](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.7...@northlight/ui@2.28.8) (2024-06-03)
+
+
+### Bug Fixes
+
+* **northlight-ui:** make color clearable in colorpicker ([10bc098](https://github.com/mediatool/northlight/commit/10bc09825cc3c6fd577b9f4b8a1eb3f1d83dfb55))
+
+
+
+
+
 ## [2.28.7](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.6...@northlight/ui@2.28.7) (2024-05-31)
 
 **Note:** Version bump only for package @northlight/ui
