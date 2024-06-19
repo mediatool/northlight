@@ -1,5 +1,5 @@
 import React, { Children, useEffect, useRef, useState } from 'react'
-import { always, dec, defaultTo, gt, identity, ifElse, inc, take } from 'ramda'
+import { always, dec, defaultTo, gt, identity, ifElse, inc, isNil, take } from 'ramda'
 import { OverflowGroupProps } from './types'
 import { getChildrenWithProps } from '../../utils'
 
@@ -116,7 +116,7 @@ export const OverflowGroup = ({
   onChange = identity,
   rect,
 }: OverflowGroupProps) => {
-  const [ max, setMax ] = useState(typeof rect === 'undefined' ? initMax : 0)
+  const [ max, setMax ] = useState(isNil(rect) ? initMax : 0)
   const [ windowState, setWindowState ] = useState(EMPTY_WINDOW)
   const isLocked = useRef(false)
   const nbrChildren = Children.count(children)
