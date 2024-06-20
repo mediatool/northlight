@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.28.12](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.11...@northlight/ui@2.28.12) (2024-06-20)
+
+
+### Bug Fixes
+
+* **framework:** fix overflow-group max ([1bb81a8](https://github.com/mediatool/northlight/commit/1bb81a8aef1da999cf10239dd67051283940fdc5))
+
+
+
+
+
 ## [2.28.11](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.10...@northlight/ui@2.28.11) (2024-06-14)
 
 **Note:** Version bump only for package @northlight/ui
