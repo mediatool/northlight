@@ -180,7 +180,7 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
   }, [ options ])
 
   return (
-    <Box w="full" data-testid={ testId }>
+    <Box w="full" data-testid={ testId } cursor="pointer">
       <ChakraReactSelect
         isMulti={ isMulti }
         options={ renderedOptions }
