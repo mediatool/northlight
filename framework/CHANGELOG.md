@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.28.14](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.13...@northlight/ui@2.28.14) (2024-07-05)
+
+
+### Bug Fixes
+
+* **framework:** add cursor pointer to select component ([18b5485](https://github.com/mediatool/northlight/commit/18b5485f3ded0e66d3709044654bdf34877265c2))
+
+
+
+
+
 ## [2.28.13](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.12...@northlight/ui@2.28.13) (2024-07-04)
 
 **Note:** Version bump only for package @northlight/ui
