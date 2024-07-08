@@ -33,7 +33,7 @@ export interface SearchBarProps<T extends SearchBarOptionType, K extends boolean
   debouncedWaitTime?: number
   clearInputOnSelect?: boolean
   closeMenuonSelect?: boolean
-  defaultOptions?: T[]
+  defaultOptions?: T[] | boolean
   sx?: ChakraStylesConfig<any>
   isMulti?: K
   customOption?: CustomElementType<T>
