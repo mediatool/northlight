@@ -55,19 +55,24 @@ export const SearchBar = forwardRef(
       []
     )
 
-    const simpleFilter = (query: string) => (
-      filter(
+    const simpleFilter = (query: string) => {
+      if (typeof defaultOptions === 'boolean') return []
+      return filter(
         (option: T) =>
           test(new RegExp(toLower(query), 'g'), toLower(option.label)),
         defaultOptions
       )
-    )
-
+    }
     const getOptions = async (query: string) => {
       const newOptions = getCustomOptions
         ? await getCustomOptions(query)
         : simpleFilter(query)
-      setFiltered(newOptions)
+      setFiltered((prev) => {
+        // If default value is a boolean we want default value to persist to it's initial value
+        // this is to allow pre-fetching of values on first render
+        if (typeof prev === 'boolean') return prev
+        return newOptions
+      })
 
       return newOptions
     }
