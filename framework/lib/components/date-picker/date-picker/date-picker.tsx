@@ -14,6 +14,7 @@ import { InputGroup, InputRightElement } from '../../input'
 import { Popover, PopoverAnchor, PopoverContent } from '../../popover'
 import { Icon } from '../../icon'
 import { Box } from '../../box'
+import { DatePickerLocaleWrapper } from './date-picker-locale-wrapper'
 
 /**
  * Popover to select single date
@@ -133,7 +134,9 @@ export const DatePicker = (props: DatePickerProps) => {
       { state.isOpen && (
         <PopoverContent { ...dialogProps } ref={ ref } w={ 64 } border="none">
           <FocusScope contain={ true } restoreFocus={ true }>
-            <Calendar { ...calendarProps } firstDayOfWeek={ firstDayOfWeek } />
+            <DatePickerLocaleWrapper firstDayOfWeek={ firstDayOfWeek }>
+              <Calendar { ...calendarProps } firstDayOfWeek={ firstDayOfWeek } />
+            </DatePickerLocaleWrapper>
           </FocusScope>
         </PopoverContent>
       ) }
