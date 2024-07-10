@@ -18,6 +18,7 @@ import { IconButton } from '../../icon-button'
 import { InputGroup, InputRightElement } from '../../input'
 import { Icon } from '../../icon'
 import { isValidDateRange } from '../date-picker-field/utils'
+import { DatePickerLocaleWrapper } from './date-picker-locale-wrapper'
 
 const parseValue = (value: any) => {
   if (!isValidDateRange(value)) return null
@@ -114,7 +115,6 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     minValue: isNil(minValue) ? undefined : (parseDate(minValue) as DateValue),
     maxValue: isNil(maxValue) ? undefined : (parseDate(maxValue) as DateValue),
   }
-
   const state = useDateRangePickerState({
     ...props,
     ...parsedProps,
@@ -194,15 +194,17 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
         { state.isOpen && (
           <PopoverContent { ...dialogProps } ref={ ref } w="max-content">
             <FocusScope contain={ true } restoreFocus={ true }>
-              <RangeCalendar
-                { ...calendarProps }
-                resetDate={ resetDate }
-                handleClose={ handleClose }
-                fiscalStartMonth={ fiscalStartMonth || 0 }
-                fiscalStartDay={ fiscalStartDay || 0 }
-                isClearable={ isClearable }
-                firstDayOfWeek={ firstDayOfWeek }
-              />
+              <DatePickerLocaleWrapper firstDayOfWeek={ firstDayOfWeek }>
+                <RangeCalendar
+                  { ...calendarProps }
+                  resetDate={ resetDate }
+                  handleClose={ handleClose }
+                  fiscalStartMonth={ fiscalStartMonth || 0 }
+                  fiscalStartDay={ fiscalStartDay || 0 }
+                  isClearable={ isClearable }
+                  firstDayOfWeek={ firstDayOfWeek }
+                />
+              </DatePickerLocaleWrapper>
             </FocusScope>
           </PopoverContent>
         ) }
