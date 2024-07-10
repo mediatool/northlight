@@ -1,5 +1,6 @@
 import { ComponentMultiStyleConfig, keyframes } from '@chakra-ui/react'
 import { CSSObject } from '@emotion/react'
+import { merge } from 'ramda'
 import { CurrentTheme } from '../../../utils'
 
 const shakeAnimation = keyframes`
@@ -55,8 +56,8 @@ const getAiColorStyles = (isInvalid: boolean, isImage = true) => ({
 
 export const FilePicker: ComponentMultiStyleConfig = {
   parts: [ 'filePicker', 'fileItem', 'multiFilePicker' ],
-  baseStyle: ({ theme: { sizes, colors }, hasLoaded, isImage, isInvalid, currentTheme }) => ({
-    filePicker: {
+  baseStyle: ({ theme: { sizes, colors }, hasLoaded, isImage, isInvalid, currentTheme, sx }) => ({
+    filePicker: merge({
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -70,7 +71,7 @@ export const FilePicker: ComponentMultiStyleConfig = {
       borderRadius: 'lg',
       ...getInvalidColorStyles(isInvalid, isImage, currentTheme),
       ...thickRing,
-    },
+    }, sx),
     multiFilePicker: {
       width: 'full',
       maxWidth: 'inherit',
