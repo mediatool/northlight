@@ -5,7 +5,6 @@ import { pinSizeMap } from './pin-size-map'
 import { StatusPinProps } from './types'
 
 /**
- * @see StatusBlock
  * @see {@link https://northlight/reference/status-pin}
  *
  * @example
