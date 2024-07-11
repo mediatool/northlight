@@ -37,4 +37,21 @@ export const Badge: ComponentSingleStyleConfig = {
       }
     },
   },
+  sizes: {
+    xs: {
+      fontSize: '2xs',
+    },
+    sm: {
+      fontSize: 'xs',
+    },
+    md: {
+      fontSize: 'sm',
+    },
+    lg: {
+      fontSize: 'md',
+    },
+  },
+  defaultProps: {
+    size: 'sm',
+  },
 }
