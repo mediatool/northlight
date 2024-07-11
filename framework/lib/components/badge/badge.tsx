@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react'
-import { BadgeProps, Badge as ChakraBadge } from '@chakra-ui/react'
+import { Badge as ChakraBadge } from '@chakra-ui/react'
+import { BadgeProps } from './types'
 
 /**
  * Badges are used to highlight an item's status for quick recognition.
