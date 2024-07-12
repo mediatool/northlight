@@ -5,30 +5,35 @@ import { pinSizeMap } from './pin-size-map'
 import { StatusPinProps } from './types'
 
 /**
+ * Status pins are meant to display the status of a specific entry.
+ * @see Badge
  * @see {@link https://northlight/reference/status-pin}
  *
- * @example
+ * @example (Example)
  * (?
  * +
- * const variants = ["running", "inProgress", "notExecuted", "rejected"]
- * const sizes = ["sm", "md", "lg"]
+ * const sizes = ['lg', 'md', 'sm']
+ * const variants = ['notExecuted', 'running', 'inProgress', 'rejected']
+ *
  * const Example = () => {
- *     return <Stack>
- *         { sizes.map((size) => (
- *         <HStack spacing={ 4 }>
- *             {
- *                 variants.map((variant) => (
- *                 <StatusPin variant={variant} size={size} />
- *                 ))
- *             }
- *             </HStack>
- *         ))}
- *         </Stack>
+ *    return (
+ *      <Stack>
+ *        {variants.map((variant)=>(
+ *          <HStack spacing={4} alignItems="center">
+ *            {sizes.map((size)=>(
+ *              <StatusPin size={size} variant={variant} />
+ *            ))}
+ *          </HStack>
+ *        ))}
+ *      </Stack>
+ *    )
  * }
  * render(<Example/>)
  * ?)
  *
  */
+
+
 export const StatusPin = ({ size = 'md', variant, ...rest }: StatusPinProps) => {
   const pinColor = pinVariantMap[variant]
   const pinSizeTuple = pinSizeMap[size]
@@ -37,8 +42,8 @@ export const StatusPin = ({ size = 'md', variant, ...rest }: StatusPinProps) => 
   return (
     <Circle
       size={ outerSize }
-      bg="white"
-      borderWidth="1px"
+      bg="transparent"
+      borderWidth="xs"
       borderColor={ pinColor }
       { ...rest }
     >
