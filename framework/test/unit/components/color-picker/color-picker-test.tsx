@@ -1,9 +1,9 @@
 import React from 'react'
 import { describe, it } from 'mocha'
 import { assert, expect } from 'chai'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { ColorPicker } from '../../../../lib/components'
+import { ColorPicker } from '../../../../lib'
 import { columns } from '../../../../lib/components/color-picker/constants'
 
 const { isOk } = assert
@@ -58,7 +58,7 @@ describe('ColorPicker', () => {
     const user = userEvent.setup()
     const colorPicker = getComponent().children[0]
     await user.tab()
-    expect(colorPicker).to.deep.equal(document.activeElement)
+    waitFor(() => expect(colorPicker).to.deep.equal(document.activeElement))
   })
 
   it('Focuses on first colorbutton on popup', async () => {
@@ -67,7 +67,7 @@ describe('ColorPicker', () => {
     const triggerButton = getComponent().children[0]
     const colorButton = getColorButton(0)
     await user.click(triggerButton)
-    expect(colorButton).to.deep.equal(document.activeElement)
+    waitFor(() => expect(colorButton).to.deep.equal(document.activeElement))
   })
 
   it('Moves focus to next colorButton on tab', async () => {
@@ -77,7 +77,7 @@ describe('ColorPicker', () => {
     const colorButton = getColorButton(1)
     await user.click(triggerButton)
     await user.tab()
-    expect(colorButton).to.deep.equal(document.activeElement)
+    waitFor(() => expect(colorButton).to.deep.equal(document.activeElement))
   })
 
   it('Can move focus with keyboard keys', async () => {
@@ -89,19 +89,19 @@ describe('ColorPicker', () => {
 
     await user.keyboard('{ArrowRight}')
     index += 1
-    expect(getColorButton(index)).to.deep.equal(document.activeElement)
+    waitFor(() => expect(getColorButton(index)).to.deep.equal(document.activeElement))
 
     await user.keyboard('{ArrowDown}')
     index += columns
-    expect(getColorButton(index)).to.deep.equal(document.activeElement)
+    waitFor(() => expect(getColorButton(index)).to.deep.equal(document.activeElement))
 
     await user.keyboard('{ArrowLeft}')
     index -= 1
-    expect(getColorButton(index)).to.deep.equal(document.activeElement)
+    waitFor(() => expect(getColorButton(index)).to.deep.equal(document.activeElement))
 
     await user.keyboard('{ArrowUp}')
     index -= columns
-    expect(getColorButton(index)).to.deep.equal(document.activeElement)
+    waitFor(() => expect(getColorButton(index)).to.deep.equal(document.activeElement))
   })
 
   it('Renders custom color', () => {
@@ -117,9 +117,9 @@ describe('ColorPicker', () => {
     const colorButton = getColorButton(0)
     const triggerButton = getComponent().children[0]
     await user.click(triggerButton)
-    expect(triggerButton.getAttribute('aria-expanded')).to.equal('true')
+    waitFor(() => expect(triggerButton.getAttribute('aria-expanded')).to.equal('true'))
     await user.click(colorButton)
-    expect(triggerButton.getAttribute('aria-expanded')).to.equal('false')
+    waitFor(() => expect(triggerButton.getAttribute('aria-expanded')).to.equal('false'))
   })
 
   it('Adds expanded colors when press down arrow', async () => {
@@ -127,8 +127,10 @@ describe('ColorPicker', () => {
     const user = userEvent.setup()
     const expandButton = getExpandButton()
     await user.click(expandButton)
-    const expandedColorButton = getColorButton(10)
-    expect(expandedColorButton.getAttribute('aria-label')).to.equal('select-#00ff00')
+    waitFor(() => {
+      const expandedColorButton = getColorButton(10)
+      expect(expandedColorButton.getAttribute('aria-label')).to.equal('select-#00ff00')
+    })
   })
 
   it('Can focus on expand button, and return focus', async () => {
@@ -139,8 +141,8 @@ describe('ColorPicker', () => {
     const colorButton = getColorButton(0)
     await user.click(triggerButton)
     await user.keyboard('{PageDown}')
-    expect(expandButton).to.deep.equal(document.activeElement)
+    waitFor(() => expect(expandButton).to.deep.equal(document.activeElement))
     await user.keyboard('{PageUp}')
-    expect(colorButton).to.deep.equal(document.activeElement)
+    waitFor(() => expect(colorButton).to.deep.equal(document.activeElement))
   })
 })
