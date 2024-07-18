@@ -90,8 +90,8 @@ export const Avatar: ComponentMultiStyleConfig = {
     colors: color,
     sizes: sizing,
     radii: borderRadius,
-  }, image, name }) => {
-    const avatarBgColor = getAvatarBgColor(image, name, color)
+  }, image, name, bgColor }) => {
+    const avatarBgColor = bgColor || getAvatarBgColor(image, name, color)
 
     return {
       container: {
