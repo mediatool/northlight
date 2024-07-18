@@ -36,6 +36,7 @@ export const Avatar = ({
   name,
   image,
   size,
+  bgColor,
   ...rest
 }: AvatarProps) => {
   const { container, text, userImage, icon } = useMultiStyleConfig('Avatar', {
@@ -43,6 +44,7 @@ export const Avatar = ({
     image,
     size,
     name,
+    bgColor,
   })
 
   return (
