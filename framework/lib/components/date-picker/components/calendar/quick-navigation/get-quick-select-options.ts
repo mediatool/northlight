@@ -42,6 +42,14 @@ export const getQuickSelectOptions = (
     label: 'This Week',
   }
 
+  const nextWeek = {
+    value: {
+      start: startOfWeek(thisDay.add({ weeks: 1 }), locale),
+      end: endOfWeek(thisDay.add({ weeks: 1 }), locale),
+    },
+    label: 'Next Week',
+  }
+
   const lastWeek = {
     value: {
       start: startOfWeek(thisDay.subtract({ weeks: 1 }), locale),
@@ -250,17 +258,18 @@ export const getQuickSelectOptions = (
     fiscalStartMonth === 0 ? [] : [ thisFiscalYear, lastFiscalYear ]
 
   const quickDates = [
-    thisWeek,
-    lastWeek,
-    thisMonth,
-    lastMonth,
-    thisYear,
     yearToDate,
-    lastYear,
-    nextMonth,
+    lastWeek,
+    nextWeek,
+    thisWeek,
+    lastMonth,
     nextThreeMonths,
     nextSixMonths,
+    nextMonth,
+    thisMonth,
+    lastYear,
     nextYear,
+    thisYear,
     ...fiscalYears,
   ]
 
