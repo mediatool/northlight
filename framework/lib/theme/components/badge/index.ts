@@ -36,6 +36,16 @@ export const Badge: ComponentSingleStyleConfig = {
         color: textColor,
       }
     },
+    ghost: ({ colorScheme, theme: { colors } }) => {
+      const textColor = colorScheme === 'mediatoolBlue'
+        ? colors[colorScheme][500]
+        : colors[colorScheme] && colors[colorScheme][700]
+
+      return {
+        bgColor: 'mono.transparent',
+        color: textColor,
+      }
+    },
   },
   sizes: {
     xs: {
