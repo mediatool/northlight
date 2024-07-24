@@ -11,7 +11,7 @@ import { BadgeProps } from './types'
  * +
  * const colors = ["gray", "mediatoolBlue", "blue", "red", "green",
  * "orange", "yellow", "teal", "purple", "pink"]
- * const variants = ["solid", "outline", "subtle"]
+ * const variants = ["solid", "outline", "subtle", "ghost"]
  * const Example = () => {
  *     return <Stack>
  *         { colors.map((color) => (
