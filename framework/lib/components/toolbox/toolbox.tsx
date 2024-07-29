@@ -10,6 +10,7 @@ import { Portal } from '../portal'
 import { ToolboxProps } from './types'
 import { getChildrenWithProps } from '../../utils'
 import { ResizeHandle } from '../resize-handle'
+import { VStack } from '../stack'
 
 /**
  * Controllable Sidebar drawer
@@ -117,9 +118,9 @@ export const Toolbox = ({
           >
             { isResizable && <ResizeHandle { ...resizeProps } /> }
             <FocusScope autoFocus={ autoFocus }>
-              <Box width="full" height="full">
+              <VStack width="full" height="full">
                 { newChildren }
-              </Box>
+              </VStack>
             </FocusScope>
           </Flex>
         </Slide>
