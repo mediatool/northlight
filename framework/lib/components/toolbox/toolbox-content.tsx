@@ -8,8 +8,8 @@ import { ToolboxContentProps } from './types'
  * @see Toolbox
  * @see {@link https://northlight.dev/reference/toolbox-content}
  */
-export const ToolboxContent = ({ children, ...rest }: ToolboxContentProps) => {
-  const { body } = useMultiStyleConfig('Toolbox', {})
+export const ToolboxContent = ({ sx = {}, children, ...rest }: ToolboxContentProps) => {
+  const { body } = useMultiStyleConfig('Toolbox', { sx })
 
   return (
     <Flex

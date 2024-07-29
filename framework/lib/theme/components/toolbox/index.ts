@@ -1,8 +1,9 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { merge } from 'ramda'
 
 export const Toolbox: ComponentMultiStyleConfig = {
   parts: [ 'container', 'header', 'body', 'footer' ],
-  baseStyle: ({ theme: { sizes: sizing } }) => ({
+  baseStyle: ({ sx, theme: { sizes: sizing } }) => ({
     container: {
       position: 'relative',
       bg: 'text.inverted',
@@ -31,14 +32,14 @@ export const Toolbox: ComponentMultiStyleConfig = {
       borderTopStyle: 'solid',
       borderTopColor: 'gray.100',
     },
-    body: {
+    body: merge({
       p: sizing['4'],
       flexDirection: 'column',
       w: '100%',
       h: '100%',
       maxH: `calc(100vh - ${sizing['16']} * 2)`,
       overflowY: 'scroll',
-    },
+    }, sx.body),
   }),
   sizes: {
     sm: {
