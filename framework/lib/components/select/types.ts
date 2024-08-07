@@ -58,4 +58,6 @@ Omit<InputFieldProps, 'isMulti'> & {
   label: string
   validate?: RegisterOptions
   isRequired?: boolean
+  onChange?: (option: K extends true ? MultiValue<T> | undefined : SingleValue<T> | undefined,
+    event: ActionMeta<T>) => void
 }

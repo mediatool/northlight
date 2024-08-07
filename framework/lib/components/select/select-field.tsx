@@ -7,7 +7,7 @@ import { Select } from './select'
 import { HStack } from '../stack'
 import { IconButton } from '../icon-button'
 import { Icon } from '../icon'
-import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
+import { InputGroupWrapper } from '../../internal-components'
 
 const BaseSelectField = <T extends Option, K extends boolean = false>(
   {
@@ -77,6 +77,7 @@ const BaseSelectField = <T extends Option, K extends boolean = false>(
           hidden={ value === undefined || !isClearable }
           onClick={ () => {
             onChange(undefined)
+            onChangeCallback(undefined, { action: 'clear', removedValues: value })
           } }
           icon={ <Icon as={ XCloseSolid } /> }
         />
