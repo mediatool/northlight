@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.5](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.4.4...@northlight/tokens@1.4.5) (2024-08-16)
+
+
+### Bug Fixes
+
+* **tokens:** remove unused status-block tokens ([959601c](https://github.com/mediatool/northlight/commit/959601c3ab7e113c302f8aa109ffd50c0988476a))
+
+
+
+
+
 ## [1.4.4](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.4.3...@northlight/tokens@1.4.4) (2024-02-08)
 
 **Note:** Version bump only for package @northlight/tokens

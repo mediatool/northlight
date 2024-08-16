@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.29.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.14...@northlight/ui@2.29.0) (2024-08-16)
+
+
+### Bug Fixes
+
+* **framework:** add proper avatar text contrast color ([a9ccb1a](https://github.com/mediatool/northlight/commit/a9ccb1a857aa3d5d742f7ca02535c8846c6d6a41))
+* **framework:** fix select field clear button action ([c2a4d45](https://github.com/mediatool/northlight/commit/c2a4d4559dbf228d85b747b7b78da43cf33074e0))
+* **framework:** remove unused status-block component ([bf53698](https://github.com/mediatool/northlight/commit/bf53698406761e5edfed3ba2049c4bb10dc15276))
+* **northlight-ui:** add test for getContrastColor ([58e3c89](https://github.com/mediatool/northlight/commit/58e3c893da6c607517a69910c90798d46448b57e))
+* **northlight-ui:** fix color picker tests ([603c9fa](https://github.com/mediatool/northlight/commit/603c9fab9250c3d4e75356d1068569db770d9a83))
+* **northlight-ui:** fix firstdayofweek in calendar ([7d410c5](https://github.com/mediatool/northlight/commit/7d410c5f18d4f6220b4d1d5f85ff967e26ad6e9a)), closes [#DEV-14275](https://github.com/mediatool/northlight/issues/DEV-14275)
+
+
+### Features
+
+* **northligh-ui:** allow search bar default values as boolean ([1e3cd03](https://github.com/mediatool/northlight/commit/1e3cd03fe8ae2e2709420848df2fadf1afd98932))
+* **northlight-ui:** add next week to date range picker ([473390c](https://github.com/mediatool/northlight/commit/473390cadca87206a881f25b950f76213aecbf6b)), closes [#DEV-13744](https://github.com/mediatool/northlight/issues/DEV-13744)
+
+
+
+
+
 ## [2.28.14](https://github.com/mediatool/northlight/compare/@northlight/ui@2.28.13...@northlight/ui@2.28.14) (2024-07-05)
 
 

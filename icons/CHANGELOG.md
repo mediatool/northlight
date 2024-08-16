@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.5.5...@northlight/icons@1.6.0) (2024-08-16)
+
+
+### Features
+
+* **icons:** add music duo and solid icons ([79c5cad](https://github.com/mediatool/northlight/commit/79c5cada94dd9b188a6956e90d73acedc725a8c7))
+
+
+
+
+
 ## [1.5.5](https://github.com/mediatool/northlight/compare/@northlight/icons@1.5.4...@northlight/icons@1.5.5) (2024-07-04)
 
 **Note:** Version bump only for package @northlight/icons
