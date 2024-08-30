@@ -258,6 +258,7 @@ export const getQuickSelectOptions = (
     fiscalStartMonth === 0 ? [] : [ thisFiscalYear, lastFiscalYear ]
 
   const quickDates = [
+    thisYear,
     yearToDate,
     lastWeek,
     nextWeek,
@@ -269,7 +270,6 @@ export const getQuickSelectOptions = (
     thisMonth,
     lastYear,
     nextYear,
-    thisYear,
     ...fiscalYears,
   ]
 
