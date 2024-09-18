@@ -49,6 +49,11 @@ export const routes: Page[] = [
       component: () => import('../pages/checkbox-page'),
     },
     {
+      title: 'Combo Picker',
+      path: '/combopicker',
+      component: () => import('../pages/combo-picker-page'),
+    },
+    {
       title: 'Date Range Picker',
       path: '/date-range-picker',
       component: () => import('../pages/date-range-picker-page'),
