@@ -33,7 +33,6 @@ import { StatusPinProps } from './types'
  *
  */
 
-
 export const StatusPin = ({ size = 'md', variant, ...rest }: StatusPinProps) => {
   const pinColor = pinVariantMap[variant]
   const pinSizeTuple = pinSizeMap[size]
