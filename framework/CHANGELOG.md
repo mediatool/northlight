@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.30.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.29.1...@northlight/ui@2.30.0) (2024-09-25)
+
+
+### Features
+
+* **framework:** created combo-picker component ([1b0c6f6](https://github.com/mediatool/northlight/commit/1b0c6f60f4ac9e9175275f6e1007ddfbd2596439))
+
+
+
+
+
 ## [2.29.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.29.0...@northlight/ui@2.29.1) (2024-08-30)
 
 
