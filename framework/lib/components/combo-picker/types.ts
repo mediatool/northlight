@@ -1,6 +1,6 @@
 import { RegisterOptions } from 'react-hook-form'
 import { StackDirection } from '@chakra-ui/react'
-import { NumberInputProps } from '../number-input'
+import { FormattedNumberInputPreset, FormattedNumberInputProps } from '../text-field'
 
 export type ComboPickerValue = {
   input: number
@@ -12,11 +12,15 @@ export type ComboPickerOption = {
   value: string
 }
 
-export interface ComboPickerProps extends Omit<NumberInputProps, | 'value'> {
+export interface ComboPickerProps extends Omit<FormattedNumberInputProps, | 'value' | 'onChange'> {
   options: ComboPickerOption[]
   value?: ComboPickerValue
   onChange?: (value: ComboPickerValue) => void
   defaultOption?: ComboPickerOption
+  precision?: number
+  formatPreset?: FormattedNumberInputPreset
+  isDisabled?: boolean
+  isReadOnly?: boolean
 }
 
 export interface ComboPickerFieldProps extends ComboPickerProps {

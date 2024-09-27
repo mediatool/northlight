@@ -10,13 +10,50 @@ import { Field } from '../form'
  * @see {@link https://northlight.dev/reference/combo-picker}
  *
  * @example (Example)
- * ##Fill in your information:
+ * ##Default number format preset(EU) with default decimals(2):
  * (?
- * <Form initialValues={{"budget": {input: 195, option:{label: 'SEK', value: 'sek'}}}}>
+ * <Form initialValues={{"budget": {input: 123456789.123, option:{label: 'EUR', value: 'eur'}}}}>
  * <ComboPickerField
  *         label="Budget"
  *         name="budget"
- *         precision={ 2 }
+ *         options={ [
+ *           { label: 'USD', value: 'usd' },
+ *           { label: 'EUR', value: 'eur' },
+ *           { label: 'SEK', value: 'sek' },
+ *        ] }
+ *      />
+ * </Form>
+ *
+ * ?)
+ * <br />
+  * ##US number format preset with three decimals as Disabled:
+ * (?
+ * <Form initialValues={{"budget": {input: 123456789.1234, option:{label: 'USD', value: 'usd'}}}}>
+ * <ComboPickerField
+ *         label="Budget"
+ *         name="budget"
+ *         precision={ 3 }
+ *         isDisabled={true}
+ *         formatPreset='us'
+ *         options={ [
+ *           { label: 'USD', value: 'usd' },
+ *           { label: 'EUR', value: 'eur' },
+ *           { label: 'SEK', value: 'sek' },
+ *        ] }
+ *      />
+ * </Form>
+ *
+ * ?)
+ * <br />
+ * ##NOR number format preset with four decimals as ReadOnly:
+ * (?
+ * <Form initialValues={{"budget": {input: 123456789.1234, option:{label: 'SEK', value: 'sek'}}}}>
+ * <ComboPickerField
+ *         label="Budget"
+ *         name="budget"
+ *         precision={ 4 }
+ *         isReadOnly={true}
+ *         formatPreset='nor'
  *         options={ [
  *           { label: 'USD', value: 'usd' },
  *           { label: 'EUR', value: 'eur' },

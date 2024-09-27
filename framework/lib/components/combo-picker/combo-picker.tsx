@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Button, InputGroup, InputRightElement, NumberInputField, useDisclosure } from '@chakra-ui/react'
+import { Button, InputGroup, InputRightElement, useDisclosure } from '@chakra-ui/react'
+import { NumberFormatValues } from 'react-number-format'
 import { ComboPickerOption, ComboPickerProps } from './types'
 import { Select, SingleValue } from '../select'
-import { NumberInput } from '../number-input'
 import { Box } from '../box'
+import { FormattedNumberInput } from '../text-field'
 
 /**
  * @see ComboPickerField
@@ -15,7 +16,10 @@ export const ComboPicker = ({
   size,
   value,
   placeholder,
+  precision,
+  formatPreset,
   isDisabled,
+  isReadOnly,
   ...rest
 }: ComboPickerProps) => {
   const { isOpen, onToggle, onClose } = useDisclosure()
@@ -26,10 +30,10 @@ export const ComboPicker = ({
   const buttonRef = useRef<any>()
   const selectRef = useRef<any>()
 
-  const handleInputChange = (newInputvalue: string) => {
-    setInputValue(Number(newInputvalue))
+  const handleInputChange = (newInputvalue: NumberFormatValues) => {
+    setInputValue(Number(newInputvalue.floatValue))
     onChange?.({
-      input: Number(newInputvalue), option: selectOption,
+      input: Number(newInputvalue.floatValue), option: selectOption,
     })
   }
 
@@ -68,18 +72,19 @@ export const ComboPicker = ({
   }, [ enableSelectInput ])
 
   return (
-    <InputGroup size={ size }>
-      <NumberInput
+    <InputGroup>
+      <FormattedNumberInput
         width="100%"
-        overflow="hidden"
         onChange={ handleInputChange }
         defaultValue={ inputValue }
         placeholder={ placeholder }
-        isDisabled={ isDisabled }
+        size={ size }
+        numberOfDecimals={ precision }
+        preset={ formatPreset }
+        disabled={ isDisabled }
+        readOnly={ isReadOnly }
         { ...rest }
-      >
-        <NumberInputField />
-      </NumberInput>
+      />
       <InputRightElement
         width="auto"
         display="flex"
