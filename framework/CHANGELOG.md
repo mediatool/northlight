@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.31.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.30.0...@northlight/ui@2.31.0) (2024-09-30)
+
+
+### Features
+
+* **framework:** use formattedInput in ComboPicker ([73b03c7](https://github.com/mediatool/northlight/commit/73b03c7f875e1a044066a6a3d8f8f2ddaff179ce))
+
+
+
+
+
 # [2.30.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.29.1...@northlight/ui@2.30.0) (2024-09-25)
 
 
