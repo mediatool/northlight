@@ -16,6 +16,7 @@ import { Field } from '../form'
  * <ComboPickerField
  *         label="Budget"
  *         name="budget"
+ *         placeholder="Amount"
  *         options={ [
  *           { label: 'USD', value: 'usd' },
  *           { label: 'EUR', value: 'eur' },

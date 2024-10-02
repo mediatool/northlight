@@ -3,7 +3,7 @@ import { StackDirection } from '@chakra-ui/react'
 import { FormattedNumberInputPreset, FormattedNumberInputProps } from '../text-field'
 
 export type ComboPickerValue = {
-  input: number
+  input?: number
   option: ComboPickerOption
 }
 
