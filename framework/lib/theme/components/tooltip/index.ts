@@ -17,10 +17,13 @@ export const Tooltip: ComponentSingleStyleConfig = {
   }),
   variants: {
     default: ({ theme: { colors: color } }) => ({
-      bgColor: 'bg.tertiary.default',
-      color: color.text.inverted,
-      [$arrowBg.variable]: color.bg.tertiary.default,
-      [$arrowBorder.variable]: color.bg.tertiary.default,
+      color: color.text.default,
+      bgColor: color.bg.base,
+      borderWidth: 'xs',
+      borderColor: color.border.default,
+      borderStyle: 'solid',
+      [$arrowBg.variable]: color.bg.base,
+      [$arrowBorder.variable]: color.border.default,
     }),
     success: ({ theme: { colors: color } }) => ({
       color: 'text.over.success',
