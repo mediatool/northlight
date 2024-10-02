@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Button, InputGroup, InputRightElement, useDisclosure } from '@chakra-ui/react'
 import { NumberFormatValues } from 'react-number-format'
-import { ComboPickerOption, ComboPickerProps } from './types'
+import { ComboPickerOption, ComboPickerProps, ComboPickerValue } from './types'
 import { Select, SingleValue } from '../select'
 import { Box } from '../box'
 import { FormattedNumberInput } from '../text-field'
@@ -23,18 +23,22 @@ export const ComboPicker = ({
   ...rest
 }: ComboPickerProps) => {
   const { isOpen, onToggle, onClose } = useDisclosure()
-  const [ inputValue, setInputValue ] = useState(value ? value.input : 0)
-  const [ selectOption, setSelectOption ] = useState(value ? value.option : options[0])
+  const [ inputValue, setInputValue ] = useState(value?.input)
+  const [ selectOption, setSelectOption ] = useState(value?.option ?? options[0])
   const [ enableSelectInput, setEnableSelectInput ] = useState(false)
 
   const buttonRef = useRef<any>()
   const selectRef = useRef<any>()
 
+  const getNewValue = (option: ComboPickerOption, input?: number): ComboPickerValue => ((input)
+    ? { input: Number(input), option }
+    : { option })
+
   const handleInputChange = (newInputvalue: NumberFormatValues) => {
-    setInputValue(Number(newInputvalue.floatValue))
-    onChange?.({
-      input: Number(newInputvalue.floatValue), option: selectOption,
-    })
+    const newValue = getNewValue(selectOption, newInputvalue.floatValue)
+
+    setInputValue(newValue.input)
+    onChange?.(newValue)
   }
 
   const handleSelectClose = () => {
@@ -49,9 +53,7 @@ export const ComboPicker = ({
   const handleSelectChange = (selectedOption: SingleValue<ComboPickerOption>) => {
     if (selectedOption) {
       setSelectOption(selectedOption)
-      onChange?.({
-        input: inputValue, option: selectedOption,
-      })
+      onChange?.(getNewValue(selectedOption, inputValue))
 
       handleSelectClose()
     }
