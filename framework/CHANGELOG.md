@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.31.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.31.0...@northlight/ui@2.31.1) (2024-10-02)
+
+
+### Bug Fixes
+
+* **framework:** made input optional ([6bc72c5](https://github.com/mediatool/northlight/commit/6bc72c5557b54ba11a751b2023c1ff9851dc1213))
+
+
+
+
+
 # [2.31.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.30.0...@northlight/ui@2.31.0) (2024-09-30)
 
 
