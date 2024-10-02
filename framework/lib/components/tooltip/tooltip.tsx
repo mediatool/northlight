@@ -18,19 +18,18 @@ import { OurTooltipProps } from './types'
  * (?
  * <HStack>
  *    <Tooltip
+ *      hasIcon={ true }
  *      description="Here’s a regular tooltip with some with icon
  *      inside of it that’s supposed to be substantially large.">
  *      <Badge>ICON</Badge>
  *    </Tooltip>
  *    <Tooltip
- *       hasIcon={ false }
  *       description="Here’s a regular tooltip with some text without icon
  *      inside of it that’s supposed to be substantially large."
  *    >
  *      <Badge>NOICON</Badge>
  *    </Tooltip>
  *    <Tooltip
- *      hasIcon={ false }
  *      description={
  *        <Box>
  *          <Text>
@@ -61,12 +60,14 @@ import { OurTooltipProps } from './types'
  * <HStack>
  *     <VStack>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="success"
  *          description="This is a successful message"
  *          >
  *          <Badge colorScheme="green">Success</Badge>
  *        </Tooltip>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="success"
  *          title="Please check fields"
  *          description="This is a successful message with a title and an icon
@@ -77,12 +78,14 @@ import { OurTooltipProps } from './types'
  *     </VStack>
  *     <VStack>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="info"
  *          description="This is an informative text"
  *          >
  *          <Badge colorScheme="blue">Info</Badge>
  *        </Tooltip>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="info"
  *          title="Please check fields"
  *          description="This is an informative text with a title and an icon
@@ -93,12 +96,14 @@ import { OurTooltipProps } from './types'
  *     </VStack>
  *     <VStack>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="warning"
  *          description="This is a warning"
  *          >
  *        <Badge colorScheme="yellow">Warning</Badge>
  *        </Tooltip>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="warning"
  *          title="Please check fields"
  *          description="This is a warning with a title and an icon
@@ -109,12 +114,14 @@ import { OurTooltipProps } from './types'
  *      </VStack>
  *      <VStack>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="danger"
  *          description="This is an error message"
  *          >
  *        <Badge colorScheme="red">Error</Badge>
  *        </Tooltip>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="danger"
  *          title="Please check fields"
  *          description="This is an error message with a title and an icon
@@ -125,11 +132,13 @@ import { OurTooltipProps } from './types'
  *      </VStack>
  *      <VStack>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="ai"
  *          description="This is an AI message">
  *        <Badge colorScheme="teal" variant="subtle">AI</Badge>
  *        </Tooltip>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="ai"
  *          title="Please check fields"
  *          description="This is an AI message with a title and an icon
@@ -140,11 +149,13 @@ import { OurTooltipProps } from './types'
  *      </VStack>
  *      <VStack>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="ghost"
  *          description="This is an clean message">
  *        <Badge>Ghost</Badge>
  *        </Tooltip>
  *        <Tooltip
+ *          hasIcon={ true }
  *          variant="ghost"
  *          title="Please check fields"
  *          description="This is an clean message with a title and an icon
@@ -162,7 +173,7 @@ export const Tooltip: React.FC<OurTooltipProps> = ({
   hasArrow = true,
   title = '',
   description = '',
-  hasIcon = 'true',
+  hasIcon = false,
   ...rest
 }) => {
   const iconVariant: AlertVariants = variant as AlertVariants
@@ -176,7 +187,7 @@ export const Tooltip: React.FC<OurTooltipProps> = ({
         <P
           variant="14"
           sx={ {
-            color: !variant || variant === 'ai' || variant === 'default' ? 'text.inverted' : undefined,
+            color: !variant || variant === 'ai' ? 'text.inverted' : 'text.default',
           } }
         >
           { description }
