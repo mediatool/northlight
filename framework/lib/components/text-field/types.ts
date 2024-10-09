@@ -4,7 +4,8 @@ import {
   StackDirection,
 } from '@chakra-ui/react'
 import { RegisterOptions } from 'react-hook-form'
-import { NumericFormatProps } from 'react-number-format'
+import { NumberFormatValues, NumericFormatProps, SourceInfo } from 'react-number-format'
+import React from 'react'
 import { InputFieldProps } from '../../types'
 
 export interface TextInputFormatter {
@@ -41,7 +42,7 @@ export interface FormattedNumberInputProps extends Omit<NumericFormatProps, 'onC
   /** Changes thousand and decimal separators */
   preset?: FormattedNumberInputPreset
   /** Gives you back an object, see https://s-yadav.github.io/react-number-format/docs/quirks */
-  onChange?: NumericFormatProps['onValueChange']
+  onChange?: (values: NumberFormatValues, sourceInfo?: SourceInfo) => void
   /** Will format number UI as percentage, but return as decimal value */
   isPercentage?: boolean
   /** Will round up and restrict number of decimals */

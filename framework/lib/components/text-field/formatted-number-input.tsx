@@ -1,10 +1,11 @@
-import React, { ComponentType, useState } from 'react'
+import React, { ComponentType, useEffect, useState } from 'react'
 import { identity, isNil } from 'ramda'
 import {
   InputAttributes,
   NumberFormatValues,
   NumericFormat,
   SourceInfo,
+  numericFormatter,
 } from 'react-number-format'
 import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 import { Input } from '../input'
@@ -75,28 +76,39 @@ export const FormattedNumberInput = ({
   preset = 'eu',
   isPercentage = false,
   onChange = identity,
-  value,
+  value: valueProp,
   numberOfDecimals = 2,
   max = Infinity,
   min = -Infinity,
   inputLeftElement,
   inputRightElement,
+  onBlur,
   ...rest
 }: FormattedNumberInputProps) => {
+  const [ valueState, setValueState ] = useState(valueProp)
+  const isControlled = typeof valueProp !== 'undefined'
+  const value = isControlled ? valueProp : valueState
   const props = presetMap[preset]
-  const [ v, setV ] = useState(value)
+
+  const getNumberFormatValues = (number: number) => ({
+    floatValue: number,
+    formattedValue: numericFormatter(number.toString(), props),
+    value: number.toString(),
+  })
 
   const validateRange = () => {
-    if (isNil(v)) return
-    const vNum = typeof v === 'string' ? parseFloat(v) : v
+    if (isNil(value)) return
+    const vNum = typeof value === 'string' ? parseFloat(value) : value
     const factor = isPercentage ? 100 : 1
     if (vNum * factor > max) {
       const newValue = roundToPrecision(max / factor, numberOfDecimals)
-      setV(newValue)
+      setValueState(newValue)
+      onChange(getNumberFormatValues(newValue))
     }
     if (vNum * factor < min) {
       const newValue = roundToPrecision(min / factor, numberOfDecimals)
-      setV(newValue)
+      setValueState(newValue)
+      onChange(getNumberFormatValues(newValue))
     }
   }
 
@@ -108,7 +120,7 @@ export const FormattedNumberInput = ({
       values.floatValue && isPercentage
         ? roundToPrecision(values.floatValue / 100, numberOfDecimals)
         : values.floatValue
-    setV(newFloatValue)
+    setValueState(newFloatValue)
     onChange(
       {
         ...values,
@@ -118,6 +130,10 @@ export const FormattedNumberInput = ({
     )
   }
 
+  useEffect(() => {
+    validateRange()
+  }, [ value ])
+
   return (
     <InputGroupWrapper
       inputLeftElement={ inputLeftElement }
@@ -126,13 +142,16 @@ export const FormattedNumberInput = ({
       <NumericFormat
         allowLeadingZeros={ true }
         customInput={ Input as ComponentType<InputAttributes> }
-        onBlur={ validateRange }
+        onBlur={ (e) => {
+          onBlur?.(e)
+          validateRange()
+        } }
         onValueChange={ onValueChangeHandler }
         decimalScale={ numberOfDecimals }
         value={
           isPercentage
-            ? roundToPrecision(parseFloat(`${v ?? 0}`) * 100, numberOfDecimals)
-            : v
+            ? roundToPrecision(parseFloat(`${value ?? 0}`) * 100, numberOfDecimals)
+            : value
         }
         suffix={ isPercentage ? '%' : '' }
         { ...props }
