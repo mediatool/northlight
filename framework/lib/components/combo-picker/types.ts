@@ -21,6 +21,7 @@ export interface ComboPickerProps extends Omit<FormattedNumberInputProps, | 'val
   formatPreset?: FormattedNumberInputPreset
   isDisabled?: boolean
   isReadOnly?: boolean
+  defaultToZeroIfEmpty?: boolean
 }
 
 export interface ComboPickerFieldProps extends ComboPickerProps {
