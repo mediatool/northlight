@@ -69,7 +69,9 @@ export const StandaloneCalendarGrid = ({
         <chakra.table { ...gridProps } sx={ { borderSpacing: '0' } }>
           <chakra.thead { ...headerProps }>
             <chakra.tr>
+              { firstDayOfWeek === 'monday' && (
               <chakra.th />
+              ) }
               <DayLabels weekDays={ weekDays } />
             </chakra.tr>
           </chakra.thead>
@@ -79,12 +81,14 @@ export const StandaloneCalendarGrid = ({
 
               return (
                 <chakra.tr key={ weekIndex }>
+                  { firstDayOfWeek === 'monday' && (
                   <chakra.td>
                     <Small sx={ { color: 'text.subdued' } } pr="2">
                       w.
                       { weekNumber > 52 ? weekNumber - 52 : weekNumber }
                     </Small>
                   </chakra.td>
+                  ) }
                   { state
                     .getDatesInWeek(weekIndex, startDate)
                     .map((date) =>
