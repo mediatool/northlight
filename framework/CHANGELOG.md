@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.32.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.31.2...@northlight/ui@2.32.0) (2024-10-11)
+
+
+### Features
+
+* **framework:** add util getConsistentRandomColorFromString ([a80758c](https://github.com/mediatool/northlight/commit/a80758c7074fe65ba213776526706a25ddf3e2ae))
+
+
+
+
+
 ## [2.31.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.31.1...@northlight/ui@2.31.2) (2024-10-09)
 
 
