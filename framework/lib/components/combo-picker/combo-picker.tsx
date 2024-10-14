@@ -90,7 +90,7 @@ export const ComboPicker = ({
     if (!is(Number, inputValue) && defaultToZeroIfEmpty) {
       handleInputChange(clamp(min, max, 0))
     }
-  }, [ valueProp?.input ])
+  }, [ valueProp?.input, defaultToZeroIfEmpty ])
 
   return (
     <InputGroup>
