@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.32.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.32.0...@northlight/ui@2.32.1) (2024-10-14)
+
+
+### Bug Fixes
+
+* **framework:** listen to defaultToZeroIfEmpty changes ([2447ca7](https://github.com/mediatool/northlight/commit/2447ca76943998b2c8a7da787d2d705232f54dcc))
+
+
+
+
+
 # [2.32.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.31.2...@northlight/ui@2.32.0) (2024-10-11)
 
 
