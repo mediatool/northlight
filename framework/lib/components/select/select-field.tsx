@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { XCloseSolid } from '@northlight/icons'
-import { equals, identity } from 'ramda'
+import { equals, identity, isNil } from 'ramda'
 import { Option, SelectFieldProps } from './types'
 import { Field } from '../form'
 import { Select } from './select'
@@ -74,7 +74,7 @@ const BaseSelectField = <T extends Option, K extends boolean = false>(
           variant="danger"
           size="sm"
           fontSize="xs"
-          hidden={ value === undefined || !isClearable }
+          hidden={ isNil(value) || !isClearable }
           onClick={ () => {
             onChange(undefined)
             onChangeCallback(undefined, { action: 'clear', removedValues: value })
