@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.32.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.32.1...@northlight/ui@2.32.2) (2024-10-15)
+
+
+### Bug Fixes
+
+* **framework:** hide select clear button if value null ([8d970e6](https://github.com/mediatool/northlight/commit/8d970e6ea58e7220c856eea2ef8249244982d673))
+
+
+
+
+
 ## [2.32.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.32.0...@northlight/ui@2.32.1) (2024-10-14)
 
 
