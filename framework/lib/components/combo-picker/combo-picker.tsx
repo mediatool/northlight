@@ -28,7 +28,7 @@ export const ComboPicker = ({
 }: ComboPickerProps) => {
   const { isOpen, onToggle, onClose } = useDisclosure()
   const [ inputValueState, setInputValueState ] = useState(valueProp?.input)
-  const [ selectOptionState, setselectOptionState ] = useState(valueProp?.option ?? options[0])
+  const [ selectOptionState, setselectOptionState ] = useState(valueProp?.option)
   const [ enableSelectInput, setEnableSelectInput ] = useState(false)
 
   const isInputValueControlled = typeof valueProp?.input !== 'undefined'
@@ -40,10 +40,13 @@ export const ComboPicker = ({
   const buttonRef = useRef<any>()
   const selectRef = useRef<any>()
 
-  const getNewValue = (option: ComboPickerOption, input?: number): ComboPickerValue => (
-    (is(Number, input))
-      ? { input: Number(input), option }
-      : { option })
+  const getNewValue = (option?: ComboPickerOption, input?: number): ComboPickerValue => {
+    const newValueOption = option ?? options[0]
+
+    return (is(Number, input))
+      ? { input: Number(input), option: newValueOption }
+      : { option: newValueOption }
+  }
 
   const handleInputChange = (newInputvalue?: number) => {
     const newValue = getNewValue(selectOption, newInputvalue)
@@ -87,10 +90,24 @@ export const ComboPicker = ({
   }, [ enableSelectInput ])
 
   useEffect(() => {
-    if (!is(Number, inputValue) && defaultToZeroIfEmpty) {
-      handleInputChange(clamp(min, max, 0))
+    const needsToCorrectOption = !selectOption
+    const needsToCorrectInput = !is(Number, inputValue) && defaultToZeroIfEmpty
+
+    const option = needsToCorrectOption ? options[0] : selectOption
+    const input = needsToCorrectInput ? clamp(min, max, 0) : inputValue
+
+    if (needsToCorrectOption) {
+      setselectOptionState(option)
     }
-  }, [ valueProp?.input, defaultToZeroIfEmpty ])
+
+    if (needsToCorrectInput) {
+      setInputValueState(input)
+    }
+
+    if (needsToCorrectOption || needsToCorrectInput) {
+      onChange?.(getNewValue(option, input))
+    }
+  }, [ inputValue, defaultToZeroIfEmpty ])
 
   return (
     <InputGroup>
@@ -121,7 +138,7 @@ export const ComboPicker = ({
           flexShrink="0"
           height="100%"
         >
-          { selectOption.label }
+          { selectOption?.label ?? '' }
         </Button>
       </InputRightElement>
       <Box position="absolute" width="100%">
