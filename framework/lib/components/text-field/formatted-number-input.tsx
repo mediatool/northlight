@@ -16,6 +16,10 @@ import {
 } from './types'
 import { roundToPrecision } from './round-to-precision'
 
+const MyInput = ({ controlledValue, ...rest }: any) => (
+  <Input { ...rest } value={ controlledValue } />
+)
+
 const presetMap: Record<FormattedNumberInputPreset, PresetOptions> = {
   eu: {
     thousandSeparator: ' ',
@@ -134,6 +138,8 @@ export const FormattedNumberInput = ({
     validateRange()
   }, [ value ])
 
+  const suffix = isPercentage ? '%' : ''
+
   return (
     <InputGroupWrapper
       inputLeftElement={ inputLeftElement }
@@ -141,7 +147,7 @@ export const FormattedNumberInput = ({
     >
       <NumericFormat
         allowLeadingZeros={ true }
-        customInput={ Input as ComponentType<InputAttributes> }
+        customInput={ MyInput as ComponentType<InputAttributes> }
         onBlur={ (e) => {
           onBlur?.(e)
           validateRange()
@@ -150,10 +156,30 @@ export const FormattedNumberInput = ({
         decimalScale={ numberOfDecimals }
         value={
           isPercentage
-            ? roundToPrecision(parseFloat(`${value ?? 0}`) * 100, numberOfDecimals)
+            ? roundToPrecision(
+              parseFloat(`${value ?? 0}`) * 100,
+              numberOfDecimals
+            )
             : value
         }
         suffix={ isPercentage ? '%' : '' }
+        // @ts-ignore
+        controlledValue={ `
+${
+  value
+    ? getNumberFormatValues(
+      Number(
+        isPercentage
+          ? roundToPrecision(
+            parseFloat(`${value ?? 0}`) * 100,
+            numberOfDecimals
+          )
+          : value
+      )
+    ).formattedValue
+    : 0
+}
+${suffix}` }
         { ...props }
         { ...rest }
       />

@@ -10,6 +10,20 @@ import { clamp } from '../../utils'
 /**
  * @see ComboPickerField
  * @see {@link https://northlight.dev/reference/combo-picker}
+ *
+ * @example (Example)
+ * ##Defafult number format preset(EU) with default decimals(2):
+ * (?
+ * <ComboPicker
+ *         placeholder="Amount"
+ *         options={ [
+ *           { label: 'USD', value: 'usd' },
+ *           { label: 'EUR', value: 'eur' },
+ *           { label: 'SEK', value: 'sek' },
+ *        ] }
+ *      />
+ *
+ * ?)
  */
 export const ComboPicker = ({
   onChange,
@@ -48,10 +62,16 @@ export const ComboPicker = ({
       : { option: newValueOption }
   }
 
+  console.log({ inputValue })
+
   const handleInputChange = (newInputvalue?: number) => {
     const newValue = getNewValue(selectOption, newInputvalue)
 
-    setInputValueState(newValue.input)
+    const v = newValue.input
+    const needsToCorrectInput = !is(Number, v) && defaultToZeroIfEmpty
+    const input = needsToCorrectInput ? clamp(min, max, 0) : v
+
+    setInputValueState(input)
     onChange?.(newValue)
   }
 
@@ -107,7 +127,7 @@ export const ComboPicker = ({
     if (needsToCorrectOption || needsToCorrectInput) {
       onChange?.(getNewValue(option, input))
     }
-  }, [ inputValue, defaultToZeroIfEmpty ])
+  }, [ valueProp?.input, defaultToZeroIfEmpty ])
 
   return (
     <InputGroup>
