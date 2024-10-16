@@ -166,7 +166,7 @@ export const FormattedNumberInput = ({
         // @ts-ignore
         controlledValue={ `
 ${
-  value
+  !isNil(value)
     ? getNumberFormatValues(
       Number(
         isPercentage
@@ -177,7 +177,7 @@ ${
           : value
       )
     ).formattedValue
-    : 0
+    : ''
 }
 ${suffix}` }
         { ...props }
