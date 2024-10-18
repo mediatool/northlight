@@ -54,6 +54,11 @@ export const Tooltip: ComponentSingleStyleConfig = {
       bgColor: color['destructive-alt'],
       [$arrowBg.variable]: color['destructive-alt'],
     }),
+    error: ({ theme: { colors: color } }) => ({
+      color: 'text.over.error',
+      bgColor: color['destructive-alt'],
+      [$arrowBg.variable]: color['destructive-alt'],
+    }),
     ai: ({ theme: { colors: color } }) => ({
       bgColor: color.bg.ai.default,
       [$arrowBg.variable]: color.bg.ai.default,
