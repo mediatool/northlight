@@ -7,7 +7,7 @@ import {
 import { Label, P } from '../typography'
 import { Icon } from '../icon'
 import { AlertVariants } from '../alert'
-import { toastIconMap } from '../types/toastIconMap'
+import { tooltipIconMap } from '../types/tooltipIconMap'
 import { OurTooltipProps } from './types'
 
 /**
@@ -177,7 +177,7 @@ export const Tooltip: React.FC<OurTooltipProps> = ({
   ...rest
 }) => {
   const iconVariant: AlertVariants = variant as AlertVariants
-  const icon = toastIconMap[iconVariant]
+  const icon = tooltipIconMap[iconVariant]
 
   const TooltipContent = (
     <HStack alignItems="flex-start">
