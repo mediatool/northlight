@@ -2,6 +2,9 @@
 
 Northlight is an open source UI framework built by Mediatool. It is based on Chakra UI and uses design tokens, making it easy to customize the look and feel of your application.
 
+## Documentation
+[https://northlight.dev/guide](https://northlight.dev/guide)
+
 ## Local sandbox
 
 To start up a local environment of the Northlight UI framework docs:
