@@ -6,7 +6,7 @@ export type CheckboxVariants = 'default' | 'rounded'
 
 export interface CheckboxProps extends Omit<ChakraCheckboxProps, 'value'> {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
-  value?: boolean
+  value?: boolean | string | number
   variant?: CheckboxVariants
 }
 
