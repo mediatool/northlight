@@ -1,4 +1,4 @@
-import { CheckboxProps as ChakraCheckboxProps, StackDirection } from '@chakra-ui/react'
+import { CheckboxProps as ChakraCheckboxProps, CheckboxGroupProps, StackDirection } from '@chakra-ui/react'
 import { ChangeEvent } from 'react'
 import { RegisterOptions } from 'react-hook-form'
 
@@ -19,4 +19,13 @@ export interface CheckboxFieldProps extends ChakraCheckboxProps {
   direction?: StackDirection
   labelPlacement?: 'left' | 'right'
   labelSize?: '2xs' | 'xs' | 'sm' | 'md' | 'lg'
+}
+
+export interface CheckboxFieldGroupProps extends CheckboxGroupProps {
+  direction?: StackDirection
+  name: string
+  label: string
+  validate?: RegisterOptions
+  isRequired?: boolean
+  value?: string[]
 }
