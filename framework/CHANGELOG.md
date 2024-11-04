@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.33.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.32.5...@northlight/ui@2.33.0) (2024-11-04)
+
+
+### Bug Fixes
+
+* **framework:** extend checkbox value prop to support strings and numbers ([c7b66dd](https://github.com/mediatool/northlight/commit/c7b66dd387c6496bf2bb6d101abaf9c3f4fc5d6f))
+
+
+### Features
+
+* **framework:** add support for checkboxGroupField form component ([7b86c02](https://github.com/mediatool/northlight/commit/7b86c02fdd18f8c1ca9a2a94f1f1501161e75410))
+
+
+
+
+
 ## [2.32.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.32.4...@northlight/ui@2.32.5) (2024-10-21)
 
 

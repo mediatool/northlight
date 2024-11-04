@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.9.26...@northlight/docs@1.10.0) (2024-11-04)
+
+
+### Bug Fixes
+
+* **docs:** remove joi schema from form example one ([76a2815](https://github.com/mediatool/northlight/commit/76a2815366f5cf46d55ca7cd197b2ba597e05a4a))
+
+
+### Features
+
+* **framework:** add support for checkboxGroupField form component ([7b86c02](https://github.com/mediatool/northlight/commit/7b86c02fdd18f8c1ca9a2a94f1f1501161e75410))
+
+
+
+
+
 ## [1.9.26](https://github.com/mediatool/northlight/compare/@northlight/docs@1.9.25...@northlight/docs@1.9.26) (2024-10-21)
 
 **Note:** Version bump only for package @northlight/docs
