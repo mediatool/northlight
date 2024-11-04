@@ -3,7 +3,9 @@ import { TextSolid } from '@northlight/icons'
 import {
   Avatar,
   Button,
+  Checkbox,
   CheckboxField,
+  CheckboxGroupField,
   Code,
   DatePickerField,
   DateRangePickerField,
@@ -101,6 +103,7 @@ export const FormOne = () => (
       multiImage: '',
       teste: '',
       dateRange: '',
+      features: [],
     } }
     onSubmit={ () => {} }
   >
@@ -183,6 +186,16 @@ export const FormOne = () => (
           name="personalInfoAgree"
           label="I hereby consent to Mediatool using my personal information for further processing"
         />
+        <CheckboxGroupField
+          name="features"
+          label="Select what features you want to enable"
+        >
+          <HStack>
+            <Checkbox value="mediaInventory">Media Inventory</Checkbox>
+            <Checkbox value="exchangeRates">Exchange Rates</Checkbox>
+            <Checkbox value="mediaOrders">Media Orders</Checkbox>
+          </HStack>
+        </CheckboxGroupField>
         <RadioGroupField
           name="userRole"
           label="Choose your role"
