@@ -36,13 +36,19 @@ export const Checkbox = ({
   size = 'md',
   variant = 'default',
   ...rest
-}: CheckboxProps) => (
-  <ChakraCheckbox
-    size={ size }
-    id={ name }
-    onChange={ onChange }
-    isChecked={ value }
-    variant={ variant }
-    { ...rest }
-  />
-)
+}: CheckboxProps) => {
+  const controlledValue = typeof value === 'boolean'
+    ? { isChecked: value }
+    : { value }
+
+  return (
+    <ChakraCheckbox
+      size={ size }
+      id={ name }
+      onChange={ onChange }
+      variant={ variant }
+      { ...controlledValue }
+      { ...rest }
+    />
+  )
+}
