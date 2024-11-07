@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.33.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.0...@northlight/ui@2.33.1) (2024-11-07)
+
+
+### Bug Fixes
+
+* **framework:** make tags-input work in toolbox ([f8db74d](https://github.com/mediatool/northlight/commit/f8db74dccf92dd357d802bbc4519179f68f360b4))
+
+
+
+
+
 # [2.33.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.32.5...@northlight/ui@2.33.0) (2024-11-04)
 
 
