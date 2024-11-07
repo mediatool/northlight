@@ -6,7 +6,7 @@ import {
   SelectInstance,
 } from 'chakra-react-select'
 import { Box } from '@chakra-ui/react'
-import { equals, identity, is } from 'ramda'
+import { always, equals, identity, is } from 'ramda'
 import { Option, SelectProps } from './types'
 import { customSelectStyles } from '../../theme/components/select/custom-select'
 import { useSelectCallbacks } from '../../hooks'
@@ -152,6 +152,7 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
   value,
   icon,
   components,
+  generateComponentsUpdateKey = always(0),
   ...rest
 }: SelectProps<T, K>,
   ref: Ref<SelectInstance<T, K, GroupBase<T>>>
@@ -166,7 +167,7 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
 
   const customComponents = useMemo(
     () => getComponents<T>(components),
-    []
+    [ generateComponentsUpdateKey() ]
   )
 
   const prevOptions = useRef<OptionsOrGroups<T, GroupBase<T>> | undefined>(

@@ -49,6 +49,10 @@ export interface SelectProps<T, K extends boolean>
   customOption?: ((option: T) => JSX.Element) | null
   isMulti?: K
   ref?: Ref<SelectInstance<T, K, GroupBase<T>>>
+  /** Should return a unique key that is tracked so when the key changes
+      the sub-components for react-select will be recomputed/rerendered
+  */
+  generateComponentsUpdateKey?: () => unknown
 }
 
 export type SelectFieldProps<T, K extends boolean = false> = SelectProps<T, K> &
