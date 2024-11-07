@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.33.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.1...@northlight/ui@2.33.2) (2024-11-07)
+
+
+### Bug Fixes
+
+* **framework:** handle updates to components prop in select ([aca341b](https://github.com/mediatool/northlight/commit/aca341bdfc1b471d66371de5b66b06309dffbbc0))
+
+
+
+
+
 ## [2.33.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.0...@northlight/ui@2.33.1) (2024-11-07)
 
 
