@@ -16,6 +16,7 @@ import { useToken } from '../../hooks'
 import { TagsInputProps } from './types'
 import { Option } from '../select'
 import { tagsInputStyles } from './tags-input-styles'
+import { theme } from '../../theme'
 
 /**
  * Tags Input, based of react creatable select, is meant to select
@@ -150,6 +151,7 @@ export function TagsInput<T extends Option> ({
         components={ {
           DropdownIndicator: () => null,
         } }
+        styles={ { menuPortal: (base) => ({ ...base, zIndex: theme.zIndices.popover }) } }
         formatCreateLabel={ (textInputValue: string) =>
           `Add tag "${textInputValue}"`
         }
