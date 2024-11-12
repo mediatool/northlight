@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.33.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.2...@northlight/ui@2.33.3) (2024-11-12)
+
+
+### Bug Fixes
+
+* **framework:** use interface instead of type for swich types ([2735efe](https://github.com/mediatool/northlight/commit/2735efef72cd711b33c048af05bb764767e37f57))
+
+
+
+
+
 ## [2.33.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.1...@northlight/ui@2.33.2) (2024-11-07)
 
 
