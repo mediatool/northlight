@@ -122,6 +122,7 @@ export const getQuickSelectOptions = (
     label: 'Next Year',
   }
 
+  // Fiscal year from input is 0-11, while internationalized gives 1-12. This corrects the check.
   const offsetFiscalYear =
     thisDay.month < fiscalStartMonth + 1 ||
     (thisDay.month === fiscalStartMonth + 1 && thisDay.day < fiscalStartDay)
