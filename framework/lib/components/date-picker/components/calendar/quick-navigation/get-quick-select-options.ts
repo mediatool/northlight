@@ -123,8 +123,8 @@ export const getQuickSelectOptions = (
   }
 
   const offsetFiscalYear =
-    thisDay.month < fiscalStartMonth ||
-    (thisDay.month === fiscalStartMonth && thisDay.day < fiscalStartDay)
+    thisDay.month < fiscalStartMonth + 1 ||
+    (thisDay.month === fiscalStartMonth + 1 && thisDay.day < fiscalStartDay)
       ? 1
       : 0
 
