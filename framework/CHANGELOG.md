@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.33.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.3...@northlight/ui@2.33.4) (2024-11-25)
+
+
+### Bug Fixes
+
+* **framework:** fix select this fiscal year in date range picker ([4938fce](https://github.com/mediatool/northlight/commit/4938fced42429cb0f022bb8371fe535861c98860))
+
+
+
+
+
 ## [2.33.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.2...@northlight/ui@2.33.3) (2024-11-12)
 
 
