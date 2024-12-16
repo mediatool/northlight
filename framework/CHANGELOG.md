@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.33.6](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.5...@northlight/ui@2.33.6) (2024-12-16)
+
+
+### Bug Fixes
+
+* **framework:** add callback as a dependency ([1e06a46](https://github.com/mediatool/northlight/commit/1e06a46836f3bf3ea4b13c29eb429b31bc83c630))
+
+
+
+
+
 ## [2.33.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.4...@northlight/ui@2.33.5) (2024-12-09)
 
 **Note:** Version bump only for package @northlight/ui
