@@ -77,5 +77,5 @@ export const useOutsideRectClick =
       document.removeEventListener('touchstart', onPointerDown, true)
       document.removeEventListener('touchend', onTouchEnd, true)
     }
-  }, [])
+  }, [ callback ])
 }
