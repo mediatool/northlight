@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { chakra } from '@chakra-ui/react'
 import { useCalendar, useCalendarGrid } from '@react-aria/calendar'
-import { getDayOfWeek, getWeeksInMonth } from '@internationalized/date'
+import { getWeeksInMonth } from '@internationalized/date'
 import { times } from 'ramda'
 import { useLocale } from '@react-aria/i18n'
 import { CalendarState } from '@react-stately/calendar'
@@ -45,8 +45,7 @@ export const StandaloneCalendarGrid = ({
     () =>
       getWeekNumberAtStartOfMonth(
         startDate.year,
-        startDate.month,
-        getDayOfWeek(startDate, locale)
+        startDate.month
       ),
     [ startDate.year, startDate.month ]
   )
