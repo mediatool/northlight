@@ -1,37 +1,23 @@
-import { add } from 'ramda'
+const MILLISECONDS_PER_DAY = 86400000
+
+const getThursdayDate = (date: Date): Date => {
+  const thursdayDate = new Date(date)
+  thursdayDate.setDate(date.getDate() + (4 - (date.getDay() || 7)))
+  return thursdayDate
+}
 
 export const getWeekNumberAtStartOfMonth = (
   year: number,
-  month: number,
-  weekDay: number
+  month: number
 ): number => {
-  if (month === 1) {
-    return weekDay > 3 ? 52 : 1
-  }
+  const firstDayOfMonth = new Date(year, month - 1, 1)
+  const thursdayOfFirstWeek = getThursdayDate(firstDayOfMonth)
 
-  const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+  const firstDayOfYear = new Date(year, 0, 1)
+  const firstThursdayOfYear = getThursdayDate(firstDayOfYear)
 
-  const daysInMonths = [
-    0,
-    31,
-    isLeapYear ? 29 : 28,
-    31,
-    30,
-    31,
-    30,
-    31,
-    31,
-    30,
-    31,
-    30,
-    31,
-  ]
-
-  const totalDaysUntilMonth = daysInMonths
-    .slice(1, month)
-    .reduce(add, 1)
-
-  const weekNumber = Math.ceil(totalDaysUntilMonth / 7)
+  const daysDifference = thursdayOfFirstWeek.getTime() - firstThursdayOfYear.getTime()
+  const weekNumber = Math.ceil((daysDifference / MILLISECONDS_PER_DAY + 1) / 7)
 
   return weekNumber
 }
