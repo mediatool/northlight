@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { chakra } from '@chakra-ui/react'
 import { useCalendar, useCalendarGrid } from '@react-aria/calendar'
-import { getDayOfWeek, getWeeksInMonth } from '@internationalized/date'
+import { getWeeksInMonth } from '@internationalized/date'
 import { times } from 'ramda'
 import { useLocale } from '@react-aria/i18n'
 import { CalendarState } from '@react-stately/calendar'
@@ -14,7 +14,7 @@ import { Icon } from '../../../../icon'
 import { Small } from '../../../../typography'
 import { MonthSelect, YearSelectRangeCalendar } from '../date-select'
 import { MonthButton } from './month-button'
-import { getWeekNumberAtStartOfMonth } from './get-week-number-start-of-month'
+import { getDisplayWeek, getWeekNumberAtStartOfMonth } from './get-week-number-start-of-month'
 import { RangeCell } from './range-cell'
 import { DateRangeValue } from '../quick-navigation/types'
 import { FirstDayOfWeek } from './types'
@@ -41,15 +41,10 @@ export const StandaloneCalendarGrid = ({
   const { gridProps, headerProps } = useCalendarGrid(rest, state)
   const weekDays = getWeekdays(firstDayOfWeek)
   const weeksInMonth = getWeeksInMonth(startDate, locale)
-  const weekNumberStart = useMemo(
-    () =>
-      getWeekNumberAtStartOfMonth(
-        startDate.year,
-        startDate.month,
-        getDayOfWeek(startDate, locale)
-      ),
-    [ startDate.year, startDate.month ]
-  )
+  const weekNumberStart = useMemo(() => {
+    const weekNumber = getWeekNumberAtStartOfMonth(startDate.year, startDate.month)
+    return weekNumber
+  }, [ startDate.year, startDate.month ])
 
   return (
     <Box { ...calendarProps } h="265px" p="0">
@@ -75,14 +70,16 @@ export const StandaloneCalendarGrid = ({
           </chakra.thead>
           <chakra.tbody>
             { times((weekIndex) => {
-              const weekNumber = weekNumberStart + weekIndex
-
+              const weekNumber = getDisplayWeek(weekNumberStart,
+                weekIndex,
+                startDate.year,
+                startDate.month)
               return (
                 <chakra.tr key={ weekIndex }>
                   <chakra.td>
                     <Small sx={ { color: 'text.subdued' } } pr="2">
                       w.
-                      { weekNumber > 52 ? weekNumber - 52 : weekNumber }
+                      { weekNumber }
                     </Small>
                   </chakra.td>
                   { state
