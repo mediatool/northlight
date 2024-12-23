@@ -2,21 +2,25 @@ import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 
 export const Toolbox: ComponentMultiStyleConfig = {
   parts: [ 'container', 'header', 'body', 'footer' ],
-  baseStyle: ({ theme: { sizes: sizing } }) => ({
+  baseStyle: ({ theme: {
+    colors: color,
+    sizes: sizing,
+    borders: borderWidth,
+  } }) => ({
     container: {
       position: 'relative',
       bg: 'text.inverted',
       h: '100vh',
-      borderLeftWidth: '1px',
+      borderLeftWidth: borderWidth.xs,
       borderLeftStyle: 'solid',
-      borderLeftColor: 'gray.100',
+      borderLeftColor: color.border.default,
     },
     header: {
       alignItems: 'center',
       height: '16',
-      borderBottomWidth: '1px',
+      borderBottomWidth: borderWidth.xs,
       borderBottomStyle: 'solid',
-      borderBottomColor: 'gray.100',
+      borderBottomColor: color.border.default,
       pl: '4',
       pr: '16',
     },
@@ -27,9 +31,9 @@ export const Toolbox: ComponentMultiStyleConfig = {
       p: '4',
       alignItems: 'center',
       height: '16',
-      borderTopWidth: '1px',
+      borderTopWidth: borderWidth.xs,
       borderTopStyle: 'solid',
-      borderTopColor: 'gray.100',
+      borderTopColor: color.border.default,
     },
     body: {
       p: sizing['4'],

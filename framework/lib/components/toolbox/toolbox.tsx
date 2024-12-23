@@ -118,7 +118,7 @@ export const Toolbox = ({
           >
             { isResizable && <ResizeHandle { ...resizeProps } /> }
             <FocusScope autoFocus={ autoFocus }>
-              <VStack width="full" height="full">
+              <VStack w="full" h="full" alignItems="normal">
                 { newChildren }
               </VStack>
             </FocusScope>
