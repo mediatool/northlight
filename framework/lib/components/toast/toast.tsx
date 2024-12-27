@@ -51,7 +51,15 @@ export const Toast = ({
         ) }
         <Stack spacing={ 0 } alignItems="flex-start">
           { title && <Label size="md">{ title }</Label> }
-          { description && <P>{ description }</P> }
+          { description && (
+          <P
+            sx={ {
+              color: variant === 'ai' ? 'color.text.inverted' : 'text.default',
+            } }
+          >
+            { description }
+          </P>
+          ) }
         </Stack>
 
         <CloseButton
