@@ -9,11 +9,13 @@ import { StepListProps } from './types'
  * @see {@link https://northlight.dev/reference/step-list}
  * @example
  * (?
+ *    <Steps>
         <StepList>
           <Step label="Step 1" description="Name and email" />
           <Step label="Step 2" description="Pick a password" />
           <Step label="Step 3" description="Review" />
         </StepList>
+      </Steps>
  * ?)
  *
  */
