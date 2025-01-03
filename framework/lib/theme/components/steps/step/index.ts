@@ -1,13 +1,8 @@
 import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 
 export const Step: ComponentMultiStyleConfig = {
-  parts: [ 'step', 'label', 'description' ],
-  baseStyle: ({ theme: {
-    colors: color,
-    fontWeights,
-    space: spacing,
-    borders: borderWidth,
-  } }) => ({
+  parts: [ 'step', 'label', 'description', 'indicator' ],
+  baseStyle: ({ theme: { colors: color, fontWeights, space: spacing, borders: borderWidth } }) => ({
     step: {
       justifyContent: 'start',
       alignItems: 'start',
@@ -32,6 +27,9 @@ export const Step: ComponentMultiStyleConfig = {
         bgColor: color.background.step.selected,
         borderColor: color.border.step.selected,
         color: color.border.step.selected,
+        '[data-part="indicator"]': {
+          bg: color.border.step.selected,
+        },
         _hover: {
           borderColor: color.border.step.selected,
           color: color.border.step.selected,
@@ -40,7 +38,6 @@ export const Step: ComponentMultiStyleConfig = {
     },
     label: {
       color: 'inherit',
-      pt: spacing.paddingTop.step.label,
       textAlign: 'start',
       fontWeight: fontWeights.bold,
     },
@@ -48,6 +45,19 @@ export const Step: ComponentMultiStyleConfig = {
       textAlign: 'start',
       fontWeight: fontWeights.semiBold,
       color: color.text.default,
+    },
+    indicator: {
+      minW: 6,
+      minH: 6,
+      borderRadius: 'full',
+      bg: color.text.subdued,
+      color: 'mono.white',
+      fontWeight: fontWeights.bold,
+      fontSize: 'xs',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: '2xs',
     },
   }),
 }

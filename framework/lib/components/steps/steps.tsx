@@ -11,9 +11,13 @@ import { StepsProps } from './types'
  * (?
   <Steps>
     <StepList>
-      <Step label="Step 1" description="Name and email" />
-      <Step label="Step 2" description="Pick a password" />
-      <Step label="Step 3" description="Review" />
+      <Step label="Step 1" description="Name and email" indicator={1} />
+      <Step label="Step 2" description="Pick a password" indicator={2}  />
+      <Step label="Step 3"
+      description="Review"
+      indicator={<Icon as={ BrightnessSolid }
+      size="xs" /> }
+      />
     </StepList>
     <StepPanels>
       <StepPanel>1</StepPanel>
