@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.33.7](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.6...@northlight/ui@2.33.7) (2025-01-09)
+
+
+### Bug Fixes
+
+* **northlight-ui:** fix weeks in date picker ([fb48129](https://github.com/mediatool/northlight/commit/fb4812937860b90f95edf7c86e851c07c923ba1b)), closes [#DEV-17786](https://github.com/mediatool/northlight/issues/DEV-17786)
+* **northlight:** steps style updates ([6282e10](https://github.com/mediatool/northlight/commit/6282e108a5da5e66a4622b5fb6934385b4228b2a))
+* **northlight:** toast ai desc style ([08ccd0a](https://github.com/mediatool/northlight/commit/08ccd0a7a55b4355adcc615284dd554705f3ac36))
+* **northlight:** toolbox style updates ([4430f43](https://github.com/mediatool/northlight/commit/4430f43a3d157ecd42c99ae22b23f20118df0896))
+
+
+
+
+
 ## [2.33.6](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.5...@northlight/ui@2.33.6) (2024-12-16)
 
 
