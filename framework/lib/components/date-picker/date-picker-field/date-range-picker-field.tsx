@@ -23,6 +23,7 @@ export const DateRangePickerField = forwardRef<HTMLDivElement, DateRangePickerFi
   firstDayOfWeek = 'monday',
   onChange: onChangeCallback = identity,
   isClearable = true,
+  onSave,
   ...rest
 }, ref) => {
   const { setValue, setError, trigger } = useFormContext<FormBody>()
@@ -63,6 +64,7 @@ export const DateRangePickerField = forwardRef<HTMLDivElement, DateRangePickerFi
           aria-label={ label }
           isInvalid={ !!errors[name] }
           onChange={ handleChange }
+          onSave={ onSave }
           resetDate={ () => onChange(null) }
           value={ value }
           minValue={ minValue }

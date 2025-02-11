@@ -9,6 +9,7 @@ export interface RangeCalendarProps extends AriaRangeCalendarProps<DateValue> {
   fiscalStartDay?: number
   isClearable: boolean
   firstDayOfWeek: FirstDayOfWeek
+  onSave?: () => void
 }
 
 export interface CalendarProps extends AriaCalendarProps<DateValue> {
