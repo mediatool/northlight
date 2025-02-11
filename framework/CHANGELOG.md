@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.33.9](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.8...@northlight/ui@2.33.9) (2025-02-11)
+
+
+### Bug Fixes
+
+* **framework:** add onSave prop to dateRangePickerField ([72d7ea6](https://github.com/mediatool/northlight/commit/72d7ea68f5084eae6f8e0f8152657f6dfe6842c2))
+
+
+
+
+
 ## [2.33.8](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.7...@northlight/ui@2.33.8) (2025-01-30)
 
 **Note:** Version bump only for package @northlight/ui
