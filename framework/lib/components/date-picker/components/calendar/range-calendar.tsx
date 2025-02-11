@@ -33,6 +33,7 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
     minValue,
     maxValue,
     firstDayOfWeek,
+    onSave,
   } = props
 
   const { locale } = useLocale()
@@ -87,6 +88,11 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
 
   const focusedStartMonthProps = value && value.start ? {} : focusRing
 
+  const handleSave = () => {
+    onSave?.()
+    handleClose()
+  }
+
   return (
     <Box ref={ ref } __css={ rangeCalendarContainer }>
       <Stack>
@@ -126,7 +132,7 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
                       Clear
                     </Button>
                   ) }
-                  <Button variant="brand" onClick={ handleClose } size="sm">
+                  <Button variant="brand" onClick={ handleSave } size="sm">
                     Save
                   </Button>
                 </HStack>

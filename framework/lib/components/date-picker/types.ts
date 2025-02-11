@@ -35,6 +35,7 @@ export interface DateRangePickerProps
   extends Omit<AriaDateRangePickerProps<DateValue>, 'onChange' | 'value' | 'minValue' | 'maxValue'>,
   DatePickerSettings {
   onChange?: (date: null | DateRange) => void
+  onSave?: () => void
   value: DateRange | null
   minValue?: string | undefined
   maxValue?: string | undefined
@@ -54,6 +55,7 @@ export interface DatePickerFieldProps
   direction?: StackDirection
   dateFormat?: string
   onChange?: (date: DateValue) => void
+  onSave?: () => void
   isClearable?: boolean
   fiscalStartMonth?: number
   fiscalStartDay?: number

@@ -101,6 +101,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     maxValue,
     renderInPortal = false,
     firstDayOfWeek,
+    onSave,
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -203,6 +204,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                   fiscalStartDay={ fiscalStartDay || 0 }
                   isClearable={ isClearable }
                   firstDayOfWeek={ firstDayOfWeek }
+                  onSave={ onSave }
                 />
               </DatePickerLocaleWrapper>
             </FocusScope>
