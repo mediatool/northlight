@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Text as ChakraText, TextProps, useStyleConfig } from '@chakra-ui/react'
 
 /**
@@ -17,20 +17,21 @@ import { Text as ChakraText, TextProps, useStyleConfig } from '@chakra-ui/react'
  * props tab to right should be passed down via **sx**_)
  *
  */
-export const Small = ({
+export const Small = forwardRef<HTMLParagraphElement, TextProps>(({
   children,
   sx = {},
   ...rest
-}: TextProps) => {
+}, ref) => {
   const styles = useStyleConfig('Small', { sx })
 
   return (
     <ChakraText
       as="small"
       sx={ styles }
+      ref={ ref }
       { ...rest }
     >
       { children }
     </ChakraText>
   )
-}
+})
