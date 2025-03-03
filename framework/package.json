@@ -3,7 +3,7 @@
   "version": "2.33.9",
   "description": "Northlight UI library, based on Chakra-ui",
   "license": "MIT",
-  "author": "Mediatool",
+  "author": "Camphouse",
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
