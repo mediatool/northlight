@@ -11,11 +11,11 @@ import {
   Hash01Duo,
   Iconsapp,
   LinkDuo,
-  MediatoolLogoSolid,
+  MediatoolLogoDuo,
   NorthlightLogoXs,
   OctocatW,
   Principleshapp,
-  ShapesDuo,
+  RouteOpenDuo,
   StatusPinDuo,
   Tokensapp,
 } from '@northlight/icons'
@@ -181,8 +181,8 @@ const DocsApp = () => (
           <CardBody>
             <Text fontSize={ { base: 'md', md: 'md' } } textAlign="left">
               Northlight is a comprehensive, opinionated open-source design system built
-              by Mediatool. It features a suite of UI components, icons, and design
-              tokens tailored for Mediatool's products. Crafted to streamline modern UI development,
+              by Camphouse. It features a suite of UI components, icons, and design
+              tokens tailored for Camhouses's products. Crafted to streamline modern UI development,
               Northlight has evolved into a unique tool that we're
               excited to offer to the wider community
             </Text>
@@ -238,7 +238,7 @@ const DocsApp = () => (
                   } }
                 />
                 <P variant="14">
-                  Tokens are platform-agnostic variables that represent Mediatool's
+                  Tokens are platform-agnostic variables that represent Camphouse's
                   brand
                 </P>
               </CardBody>
@@ -538,8 +538,8 @@ const DocsApp = () => (
                   <Stack spacing={ 2 } direction={ { base: 'column', md: 'row' } }>
                     <Link href={ person.github } isExternal={ true }>
                       <Button
-                        size="sm"
-                        leftIcon={ <ShapesDuo /> }
+                        size="xs"
+                        leftIcon={ <RouteOpenDuo /> }
                         variant="ghost"
                       >
                         Github
@@ -548,7 +548,7 @@ const DocsApp = () => (
                     { person.linkedin && (
                     <Link href={ person.linkedin } isExternal={ true }>
                       <Button
-                        size="sm"
+                        size="xs"
                         leftIcon={ <LinkDuo /> }
                         variant="ghost"
                       >
@@ -559,7 +559,7 @@ const DocsApp = () => (
                     { person.slack && (
                     <Link href={ person.slack } isExternal={ true }>
                       <Button
-                        size="sm"
+                        size="xs"
                         leftIcon={ <Hash01Duo /> }
                         variant="ghost"
                       >
@@ -721,17 +721,14 @@ const DocsApp = () => (
             Built by the giants at{ ' ' }
             <Icon
               color="bg.brand.default"
-              as={ MediatoolLogoSolid }
+              as={ MediatoolLogoDuo }
               boxSize={ 5 }
-              ml={ 2 }
+              ml={ 1 }
               flexGrow={ 1 }
             />
           </Lead>
           <Tiny textAlign="center">
-            Hop aboard the Northlight UI spaceship—no space suits needed!
-            We're not responsible for any code that goes supernova.
-            Feel like funding our next spacewalk with a slice of your salary?
-            That's one small step for you, one giant leap for our snack budget! 🌌 👨‍🚀 🚀
+            Hop aboard the Northlight UI spaceship. No space suits needed! 🌌
           </Tiny>
         </VStack>
       </VStack>
