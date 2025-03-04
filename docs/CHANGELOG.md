@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.10](https://github.com/mediatool/northlight/compare/@northlight/docs@1.10.9...@northlight/docs@1.10.10) (2025-03-04)
+
+
+### Bug Fixes
+
+* **northlight:** org name change ([d455d12](https://github.com/mediatool/northlight/commit/d455d12fcff761fbca3792f90999ebc8d0213442))
+
+
+
+
+
 ## [1.10.9](https://github.com/mediatool/northlight/compare/@northlight/docs@1.10.8...@northlight/docs@1.10.9) (2025-02-11)
 
 **Note:** Version bump only for package @northlight/docs
