@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.33.13](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.12...@northlight/ui@2.33.13) (2025-03-14)
+
+
+### Bug Fixes
+
+* **framework:** add forwardRef to stylized typography components and p ([2ce7a4e](https://github.com/mediatool/northlight/commit/2ce7a4e922b779798a745c7b502e5aa641b0efa6))
+
+
+
+
+
 ## [2.33.12](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.11...@northlight/ui@2.33.12) (2025-03-14)
 
 **Note:** Version bump only for package @northlight/ui
