@@ -7,17 +7,15 @@ import React, {
 import {
   ActionMeta,
   CreatableSelect,
-  InputActionMeta,
   MultiValue,
 } from 'chakra-react-select'
-import { any, append, identity, init, isEmpty } from 'ramda'
+import { any, identity, isEmpty } from 'ramda'
 import { Box } from '../box'
 import { useToken } from '../../hooks'
 import { TagsInputProps } from './types'
 import { Option } from '../select'
 import { tagsInputStyles } from './tags-input-styles'
 import { theme } from '../../theme'
-
 /**
  * Tags Input, based of react creatable select, is meant to select
  * multiple tags. Follows styling of textarea and is resizable.
@@ -43,6 +41,7 @@ export function TagsInput<T extends Option> ({
   loadingList = () => null,
   'data-testid': testId,
   value = [],
+  onError,
   ...rest
 }: TagsInputProps<T>) {
   const [ borderColor ] = useToken('border.select', [ 'focus' ])
@@ -50,6 +49,7 @@ export function TagsInput<T extends Option> ({
   const [ inputValue, setInputValue ] = useState('')
   const [ selectedOptions, setSelectedOptions ] = useState<MultiValue<T>>(value)
   const [ isFocused, setIsFocused ] = useState(false)
+
   useEffect(() => {
     setSelectedOptions(value)
   }, [ value.length ])
@@ -61,57 +61,40 @@ export function TagsInput<T extends Option> ({
     onChange(values, actionMeta)
   }
 
-  const isValidNewOption = (input: string, availableOptions: MultiValue<T>) => {
-    const optionAlreadyExists = any(
-      (option) => option.value === input,
-      availableOptions
-    )
-    return !isEmpty(input) && !optionAlreadyExists
-  }
+  const isValidNewOption = (input: string, availableOptions: MultiValue<T>) => !any(
+    (option) => option.value === input,
+    availableOptions
+  )
 
   const addNewOption = (newOption: T) => {
-    onChange(selectedOptions, { action: 'select-option', option: newOption })
-    setSelectedOptions(append(newOption))
+    const updatedOptions = [ ...selectedOptions, newOption ]
+    onChange(updatedOptions, { action: 'select-option', option: newOption })
+    setSelectedOptions(updatedOptions)
   }
-
-  const isInputChangeValid = (newInput: string, event: InputActionMeta) =>
-    isValidNewOption(newInput, selectedOptions) &&
-    newInput !== '' &&
-    newInput !== ',' &&
-    newInput.endsWith(',') &&
-    event.action !== 'input-blur'
 
   const clearInput = () => {
     setInputValue('')
   }
 
-  const handleInputChange = (newInput: string, event: InputActionMeta) => {
+  const handleInputChange = (newInput: string) => {
     setInputValue(newInput)
-    if (!isInputChangeValid(newInput, event)) return
-    const newOption: Option = {
-      value: init(newInput),
-      label: init(newInput).slice(0, -1),
-    }
-    addNewOption(newOption as T)
-    clearInput()
   }
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-    if (
-      !isValidNewOption(inputValue, selectedOptions) &&
-      !isEmpty(inputValue) &&
-      event.key !== ' '
-    ) {
-      clearInput()
-      event.preventDefault()
-      return
-    }
-    if ((event.key === 'Enter' || event.key === 'Tab') && !isEmpty(inputValue)) {
-      const newOption: Option = { value: inputValue, label: inputValue }
+    const shouldAddOption = event.key === 'Enter' || event.key === 'Tab' || event.key === ','
+
+    if (!shouldAddOption || isEmpty(inputValue)) return
+
+    const trimmedInputValue = inputValue.trim()
+
+    if (isValidNewOption(trimmedInputValue, selectedOptions)) {
+      const newOption: Option = { value: trimmedInputValue, label: trimmedInputValue }
       addNewOption(newOption as T)
-      clearInput()
-      event.preventDefault()
+    } else {
+      onError?.('Tag already exists')
     }
+
+    clearInput()
   }
 
   const handleFocus = () => {
@@ -154,7 +137,7 @@ export function TagsInput<T extends Option> ({
         styles={ { menuPortal: (base) => ({ ...base, zIndex: theme.zIndices.popover }) } }
         formatCreateLabel={ (textInputValue: string) =>
           `Add tag "${textInputValue}"`
-        }
+          }
         { ...rest }
       />
     </Box>
