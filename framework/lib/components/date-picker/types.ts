@@ -42,6 +42,7 @@ export interface DateRangePickerProps
   fiscalStartMonth?: number
   fiscalStartDay?: number
   renderInPortal?: boolean
+  buttonLabel?: string
 }
 
 export interface DatePickerFieldProps
@@ -63,6 +64,7 @@ export interface DatePickerFieldProps
 
 export interface DateRangePickerFieldProps extends Omit<DatePickerFieldProps, 'onChange'> {
   onChange?: (date: null | DateRange) => void
+  buttonLabel?: string
 }
 
 export type FormBody = Record<string, DateRange>

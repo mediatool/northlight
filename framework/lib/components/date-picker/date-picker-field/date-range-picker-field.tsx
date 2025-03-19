@@ -24,6 +24,7 @@ export const DateRangePickerField = forwardRef<HTMLDivElement, DateRangePickerFi
   onChange: onChangeCallback = identity,
   isClearable = true,
   onSave,
+  buttonLabel = 'Save',
   ...rest
 }, ref) => {
   const { setValue, setError, trigger } = useFormContext<FormBody>()
@@ -71,6 +72,7 @@ export const DateRangePickerField = forwardRef<HTMLDivElement, DateRangePickerFi
           maxValue={ maxValue }
           validationState={ errors.name ? 'invalid' : 'valid' }
           isClearable={ isClearable }
+          buttonLabel={ buttonLabel }
           { ...(rest as any) }
         />
       ) }
