@@ -34,6 +34,7 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
     maxValue,
     firstDayOfWeek,
     onSave,
+    buttonLabel = 'Save',
   } = props
 
   const { locale } = useLocale()
@@ -133,7 +134,7 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
                     </Button>
                   ) }
                   <Button variant="brand" onClick={ handleSave } size="sm">
-                    Save
+                    { buttonLabel }
                   </Button>
                 </HStack>
               </Stack>
