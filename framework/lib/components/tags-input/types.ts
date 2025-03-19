@@ -16,4 +16,5 @@ export interface TagsInputProps<T>
   value?: MultiValue<T>
   formatCreateLabel?: (textInputValue: string) => string
   isValidNewOption?: (option: string, selectOptions: MultiValue<T>) => boolean
+  onError?: (message: string) => void
 }
