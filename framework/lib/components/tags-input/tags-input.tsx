@@ -77,6 +77,8 @@ export function TagsInput<T extends Option> ({
   }
 
   const handleInputChange = (newInput: string) => {
+    if (newInput === ',') return
+
     setInputValue(newInput)
   }
 
