@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.33.15](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.14...@northlight/ui@2.33.15) (2025-03-20)
+
+
+### Bug Fixes
+
+* **framework:** fix tags input component ([2b77ee2](https://github.com/mediatool/northlight/commit/2b77ee217bd2ead8232ad88f86ecf64218210acc))
+
+
+
+
+
 ## [2.33.14](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.13...@northlight/ui@2.33.14) (2025-03-19)
 
 **Note:** Version bump only for package @northlight/ui
