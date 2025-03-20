@@ -1,6 +1,0 @@
-export * from './headings'
-export * from './body'
-export * from './stylized'
-export * from './labels'
-export * from './types'
-export * from './numvals'

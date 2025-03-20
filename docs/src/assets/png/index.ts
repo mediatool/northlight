@@ -1,6 +1,0 @@
-export { default as user } from './user.jpeg'
-export { default as textfield } from './textfield.png'
-export { default as darthVader } from './darth-vader.jpeg'
-export { default as kindredLogo } from './kindred.png'
-export { default as mediatoolLogo } from './mediatool.png'
-export { default as klarnaLogo } from './klarna.png'

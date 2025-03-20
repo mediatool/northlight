@@ -1,22 +1,9 @@
 {
-  "name": "northlight",
+  "name": "@northlight/root",
   "private": true,
-  "workspaces": [
-    "framework",
-    "tokens",
-    "icons",
-    "docs"
-  ],
-  "devDependencies": {
-    "@nrwl/nx-cloud": "^15.0.3",
-    "lerna": "^5.1.6",
-    "nx": "^15.7.2"
-  },
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
-    "clean": "nx run-many --target=clean --all && nx reset",
-    "lint": "nx run-many --target=lint --all",
-    "test": "nx run-many --target=test --all",
-    "transpile": "nx run-many --target=transpile --all"
   },
-  "packageManager": "yarn@1.22.22"
+  "packageManager": "pnpm@10.6.5"
 }

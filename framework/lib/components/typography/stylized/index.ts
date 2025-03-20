@@ -1,5 +1,0 @@
-export * from './blockquote'
-export * from './capitalized'
-export * from './lead'
-export * from './small'
-export * from './tiny'
