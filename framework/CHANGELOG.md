@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.33.16](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.15...@northlight/ui@2.33.16) (2025-03-20)
+
+
+### Bug Fixes
+
+* **framework:** small bug fix tags input ([bb72056](https://github.com/mediatool/northlight/commit/bb72056c6b6973dae079e838a48ebc53bd2afcea))
+
+
+
+
+
 ## [2.33.15](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.14...@northlight/ui@2.33.15) (2025-03-20)
 
 
