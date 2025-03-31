@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.34.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.34.1...@northlight/ui@2.34.2) (2025-03-31)
+
+
+### Bug Fixes
+
+* **framework:** add import react to render in portal ([0b4c70e](https://github.com/mediatool/northlight/commit/0b4c70ed1a4aa4d6cd44a19b79f13ef8425d941f))
+
+
+
+
+
 ## [2.34.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.34.0...@northlight/ui@2.34.1) (2025-03-31)
 
 
