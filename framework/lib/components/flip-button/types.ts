@@ -95,6 +95,6 @@ export interface FlipButtonGroupFieldProps extends FlipButtonGroupProps {
   label: string
   isRequired?: boolean
   validate?: RegisterOptions
-  value?: string
+  value?: string | string[]
   iconPlacement?: 'left' | 'right' | 'none'
 }
