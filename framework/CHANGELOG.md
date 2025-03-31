@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.34.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.16...@northlight/ui@2.34.0) (2025-03-31)
+
+
+### Features
+
+* **framework:** add render in portal option to color-picker ([e081dd4](https://github.com/mediatool/northlight/commit/e081dd447a11d98fde2cf8869ebffb1e0ba586f8))
+
+
+
+
+
 ## [2.33.16](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.15...@northlight/ui@2.33.16) (2025-03-20)
 
 
