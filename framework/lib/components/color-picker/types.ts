@@ -18,6 +18,7 @@ export interface ColorPickerProps
   size?: ColorPickerSize
   name?: string
   popoverProps?: PopoverProps
+  shouldRenderInPortal?: boolean
 }
 
 export type ColorButtonProps = {
