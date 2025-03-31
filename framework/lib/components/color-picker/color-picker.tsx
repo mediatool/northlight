@@ -20,6 +20,7 @@ import {
 } from '../popover'
 import { ColorsExpandButton } from './colors-expand-button'
 import { Button } from '../button'
+import { RenderInPortal } from '../portal/render-in-portal'
 
 /**
  * Dropdown menu where user can select hex value
@@ -52,6 +53,7 @@ export const ColorPicker = ({
   value = null,
   name,
   size = 'md',
+  shouldRenderInPortal = false,
   popoverProps,
   ...rest
 }: ColorPickerProps) => {
@@ -138,18 +140,19 @@ export const ColorPicker = ({
             { ...rest }
           />
         </PopoverTrigger>
-        <PopoverContent w="auto" boxShadow="md" p={ 2 } bgColor="background.default">
-          <Stack>
-            <PopoverHeader
-              color="text.default"
-              sx={ heading }
-              display="flex"
-              alignItems="center"
-              justifyContent="space-between"
-              width="full"
-            >
-              Pick a color
-              { clearable && trigger.color !== 'unset' && (
+        <RenderInPortal shouldRenderInPortal={ shouldRenderInPortal }>
+          <PopoverContent w="auto" boxShadow="md" p={ 2 } bgColor="background.default">
+            <Stack>
+              <PopoverHeader
+                color="text.default"
+                sx={ heading }
+                display="flex"
+                alignItems="center"
+                justifyContent="space-between"
+                width="full"
+              >
+                Pick a color
+                { clearable && trigger.color !== 'unset' && (
                 <Button
                   size="sm"
                   h="5"
@@ -158,43 +161,44 @@ export const ColorPicker = ({
                 >
                   Clear
                 </Button>
-              ) }
-            </PopoverHeader>
-            <PopoverBody p={ 0 }>
-              <Stack alignItems="center" p={ 0 } spacing={ 0 }>
-                <FocusScope>
-                  <SimpleGrid
-                    columns={ getNumberOfColumns() }
-                    spacing={ 2 }
-                    overflowY="scroll"
-                    maxH={ 72 }
-                    pr={ 2 }
-                    pl={ 4 }
-                    py={ 1 }
-                  >
-                    { visibleColors.map((color, index) => (
-                      <ColorButton
-                        color={ color }
-                        key={ `${color}-button-${index as number}` }
-                        selected={ color === selectedColor }
-                        ref={ shouldBeFocused(index) ? initialFocusRef : undefined }
-                        size={ size }
-                        onClick={ () => handleSelect(color) }
-                      />
-                    )) }
-                  </SimpleGrid>
-                  { expandedColors.length > 0 && (
+                ) }
+              </PopoverHeader>
+              <PopoverBody p={ 0 }>
+                <Stack alignItems="center" p={ 0 } spacing={ 0 }>
+                  <FocusScope>
+                    <SimpleGrid
+                      columns={ getNumberOfColumns() }
+                      spacing={ 2 }
+                      overflowY="scroll"
+                      maxH={ 72 }
+                      pr={ 2 }
+                      pl={ 4 }
+                      py={ 1 }
+                    >
+                      { visibleColors.map((color, index) => (
+                        <ColorButton
+                          color={ color }
+                          key={ `${color}-button-${index as number}` }
+                          selected={ color === selectedColor }
+                          ref={ shouldBeFocused(index) ? initialFocusRef : undefined }
+                          size={ size }
+                          onClick={ () => handleSelect(color) }
+                        />
+                      )) }
+                    </SimpleGrid>
+                    { expandedColors.length > 0 && (
                     <ColorsExpandButton
                       onClick={ expandColors }
                       expanded={ expanded }
                       size={ size }
                     />
-                  ) }
-                </FocusScope>
-              </Stack>
-            </PopoverBody>
-          </Stack>
-        </PopoverContent>
+                    ) }
+                  </FocusScope>
+                </Stack>
+              </PopoverBody>
+            </Stack>
+          </PopoverContent>
+        </RenderInPortal>
       </Popover>
     </Box>
   )
