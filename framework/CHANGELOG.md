@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.34.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.34.0...@northlight/ui@2.34.1) (2025-03-31)
+
+
+### Bug Fixes
+
+* **northlight-ui:** update type in flipbuttongroupfield ([7385d65](https://github.com/mediatool/northlight/commit/7385d650dd826f04f96910a116c4e2cf26a036e3)), closes [#DEV-19393](https://github.com/mediatool/northlight/issues/DEV-19393)
+
+
+
+
+
 # [2.34.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.33.16...@northlight/ui@2.34.0) (2025-03-31)
 
 
