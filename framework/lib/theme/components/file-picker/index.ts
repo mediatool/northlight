@@ -1,5 +1,5 @@
-import { ComponentMultiStyleConfig, keyframes } from '@chakra-ui/react'
-import { CSSObject } from '@emotion/react'
+import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { CSSObject, keyframes } from '@emotion/react'
 import { merge } from 'ramda'
 import { CurrentTheme } from '../../../utils'
 

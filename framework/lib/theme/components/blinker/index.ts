@@ -1,4 +1,5 @@
-import { ComponentSingleStyleConfig, keyframes } from '@chakra-ui/react'
+import { ComponentSingleStyleConfig } from '@chakra-ui/react'
+import { keyframes } from '@emotion/react'
 
 const pulseRing = keyframes`
 0% {
