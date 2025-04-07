@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.34.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.34.2...@northlight/ui@2.34.3) (2025-04-07)
+
+
+### Bug Fixes
+
+* **framework:** change keyframes import to emotion ([72ef6f6](https://github.com/mediatool/northlight/commit/72ef6f60dc96478a06364d021c877b1ece4659d0))
+
+
+
+
+
 ## [2.34.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.34.1...@northlight/ui@2.34.2) (2025-03-31)
 
 
