@@ -28,11 +28,11 @@ interface DatePickerSettings {
 }
 
 export interface DatePickerProps
-  extends AriaDatePickerProps<DateValue>,
+  extends Omit<AriaDatePickerProps<DateValue>, 'firstDayOfWeek'>,
   DatePickerSettings {}
 
 export interface DateRangePickerProps
-  extends Omit<AriaDateRangePickerProps<DateValue>, 'onChange' | 'value' | 'minValue' | 'maxValue'>,
+  extends Omit<AriaDateRangePickerProps<DateValue>, 'firstDayOfWeek' | 'onChange' | 'value' | 'minValue' | 'maxValue'>,
   DatePickerSettings {
   onChange?: (date: null | DateRange) => void
   onSave?: () => void
