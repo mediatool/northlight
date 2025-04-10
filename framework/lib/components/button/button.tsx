@@ -24,6 +24,31 @@ const SpinnerSizeMap = {
         </Button>
  * ?)
  *
+ * @example
+ * ### Use the `isLoading` prop to show a loading spinner
+ * (?
+        <Button
+            variant="success"
+            isLoading={ true }
+            loadingText="Creating folder..."
+        >
+          Create folder
+        </Button>
+ * ?)
+ *
+ * @example
+ * ### Also use the `spinner` prop to show a custom spinner
+ * (?
+        <Button
+            variant="success"
+            isLoading={ true }
+            loadingText="Creating folder..."
+            spinner={ <Spinner color="text.success" /> }
+        >
+          Creating folder
+        </Button>
+ * ?)
+ *
  * @example (Example)
  * (?
  * +
