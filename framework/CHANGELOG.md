@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.35.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.34.3...@northlight/ui@2.35.0) (2025-04-14)
+
+
+### Features
+
+* **framework:** ignore firstDayOfWeek prop from react-aria ([ca2855b](https://github.com/mediatool/northlight/commit/ca2855b03f004c650d6f3a5a84f28c9f6db11731))
+
+
+
+
+
 ## [2.34.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.34.2...@northlight/ui@2.34.3) (2025-04-07)
 
 
