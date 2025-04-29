@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.35.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.35.0...@northlight/ui@2.35.1) (2025-04-29)
+
+
+### Bug Fixes
+
+* **framework:** add white variant for flip button ([79274e0](https://github.com/mediatool/northlight/commit/79274e05f1da3db0201860507886f346171074fe))
+
+
+
+
+
 # [2.35.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.34.3...@northlight/ui@2.35.0) (2025-04-14)
 
 
