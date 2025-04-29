@@ -6,7 +6,7 @@ import { RadioGroupState } from '@react-stately/radio'
 import { CSSObject } from '@emotion/react'
 
 type FlipButtonSize = 'xs' | 'sm' | 'md' | 'lg'
-type FlipButtonVariant = 'default' | 'brand'
+type FlipButtonVariant = 'default' | 'brand' | 'light'
 
 type StyleType = {
   opacity: '0'
