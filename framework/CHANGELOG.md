@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.35.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.35.1...@northlight/ui@2.35.2) (2025-05-06)
+
+
+### Bug Fixes
+
+* **framework:** extends comboPicker to take chakra props ([6dccd04](https://github.com/mediatool/northlight/commit/6dccd0405425ced73a87657b8382bf53166c0e67))
+
+
+
+
+
 ## [2.35.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.35.0...@northlight/ui@2.35.1) (2025-04-29)
 
 
