@@ -109,6 +109,8 @@ export const ComboPicker = ({
     }
   }, [ inputValue, defaultToZeroIfEmpty ])
 
+  const buttonWidth = (buttonRef.current?.offsetWidth ?? 0)
+
   return (
     <InputGroup>
       <FormattedNumberInput
@@ -124,6 +126,7 @@ export const ComboPicker = ({
         min={ min }
         max={ max }
         { ...rest }
+        pr={ `${buttonWidth >= 0 ? buttonWidth + 10 : 0}px` }
       />
       <InputRightElement
         width="auto"
