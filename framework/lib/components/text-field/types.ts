@@ -36,7 +36,7 @@ export interface PresetOptions {
   decimalSeparator: string
 }
 
-export interface FormattedNumberInputProps extends Omit<NumericFormatProps, 'onChange' | 'max' | 'min'> {
+export interface FormattedNumberInputProps extends Omit<NumericFormatProps, 'onChange' | 'max' | 'min'>, Omit<ChakraInputProps, 'color' | 'defaultValue' | 'value' | 'height' | 'size' | 'type' | 'width' | 'values' | 'events' | 'onChange'> {
   max?: number
   min?: number
   /** Changes thousand and decimal separators */
