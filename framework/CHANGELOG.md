@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.35.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.35.2...@northlight/ui@2.35.3) (2025-05-08)
+
+
+### Bug Fixes
+
+* **framework:** add semester to quick select options in date picker ([bfda403](https://github.com/mediatool/northlight/commit/bfda403db535bba42611620b669e7b8b72c101b3))
+
+
+
+
+
 ## [2.35.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.35.1...@northlight/ui@2.35.2) (2025-05-06)
 
 
