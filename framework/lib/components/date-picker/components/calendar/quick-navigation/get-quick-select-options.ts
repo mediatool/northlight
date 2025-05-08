@@ -174,6 +174,46 @@ export const getQuickSelectOptions = (
     label: 'Year to Date',
   }
 
+  const S1 = {
+    value: {
+      start: startOfMonthWithDays(
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth,
+          days: fiscalStartDay,
+        }
+      ),
+      end: endOfMonthWithDays(
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth + 6,
+          days: fiscalStartDay,
+        }
+      ),
+    },
+    label: fiscalStartMonth === 0 ? 'S1' : 'FS1',
+  }
+
+  const S2 = {
+    value: {
+      start: startOfMonthWithDays(
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth + 6,
+          days: fiscalStartDay,
+        }
+      ),
+      end: endOfMonthWithDays(
+        startOfYear(thisDay).subtract({ years: offsetFiscalYear }),
+        {
+          months: fiscalStartMonth + 12,
+          days: fiscalStartDay,
+        }
+      ),
+    },
+    label: fiscalStartMonth === 0 ? 'S2' : 'FS2',
+  }
+
   const F1 = {
     value: {
       start: startOfMonthWithDays(
@@ -254,6 +294,7 @@ export const getQuickSelectOptions = (
     label: fiscalStartMonth === 0 ? 'Q4' : 'FQ4',
   }
 
+  const fiscalSemesters = [ S1, S2 ]
   const fiscalQuarters = [ F1, F2, F3, F4 ]
   const fiscalYears =
     fiscalStartMonth === 0 ? [] : [ thisFiscalYear, lastFiscalYear ]
@@ -274,5 +315,5 @@ export const getQuickSelectOptions = (
     ...fiscalYears,
   ]
 
-  return { quickDates, fiscalQuarters }
+  return { quickDates, fiscalQuarters, fiscalSemesters }
 }
