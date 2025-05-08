@@ -18,7 +18,7 @@ export const QuickSelect = ({
   locale = '',
   height = '17.5rem',
 }: QuickSelectProps) => {
-  const { quickDates, fiscalQuarters } = useMemo(
+  const { quickDates, fiscalQuarters, fiscalSemesters } = useMemo(
     () => getQuickSelectOptions(state, locale, fiscalStartMonth, fiscalStartDay),
     []
   )
@@ -67,9 +67,30 @@ export const QuickSelect = ({
       />
       <Spacer />
       <Flex
-        justifyContent="space-between"
+        justifyContent="space-around"
         w="full"
         pt="2"
+        pr="4"
+        display={ shouldShow(fiscalSemesters) ? 'flex' : 'none' }
+      >
+        { map(
+          (semester) =>
+            validRange(semester.value, state) && (
+              <DateButton
+                onClick={ updateDate(semester.value) }
+                isActive={ getIsActive(semester) }
+                key={ `quick-select-${semester.label}` }
+              >
+                { semester.label }
+              </DateButton>
+            ),
+          fiscalSemesters
+        ) }
+      </Flex>
+      <Flex
+        justifyContent="space-around"
+        w="full"
+        pt={ shouldShow(fiscalSemesters) ? '0' : '2' }
         pr="4"
         display={ shouldShow(fiscalQuarters) ? 'flex' : 'none' }
       >
