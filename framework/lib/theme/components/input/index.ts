@@ -37,8 +37,9 @@ export const Input: ComponentMultiStyleConfig = {
         _focusVisible: {
           bgColor: color.background.input['outline-focus'],
           borderColor: color.border.input.focus,
+          boxShadow: `inset 0 0 0 1px ${color.border.input.focus}`,
           _invalid: {
-            boxShadow: `0 0 0 1px ${color.border.input.error}`,
+            boxShadow: `inset 0 0 0 1px ${color.border.input.error}`,
             bgColor: color.background.input['outline-error'],
             borderColor: color.border.input.error,
           },
@@ -50,6 +51,7 @@ export const Input: ComponentMultiStyleConfig = {
         _invalid: {
           bgColor: color.background.input['outline-error'],
           borderColor: color.border.input.error,
+          boxShadow: `inset 0 0 0 1px ${color.border.input.error}`,
         },
         _disabled: {
           bgColor: color.background.input['outline-disabled'],
@@ -88,20 +90,20 @@ export const Input: ComponentMultiStyleConfig = {
           bgColor: color.background.input['filled-hover'],
         },
         _focusVisible: {
-          boxShadow: `0 0 0 1px ${color.border.input.focus}`,
+          boxShadow: `inset 0 0 0 1px ${color.border.input.focus}`,
           borderColor: color.border.input.focus,
           bgColor: color.background.input['filled-focus'],
           _readOnly: {
             bgColor: color.background.input['filled-default'],
           },
           _invalid: {
-            boxShadow: `0 0 0 1px ${color.border.input.error}`,
+            boxShadow: `inset 0 0 0 1px ${color.border.input.error}`,
             bgColor: color.background.input['outline-error'],
             borderColor: color.border.input.error,
           },
         },
         _invalid: {
-          boxShadow: `0 0 0 1px ${color.border.input.error}`,
+          boxShadow: `inset 0 0 0 1px ${color.border.input.error}`,
           bgColor: color.background.input['filled-error'],
           borderColor: color.border.input.error,
         },
@@ -188,11 +190,11 @@ export const Input: ComponentMultiStyleConfig = {
         _focusVisible: {
           bgColor: color.background.input['outline-focus'],
           _hover: {
-            boxShadow: `0 0 0 1px ${color.border.ai}`,
+            boxShadow: `inset 0 0 0 1px ${color.border.ai}`,
             borderColor: color.border.ai,
           },
           _invalid: {
-            boxShadow: `0 0 0 1px ${color.border.input.error}`,
+            boxShadow: `inset 0 0 0 1px ${color.border.input.error}`,
             bgColor: color.background.input['outline-error'],
             borderColor: color.border.input.error,
           },

@@ -52,12 +52,12 @@ export const NumberInput: ComponentMultiStyleConfig = {
       _focusVisible: {
         bg: color.background.input['outline-focus'],
         borderColor: color.border.input.focus,
-        boxShadow: `0 0 0 1px ${color.border.textarea.focus}`,
+        boxShadow: `inset 0 0 0 1px ${color.border.textarea.focus}`,
       },
       _invalid: {
         bg: color.background.input['outline-error'],
         borderColor: color.border.input.error,
-        boxShadow: `0 0 0 1px ${color.border.input.error}`,
+        boxShadow: `inset 0 0 0 1px ${color.border.input.error}`,
       },
       _disabled: {
         bg: color.background.input['outline-disabled'],
