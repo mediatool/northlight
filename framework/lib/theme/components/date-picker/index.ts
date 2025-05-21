@@ -13,10 +13,10 @@ export const DatePicker: ComponentMultiStyleConfig = {
       _focusWithin: {
         bgColor: color.background.input['outline-focus'],
         borderColor: color.border.textarea.focus,
-        boxShadow: `0 0 0 1px ${color.border.textarea.focus}`,
+        boxShadow: `inset 0 0 0 1px ${color.border.textarea.focus}`,
       },
       _invalid: {
-        boxShadow: `0 0 0 1px ${color.border.input.error}`,
+        boxShadow: `inset 0 0 0 1px ${color.border.input.error}`,
         borderColor: color.border.input.error,
       },
       _disabled: {
@@ -37,11 +37,11 @@ export const DatePicker: ComponentMultiStyleConfig = {
       outline: 'none',
       rounded: 'md',
       _focus: {
-        bgColor: 'blue.500',
+        bgColor: 'bg.brand.default',
         color: color.text.inverted,
       },
       _placeholder: {
-        color: 'red.500',
+        color: 'destructive',
       },
     },
   }),
