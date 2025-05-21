@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.35.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.35.3...@northlight/ui@2.35.4) (2025-05-21)
+
+
+### Bug Fixes
+
+* **northlight:** daterange input focus ring ([6caab1a](https://github.com/mediatool/northlight/commit/6caab1aaba78a4e378cd28597ea4210a665415ce))
+* **northlight:** input focus ring stays within boundaries ([63addb8](https://github.com/mediatool/northlight/commit/63addb878c90b2a2b35ca82b4ec88b6c5f3ff840))
+
+
+
+
+
 ## [2.35.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.35.2...@northlight/ui@2.35.3) (2025-05-08)
 
 
