@@ -8,4 +8,6 @@ export interface BadgeProps extends Omit<ChakraBadgeProps, 'size' | 'variant' > 
   size?: BadgeSize
   variant?: BadgeVariant
   colorScheme?: ColorScheme
+  withIcon?: boolean
+  iconPosition?: 'left' | 'right'
 }
