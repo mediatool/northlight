@@ -14,6 +14,14 @@ export const Alert: ComponentMultiStyleConfig = {
       width: 'auto',
       display: 'flex',
     },
+    title: {
+      lineHeight: '1.25',
+      overflowWrap: 'break-word',
+    },
+    description: {
+      lineHeight: '1.25',
+      overflowWrap: 'break-word',
+    },
     icon: {
       boxSize: 6,
     },
