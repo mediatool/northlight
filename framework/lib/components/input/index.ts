@@ -1,19 +1,17 @@
 import {
-  Input,
   InputAddon,
-  InputGroup,
   InputLeftAddon,
-  InputLeftElement,
   InputRightAddon,
   InputRightElement,
 } from '@chakra-ui/react'
 
 export {
-  Input,
-  InputGroup,
   InputAddon,
   InputLeftAddon,
   InputRightAddon,
-  InputLeftElement,
   InputRightElement,
 }
+
+export * from './input-left-element'
+export * from './input'
+export * from './input-group'
