@@ -153,11 +153,7 @@ export const FlipButton = (props: FlipButtonProps) => {
       state,
       containerProps,
       flipButtonProps,
-      isFocused,
       isSelected,
-      isDisabled,
-      isMulti: isMulti || false,
-      focusRing,
       value,
       ...rest,
     })
