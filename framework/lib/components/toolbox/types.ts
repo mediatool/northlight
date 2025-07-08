@@ -1,4 +1,5 @@
 import { FlexProps } from '@chakra-ui/react'
+import type { SlideProps } from '../transitions/types'
 
 export interface ToolboxProps extends Omit<FlexProps, 'direction' | 'zIndex'> {
   isResizable?: boolean
@@ -16,6 +17,7 @@ export interface ToolboxProps extends Omit<FlexProps, 'direction' | 'zIndex'> {
   /** limit the sizing of the toolbox */
   resizeLimit?: 'half' | 'full'
   zIndex?: number
+  slideProps: SlideProps
 }
 
 export interface ToolboxHeaderProps extends FlexProps {
