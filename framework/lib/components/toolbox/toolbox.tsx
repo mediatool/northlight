@@ -60,6 +60,7 @@ export const Toolbox = ({
   autoFocus = true,
   resizeLimit = 'full',
   zIndex = coreZIndex.overlay,
+  slideProps,
   ...rest
 }: ToolboxProps) => {
   const { container } = useMultiStyleConfig('Toolbox', { size })
@@ -107,6 +108,7 @@ export const Toolbox = ({
             width: adjustableWidth,
             zIndex,
           } }
+          { ...slideProps }
         >
           <Flex
             sx={ { ...container, w: adjustableWidth } }
