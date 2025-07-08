@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.36.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.35.4...@northlight/ui@2.36.0) (2025-07-08)
+
+
+### Bug Fixes
+
+* **framework:** added docs for how to use is loading ([be93c39](https://github.com/mediatool/northlight/commit/be93c398ce6ab1dccbbbeda6382604965b6f6b9e))
+* **framework:** extend toolbox customizability with slideprops ([d00a05d](https://github.com/mediatool/northlight/commit/d00a05d37f15674fc8fbf81e1836e5f40446af2d))
+* **northlight:** alert title and desc ([ef19613](https://github.com/mediatool/northlight/commit/ef19613156db7ffb8c8a444ffd104b3f59085fc4))
+
+
+### Features
+
+* **northlight:** alert doc page ([5a6efb5](https://github.com/mediatool/northlight/commit/5a6efb5a038f8474315a1880873abfc3efb77eaa))
+* **northlight:** badge icon ([829ae9b](https://github.com/mediatool/northlight/commit/829ae9b1bf14b353608adad982c1ec6f6019e7ec))
+
+
+
+
+
 ## [2.35.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.35.3...@northlight/ui@2.35.4) (2025-05-21)
 
 
