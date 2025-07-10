@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.0...@northlight/ui@2.36.1) (2025-07-10)
+
+
+### Bug Fixes
+
+* **framework:** add dependencies needed for chakra-react-select ([c0386d1](https://github.com/mediatool/northlight/commit/c0386d11cde8cb406862e34c7608beca329ecfc1))
+
+
+
+
+
 # [2.36.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.35.4...@northlight/ui@2.36.0) (2025-07-08)
 
 
