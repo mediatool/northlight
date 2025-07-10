@@ -140,6 +140,7 @@ export const ComboPicker = ({
           onClick={ handleSelectToggle }
           flexShrink="0"
           height="100%"
+          data-testid="combo-picker-button"
         >
           { selectOption?.label ?? '' }
         </Button>
