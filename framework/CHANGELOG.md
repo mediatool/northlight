@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.1...@northlight/ui@2.36.2) (2025-07-11)
+
+
+### Bug Fixes
+
+* **framework:** add test id to combo picker btn ([ed06f52](https://github.com/mediatool/northlight/commit/ed06f52f7e3986b5215b3014b6080412f55d74f2))
+
+
+
+
+
 ## [2.36.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.0...@northlight/ui@2.36.1) (2025-07-10)
 
 
