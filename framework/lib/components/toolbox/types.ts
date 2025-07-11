@@ -17,7 +17,7 @@ export interface ToolboxProps extends Omit<FlexProps, 'direction' | 'zIndex'> {
   /** limit the sizing of the toolbox */
   resizeLimit?: 'half' | 'full'
   zIndex?: number
-  slideProps: SlideProps
+  slideProps?: SlideProps
 }
 
 export interface ToolboxHeaderProps extends FlexProps {
