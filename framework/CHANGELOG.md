@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.2...@northlight/ui@2.36.3) (2025-07-11)
+
+
+### Bug Fixes
+
+* **framework:** slideProps on toolbox should be optional ([aec4f30](https://github.com/mediatool/northlight/commit/aec4f30161df7e65e09a25d03bac2910ee08b23f))
+
+
+
+
+
 ## [2.36.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.1...@northlight/ui@2.36.2) (2025-07-11)
 
 
