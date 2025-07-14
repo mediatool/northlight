@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Button, InputGroup, InputRightElement, useDisclosure } from '@chakra-ui/react'
+import { Button, InputRightElement, useDisclosure } from '@chakra-ui/react'
 import { is } from 'ramda'
 import { ComboPickerOption, ComboPickerProps, ComboPickerValue } from './types'
 import { Select, SingleValue } from '../select'
@@ -112,7 +112,7 @@ export const ComboPicker = ({
   const buttonWidth = (buttonRef.current?.offsetWidth ?? 0)
 
   return (
-    <InputGroup>
+    <>
       <FormattedNumberInput
         width="100%"
         onChange={ (values) => handleInputChange(values.floatValue) }
@@ -127,51 +127,58 @@ export const ComboPicker = ({
         max={ max }
         { ...rest }
         pr={ `${buttonWidth >= 0 ? buttonWidth + 10 : 0}px` }
+        inputRightElement={ (
+          <InputRightElement
+            width="auto"
+            display="flex"
+            justifyContent="flex-end"
+            py={ 2 }
+            mr={ 2 }
+          >
+            <Button
+              ref={ buttonRef }
+              isDisabled={ isDisabled }
+              onClick={ handleSelectToggle }
+              flexShrink="0"
+              height="100%"
+              data-testid="combo-picker-button"
+            >
+              { selectOption?.label ?? '' }
+            </Button>
+          </InputRightElement>
+        ) }
       />
-      <InputRightElement
-        width="auto"
-        display="flex"
-        justifyContent="flex-end"
-        padding={ 2 }
-      >
-        <Button
-          ref={ buttonRef }
-          isDisabled={ isDisabled }
-          onClick={ handleSelectToggle }
-          flexShrink="0"
-          height="100%"
-          data-testid="combo-picker-button"
-        >
-          { selectOption?.label ?? '' }
-        </Button>
-      </InputRightElement>
-      <Box position="absolute" width="100%">
-        <Select
-          ref={ selectRef }
-          chakraStyles={ { container: (provided) => ({
-            ...provided,
-            position: 'absolute',
-            visibility: 'hidden',
-            right: '0',
-          }),
-          input: (provided) => ({
-            ...provided,
-            pointerEvents: 'none',
-            color: 'transparent',
-            display: enableSelectInput ? 'block' : 'none',
-          }),
-          menu: (provided) => ({
-            ...provided,
-            width: 'auto',
-            right: '0',
-          }) } }
-          options={ options }
-          value={ selectOption ? selectOption.value : undefined }
-          onChange={ handleSelectChange }
-          onBlur={ handleSelectClose }
-          menuIsOpen={ isOpen }
-        />
-      </Box>
-    </InputGroup>
+      {
+        isOpen && (
+        <Box position="absolute" width="100%">
+          <Select
+            ref={ selectRef }
+            chakraStyles={ { container: (provided) => ({
+              ...provided,
+              position: 'absolute',
+              visibility: 'hidden',
+              right: '0',
+            }),
+            input: (provided) => ({
+              ...provided,
+              pointerEvents: 'none',
+              color: 'transparent',
+              display: enableSelectInput ? 'block' : 'none',
+            }),
+            menu: (provided) => ({
+              ...provided,
+              width: 'auto',
+              right: '0',
+            }) } }
+            options={ options }
+            value={ selectOption ? selectOption.value : undefined }
+            onChange={ handleSelectChange }
+            onBlur={ handleSelectClose }
+            menuIsOpen={ isOpen }
+          />
+        </Box>
+        )
+      }
+    </>
   )
 }
