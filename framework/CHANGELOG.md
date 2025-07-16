@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.3...@northlight/ui@2.36.4) (2025-07-16)
+
+
+### Bug Fixes
+
+* **framework:** refactor combopicker ([07904e4](https://github.com/mediatool/northlight/commit/07904e45886536e915358e27a4795baf5f9c13f4))
+
+
+
+
+
 ## [2.36.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.2...@northlight/ui@2.36.3) (2025-07-11)
 
 
