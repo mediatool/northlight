@@ -146,37 +146,37 @@ export const ComboPicker = ({
               { selectOption?.label ?? '' }
             </Button>
           </InputRightElement>
-        ) }
+    ) }
       />
       {
         isOpen && (
-        <Box position="absolute" width="100%">
-          <Select
-            ref={ selectRef }
-            chakraStyles={ { container: (provided) => ({
-              ...provided,
-              position: 'absolute',
-              visibility: 'hidden',
-              right: '0',
-            }),
-            input: (provided) => ({
-              ...provided,
-              pointerEvents: 'none',
-              color: 'transparent',
-              display: enableSelectInput ? 'block' : 'none',
-            }),
-            menu: (provided) => ({
-              ...provided,
-              width: 'auto',
-              right: '0',
-            }) } }
-            options={ options }
-            value={ selectOption ? selectOption.value : undefined }
-            onChange={ handleSelectChange }
-            onBlur={ handleSelectClose }
-            menuIsOpen={ isOpen }
-          />
-        </Box>
+          <Box position="absolute" width="100%" top={ 0 }>
+            <Select
+              ref={ selectRef }
+              chakraStyles={ { container: (provided) => ({
+                ...provided,
+                position: 'absolute',
+                visibility: 'hidden',
+                right: '0',
+              }),
+              input: (provided) => ({
+                ...provided,
+                pointerEvents: 'none',
+                color: 'transparent',
+                display: enableSelectInput ? 'block' : 'none',
+              }),
+              menu: (provided) => ({
+                ...provided,
+                width: 'auto',
+                right: '0',
+              }) } }
+              options={ options }
+              value={ selectOption ? selectOption.value : undefined }
+              onChange={ handleSelectChange }
+              onBlur={ handleSelectClose }
+              menuIsOpen={ isOpen }
+            />
+          </Box>
         )
       }
     </>
