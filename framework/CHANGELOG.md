@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.6](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.5...@northlight/ui@2.36.6) (2025-07-17)
+
+
+### Bug Fixes
+
+* **framework:** add null to valid value for select ([7ee840c](https://github.com/mediatool/northlight/commit/7ee840c9de2d58ea508c663ff269a3001eaedbdf))
+
+
+
+
+
 ## [2.36.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.4...@northlight/ui@2.36.5) (2025-07-16)
 
 
