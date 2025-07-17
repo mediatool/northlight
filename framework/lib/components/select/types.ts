@@ -29,7 +29,7 @@ export interface SelectProps<T, K extends boolean>
   > {
   /** Whatever is currently selected by the select will be controlled by value prop, if value is
    *  of type string then it will automatically pair it up with matching object from options list */
-  value?: K extends true ? T[] | string[] : T | string
+  value?: K extends true ? T[] | string[] : T | string | null
   /** Take a look at the second argument, the event,
    *  for info as to which specific element was added */
   onChange?: (option: K extends true ? MultiValue<T> : SingleValue<T>, event: ActionMeta<T>) => void
