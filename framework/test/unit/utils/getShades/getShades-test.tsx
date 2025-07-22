@@ -14,6 +14,13 @@ const testShades500 = [
   `${palette.purple['500']}`,
   `${palette.yellow['500']}`,
   `${palette.teal['500']}`,
+  `${palette.inkBlue['500']}`,
+  `${palette.coral['500']}`,
+  `${palette.dustPink['500']}`,
+  `${palette.clay['500']}`,
+  `${palette.moss['500']}`,
+  `${palette.smoke['500']}`,
+  `${palette.rose['500']}`,
 ]
 
 const testShades500to600 = [
@@ -37,9 +44,23 @@ const testShades500to600 = [
   `${palette.yellow['600']}`,
   `${palette.teal['500']}`,
   `${palette.teal['600']}`,
+  `${palette.inkBlue['500']}`,
+  `${palette.inkBlue['600']}`,
+  `${palette.coral['500']}`,
+  `${palette.coral['600']}`,
+  `${palette.dustPink['500']}`,
+  `${palette.dustPink['600']}`,
+  `${palette.clay['500']}`,
+  `${palette.clay['600']}`,
+  `${palette.moss['500']}`,
+  `${palette.moss['600']}`,
+  `${palette.smoke['500']}`,
+  `${palette.smoke['600']}`,
+  `${palette.rose['500']}`,
+  `${palette.rose['600']}`,
 ]
 
-describe('getShades', () => {
+describe.only('getShades', () => {
   it('Returns correct shades with 1 argument', () => {
     const shades500 = getShades(500)
     expect(shades500).to.deep.equal(testShades500)
