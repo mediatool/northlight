@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Button, InputRightElement, useDisclosure } from '@chakra-ui/react'
+import { Button, InputGroup, InputRightElement, useDisclosure } from '@chakra-ui/react'
 import { is } from 'ramda'
 import { ComboPickerOption, ComboPickerProps, ComboPickerValue } from './types'
 import { Select, SingleValue } from '../select'
@@ -112,7 +112,7 @@ export const ComboPicker = ({
   const buttonWidth = (buttonRef.current?.offsetWidth ?? 0)
 
   return (
-    <>
+    <InputGroup>
       <FormattedNumberInput
         width="100%"
         onChange={ (values) => handleInputChange(values.floatValue) }
@@ -150,7 +150,7 @@ export const ComboPicker = ({
       />
       {
         isOpen && (
-          <Box position="absolute" width="100%" top={ 0 }>
+          <Box position="absolute" width="100%">
             <Select
               ref={ selectRef }
               chakraStyles={ { container: (provided) => ({
@@ -179,6 +179,6 @@ export const ComboPicker = ({
           </Box>
         )
       }
-    </>
+    </InputGroup>
   )
 }
