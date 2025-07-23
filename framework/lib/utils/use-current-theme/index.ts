@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-export type CurrentTheme = 'webappTheme' | 'tottTheme'
+export type CurrentTheme = 'webappTheme' | 'tottTheme' | 'camphouseLightTheme'
 
 export const CustomTheme = createContext<CurrentTheme>('webappTheme')
 
