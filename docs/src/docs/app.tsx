@@ -20,6 +20,7 @@ import {
   Tokensapp,
 } from '@northlight/icons'
 import {
+  AspectRatio,
   Box,
   Button,
   Capitalized,
@@ -27,6 +28,7 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
+  Center,
   Fade,
   Flex,
   Grid,
@@ -190,6 +192,23 @@ const DocsApp = () => (
         </Card>
       </Box>
     </Fade>
+
+    <SlideFade in={ true } enterDelay={ 500 }>
+      <VStack w="full" spacing="4" p="8">
+        <Center w="full">
+          <Heading size="md" textAlign="center"> ✨ Comprehensive Workshop: Master the Northlight Design System ✨</Heading>
+        </Center>
+        <AspectRatio w={ { base: '90vw', md: '50vw' } } ratio={ 16 / 9 }>
+          <iframe
+            src="https://www.youtube.com/embed/aMuFB9UOcV4?si=XIQ4bKBFMyLnzciK"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen={ true }
+          />
+        </AspectRatio>
+      </VStack>
+    </SlideFade>
 
     <Box
       w="full"
