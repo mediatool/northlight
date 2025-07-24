@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.10.32...@northlight/docs@1.11.0) (2025-07-24)
+
+
+### Features
+
+* **docs:** embed the northlight workshop on the docs landing page ([6388aa9](https://github.com/mediatool/northlight/commit/6388aa9612c951e974f927836a4b8e2cb569e795))
+
+
+
+
+
 ## [1.10.32](https://github.com/mediatool/northlight/compare/@northlight/docs@1.10.31...@northlight/docs@1.10.32) (2025-07-17)
 
 **Note:** Version bump only for package @northlight/docs
