@@ -248,10 +248,10 @@ export const FilePicker = ({
               boxSize="32px"
               color={
               isInvalid
-                ? 'red.500'
+                ? 'destructive'
                 : editable
-                  ? 'blue.500'
-                  : 'gray.300'
+                  ? 'brand'
+                  : 'text.subdued'
             }
               display={ isImage && !hasLoaded ? 'inline-block' : 'none' }
               aria-label="file-icon-upload"
@@ -280,7 +280,7 @@ export const FilePicker = ({
             <Lead
               sx={ {
                 textDecoration: 'underline',
-                color: isInvalid ? 'red.500' : 'blue.500',
+                color: isInvalid ? 'destructive' : 'brand',
               } }
               display={ isLoading || hasLoaded ? 'none' : 'default' }
             >
@@ -326,7 +326,7 @@ export const FilePicker = ({
                 aria-label="delete-file"
                 onClick={ confirmDelete ? deleteModal.onOpen : clearImage }
                 icon={ TrashFullDuo }
-                color="red.500"
+                color="destructive"
               />
             </HStack>
           </Fade>
