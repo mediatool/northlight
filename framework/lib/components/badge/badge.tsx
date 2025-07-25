@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react'
 import { Badge as ChakraBadge } from '@chakra-ui/react'
+import { useCurrentTheme } from '../../utils'
 import { BadgeProps } from './types'
 
 /**
@@ -28,6 +29,10 @@ import { BadgeProps } from './types'
  * render(<Example/>)
  * ?)
  */
-export const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => (
-  <ChakraBadge ref={ ref } { ...props } />
-))
+export const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
+  const currentTheme = useCurrentTheme()
+
+  return (
+    <ChakraBadge ref={ ref } currentTheme={ currentTheme } { ...props } />
+  )
+})
