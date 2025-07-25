@@ -152,10 +152,10 @@ export function MultiFileUploader<T extends FileFormat> ({
             boxSize="32px"
             color={
             isInvalid
-              ? 'red.500 '
+              ? 'destructive'
               : active
-                ? 'blue.500 '
-                : 'gray.300'
+                ? 'brand'
+                : 'text.subdued'
             }
             aria-label="image-icon-upload"
             mb={ onlyImageAccepted ? '0a' : 0 }
@@ -164,7 +164,7 @@ export function MultiFileUploader<T extends FileFormat> ({
             <P variant="14" textAlign="center" alignSelf="center">
               Drag & drop { onlyImageAccepted ? 'images' : 'files' } here or
             </P>
-            <Lead sx={ { textDecoration: 'underline', color: 'blue.500' } }>
+            <Lead sx={ { textDecoration: 'underline', color: 'brand' } }>
               choose { onlyImageAccepted ? 'image' : 'file' }
             </Lead>
           </HStack>

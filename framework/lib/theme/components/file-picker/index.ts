@@ -35,22 +35,22 @@ const getBgColor = (currentTheme: CurrentTheme) => {
 }
 
 const getInvalidColorStyles = (isInvalid: boolean, isImage = true, currentTheme: CurrentTheme = 'webappTheme') => ({
-  borderColor: isInvalid ? 'red.500' : 'gray.300',
-  bgColor: isInvalid && 'red.50',
+  borderColor: isInvalid ? 'border.error' : 'border.default',
+  bgColor: isInvalid && 'bg.error.default',
   animation: isInvalid && `500ms ${shakeAnimation} ease`,
   _hover: isImage && {
-    bgColor: isInvalid ? 'red.50' : getBgColor(currentTheme),
-    borderColor: isInvalid ? 'red.500' : 'blue.500',
+    bgColor: isInvalid ? 'bg.error.default' : getBgColor(currentTheme),
+    borderColor: isInvalid ? 'border.error' : 'border.brand.default',
   },
 })
 
 const getAiColorStyles = (isInvalid: boolean, isImage = true) => ({
-  borderColor: isInvalid ? 'red.500' : 'gray.300',
-  bgColor: isInvalid && 'red.50',
+  borderColor: isInvalid ? 'border.error' : 'border.default',
+  bgColor: isInvalid && 'bg.error.default',
   animation: isInvalid && `500ms ${shakeAnimation} ease`,
   _hover: isImage && {
-    bgColor: isInvalid ? 'red.50' : 'bg.filled',
-    borderColor: isInvalid ? 'red.500' : 'border.ai',
+    bgColor: isInvalid ? 'bg.error.default' : 'bg.filled',
+    borderColor: isInvalid ? 'border.error' : 'border.ai',
   },
 })
 
