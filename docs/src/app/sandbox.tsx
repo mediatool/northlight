@@ -4,6 +4,7 @@ import { head } from 'ramda'
 import {
   HamburgerDuo,
   LinkDuo,
+  MediatoolLogoDuo,
   MoonSolid,
   NorthlightLogoXs,
   SunDuo,
@@ -12,6 +13,7 @@ import {
   Box,
   Button,
   Capitalized,
+  CurrentTheme,
   Divider,
   Drawer,
   DrawerBody,
@@ -19,12 +21,17 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
+  FlipButton,
+  FlipButtonGroup,
   HStack,
   Icon,
   IconButton,
   Link,
   MediatoolThemeProvider,
+  Tooltip,
   VStack,
+  camphouseLightTheme,
+  theme,
   tottTheme,
   useDisclosure,
 } from '@northlight/ui'
@@ -38,12 +45,18 @@ export interface SandboxProps {
   routes: MainPage[]
 }
 
+const mapThemeNameToTheme = {
+  tottTheme,
+  webappTheme: theme,
+  camphouseLightTheme,
+}
+
 export const Sandbox = ({ routes }: SandboxProps) => {
-  const [ tott, setTott ] = useLocalStorageState<boolean>(false, 'tottMode')
+  const [ currentTheme, setCurrentTheme ] = useLocalStorageState<CurrentTheme>('webappTheme', 'currentTheme')
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <MediatoolThemeProvider theme={ tott ? tottTheme : undefined } themeName={ tott ? 'tottTheme' : 'webappTheme' }>
+    <MediatoolThemeProvider theme={ mapThemeNameToTheme[currentTheme] } themeName={ currentTheme }>
       <UserProvider>
         <CalendarProvider>
           <I18nProvider>
@@ -116,13 +129,19 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                       Contribute
                     </Button>
                   </Link>
-                  <IconButton
-                    variant="ghost"
-                    icon={ <Icon as={ tott ? SunDuo : MoonSolid } /> }
-                    aria-label="dark mode"
-                    onClick={ () => setTott(!tott) }
-                    display={ { base: 'flex', md: 'flex' } }
-                  />
+                  <Box w="50" px="8">
+                    <FlipButtonGroup isMulti={ false } size="sm" onChange={ (v) => setCurrentTheme(v as CurrentTheme) }>
+                      <Tooltip label="Default Northlight light theme">
+                        <FlipButton value="webappTheme" icon={ SunDuo } />
+                      </Tooltip>
+                      <Tooltip label="Northlight dark mode">
+                        <FlipButton value="tottTheme" icon={ MoonSolid } />
+                      </Tooltip>
+                      <Tooltip label="The Camphouse theme">
+                        <FlipButton value="camphouseLightTheme" icon={ MediatoolLogoDuo } />
+                      </Tooltip>
+                    </FlipButtonGroup>
+                  </Box>
                 </HStack>
 
                 <Drawer

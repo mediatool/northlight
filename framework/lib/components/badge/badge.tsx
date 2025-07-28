@@ -1,7 +1,11 @@
 import React, { forwardRef } from 'react'
 import { Badge as ChakraBadge } from '@chakra-ui/react'
+<<<<<<< Updated upstream
 import { MediatoolLogoSolid } from '@northlight/icons'
 import * as NorthlightIcons from '@northlight/icons'
+=======
+import { useCurrentTheme } from '../../utils'
+>>>>>>> Stashed changes
 import { BadgeProps } from './types'
 import { Flex } from '../flex'
 import { Icon } from '../icon'
@@ -39,6 +43,7 @@ import { Icon } from '../icon'
  * render(<Example />)
  * ?)
  */
+<<<<<<< Updated upstream
 
 export const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
   const {
@@ -63,5 +68,12 @@ export const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
         ) }
       </Flex>
     </ChakraBadge>
+=======
+export const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
+  const currentTheme = useCurrentTheme()
+
+  return (
+    <ChakraBadge ref={ ref } currentTheme={ currentTheme } { ...props } />
+>>>>>>> Stashed changes
   )
 })

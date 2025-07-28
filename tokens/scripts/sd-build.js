@@ -2,7 +2,7 @@ const { isArrayLike, map, join } = require('ramda')
 
 const SD = require('style-dictionary')
 
-const skins = [ 'webapp', 'tott' ]
+const skins = [ 'webapp', 'tott', 'camphouseLight' ]
 
 const convertToRem = (value) => `${parseFloat(value) / 16}rem`
 
