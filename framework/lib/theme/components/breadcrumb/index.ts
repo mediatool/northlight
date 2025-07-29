@@ -5,18 +5,18 @@ export const Breadcrumb: ComponentMultiStyleConfig = {
   baseStyle: {
     link: {
       padding: [ 0.5, 1 ],
-      color: 'primary',
-      fontWeight: '600',
-      fontSize: 'semibold',
+      color: 'text.default',
+      fontWeight: 'semibold',
+      fontSize: 'md',
       _hover: {
-        bg: 'blue.50',
+        bg: 'brand-alt',
         borderRadius: 'base',
         textDecor: 'none',
       },
     },
     separator: {
-      color: 'gray.300',
-      fontSize: 'semibold',
+      color: 'subdued',
+      fontSize: 'sm',
     },
   },
 }
