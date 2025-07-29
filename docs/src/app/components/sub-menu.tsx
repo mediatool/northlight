@@ -40,7 +40,7 @@ export const SubMenu = ({ mainRoutes }: SubMenuProps) => (
     h="calc(100vh - 350px)"
     sx={ {
       '::-webkit-scrollbar': { display: 'none' },
-      '::-webkit-scrollbar-thumb': { background: 'blue.500' },
+      '::-webkit-scrollbar-thumb': { background: 'brand' },
       _hover: { '::-webkit-scrollbar': { display: 'block' } },
     } }
   >
