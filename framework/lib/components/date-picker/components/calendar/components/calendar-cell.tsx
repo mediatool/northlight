@@ -32,7 +32,7 @@ export const CalendarCell = ({
         fontWeight="medium"
         variant={ isSelected ? 'brand' : 'ghost' }
         ring={ isToday && !isSelected ? '1px' : '0px' }
-        ringColor="blue.500"
+        ringColor="brand"
       >
         { formattedDate }
       </Button>
