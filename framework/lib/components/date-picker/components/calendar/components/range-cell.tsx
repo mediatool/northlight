@@ -39,12 +39,12 @@ export const RangeCell = ({
         ref={ ref }
         borderRadius="xs"
         bgColor={
-          isHighlighted ? 'brand-alt' : isSelected ? 'blue.500' : 'transparent'
+          isHighlighted ? 'brand-alt' : isSelected ? 'brand' : 'transparent'
         }
         color={ isSelected ? 'text.inverted' : 'text.default' }
         fontSize="sm"
         ring={ isToday && !isSelected ? '1px' : '0px' }
-        ringColor="blue.500"
+        ringColor="brand"
         mx="-1px"
         ml={ isToday ? '-2px ' : undefined }
         my="0a"
@@ -59,7 +59,7 @@ export const RangeCell = ({
           ringOffset: '1px',
         } }
         _hover={ {
-          bgColor: isSelected ? 'blue.400' : 'bg.filled',
+          bgColor: isSelected ? ' background.button.brand-hover' : 'bg.filled',
           _disabled: {
             bgColor: 'transparent',
           },
