@@ -5,7 +5,7 @@ import { Card, CardBody, CardFooter, CardHeader, Center, Code, Divider, H1, H3, 
 
 const Icons = () => (
   <Stack p={ 4 } spacing={ 4 } bgColor="background.default" height="auto">
-    <H1>Icons <Icon as={ SmileyDuo } sx={ { color: 'blue.500' } } /> </H1>
+    <H1>Icons <Icon as={ SmileyDuo } sx={ { color: 'brand' } } /> </H1>
     <P>Northlight provides a set of commonly used interface icons you can use in your project, exported as components from the package{ ' ' }
       <Code>@northlight/icons</Code>
     </P>
@@ -16,8 +16,8 @@ const Icons = () => (
     <SimpleGrid spacing={ 10 } alignItems="center" minChildWidth="300px" templateColumns="repeat(auto-fit, minmax(200px, 1fr))">
 
       <Spacer />
-      <Link as={ NavLink } sx={ { borderRadius: 'lg', _hover: { textDecoration: 'none', color: 'gray.50' } } } to="/icons/duo">
-        <Card align="center" variant="outline" sx={ { bgColor: 'transparent', _hover: { color: 'mono.white', borderColor: 'blue.500', bgColor: 'blue.500' } } }>
+      <Link as={ NavLink } sx={ { borderRadius: 'lg', _hover: { textDecoration: 'none', color: 'base-alt' } } } to="/icons/duo">
+        <Card align="center" variant="outline" sx={ { bgColor: 'transparent', _hover: { color: 'mono.white', borderColor: 'brand', bgColor: 'brand' } } }>
           <CardHeader>
             <Heading size="md"> Duo </Heading>
           </CardHeader>
@@ -28,8 +28,8 @@ const Icons = () => (
         </Card>
       </Link>
 
-      <Link as={ NavLink } sx={ { borderRadius: 'lg', _hover: { textDecoration: 'none', color: 'gray.50' } } } to="/icons/solid">
-        <Card align="center" variant="outline" sx={ { bgColor: 'transparent', _hover: { color: 'mono.white', borderColor: 'blue.500', bgColor: 'blue.500' } } }>
+      <Link as={ NavLink } sx={ { borderRadius: 'lg', _hover: { textDecoration: 'none', color: 'base-alt' } } } to="/icons/solid">
+        <Card align="center" variant="outline" sx={ { bgColor: 'transparent', _hover: { color: 'mono.white', borderColor: 'brand', bgColor: 'brand' } } }>
           <CardHeader>
             <Heading size="md"> Solid </Heading>
           </CardHeader>
@@ -45,8 +45,8 @@ const Icons = () => (
 
     <Stack pt={ 10 }>
       <P>Northlight uses 2 variants of icons: { ' ' }
-        <Link as={ NavLink } color="blue.500" fontWeight="bold" to="/icons/solid">solid</Link> and { ' ' }
-        <Link as={ NavLink } color="blue.500" fontWeight="bold" to="/icons/duo">duo</Link>.
+        <Link as={ NavLink } color="brand" fontWeight="bold" to="/icons/solid">solid</Link> and { ' ' }
+        <Link as={ NavLink } color="brand" fontWeight="bold" to="/icons/duo">duo</Link>.
         Every icon is exported in both variants.
       </P>
     </Stack>
