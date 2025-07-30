@@ -119,7 +119,7 @@ export const Avatar: ComponentMultiStyleConfig = {
         fontSize: 'xs',
         fontWeight: 'semibold',
         padding: sizing['0a'],
-        bgColor: color.red['500'],
+        bgColor: color.destructive,
         color: color.text.inverted,
         borderRadius: borderRadius.avatar.square,
         border: 'none',
