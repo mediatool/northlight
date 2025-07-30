@@ -1,14 +1,17 @@
 import { ComponentSingleStyleConfig, useToken } from '@chakra-ui/react'
 import { getContrastColor } from '../../../utils'
+import { processColorSchemeBasedOnTheme } from '../../process-color-scheme-based-on-theme'
 
 export const Badge: ComponentSingleStyleConfig = {
-  baseStyle: ({ colorScheme, theme: { colors } }) => {
-    const bgColor = colorScheme === 'mediatoolBlue'
-      ? colors[colorScheme][100]
-      : colors[colorScheme] && colors[colorScheme][100]
-    const textColor = colorScheme === 'mediatoolBlue'
-      ? colors[colorScheme][800]
-      : colors[colorScheme] && colors[colorScheme][800]
+  baseStyle: ({ colorScheme, theme: { colors }, currentTheme }) => {
+    const processedColorScheme = processColorSchemeBasedOnTheme({ currentTheme, colorScheme })
+
+    const bgColor = processedColorScheme === 'mediatoolBlue'
+      ? colors[processedColorScheme][100]
+      : colors[processedColorScheme] && colors[processedColorScheme][100]
+    const textColor = processedColorScheme === 'mediatoolBlue'
+      ? colors[processedColorScheme][800]
+      : colors[processedColorScheme] && colors[processedColorScheme][800]
 
     return {
       bgColor,
@@ -16,30 +19,36 @@ export const Badge: ComponentSingleStyleConfig = {
     }
   },
   variants: {
-    solid: ({ colorScheme, theme: { colors } }) => {
-      const bgColor = colorScheme === 'mediatoolBlue'
-        ? colors[colorScheme][500]
-        : colors[colorScheme] && colors[colorScheme][500]
+      solid: ({ colorScheme, theme: { colors }, currentTheme }) => {
+      const processedColorScheme = processColorSchemeBasedOnTheme({ currentTheme, colorScheme })
+
+      const bgColor = processedColorScheme === 'mediatoolBlue'
+        ? colors[processedColorScheme][500]
+        : colors[processedColorScheme] && colors[processedColorScheme][500]
 
       return {
         bgColor,
-        color: getContrastColor(bgColor ?? useToken('colors', colorScheme)),
+        color: getContrastColor(bgColor ?? useToken('colors', processedColorScheme)),
       }
     },
-    outline: ({ colorScheme, theme: { colors } }) => {
-      const textColor = colorScheme === 'mediatoolBlue'
-        ? colors[colorScheme][500]
-        : colors[colorScheme] && colors[colorScheme][700]
+    outline: ({ colorScheme, theme: { colors }, currentTheme }) => {
+      const processedColorScheme = processColorSchemeBasedOnTheme({ currentTheme, colorScheme })
+
+      const textColor = processedColorScheme === 'mediatoolBlue'
+        ? colors[processedColorScheme][500]
+        : colors[processedColorScheme] && colors[processedColorScheme][700]
 
       return {
         bgColor: 'mono.transparent',
         color: textColor,
       }
     },
-    ghost: ({ colorScheme, theme: { colors } }) => {
-      const textColor = colorScheme === 'mediatoolBlue'
-        ? colors[colorScheme][500]
-        : colors[colorScheme] && colors[colorScheme][700]
+    ghost: ({ colorScheme, theme: { colors }, currentTheme }) => {
+      const processedColorScheme = processColorSchemeBasedOnTheme({ currentTheme, colorScheme })
+
+      const textColor = processedColorScheme === 'mediatoolBlue'
+        ? colors[processedColorScheme][500]
+        : colors[processedColorScheme] && colors[processedColorScheme][700]
 
       return {
         bgColor: 'mono.transparent',

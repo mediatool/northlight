@@ -15,7 +15,7 @@ import {
 } from '@northlight/tokens'
 import { scrollbarStyles } from './global/scrollbar'
 import * as components from './components'
-import { TottSkin, WebappSkin } from './skins'
+import { CamphouseLightSkin, TottSkin, WebappSkin } from './skins'
 
 const overrides: ThemeOverride = {
   config: {
@@ -63,3 +63,5 @@ const overrides: ThemeOverride = {
 export const theme = extendTheme(overrides, WebappSkin)
 
 export const tottTheme = extendTheme(overrides, TottSkin)
+
+export const camphouseLightTheme = extendTheme(overrides, CamphouseLightSkin)

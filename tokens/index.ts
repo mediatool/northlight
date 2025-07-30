@@ -2,6 +2,8 @@ import WebappComponentsTokensSet from './dist/webapp/webapp-components.json'
 import WebappSystemTokensSet from './dist/webapp/webapp.json'
 import TottComponentsTokensSet from './dist/tott/tott-components.json'
 import TottSystemTokensSet from './dist/tott/tott.json'
+import CamphouseLightComponentsTokensSet from './dist/camphouseLight/camphouseLight-components.json'
+import CamphouseLightSystemTokensSet from './dist/camphouseLight/camphouseLight.json'
 
 export {
   color as palette,
@@ -21,4 +23,6 @@ export {
   WebappSystemTokensSet,
   TottComponentsTokensSet,
   TottSystemTokensSet,
+  CamphouseLightComponentsTokensSet,
+  CamphouseLightSystemTokensSet,
 }

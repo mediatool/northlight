@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react'
 import { Tag as ChakraTag } from '@chakra-ui/react'
+import { useCurrentTheme } from '../../utils'
 import { TagProps } from './types'
 
 /**
@@ -78,14 +79,19 @@ export const Tag = forwardRef<HTMLSpanElement, TagProps>(({
   bgColor,
   colorScheme,
   ...rest
-}, ref) => (
-  <ChakraTag
-    bgColor={ bgColor }
-    colorScheme={ colorScheme }
-    ref={ ref }
-    variant={ variant }
-    { ...rest }
-  >
-    { children }
-  </ChakraTag>
-))
+}, ref) => {
+  const currentTheme = useCurrentTheme()
+
+  return (
+    <ChakraTag
+      bgColor={ bgColor }
+      colorScheme={ colorScheme }
+      ref={ ref }
+      variant={ variant }
+      currentTheme={ currentTheme }
+      { ...rest }
+    >
+      { children }
+    </ChakraTag>
+  )
+})
