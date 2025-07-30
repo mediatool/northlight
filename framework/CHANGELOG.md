@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.7](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.6...@northlight/ui@2.36.7) (2025-07-30)
+
+
+### Bug Fixes
+
+* **framework:** remap reference to system tokens for file-picker ([f5ee93b](https://github.com/mediatool/northlight/commit/f5ee93bf8a7fba188cd62ba9d38250b8b43ee7b9))
+* **norhtlight:** datePicker tokens update ([88486fa](https://github.com/mediatool/northlight/commit/88486fa39de255be9dfdc613dd42ff85c91f8574))
+* **northlight:** avatar tokens update ([e33b1b7](https://github.com/mediatool/northlight/commit/e33b1b72e3a58be5cbfe6be97fb775ced61353f8))
+* **northlight:** breadcrumbs tokens ([49f7ace](https://github.com/mediatool/northlight/commit/49f7ace404d9d48103b5ba68f2a318d15573214e))
+* **northlight:** numberInput token fix ([b5ad2ab](https://github.com/mediatool/northlight/commit/b5ad2abf7b887aaf750cdbf974f68b77e2acc1cf))
+* **northlight:** progressBar styling ([665cece](https://github.com/mediatool/northlight/commit/665cece7af9b0b292bc066850be5e606b2be4f6e))
+* **northlight:** stepstack nl docs token ([65de2f9](https://github.com/mediatool/northlight/commit/65de2f92cafe71ba20b791bffe5bfdd14a0fd724))
+
+
+
+
+
 ## [2.36.6](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.5...@northlight/ui@2.36.6) (2025-07-17)
 
 
