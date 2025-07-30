@@ -55,7 +55,7 @@ const FormPage = () => {
         <H2>
           Our forms are built on{ ' ' }
           <Link
-            color="blue.600"
+            color="text.link.default"
             _hover={ { textDecoration: 'underline' } }
             href="https://react-hook-form.com/api"
             isExternal={ true }
@@ -102,7 +102,7 @@ const FormPage = () => {
           - This can be used to customize the form, look at <br />
           <Link
             href="https://react-hook-form.com/api/useform"
-            color="blue.600"
+            color="text.link.default"
             _hover={ { textDecoration: 'underline' } }
             isExternal={ true }
           >

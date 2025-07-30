@@ -52,7 +52,7 @@ const FieldPage = () => (
         out react hook form docs for specific field validation:
         <Link
           href="https://react-hook-form.com/api/useform/register"
-          color="blue.600"
+          color="text.link.default"
           _hover={ { textDecoration: 'underline' } }
           isExternal={ true }
         >

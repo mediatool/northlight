@@ -56,7 +56,7 @@ export default function QuickStart () {
           <Link
             as={ ReactLink }
             to="/reference/theme-reference"
-            sx={ { color: 'cyan.500', textDecoration: 'underline' } }
+            sx={ { color: 'text.link.default', textDecoration: 'underline' } }
           >
             style props
           </Link>
@@ -64,7 +64,7 @@ export default function QuickStart () {
           <Link
             as={ ReactLink }
             to="/theme"
-            sx={ { color: 'cyan.500', textDecoration: 'underline' } }
+            sx={ { color: 'text.link.default', textDecoration: 'underline' } }
           >
             theme
           </Link>

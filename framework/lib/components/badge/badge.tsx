@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react'
 import { Badge as ChakraBadge } from '@chakra-ui/react'
 import { MediatoolLogoSolid } from '@northlight/icons'
 import * as NorthlightIcons from '@northlight/icons'
+import { useCurrentTheme } from '../../utils'
 import { BadgeProps } from './types'
 import { Flex } from '../flex'
 import { Icon } from '../icon'
@@ -50,9 +51,10 @@ export const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
   } = props
 
   const IconComponent = iconAs ? NorthlightIcons[iconAs] : MediatoolLogoSolid
+  const currentTheme = useCurrentTheme()
 
   return (
-    <ChakraBadge ref={ ref } { ...rest }>
+    <ChakraBadge ref={ ref } currentTheme={ currentTheme } { ...rest }>
       <Flex align="center" gap="1">
         { withIcon && iconPosition === 'left' && IconComponent && (
           <Icon as={ IconComponent } boxSize="3" />

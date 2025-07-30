@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { forwardRef, useContext, useRef } from 'react'
 import { CheckSolid } from '@northlight/icons'
 import { useCheckboxGroupItem } from '@react-aria/checkbox'
 import { SlideFade, useMultiStyleConfig } from '@chakra-ui/react'
@@ -99,7 +99,7 @@ render(<MyComponent/>)
  * ?)
  *
  */
-export const FlipButton = (props: FlipButtonProps) => {
+export const FlipButton = forwardRef<HTMLDivElement, FlipButtonProps>((props, wrapperRef) => {
   const {
     children,
     size,
@@ -168,6 +168,7 @@ export const FlipButton = (props: FlipButtonProps) => {
         aria-checked={ isSelected }
         aria-disabled={ isDisabled }
         as="label"
+        ref={ wrapperRef }
       >
         <input { ...flipButtonProps } />
         { icon && iconPlacement !== 'none'
@@ -181,4 +182,4 @@ export const FlipButton = (props: FlipButtonProps) => {
         <Text textAlign="center">{ children }</Text>
       </HStack>
     )
-}
+})

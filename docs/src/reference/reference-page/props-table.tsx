@@ -1,7 +1,6 @@
 import React from 'react'
 import { isEmpty, isNil, propOr, slice } from 'ramda'
 import { PropItemType } from 'react-docgen-typescript'
-import { palette } from '@northlight/tokens'
 import { AlertCircleDuo } from '@northlight/icons'
 import {
   Box,
@@ -35,8 +34,14 @@ export interface PropsTableProps {
   isRequired: boolean
 }
 
-const matchPageLink =
-  /\b(?:https?|ftp):\/\/[a-z0-9-+&@#/%?=~_|!:,.;]*[a-z0-9-+&@#/%=~_|]/gi
+const urlSource =
+  '\\b(?:https?|ftp):\\/\\/[a-z0-9-+&@#/%?=~_|!:,.;]*[a-z0-9-+&@#/%=~_|]'
+const matchPageLink = new RegExp(urlSource, 'gi')
+const splitOnLink = new RegExp(`(${urlSource})`, 'gi')
+
+function tokenizeLinks (text: string): string[] {
+  return text.split(splitOnLink).filter(Boolean)
+}
 
 export const PropsTable = ({
   name,
@@ -50,42 +55,60 @@ export const PropsTable = ({
     : ''
 
   const { isOpen, onOpen, onClose } = useDisclosure()
-
   const isLinkAvailable = fileLink.includes('framework/lib')
 
   const typeName =
     type.name === 'enum'
-      ? slice(2, Infinity, type.value.reduce(
-        (acc: string, curr: { value: string }) => `${acc} | ${curr.value}`,
-        ''
-      ))
+      ? slice(
+        2,
+        Infinity,
+        type.value.reduce(
+          (acc: string, curr: { value: string }) => `${acc} | ${curr.value}`,
+          ''
+        )
+      )
       : type.name
-
-  const textWithLink = description.replace(
-    matchPageLink,
-    (url) =>
-      `<a href="${url}" target="_blank" rel="noopener noreferrer" style="color: ${palette.blue['600']}; text-decoration: underline;">${url}</a>`
-  )
 
   return (
     <Stack spacing="0">
       <HStack spacing="3">
         <Lead>{ name }</Lead>
         { isRequired && (
-        <HStack spacing="1">
-          <Icon as={ AlertCircleDuo } size="xs" color="text.warning" />
-          <Small>Required</Small>
-        </HStack>
+          <HStack spacing="1">
+            <Icon as={ AlertCircleDuo } size="xs" color="text.warning" />
+            <Small>Required</Small>
+          </HStack>
         ) }
       </HStack>
+
       <Divider />
+
       <Stack pt="2" spacing="2">
         { !isEmpty(description) && (
           <Flex>
-            <Box minW="32"><P>Description</P></Box>
-            <P dangerouslySetInnerHTML={ { __html: textWithLink } } />
+            <Box minW="32">
+              <P>Description</P>
+            </Box>
+            <P>
+              { tokenizeLinks(description).map((chunk) =>
+                (matchPageLink.test(chunk) ? (
+                  <Link
+                    key={ chunk }
+                    href={ chunk }
+                    isExternal={ true }
+                    color="text.link.default"
+                    _hover={ { textDecoration: 'underline' } }
+                  >
+                    { chunk }
+                  </Link>
+                ) : (
+                  <React.Fragment key={ chunk }>{ chunk }</React.Fragment>
+                ))
+              ) }
+            </P>
           </Flex>
         ) }
+
         { !isEmpty(type) && (
           <Flex>
             <Box minW="32">
@@ -107,17 +130,22 @@ export const PropsTable = ({
                 bgColor="bg.tertiary.default"
               >
                 <PopoverBody>
-                  { isLinkAvailable && (
+                  { isLinkAvailable ? (
                     <Link
-                      sx={ { color: getContrastColor('bg.tertiary.defualt') } }
+                      sx={ { color: getContrastColor('bg.tertiary.default') } }
                       isExternal={ true }
-                      href={ `https://github.com/mediatool/northlight/blob/master/${propOr('', 'fileName', file)}` }
+                      href={ `https://github.com/mediatool/northlight/blob/master/${propOr(
+                        '',
+                        'fileName',
+                        file
+                      )}` }
                     >
                       { fileLink }
                     </Link>
-                  ) }
-                  { !isLinkAvailable && (
-                    <P sx={ { color: getContrastColor('bg.tertiary.default') } }>{ fileLink }</P>
+                  ) : (
+                    <P sx={ { color: getContrastColor('bg.tertiary.default') } }>
+                      { fileLink }
+                    </P>
                   ) }
                 </PopoverBody>
               </PopoverContent>
