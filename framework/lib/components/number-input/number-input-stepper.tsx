@@ -19,7 +19,7 @@ export const NumberInputStepper = ({
   <ChakraNumberInputStepper>
     <HStack alignItems="center" h="full">
       { includePercentage && (
-        <Center bgColor="gray.50" borderRadius="md" boxSize="6">
+        <Center bgColor="bg.layer" borderRadius="md" boxSize="6">
           <P>%</P>
         </Center>
       ) }
