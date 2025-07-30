@@ -171,7 +171,7 @@ const customTag = ({ label }: ExampleOptionsType) => {
           The select is fully customisable with the sx prop
           <Link
             href="https://www.npmjs.com/package/chakra-react-select#chakrastyles"
-            color="blue.600"
+            color="text.link.default"
             _hover={ { textDecoration: 'underline' } }
             isExternal={ true }
           >

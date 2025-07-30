@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.1](https://github.com/mediatool/northlight/compare/@northlight/docs@1.11.0...@northlight/docs@1.11.1) (2025-07-30)
+
+
+### Bug Fixes
+
+* **northlight:** icons docs page ([0f27d45](https://github.com/mediatool/northlight/commit/0f27d45f4660327c31fa96bf67a7aafa9b19ffe8))
+* **northlight:** scrollbar and menu tokens ([9184e64](https://github.com/mediatool/northlight/commit/9184e6461c7f2d86627878cf8b586019698af36f))
+
+
+
+
+
 # [1.11.0](https://github.com/mediatool/northlight/compare/@northlight/docs@1.10.32...@northlight/docs@1.11.0) (2025-07-24)
 
 

@@ -25,7 +25,7 @@ const DragAndDropPage = () => (
         please checkout their
         <Link
           href="https://docs.dndkit.com/introduction/getting-started"
-          color="blue.600"
+          color="text.link.default"
           _hover={ { textDecoration: 'underline' } }
           isExternal={ true }
         >
@@ -41,7 +41,7 @@ const DragAndDropPage = () => (
           DragAndDrop is our renaming of what dnd-kit calls
           <Link
             href="https://docs.dndkit.com/api-documentation/context-provider"
-            color="blue.600"
+            color="text.link.default"
             _hover={ { textDecoration: 'underline' } }
             isExternal={ true }
           >
