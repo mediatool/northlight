@@ -80,7 +80,7 @@ export const StepStack = ({
             <>
               <Box
                 borderRadius="full"
-                bgColor="blue.500"
+                bgColor="brand"
                 boxSize="6"
                 minW="6"
                 minH="6"
