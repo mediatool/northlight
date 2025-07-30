@@ -4,8 +4,8 @@ import { head } from 'ramda'
 import {
   HamburgerDuo,
   LinkDuo,
-  MoonSolid,
   MediatoolLogoDuo,
+  MoonSolid,
   NorthlightLogoXs,
   SunDuo,
 } from '@northlight/icons'
@@ -52,7 +52,7 @@ const mapThemeNameToTheme = {
 }
 
 export const Sandbox = ({ routes }: SandboxProps) => {
-  const [ currentTheme, setCurrentTheme ] = useLocalStorageState<boolean>('webappTheme', 'currentTheme')
+  const [ currentTheme, setCurrentTheme ] = useLocalStorageState<CurrentTheme>('webappTheme', 'currentTheme')
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (

@@ -19,7 +19,7 @@ export const Badge: ComponentSingleStyleConfig = {
     }
   },
   variants: {
-      solid: ({ colorScheme, theme: { colors }, currentTheme }) => {
+    solid: ({ colorScheme, theme: { colors }, currentTheme }) => {
       const processedColorScheme = processColorSchemeBasedOnTheme({ currentTheme, colorScheme })
 
       const bgColor = processedColorScheme === 'mediatoolBlue'
