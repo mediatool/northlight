@@ -47,7 +47,7 @@ export const AvatarGroup = ({
         </OverflowGroup>
       </HStack>
       { nbrRemainingAvatars > 0 && (
-        <Small sx={ { color: 'blue.500' } }>
+        <Small sx={ { color: 'brand' } }>
           +{ nbrRemainingAvatars }
         </Small>
       ) }
