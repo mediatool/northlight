@@ -18,7 +18,7 @@ export const NavSideLink = ({
   onClick,
   linkProps,
 }: CustomNavLinkProps) => {
-  const color = isActive ? 'mono.white' : 'text.default'
+  const color = isActive ? 'text.inverted' : 'text.default'
 
   return (
     <Button

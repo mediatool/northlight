@@ -22,6 +22,8 @@ export const PinInput: ComponentSingleStyleConfig = {
       _focus: {
         borderColor: color.border.input.focus,
         bg: color.background.input['outline-focus'],
+        boxShadow: 'none',
+        borderWidth: borderWidth.sm,
       },
       _invalid: {
         bg: color.background.input['outline-error'],
