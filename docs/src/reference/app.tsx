@@ -32,7 +32,7 @@ export default function ContributePage () {
         <Link
           href=" https://github.com/mediatool/northlight"
           isExternal={ true }
-          sx={ { color: 'cyan.500', textDecoration: 'underline' } }
+          sx={ { color: 'text.link.default', textDecoration: 'underline' } }
         >
           repo
         </Link>
@@ -78,7 +78,7 @@ export default function ContributePage () {
           <Link
             href="https://github.com/styleguidist/react-docgen-typescript"
             isExternal={ true }
-            sx={ { color: 'cyan.500', textDecoration: 'underline' } }
+            sx={ { color: 'text.link.default', textDecoration: 'underline' } }
           >
             react-docgen-typescript
           </Link>{ ' ' }
@@ -151,7 +151,7 @@ const MyComponent = (props: MyComponentProps) => (
           <Link
             href="https://formidable.com/open-source/react-live/"
             isExternal={ true }
-            sx={ { color: 'cyan.500', textDecoration: 'underline' } }
+            sx={ { color: 'text.link.default', textDecoration: 'underline' } }
           >
             react-live
           </Link>{ ' ' }
@@ -257,7 +257,7 @@ const MyComponent = (props: MyComponentProps) => (
           <Link
             href="https://www.npmjs.com/package/markdown-to-jsx"
             isExternal={ true }
-            sx={ { color: 'cyan.500', textDecoration: 'underline' } }
+            sx={ { color: 'text.link.default', textDecoration: 'underline' } }
           >
             markdown-to-jsx
           </Link>

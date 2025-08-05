@@ -24,7 +24,7 @@ export default function AboutTokens () {
             as={ ReactLink }
             isExternal={ true }
             to="https://chakra-ui.com/docs/styled-system/customize-theme"
-            sx={ { color: 'cyan.500', textDecoration: 'underline' } }
+            sx={ { color: 'text.link.default', textDecoration: 'underline' } }
           >
             Chakra UI theme
           </Link>
@@ -33,7 +33,7 @@ export default function AboutTokens () {
             as={ ReactLink }
             isExternal={ true }
             to="/reference/theming-reference"
-            sx={ { color: 'cyan.500', textDecoration: 'underline' } }
+            sx={ { color: 'text.link.default', textDecoration: 'underline' } }
           >
             style props
           </Link>

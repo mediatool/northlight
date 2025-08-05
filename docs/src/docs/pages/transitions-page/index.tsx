@@ -153,7 +153,7 @@ const TransitionsPage = () => {
             which you can check out in the
             <Link
               href="https://chakra-ui.com/docs/components/transitions/usage"
-              color="blue.600"
+              color="text.link.default"
               _hover={ { textDecoration: 'underline' } }
               isExternal={ true }
             >
