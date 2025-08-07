@@ -4,10 +4,7 @@ import { head } from 'ramda'
 import {
   HamburgerDuo,
   LinkDuo,
-  MediatoolLogoDuo,
-  MoonSolid,
   NorthlightLogoXs,
-  SunDuo,
 } from '@northlight/icons'
 import {
   Box,
@@ -21,13 +18,15 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
-  FlipButton,
-  FlipButtonGroup,
   HStack,
   Icon,
   IconButton,
   Link,
   MediatoolThemeProvider,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Text,
   Tooltip,
   VStack,
   camphouseLightTheme,
@@ -129,19 +128,368 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                       Contribute
                     </Button>
                   </Link>
-                  <Box w="50" px="8">
-                    <FlipButtonGroup isMulti={ false } size="sm" onChange={ (v) => setCurrentTheme(v as CurrentTheme) }>
-                      <Tooltip label="Default Northlight light theme">
-                        <FlipButton value="webappTheme" icon={ SunDuo } />
-                      </Tooltip>
-                      <Tooltip label="Northlight dark mode">
-                        <FlipButton value="tottTheme" icon={ MoonSolid } />
-                      </Tooltip>
-                      <Tooltip label="The Camphouse theme">
-                        <FlipButton value="camphouseLightTheme" icon={ MediatoolLogoDuo } />
-                      </Tooltip>
-                    </FlipButtonGroup>
-                  </Box>
+                  <Popover placement="bottom-end" isLazy={ true }>
+                    <PopoverTrigger>
+                      <Button
+                        variant="ghost"
+                        px={ { base: 2, sm: 4 } }
+                        py={ { base: 2, sm: 2 } }
+                        minW={ { base: 'auto', sm: '30' } }
+                        w={ { base: 'auto', sm: 'auto' } }
+                        h={ { base: '10', sm: 'auto' } }
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        gap="2"
+                        rightIcon={ undefined }
+                        fontWeight="medium"
+                        sx={ { boxShadow: 'sm' } }
+                      >
+                        <Box display="flex" alignItems="center" justifyContent="center">
+                          { currentTheme === 'webappTheme' && (
+                            <Box display="flex" w={ { base: '10', sm: '6' } } h={ { base: '10', sm: '6' } } borderRadius="md" overflow="hidden">
+                              <Tooltip
+                                label={ (
+                                  <Box display="flex" alignItems="center" gap="2">
+                                    <Box w="3" h="3" bg="#2A8BFB" borderWidth="xs" borderColor="mono.black" />
+                                    <Text>bg.brand.default</Text>
+                                  </Box>
+                                ) }
+                                variant="ghost"
+                                openDelay={ 3000 }
+                                hasArrow={ false }
+                              >
+                                <Box flex="1" bg="#2A8BFB" />
+                              </Tooltip>
+                              <Tooltip
+                                label={ (
+                                  <Box display="flex" alignItems="center" gap="2">
+                                    <Box w="3" h="3" bg="#59C28F" borderWidth="xs" borderColor="mono.black" />
+                                    <Text>bg.secondary.default</Text>
+                                  </Box>
+                                ) }
+                                variant="ghost"
+                                openDelay={ 3000 }
+                                hasArrow={ false }
+                              >
+                                <Box flex="1" bg="#59C28F" />
+                              </Tooltip>
+                              <Tooltip
+                                label={ (
+                                  <Box display="flex" alignItems="center" gap="2">
+                                    <Box w="3" h="3" bg="#F1F5F8" borderWidth="xs" borderColor="mono.black" />
+                                    <Text>base-alt</Text>
+                                  </Box>
+                                ) }
+                                variant="ghost"
+                                openDelay={ 3000 }
+                                hasArrow={ false }
+                              >
+                                <Box flex="1" bg="#F1F5F8" />
+                              </Tooltip>
+                            </Box>
+                          ) }
+                          { currentTheme === 'tottTheme' && (
+                            <Box display="flex" w={ { base: '10', sm: '6' } } h={ { base: '10', sm: '6' } } borderRadius="md" overflow="hidden">
+                              <Tooltip
+                                label={ (
+                                  <Box display="flex" alignItems="center" gap="2">
+                                    <Box w="3" h="3" bg="#55A2FC" borderWidth="xs" borderColor="mono.white" />
+                                    <Text>bg.brand.default</Text>
+                                  </Box>
+                                ) }
+                                variant="ghost"
+                                openDelay={ 3000 }
+                                hasArrow={ false }
+                              >
+                                <Box flex="1" bg="#55A2FC" />
+                              </Tooltip>
+                              <Tooltip
+                                label={ (
+                                  <Box display="flex" alignItems="center" gap="2">
+                                    <Box w="3" h="3" bg="#7ACEA5" borderWidth="xs" borderColor="mono.white" />
+                                    <Text>bg.secondary.default</Text>
+                                  </Box>
+                                ) }
+                                variant="ghost"
+                                openDelay={ 3000 }
+                                hasArrow={ false }
+                              >
+                                <Box flex="1" bg="#7ACEA5" />
+                              </Tooltip>
+                              <Tooltip
+                                label={ (
+                                  <Box display="flex" alignItems="center" gap="2">
+                                    <Box w="3" h="3" bg="#3B3D44" borderWidth="xs" borderColor="mono.white" />
+                                    <Text>base-alt</Text>
+                                  </Box>
+                                ) }
+                                variant="ghost"
+                                openDelay={ 3000 }
+                                hasArrow={ false }
+                              >
+                                <Box flex="1" bg="#3B3D44" />
+                              </Tooltip>
+                            </Box>
+                          ) }
+                          { currentTheme === 'camphouseLightTheme' && (
+                            <Box display="flex" w={ { base: '10', sm: '6' } } h={ { base: '10', sm: '6' } } borderRadius="md" overflow="hidden">
+                              <Tooltip
+                                label={ (
+                                  <Box display="flex" alignItems="center" gap="2">
+                                    <Box w="3" h="3" bg="#052538" borderWidth="xs" borderColor="mono.black" />
+                                    <Text>bg.brand.default</Text>
+                                  </Box>
+                                ) }
+                                variant="ghost"
+                                openDelay={ 3000 }
+                                hasArrow={ false }
+                              >
+                                <Box flex="1" bg="#052538" />
+                              </Tooltip>
+                              <Tooltip
+                                label={ (
+                                  <Box display="flex" alignItems="center" gap="2">
+                                    <Box w="3" h="3" bg="#E5856E" borderWidth="xs" borderColor="mono.black" />
+                                    <Text>bg.secondary.default</Text>
+                                  </Box>
+                                ) }
+                                variant="ghost"
+                                openDelay={ 3000 }
+                                hasArrow={ false }
+                              >
+                                <Box flex="1" bg="#E5856E" />
+                              </Tooltip>
+                              <Tooltip
+                                label={ (
+                                  <Box display="flex" alignItems="center" gap="2">
+                                    <Box w="3" h="3" bg="#F4F1ED" borderWidth="xs" borderColor="mono.black" />
+                                    <Text>base-alt</Text>
+                                  </Box>
+                                ) }
+                                variant="ghost"
+                                openDelay={ 3000 }
+                                hasArrow={ false }
+                              >
+                                <Box flex="1" bg="#F4F1ED" />
+                              </Tooltip>
+                            </Box>
+                          ) }
+                        </Box>
+                        <Box display={ { base: 'none', md: 'block' } } ml={ 2 }>
+                          { currentTheme === 'webappTheme' && 'Northlight' }
+                          { currentTheme === 'tottTheme' && 'Lunar Onyx' }
+                          { currentTheme === 'camphouseLightTheme' && 'Camphouse' }
+                        </Box>
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent borderRadius="lg" boxShadow="lg" width="auto" maxW="100vw" p={ { base: 2, sm: 4 } } bg="background.default">
+                      <Box fontWeight="medium" mb="4" ml="2" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Theme</Box>
+                      <Flex gap={ { base: 2, sm: 6 } } direction={ { base: 'row', sm: 'row' } } align="center" w="100%" justify="center" p={ 0 }>
+                        { /* Northlight */ }
+                        <Box
+                          as="button"
+                          aria-label="Northlight"
+                          onClick={ () => setCurrentTheme('webappTheme') }
+                          borderRadius="md"
+                          borderWidth={ currentTheme === 'webappTheme' ? '1.5px' : '0px' }
+                          borderColor={ currentTheme === 'webappTheme' ? 'mono.black' : 'transparent' }
+                          p={ 0 }
+                          w={ { base: '12', sm: '28' } }
+                          h={ { base: '12', sm: '36' } }
+                          minW={ { base: '12', sm: '28' } }
+                          minH={ { base: '12', sm: '36' } }
+                          display="flex"
+                          flexDirection="column"
+                          alignItems="center"
+                          justifyContent="center"
+                          position="relative"
+                          transition="all 0.15s"
+                          _hover={ { borderWidth: '1.5px', borderColor: currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black', opacity: 1 } }
+                          opacity={ currentTheme === 'webappTheme' ? 1 : 0.8 }
+                          bg="background.default"
+                          boxSizing="border-box"
+                        >
+                          <Box display="flex" w={ { base: '10', sm: '16' } } h={ { base: '10', sm: '16' } } borderRadius="md" overflow="hidden" mb={ { base: 0, sm: 2 } }>
+                            <Tooltip
+                              label={ (
+                                <Box display="flex" alignItems="center" gap="2">
+                                  <Box w="3" h="3" bg="#2A8BFB" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
+                                  <Text>bg.brand.default</Text>
+                                </Box>
+                                ) }
+                              variant="ghost"
+                              openDelay={ 3000 }
+                              hasArrow={ false }
+                            >
+                              <Box flex="1" bg="#2A8BFB" />
+                            </Tooltip>
+                            <Tooltip
+                              label={ (
+                                <Box display="flex" alignItems="center" gap="2">
+                                  <Box w="3" h="3" bg="#59C28F" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
+                                  <Text>bg.secondary.default</Text>
+                                </Box>
+                                ) }
+                              variant="ghost"
+                              openDelay={ 3000 }
+                              hasArrow={ false }
+                            >
+                              <Box flex="1" bg="#59C28F" />
+                            </Tooltip>
+                            <Tooltip
+                              label={ (
+                                <Box display="flex" alignItems="center" gap="2">
+                                  <Box w="3" h="3" bg="#F1F5F8" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
+                                  <Text>base-alt</Text>
+                                </Box>
+                                ) }
+                              variant="ghost"
+                              openDelay={ 3000 }
+                              hasArrow={ false }
+                            >
+                              <Box flex="1" bg="#F1F5F8" />
+                            </Tooltip>
+                          </Box>
+                          <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Northlight</Text>
+                        </Box>
+                        { /* Lunar Onyx */ }
+                        <Box
+                          as="button"
+                          aria-label="Lunar Onyx"
+                          onClick={ () => setCurrentTheme('tottTheme') }
+                          borderRadius="md"
+                          borderWidth={ currentTheme === 'tottTheme' ? '1.5px' : '0px' }
+                          borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'transparent' }
+                          p={ 0 }
+                          w={ { base: '12', sm: '28' } }
+                          h={ { base: '12', sm: '36' } }
+                          minW={ { base: '12', sm: '28' } }
+                          minH={ { base: '12', sm: '36' } }
+                          display="flex"
+                          flexDirection="column"
+                          alignItems="center"
+                          justifyContent="center"
+                          position="relative"
+                          transition="all 0.15s"
+                          _hover={ { borderWidth: '1.5px', borderColor: currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black', opacity: 1 } }
+                          opacity={ currentTheme === 'tottTheme' ? 1 : 0.8 }
+                          bg="background.default"
+                          boxSizing="border-box"
+                        >
+                          <Box display="flex" w={ { base: '10', sm: '16' } } h={ { base: '10', sm: '16' } } borderRadius="md" overflow="hidden" mb={ { base: 0, sm: 2 } }>
+                            <Tooltip
+                              label={ (
+                                <Box display="flex" alignItems="center" gap="2">
+                                  <Box w="3" h="3" bg="#55A2FC" borderWidth="xs" borderColor="mono.white" />
+                                  <Text>bg.brand.default</Text>
+                                </Box>
+                                ) }
+                              variant="ghost"
+                              openDelay={ 3000 }
+                              hasArrow={ false }
+                            >
+                              <Box flex="1" bg="#55A2FC" />
+                            </Tooltip>
+                            <Tooltip
+                              label={ (
+                                <Box display="flex" alignItems="center" gap="2">
+                                  <Box w="3" h="3" bg="#7ACEA5" borderWidth="xs" borderColor="mono.white" />
+                                  <Text>bg.secondary.default</Text>
+                                </Box>
+                                ) }
+                              variant="ghost"
+                              openDelay={ 3000 }
+                              hasArrow={ false }
+                            >
+                              <Box flex="1" bg="#7ACEA5" />
+                            </Tooltip>
+                            <Tooltip
+                              label={ (
+                                <Box display="flex" alignItems="center" gap="2">
+                                  <Box w="3" h="3" bg="#3B3D44" borderWidth="xs" borderColor="mono.white" />
+                                  <Text>base-alt</Text>
+                                </Box>
+                                ) }
+                              variant="ghost"
+                              openDelay={ 3000 }
+                              hasArrow={ false }
+                            >
+                              <Box flex="1" bg="#3B3D44" />
+                            </Tooltip>
+                          </Box>
+                          <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Lunar Onyx</Text>
+                        </Box>
+                        { /* Camphouse */ }
+                        <Box
+                          as="button"
+                          aria-label="Camphouse"
+                          onClick={ () => setCurrentTheme('camphouseLightTheme') }
+                          borderRadius="md"
+                          borderWidth={ currentTheme === 'camphouseLightTheme' ? '1.5px' : '0px' }
+                          borderColor={ currentTheme === 'camphouseLightTheme' ? 'mono.black' : 'transparent' }
+                          p={ 0 }
+                          w={ { base: '12', sm: '28' } }
+                          h={ { base: '12', sm: '36' } }
+                          minW={ { base: '12', sm: '28' } }
+                          minH={ { base: '12', sm: '36' } }
+                          display="flex"
+                          flexDirection="column"
+                          alignItems="center"
+                          justifyContent="center"
+                          position="relative"
+                          transition="all 0.15s"
+                          _hover={ { borderWidth: '1.5px', borderColor: currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black', opacity: 1 } }
+                          opacity={ currentTheme === 'camphouseLightTheme' ? 1 : 0.8 }
+                          bg="background.default"
+                          boxSizing="border-box"
+                        >
+                          <Box display="flex" w={ { base: '10', sm: '16' } } h={ { base: '10', sm: '16' } } borderRadius="md" overflow="hidden" mb={ { base: 0, sm: 2 } }>
+                            <Tooltip
+                              label={ (
+                                <Box display="flex" alignItems="center" gap="2">
+                                  <Box w="3" h="3" bg="#052538" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
+                                  <Text>bg.brand.default</Text>
+                                </Box>
+                                ) }
+                              variant="ghost"
+                              openDelay={ 3000 }
+                              hasArrow={ false }
+                            >
+                              <Box flex="1" bg="#052538" />
+                            </Tooltip>
+                            <Tooltip
+                              label={ (
+                                <Box display="flex" alignItems="center" gap="2">
+                                  <Box w="3" h="3" bg="#E5856E" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
+                                  <Text>bg.secondary.default</Text>
+                                </Box>
+                                ) }
+                              variant="ghost"
+                              openDelay={ 3000 }
+                              hasArrow={ false }
+                            >
+                              <Box flex="1" bg="#E5856E" />
+                            </Tooltip>
+                            <Tooltip
+                              label={ (
+                                <Box display="flex" alignItems="center" gap="2">
+                                  <Box w="3" h="3" bg="#F4F1ED" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
+                                  <Text>base-alt</Text>
+                                </Box>
+                                ) }
+                              variant="ghost"
+                              openDelay={ 3000 }
+                              hasArrow={ false }
+                            >
+                              <Box flex="1" bg="#F4F1ED" />
+                            </Tooltip>
+                          </Box>
+                          <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Camphouse</Text>
+                        </Box>
+                      </Flex>
+                    </PopoverContent>
+                  </Popover>
                 </HStack>
 
                 <Drawer
