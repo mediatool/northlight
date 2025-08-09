@@ -144,6 +144,14 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                         rightIcon={ undefined }
                         fontWeight="medium"
                         sx={ { boxShadow: 'sm' } }
+                        _focus={ {
+                          boxShadow: 'none',
+                          outline: 'none',
+                        } }
+                        _focusVisible={ {
+                          boxShadow: 'none',
+                          outline: 'none',
+                        } }
                       >
                         <Box display="flex" alignItems="center" justifyContent="center">
                           { currentTheme === 'webappTheme' && (
@@ -158,8 +166,9 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                 variant="ghost"
                                 openDelay={ 3000 }
                                 hasArrow={ false }
+                                pointerEvents={ { base: 'none', md: 'auto' } }
                               >
-                                <Box flex="1" bg="#2A8BFB" />
+                                <Box flex="1" bg="#2A8BFB" pointerEvents={ { base: 'none', md: 'auto' } } />
                               </Tooltip>
                               <Tooltip
                                 label={ (
@@ -171,8 +180,9 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                 variant="ghost"
                                 openDelay={ 3000 }
                                 hasArrow={ false }
+                                pointerEvents={ { base: 'none', md: 'auto' } }
                               >
-                                <Box flex="1" bg="#59C28F" />
+                                <Box flex="1" bg="#59C28F" pointerEvents={ { base: 'none', md: 'auto' } } />
                               </Tooltip>
                               <Tooltip
                                 label={ (
@@ -184,8 +194,9 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                 variant="ghost"
                                 openDelay={ 3000 }
                                 hasArrow={ false }
+                                pointerEvents={ { base: 'none', md: 'auto' } }
                               >
-                                <Box flex="1" bg="#F1F5F8" />
+                                <Box flex="1" bg="#F1F5F8" pointerEvents={ { base: 'none', md: 'auto' } } />
                               </Tooltip>
                             </Box>
                           ) }
@@ -201,8 +212,9 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                 variant="ghost"
                                 openDelay={ 3000 }
                                 hasArrow={ false }
+                                pointerEvents={ { base: 'none', md: 'auto' } }
                               >
-                                <Box flex="1" bg="#55A2FC" />
+                                <Box flex="1" bg="#55A2FC" pointerEvents={ { base: 'none', md: 'auto' } } />
                               </Tooltip>
                               <Tooltip
                                 label={ (
@@ -214,8 +226,9 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                 variant="ghost"
                                 openDelay={ 3000 }
                                 hasArrow={ false }
+                                pointerEvents={ { base: 'none', md: 'auto' } }
                               >
-                                <Box flex="1" bg="#7ACEA5" />
+                                <Box flex="1" bg="#7ACEA5" pointerEvents={ { base: 'none', md: 'auto' } } />
                               </Tooltip>
                               <Tooltip
                                 label={ (
@@ -227,8 +240,9 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                 variant="ghost"
                                 openDelay={ 3000 }
                                 hasArrow={ false }
+                                pointerEvents={ { base: 'none', md: 'auto' } }
                               >
-                                <Box flex="1" bg="#3B3D44" />
+                                <Box flex="1" bg="#3B3D44" pointerEvents={ { base: 'none', md: 'auto' } } />
                               </Tooltip>
                             </Box>
                           ) }
@@ -244,8 +258,9 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                 variant="ghost"
                                 openDelay={ 3000 }
                                 hasArrow={ false }
+                                pointerEvents={ { base: 'none', md: 'auto' } }
                               >
-                                <Box flex="1" bg="#052538" />
+                                <Box flex="1" bg="#052538" pointerEvents={ { base: 'none', md: 'auto' } } />
                               </Tooltip>
                               <Tooltip
                                 label={ (
@@ -257,8 +272,9 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                 variant="ghost"
                                 openDelay={ 3000 }
                                 hasArrow={ false }
+                                pointerEvents={ { base: 'none', md: 'auto' } }
                               >
-                                <Box flex="1" bg="#E5856E" />
+                                <Box flex="1" bg="#E5856E" pointerEvents={ { base: 'none', md: 'auto' } } />
                               </Tooltip>
                               <Tooltip
                                 label={ (
@@ -270,8 +286,9 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                 variant="ghost"
                                 openDelay={ 3000 }
                                 hasArrow={ false }
+                                pointerEvents={ { base: 'none', md: 'auto' } }
                               >
-                                <Box flex="1" bg="#F4F1ED" />
+                                <Box flex="1" bg="#F4F1ED" pointerEvents={ { base: 'none', md: 'auto' } } />
                               </Tooltip>
                             </Box>
                           ) }
@@ -283,10 +300,24 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                         </Box>
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent borderRadius="lg" boxShadow="lg" width="auto" maxW="100vw" p={ { base: 2, sm: 4 } } bg="background.default">
+                    <PopoverContent
+                      borderRadius="md"
+                      _focus={ {
+                        boxShadow: 'none',
+                        outline: 'none',
+                      } }
+                      _focusVisible={ {
+                        boxShadow: 'none',
+                        outline: 'none',
+                      } }
+                      boxShadow="lg"
+                      width="auto"
+                      maxW="100vw"
+                      p={ { base: 2, sm: 4 } }
+                      bg="background.default"
+                    >
                       <Box fontWeight="medium" mb="4" ml="2" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Theme</Box>
                       <Flex gap={ { base: 2, sm: 6 } } direction={ { base: 'row', sm: 'row' } } align="center" w="100%" justify="center" p={ 0 }>
-                        { /* Northlight */ }
                         <Box
                           as="button"
                           aria-label="Northlight"
@@ -317,12 +348,13 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                   <Box w="3" h="3" bg="#2A8BFB" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
                                   <Text>bg.brand.default</Text>
                                 </Box>
-                                ) }
+                              ) }
                               variant="ghost"
                               openDelay={ 3000 }
                               hasArrow={ false }
+                              pointerEvents={ { base: 'none', md: 'auto' } }
                             >
-                              <Box flex="1" bg="#2A8BFB" />
+                              <Box flex="1" bg="#2A8BFB" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                             <Tooltip
                               label={ (
@@ -330,12 +362,13 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                   <Box w="3" h="3" bg="#59C28F" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
                                   <Text>bg.secondary.default</Text>
                                 </Box>
-                                ) }
+                              ) }
                               variant="ghost"
                               openDelay={ 3000 }
                               hasArrow={ false }
+                              pointerEvents={ { base: 'none', md: 'auto' } }
                             >
-                              <Box flex="1" bg="#59C28F" />
+                              <Box flex="1" bg="#59C28F" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                             <Tooltip
                               label={ (
@@ -343,17 +376,17 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                   <Box w="3" h="3" bg="#F1F5F8" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
                                   <Text>base-alt</Text>
                                 </Box>
-                                ) }
+                              ) }
                               variant="ghost"
                               openDelay={ 3000 }
                               hasArrow={ false }
+                              pointerEvents={ { base: 'none', md: 'auto' } }
                             >
-                              <Box flex="1" bg="#F1F5F8" />
+                              <Box flex="1" bg="#F1F5F8" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                           </Box>
                           <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Northlight</Text>
                         </Box>
-                        { /* Lunar Onyx */ }
                         <Box
                           as="button"
                           aria-label="Lunar Onyx"
@@ -384,12 +417,13 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                   <Box w="3" h="3" bg="#55A2FC" borderWidth="xs" borderColor="mono.white" />
                                   <Text>bg.brand.default</Text>
                                 </Box>
-                                ) }
+                              ) }
                               variant="ghost"
                               openDelay={ 3000 }
                               hasArrow={ false }
+                              pointerEvents={ { base: 'none', md: 'auto' } }
                             >
-                              <Box flex="1" bg="#55A2FC" />
+                              <Box flex="1" bg="#55A2FC" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                             <Tooltip
                               label={ (
@@ -397,12 +431,13 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                   <Box w="3" h="3" bg="#7ACEA5" borderWidth="xs" borderColor="mono.white" />
                                   <Text>bg.secondary.default</Text>
                                 </Box>
-                                ) }
+                              ) }
                               variant="ghost"
                               openDelay={ 3000 }
                               hasArrow={ false }
+                              pointerEvents={ { base: 'none', md: 'auto' } }
                             >
-                              <Box flex="1" bg="#7ACEA5" />
+                              <Box flex="1" bg="#7ACEA5" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                             <Tooltip
                               label={ (
@@ -410,17 +445,17 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                   <Box w="3" h="3" bg="#3B3D44" borderWidth="xs" borderColor="mono.white" />
                                   <Text>base-alt</Text>
                                 </Box>
-                                ) }
+                              ) }
                               variant="ghost"
                               openDelay={ 3000 }
                               hasArrow={ false }
+                              pointerEvents={ { base: 'none', md: 'auto' } }
                             >
-                              <Box flex="1" bg="#3B3D44" />
+                              <Box flex="1" bg="#3B3D44" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                           </Box>
                           <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Lunar Onyx</Text>
                         </Box>
-                        { /* Camphouse */ }
                         <Box
                           as="button"
                           aria-label="Camphouse"
@@ -451,12 +486,13 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                   <Box w="3" h="3" bg="#052538" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
                                   <Text>bg.brand.default</Text>
                                 </Box>
-                                ) }
+                              ) }
                               variant="ghost"
                               openDelay={ 3000 }
                               hasArrow={ false }
+                              pointerEvents={ { base: 'none', md: 'auto' } }
                             >
-                              <Box flex="1" bg="#052538" />
+                              <Box flex="1" bg="#052538" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                             <Tooltip
                               label={ (
@@ -464,12 +500,13 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                   <Box w="3" h="3" bg="#E5856E" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
                                   <Text>bg.secondary.default</Text>
                                 </Box>
-                                ) }
+                              ) }
                               variant="ghost"
                               openDelay={ 3000 }
                               hasArrow={ false }
+                              pointerEvents={ { base: 'none', md: 'auto' } }
                             >
-                              <Box flex="1" bg="#E5856E" />
+                              <Box flex="1" bg="#E5856E" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                             <Tooltip
                               label={ (
@@ -477,12 +514,13 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                                   <Box w="3" h="3" bg="#F4F1ED" borderWidth="xs" borderColor={ currentTheme === 'tottTheme' ? 'mono.white' : 'mono.black' } />
                                   <Text>base-alt</Text>
                                 </Box>
-                                ) }
+                              ) }
                               variant="ghost"
                               openDelay={ 3000 }
                               hasArrow={ false }
+                              pointerEvents={ { base: 'none', md: 'auto' } }
                             >
-                              <Box flex="1" bg="#F4F1ED" />
+                              <Box flex="1" bg="#F4F1ED" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                           </Box>
                           <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Camphouse</Text>
