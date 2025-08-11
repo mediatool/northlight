@@ -45,6 +45,21 @@ describe('useOutsideRectClick', () => {
     assert.isNull(result)
   })
 
+  it('should not call the callback when mousedown is triggered inside and mouseUp is released outside', async () => {
+    renderHook(
+      () => useOutsideRectClick(ref, () => {
+        result = 'clicked inside'
+      })
+    )
+
+    act(() => {
+      fireEvent.mouseDown(document, { clientX: 0, clientY: 0 })
+      fireEvent.mouseUp(document, { clientX: 10, clientY: 10 })
+    })
+
+    assert.isNull(result)
+  })
+
   it('should call the callback when touchEnd is released outside', async () => {
     renderHook(
       () => useOutsideRectClick(ref, () => {
@@ -70,6 +85,21 @@ describe('useOutsideRectClick', () => {
     act(() => {
       fireEvent.touchStart(document, { changedTouches: [ { clientX: 0, clientY: 0 } ] })
       fireEvent.touchEnd(document, { changedTouches: [ { clientX: 0, clientY: 0 } ] })
+    })
+
+    assert.isNull(result)
+  })
+
+  it('should not call the callback when touchStart is triggered inside and touchEnd is released outside', async () => {
+    renderHook(
+      () => useOutsideRectClick(ref, () => {
+        result = 'clicked inside'
+      })
+    )
+
+    act(() => {
+      fireEvent.touchStart(document, { changedTouches: [ { clientX: 0, clientY: 0 } ] })
+      fireEvent.touchEnd(document, { changedTouches: [ { clientX: 10, clientY: 10 } ] })
     })
 
     assert.isNull(result)
