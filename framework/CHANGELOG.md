@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.8](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.7...@northlight/ui@2.36.8) (2025-08-11)
+
+
+### Bug Fixes
+
+* **framework:** handle drag actions in outside ref click ([05a3548](https://github.com/mediatool/northlight/commit/05a3548f7215001547ceb6152633557bd9f791d0))
+
+
+
+
+
 ## [2.36.7](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.6...@northlight/ui@2.36.7) (2025-07-30)
 
 

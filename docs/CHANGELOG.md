@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.2](https://github.com/mediatool/northlight/compare/@northlight/docs@1.11.1...@northlight/docs@1.11.2) (2025-08-11)
+
+
+### Bug Fixes
+
+* **northlight:** theme switcher mobile ([3c887cc](https://github.com/mediatool/northlight/commit/3c887cc45c81bb4b4dda32a628220899d5cda140))
+
+
+
+
+
 ## [1.11.1](https://github.com/mediatool/northlight/compare/@northlight/docs@1.11.0...@northlight/docs@1.11.1) (2025-07-30)
 
 
