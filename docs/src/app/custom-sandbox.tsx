@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Link as ReactRouterLink } from 'react-router-dom'
 import { head } from 'ramda'
-import { NorthlightLogoXs } from '@northlight/icons'
 import {
   Box,
   Capitalized,
@@ -10,13 +9,13 @@ import {
   FormLabel,
   Grid,
   HStack,
-  Icon,
   Link,
   MediatoolThemeProvider,
   Stack,
   Switch,
   tottTheme,
 } from '@northlight/ui'
+import { ColoredNorthlightLogo } from '../docs/components/ColoredNorthlightLogo'
 import { CalendarProvider, I18nProvider, UserProvider } from './context'
 import { MainPage } from './types'
 import { MainMenu, SearchComponentsBar, SubMenu } from './components'
@@ -53,7 +52,9 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     sx={ { _hover: { textDecoration: 'none' }, _focus: { outline: 'none' } } }
                   >
                     <HStack>
-                      <Icon as={ NorthlightLogoXs } mt={ 4 } ml={ 2 } boxSize={ 16 } />
+                      <Box color={ tott ? 'bg.brand.default' : 'bg.brand.default' } mt={ 4 } ml={ 2 }>
+                        <ColoredNorthlightLogo width={ 16 } height={ 16 } />
+                      </Box>
                       <Capitalized>Northlight</Capitalized>
                     </HStack>
                   </Link>
