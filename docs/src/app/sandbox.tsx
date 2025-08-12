@@ -4,7 +4,6 @@ import { head } from 'ramda'
 import {
   HamburgerDuo,
   LinkDuo,
-  NorthlightLogoXs,
 } from '@northlight/icons'
 import {
   Box,
@@ -39,6 +38,7 @@ import { MainPage } from './types'
 import { MainMenu, SearchComponentsBar, SubMenu } from './components'
 import { Routing } from './routing'
 import { useLocalStorageState } from './use-local-storage-state'
+import { ColoredNorthlightLogo } from '../docs/components/ColoredNorthlightLogo'
 
 export interface SandboxProps {
   routes: MainPage[]
@@ -77,14 +77,14 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   p={ 4 }
                   zIndex="sticky"
                   alignItems="center"
-                  justifyContent={ { base: 'flex-start', md: 'center' } }
+                  justifyContent={ { base: 'flex-start', lg: 'center' } }
                 >
                   <IconButton
                     variant="ghost"
                     icon={ <Icon as={ HamburgerDuo } /> }
                     aria-label="Open menu"
                     onClick={ onOpen }
-                    display={ { base: 'flex', md: 'none' } }
+                    display={ { base: 'flex', lg: 'none' } }
                   />
                   <Link
                     as={ ReactRouterLink }
@@ -92,34 +92,32 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     _hover={ { textDecoration: 'none' } }
                     _focus={ { outline: 'none' } }
                   >
-                    <Box display={ { base: 'none', md: 'flex' } } alignItems="center" minW="xs">
-                      <Icon
-                        as={ NorthlightLogoXs }
-                        boxSize={ 16 }
-                        viewBox="0 0 20 18"
-                      />
-                      <Capitalized>North</Capitalized><Capitalized sx={ { color: 'brand' } }>Light</Capitalized>
+                    <Box display={ { base: 'none', lg: 'flex' } } alignItems="center" minW="xs">
+                      <Box mr={ 2 } color={ currentTheme === 'camphouseLightTheme' ? 'bg.secondary.default' : 'bg.brand.default' }>
+                        <ColoredNorthlightLogo width={ 48 } height={ 44 } />
+                      </Box>
+                      <Capitalized>North</Capitalized><Capitalized sx={ { color: currentTheme === 'camphouseLightTheme' ? 'bg.secondary.default' : 'bg.brand.default' } }>Light</Capitalized>
                     </Box>
                   </Link>
                   <Box
                     flexGrow={ 1 }
-                    display={ { base: 'flex', md: 'flex' } }
+                    display={ { base: 'flex', lg: 'flex' } }
                     justifyContent="center"
                   >
                     <Box w="full">
                       <SearchComponentsBar routes={ routes } />
                     </Box>
                   </Box>
-                  <Link as={ ReactRouterLink } to="/guide/quick-start" display={ { base: 'none', md: 'flex' } }>
+                  <Link as={ ReactRouterLink } to="/guide/quick-start" display={ { base: 'none', lg: 'flex' } }>
                     <Button variant="ghost">Start</Button>
                   </Link>
-                  <Link as={ ReactRouterLink } to="./reference" display={ { base: 'none', md: 'flex' } }>
+                  <Link as={ ReactRouterLink } to="./reference" display={ { base: 'none', lg: 'flex' } }>
                     <Button variant="ghost">Reference</Button>
                   </Link>
                   <Link
                     isExternal={ true }
                     href="https://github.com/mediatool/northlight"
-                    display={ { base: 'none', md: 'flex' } }
+                    display={ { base: 'none', lg: 'flex' } }
                   >
                     <Button
                       variant="ghost"
@@ -293,7 +291,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                             </Box>
                           ) }
                         </Box>
-                        <Box display={ { base: 'none', md: 'block' } } ml={ 2 }>
+                        <Box display={ { base: 'none', lg: 'block' } } ml={ 2 }>
                           { currentTheme === 'webappTheme' && 'Northlight' }
                           { currentTheme === 'tottTheme' && 'Lunar Onyx' }
                           { currentTheme === 'camphouseLightTheme' && 'Camphouse' }
@@ -316,7 +314,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                       p={ { base: 2, sm: 4 } }
                       bg="background.default"
                     >
-                      <Box fontWeight="medium" mb="4" ml="2" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Theme</Box>
+                      <Box fontWeight="medium" mb="4" ml="2" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', lg: 'block' } }>Theme</Box>
                       <Flex gap={ { base: 2, sm: 6 } } direction={ { base: 'row', sm: 'row' } } align="center" w="100%" justify="center" p={ 0 }>
                         <Box
                           as="button"
@@ -385,7 +383,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                               <Box flex="1" bg="#F1F5F8" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                           </Box>
-                          <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Northlight</Text>
+                          <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', lg: 'block' } }>Northlight</Text>
                         </Box>
                         <Box
                           as="button"
@@ -454,7 +452,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                               <Box flex="1" bg="#3B3D44" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                           </Box>
-                          <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Lunar Onyx</Text>
+                          <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', lg: 'block' } }>Lunar Onyx</Text>
                         </Box>
                         <Box
                           as="button"
@@ -523,7 +521,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                               <Box flex="1" bg="#F4F1ED" pointerEvents={ { base: 'none', md: 'auto' } } />
                             </Tooltip>
                           </Box>
-                          <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', md: 'block' } }>Camphouse</Text>
+                          <Text fontWeight="medium" fontSize="md" color={ currentTheme === 'tottTheme' ? 'mono.white' : undefined } display={ { base: 'none', lg: 'block' } }>Camphouse</Text>
                         </Box>
                       </Flex>
                     </PopoverContent>
@@ -545,12 +543,10 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                         _focus={ { outline: 'none' } }
                       >
                         <HStack gap={ 0 }>
-                          <Icon
-                            as={ NorthlightLogoXs }
-                            boxSize={ 16 }
-                            viewBox="0 0 20 18"
-                          />
-                          <Capitalized>North</Capitalized><Capitalized sx={ { color: 'brand' } }>Light</Capitalized>
+                          <Box mr={ 2 } color={ currentTheme === 'camphouseLightTheme' ? 'bg.secondary.default' : 'bg.brand.default' }>
+                            <ColoredNorthlightLogo width={ 44 } height={ 44 } />
+                          </Box>
+                          <Capitalized>North</Capitalized><Capitalized sx={ { color: currentTheme === 'camphouseLightTheme' ? 'bg.secondary.default' : 'bg.brand.default' } }>Light</Capitalized>
                         </HStack>
                       </Link>
                     </DrawerHeader>
@@ -564,8 +560,8 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                 <Box
                   pt={ 16 }
                   minH="100vh"
-                  w={ { base: '100%', md: 'auto' } }
-                  maxW={ { base: '100vw', md: 'none' } }
+                  w={ { base: '100%', lg: 'auto' } }
+                  maxW={ { base: '100vw', lg: 'none' } }
                 >
                   <Box
                     w={ 80 }
@@ -573,7 +569,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                     px={ 2 }
                     overflowY="auto"
                     position="fixed"
-                    display={ { base: 'none', md: 'block' } }
+                    display={ { base: 'none', lg: 'block' } }
                     left="0"
                     top="100"
                     zIndex="sticky"
@@ -585,7 +581,7 @@ export const Sandbox = ({ routes }: SandboxProps) => {
                   </Box>
 
                   <Flex
-                    pl={ { md: '21rem' } }
+                    pl={ { lg: '21rem' } }
                     pt={ 4 }
                     w="full"
                   >
