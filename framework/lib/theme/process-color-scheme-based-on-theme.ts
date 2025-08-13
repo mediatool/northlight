@@ -1,4 +1,4 @@
-import { defaultTo } from 'ramda'
+import { path } from 'ramda'
 import type { CurrentTheme } from '../utils'
 
 const themeMap: Record<CurrentTheme, Record<string, string>> = {
@@ -21,4 +21,4 @@ export const processColorSchemeBasedOnTheme = ({
   currentTheme,
   colorScheme,
 }: ProcessColorSchemeBasedOnThemeProps) =>
-  defaultTo(colorScheme, themeMap[currentTheme as CurrentTheme][colorScheme])
+  path<string>([ currentTheme, colorScheme ], themeMap) ?? colorScheme
