@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.9](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.8...@northlight/ui@2.36.9) (2025-08-13)
+
+
+### Bug Fixes
+
+* **northlight-ui:** handle undefined theme ([0f018b2](https://github.com/mediatool/northlight/commit/0f018b29f70900db693c4324762ea647bd645478))
+
+
+
+
+
 ## [2.36.8](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.7...@northlight/ui@2.36.8) (2025-08-11)
 
 

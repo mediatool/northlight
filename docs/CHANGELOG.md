@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.3](https://github.com/mediatool/northlight/compare/@northlight/docs@1.11.2...@northlight/docs@1.11.3) (2025-08-13)
+
+
+### Bug Fixes
+
+* **northlight:** theme logo and text styling ([09d711b](https://github.com/mediatool/northlight/commit/09d711bb2416511e2f5e4117215fcd6ec83fc2b0))
+
+
+
+
+
 ## [1.11.2](https://github.com/mediatool/northlight/compare/@northlight/docs@1.11.1...@northlight/docs@1.11.2) (2025-08-11)
 
 
