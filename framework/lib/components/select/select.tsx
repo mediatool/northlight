@@ -1,6 +1,7 @@
 import React, { Ref, forwardRef, useMemo, useRef } from 'react'
 import {
   Select as ChakraReactSelect,
+  Props as ChakraReactSelectProps,
   GroupBase,
   OptionsOrGroups,
   SelectInstance,
@@ -44,9 +45,12 @@ import { theme } from '../../theme'
  * ## Multi select
  * (?
  * <Select
- *   options={[{ label: 'Option 1', value: '1' }, { label: 'Option 2', value: '2' }]}
+ *   options={[{ label: 'Option 1', value: '1' }, { label: 'Option 2', value: '2' },
+ *   { label: 'Option 3', value: '3' }, { label: 'Option 4', value: '4' },
+ *   { label: 'Option 5', value: '5' }, { label: 'Option 6', value: '6' } ]}
  *   onChange={(value, action) => console.log('Selected:', value)}
  *   isMulti
+ *   displayLimit={ 3 }
  * />
  * ?)
  *
@@ -153,6 +157,7 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
   icon,
   components,
   generateComponentsUpdateKey = always(0),
+  displayLimit,
   ...rest
 }: SelectProps<T, K>,
   ref: Ref<SelectInstance<T, K, GroupBase<T>>>
@@ -165,14 +170,16 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
     value: is(Array, value) ? (value as T[]) : [],
   })
 
-  const customComponents = useMemo(
-    () => getComponents<T>(components),
-    [ generateComponentsUpdateKey() ]
-  )
+  const customComponents = useMemo(() => {
+    const baseComponents = getComponents<T>({
+      components: components as ChakraReactSelectProps<T, boolean, GroupBase<T>>['components'],
+      displayLimit,
+    })
 
-  const prevOptions = useRef<OptionsOrGroups<T, GroupBase<T>> | undefined>(
-    options
-  )
+    return baseComponents
+  }, [ displayLimit, isMulti, components, generateComponentsUpdateKey() ])
+
+  const prevOptions = useRef<OptionsOrGroups<T, GroupBase<T>> | undefined>(options)
   const renderedOptions = useMemo(() => {
     if (!equals(prevOptions.current, options)) {
       prevOptions.current = options
