@@ -5,7 +5,6 @@ import { ComboPickerOption, ComboPickerProps, ComboPickerValue } from './types'
 import { Select, SingleValue } from '../select'
 import { Box } from '../box'
 import { FormattedNumberInput } from '../text-field'
-import { clamp } from '../../utils'
 
 /**
  * @see ComboPickerField
@@ -27,15 +26,9 @@ export const ComboPicker = ({
   ...rest
 }: ComboPickerProps) => {
   const { isOpen, onToggle, onClose } = useDisclosure()
-  const [ inputValueState, setInputValueState ] = useState(valueProp?.input)
-  const [ selectOptionState, setselectOptionState ] = useState(valueProp?.option)
+  const [ inputValue, setInputValue ] = useState(valueProp?.input)
+  const [ selectOption, setSelectOption ] = useState(valueProp?.option)
   const [ enableSelectInput, setEnableSelectInput ] = useState(false)
-
-  const isInputValueControlled = typeof valueProp?.input !== 'undefined'
-  const inputValue = isInputValueControlled ? valueProp.input : inputValueState
-
-  const isOptionControlled = typeof valueProp?.option !== 'undefined'
-  const selectOption = isOptionControlled ? valueProp.option : selectOptionState
 
   const buttonRef = useRef<any>()
   const selectRef = useRef<any>()
@@ -49,9 +42,8 @@ export const ComboPicker = ({
   }
 
   const handleInputChange = (newInputvalue?: number) => {
-    const newValue = getNewValue(selectOption, newInputvalue)
+    const newValue = getNewValue(valueProp?.option, newInputvalue)
 
-    setInputValueState(newValue.input)
     onChange?.(newValue)
   }
 
@@ -66,8 +58,7 @@ export const ComboPicker = ({
 
   const handleSelectChange = (selectedOption: SingleValue<ComboPickerOption>) => {
     if (selectedOption) {
-      setselectOptionState(selectedOption)
-      onChange?.(getNewValue(selectedOption, inputValue))
+      onChange?.(getNewValue(selectedOption, valueProp?.input))
 
       if (isOpen) {
         handleSelectClose()
@@ -90,24 +81,14 @@ export const ComboPicker = ({
   }, [ enableSelectInput ])
 
   useEffect(() => {
-    const needsToCorrectOption = !selectOption
-    const needsToCorrectInput = !is(Number, inputValue) && defaultToZeroIfEmpty
+    const option = valueProp?.option ?? options[0]
+    const input = defaultToZeroIfEmpty ? valueProp?.input ?? 0 : valueProp?.input
 
-    const option = needsToCorrectOption ? options[0] : selectOption
-    const input = needsToCorrectInput ? clamp(min, max, 0) : inputValue
+    setSelectOption(option)
+    setInputValue(input)
 
-    if (needsToCorrectOption) {
-      setselectOptionState(option)
-    }
-
-    if (needsToCorrectInput) {
-      setInputValueState(input)
-    }
-
-    if (needsToCorrectOption || needsToCorrectInput) {
-      onChange?.(getNewValue(option, input))
-    }
-  }, [ inputValue, defaultToZeroIfEmpty ])
+    onChange?.(getNewValue(option, input))
+  }, [ valueProp?.input, valueProp?.option, defaultToZeroIfEmpty, options ])
 
   const buttonWidth = (buttonRef.current?.offsetWidth ?? 0)
 
