@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.10](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.9...@northlight/ui@2.36.10) (2025-08-18)
+
+
+### Bug Fixes
+
+* **framework:** fix combopicker to not handle state ([af49cd1](https://github.com/mediatool/northlight/commit/af49cd1d1a5322015c15f28a8aa14b3e5062cf32))
+
+
+
+
+
 ## [2.36.9](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.8...@northlight/ui@2.36.9) (2025-08-13)
 
 
