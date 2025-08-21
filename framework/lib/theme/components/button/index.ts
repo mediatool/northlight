@@ -87,14 +87,14 @@ export const Button: ComponentSingleStyleConfig = {
       },
     }),
     brandSubdued: ({ theme: { colors: color } }) => ({
-      color: color.text.button.link,
+      color: color.text.button.brandSubdued,
       bgColor: color.background.button.ghost,
       _hover: {
         bg: color.background.button.brand,
         color: color.text.inverted,
         _disabled: {
           bgColor: color.background.button.ghost,
-          color: color.text.button.link,
+          color: color.text.button.brandSubdued,
         },
       },
       _active: {
