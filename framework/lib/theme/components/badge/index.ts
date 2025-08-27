@@ -19,16 +19,19 @@ export const Badge: ComponentSingleStyleConfig = {
     }
   },
   variants: {
-    solid: ({ colorScheme, theme: { colors }, currentTheme }) => {
+    solid: ({ colorScheme, theme: { colors }, currentTheme, bg, bgColor }) => {
       const processedColorScheme = processColorSchemeBasedOnTheme({ currentTheme, colorScheme })
 
-      const bgColor = processedColorScheme === 'mediatoolBlue'
-        ? colors[processedColorScheme][500]
-        : colors[processedColorScheme] && colors[processedColorScheme][500]
+      const finalBg =
+    bg ??
+    bgColor ??
+    (processedColorScheme === 'mediatoolBlue'
+      ? colors[processedColorScheme][500]
+      : colors[processedColorScheme] && colors[processedColorScheme][500])
 
       return {
-        bgColor,
-        color: getContrastColor(bgColor ?? useToken('colors', processedColorScheme)),
+        bgColor: finalBg,
+        color: getContrastColor(finalBg ?? useToken('colors', processedColorScheme)),
       }
     },
     outline: ({ colorScheme, theme: { colors }, currentTheme }) => {
@@ -72,5 +75,6 @@ export const Badge: ComponentSingleStyleConfig = {
   },
   defaultProps: {
     size: 'sm',
+    variant: 'solid',
   },
 }
