@@ -1,15 +1,15 @@
 export const luminosity = (hexcolor: string) => {
-  let color = hexcolor
+  if (!hexcolor || typeof hexcolor !== 'string') return Number.NaN
 
-  if (color.slice(0, 1) === '#') {
-    color = color.slice(1)
+  let color = hexcolor.trim()
+
+  if (!/^#?[0-9a-f]{3}([0-9a-f]{3})?$/i.test(color)) {
+    return Number.NaN
   }
 
+  if (color[0] === '#') color = color.slice(1)
   if (color.length === 3) {
-    color = color
-      .split('')
-      .map((hex) => hex + hex)
-      .join('')
+    color = color.split('').map((h) => h + h).join('')
   }
 
   const r = parseInt(color.substring(0, 2), 16)

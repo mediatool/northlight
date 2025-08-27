@@ -30,11 +30,13 @@ export const Tag: ComponentMultiStyleConfig = {
     solid: ({ theme: { colors }, bgColor, colorScheme, currentTheme }) => {
       const processedColorScheme = processColorSchemeBasedOnTheme({ currentTheme, colorScheme })
 
-      const tagBgColor =
+      const tagBgColorRaw =
         bgColor ??
         (colors[processedColorScheme] && colors[processedColorScheme][500]
           ? colors[processedColorScheme][500]
           : processedColorScheme)
+
+      const tagBgColor = typeof tagBgColorRaw === 'string' ? tagBgColorRaw.trim() : tagBgColorRaw
 
       const tagColor = getContrastColor(useToken('colors', tagBgColor))
 
@@ -48,11 +50,13 @@ export const Tag: ComponentMultiStyleConfig = {
     subtle: ({ theme: { colors }, colorScheme, bgColor, currentTheme }) => {
       const processedColorScheme = processColorSchemeBasedOnTheme({ currentTheme, colorScheme })
 
-      const tagBgColor =
+      const tagBgColorRaw =
         bgColor ??
         (colors[processedColorScheme] && colors[processedColorScheme][100]
           ? colors[processedColorScheme][100]
           : processedColorScheme)
+
+      const tagBgColor = typeof tagBgColorRaw === 'string' ? tagBgColorRaw.trim() : tagBgColorRaw
 
       const tagColor = getContrastColor(useToken('colors', tagBgColor))
 
