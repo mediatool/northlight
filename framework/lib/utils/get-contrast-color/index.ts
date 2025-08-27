@@ -1,18 +1,34 @@
 import { useToken } from '@chakra-ui/system'
 import { luminosity } from '../luminosity'
 
+function safeUseToken (tokenOrValue: string): string {
+  try {
+    return useToken('colors', tokenOrValue)
+  } catch {
+    return tokenOrValue
+  }
+}
+
 export const getContrastColor = (color: string) => {
-  const colorTwo = useToken('colors', 'text.default')
-  const colorOne = useToken('colors', 'text.inverted')
-  const colorInHex = useToken('colors', color)
+  const textDefault = useToken('colors', 'text.default') // dark
+  const textInverted = useToken('colors', 'text.inverted') // light
 
-  const l1 = luminosity(colorOne)
-  const l2 = luminosity(colorTwo)
+  const normalized = typeof color === 'string' ? color.trim() : (color as unknown as string)
 
-  const threshold = (l1 + l2) / 2
+  // If a concrete hex is passed, use it directly; else try token resolution.
+  const isHex = /^#?[0-9a-f]{3}([0-9a-f]{3})?$/i.test(normalized)
+  const bgResolved = isHex
+    ? (normalized[0] === '#' ? normalized : `#${normalized}`)
+    : safeUseToken(normalized)
 
-  const brightColor = l1 > l2 ? colorOne : colorTwo
-  const darkColor = l1 > l2 ? colorTwo : colorOne
+  const lInverted = luminosity(textInverted)
+  const lDefault = luminosity(textDefault)
+  const threshold = (lInverted + lDefault) / 2
+  const brightColor = lInverted > lDefault ? textInverted : textDefault
+  const darkColor = lInverted > lDefault ? textDefault : textInverted
 
-  return luminosity(colorInHex) >= threshold ? darkColor : brightColor
+  const lBg = luminosity(bgResolved)
+  if (Number.isNaN(lBg)) return undefined
+
+  return lBg >= threshold ? darkColor : brightColor
 }
