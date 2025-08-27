@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.11](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.10...@northlight/ui@2.36.11) (2025-08-27)
+
+
+### Bug Fixes
+
+* **northlight:** brandSubdued token ([19ab647](https://github.com/mediatool/northlight/commit/19ab64787e2feadfd924f235575860d0ee86a55d))
+
+
+
+
+
 ## [2.36.10](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.9...@northlight/ui@2.36.10) (2025-08-18)
 
 
