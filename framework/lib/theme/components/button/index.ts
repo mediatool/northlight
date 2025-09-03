@@ -182,6 +182,22 @@ export const Button: ComponentSingleStyleConfig = {
         color: color.text.button.accent,
       },
     }),
+    sidebar: ({ theme: { colors: color } }) => ({
+      color: color.text.button.sidebar,
+      bgColor: color.background.button.sidebar,
+      _hover: {
+        bg: color.background.button['sidebar-hover'],
+        color: color.text.button.sidebar,
+        _disabled: {
+          bgColor: color.background.button.ghost,
+          color: color.text.button.sidebar,
+        },
+      },
+      _active: {
+        bg: color.background.button['sidebar-active'],
+        color: color.text.button['sidebar-active'],
+      },
+    }),
   },
   defaultProps: {
     size: 'md',
