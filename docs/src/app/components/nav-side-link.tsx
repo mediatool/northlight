@@ -3,6 +3,7 @@ import {
   Button,
   Label,
   LinkOverlay,
+  useCurrentTheme,
 } from '@northlight/ui'
 
 interface CustomNavLinkProps {
@@ -18,21 +19,22 @@ export const NavSideLink = ({
   onClick,
   linkProps,
 }: CustomNavLinkProps) => {
-  const color = isActive ? 'text.inverted' : 'text.default'
+  const currentTheme = useCurrentTheme()
+
+  const buttonVariant = currentTheme === 'camphouseLightTheme' ? 'sidebar' : 'brand'
 
   return (
     <Button
       size="sm"
-      p="4"
-      _hover={ { bgColor: isActive ? 'bg.brand.default' : 'background.button.ghost-hover' } }
-      _active={ { bgColor: 'bg.brand.default' } }
-      bgColor={ isActive ? 'bg.brand.default' : 'transparent' }
+      p={ 4 }
+      variant={ isActive ? buttonVariant : 'ghost' }
+      isActive={ isActive }
       onClick={ onClick }
       display="flex"
       justifyContent="start"
     >
       <LinkOverlay { ...linkProps }>
-        <Label size="sm" sx={ { color, cursor: 'pointer' } }>{ linkName }</Label>
+        <Label size="sm" sx={ { cursor: 'pointer' } }>{ linkName }</Label>
       </LinkOverlay>
     </Button>
   )

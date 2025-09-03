@@ -5,6 +5,7 @@ import {
   Icon,
   Label,
   Stack,
+  useCurrentTheme,
 } from '@northlight/ui'
 
 export interface MenuItemProps {
@@ -13,23 +14,34 @@ export interface MenuItemProps {
   Icon: any
 }
 
-const MenuItem = ({ path, Icon: IconComponent, title }: MenuItemProps) => (
-  <HStack
-    px={ 2 }
-    to={ path }
-    as={ NavLink }
-    borderRadius={ 6 }
-    _hover={ { bgColor: 'background.button.ghost-hover' } }
-    _activeLink={ { bgColor: 'background.button.brand', color: 'text.inverted' } }
-  >
-    <HStack p={ 2 }>
-      <Icon as={ IconComponent } boxSize={ 6 } />
-      <Label size="sm" sx={ { color: 'inherit', cursor: 'pointer' } }>
-        { title }
-      </Label>
+const MenuItem = ({ path, Icon: IconComponent, title }: MenuItemProps) => {
+  const currentTheme = useCurrentTheme()
+
+  const activeBgColor = currentTheme === 'camphouseLightTheme'
+    ? 'background.button.sidebar-active'
+    : 'background.button.brand-active'
+  const activeTextColor = currentTheme === 'camphouseLightTheme'
+    ? 'text.button.sidebar-active'
+    : 'text.inverted'
+
+  return (
+    <HStack
+      px={ 2 }
+      to={ path }
+      as={ NavLink }
+      borderRadius={ 6 }
+      _hover={ { bgColor: 'background.button.ghost-hover' } }
+      _activeLink={ { bgColor: activeBgColor, color: activeTextColor } }
+    >
+      <HStack p={ 2 }>
+        <Icon as={ IconComponent } boxSize={ 6 } />
+        <Label size="sm" sx={ { color: 'inherit', cursor: 'pointer' } }>
+          { title }
+        </Label>
+      </HStack>
     </HStack>
-  </HStack>
-)
+  )
+}
 
 export interface MainMenuProps {
   menuItems: MenuItemProps[]
