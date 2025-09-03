@@ -52,7 +52,7 @@ const SpinnerSizeMap = {
  * @example (Example)
  * (?
  * +
- * const variants = ['link', 'success', 'default', 'danger', 'brand',
+ * const variants = ['link', 'success', 'default', 'danger', 'brand', 'accent',
  *  'ghost', 'ai', 'outline', 'brandSubdued', 'solid']
  *
  * const ExampleButton = () => {

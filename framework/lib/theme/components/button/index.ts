@@ -166,6 +166,22 @@ export const Button: ComponentSingleStyleConfig = {
         color: color.text.inverted,
       },
     }),
+    accent: ({ theme: { colors: color } }) => ({
+      color: color.text.button.accent,
+      bgColor: color.background.button.ghost,
+      _hover: {
+        bg: color.background.button['ghost-active'],
+        color: color.text.button.accent,
+        _disabled: {
+          bgColor: color.background.button.ghost,
+          color: color.text.button.accent,
+        },
+      },
+      _active: {
+        bg: color.background.button['ghost-active'],
+        color: color.text.button.accent,
+      },
+    }),
   },
   defaultProps: {
     size: 'md',
