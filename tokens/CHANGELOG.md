@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.7](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.4.6...@northlight/tokens@1.4.7) (2025-09-04)
+
+
+### Bug Fixes
+
+* **tokens:** remapped secondary and tertiary colors for different states of bg and borders to their root 'default' values. Fixed text.over colors to match semantic colors. Set bg.secondary.default to blue.500 instead of grenn.500, and border.secondary.default - to blue.400 instead of green.400. ([2a0e7fc](https://github.com/mediatool/northlight/commit/2a0e7fcf8b1ddb223a0b31c30bb2e66cd8a51466))
+* **tokens:** remapped secondary and tertiary state colors to their root tokens. bg.secondary.default color in webapp set to blue.500 ([78b926c](https://github.com/mediatool/northlight/commit/78b926c87afbca579720a8a6d021d941c5842223))
+
+
+
+
+
 ## [1.4.6](https://github.com/mediatool/northlight/compare/@northlight/tokens@1.4.5...@northlight/tokens@1.4.6) (2025-08-11)
 
 **Note:** Version bump only for package @northlight/tokens

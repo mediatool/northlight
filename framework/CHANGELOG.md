@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.12](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.11...@northlight/ui@2.36.12) (2025-09-04)
+
+**Note:** Version bump only for package @northlight/ui
+
+
+
+
+
 ## [2.36.11](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.10...@northlight/ui@2.36.11) (2025-08-27)
 
 
