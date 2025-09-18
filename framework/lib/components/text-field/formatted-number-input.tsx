@@ -1,4 +1,4 @@
-import React, { ComponentType, useEffect } from 'react'
+import React, { ComponentType, useEffect, useState } from 'react'
 import { identity, isNil } from 'ramda'
 import {
   InputAttributes,
@@ -85,9 +85,10 @@ export const FormattedNumberInput = ({
   onBlur,
   ...rest
 }: FormattedNumberInputProps) => {
+  const [ valueState, setValueState ] = useState(valueProp)
+  const isControlled = typeof valueProp !== 'undefined'
+  const value = isControlled ? valueProp : valueState
   const props = presetMap[preset]
-
-  const value = valueProp ?? ''
 
   const getNumberFormatValues = (number: number) => ({
     floatValue: number,
@@ -101,10 +102,12 @@ export const FormattedNumberInput = ({
     const factor = isPercentage ? 100 : 1
     if (vNum * factor > max) {
       const newValue = roundToPrecision(max / factor, numberOfDecimals)
+      setValueState(newValue)
       onChange(getNumberFormatValues(newValue))
     }
     if (vNum * factor < min) {
       const newValue = roundToPrecision(min / factor, numberOfDecimals)
+      setValueState(newValue)
       onChange(getNumberFormatValues(newValue))
     }
   }
@@ -117,6 +120,7 @@ export const FormattedNumberInput = ({
       values.floatValue && isPercentage
         ? roundToPrecision(values.floatValue / 100, numberOfDecimals)
         : values.floatValue
+    setValueState(newFloatValue)
     onChange(
       {
         ...values,
