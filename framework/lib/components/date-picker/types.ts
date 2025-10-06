@@ -43,6 +43,7 @@ export interface DateRangePickerProps
   fiscalStartDay?: number
   renderInPortal?: boolean
   buttonLabel?: string
+  setIsOpen?: (isOpen: boolean) => void
 }
 
 export interface DatePickerFieldProps

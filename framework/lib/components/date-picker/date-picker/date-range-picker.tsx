@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FocusScope } from '@react-aria/focus'
 import { useDateRangePickerState } from '@react-stately/datepicker'
 import { useDateRangePicker } from '@react-aria/datepicker'
@@ -103,6 +103,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     firstDayOfWeek,
     onSave,
     buttonLabel = 'Save',
+    setIsOpen = () => {},
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -123,6 +124,10 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     shouldCloseOnSelect: false,
     hideTimeZone: true,
   })
+
+  useEffect(() => {
+    setIsOpen(state.isOpen)
+  }, [ state.isOpen ])
 
   const {
     groupProps,
