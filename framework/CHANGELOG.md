@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.37.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.12...@northlight/ui@2.37.0) (2025-10-07)
+
+
+### Features
+
+* **framework:** add setIsOpen prop to DateRangePicker ([5f7822a](https://github.com/mediatool/northlight/commit/5f7822a0bbf9cb8107bd213abb78a8ed1b6bd687))
+
+
+
+
+
 ## [2.36.12](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.11...@northlight/ui@2.36.12) (2025-09-04)
 
 **Note:** Version bump only for package @northlight/ui
