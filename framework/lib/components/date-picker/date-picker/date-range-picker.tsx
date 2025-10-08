@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { FocusScope } from '@react-aria/focus'
 import { useDateRangePickerState } from '@react-stately/datepicker'
 import { useDateRangePicker } from '@react-aria/datepicker'
@@ -19,6 +19,7 @@ import { InputGroup, InputRightElement } from '../../input'
 import { Icon } from '../../icon'
 import { isValidDateRange } from '../date-picker-field/utils'
 import { DatePickerLocaleWrapper } from './date-picker-locale-wrapper'
+import { Tooltip } from '../../tooltip'
 
 const parseValue = (value: any) => {
   if (!isValidDateRange(value)) return null
@@ -109,9 +110,8 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     onSave,
     buttonLabel = 'Save',
     clearButtonLabel = 'Clear',
-    setIsOpen = () => {},
-    savedDateRange = value,
-    defaultDateRange = value,
+    savedDateRange,
+    defaultDateRange,
     CustomResetButton,
     onCancelChanges,
   } = props
@@ -142,10 +142,6 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     hideTimeZone: true,
   })
 
-  useEffect(() => {
-    setIsOpen(state.isOpen)
-  }, [ state.isOpen ])
-
   const {
     groupProps,
     startFieldProps,
@@ -171,6 +167,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       isInvalid,
       startName: props.startName,
       endName: props.endName,
+      'aria-label': 'Date range picker',
     },
     state,
     ref
@@ -179,7 +176,6 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
   const togglePopup = () => state.setOpen(!state.isOpen)
 
   const handleClose = () => {
-    onChangeCallback(savedDateRange)
     state.setOpen(false)
   }
 
@@ -201,14 +197,12 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     />
   )
 
-  const isCurrentDateSaved = isDatesEqual(value, savedDateRange)
-
-  const isCurrentDateDefault = isDatesEqual(value, defaultDateRange)
-
-  const cancelDateChange = () => {
+  const cancelOrResetDateChange = () => {
     if (onCancelChanges) {
+      if (!isNil(savedDateRange)) onChangeCallback(savedDateRange)
       onCancelChanges()
     } else {
+      if (!isNil(defaultDateRange)) onChangeCallback(defaultDateRange)
       resetDate()
     }
   }
@@ -218,13 +212,31 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     handleClose()
   }
 
-  const shouldShowResetButton = !state.isOpen && isCurrentDateSaved && !isCurrentDateDefault
-  const shouldShowSaveAndCancelButtons = !state.isOpen && !isCurrentDateSaved
+  const handleModalClose = () => {
+    if (!isNil(savedDateRange)) onChangeCallback(savedDateRange)
+    handleClose()
+  }
+
+  // If savedDateRange is null, we consider value saved
+  const isCurrentDateSaved =
+    isNil(savedDateRange) || isDatesEqual(value, savedDateRange)
+
+  // If defaultDateRange is null, we consider value resettable
+  const isDateResettable =
+    isNil(defaultDateRange) || !isDatesEqual(value, defaultDateRange)
+
+  const canShowSaveAndCancelButtons = !isNil(savedDateRange) && !isNil(defaultDateRange)
+
+  const shouldShowResetButton =
+    !state.isOpen && isCurrentDateSaved && isDateResettable
+
+  const shouldShowSaveAndCancelButtons =
+    canShowSaveAndCancelButtons && !state.isOpen && !isCurrentDateSaved
 
   return (
     <Popover
       isOpen={ state.isOpen }
-      onClose={ handleClose }
+      onClose={ handleModalClose }
       placement="bottom-start"
     >
       <PopoverAnchor>
@@ -254,23 +266,28 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
           ) }
           { shouldShowSaveAndCancelButtons && (
             <>
-              <IconButton
-                aria-label="cancel-date-change"
-                variant="ghost"
-                size="sm"
-                fontSize="xs"
-                onClick={ cancelDateChange }
-                isDisabled={ isDisabled }
-                icon={ <Icon as={ XCloseSolid } /> }
-              />
-              <IconButton
-                aria-label="save-date"
-                variant="brand"
-                size="sm"
-                fontSize="xs"
-                onClick={ handleSave }
-                icon={ <Icon as={ CheckSolid } /> }
-              />
+              <Tooltip label={ clearButtonLabel }>
+                <IconButton
+                  aria-label="cancel-date-change"
+                  variant="ghost"
+                  size="sm"
+                  fontSize="xs"
+                  onClick={ onCancelChanges }
+                  isDisabled={ isDisabled }
+                  icon={ <Icon as={ XCloseSolid } /> }
+                />
+              </Tooltip>
+              <Tooltip label={ buttonLabel }>
+                <IconButton
+                  aria-label="save-date"
+                  variant="brand"
+                  size="sm"
+                  fontSize="xs"
+                  onClick={ handleSave }
+                  isDisabled={ isDisabled }
+                  icon={ <Icon as={ CheckSolid } /> }
+                />
+              </Tooltip>
             </>
           ) }
         </HStack>
@@ -282,14 +299,13 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
               <DatePickerLocaleWrapper firstDayOfWeek={ firstDayOfWeek }>
                 <RangeCalendar
                   { ...calendarProps }
-                  resetDate={ resetDate }
+                  resetDate={ cancelOrResetDateChange }
                   handleClose={ handleClose }
                   fiscalStartMonth={ fiscalStartMonth || 0 }
                   fiscalStartDay={ fiscalStartDay || 0 }
                   isClearable={ isClearable }
                   firstDayOfWeek={ firstDayOfWeek }
                   onSave={ onSave }
-                  onCancel={ onCancelChanges }
                   clearButtonLabel={ clearButtonLabel }
                   buttonLabel={ buttonLabel }
                 />
