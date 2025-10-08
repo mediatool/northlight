@@ -113,6 +113,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     savedDateRange = value,
     defaultDateRange = value,
     CustomResetButton,
+    onCancelChanges,
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -205,7 +206,11 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
   const isCurrentDateDefault = isDatesEqual(value, defaultDateRange)
 
   const cancelDateChange = () => {
-    onChangeCallback(savedDateRange)
+    if (onCancelChanges) {
+      onCancelChanges()
+    } else {
+      resetDate()
+    }
   }
 
   const handleSave = () => {
@@ -284,7 +289,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                   isClearable={ isClearable }
                   firstDayOfWeek={ firstDayOfWeek }
                   onSave={ onSave }
-                  onCancel={ cancelDateChange }
+                  onCancel={ onCancelChanges }
                   clearButtonLabel={ clearButtonLabel }
                   buttonLabel={ buttonLabel }
                 />
