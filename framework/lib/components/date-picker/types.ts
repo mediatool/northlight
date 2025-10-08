@@ -34,7 +34,14 @@ export interface DatePickerProps
 export interface DateRangePickerProps
   extends Omit<AriaDateRangePickerProps<DateValue>, 'firstDayOfWeek' | 'onChange' | 'value' | 'minValue' | 'maxValue'>,
   DatePickerSettings {
+  /**
+   * Function to be called when the user changes the date, both in
+   * the modal and the input field.
+   */
   onChange?: (date: null | DateRange) => void
+  /**
+   * Function to be called when the user saves the date change.
+   */
   onSave?: () => void
   value: DateRange | null
   minValue?: string | undefined
@@ -42,12 +49,36 @@ export interface DateRangePickerProps
   fiscalStartMonth?: number
   fiscalStartDay?: number
   renderInPortal?: boolean
+  /**
+   * Label for the save button in the date range picker modal
+   */
   buttonLabel?: string
-  setIsOpen?: (isOpen: boolean) => void
+  /**
+   * The previously saved date range used for save/cancel functionality.
+   * When provided along with defaultDateRange, enables save and cancel buttons that appear
+   * when the current value differs from the saved value. The component will revert to this
+   * value when the popover is closed without saving or when cancel is clicked.
+   */
   savedDateRange?: DateRange | null
+  /**
+   * The default date range to set when the input is cleared.
+   * When provided, the clear button will be shown next to the input field when
+   * modal is closed if the current value differs from the default value.
+   * If not provided, the clear button will always be shown when modal is closed.
+   */
   defaultDateRange?: DateRange | null
+  /**
+   * Custom reset button to be shown next to the input field when modal is closed.
+   * If not provided, the default clear button will be shown.
+   */
   CustomResetButton?: React.ReactNode
+  /**
+   * Custom label for the clear button in the date range picker modal
+   */
   clearButtonLabel?: string
+  /**
+   * Function to be called when the user cancels the date change
+   */
   onCancelChanges?: () => void
 }
 
