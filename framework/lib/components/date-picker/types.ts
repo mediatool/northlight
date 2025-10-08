@@ -48,6 +48,7 @@ export interface DateRangePickerProps
   defaultDateRange?: DateRange | null
   CustomResetButton?: React.ReactNode
   clearButtonLabel?: string
+  onCancelChanges?: () => void
 }
 
 export interface DatePickerFieldProps
