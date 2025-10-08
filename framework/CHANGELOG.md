@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.38.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.38.0...@northlight/ui@2.38.1) (2025-10-08)
+
+
+### Bug Fixes
+
+* **framework:** add onCancelChanges prop to date range picker ([ae36a2b](https://github.com/mediatool/northlight/commit/ae36a2be748d06632f53175681bb77dd200c6c07))
+
+
+
+
+
 # [2.38.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.37.0...@northlight/ui@2.38.0) (2025-10-08)
 
 
