@@ -3,14 +3,14 @@ import { FocusScope } from '@react-aria/focus'
 import { useDateRangePickerState } from '@react-stately/datepicker'
 import { useDateRangePicker } from '@react-aria/datepicker'
 import { useMultiStyleConfig, useOutsideClick } from '@chakra-ui/react'
-import { XCloseSolid } from '@northlight/icons'
+import { CheckSolid, XCloseSolid } from '@northlight/icons'
 import { identity, isNil } from 'ramda'
 import { DateValue, parseDate } from '@internationalized/date'
 import { DateRange } from '@react-types/datepicker'
+import { DateRangePickerProps, DateRange as NorthlightDateRange } from '../types'
 import { RangeCalendar } from '../components/calendar/quick-navigation'
 import { P } from '../../typography'
 import { HStack } from '../../stack'
-import { DateRangePickerProps } from '../types'
 import { Popover, PopoverAnchor, PopoverContent } from '../../popover'
 import { Portal } from '../../portal'
 import { DateField, StyledField, Trigger } from '../components/date-field'
@@ -37,6 +37,11 @@ const PortalWrapper = ({
   }
   return <>{ children }</>
 }
+
+const isDatesEqual = (
+  date1: NorthlightDateRange | null,
+  date2: NorthlightDateRange | null
+) => date1?.startDate === date2?.startDate && date1?.endDate === date2?.endDate
 
 /**
  * Popover to choose date range on format {startDate:' yyyy-mm-dd', endDate: 'yyyy-mm-dd'}
@@ -103,7 +108,11 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     firstDayOfWeek,
     onSave,
     buttonLabel = 'Save',
+    clearButtonLabel = 'Clear',
     setIsOpen = () => {},
+    savedDateRange = value,
+    defaultDateRange = value,
+    CustomResetButton,
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -119,8 +128,15 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     maxValue: isNil(maxValue) ? undefined : (parseDate(maxValue) as DateValue),
   }
   const state = useDateRangePickerState({
-    ...props,
-    ...parsedProps,
+    value: parsedProps.value,
+    onChange: parsedProps.onChange,
+    minValue: parsedProps.minValue,
+    maxValue: parsedProps.maxValue,
+    isDisabled,
+    isInvalid,
+    placeholderValue: props.placeholderValue,
+    isDateUnavailable: props.isDateUnavailable,
+    allowsNonContiguousRanges: props.allowsNonContiguousRanges,
     shouldCloseOnSelect: false,
     hideTimeZone: true,
   })
@@ -138,9 +154,22 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     calendarProps,
   } = useDateRangePicker(
     {
-      ...props,
-      ...parsedProps,
+      onChange: (date: DateRange) => {
+        onChangeCallback({
+          startDate: date?.start.toString(),
+          endDate: date?.end.toString(),
+        })
+      },
+      value: parseValue(value) as { start: DateValue, end: DateValue },
       minValue: parsedProps.minValue || parseDate('1994-03-08'),
+      maxValue: parsedProps.maxValue,
+      placeholderValue: props.placeholderValue,
+      isDateUnavailable: props.isDateUnavailable,
+      allowsNonContiguousRanges: props.allowsNonContiguousRanges,
+      isDisabled,
+      isInvalid,
+      startName: props.startName,
+      endName: props.endName,
     },
     state,
     ref
@@ -149,6 +178,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
   const togglePopup = () => state.setOpen(!state.isOpen)
 
   const handleClose = () => {
+    onChangeCallback(savedDateRange)
     state.setOpen(false)
   }
 
@@ -156,6 +186,35 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     ref,
     handler: () => state.setOpen(false),
   })
+
+  const ResetButton = CustomResetButton || (
+    <IconButton
+      aria-label="reset-date"
+      variant="danger"
+      size="sm"
+      fontSize="xs"
+      hidden={ !isClearable }
+      isDisabled={ isDisabled }
+      onClick={ resetDate }
+      icon={ <Icon as={ XCloseSolid } /> }
+    />
+  )
+
+  const isCurrentDateSaved = isDatesEqual(value, savedDateRange)
+
+  const isCurrentDateDefault = isDatesEqual(value, defaultDateRange)
+
+  const cancelDateChange = () => {
+    onChangeCallback(savedDateRange)
+  }
+
+  const handleSave = () => {
+    onSave?.()
+    handleClose()
+  }
+
+  const shouldShowResetButton = !state.isOpen && isCurrentDateSaved && !isCurrentDateDefault
+  const shouldShowSaveAndCancelButtons = !state.isOpen && !isCurrentDateSaved
 
   return (
     <Popover
@@ -185,16 +244,30 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
               />
             </InputRightElement>
           </InputGroup>
-          <IconButton
-            aria-label="reset-date"
-            variant="danger"
-            size="sm"
-            fontSize="xs"
-            onClick={ resetDate }
-            hidden={ !isClearable }
-            isDisabled={ isDisabled }
-            icon={ <Icon as={ XCloseSolid } /> }
-          />
+          { shouldShowResetButton && (
+            ResetButton
+          ) }
+          { shouldShowSaveAndCancelButtons && (
+            <>
+              <IconButton
+                aria-label="cancel-date-change"
+                variant="ghost"
+                size="sm"
+                fontSize="xs"
+                onClick={ cancelDateChange }
+                isDisabled={ isDisabled }
+                icon={ <Icon as={ XCloseSolid } /> }
+              />
+              <IconButton
+                aria-label="save-date"
+                variant="brand"
+                size="sm"
+                fontSize="xs"
+                onClick={ handleSave }
+                icon={ <Icon as={ CheckSolid } /> }
+              />
+            </>
+          ) }
         </HStack>
       </PopoverAnchor>
       <PortalWrapper renderInPortal={ renderInPortal }>
@@ -211,6 +284,8 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                   isClearable={ isClearable }
                   firstDayOfWeek={ firstDayOfWeek }
                   onSave={ onSave }
+                  onCancel={ cancelDateChange }
+                  clearButtonLabel={ clearButtonLabel }
                   buttonLabel={ buttonLabel }
                 />
               </DatePickerLocaleWrapper>

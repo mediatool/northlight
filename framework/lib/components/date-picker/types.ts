@@ -44,6 +44,10 @@ export interface DateRangePickerProps
   renderInPortal?: boolean
   buttonLabel?: string
   setIsOpen?: (isOpen: boolean) => void
+  savedDateRange?: DateRange | null
+  defaultDateRange?: DateRange | null
+  CustomResetButton?: React.ReactNode
+  clearButtonLabel?: string
 }
 
 export interface DatePickerFieldProps
