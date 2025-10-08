@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Button, InputRightElement, useDisclosure } from '@chakra-ui/react'
-import { is } from 'ramda'
-import { ComboPickerOption, ComboPickerProps, ComboPickerValue } from './types'
+import { Button, InputGroup, InputRightElement, useDisclosure } from '@chakra-ui/react'
+import { ComboPickerOption, ComboPickerProps } from './types'
 import { Select, SingleValue } from '../select'
 import { Box } from '../box'
 import { FormattedNumberInput } from '../text-field'
@@ -20,30 +19,19 @@ export const ComboPicker = ({
   formatPreset,
   isDisabled,
   isReadOnly,
-  defaultToZeroIfEmpty = true,
   max = Infinity,
   min = -Infinity,
   ...rest
 }: ComboPickerProps) => {
   const { isOpen, onToggle, onClose } = useDisclosure()
-  const [ inputValue, setInputValue ] = useState(valueProp?.input)
-  const [ selectOption, setSelectOption ] = useState(valueProp?.option)
+  const { input: inputValue, option: selectOption } = valueProp
   const [ enableSelectInput, setEnableSelectInput ] = useState(false)
 
   const buttonRef = useRef<any>()
   const selectRef = useRef<any>()
 
-  const getNewValue = (option?: ComboPickerOption, input?: number): ComboPickerValue => {
-    const newValueOption = option ?? options[0]
-
-    return (is(Number, input))
-      ? { input: Number(input), option: newValueOption }
-      : { option: newValueOption }
-  }
-
   const handleInputChange = (newInputvalue?: number) => {
-    const newValue = getNewValue(valueProp?.option, newInputvalue)
-
+    const newValue = { ...valueProp, input: newInputvalue }
     onChange?.(newValue)
   }
 
@@ -58,7 +46,8 @@ export const ComboPicker = ({
 
   const handleSelectChange = (selectedOption: SingleValue<ComboPickerOption>) => {
     if (selectedOption) {
-      onChange?.(getNewValue(selectedOption, valueProp?.input))
+      const newValue = { ...valueProp, option: selectedOption }
+      onChange?.(newValue)
 
       if (isOpen) {
         handleSelectClose()
@@ -80,20 +69,10 @@ export const ComboPicker = ({
     }
   }, [ enableSelectInput ])
 
-  useEffect(() => {
-    const option = valueProp?.option ?? options[0]
-    const input = defaultToZeroIfEmpty ? valueProp?.input ?? 0 : valueProp?.input
-
-    setSelectOption(option)
-    setInputValue(input)
-
-    onChange?.(getNewValue(option, input))
-  }, [ valueProp?.input, valueProp?.option, defaultToZeroIfEmpty, options ])
-
   const buttonWidth = (buttonRef.current?.offsetWidth ?? 0)
 
   return (
-    <>
+    <InputGroup>
       <FormattedNumberInput
         width="100%"
         onChange={ (values) => handleInputChange(values.floatValue) }
@@ -160,6 +139,6 @@ export const ComboPicker = ({
           </Box>
         )
       }
-    </>
+    </InputGroup>
   )
 }

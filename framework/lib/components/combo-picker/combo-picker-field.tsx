@@ -82,7 +82,7 @@ export const ComboPickerField = ({
     isRequired={ isRequired }
     validate={ validate }
   >
-    { ({ value, onChange }) => (
+    { ({ onChange }) => (
       <ComboPicker
         data-testid="combo-picker-test-id"
         aria-label={ label }
@@ -90,7 +90,6 @@ export const ComboPickerField = ({
           onChange(comboPickerValue)
           onChangeCallback?.(comboPickerValue)
         } }
-        value={ value }
         { ...rest }
       />
     ) }
