@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.38.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.37.0...@northlight/ui@2.38.0) (2025-10-08)
+
+
+### Features
+
+* **framework:** daterangepicker can now save, cancel ([6d48668](https://github.com/mediatool/northlight/commit/6d48668407c741ac587d25f1238393e9f5f89a50))
+
+
+
+
+
 # [2.37.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.36.12...@northlight/ui@2.37.0) (2025-10-07)
 
 
