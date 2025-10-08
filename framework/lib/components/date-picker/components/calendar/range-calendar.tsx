@@ -35,6 +35,8 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
     firstDayOfWeek,
     onSave,
     buttonLabel = 'Save',
+    clearButtonLabel = 'Clear',
+    onCancel,
   } = props
 
   const { locale } = useLocale()
@@ -70,6 +72,15 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
     locale,
     createCalendar: () => new GregorianCalendar(),
   })
+
+  const handleOnReset = () => {
+    if (onCancel) {
+      onCancel()
+    } else {
+      resetDate()
+    }
+    handleClose()
+  }
 
   const focusDateRange = (dateRange: DateRangeValue) => {
     if (dateRange && dateRange.start && dateRange.end) {
@@ -129,8 +140,8 @@ export const RangeCalendar = (props: RangeCalendarProps) => {
                 </Stack>
                 <HStack pt="2" alignSelf="end">
                   { isClearable && (
-                    <Button onClick={ resetDate } variant="ghost" size="sm">
-                      Clear
+                    <Button onClick={ handleOnReset } variant="ghost" size="sm">
+                      { clearButtonLabel }
                     </Button>
                   ) }
                   <Button variant="brand" onClick={ handleSave } size="sm">

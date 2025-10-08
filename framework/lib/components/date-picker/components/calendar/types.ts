@@ -11,6 +11,8 @@ export interface RangeCalendarProps extends AriaRangeCalendarProps<DateValue> {
   firstDayOfWeek: FirstDayOfWeek
   onSave?: () => void
   buttonLabel?: string
+  onCancel?: () => void
+  clearButtonLabel?: string
 }
 
 export interface CalendarProps extends AriaCalendarProps<DateValue> {
