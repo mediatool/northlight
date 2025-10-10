@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.38.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.38.1...@northlight/ui@2.38.2) (2025-10-10)
+
+
+### Bug Fixes
+
+* **framework:** add null check to savedDateRange and defaultDateRange ([76f0765](https://github.com/mediatool/northlight/commit/76f076517d6c3d0a8bef4b8d414a25dcff7385fd))
+
+
+
+
+
 ## [2.38.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.38.0...@northlight/ui@2.38.1) (2025-10-08)
 
 
