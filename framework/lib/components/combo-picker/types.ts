@@ -14,14 +14,13 @@ export type ComboPickerOption = {
 
 export interface ComboPickerProps extends Omit<FormattedNumberInputProps, | 'value' | 'onChange'> {
   options: ComboPickerOption[]
-  value?: ComboPickerValue
+  value: ComboPickerValue
   onChange?: (value: ComboPickerValue) => void
   defaultOption?: ComboPickerOption
   precision?: number
   formatPreset?: FormattedNumberInputPreset
   isDisabled?: boolean
   isReadOnly?: boolean
-  defaultToZeroIfEmpty?: boolean
 }
 
 export interface ComboPickerFieldProps extends ComboPickerProps {
