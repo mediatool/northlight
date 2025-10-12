@@ -66,7 +66,7 @@ export const ColorPicker = ({
     trigger,
     heading,
   } = useMultiStyleConfig('ColorPicker', { selectedColor, size })
-  const parsedValue = value && useToken('colors', value)
+  const parsedValue = useToken('colors', value ?? '')
 
   const baseColors = [ ...colors ]
   for (let i = 0; i < baseColors.length % columns; i += 1) {
