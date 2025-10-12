@@ -15,8 +15,10 @@ export const ColorButton = forwardRef(({
   size,
   selected = false,
 }: ColorButtonProps, ref: any) => {
-  if (!color) return <Box />
   const { defaultArrows, focusPrevious, focusNext } = useArrowFocus(columns)
+  const { colorButton } = useMultiStyleConfig('ColorPicker', { size })
+
+  if (!color) return <Box />
 
   const onKeyDown = (e: any) => {
     switch (e.key) {
@@ -33,8 +35,6 @@ export const ColorButton = forwardRef(({
         break
     }
   }
-
-  const { colorButton } = useMultiStyleConfig('ColorPicker', { size })
 
   return (
     <IconButton

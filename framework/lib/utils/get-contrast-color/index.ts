@@ -9,17 +9,21 @@ function safeUseToken (tokenOrValue: string): string {
   }
 }
 
-export const getContrastColor = (color: string) => {
-  const textDefault = useToken('colors', 'text.default') // dark
-  const textInverted = useToken('colors', 'text.inverted') // light
+type GetContrastColorProps = {
+  color: string
+  textDefault: string
+  textInverted: string
 
-  const normalized = typeof color === 'string' ? color.trim() : (color as unknown as string)
+}
+
+export const getContrastColor = ({ color, textDefault, textInverted }: GetContrastColorProps) => {
+  const trimmedColor = color.trim()
 
   // If a concrete hex is passed, use it directly; else try token resolution.
-  const isHex = /^#?[0-9a-f]{3}([0-9a-f]{3})?$/i.test(normalized)
+  const isHex = /^#?[0-9a-f]{3}([0-9a-f]{3})?$/i.test(trimmedColor)
   const bgResolved = isHex
-    ? (normalized[0] === '#' ? normalized : `#${normalized}`)
-    : safeUseToken(normalized)
+    ? (trimmedColor[0] === '#' ? trimmedColor : `#${trimmedColor}`)
+    : safeUseToken(trimmedColor)
 
   const lInverted = luminosity(textInverted)
   const lDefault = luminosity(textDefault)
