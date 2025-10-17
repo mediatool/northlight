@@ -80,6 +80,7 @@ export interface DateRangePickerProps
    * Function to be called when the user cancels the date change
    */
   onCancelChanges?: () => void
+  'data-testid'?: string
 }
 
 export interface DatePickerFieldProps

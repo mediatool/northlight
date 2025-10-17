@@ -114,6 +114,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     defaultDateRange,
     CustomResetButton,
     onCancelChanges,
+    'data-testid': dataTestId,
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -168,6 +169,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       startName: props.startName,
       endName: props.endName,
       'aria-label': 'Date range picker',
+      ...(!isNil(dataTestId) && { 'data-testid': dataTestId }),
     },
     state,
     ref
