@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.38.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.38.2...@northlight/ui@2.38.3) (2025-10-17)
+
+
+### Bug Fixes
+
+* **framework:** add data-testid to DateRangePicker ([6cf2be1](https://github.com/mediatool/northlight/commit/6cf2be14d2cd25b3e1f6e64ee798fb120522f8ae))
+
+
+
+
+
 ## [2.38.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.38.1...@northlight/ui@2.38.2) (2025-10-10)
 
 
