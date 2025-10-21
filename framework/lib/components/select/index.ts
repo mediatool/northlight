@@ -8,5 +8,6 @@ export {
 
 export * from './select'
 export * from './select-field'
+export * from './sortable-select'
 export * from './types'
 export * from './get-matching-value'
