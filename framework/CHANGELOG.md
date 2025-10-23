@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.39.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.38.3...@northlight/ui@2.39.0) (2025-10-23)
+
+
+### Features
+
+* **northlight:** add sortable select component ([97960be](https://github.com/mediatool/northlight/commit/97960bef8651c6922af17f8d3a9f3f312c9c953a))
+
+
+
+
+
 ## [2.38.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.38.2...@northlight/ui@2.38.3) (2025-10-17)
 
 
