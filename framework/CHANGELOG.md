@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.39.0...@northlight/ui@2.39.1) (2025-10-27)
+
+
+### Bug Fixes
+
+* **framework:** handle default open state for date range picker ([a6b8135](https://github.com/mediatool/northlight/commit/a6b81357b48735b428ea130cbf95b1a204bfc472))
+
+
+
+
+
 # [2.39.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.38.3...@northlight/ui@2.39.0) (2025-10-23)
 
 
