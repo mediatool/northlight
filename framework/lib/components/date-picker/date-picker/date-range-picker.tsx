@@ -115,6 +115,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     CustomResetButton,
     onCancelChanges,
     'data-testid': dataTestId,
+    defaultOpen = false,
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -141,6 +142,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     allowsNonContiguousRanges: props.allowsNonContiguousRanges,
     shouldCloseOnSelect: false,
     hideTimeZone: true,
+    defaultOpen,
   })
 
   const {
@@ -302,7 +304,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                 <RangeCalendar
                   { ...calendarProps }
                   resetDate={ cancelOrResetDateChange }
-                  handleClose={ handleClose }
+                  handleClose={ handleModalClose }
                   fiscalStartMonth={ fiscalStartMonth || 0 }
                   fiscalStartDay={ fiscalStartDay || 0 }
                   isClearable={ isClearable }
