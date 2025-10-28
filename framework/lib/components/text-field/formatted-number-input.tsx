@@ -1,5 +1,5 @@
 import React, { ComponentType, useEffect } from 'react'
-import { identity, isNil } from 'ramda'
+import { defaultTo, identity, isNil } from 'ramda'
 import {
   InputAttributes,
   NumberFormatValues,
@@ -7,7 +7,7 @@ import {
   SourceInfo,
   numericFormatter,
 } from 'react-number-format'
-import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
+import { InputGroupWrapper } from '../../internal-components'
 import { Input } from '../input'
 import {
   FormattedNumberInputPreset,
@@ -77,7 +77,7 @@ export const FormattedNumberInput = ({
   isPercentage = false,
   onChange = identity,
   value: valueProp,
-  numberOfDecimals = 2,
+  numberOfDecimals,
   max = Infinity,
   min = -Infinity,
   inputLeftElement,
@@ -89,6 +89,8 @@ export const FormattedNumberInput = ({
 
   const value = valueProp ?? ''
 
+  const defaultNumberOfDecimals = defaultTo(2, numberOfDecimals)
+
   const getNumberFormatValues = (number: number) => ({
     floatValue: number,
     formattedValue: numericFormatter(number.toString(), props),
@@ -98,13 +100,17 @@ export const FormattedNumberInput = ({
   const validateRange = () => {
     if (isNil(value)) return
     const vNum = typeof value === 'string' ? parseFloat(value) : value
+    if (isNil(numberOfDecimals) && !isPercentage) {
+      onChange(getNumberFormatValues(vNum))
+      return
+    }
     const factor = isPercentage ? 100 : 1
     if (vNum * factor > max) {
-      const newValue = roundToPrecision(max / factor, numberOfDecimals)
+      const newValue = roundToPrecision(max / factor, defaultNumberOfDecimals)
       onChange(getNumberFormatValues(newValue))
     }
     if (vNum * factor < min) {
-      const newValue = roundToPrecision(min / factor, numberOfDecimals)
+      const newValue = roundToPrecision(min / factor, defaultNumberOfDecimals)
       onChange(getNumberFormatValues(newValue))
     }
   }
@@ -115,7 +121,7 @@ export const FormattedNumberInput = ({
   ) => {
     const newFloatValue =
       values.floatValue && isPercentage
-        ? roundToPrecision(values.floatValue / 100, numberOfDecimals)
+        ? roundToPrecision(values.floatValue / 100, defaultNumberOfDecimals)
         : values.floatValue
     onChange(
       {
@@ -146,7 +152,7 @@ export const FormattedNumberInput = ({
         decimalScale={ numberOfDecimals }
         value={
           isPercentage
-            ? roundToPrecision(parseFloat(`${value ?? 0}`) * 100, numberOfDecimals)
+            ? roundToPrecision(parseFloat(`${value ?? 0}`) * 100, defaultNumberOfDecimals)
             : value
         }
         suffix={ isPercentage ? '%' : '' }
