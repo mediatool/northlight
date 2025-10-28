@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.39.1...@northlight/ui@2.39.2) (2025-10-28)
+
+
+### Bug Fixes
+
+* **framework:** fix numberOfDecimals in FormattedNumberInput ([925fc5c](https://github.com/mediatool/northlight/commit/925fc5cf61560df05af451260184b3cda5743c6c))
+
+
+
+
+
 ## [2.39.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.39.0...@northlight/ui@2.39.1) (2025-10-27)
 
 
