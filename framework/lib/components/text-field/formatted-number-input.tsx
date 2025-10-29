@@ -1,5 +1,5 @@
 import React, { ComponentType, useEffect } from 'react'
-import { defaultTo, identity, isNil } from 'ramda'
+import { defaultTo, identity, isEmpty, isNil } from 'ramda'
 import {
   InputAttributes,
   NumberFormatValues,
@@ -98,12 +98,15 @@ export const FormattedNumberInput = ({
   })
 
   const validateRange = () => {
-    if (isNil(value)) return
+    if (isNil(value) || isEmpty(value)) return
+
     const vNum = typeof value === 'string' ? parseFloat(value) : value
+
     if (isNil(numberOfDecimals) && !isPercentage) {
       onChange(getNumberFormatValues(vNum))
       return
     }
+
     const factor = isPercentage ? 100 : 1
     if (vNum * factor > max) {
       const newValue = roundToPrecision(max / factor, defaultNumberOfDecimals)
