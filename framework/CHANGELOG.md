@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.39.2...@northlight/ui@2.39.3) (2025-10-29)
+
+
+### Bug Fixes
+
+* **framework:** handle empty string on clear ([e43e80b](https://github.com/mediatool/northlight/commit/e43e80ba35d2c90d46f984870618b3941da0cae4))
+
+
+
+
+
 ## [2.39.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.39.1...@northlight/ui@2.39.2) (2025-10-28)
 
 
