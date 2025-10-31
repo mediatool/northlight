@@ -1,9 +1,12 @@
 import React, { forwardRef, useMemo, useState } from 'react'
 import {
+  ActionMeta,
   AsyncSelect,
   GroupBase,
   InputActionMeta,
+  MultiValue,
   SelectInstance,
+  SingleValue,
 } from 'chakra-react-select'
 import { filter, identity, is, test, toLower } from 'ramda'
 import { SearchDuo } from '@northlight/icons'
@@ -32,6 +35,7 @@ export const SearchBar = forwardRef(
     value,
     onSearchInputChange = identity,
     icon = SearchDuo,
+    displayLimit,
     ...rest
   }: SearchBarProps<T, K>,
     ref: React.Ref<SelectInstance<T, K, GroupBase<T>>>
@@ -43,7 +47,10 @@ export const SearchBar = forwardRef(
       [ debouncedWaitTime ]
     )
     const handleChange = useSelectCallbacks<T, K>({
-      onChange,
+      onChange: onChange as (
+        val: MultiValue<T> | SingleValue<T>,
+        event: ActionMeta<T>
+      ) => void,
       onAdd,
       onRemove,
       isMulti,
@@ -51,8 +58,11 @@ export const SearchBar = forwardRef(
     })
 
     const customComponents = useMemo(
-      () => getComponents<T>(),
-      []
+      () => getComponents<T>({
+        components: undefined,
+        displayLimit,
+      }),
+      [ displayLimit ]
     )
 
     const simpleFilter = (query: string) => {
