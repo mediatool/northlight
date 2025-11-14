@@ -116,6 +116,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     onCancelChanges,
     'data-testid': dataTestId,
     defaultOpen = false,
+    onOpenChange,
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const { group } = useMultiStyleConfig('DatePicker')
@@ -143,6 +144,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     shouldCloseOnSelect: false,
     hideTimeZone: true,
     defaultOpen,
+    onOpenChange,
   })
 
   const {
