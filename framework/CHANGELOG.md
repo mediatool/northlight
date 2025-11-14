@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.39.3...@northlight/ui@2.39.4) (2025-11-14)
+
+
+### Bug Fixes
+
+* **framework:** add onOpenChange prop to date range picker ([ee84f1d](https://github.com/mediatool/northlight/commit/ee84f1de5d4b58e73d48888e606d3b6263d2d504))
+
+
+
+
+
 ## [2.39.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.39.2...@northlight/ui@2.39.3) (2025-10-29)
 
 
