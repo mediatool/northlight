@@ -12,6 +12,8 @@ import { getChildrenWithProps } from '../../utils'
 import { ResizeHandle } from '../resize-handle'
 import { VStack } from '../stack'
 
+const getPixelSize = (sizeToken: string) => parseFloat(sizeToken) * 16
+
 /**
  * Controllable Sidebar drawer
  * @see Slide
@@ -64,6 +66,22 @@ export const Toolbox = ({
   ...rest
 }: ToolboxProps) => {
   const { container } = useMultiStyleConfig('Toolbox', { size })
+
+  const defaultWidth = useToken('sizes', size)
+  const minWidth = useToken('sizes', 'sm')
+
+  const defaultWidthPx = getPixelSize(defaultWidth)
+  const minWidthPx = getPixelSize(minWidth)
+  const maxWidthPx =
+    resizeLimit === 'half' ? 0.5 * window.innerWidth : window.innerWidth
+
+  const { adjustableWidth, resizeProps } = useResizeWidth({
+    minWidthPx,
+    maxWidthPx,
+    defaultWidthPx,
+    stationaryEdge: direction,
+  })
+
   const newChildren = getChildrenWithProps(
     children,
     { onClose },
@@ -76,23 +94,6 @@ export const Toolbox = ({
       onClose?.()
     }
   }
-
-  const getPixelSize = (sizeToken: string) => {
-    const widthInRem = useToken('sizes', sizeToken)
-    return parseFloat(widthInRem) * 16
-  }
-
-  const defaultWidthPx = getPixelSize(size)
-  const minWidthPx = getPixelSize('sm')
-  const maxWidthPx =
-    resizeLimit === 'half' ? 0.5 * window.innerWidth : window.innerWidth
-
-  const { adjustableWidth, resizeProps } = useResizeWidth({
-    minWidthPx,
-    maxWidthPx,
-    defaultWidthPx,
-    stationaryEdge: direction,
-  })
 
   return (
     <Box

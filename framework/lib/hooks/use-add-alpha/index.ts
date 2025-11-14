@@ -1,6 +1,6 @@
 import { useToken } from '@chakra-ui/system'
 
-export const addAlpha = (color: string, alpha: number = 1) => {
+export const useAddAlpha = (color: string, alpha: number = 1) => {
   const colorInHex = useToken('colors', color)
 
   const limitAlpha = Math.min(Math.max(alpha, 0), 1)

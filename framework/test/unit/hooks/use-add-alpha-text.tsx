@@ -2,7 +2,7 @@ import React from 'react'
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
 import { render } from '@testing-library/react'
-import { MediatoolThemeProvider, VisuallyHidden, addAlpha, theme } from '../../../../lib'
+import { MediatoolThemeProvider, VisuallyHidden, theme, useAddAlpha } from '../../../lib'
 
 interface AlphaProps {
   color: string
@@ -11,7 +11,7 @@ interface AlphaProps {
 }
 
 const Alpha = ({ color, opacity, expectedResult }: AlphaProps) => {
-  const colorTest = addAlpha(color, opacity)
+  const colorTest = useAddAlpha(color, opacity)
   expect(colorTest).to.equal(expectedResult)
 
   return <VisuallyHidden />
