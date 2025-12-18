@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.6.5...@northlight/icons@1.7.0) (2025-12-18)
+
+
+### Features
+
+* **northlight:** sidebar icon ([fa9ef12](https://github.com/mediatool/northlight/commit/fa9ef120eed6a0137088a91bf09b617bc286ecff))
+
+
+
+
+
 ## [1.6.5](https://github.com/mediatool/northlight/compare/@northlight/icons@1.6.4...@northlight/icons@1.6.5) (2025-03-14)
 
 **Note:** Version bump only for package @northlight/icons
