@@ -92,6 +92,7 @@
     "chai": "^4.3.7",
     "esbuild": "^0.17.10",
     "eslint": "^8.37.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
     "global-jsdom": "^8.7.0",
     "jsdom": "^21.1.0",
     "mocha": "^10.2.0",
