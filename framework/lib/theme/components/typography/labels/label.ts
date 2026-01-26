@@ -4,8 +4,6 @@ import { merge } from 'ramda'
 export const Label: ComponentSingleStyleConfig = {
   baseStyle: ({ theme: { sizes: sizing }, sx }) => merge({
     color: 'inherit',
-    width: '100%',
-    maxWidth: '100%',
     marginBottom: sizing[0],
     marginInlineStart: sizing[0],
     marginEnd: sizing[0],
