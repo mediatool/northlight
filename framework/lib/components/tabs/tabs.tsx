@@ -29,7 +29,8 @@ import { TabsProps } from './types'
  * <br />
  * **Tabs** have three main variatns:
  * `rounded` (default) or no variant, `soft-rounded` and `line`. <br />
- * Also there are multiple sub-variants: `ai`, `enclosed`, `enclosed-colored` and `unstyled`
+ * Also there are multiple sub-variants: `ai`, `enclosed`,
+ * `enclosed-colored`, `unstyled` and `piped`.
  * <br />
  * <br />
  * tip: `enclosed` and `enclosed-colored` can be combined with the `colorScheme=""` prop.

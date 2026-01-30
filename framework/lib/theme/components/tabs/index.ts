@@ -77,5 +77,39 @@ export const Tabs: ComponentMultiStyleConfig = {
         },
       },
     }),
+    piped: ({ theme: { colors: color } }) => ({
+      tab: {
+        position: 'relative',
+        color: color.text.default,
+        paddingLeft: 4,
+        opacity: 0.5,
+        transition: 'opacity 0.2s ease-in-out',
+        _before: {
+          content: "''",
+          position: 'absolute',
+          left: 0,
+          top: '50%',
+          transform: 'translateY(-50%)',
+          width: '7px',
+          height: '70%',
+          borderRadius: 999,
+          bgColor: 'brand',
+        },
+        _selected: {
+          opacity: 1,
+          _hover: {
+            opacity: 1,
+          },
+        },
+        _hover: {
+          opacity: 0.7,
+        },
+        _focusVisible: {
+          ring: '2px',
+          ringColor: color.border.wcag,
+          ringOffset: '1px',
+        },
+      },
+    }),
   },
 }
