@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.40.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.39.5...@northlight/ui@2.40.0) (2026-02-03)
+
+
+### Features
+
+* **northlight:** new tabs variant ([85ce050](https://github.com/mediatool/northlight/commit/85ce0503302137e77c4a107f7749ecabbad4dab6))
+
+
+
+
+
 ## [2.39.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.39.4...@northlight/ui@2.39.5) (2025-12-18)
 
 **Note:** Version bump only for package @northlight/ui
