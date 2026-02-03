@@ -3567,7 +3567,7 @@
     "@react-types/shared" "^3.20.0"
     "@swc/helpers" "^0.5.0"
 
-"@react-aria/focus@^3.14.1":
+"@react-aria/focus@3.14.1", "@react-aria/focus@^3.14.1":
   version "3.14.1"
   resolved "https://registry.yarnpkg.com/@react-aria/focus/-/focus-3.14.1.tgz#f91733e158eed0fda4dd495511c8e4a7a7bcd998"
   integrity sha512-2oVJgn86Rt7xgbtLzVlrYb7MZHNMpyBVLMMGjWyvjH5Ier2bgZ6czJJmm18Xe4kjlDHN0dnFzBvoRoTCWkmivA==
