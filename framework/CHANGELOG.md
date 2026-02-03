@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.40.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.40.0...@northlight/ui@2.40.1) (2026-02-03)
+
+
+### Bug Fixes
+
+* **framework:** lock react-aria/focus 3.14.1 ([f24ca28](https://github.com/mediatool/northlight/commit/f24ca28c9d53685ba5c6feb897791a0cf540d93f))
+
+
+
+
+
 # [2.40.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.39.5...@northlight/ui@2.40.0) (2026-02-03)
 
 
