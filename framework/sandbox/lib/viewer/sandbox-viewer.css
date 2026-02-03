@@ -1,0 +1,328 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f8fafc;
+}
+
+.sandbox-viewer {
+  display: flex;
+  height: 100vh;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1e293b;
+}
+
+.sandbox-sidebar {
+  width: 220px;
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 20px 0;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.sandbox-search {
+  padding: 0 12px 16px;
+}
+
+.sandbox-search-input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #1e293b;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.sandbox-search-input::placeholder {
+  color: #94a3b8;
+}
+
+.sandbox-search-input:focus {
+  border-color: #7c3aed;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.sandbox-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #94a3b8;
+  padding: 0 20px 16px;
+  letter-spacing: 0.08em;
+}
+
+.sandbox-component {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #475569;
+  transition: all 0.15s ease;
+}
+
+.sandbox-component:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.sandbox-component.selected {
+  background: linear-gradient(to right, #ede9fe, #f1f5f9);
+  color: #6d28d9;
+  font-weight: 500;
+  border-left: 3px solid #7c3aed;
+  padding-left: 17px;
+}
+
+.sandbox-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.sandbox-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  min-height: 52px;
+  overflow-x: auto;
+  flex-wrap: wrap;
+}
+
+.sandbox-tab {
+  padding: 14px 16px;
+  min-width: 100px;
+  text-align: center;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: -1px;
+  transition: all 0.15s ease;
+  border-radius: 6px 6px 0 0;
+}
+
+.sandbox-tab:hover {
+  color: #475569;
+  background: #f8fafc;
+}
+
+.sandbox-tab.selected {
+  color: #7c3aed;
+  border-bottom-color: #7c3aed;
+  background: none;
+}
+
+.sandbox-play {
+  margin-left: auto;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(124, 58, 237, 0.2);
+}
+
+.sandbox-play:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+  box-shadow: 0 2px 4px rgba(124, 58, 237, 0.3);
+  transform: translateY(-1px);
+}
+
+.sandbox-play:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.sandbox-preview {
+  flex: 1;
+  padding: 32px;
+  overflow: auto;
+}
+
+.sandbox-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.sandbox-error-title {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.sandbox-error-message {
+  color: #b91c1c;
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  margin: 0 0 12px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #fecaca;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.sandbox-error-stack {
+  color: #6b7280;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  margin: 0;
+  padding: 12px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.sandbox-inline {
+  flex: 1;
+  padding: 24px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sandbox-inline-scenario {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sandbox-inline-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.sandbox-inline-preview {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.sandbox-play-slot {
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.sandbox-play-inline {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.15s ease;
+}
+
+.sandbox-play-inline:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+  transform: translateY(-1px);
+}
+
+.sandbox-play-inline:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.sandbox-play-inline.error {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.sandbox-play.error {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.sandbox-play.error:hover {
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+}
+
+.sandbox-play-error {
+  margin-top: 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.sandbox-play-error-title {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sandbox-play-error-title::before {
+  content: "✕";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: #dc2626;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.sandbox-play-error-message {
+  color: #b91c1c;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  margin: 0;
+  padding: 10px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #fecaca;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
