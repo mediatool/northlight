@@ -163,25 +163,25 @@ export const Form = forwardRef(<FormValues extends FieldValues>({
     return undefined
   }
 
+  const formMethods = useForm<FormValues>({
+    defaultValues: initialValues as DefaultValues<FormValues>,
+    resolver: getResolver(),
+    ...formSettings,
+  })
+
   const newMethods =
     methods ||
-    useForm<FormValues>({
-      defaultValues: initialValues as DefaultValues<FormValues>,
-      resolver: getResolver(),
-      ...formSettings,
-    })
+    formMethods
 
   useImperativeHandle(ref, always(newMethods), [])
+  const initalValuesImage = useRef({})
 
-  if (enableReinitialize) {
-    const initalValuesImage = useRef({})
-    useEffect(() => {
-      if (!equals(initalValuesImage.current, initialValues)) {
-        newMethods?.reset(initialValues)
-        initalValuesImage.current = initialValues
-      }
-    }, [ initialValues ])
-  }
+  useEffect(() => {
+    if (enableReinitialize && !equals(initalValuesImage.current, initialValues)) {
+      newMethods?.reset(initialValues)
+      initalValuesImage.current = initialValues
+    }
+  }, [ enableReinitialize, initialValues, newMethods ])
 
   const formatValues = (values: FormValues) => {
     if (!shouldTrim) {

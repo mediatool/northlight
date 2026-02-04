@@ -1,4 +1,4 @@
-import { ComponentMultiStyleConfig, useToken } from '@chakra-ui/react'
+import { ComponentMultiStyleConfig } from '@chakra-ui/react'
 import { getContrastColor } from '../../../utils'
 import { processColorSchemeBasedOnTheme } from '../../process-color-scheme-based-on-theme'
 
@@ -38,7 +38,7 @@ export const Tag: ComponentMultiStyleConfig = {
 
       const tagBgColor = typeof tagBgColorRaw === 'string' ? tagBgColorRaw.trim() : tagBgColorRaw
 
-      const tagColor = getContrastColor(useToken('colors', tagBgColor))
+      const tagColor = getContrastColor(currentTheme?.colors?.[tagBgColor])
 
       return {
         container: {
@@ -58,7 +58,7 @@ export const Tag: ComponentMultiStyleConfig = {
 
       const tagBgColor = typeof tagBgColorRaw === 'string' ? tagBgColorRaw.trim() : tagBgColorRaw
 
-      const tagColor = getContrastColor(useToken('colors', tagBgColor))
+      const tagColor = getContrastColor(currentTheme?.colors?.[tagBgColor])
 
       return {
         container: {

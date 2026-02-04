@@ -11,9 +11,6 @@ export const RangeCell = ({
   currentMonth,
   range,
 }: RangeCellProps) => {
-  const isOutsideMonth = !isSameMonth(currentMonth, date)
-  if (isOutsideMonth) return <chakra.td />
-
   const ref = useRef<HTMLButtonElement>(null)
   const {
     cellProps,
@@ -21,6 +18,10 @@ export const RangeCell = ({
     isSelected: baseIsSelected,
     formattedDate,
   } = useCalendarCell({ date }, state, ref)
+
+  const isOutsideMonth = !isSameMonth(currentMonth, date)
+
+  if (isOutsideMonth) return <chakra.td />
 
   const isToday = date.compare(today(state.timeZone)) === 0
 
