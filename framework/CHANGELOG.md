@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.41.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.41.0...@northlight/ui@2.41.1) (2026-02-05)
+
+
+### Bug Fixes
+
+* **ui:** includ lib folder in deployed package ([16f13cc](https://github.com/mediatool/northlight/commit/16f13cc396b3d2ff9c8fb52d0e45cbb5bf92a614))
+
+
+
+
+
 # [2.41.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.40.1...@northlight/ui@2.41.0) (2026-02-05)
 
 
