@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.42.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.42.0...@northlight/ui@2.42.1) (2026-02-05)
+
+
+### Bug Fixes
+
+* **ui:** fix sandbox import path ([f2e1deb](https://github.com/mediatool/northlight/commit/f2e1deb352718fc38088f106fcb3f9f76c037b41))
+
+
+
+
+
 # [2.42.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.41.1...@northlight/ui@2.42.0) (2026-02-05)
 
 
