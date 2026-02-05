@@ -64,7 +64,7 @@ async function main () {
             return `
               import { createElement } from 'react'
               import { createRoot } from 'react-dom/client'
-              import { SandboxViewer } from '${sandboxPackageDir}/lib/viewer/sandbox-viewer.tsx'
+              import { SandboxViewer } from '@northlight/ui/sandbox'
               import { scenarios } from '${absoluteScenariosPath}'
 
               const root = document.getElementById('root')
