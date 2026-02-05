@@ -21,6 +21,7 @@
   "types": "./dist/es/northlight.d.ts",
   "files": [
     "dist",
+    "lib",
     "sandbox"
   ],
   "scripts": {
