@@ -1,0 +1,4 @@
+{
+  "main": "./lib/index.ts",
+  "types": "./lib/index.ts"
+}
