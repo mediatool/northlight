@@ -86,14 +86,15 @@
     "react-virtualized-auto-sizer": "^1.0.20",
     "react-window": "^1.8.9",
     "sinon": "^15.2.0",
+    "@testing-library/dom": "^10.0.0",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "tsx": "^4.21.0",
     "vite": "^6.0.0",
     "yafu": "^2.1.4"
   },
   "devDependencies": {
     "@mediatool/frontend-tools": "^1.2.2",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/user-event": "^14.4.3",
     "@types/chai": "^4.3.4",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
