@@ -9,6 +9,7 @@ import {
   AlertTitle,
   Badge,
   Button,
+  Box,
   Card,
   CardBody,
   CardHeader,
@@ -16,9 +17,9 @@ import {
   DatePicker,
   Heading,
   Input,
-  SearchBar,
   Radio,
   RadioGroup,
+  SearchBar,
   Spinner,
   Stack,
   Switch,
@@ -104,29 +105,79 @@ function DatePickerWithState ({ defaultValue }: DatePickerWithStateProps) {
 const buttonScenarios: ComponentScenarios = {
   name: 'Button',
   component: Button,
-  inline: true,
   scenarios: [
-    { name: 'default', props: { children: 'Default Button' } },
-    { name: 'brand', props: { children: 'Brand Button', variant: 'brand' } },
-    { name: 'danger', props: { children: 'Danger Button', variant: 'danger' } },
-    { name: 'success', props: { children: 'Success Button', variant: 'success' } },
-    { name: 'ghost', props: { children: 'Ghost Button', variant: 'ghost' } },
-    { name: 'link', props: { children: 'Link Button', variant: 'link' } },
-    { name: 'loading', props: { children: 'Loading...', isLoading: true } },
-    { name: 'disabled', props: { children: 'Disabled', isDisabled: true } },
-    { name: 'click test', props: { children: 'Click Me' } },
+    {
+      name: 'default',
+      props: { children: 'Default Button' },
+      code: '<Button>Default Button</Button>',
+    },
+    {
+      name: 'brand',
+      props: { children: 'Brand Button', variant: 'brand' },
+      code: '<Button variant="brand">Brand Button</Button>',
+    },
+    {
+      name: 'danger',
+      props: { children: 'Danger Button', variant: 'danger' },
+      code: '<Button variant="danger">Danger Button</Button>',
+    },
+    {
+      name: 'success',
+      props: { children: 'Success Button', variant: 'success' },
+      code: '<Button variant="success">Success Button</Button>',
+    },
+    {
+      name: 'ghost',
+      props: { children: 'Ghost Button', variant: 'ghost' },
+      code: '<Button variant="ghost">Ghost Button</Button>',
+    },
+    {
+      name: 'link',
+      props: { children: 'Link Button', variant: 'link' },
+      code: '<Button variant="link">Link Button</Button>',
+    },
+    {
+      name: 'loading',
+      props: { children: 'Loading...', isLoading: true },
+      code: '<Button isLoading>Loading...</Button>',
+    },
+    {
+      name: 'disabled',
+      props: { children: 'Disabled', isDisabled: true },
+      code: '<Button isDisabled>Disabled</Button>',
+    },
+    {
+      name: 'click test',
+      props: { children: 'Click Me' },
+      code: '<Button onClick={() => alert("Clicked!")}>Click Me</Button>',
+    },
   ],
 }
 
 const buttonSizesScenarios: ComponentScenarios = {
   name: 'Button Sizes',
   component: Button,
-  inline: true,
   scenarios: [
-    { name: 'xs', props: { children: 'Extra Small', size: 'xs' } },
-    { name: 'sm', props: { children: 'Small', size: 'sm' } },
-    { name: 'md', props: { children: 'Medium', size: 'md' } },
-    { name: 'lg', props: { children: 'Large', size: 'lg' } },
+    {
+      name: 'xs',
+      props: { children: 'Extra Small', size: 'xs' },
+      code: '<Button size="xs">Extra Small</Button>',
+    },
+    {
+      name: 'sm',
+      props: { children: 'Small', size: 'sm' },
+      code: '<Button size="sm">Small</Button>',
+    },
+    {
+      name: 'md',
+      props: { children: 'Medium', size: 'md' },
+      code: '<Button size="md">Medium</Button>',
+    },
+    {
+      name: 'lg',
+      props: { children: 'Large', size: 'lg' },
+      code: '<Button size="lg">Large</Button>',
+    },
   ],
 }
 
@@ -306,34 +357,36 @@ const tabsScenarios: ComponentScenarios = {
       props: {
         variant: 'line',
         children: [
-          <TabList key="list">
-            <Tab>Overview</Tab>
-            <Tab>Settings</Tab>
-            <Tab>Activity</Tab>
-          </TabList>,
-          <TabPanels key="panels">
-            <TabPanel pt={ 4 }>
-              <Heading size="sm" mb={ 2 }>Welcome to the Overview</Heading>
-              <Text color="gray.600">
-                This panel shows your dashboard summary. You can view key metrics,
-                recent updates, and quick actions from here.
-              </Text>
-            </TabPanel>
-            <TabPanel pt={ 4 }>
-              <Heading size="sm" mb={ 2 }>Account Settings</Heading>
-              <Text color="gray.600">
-                Manage your preferences, notifications, and security options.
-                Changes are saved automatically.
-              </Text>
-            </TabPanel>
-            <TabPanel pt={ 4 }>
-              <Heading size="sm" mb={ 2 }>Recent Activity</Heading>
-              <Text color="gray.600">
-                Track your latest actions and events. Activity logs are kept
-                for 30 days.
-              </Text>
-            </TabPanel>
-          </TabPanels>,
+          <Box key="stack">
+            <TabList key="list">
+              <Tab>Overview</Tab>
+              <Tab>Settings</Tab>
+              <Tab>Activity</Tab>
+            </TabList>
+            <TabPanels key="panels">
+              <TabPanel pt={ 4 }>
+                <Heading size="sm" mb={ 2 }>Welcome to the Overview</Heading>
+                <Text color="gray.600">
+                  This panel shows your dashboard summary. You can view key metrics,
+                  recent updates, and quick actions from here.
+                </Text>
+              </TabPanel>
+              <TabPanel pt={ 4 }>
+                <Heading size="sm" mb={ 2 }>Account Settings</Heading>
+                <Text color="gray.600">
+                  Manage your preferences, notifications, and security options.
+                  Changes are saved automatically.
+                </Text>
+              </TabPanel>
+              <TabPanel pt={ 4 }>
+                <Heading size="sm" mb={ 2 }>Recent Activity</Heading>
+                <Text color="gray.600">
+                  Track your latest actions and events. Activity logs are kept
+                  for 30 days.
+                </Text>
+              </TabPanel>
+            </TabPanels>
+          </Box>,
         ],
       },
       play: async ({ screen, user }) => {
