@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.42.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.41.1...@northlight/ui@2.42.0) (2026-02-05)
+
+
+### Bug Fixes
+
+* **ui:** support moduleResolution node for sandbox import ([74cc7a2](https://github.com/mediatool/northlight/commit/74cc7a2c58e96a7c58c726168cacac73d5204880))
+* **ui:** upgrade testing-library for ESM compatibility ([04cce9c](https://github.com/mediatool/northlight/commit/04cce9c38e7cd0efea9d7f4de17b7d04c5806fa8))
+
+
+### Features
+
+* **ui:** redesign sandbox viewer with warm theme and modern layouts ([00651cc](https://github.com/mediatool/northlight/commit/00651cc4f588a9de4de94656e8dbf7ce0dda3b07))
+
+
+
+
+
 ## [2.41.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.41.0...@northlight/ui@2.41.1) (2026-02-05)
 
 
