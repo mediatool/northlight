@@ -3,9 +3,7 @@ import type userEvent from '@testing-library/user-event'
 import type { ComponentType } from 'react'
 
 type PlayContext = {
-  /** Queries scoped to the scenario container - use for non-portaled content */
   screen: ReturnType<typeof within>
-  /** Queries scoped to document.body - use for portaled content (dropdowns, modals) */
   documentScreen: typeof screen
   user: ReturnType<typeof userEvent.setup>
   container: HTMLElement
@@ -17,12 +15,14 @@ type Scenario<P> =
     props: P
     component?: undefined
     play?: (context: PlayContext) => Promise<void>
+    code?: string
   }
   | {
     name: string
     props: Record<string, unknown>
     component: ComponentType<any>
     play?: (context: PlayContext) => Promise<void>
+    code?: string
   }
 
 type ComponentScenarios<P = any> = {
@@ -30,6 +30,7 @@ type ComponentScenarios<P = any> = {
   component: ComponentType<P>
   scenarios: Scenario<P>[]
   inline?: boolean
+  layout?: 'stacked' | 'tabbed'
 }
 
 export type { PlayContext, Scenario, ComponentScenarios }
