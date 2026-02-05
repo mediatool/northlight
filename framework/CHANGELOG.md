@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.41.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.40.1...@northlight/ui@2.41.0) (2026-02-05)
+
+
+### Features
+
+* **northlight:** add sandbox module for component development ([c99e74a](https://github.com/mediatool/northlight/commit/c99e74ab08a38546dfa2e2ca6fef4251f47905c0))
+
+
+
+
+
 ## [2.40.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.40.0...@northlight/ui@2.40.1) (2026-02-03)
 
 
