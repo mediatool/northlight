@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs'
 import dts from 'rollup-plugin-dts'
 import esbuild from 'rollup-plugin-esbuild'
+import postcss from 'rollup-plugin-postcss'
 
 const pkg = JSON.parse(readFileSync('./package.json', 'utf8'))
 
@@ -51,7 +52,29 @@ export default [
         format: 'es',
         file: 'dist/es/northlight.d.ts',
       },
-
+    ],
+  },
+  {
+    input: './sandbox/lib/index.ts',
+    external,
+    plugins: [ postcss({ inject: true }), esbuild() ],
+    output: [
+      {
+        format: 'es',
+        sourcemap: true,
+        file: 'dist/sandbox/index.js',
+      },
+    ],
+  },
+  {
+    input: './sandbox/lib/index.ts',
+    external: [ ...external, /\.css$/ ],
+    plugins: [ dts() ],
+    output: [
+      {
+        format: 'es',
+        file: 'dist/sandbox/index.d.ts',
+      },
     ],
   },
 ]

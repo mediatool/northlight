@@ -1,4 +1,4 @@
 {
-  "main": "./lib/index.ts",
-  "types": "./lib/index.ts"
+  "main": "../dist/sandbox/index.js",
+  "types": "../dist/sandbox/index.d.ts"
 }
