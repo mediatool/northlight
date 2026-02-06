@@ -6,7 +6,8 @@ import { MediatoolThemeProvider, theme } from '../../lib'
 import type { ComponentScenarios, PlayContext } from './types.ts'
 
 declare const describe: (name: string, fn: () => void) => void
-declare const it: (name: string, fn: () => void | Promise<void>) => void
+type TimeoutSetter = { timeout: (ms: number) => void }
+declare const it: ((name: string, fn: () => void | Promise<void>) => TimeoutSetter)
 
 if (typeof window !== 'undefined' && !window.matchMedia) {
   window.matchMedia = (query: string) => ({
@@ -20,6 +21,8 @@ if (typeof window !== 'undefined' && !window.matchMedia) {
     dispatchEvent: () => false,
   })
 }
+
+const CI_TIMEOUT_SAFETY_NET = 30_000
 
 function runScenarios (allScenarios: ComponentScenarios[]): void {
   for (const componentScenarios of allScenarios) {
@@ -52,7 +55,7 @@ function runScenarios (allScenarios: ComponentScenarios[]): void {
           }
 
           cleanup()
-        })
+        }).timeout(CI_TIMEOUT_SAFETY_NET)
       }
     })
   }
