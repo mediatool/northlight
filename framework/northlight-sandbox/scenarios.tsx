@@ -105,6 +105,7 @@ function DatePickerWithState ({ defaultValue }: DatePickerWithStateProps) {
 const buttonScenarios: ComponentScenarios = {
   name: 'Button',
   component: Button,
+  inline: true,
   scenarios: [
     {
       name: 'default',
@@ -157,6 +158,7 @@ const buttonScenarios: ComponentScenarios = {
 const buttonSizesScenarios: ComponentScenarios = {
   name: 'Button Sizes',
   component: Button,
+  inline: true,
   scenarios: [
     {
       name: 'xs',
