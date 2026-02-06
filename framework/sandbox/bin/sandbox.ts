@@ -1,10 +1,76 @@
 /* eslint-disable no-restricted-syntax */
-import { existsSync } from 'node:fs'
+import { existsSync, lstatSync, readFileSync, readdirSync, realpathSync } from 'node:fs'
 import { resolve } from 'node:path'
 import react from '@vitejs/plugin-react'
 import { createServer } from 'vite'
+import { reduce } from 'ramda'
 
 const DEFAULT_SCENARIOS_PATHS = [ 'sandbox/scenarios.ts', 'sandbox/scenarios.tsx' ]
+
+function getSubPaths (dep: string, depPkg: Record<string, unknown>, realPath: string): string[] {
+  if (depPkg.exports && typeof depPkg.exports === 'object') {
+    return reduce((acc, key) => {
+      if (key === '.' || !key.startsWith('./') || key.includes('*')) return acc
+      const subPath = key.slice(2)
+      if (subPath.startsWith('.') || subPath === 'package.json') return acc
+      return [ ...acc, `${dep}/${subPath}` ]
+    }, [] as string[], Object.keys(depPkg.exports as object))
+  }
+
+  const mainFile = depPkg.main || 'index.js'
+
+  return reduce((acc, file) => {
+    if (file.endsWith('.js') && file !== mainFile && !file.startsWith('.')) {
+      return [ ...acc, `${dep}/${file.slice(0, -3)}` ]
+    }
+    return acc
+  }, [] as string[], readdirSync(realPath))
+}
+
+function isCjsWorkspaceDep (cwd: string, dep: string): boolean {
+  try {
+    const depDir = resolve(cwd, 'node_modules', ...dep.split('/'))
+    if (!lstatSync(depDir).isSymbolicLink()) return false
+
+    const realPath = realpathSync(depDir)
+    if (realPath.includes('/node_modules/')) return false
+
+    const depPkgPath = resolve(realPath, 'package.json')
+    if (!existsSync(depPkgPath)) return false
+
+    const depPkg = JSON.parse(readFileSync(depPkgPath, 'utf-8'))
+    return depPkg.type !== 'module'
+  } catch {
+    return false
+  }
+}
+
+function readDepPkg (
+  cwd: string,
+  dep: string
+): { depPkg: Record<string, unknown>, realPath: string } {
+  const depDir = resolve(cwd, 'node_modules', ...dep.split('/'))
+  const realPath = realpathSync(depDir)
+  const depPkg = JSON.parse(readFileSync(resolve(realPath, 'package.json'), 'utf-8'))
+  return { depPkg, realPath }
+}
+
+function findCjsWorkspaceDeps (cwd: string): string[] {
+  const pkgPath = resolve(cwd, 'package.json')
+  if (!existsSync(pkgPath)) return []
+
+  const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'))
+  const depNames = Object.keys({
+    ...pkg.dependencies,
+    ...pkg.devDependencies,
+  })
+
+  return reduce((acc, dep) => {
+    if (!isCjsWorkspaceDep(cwd, dep)) return acc
+    const { depPkg, realPath } = readDepPkg(cwd, dep)
+    return [ ...acc, dep, ...getSubPaths(dep, depPkg, realPath) ]
+  }, [] as string[], depNames)
+}
 
 function findScenariosFile (cwd: string, scenariosArg?: string): string | undefined {
   if (scenariosArg) {
@@ -22,6 +88,7 @@ async function main () {
   const cwd = process.cwd()
   const scenariosArg = process.argv[2]
   const absoluteScenariosPath = findScenariosFile(cwd, scenariosArg)
+  const cjsWorkspaceDeps = findCjsWorkspaceDeps(cwd)
 
   if (!absoluteScenariosPath) {
     console.error('Scenarios file not found.')
@@ -44,6 +111,9 @@ async function main () {
     server: {
       port: 5000,
       strictPort: false,
+    },
+    optimizeDeps: {
+      include: cjsWorkspaceDeps,
     },
     plugins: [
       react(),
