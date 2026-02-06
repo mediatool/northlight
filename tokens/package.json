@@ -21,13 +21,13 @@
     "test": "echo testless"
   },
   "devDependencies": {
-    "@mediatool/eslint-config-mediatool": "^1.2.0",
-    "@rollup/plugin-json": "^6.0.0",
+    "@mediatool/eslint-config-mediatool": "1.2.0",
+    "@rollup/plugin-json": "6.0.0",
     "ramda": "0.15.1",
-    "rollup": "^3.17.2",
-    "rollup-plugin-dts": "^5.2.0",
-    "rollup-plugin-esbuild": "^5.0.0",
-    "style-dictionary": "^3.7.2",
-    "token-transformer": "^0.0.29"
+    "rollup": "3.17.2",
+    "rollup-plugin-dts": "5.2.0",
+    "rollup-plugin-esbuild": "5.0.0",
+    "style-dictionary": "3.7.2",
+    "token-transformer": "0.0.29"
   }
 }
