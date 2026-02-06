@@ -57,7 +57,7 @@ export default [
   {
     input: './sandbox/lib/index.ts',
     external,
-    plugins: [ postcss({ inject: true }), esbuild() ],
+    plugins: [ postcss({ inject: true }), esbuild({ jsx: 'automatic' }) ],
     output: [
       {
         format: 'es',
