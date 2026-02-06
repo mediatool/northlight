@@ -30,7 +30,6 @@ type ComponentScenarios<P = any> = {
   component: ComponentType<P>
   scenarios: Scenario<P>[]
   inline?: boolean
-  layout?: 'stacked' | 'tabbed'
 }
 
 export type { PlayContext, Scenario, ComponentScenarios }

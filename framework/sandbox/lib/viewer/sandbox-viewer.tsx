@@ -820,14 +820,7 @@ function SandboxViewerContent ({
     setPlayingScenario(null)
   }
 
-  const getLayoutMode = (): 'stacked' | 'tabbed' => {
-    if (!selectedComponent) return 'stacked'
-    if (selectedComponent.layout) return selectedComponent.layout
-    if (selectedComponent.name.toLowerCase() === 'tabs') return 'tabbed'
-    return 'stacked'
-  }
-
-  const layoutMode = getLayoutMode()
+  const isInline = selectedComponent?.inline ?? false
 
   return (
     <div className="sandbox-viewer">
@@ -853,7 +846,7 @@ function SandboxViewerContent ({
           ) }
 
           { view.type === 'detail' && selectedComponent && (
-            layoutMode === 'tabbed' ? (
+            !isInline ? (
               <TabbedDetailView
                 component={ selectedComponent }
                 onBack={ handleBack }
