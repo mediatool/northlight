@@ -1,13 +1,10 @@
 /* eslint-disable no-restricted-syntax */
 import { existsSync } from 'node:fs'
-import { dirname, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { resolve } from 'node:path'
 import react from '@vitejs/plugin-react'
 import { createServer } from 'vite'
 
 const DEFAULT_SCENARIOS_PATHS = [ 'sandbox/scenarios.ts', 'sandbox/scenarios.tsx' ]
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
 
 function findScenariosFile (cwd: string, scenariosArg?: string): string | undefined {
   if (scenariosArg) {
@@ -35,8 +32,6 @@ async function main () {
     )
     process.exit(1)
   }
-
-  const sandboxPackageDir = resolve(__dirname, '..')
 
   const virtualEntryId = 'virtual:sandbox-entry.tsx'
   const resolvedVirtualEntryId = `\0${virtualEntryId}`
