@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.42.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.42.1...@northlight/ui@2.42.2) (2026-02-06)
+
+
+### Bug Fixes
+
+* **ui:** increase sandbox scenario test timeout to 30 seconds ([09ca70c](https://github.com/mediatool/northlight/commit/09ca70c3b70f3ca9ff851fe5c32fd250aca005c0))
+* **ui:** transpile sandbox ([59a8c1f](https://github.com/mediatool/northlight/commit/59a8c1f3e97bcc5e583f6d80e313956970dd213b))
+* **ui:** use automatic JSX runtime for sandbox transpilation ([93e0a68](https://github.com/mediatool/northlight/commit/93e0a683d51e277a194841d65ecea84e8c063057))
+* **ui:** use inline prop for sandbox layout instead of layout ([7847377](https://github.com/mediatool/northlight/commit/7847377a4878c88c1a4d3cf3d6bc67df5d7eb7ec))
+
+
+
+
+
 ## [2.42.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.42.0...@northlight/ui@2.42.1) (2026-02-05)
 
 
