@@ -12,7 +12,10 @@
       "import": "./dist/es/northlight.js",
       "require": "./dist/umd/northlight.cjs"
     },
-    "./sandbox": "./sandbox/lib/index.ts"
+    "./sandbox": {
+      "types": "./dist/sandbox/index.d.ts",
+      "import": "./dist/sandbox/index.js"
+    }
   },
   "bin": {
     "sandbox": "./sandbox/bin/sandbox.sh"
@@ -111,6 +114,7 @@
     "rollup": "^3.17.2",
     "rollup-plugin-dts": "^5.2.0",
     "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "sinon": "^15.2.0",
     "typescript": "^5.2.2",
     "vitest": "^2.0.0"

@@ -35,6 +35,7 @@ function runScenarios (allScenarios: ComponentScenarios[]): void {
           const { container } = render(
             createElement(
               MediatoolThemeProvider,
+              // @ts-expect-error children passed as 3rd arg to satisfy react/no-children-prop
               { theme },
               createElement(component, props as Record<string, unknown>)
             )
