@@ -7,17 +7,47 @@ import { reduce } from 'ramda'
 
 const DEFAULT_SCENARIOS_PATHS = [ 'sandbox/scenarios.ts', 'sandbox/scenarios.tsx' ]
 
-function getSubPaths (dep: string, depPkg: Record<string, unknown>, realPath: string): string[] {
-  if (depPkg.exports && typeof depPkg.exports === 'object') {
+type Pkg = Record<string, unknown>
+
+function resolveDepDir (cwd: string, dep: string): string {
+  return resolve(cwd, 'node_modules', ...dep.split('/'))
+}
+
+function getDepPkgPath (cwd: string, dep: string): string {
+  return resolve(resolveDepDir(cwd, dep), 'package.json')
+}
+
+function readPkg (pkgPath: string): Pkg {
+  return JSON.parse(readFileSync(pkgPath, 'utf-8'))
+}
+
+function isWorkspaceDep (depDir: string): { realPath: string } | null {
+  try {
+    if (!lstatSync(depDir).isSymbolicLink()) return null
+    const realPath = realpathSync(depDir)
+    if (realPath.includes('/node_modules/')) return null
+    if (!existsSync(resolve(realPath, 'package.json'))) return null
+    return { realPath }
+  } catch {
+    return null
+  }
+}
+
+function isCjs (pkg: Pkg): boolean {
+  return pkg.type !== 'module'
+}
+
+function getSubPaths (dep: string, pkg: Pkg, realPath: string): string[] {
+  if (pkg.exports && typeof pkg.exports === 'object') {
     return reduce((acc, key) => {
       if (key === '.' || !key.startsWith('./') || key.includes('*')) return acc
       const subPath = key.slice(2)
       if (subPath.startsWith('.') || subPath === 'package.json') return acc
       return [ ...acc, `${dep}/${subPath}` ]
-    }, [] as string[], Object.keys(depPkg.exports as object))
+    }, [] as string[], Object.keys(pkg.exports as object))
   }
 
-  const mainFile = depPkg.main || 'index.js'
+  const mainFile = pkg.main || 'index.js'
 
   return reduce((acc, file) => {
     if (file.endsWith('.js') && file !== mainFile && !file.startsWith('.')) {
@@ -27,49 +57,23 @@ function getSubPaths (dep: string, depPkg: Record<string, unknown>, realPath: st
   }, [] as string[], readdirSync(realPath))
 }
 
-function isCjsWorkspaceDep (cwd: string, dep: string): boolean {
-  try {
-    const depDir = resolve(cwd, 'node_modules', ...dep.split('/'))
-    if (!lstatSync(depDir).isSymbolicLink()) return false
-
-    const realPath = realpathSync(depDir)
-    if (realPath.includes('/node_modules/')) return false
-
-    const depPkgPath = resolve(realPath, 'package.json')
-    if (!existsSync(depPkgPath)) return false
-
-    const depPkg = JSON.parse(readFileSync(depPkgPath, 'utf-8'))
-    return depPkg.type !== 'module'
-  } catch {
-    return false
-  }
-}
-
-function readDepPkg (
-  cwd: string,
-  dep: string
-): { depPkg: Record<string, unknown>, realPath: string } {
-  const depDir = resolve(cwd, 'node_modules', ...dep.split('/'))
-  const realPath = realpathSync(depDir)
-  const depPkg = JSON.parse(readFileSync(resolve(realPath, 'package.json'), 'utf-8'))
-  return { depPkg, realPath }
-}
-
 function findCjsWorkspaceDeps (cwd: string): string[] {
   const pkgPath = resolve(cwd, 'package.json')
   if (!existsSync(pkgPath)) return []
 
-  const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'))
-  const depNames = Object.keys({
-    ...pkg.dependencies,
-    ...pkg.devDependencies,
+  const pkg = readPkg(pkgPath)
+  const deps = Object.keys({
+    ...pkg.dependencies as object,
+    ...pkg.devDependencies as object,
   })
 
   return reduce((acc, dep) => {
-    if (!isCjsWorkspaceDep(cwd, dep)) return acc
-    const { depPkg, realPath } = readDepPkg(cwd, dep)
-    return [ ...acc, dep, ...getSubPaths(dep, depPkg, realPath) ]
-  }, [] as string[], depNames)
+    const workspace = isWorkspaceDep(resolveDepDir(cwd, dep))
+    if (!workspace) return acc
+    const pkg = readPkg(getDepPkgPath(cwd, dep))
+    if (!isCjs(pkg)) return acc
+    return [ ...acc, dep, ...getSubPaths(dep, pkg, workspace.realPath) ]
+  }, [] as string[], deps)
 }
 
 function findScenariosFile (cwd: string, scenariosArg?: string): string | undefined {
