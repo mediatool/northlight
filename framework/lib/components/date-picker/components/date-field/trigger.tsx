@@ -1,24 +1,44 @@
-import React, { useRef } from 'react'
+import React, { KeyboardEventHandler, useRef } from 'react'
 import { CalendarDuo } from '@northlight/icons'
-import { useButton } from '@react-aria/button'
 import { Button } from '../../../button'
 import { TriggerProps } from './types'
 import { Icon } from '../../../icon'
 
 export const Trigger = (props: TriggerProps) => {
-  const { isDisabled, handleClick } = props
+  const {
+    id,
+    'aria-haspopup': ariaHasPopup,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
+    'aria-describedby': ariaDescribedBy,
+    'aria-expanded': ariaExpanded,
+    isDisabled,
+    handleClick,
+  } = props
   const ref = useRef<HTMLButtonElement>(null)
-  const { buttonProps } = useButton(props, ref)
+
+  const handleKeyDown: KeyboardEventHandler<HTMLButtonElement> = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      handleClick()
+    }
+  }
 
   return (
     <Button
-      { ...buttonProps }
       ref={ ref }
+      id={ id }
+      aria-haspopup={ ariaHasPopup }
+      aria-label={ ariaLabel }
+      aria-labelledby={ ariaLabelledBy }
+      aria-describedby={ ariaDescribedBy }
+      aria-expanded={ ariaExpanded }
       size="sm"
       boxSize={ 8 }
       variant="ghost"
       isDisabled={ isDisabled }
-      onPointerDown={ handleClick }
+      onClick={ handleClick }
+      onKeyDown={ handleKeyDown }
       pointerEvents={ isDisabled ? 'none' : 'auto' }
     >
       <Icon as={ CalendarDuo } />
