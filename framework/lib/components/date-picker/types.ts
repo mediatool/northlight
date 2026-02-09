@@ -29,7 +29,9 @@ interface DatePickerSettings {
 
 export interface DatePickerProps
   extends Omit<AriaDatePickerProps<DateValue>, 'firstDayOfWeek'>,
-  DatePickerSettings {}
+  DatePickerSettings {
+  'data-testid': string
+}
 
 export interface DateRangePickerProps
   extends Omit<AriaDateRangePickerProps<DateValue>, 'firstDayOfWeek' | 'onChange' | 'value' | 'minValue' | 'maxValue'>,

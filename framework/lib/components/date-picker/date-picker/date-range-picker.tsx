@@ -179,7 +179,6 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       startName,
       endName,
       'aria-label': 'Date range picker',
-      ...(!isNil(dataTestId) && { 'data-testid': dataTestId }),
     },
     state,
     ref
@@ -344,7 +343,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       placement="bottom-start"
     >
       <PopoverAnchor>
-        <HStack>
+        <HStack data-testid={ dataTestId }>
           <InputGroup
             role={ groupRole }
             id={ groupId }
@@ -365,7 +364,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
               isInvalid={ isInvalid }
               variant={ variant }
             >
-              <HStack paddingInlineStart="1a" paddingInlineEnd={ 10 }>
+              <HStack paddingInlineStart="1a" data-test-id="daterange-picker-input-field" paddingInlineEnd={ 10 }>
                 <DateField
                   { ...restStartFieldProps }
                   id={ startFieldId }
@@ -412,7 +411,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                 />
               </HStack>
             </StyledField>
-            <InputRightElement sx={ { height: '100%', paddingRight: '1' } }>
+            <InputRightElement data-test-id="daterange-picker-trigger" sx={ { height: '100%', paddingRight: '1' } }>
               <Trigger
                 id={ buttonId }
                 aria-haspopup={ buttonAriaHasPopup }
