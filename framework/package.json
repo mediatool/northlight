@@ -94,6 +94,7 @@
     "sinon": "^15.2.0",
     "tsx": "^4.21.0",
     "vite": "^6.0.0",
+    "vite-plugin-commonjs": "^0.10.4",
     "yafu": "^2.1.4"
   },
   "devDependencies": {

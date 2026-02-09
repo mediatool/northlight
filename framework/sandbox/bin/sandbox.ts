@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
+import commonjs from 'vite-plugin-commonjs'
 import react from '@vitejs/plugin-react'
 import { createServer } from 'vite'
 
@@ -46,6 +47,7 @@ async function main () {
       strictPort: false,
     },
     plugins: [
+      commonjs(),
       react(),
       {
         name: 'sandbox-virtual-entry',
