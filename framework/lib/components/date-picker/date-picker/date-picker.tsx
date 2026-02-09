@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { useMultiStyleConfig } from '@chakra-ui/react'
+import { useMultiStyleConfig, useOutsideClick } from '@chakra-ui/react'
 import { useDatePicker } from '@react-aria/datepicker'
 import { useDatePickerState } from '@react-stately/datepicker'
 import { FocusScope } from '@react-aria/focus'
@@ -71,41 +71,229 @@ export const DatePicker = (props: DatePickerProps) => {
     minValue,
     variant = 'outline',
     firstDayOfWeek = 'monday',
+    value,
+    defaultValue,
+    onChange,
+    maxValue,
+    isReadOnly,
+    isRequired,
+    placeholderValue,
+    isDateUnavailable,
+    granularity,
+    hourCycle,
+    shouldForceLeadingZeros,
+    pageBehavior,
+    defaultOpen,
+    onOpenChange,
+    label,
+    description,
+    errorMessage,
+    id,
+    name,
+    autoFocus,
+    onFocus,
+    onBlur,
+    onFocusChange,
+    onKeyDown,
+    onKeyUp,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
+    'aria-describedby': ariaDescribedBy,
+    'aria-details': ariaDetails,
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
+  const dialogRef = useRef() as React.MutableRefObject<HTMLDivElement>
   const { group } = useMultiStyleConfig('DatePicker')
 
   const state = useDatePickerState({
-    ...props,
+    value,
+    defaultValue,
+    onChange,
+    minValue,
+    maxValue,
+    isDisabled,
+    isReadOnly,
+    isRequired,
+    isInvalid,
+    placeholderValue,
+    isDateUnavailable,
+    granularity,
+    hourCycle,
+    shouldForceLeadingZeros,
+    defaultOpen,
+    onOpenChange,
     shouldCloseOnSelect: false,
     hideTimeZone: true,
   })
 
   const { buttonProps, fieldProps, calendarProps, groupProps, dialogProps } =
     useDatePicker(
-      { ...props, minValue: minValue || parseDate('1994-03-08') },
+      {
+        value,
+        defaultValue,
+        onChange,
+        minValue: minValue || parseDate('1994-03-08'),
+        maxValue,
+        isDisabled,
+        isReadOnly,
+        isRequired,
+        isInvalid,
+        placeholderValue,
+        isDateUnavailable,
+        granularity,
+        hourCycle,
+        shouldForceLeadingZeros,
+        pageBehavior,
+        defaultOpen,
+        onOpenChange,
+        label,
+        description,
+        errorMessage,
+        id,
+        name,
+        autoFocus,
+        onFocus,
+        onBlur,
+        onFocusChange,
+        onKeyDown,
+        onKeyUp,
+        'aria-label': ariaLabel,
+        'aria-labelledby': ariaLabelledBy,
+        'aria-describedby': ariaDescribedBy,
+        'aria-details': ariaDetails,
+      },
       state,
       ref
     )
 
-  const togglePopup = () => state.setOpen(!state.isOpen)
+  const {
+    id: buttonId,
+    'aria-haspopup': buttonAriaHasPopup,
+    'aria-label': buttonAriaLabel,
+    'aria-labelledby': buttonAriaLabelledBy,
+    'aria-describedby': buttonAriaDescribedBy,
+    'aria-expanded': buttonAriaExpanded,
+  } = buttonProps
+
+  const {
+    id: dialogId,
+    'aria-labelledby': dialogAriaLabelledBy,
+  } = dialogProps
+
+  const {
+    autoFocus: calAutoFocus,
+    value: calValue,
+    onChange: calOnChange,
+    minValue: calMinValue,
+    maxValue: calMaxValue,
+    isDisabled: calIsDisabled,
+    isReadOnly: calIsReadOnly,
+    isDateUnavailable: calIsDateUnavailable,
+    defaultFocusedValue: calDefaultFocusedValue,
+    isInvalid: calIsInvalid,
+    errorMessage: calErrorMessage,
+  } = calendarProps
+
+  const {
+    id: fieldId,
+    'aria-describedby': fieldAriaDescribedBy,
+    'aria-labelledby': fieldAriaLabelledBy,
+    value: fieldValue,
+    onChange: fieldOnChange,
+    minValue: fieldMinValue,
+    maxValue: fieldMaxValue,
+    placeholderValue: fieldPlaceholderValue,
+    hideTimeZone: fieldHideTimeZone,
+    hourCycle: fieldHourCycle,
+    shouldForceLeadingZeros: fieldShouldForceLeadingZeros,
+    granularity: fieldGranularity,
+    isDisabled: fieldIsDisabled,
+    isReadOnly: fieldIsReadOnly,
+    isRequired: fieldIsRequired,
+    isInvalid: fieldIsInvalid,
+    autoFocus: fieldAutoFocus,
+    name: fieldName,
+    ...restFieldProps
+  } = fieldProps
+
+  const {
+    role: groupRole,
+    id: groupId,
+    'aria-disabled': groupAriaDisabled,
+    'aria-labelledby': groupAriaLabelledBy,
+    'aria-describedby': groupAriaDescribedBy,
+    onKeyDown: groupOnKeyDown,
+    onKeyUp: groupOnKeyUp,
+    onFocus: groupOnFocus,
+    onBlur: groupOnBlur,
+    onPointerDown: groupOnPointerDown,
+    onClick: groupOnClick,
+  } = groupProps
+
+  const togglePopup = () => {
+    state.setOpen(!state.isOpen)
+  }
+
+  useOutsideClick({
+    ref: dialogRef,
+    handler: (event) => {
+      if (ref.current?.contains(event.target as Node)) return
+      state.setOpen(false)
+    },
+  })
 
   return (
     <Popover
       isOpen={ state.isOpen }
       onClose={ () => state.setOpen(false) }
+      closeOnBlur={ false }
       placement="bottom-end"
     >
       <PopoverAnchor>
         <HStack minW={ 56 }>
-          <InputGroup { ...groupProps } ref={ ref } __css={ group }>
+          <InputGroup
+            role={ groupRole }
+            id={ groupId }
+            aria-disabled={ groupAriaDisabled }
+            aria-labelledby={ groupAriaLabelledBy }
+            aria-describedby={ groupAriaDescribedBy }
+            onKeyDown={ groupOnKeyDown }
+            onKeyUp={ groupOnKeyUp }
+            onFocus={ groupOnFocus }
+            onBlur={ groupOnBlur }
+            onPointerDown={ groupOnPointerDown }
+            onClick={ groupOnClick }
+            ref={ ref }
+            __css={ group }
+          >
             <StyledField
               isDisabled={ isDisabled }
               isInvalid={ isInvalid }
               variant={ variant }
             >
               <Box paddingInlineStart="1a" paddingInlineEnd={ 10 }>
-                <DateField { ...fieldProps } dateFormat={ dateFormat } />
+                <DateField
+                  { ...restFieldProps }
+                  id={ fieldId }
+                  aria-describedby={ fieldAriaDescribedBy }
+                  aria-labelledby={ fieldAriaLabelledBy }
+                  value={ fieldValue }
+                  onChange={ fieldOnChange }
+                  minValue={ fieldMinValue }
+                  maxValue={ fieldMaxValue }
+                  placeholderValue={ fieldPlaceholderValue }
+                  hideTimeZone={ fieldHideTimeZone }
+                  hourCycle={ fieldHourCycle }
+                  shouldForceLeadingZeros={ fieldShouldForceLeadingZeros }
+                  granularity={ fieldGranularity }
+                  isDisabled={ fieldIsDisabled }
+                  isReadOnly={ fieldIsReadOnly }
+                  isRequired={ fieldIsRequired }
+                  isInvalid={ fieldIsInvalid }
+                  autoFocus={ fieldAutoFocus }
+                  name={ fieldName }
+                  dateFormat={ dateFormat }
+                />
               </Box>
             </StyledField>
             <InputRightElement
@@ -113,7 +301,12 @@ export const DatePicker = (props: DatePickerProps) => {
               zIndex={ 0 }
             >
               <Trigger
-                { ...buttonProps }
+                id={ buttonId }
+                aria-haspopup={ buttonAriaHasPopup }
+                aria-label={ buttonAriaLabel }
+                aria-labelledby={ buttonAriaLabelledBy }
+                aria-describedby={ buttonAriaDescribedBy }
+                aria-expanded={ buttonAriaExpanded }
                 isDisabled={ isDisabled }
                 handleClick={ togglePopup }
               />
@@ -132,10 +325,29 @@ export const DatePicker = (props: DatePickerProps) => {
         </HStack>
       </PopoverAnchor>
       { state.isOpen && (
-        <PopoverContent { ...dialogProps } ref={ ref } w={ 64 } border="none">
+        <PopoverContent
+          id={ dialogId }
+          aria-labelledby={ dialogAriaLabelledBy }
+          ref={ dialogRef }
+          w={ 64 }
+          border="none"
+        >
           <FocusScope contain={ true } restoreFocus={ true }>
             <DatePickerLocaleWrapper firstDayOfWeek={ firstDayOfWeek }>
-              <Calendar { ...calendarProps } firstDayOfWeek={ firstDayOfWeek } />
+              <Calendar
+                autoFocus={ calAutoFocus }
+                value={ calValue }
+                onChange={ calOnChange }
+                minValue={ calMinValue }
+                maxValue={ calMaxValue }
+                isDisabled={ calIsDisabled }
+                isReadOnly={ calIsReadOnly }
+                isDateUnavailable={ calIsDateUnavailable }
+                defaultFocusedValue={ calDefaultFocusedValue }
+                isInvalid={ calIsInvalid }
+                errorMessage={ calErrorMessage }
+                firstDayOfWeek={ firstDayOfWeek }
+              />
             </DatePickerLocaleWrapper>
           </FocusScope>
         </PopoverContent>

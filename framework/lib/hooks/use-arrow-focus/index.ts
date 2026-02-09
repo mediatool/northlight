@@ -6,7 +6,7 @@ export const useArrowFocus = (columns: number) => {
     focusPrevious: previous,
     focusFirst,
     focusLast,
-  } = useFocusManager()
+  } = useFocusManager()!
 
   const defaultOpts = {
     ArrowRight: {

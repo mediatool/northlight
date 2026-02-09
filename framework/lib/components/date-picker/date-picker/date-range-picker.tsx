@@ -1,7 +1,8 @@
 import React, { useRef } from 'react'
+import { FocusScope } from '@react-aria/focus'
 import { useDateRangePickerState } from '@react-stately/datepicker'
 import { useDateRangePicker } from '@react-aria/datepicker'
-import { useMultiStyleConfig } from '@chakra-ui/react'
+import { useMultiStyleConfig, useOutsideClick } from '@chakra-ui/react'
 import { CheckSolid, XCloseSolid } from '@northlight/icons'
 import { identity, isNil } from 'ramda'
 import { DateValue, parseDate } from '@internationalized/date'
@@ -116,8 +117,14 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     'data-testid': dataTestId,
     defaultOpen = false,
     onOpenChange,
+    placeholderValue,
+    isDateUnavailable,
+    allowsNonContiguousRanges,
+    startName,
+    endName,
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
+  const dialogRef = useRef() as React.MutableRefObject<HTMLDivElement>
   const { group } = useMultiStyleConfig('DatePicker')
   const parsedProps = {
     onChange: (date: DateRange) => {
@@ -137,9 +144,9 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     maxValue: parsedProps.maxValue,
     isDisabled,
     isInvalid,
-    placeholderValue: props.placeholderValue,
-    isDateUnavailable: props.isDateUnavailable,
-    allowsNonContiguousRanges: props.allowsNonContiguousRanges,
+    placeholderValue,
+    isDateUnavailable,
+    allowsNonContiguousRanges,
     shouldCloseOnSelect: false,
     hideTimeZone: true,
     defaultOpen,
@@ -164,13 +171,13 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       value: parseValue(value) as { start: DateValue, end: DateValue },
       minValue: parsedProps.minValue || parseDate('1994-03-08'),
       maxValue: parsedProps.maxValue,
-      placeholderValue: props.placeholderValue,
-      isDateUnavailable: props.isDateUnavailable,
-      allowsNonContiguousRanges: props.allowsNonContiguousRanges,
+      placeholderValue,
+      isDateUnavailable,
+      allowsNonContiguousRanges,
       isDisabled,
       isInvalid,
-      startName: props.startName,
-      endName: props.endName,
+      startName,
+      endName,
       'aria-label': 'Date range picker',
       ...(!isNil(dataTestId) && { 'data-testid': dataTestId }),
     },
@@ -178,11 +185,107 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     ref
   )
 
-  const togglePopup = () => state.setOpen(!state.isOpen)
+  const {
+    id: buttonId,
+    'aria-haspopup': buttonAriaHasPopup,
+    'aria-label': buttonAriaLabel,
+    'aria-labelledby': buttonAriaLabelledBy,
+    'aria-describedby': buttonAriaDescribedBy,
+    'aria-expanded': buttonAriaExpanded,
+  } = buttonProps
+
+  const {
+    role: groupRole,
+    id: groupId,
+    'aria-disabled': groupAriaDisabled,
+    'aria-labelledby': groupAriaLabelledBy,
+    'aria-describedby': groupAriaDescribedBy,
+    onKeyDown: groupOnKeyDown,
+    onKeyUp: groupOnKeyUp,
+    onFocus: groupOnFocus,
+    onBlur: groupOnBlur,
+    onPointerDown: groupOnPointerDown,
+    onClick: groupOnClick,
+  } = groupProps
+
+  const {
+    id: startFieldId,
+    'aria-describedby': startFieldAriaDescribedBy,
+    'aria-labelledby': startFieldAriaLabelledBy,
+    value: startFieldValue,
+    onChange: startFieldOnChange,
+    minValue: startFieldMinValue,
+    maxValue: startFieldMaxValue,
+    placeholderValue: startFieldPlaceholderValue,
+    hideTimeZone: startFieldHideTimeZone,
+    hourCycle: startFieldHourCycle,
+    shouldForceLeadingZeros: startFieldShouldForceLeadingZeros,
+    granularity: startFieldGranularity,
+    isDisabled: startFieldIsDisabled,
+    isReadOnly: startFieldIsReadOnly,
+    isRequired: startFieldIsRequired,
+    isInvalid: startFieldIsInvalid,
+    autoFocus: startFieldAutoFocus,
+    name: startFieldName,
+    ...restStartFieldProps
+  } = startFieldProps
+
+  const {
+    id: endFieldId,
+    'aria-describedby': endFieldAriaDescribedBy,
+    'aria-labelledby': endFieldAriaLabelledBy,
+    value: endFieldValue,
+    onChange: endFieldOnChange,
+    minValue: endFieldMinValue,
+    maxValue: endFieldMaxValue,
+    placeholderValue: endFieldPlaceholderValue,
+    hideTimeZone: endFieldHideTimeZone,
+    hourCycle: endFieldHourCycle,
+    shouldForceLeadingZeros: endFieldShouldForceLeadingZeros,
+    granularity: endFieldGranularity,
+    isDisabled: endFieldIsDisabled,
+    isReadOnly: endFieldIsReadOnly,
+    isRequired: endFieldIsRequired,
+    isInvalid: endFieldIsInvalid,
+    name: endFieldName,
+    ...restEndFieldProps
+  } = endFieldProps
+
+  const {
+    id: dialogId,
+    'aria-labelledby': dialogAriaLabelledBy,
+  } = dialogProps
+
+  const {
+    autoFocus: calAutoFocus,
+    value: calValue,
+    onChange: calOnChange,
+    minValue: calMinValue,
+    maxValue: calMaxValue,
+    isDisabled: calIsDisabled,
+    isReadOnly: calIsReadOnly,
+    isDateUnavailable: calIsDateUnavailable,
+    allowsNonContiguousRanges: calAllowsNonContiguousRanges,
+    defaultFocusedValue: calDefaultFocusedValue,
+    isInvalid: calIsInvalid,
+    errorMessage: calErrorMessage,
+  } = calendarProps
+
+  const togglePopup = () => {
+    state.setOpen(!state.isOpen)
+  }
 
   const handleClose = () => {
     state.setOpen(false)
   }
+
+  useOutsideClick({
+    ref: dialogRef,
+    handler: (event) => {
+      if (ref.current?.contains(event.target as Node)) return
+      state.setOpen(false)
+    },
+  })
 
   const ResetButton = CustomResetButton || (
     <IconButton
@@ -237,25 +340,86 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     <Popover
       isOpen={ state.isOpen }
       onClose={ handleModalClose }
+      closeOnBlur={ false }
       placement="bottom-start"
     >
       <PopoverAnchor>
         <HStack>
-          <InputGroup { ...groupProps } ref={ ref } __css={ group }>
+          <InputGroup
+            role={ groupRole }
+            id={ groupId }
+            aria-disabled={ groupAriaDisabled }
+            aria-labelledby={ groupAriaLabelledBy }
+            aria-describedby={ groupAriaDescribedBy }
+            onKeyDown={ groupOnKeyDown }
+            onKeyUp={ groupOnKeyUp }
+            onFocus={ groupOnFocus }
+            onBlur={ groupOnBlur }
+            onPointerDown={ groupOnPointerDown }
+            onClick={ groupOnClick }
+            ref={ ref }
+            __css={ group }
+          >
             <StyledField
               isDisabled={ isDisabled }
               isInvalid={ isInvalid }
               variant={ variant }
             >
               <HStack paddingInlineStart="1a" paddingInlineEnd={ 10 }>
-                <DateField { ...startFieldProps } dateFormat={ dateFormat } />
+                <DateField
+                  { ...restStartFieldProps }
+                  id={ startFieldId }
+                  aria-describedby={ startFieldAriaDescribedBy }
+                  aria-labelledby={ startFieldAriaLabelledBy }
+                  value={ startFieldValue }
+                  onChange={ startFieldOnChange }
+                  minValue={ startFieldMinValue }
+                  maxValue={ startFieldMaxValue }
+                  placeholderValue={ startFieldPlaceholderValue }
+                  hideTimeZone={ startFieldHideTimeZone }
+                  hourCycle={ startFieldHourCycle }
+                  shouldForceLeadingZeros={ startFieldShouldForceLeadingZeros }
+                  granularity={ startFieldGranularity }
+                  isDisabled={ startFieldIsDisabled }
+                  isReadOnly={ startFieldIsReadOnly }
+                  isRequired={ startFieldIsRequired }
+                  isInvalid={ startFieldIsInvalid }
+                  autoFocus={ startFieldAutoFocus }
+                  name={ startFieldName }
+                  dateFormat={ dateFormat }
+                />
                 <P>-</P>
-                <DateField { ...endFieldProps } dateFormat={ dateFormat } />
+                <DateField
+                  { ...restEndFieldProps }
+                  id={ endFieldId }
+                  aria-describedby={ endFieldAriaDescribedBy }
+                  aria-labelledby={ endFieldAriaLabelledBy }
+                  value={ endFieldValue }
+                  onChange={ endFieldOnChange }
+                  minValue={ endFieldMinValue }
+                  maxValue={ endFieldMaxValue }
+                  placeholderValue={ endFieldPlaceholderValue }
+                  hideTimeZone={ endFieldHideTimeZone }
+                  hourCycle={ endFieldHourCycle }
+                  shouldForceLeadingZeros={ endFieldShouldForceLeadingZeros }
+                  granularity={ endFieldGranularity }
+                  isDisabled={ endFieldIsDisabled }
+                  isReadOnly={ endFieldIsReadOnly }
+                  isRequired={ endFieldIsRequired }
+                  isInvalid={ endFieldIsInvalid }
+                  name={ endFieldName }
+                  dateFormat={ dateFormat }
+                />
               </HStack>
             </StyledField>
             <InputRightElement sx={ { height: '100%', paddingRight: '1' } }>
               <Trigger
-                { ...buttonProps }
+                id={ buttonId }
+                aria-haspopup={ buttonAriaHasPopup }
+                aria-label={ buttonAriaLabel }
+                aria-labelledby={ buttonAriaLabelledBy }
+                aria-describedby={ buttonAriaDescribedBy }
+                aria-expanded={ buttonAriaExpanded }
                 isDisabled={ isDisabled }
                 handleClick={ togglePopup }
               />
@@ -294,21 +458,39 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       </PopoverAnchor>
       <PortalWrapper renderInPortal={ renderInPortal }>
         { state.isOpen && (
-          <PopoverContent { ...dialogProps } ref={ ref } w="max-content">
-            <DatePickerLocaleWrapper firstDayOfWeek={ firstDayOfWeek }>
-              <RangeCalendar
-                { ...calendarProps }
-                resetDate={ cancelOrResetDateChange }
-                handleClose={ handleModalClose }
-                fiscalStartMonth={ fiscalStartMonth || 0 }
-                fiscalStartDay={ fiscalStartDay || 0 }
-                isClearable={ isClearable }
-                firstDayOfWeek={ firstDayOfWeek }
-                onSave={ onSave }
-                clearButtonLabel={ clearButtonLabel }
-                buttonLabel={ buttonLabel }
-              />
-            </DatePickerLocaleWrapper>
+          <PopoverContent
+            id={ dialogId }
+            aria-labelledby={ dialogAriaLabelledBy }
+            ref={ dialogRef }
+            w="max-content"
+          >
+            <FocusScope contain={ true } restoreFocus={ true }>
+              <DatePickerLocaleWrapper firstDayOfWeek={ firstDayOfWeek }>
+                <RangeCalendar
+                  autoFocus={ calAutoFocus }
+                  value={ calValue }
+                  onChange={ calOnChange }
+                  minValue={ calMinValue }
+                  maxValue={ calMaxValue }
+                  isDisabled={ calIsDisabled }
+                  isReadOnly={ calIsReadOnly }
+                  isDateUnavailable={ calIsDateUnavailable }
+                  allowsNonContiguousRanges={ calAllowsNonContiguousRanges }
+                  defaultFocusedValue={ calDefaultFocusedValue }
+                  isInvalid={ calIsInvalid }
+                  errorMessage={ calErrorMessage }
+                  resetDate={ cancelOrResetDateChange }
+                  handleClose={ handleModalClose }
+                  fiscalStartMonth={ fiscalStartMonth || 0 }
+                  fiscalStartDay={ fiscalStartDay || 0 }
+                  isClearable={ isClearable }
+                  firstDayOfWeek={ firstDayOfWeek }
+                  onSave={ onSave }
+                  clearButtonLabel={ clearButtonLabel }
+                  buttonLabel={ buttonLabel }
+                />
+              </DatePickerLocaleWrapper>
+            </FocusScope>
           </PopoverContent>
         ) }
       </PortalWrapper>
