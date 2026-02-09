@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.42.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.42.3...@northlight/ui@2.42.4) (2026-02-09)
+
+
+### Bug Fixes
+
+* **framework:** fix daterange onblur issue ([16ea0d7](https://github.com/mediatool/northlight/commit/16ea0d7688327d4bb04a3a03a9db18afec049bb5))
+
+
+
+
+
 ## [2.42.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.42.2...@northlight/ui@2.42.3) (2026-02-09)
 
 
