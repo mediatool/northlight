@@ -63,6 +63,7 @@ import { DatePickerLocaleWrapper } from './date-picker-locale-wrapper'
  */
 export const DatePicker = (props: DatePickerProps) => {
   const {
+    'data-testid': dataTestId,
     isDisabled,
     isClearable = true,
     resetDate,
@@ -250,7 +251,7 @@ export const DatePicker = (props: DatePickerProps) => {
       placement="bottom-end"
     >
       <PopoverAnchor>
-        <HStack minW={ 56 }>
+        <HStack minW={ 56 } data-testid={ dataTestId }>
           <InputGroup
             role={ groupRole }
             id={ groupId }
@@ -271,7 +272,7 @@ export const DatePicker = (props: DatePickerProps) => {
               isInvalid={ isInvalid }
               variant={ variant }
             >
-              <Box paddingInlineStart="1a" paddingInlineEnd={ 10 }>
+              <Box paddingInlineStart="1a" data-testid="date-picker-input-field" paddingInlineEnd={ 10 }>
                 <DateField
                   { ...restFieldProps }
                   id={ fieldId }
@@ -299,6 +300,7 @@ export const DatePicker = (props: DatePickerProps) => {
             <InputRightElement
               sx={ { height: '100%', paddingRight: '1' } }
               zIndex={ 0 }
+              data-testid="date-picker-trigger"
             >
               <Trigger
                 id={ buttonId }
