@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.42.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.42.2...@northlight/ui@2.42.3) (2026-02-09)
+
+
+### Bug Fixes
+
+* **ui:** add vite-plugin-commonjs for CJS workspace dep support ([59bf39e](https://github.com/mediatool/northlight/commit/59bf39e87c917371436345f9c00fcf446af78ace))
+
+
+
+
+
 ## [2.42.2](https://github.com/mediatool/northlight/compare/@northlight/ui@2.42.1...@northlight/ui@2.42.2) (2026-02-06)
 
 
