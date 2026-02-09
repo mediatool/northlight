@@ -1,8 +1,7 @@
 import React, { useRef } from 'react'
-import { FocusScope } from '@react-aria/focus'
 import { useDateRangePickerState } from '@react-stately/datepicker'
 import { useDateRangePicker } from '@react-aria/datepicker'
-import { useMultiStyleConfig, useOutsideClick } from '@chakra-ui/react'
+import { useMultiStyleConfig } from '@chakra-ui/react'
 import { CheckSolid, XCloseSolid } from '@northlight/icons'
 import { identity, isNil } from 'ramda'
 import { DateValue, parseDate } from '@internationalized/date'
@@ -185,11 +184,6 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     state.setOpen(false)
   }
 
-  useOutsideClick({
-    ref,
-    handler: () => state.setOpen(false),
-  })
-
   const ResetButton = CustomResetButton || (
     <IconButton
       aria-label="reset-date"
@@ -301,22 +295,20 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
       <PortalWrapper renderInPortal={ renderInPortal }>
         { state.isOpen && (
           <PopoverContent { ...dialogProps } ref={ ref } w="max-content">
-            <FocusScope contain={ true } restoreFocus={ true }>
-              <DatePickerLocaleWrapper firstDayOfWeek={ firstDayOfWeek }>
-                <RangeCalendar
-                  { ...calendarProps }
-                  resetDate={ cancelOrResetDateChange }
-                  handleClose={ handleModalClose }
-                  fiscalStartMonth={ fiscalStartMonth || 0 }
-                  fiscalStartDay={ fiscalStartDay || 0 }
-                  isClearable={ isClearable }
-                  firstDayOfWeek={ firstDayOfWeek }
-                  onSave={ onSave }
-                  clearButtonLabel={ clearButtonLabel }
-                  buttonLabel={ buttonLabel }
-                />
-              </DatePickerLocaleWrapper>
-            </FocusScope>
+            <DatePickerLocaleWrapper firstDayOfWeek={ firstDayOfWeek }>
+              <RangeCalendar
+                { ...calendarProps }
+                resetDate={ cancelOrResetDateChange }
+                handleClose={ handleModalClose }
+                fiscalStartMonth={ fiscalStartMonth || 0 }
+                fiscalStartDay={ fiscalStartDay || 0 }
+                isClearable={ isClearable }
+                firstDayOfWeek={ firstDayOfWeek }
+                onSave={ onSave }
+                clearButtonLabel={ clearButtonLabel }
+                buttonLabel={ buttonLabel }
+              />
+            </DatePickerLocaleWrapper>
           </PopoverContent>
         ) }
       </PortalWrapper>
