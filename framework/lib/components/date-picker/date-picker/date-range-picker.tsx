@@ -364,7 +364,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
               isInvalid={ isInvalid }
               variant={ variant }
             >
-              <HStack paddingInlineStart="1a" data-test-id="daterange-picker-input-field" paddingInlineEnd={ 10 }>
+              <HStack paddingInlineStart="1a" data-testid="daterange-picker-input-field" paddingInlineEnd={ 10 }>
                 <DateField
                   { ...restStartFieldProps }
                   id={ startFieldId }
