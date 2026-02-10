@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.43.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.0...@northlight/ui@2.43.1) (2026-02-10)
+
+
+### Bug Fixes
+
+* **framework:** handle ESM/CJS interop for user-event import ([667ce66](https://github.com/mediatool/northlight/commit/667ce664e17601f6742868b8bf8e01434ccf3dac))
+* **framework:** preserve types on userEvent ESM/CJS interop ([da3c594](https://github.com/mediatool/northlight/commit/da3c59456dd859b64d9d3ea7e2a81f9c4d2aa685))
+* **northlight:** text area outline ([e6a0072](https://github.com/mediatool/northlight/commit/e6a00723cb63d618c77a30e2ee48ff5762a07338))
+
+
+
+
+
 # [2.43.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.42.4...@northlight/ui@2.43.0) (2026-02-10)
 
 
