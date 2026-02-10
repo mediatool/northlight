@@ -2,11 +2,11 @@
 import { cleanup, render, screen, within } from '@testing-library/react'
 import userEventImport from '@testing-library/user-event'
 import { createElement } from 'react'
+import { MediatoolThemeProvider, theme } from '../../lib'
+import type { ComponentScenarios, PlayContext } from './types.ts'
 
 // Handle ESM/CJS interop for tsx/Node.js environments
 const userEvent = (userEventImport as any).default ?? userEventImport
-import { MediatoolThemeProvider, theme } from '../../lib'
-import type { ComponentScenarios, PlayContext } from './types.ts'
 
 declare const describe: (name: string, fn: () => void) => void
 type TimeoutSetter = { timeout: (ms: number) => void }
