@@ -64,6 +64,11 @@ export default [
         sourcemap: true,
         file: 'dist/sandbox/index.js',
       },
+      {
+        format: 'cjs',
+        sourcemap: true,
+        file: 'dist/sandbox/index.cjs',
+      },
     ],
   },
   {

@@ -14,7 +14,8 @@
     },
     "./sandbox": {
       "types": "./dist/sandbox/index.d.ts",
-      "import": "./dist/sandbox/index.js"
+      "import": "./dist/sandbox/index.js",
+      "require": "./dist/sandbox/index.cjs"
     }
   },
   "bin": {
