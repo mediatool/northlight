@@ -6,7 +6,7 @@ import { MediatoolThemeProvider, theme } from '../../lib'
 import type { ComponentScenarios, PlayContext } from './types.ts'
 
 // Handle ESM/CJS interop for tsx/Node.js environments
-const userEvent = (userEventImport as any).default ?? userEventImport
+const userEvent = ((userEventImport as any).default ?? userEventImport) as typeof userEventImport
 
 declare const describe: (name: string, fn: () => void) => void
 type TimeoutSetter = { timeout: (ms: number) => void }
