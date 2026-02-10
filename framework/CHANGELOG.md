@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.43.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.42.4...@northlight/ui@2.43.0) (2026-02-10)
+
+
+### Features
+
+* **framework:** add commonjs support for sandbox export ([f922e11](https://github.com/mediatool/northlight/commit/f922e11e1e1751413a4dde1e97423cc706904862))
+
+
+
+
+
 ## [2.42.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.42.3...@northlight/ui@2.42.4) (2026-02-09)
 
 
