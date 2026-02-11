@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.43.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.3...@northlight/ui@2.43.4) (2026-02-11)
+
+
+### Bug Fixes
+
+* **framework:** fix ttype of propkey data-testid ([34a91ff](https://github.com/mediatool/northlight/commit/34a91ffb9c31a67bb7d8ebb7a8dc5e50675c643f))
+
+
+
+
+
 ## [2.43.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.2...@northlight/ui@2.43.3) (2026-02-10)
 
 
