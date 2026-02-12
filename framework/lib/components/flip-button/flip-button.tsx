@@ -153,11 +153,7 @@ export const FlipButton = forwardRef<HTMLDivElement, FlipButtonProps>((props, wr
       state,
       containerProps,
       flipButtonProps,
-      isFocused,
       isSelected,
-      isDisabled,
-      isMulti: isMulti || false,
-      focusRing,
       value,
       ...rest,
     })
