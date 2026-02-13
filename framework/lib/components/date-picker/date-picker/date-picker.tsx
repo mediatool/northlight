@@ -4,7 +4,7 @@ import { useDatePicker } from '@react-aria/datepicker'
 import { useDatePickerState } from '@react-stately/datepicker'
 import { FocusScope } from '@react-aria/focus'
 import { XCloseSolid } from '@northlight/icons'
-import { parseDate } from '@internationalized/date'
+import { CalendarDateTime, parseDate, toCalendarDate } from '@internationalized/date'
 import { DateField, StyledField, Trigger } from '../components/date-field'
 import { Calendar } from '../components/calendar'
 import { DatePickerProps } from '../types'
@@ -78,7 +78,7 @@ export const DatePicker = (props: DatePickerProps) => {
     maxValue,
     isReadOnly,
     isRequired,
-    placeholderValue,
+    placeholderValue = toCalendarDate(new CalendarDateTime(2024, 1, 31)),
     isDateUnavailable,
     granularity,
     hourCycle,
