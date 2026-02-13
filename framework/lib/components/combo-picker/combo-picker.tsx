@@ -93,7 +93,7 @@ export const ComboPicker = ({
   const buttonWidth = (buttonRef.current?.offsetWidth ?? 0)
 
   return (
-    <>
+    <Box position="relative" width="100%">
       <FormattedNumberInput
         width="100%"
         onChange={ (values) => handleInputChange(values.floatValue) }
@@ -160,6 +160,6 @@ export const ComboPicker = ({
           </Box>
         )
       }
-    </>
+    </Box>
   )
 }
