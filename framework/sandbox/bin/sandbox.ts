@@ -44,6 +44,8 @@ async function main () {
     root: cwd,
     define: {
       __ENV__: '"sandbox"',
+      'process.env': {},
+      global: 'window',
     },
     server: {
       port: 5000,
