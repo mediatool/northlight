@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.43.7](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.6...@northlight/ui@2.43.7) (2026-02-16)
+
+
+### Bug Fixes
+
+* **sandbox:** font loading in sandbox ([c978720](https://github.com/mediatool/northlight/commit/c978720bdf01c74175773590f35e92aedfdc20ca))
+* **ui:** remove overflow hidden of tabbed card ([217d487](https://github.com/mediatool/northlight/commit/217d4875f0afe8dfe9f4d16930d1cf25205f5cdc))
+
+
+
+
+
 ## [2.43.6](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.5...@northlight/ui@2.43.6) (2026-02-16)
 
 
