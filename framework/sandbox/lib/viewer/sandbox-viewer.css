@@ -801,7 +801,6 @@ body {
   border-radius: var(--sandbox-radius-lg);
   border: 1px solid var(--sandbox-border);
   background: var(--sandbox-card);
-  overflow: hidden;
 }
 
 .sandbox-tabs-bar {
