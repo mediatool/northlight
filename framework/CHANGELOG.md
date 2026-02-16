@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.43.6](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.5...@northlight/ui@2.43.6) (2026-02-16)
+
+
+### Bug Fixes
+
+* **ui:** add env and global to sandbox definitions ([449ddfe](https://github.com/mediatool/northlight/commit/449ddfeadf68c20deddc6744b04b0611ba2cbbd2))
+
+
+
+
+
 ## [2.43.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.4...@northlight/ui@2.43.5) (2026-02-16)
 
 
