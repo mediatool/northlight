@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.43.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.4...@northlight/ui@2.43.5) (2026-02-16)
+
+
+### Bug Fixes
+
+* **framework:** render FormattedNumberInput in a relative Box ([e859e97](https://github.com/mediatool/northlight/commit/e859e973e90b6d3ed0fc3841eca51f201f5e4ed8))
+* **framework:** set default placholder value ([bb1b1df](https://github.com/mediatool/northlight/commit/bb1b1df2b734e1dfacf7f56b60e4320703452e33))
+* **ui:** add __ENV__ variable sandbox when running sandbox ([1ca7c24](https://github.com/mediatool/northlight/commit/1ca7c244ad3740d8a95ac1bc6ddf995c16f7864f))
+
+
+
+
+
 ## [2.43.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.3...@northlight/ui@2.43.4) (2026-02-11)
 
 

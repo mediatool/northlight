@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.1](https://github.com/mediatool/northlight/compare/@northlight/icons@1.7.0...@northlight/icons@1.7.1) (2026-02-16)
+
+**Note:** Version bump only for package @northlight/icons
+
+
+
+
+
 # [1.7.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.6.5...@northlight/icons@1.7.0) (2025-12-18)
 
 
