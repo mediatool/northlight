@@ -42,6 +42,9 @@ async function main () {
   const server = await createServer({
     configFile: false,
     root: cwd,
+    define: {
+      __ENV__: '"sandbox"',
+    },
     server: {
       port: 5000,
       strictPort: false,
