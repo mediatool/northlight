@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.43.8](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.7...@northlight/ui@2.43.8) (2026-02-20)
+
+
+### Bug Fixes
+
+* **framework:** add default placeholder value to date range picker ([6d3d53a](https://github.com/mediatool/northlight/commit/6d3d53a0cb9ccb792858d0f6f70abc32e87fa685))
+
+
+
+
+
 ## [2.43.7](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.6...@northlight/ui@2.43.7) (2026-02-16)
 
 
