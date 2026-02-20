@@ -5,7 +5,7 @@ import { useDateRangePicker } from '@react-aria/datepicker'
 import { useMultiStyleConfig, useOutsideClick } from '@chakra-ui/react'
 import { CheckSolid, XCloseSolid } from '@northlight/icons'
 import { identity, isNil } from 'ramda'
-import { DateValue, parseDate } from '@internationalized/date'
+import { CalendarDateTime, DateValue, parseDate, toCalendarDate } from '@internationalized/date'
 import { DateRange } from '@react-types/datepicker'
 import { DateRangePickerProps, DateRange as NorthlightDateRange } from '../types'
 import { RangeCalendar } from '../components/calendar/quick-navigation'
@@ -117,7 +117,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     'data-testid': dataTestId,
     defaultOpen = false,
     onOpenChange,
-    placeholderValue,
+    placeholderValue = toCalendarDate(new CalendarDateTime(2024, 1, 31)),
     isDateUnavailable,
     allowsNonContiguousRanges,
     startName,
