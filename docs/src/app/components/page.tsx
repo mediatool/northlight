@@ -17,7 +17,7 @@ export const Page = ({
     h="100%"
     p={ 6 }
     overflowY="auto"
-    overscrollBehavior="contain"
+    overscrollBehavior="auto"
     bgColor="background.default"
     color="text.default"
   >

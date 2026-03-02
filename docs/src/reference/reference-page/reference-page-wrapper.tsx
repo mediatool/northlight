@@ -34,7 +34,7 @@ export const Page = ({
   <Stack
     h="100%"
     overflowY="auto"
-    overscrollBehavior="contain"
+    overscrollBehavior="auto"
     bgColor="background.default"
     color="text.default"
     pb="10rem"
