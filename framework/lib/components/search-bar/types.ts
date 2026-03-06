@@ -41,6 +41,7 @@ export interface SearchBarProps<T extends SearchBarOptionType, K extends boolean
   loadOptions?: ((query: string) => Promise<T[]>) | null
   onSearchInputChange?: (input: string) => void
   icon?: ComponentType<any>
+  displayLimit?: number
 }
 
 export interface SearchBarFieldProps<T extends SearchBarOptionType, K extends boolean = false> extends Omit<SearchBarProps<T, K>, 'onChange'>, InputFieldProps {
