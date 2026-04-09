@@ -48,7 +48,7 @@ export const Avatar = ({
   })
 
   return (
-    <Box __css={ container } data-testid="avatar-test-id" { ...rest }>
+    <Box __css={ container } data-testid={ `avatar-${name}` } { ...rest }>
       { image
         ? (
           <chakra.img
