@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.43.10](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.9...@northlight/ui@2.43.10) (2026-04-09)
+
+
+### Bug Fixes
+
+* **framework:** update avatar data-testid ([cc2765e](https://github.com/mediatool/northlight/commit/cc2765eda3318c098367c43f152fc0b3c7da19b2))
+* **framework:** update isDirty on date range picker fields ([e1cd330](https://github.com/mediatool/northlight/commit/e1cd330555a2a70235d9046f4626981c84a148d9))
+
+
+
+
+
 ## [2.43.9](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.8...@northlight/ui@2.43.9) (2026-04-08)
 
 **Note:** Version bump only for package @northlight/ui
