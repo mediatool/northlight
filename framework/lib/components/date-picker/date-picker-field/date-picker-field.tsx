@@ -46,7 +46,7 @@ export const DatePickerField = forwardRef<HTMLDivElement, DatePickerFieldProps>(
   const { setValue, setError, trigger } = useFormContext()
 
   const handleChange = (date: DateValue) => {
-    setValue(name, date?.toString())
+    setValue(name, date?.toString(), { shouldDirty: true })
     if ((minValue && date < parseDate(minValue)) || (maxValue && date > parseDate(maxValue))) {
       setError(name, {
         type: 'custom',

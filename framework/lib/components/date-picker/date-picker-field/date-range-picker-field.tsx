@@ -30,7 +30,7 @@ export const DateRangePickerField = forwardRef<HTMLDivElement, DateRangePickerFi
   const { setValue, setError, trigger } = useFormContext<FormBody>()
 
   const handleChange = (dateRange: { startDate: string, endDate: string }) => {
-    setValue(name, dateRange)
+    setValue(name, dateRange, { shouldDirty: true })
     if (
       (minValue && dateRange?.startDate < minValue) ||
       (maxValue && dateRange?.endDate > maxValue)
