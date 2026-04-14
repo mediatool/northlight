@@ -32,9 +32,7 @@ export const Page = ({
   references,
 }: Props) => (
   <Stack
-    h="100%"
-    overflowY="auto"
-    overscrollBehavior="contain"
+    minH="100%"
     bgColor="background.default"
     color="text.default"
     pb="10rem"
@@ -80,7 +78,7 @@ export const Page = ({
       </Stack>
 
     </VStack>
-    <VStack width="100%" mt={ 10 } overflowY="scroll">
+    <VStack width="100%" mt={ 10 }>
       { children }
     </VStack>
   </Stack>

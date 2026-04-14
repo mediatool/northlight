@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Capitalized, Stack } from '@northlight/ui'
+import { Box, Capitalized, Stack } from '@northlight/ui'
 import { NavSideLink } from '../../app/components/nav-side-link'
 
 interface SideNavBarProps {
@@ -33,15 +33,17 @@ export const SideNavBar = ({
   }, [])
 
   return (
-    <Stack w="28rem" position="fixed" h="full" right="0" top="100px" pt="8">
-      <Capitalized>On this page</Capitalized>
+    <Stack w="28rem" position="fixed" right="0" top="100px" pt="8" pointerEvents="none">
+      <Capitalized pointerEvents="auto">On this page</Capitalized>
       { links.map((link, i) => (
-        <NavSideLink
-          linkName={ link }
-          linkProps={ { href: `/reference/${componentName}#Example-${i}` } }
-          isActive={ activeSection === i }
-          onClick={ () => setActiveSection(i) }
-        />
+        <Box key={ link } pointerEvents="auto">
+          <NavSideLink
+            linkName={ link }
+            linkProps={ { href: `/reference/${componentName}#Example-${i}` } }
+            isActive={ activeSection === i }
+            onClick={ () => setActiveSection(i) }
+          />
+        </Box>
       )) }
     </Stack>
   )

@@ -14,10 +14,8 @@ export const Page = ({
 }: Props) => (
   <Box
     w="100%"
-    h="100%"
+    minH="100%"
     p={ 6 }
-    overflowY="auto"
-    overscrollBehavior="contain"
     bgColor="background.default"
     color="text.default"
   >
@@ -27,7 +25,7 @@ export const Page = ({
         <Heading as="h2" size="sm">{ subtitle }</Heading>
       ) : subtitle }
     </Stack>
-    <Box width="100%" mt={ 10 } overflowY="auto">
+    <Box width="100%" mt={ 10 }>
       { children }
     </Box>
   </Box>
