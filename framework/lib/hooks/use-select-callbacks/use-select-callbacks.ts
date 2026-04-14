@@ -27,6 +27,12 @@ export const useSelectCallbacks = <
       (val as T[]).length > (items.current as T[]).length
     ) {
       onAdd(last(val as T[])?.value)
+    } else if (isNil(val)) {
+      onRemove(
+        isMulti
+          ? map(prop('value'), (items.current as T[]) ?? [])
+          : (items.current as T)?.value
+      )
     } else {
       const removedItems = map(
         prop('value'),
