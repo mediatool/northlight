@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.38](https://github.com/mediatool/northlight/compare/@northlight/docs@1.11.37...@northlight/docs@1.11.38) (2026-04-16)
+
+
+### Bug Fixes
+
+* **northlight:** docs page scroll ([025b005](https://github.com/mediatool/northlight/commit/025b005229863245cbcdfedcdfd7bd582cb9b5f9))
+
+
+
+
+
 ## [1.11.37](https://github.com/mediatool/northlight/compare/@northlight/docs@1.11.36...@northlight/docs@1.11.37) (2026-04-09)
 
 **Note:** Version bump only for package @northlight/docs
