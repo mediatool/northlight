@@ -38,7 +38,7 @@ export const useSelectCallbacks = <
         prop('value'),
         difference(
           isMulti ? (items.current as T[]) : ([ items.current ] as T[]),
-          val as T[]
+          val as T[] ?? []
         )
       )
       onRemove(removedItems.length === 1 ? removedItems[0] : removedItems)
