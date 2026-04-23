@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.43.12](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.11...@northlight/ui@2.43.12) (2026-04-23)
+
+
+### Bug Fixes
+
+* **framework:** add inner horizontal padding to table cells ([a228721](https://github.com/mediatool/northlight/commit/a22872198bae050abe9b06604e05d21cf8dabb09))
+* **framework:** fix use-select-callbacks hook ([e6d9681](https://github.com/mediatool/northlight/commit/e6d96819b55eb1a83c5c908fff19c8be72d329f8))
+
+
+
+
+
 ## [2.43.11](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.10...@northlight/ui@2.43.11) (2026-04-16)
 
 **Note:** Version bump only for package @northlight/ui
