@@ -20,7 +20,6 @@ export const Table: ComponentMultiStyleConfig = {
         borderRadius: 'md',
         borderColor: 'border.default',
         borderWidth: 'xs',
-        px: '3',
       },
 
       th: {
@@ -28,11 +27,17 @@ export const Table: ComponentMultiStyleConfig = {
         fontWeight: 'bold',
         textTransform: 'none',
         fontSize: 'sm',
+        // Add inner horizontal padding (6 from size md + 3 for table inset)
+        '&:first-of-type': { pl: '9' },
+        '&:last-of-type': { pr: '9' },
       },
 
       td: {
         borderColor: 'border.default',
         borderTopWidth: 'xs',
+        // Add inner horizontal padding (6 from size md + 3 for table inset)
+        '&:first-of-type': { pl: '9' },
+        '&:last-of-type': { pr: '9' },
       },
     }),
     striped: (props) => {
