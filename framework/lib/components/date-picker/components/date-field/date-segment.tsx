@@ -4,12 +4,12 @@ import { useDateSegment } from '@react-aria/datepicker'
 import { Box } from '../../../box'
 import { DateSegmentProps } from './types'
 
-export const DateSegment = ({ segment, state }: DateSegmentProps) => {
+export const DateSegment = ({ segment, state, size }: DateSegmentProps) => {
   const ref = useRef<HTMLInputElement>(null)
   const { segmentProps } = useDateSegment(segment, state, ref)
 
   const isDivider = segment.type === 'literal'
-  const { dateSegment } = useMultiStyleConfig('DatePicker')
+  const { dateSegment } = useMultiStyleConfig('DatePicker', { size })
   const minWidth = `${String(segment.maxValue).length}ch`
 
   return (
@@ -26,7 +26,6 @@ export const DateSegment = ({ segment, state }: DateSegmentProps) => {
             ? 'text.subduded'
             : 'text.default'
       }
-      fontSize="md"
     >
       { segment.text }
     </Box>

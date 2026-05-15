@@ -122,6 +122,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     allowsNonContiguousRanges,
     startName,
     endName,
+    size = 'md',
   } = props
   const ref = useRef() as React.MutableRefObject<HTMLInputElement>
   const dialogRef = useRef() as React.MutableRefObject<HTMLDivElement>
@@ -363,6 +364,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
               isDisabled={ isDisabled }
               isInvalid={ isInvalid }
               variant={ variant }
+              size={ size }
             >
               <HStack paddingInlineStart="1a" data-testid="daterange-picker-input-field" paddingInlineEnd={ 10 }>
                 <DateField
@@ -386,6 +388,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                   autoFocus={ startFieldAutoFocus }
                   name={ startFieldName }
                   dateFormat={ dateFormat }
+                  size={ size }
                 />
                 <P>-</P>
                 <DateField
@@ -408,6 +411,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                   isInvalid={ endFieldIsInvalid }
                   name={ endFieldName }
                   dateFormat={ dateFormat }
+                  size={ size }
                 />
               </HStack>
             </StyledField>
@@ -421,6 +425,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                 aria-expanded={ buttonAriaExpanded }
                 isDisabled={ isDisabled }
                 handleClick={ togglePopup }
+                size={ size }
               />
             </InputRightElement>
           </InputGroup>

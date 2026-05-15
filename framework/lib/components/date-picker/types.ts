@@ -36,6 +36,7 @@ export interface DatePickerProps
 export interface DateRangePickerProps
   extends Omit<AriaDateRangePickerProps<DateValue>, 'firstDayOfWeek' | 'onChange' | 'value' | 'minValue' | 'maxValue'>,
   DatePickerSettings {
+  size?: 'sm' | 'md' | 'lg'
   /**
    * Function to be called when the user changes the date, both in
    * the modal and the input field.
@@ -102,9 +103,10 @@ export interface DatePickerFieldProps
   fiscalStartDay?: number
 }
 
-export interface DateRangePickerFieldProps extends Omit<DatePickerFieldProps, 'onChange'> {
+export interface DateRangePickerFieldProps extends Omit<DatePickerFieldProps, 'onChange' | 'size'> {
   onChange?: (date: null | DateRange) => void
   buttonLabel?: string
+  size?: 'sm' | 'md' | 'lg'
 }
 
 export type FormBody = Record<string, DateRange>
