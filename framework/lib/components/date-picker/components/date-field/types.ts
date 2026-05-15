@@ -7,11 +7,13 @@ import { AriaButtonProps } from '@react-aria/button'
 export type DateSegmentType = DateSegment
 export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   dateFormat?: string
+  size?: 'sm' | 'md' | 'lg'
 }
 
 export interface DateSegmentProps {
   segment: DateSegment
   state: DateFieldState
+  size?: 'sm' | 'md' | 'lg'
 }
 
 export interface StyledFieldProps extends HTMLAttributes<HTMLElement> {
@@ -19,8 +21,10 @@ export interface StyledFieldProps extends HTMLAttributes<HTMLElement> {
   isDisabled?: boolean
   children: ReactNode
   variant?: 'outline' | 'filled'
+  size?: 'sm' | 'md' | 'lg'
 }
 
 export interface TriggerProps extends AriaButtonProps {
   handleClick: () => void
+  size?: 'sm' | 'md' | 'lg'
 }
