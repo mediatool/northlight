@@ -4,10 +4,10 @@ import { Box } from '../../../box'
 import { StyledFieldProps } from './types'
 
 export const StyledField = forwardRef((
-  { isInvalid, isDisabled, children, variant, ...rest }: StyledFieldProps,
+  { isInvalid, isDisabled, children, variant, size, ...rest }: StyledFieldProps,
   ref: any
 ) => {
-  const { styledField } = useMultiStyleConfig('DatePicker', { variant })
+  const { styledField } = useMultiStyleConfig('DatePicker', { variant, size })
 
   return (
     <Box
@@ -17,7 +17,6 @@ export const StyledField = forwardRef((
       aria-disabled={ isDisabled }
       display="flex"
       alignItems="center"
-      h={ 10 }
       __css={ styledField }
     >
       { children }

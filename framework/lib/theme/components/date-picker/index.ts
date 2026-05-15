@@ -67,4 +67,21 @@ export const DatePicker: ComponentMultiStyleConfig = {
       },
     }),
   },
+  sizes: {
+    sm: {
+      styledField: { h: 8 },
+      dateSegment: { fontSize: 'sm' },
+    },
+    md: {
+      styledField: { h: 10 },
+      dateSegment: { fontSize: 'md' },
+    },
+    lg: {
+      styledField: { h: 12 },
+      dateSegment: { fontSize: 'xl' },
+    },
+  },
+  defaultProps: {
+    size: 'md',
+  },
 }
