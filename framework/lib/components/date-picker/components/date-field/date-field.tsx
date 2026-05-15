@@ -11,8 +11,9 @@ import { delimeterIncluded, formatQuery } from './utils'
 
 export const DateField = (props: DateFieldProps) => {
   const ref = useRef<HTMLInputElement>(null)
+  const { size, dateFormat = 'dd/mm/yyyy', ...ariaProps } = props
   const state = useDateFieldState({
-    ...props,
+    ...ariaProps,
     /* Hard coding the United Kingdom locale,
      this enforces using english characters e.g.
       yyyy and not other such as åååå or chinese, which prevents hard to predict bugs */
@@ -20,11 +21,10 @@ export const DateField = (props: DateFieldProps) => {
     createCalendar,
   })
 
-  const { dateField } = useMultiStyleConfig('DatePicker')
-  const { fieldProps } = useDateField(props, state, ref)
+  const { dateField } = useMultiStyleConfig('DatePicker', { size })
+  const { fieldProps } = useDateField(ariaProps, state, ref)
 
   const { segments } = state
-  const { dateFormat = 'dd/mm/yyyy' } = props
   const getMatchingSegment = (query: string, index: number) =>
     find(
       (segment: DateSegmentType) => segment.placeholder === formatQuery(query)
@@ -44,7 +44,7 @@ export const DateField = (props: DateFieldProps) => {
     >
       { sortedSegments.map((segment, i) => {
         const id = `${segment.type}-${i}`
-        return <DateSegment segment={ segment } state={ state } key={ id } />
+        return <DateSegment segment={ segment } state={ state } key={ id } size={ size } />
       }) }
     </Box>
   )
