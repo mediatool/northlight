@@ -17,7 +17,8 @@
     }
   },
   "namedInputs": {
-    "source": ["{projectRoot}/lib/*"]
+    "source": ["{projectRoot}/lib/**/*"],
+    "tests": ["{projectRoot}/test/**/*"]
   },
   "targetDefaults": {
     "build": {
@@ -39,7 +40,7 @@
     },
     "test": {
       "dependsOn": ["^transpile"],
-      "inputs": [{ "runtime": "node -v" }, "source", "^source"]
+      "inputs": [{ "runtime": "node -v" }, "source", "tests", "^source"]
     }
   },
   "affected": {
