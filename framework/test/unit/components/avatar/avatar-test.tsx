@@ -77,7 +77,8 @@ const getAvatar = (customProps = { }) => {
   )
 }
 
-const getComponent = () => screen.getByTestId('avatar-test-id').children[0]
+const getComponent = (name?: string) =>
+  screen.getByTestId(`avatar-${ name }`).children[0]
 
 describe('Avatar', () => {
   it('Renders properly', () => {
@@ -87,7 +88,7 @@ describe('Avatar', () => {
   })
   it('Renders image', () => {
     render(getAvatar({ image: users.anakin.image, name: 'Anakin Skywalker' }))
-    const avatar = getComponent()
+    const avatar = getComponent('Anakin Skywalker')
     expect(avatar).to.have.property('alt', 'Anakin Skywalker')
     expect(avatar).to.have.property('src', users.anakin.image.trim())
   })
