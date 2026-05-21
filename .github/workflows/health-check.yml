@@ -1,0 +1,38 @@
+name: Verify permissions for github and npm
+
+on:
+  schedule:
+    - cron: 0 0 * * *
+  workflow_dispatch:
+
+
+permissions:
+  contents: read
+
+jobs:
+  health-check:
+    name: Verify github and npm permissions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check github permissions
+        uses: lannonbr/repo-permission-check-action@2.0.0
+        with:
+            permission: "write"
+        env:
+            GITHUB_TOKEN: ${{ secrets.MT_GITHUB_TOKEN }}
+        
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+            node-version: '20.x'
+            registry-url: 'https://registry.npmjs.org'
+            always-auth: true
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          
+      - name: Verify npm access
+        run: |
+            npm whoami
+            npm install @mediatool/mt-utils
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
