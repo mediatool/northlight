@@ -78,7 +78,7 @@ const getAvatar = (customProps = { }) => {
 }
 
 const getComponent = (name?: string) =>
-  screen.getByTestId(`avatar-${ name }`).children[0]
+  screen.getByTestId(`avatar-${name}`).children[0]
 
 describe('Avatar', () => {
   it('Renders properly', () => {
