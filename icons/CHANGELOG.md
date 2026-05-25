@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.7.3...@northlight/icons@1.8.0) (2026-05-25)
+
+
+### Features
+
+* **icons:** menial change for publish flow ([d718239](https://github.com/mediatool/northlight/commit/d71823967d232995854c626709ca772b094d34e1))
+
+
+
+
+
 ## [1.7.3](https://github.com/mediatool/northlight/compare/@northlight/icons@1.7.2...@northlight/icons@1.7.3) (2026-05-22)
 
 **Note:** Version bump only for package @northlight/icons

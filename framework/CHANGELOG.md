@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.44.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.13...@northlight/ui@2.44.0) (2026-05-25)
+
+
+### Features
+
+* **framework:** swap prop order to trigger release ([c0d5080](https://github.com/mediatool/northlight/commit/c0d5080b24d541af01da77610f9b19df8be4bfaf))
+
+
+
+
+
 ## [2.43.13](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.12...@northlight/ui@2.43.13) (2026-05-22)
 
 **Note:** Version bump only for package @northlight/ui
