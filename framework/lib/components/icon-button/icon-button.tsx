@@ -25,9 +25,9 @@ import { IconButtonProps } from './types'
  *
  */
 export const IconButton = forwardRef(({
+  'aria-label': ariaLabel,
   variant = 'default',
   icon,
-  'aria-label': ariaLabel,
   children,
   ...rest
 }: IconButtonProps, ref: any) => {
