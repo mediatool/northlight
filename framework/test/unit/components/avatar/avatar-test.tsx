@@ -68,17 +68,11 @@ const users: Record<string, User> = {
 
 const { isOk } = assert
 
-const getAvatar = (customProps = { }) => {
-  const props = {
-    ...customProps,
-  }
-  return (
-    <Avatar { ...props } />
-  )
-}
+const getAvatar = (customProps: { name?: string, image?: string } = { }) => (
+  <Avatar { ...customProps } />
+)
 
-const getComponent = (name?: string) =>
-  screen.getByTestId(`avatar-${name}`).children[0]
+const getComponent = (name?: string) => screen.getByTestId(`avatar-${name}`).children[0]
 
 describe('Avatar', () => {
   it('Renders properly', () => {
