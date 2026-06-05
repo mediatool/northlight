@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.44.1](https://github.com/mediatool/northlight/compare/@northlight/ui@2.44.0...@northlight/ui@2.44.1) (2026-06-05)
+
+
+### Bug Fixes
+
+* **northlight:** avatar test problem ([7916395](https://github.com/mediatool/northlight/commit/791639578459c5c721b56070f4f4259f0375685c))
+
+
+
+
+
 # [2.44.0](https://github.com/mediatool/northlight/compare/@northlight/ui@2.43.13...@northlight/ui@2.44.0) (2026-05-25)
 
 
