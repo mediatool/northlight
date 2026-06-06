@@ -53,6 +53,8 @@ export interface SelectProps<T, K extends boolean>
       the sub-components for react-select will be recomputed/rerendered
   */
   generateComponentsUpdateKey?: () => unknown
+  /** Sets the number of selected items to display before showing the "+N" indicator */
+  displayLimit?: number
 }
 
 export type SelectFieldProps<T, K extends boolean = false> = SelectProps<T, K> &
