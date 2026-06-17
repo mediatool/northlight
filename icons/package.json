@@ -1,6 +1,6 @@
 {
   "name": "@northlight/icons",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "license": "UNLICENSED",
   "exports": {
     "types": "./dist/ts/types.d.ts",
