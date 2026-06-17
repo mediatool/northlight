@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/mediatool/northlight/compare/@northlight/icons@1.8.2...@northlight/icons@1.9.0) (2026-06-17)
+
+
+### Features
+
+* **icons:** trigger release ([1abac8e](https://github.com/mediatool/northlight/commit/1abac8e7be7060359496e19a1fa24cdc6dc9e637))
+
+
+
+
+
 ## [1.8.2](https://github.com/mediatool/northlight/compare/@northlight/icons@1.8.1...@northlight/icons@1.8.2) (2026-06-17)
 
 **Note:** Version bump only for package @northlight/icons
