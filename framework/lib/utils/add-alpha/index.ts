@@ -1,6 +1,8 @@
 import { useToken } from '@chakra-ui/system'
 
 export const addAlpha = (color: string, alpha: number = 1) => {
+  // ponytail: public API consumed by mediatool as a plain fn; cannot rename to use*
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const colorInHex = useToken('colors', color)
 
   const limitAlpha = Math.min(Math.max(alpha, 0), 1)

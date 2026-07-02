@@ -78,6 +78,9 @@ export const useDelay = (
       show ? enterDelay : exitDelay
     )
     return () => clearTimeout(ref)
+    // ponytail: fires only on `show` toggle; adding enterDelay/exitDelay
+    // would restart the timer on unrelated renders
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ show ])
   return showWithDelay
 }
@@ -97,6 +100,9 @@ export const useHiddenDisplay = (
       onTransitionComplete(anchor)
     }, exitDelay + (exitDuration || duration || 0))
     return () => clearTimeout(ref)
+    // ponytail: fires only on `anchor` toggle; adding duration/exitDelay/
+    // exitDuration/onTransitionComplete would restart the timer unrelatedly
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ anchor ])
 
   return hidden

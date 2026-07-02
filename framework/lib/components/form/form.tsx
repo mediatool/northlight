@@ -163,25 +163,28 @@ export const Form = forwardRef(<FormValues extends FieldValues>({
     return undefined
   }
 
-  const newMethods =
-    methods ||
-    useForm<FormValues>({
-      defaultValues: initialValues as DefaultValues<FormValues>,
-      resolver: getResolver(),
-      ...formSettings,
-    })
+  const internalMethods = useForm<FormValues>({
+    defaultValues: initialValues as DefaultValues<FormValues>,
+    resolver: getResolver(),
+    ...formSettings,
+  })
 
+  const newMethods = methods || internalMethods
+
+  // ponytail: ref handle reflects newMethods for its lifetime; always() wrapper deps are stable
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useImperativeHandle(ref, always(newMethods), [])
 
-  if (enableReinitialize) {
-    const initalValuesImage = useRef({})
-    useEffect(() => {
-      if (!equals(initalValuesImage.current, initialValues)) {
-        newMethods?.reset(initialValues)
-        initalValuesImage.current = initialValues
-      }
-    }, [ initialValues ])
-  }
+  const initalValuesImage = useRef({})
+  useEffect(() => {
+    if (enableReinitialize && !equals(initalValuesImage.current, initialValues)) {
+      newMethods?.reset(initialValues)
+      initalValuesImage.current = initialValues
+    }
+    // ponytail: intentionally fires only on initialValues change (reinitialize
+    // semantics); adding newMethods/enableReinitialize would re-run every render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ initialValues ])
 
   const formatValues = (values: FormValues) => {
     if (!shouldTrim) {

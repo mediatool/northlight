@@ -14,5 +14,5 @@ export const useScrollToBottom = (scrollView: RefObject<HTMLDivElement>, message
     if (div) {
       smoothScrollToBottom(div)
     }
-  }, [ messages ])
+  }, [ messages, scrollView ])
 }

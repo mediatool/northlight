@@ -66,7 +66,8 @@ export const ColorPicker = ({
     trigger,
     heading,
   } = useMultiStyleConfig('ColorPicker', { selectedColor, size })
-  const parsedValue = value && useToken('colors', value)
+  const resolvedToken = useToken('colors', value ?? '')
+  const parsedValue = value && resolvedToken
 
   const baseColors = [ ...colors ]
   for (let i = 0; i < baseColors.length % columns; i += 1) {
@@ -79,7 +80,7 @@ export const ColorPicker = ({
     } else {
       setSelectedColor(parsedValue)
     }
-  }, [ value ])
+  }, [ value, parsedValue ])
 
   useEffect(() => {
     if (expanded) {
@@ -87,6 +88,9 @@ export const ColorPicker = ({
     } else {
       setVisibleColors(baseColors)
     }
+    // ponytail: intentionally fires only on expand/collapse toggle; baseColors is a
+    // fresh array each render, so adding it (or expandedColors) would re-run every render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ expanded ])
 
   const expandColors = () => {

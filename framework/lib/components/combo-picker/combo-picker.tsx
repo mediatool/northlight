@@ -88,6 +88,10 @@ export const ComboPicker = ({
     setInputValue(input)
 
     onChange?.(getNewValue(option, input))
+    // ponytail: intentionally fires only on value/options change; adding onChange
+    // (unstable parent prop) or getNewValue (recreated each render) would re-emit on
+    // every parent render and can loop since onChange updates valueProp
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ valueProp?.input, valueProp?.option, defaultToZeroIfEmpty, options ])
 
   const buttonWidth = (buttonRef.current?.offsetWidth ?? 0)

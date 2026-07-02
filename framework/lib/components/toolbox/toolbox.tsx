@@ -77,13 +77,9 @@ export const Toolbox = ({
     }
   }
 
-  const getPixelSize = (sizeToken: string) => {
-    const widthInRem = useToken('sizes', sizeToken)
-    return parseFloat(widthInRem) * 16
-  }
-
-  const defaultWidthPx = getPixelSize(size)
-  const minWidthPx = getPixelSize('sm')
+  const [ defaultWidthRem, minWidthRem ] = useToken('sizes', [ size, 'sm' ])
+  const defaultWidthPx = parseFloat(defaultWidthRem) * 16
+  const minWidthPx = parseFloat(minWidthRem) * 16
   const maxWidthPx =
     resizeLimit === 'half' ? 0.5 * window.innerWidth : window.innerWidth
 

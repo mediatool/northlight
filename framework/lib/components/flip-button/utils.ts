@@ -7,39 +7,27 @@ import { FlipButtonGroupProps } from './types'
 
 export const FlipButtonContext = createContext<CheckboxGroupState | RadioGroupState | null>(null)
 
-export const useFlipButtonState = (
-  props: FlipButtonGroupProps,
-  isMulti: boolean
-) => (
-  isMulti
-    ? useCheckboxGroupState(props as CheckboxGroupProps)
-    : useRadioGroupState(props as RadioGroupProps)
-)
+const withGroupLabel = (props: FlipButtonGroupProps, isMulti: boolean) => ({
+  ...props,
+  'aria-label': `${isMulti ? 'Checkbox' : 'Radio'}-button-group`,
+})
 
-export const useFlipButtonGroup = (
-  props: FlipButtonGroupProps,
-  state: CheckboxGroupState | RadioGroupState,
-  isMulti: boolean
-): DOMAttributes<Element> => {
-  const propsWithLabel = {
-    ...props,
-    'aria-label': `${isMulti ? 'Checkbox' : 'Radio'}-button-group`,
-  }
-
-  return (isMulti
-    ? useCheckboxGroup(
-      propsWithLabel as AriaCheckboxGroupProps,
-      state as CheckboxGroupState
-    ).groupProps
-    : useRadioGroup(
-      propsWithLabel as AriaRadioGroupProps,
-      state as RadioGroupState
-    ).radioGroupProps
+// ponytail: split by isMulti at the hook boundary so each react-aria hook is
+// called unconditionally; isMulti is fixed per instance, so behavior is identical.
+export const useMultiFlipButton = (props: FlipButtonGroupProps) => {
+  const state = useCheckboxGroupState(props as CheckboxGroupProps)
+  const { groupProps } = useCheckboxGroup(
+    withGroupLabel(props, true) as AriaCheckboxGroupProps,
+    state
   )
+  return { state, flipButtonGroupProps: groupProps as DOMAttributes<Element> }
 }
 
-export const useFlipButton = (props: FlipButtonGroupProps, isMulti: boolean) => {
-  const state = useFlipButtonState(props, isMulti)
-  const flipButtonGroupProps = useFlipButtonGroup(props, state, isMulti)
-  return { state, flipButtonGroupProps }
+export const useSingleFlipButton = (props: FlipButtonGroupProps) => {
+  const state = useRadioGroupState(props as RadioGroupProps)
+  const { radioGroupProps } = useRadioGroup(
+    withGroupLabel(props, false) as AriaRadioGroupProps,
+    state
+  )
+  return { state, flipButtonGroupProps: radioGroupProps as DOMAttributes<Element> }
 }

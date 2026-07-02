@@ -165,9 +165,13 @@ export const Select = forwardRef(<T extends Option, K extends boolean = false>({
     value: is(Array, value) ? (value as T[]) : [],
   })
 
+  const componentsUpdateKey = generateComponentsUpdateKey()
   const customComponents = useMemo(
     () => getComponents<T>(components),
-    [ generateComponentsUpdateKey() ]
+    // ponytail: recompute only on componentsUpdateKey; adding `components`
+    // would re-run every parent render, defeating generateComponentsUpdateKey
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [ componentsUpdateKey ]
   )
 
   const prevOptions = useRef<OptionsOrGroups<T, GroupBase<T>> | undefined>(

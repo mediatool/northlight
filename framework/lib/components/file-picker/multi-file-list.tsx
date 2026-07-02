@@ -46,6 +46,9 @@ export function MultiFileList<T extends FileFormat> ({
     if (listRef.current) {
       setOverflowing(isOverflowing(listRef.current))
     }
+    // ponytail: fires only on uploadingFiles/files; uploadingFilesReference is
+    // state this effect sets (adding it loops); enableSmartLoad omitted intentionally
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ uploadingFiles, files ])
 
   const isLazy = uploadingFilesReference

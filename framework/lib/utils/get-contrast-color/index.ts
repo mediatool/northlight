@@ -3,6 +3,8 @@ import { luminosity } from '../luminosity'
 
 function safeUseToken (tokenOrValue: string): string {
   try {
+    // ponytail: public API path; consumed by mediatool as plain fn, cannot rename
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     return useToken('colors', tokenOrValue)
   } catch {
     return tokenOrValue
@@ -10,7 +12,10 @@ function safeUseToken (tokenOrValue: string): string {
 }
 
 export const getContrastColor = (color: string) => {
+  // ponytail: public API consumed by mediatool as plain fn; cannot rename to use*
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const textDefault = useToken('colors', 'text.default') // dark
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const textInverted = useToken('colors', 'text.inverted') // light
 
   const normalized = typeof color === 'string' ? color.trim() : (color as unknown as string)

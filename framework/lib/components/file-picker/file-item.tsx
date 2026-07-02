@@ -46,7 +46,7 @@ export function FileItem<T extends FileFormat> ({
         setLoadingImage(false)
       }
     }
-  }, [ file.isUploading ])
+  }, [ file.isUploading, file.src ])
 
   const handleCrop = async () => {
     if (imageEditorRef.current && isFileImage(file)) {

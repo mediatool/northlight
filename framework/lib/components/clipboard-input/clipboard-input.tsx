@@ -29,7 +29,7 @@ export const ClipboardInput = forwardRef<HTMLDivElement, ClipboardInputProps>(({
 
   useEffect(() => {
     setValue(value)
-  }, [ value ])
+  }, [ value, setValue ])
 
   return (
     <InputGroup size={ size } data-testid="clipboard-input-test-id" ref={ ref }>

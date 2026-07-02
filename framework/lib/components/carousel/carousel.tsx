@@ -131,6 +131,9 @@ export const Carousel = ({
   useEffect(() => {
     animate(x, getNewX())
     onChange(activeIndex)
+    // ponytail: intentionally fires only on activeIndex change; adding
+    // onChange/getNewX/x would re-fire on every parent render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ activeIndex ])
 
   useEffect(() => {

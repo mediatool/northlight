@@ -209,7 +209,7 @@ export const CreatableSelectDropdown = <T extends string = string>({
     if (selectedOption?.value !== newSelectedOption?.value) {
       setSelectedOption(newSelectedOption)
     }
-  }, [ value, combinedOptions ])
+  }, [ value, combinedOptions, selectedOption?.value ])
 
   return (
     <Box

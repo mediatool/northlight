@@ -144,6 +144,8 @@ export const OverflowGroup = ({
   }
 
   const rectDependency = defaultTo(EMPTY_RECT, rect) as HTMLElement
+  // ponytail: fires only on rect dimension changes; rect object identity changes each render
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(updateMax, [
     rectDependency.clientWidth,
     rectDependency.clientHeight,
@@ -178,6 +180,8 @@ export const OverflowGroup = ({
   useEffect(() => {
     const nbrRemainingChildren = positiveOrZero(nbrChildren - max)
     onChange(nbrRemainingChildren)
+    // ponytail: fires only on max/nbrChildren; onChange (a prop) changes each parent render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ max, nbrChildren ])
 
   const shownChildren = take(

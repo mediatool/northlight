@@ -1,4 +1,5 @@
-import { ComponentSingleStyleConfig, useToken } from '@chakra-ui/react'
+import { ComponentSingleStyleConfig } from '@chakra-ui/react'
+import { getColor } from '@chakra-ui/theme-tools'
 import { getContrastColor } from '../../../utils'
 import { processColorSchemeBasedOnTheme } from '../../process-color-scheme-based-on-theme'
 
@@ -19,7 +20,8 @@ export const Badge: ComponentSingleStyleConfig = {
     }
   },
   variants: {
-    solid: ({ colorScheme, theme: { colors }, currentTheme, bg, bgColor }) => {
+    solid: ({ colorScheme, theme, currentTheme, bg, bgColor }) => {
+      const { colors } = theme
       const processedColorScheme = processColorSchemeBasedOnTheme({ currentTheme, colorScheme })
 
       const finalBg =
@@ -31,7 +33,7 @@ export const Badge: ComponentSingleStyleConfig = {
 
       return {
         bgColor: finalBg,
-        color: getContrastColor(finalBg ?? useToken('colors', processedColorScheme)),
+        color: getContrastColor(finalBg ?? getColor(theme, processedColorScheme)),
       }
     },
     outline: ({ colorScheme, theme: { colors }, currentTheme }) => {

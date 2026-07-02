@@ -6,6 +6,58 @@ import { NumberInput } from './number-input'
 import { advancedParseFloat } from './advanced-parse-float'
 import { InputGroupWrapper } from '../../internal-components/input-group-wrapper/input-group-wrapper'
 
+type NumberInputFieldInputProps = {
+  name?: string
+  value: any
+  onChange: (...event: any[]) => void
+  onChangeCallback: (...event: any[]) => void
+  onlyAcceptPercentage: boolean
+  formatNumber: (value: number, factor: number) => string | number
+  inputLeftElement?: NumberInputFieldProps[ 'inputLeftElement' ]
+  inputRightElement?: NumberInputFieldProps[ 'inputRightElement' ]
+  [ key: string ]: any
+}
+
+const NumberInputFieldInput = ({
+  name,
+  value,
+  onChange,
+  onChangeCallback,
+  onlyAcceptPercentage,
+  formatNumber,
+  inputLeftElement,
+  inputRightElement,
+  ...rest
+}: NumberInputFieldInputProps) => {
+  const initialValue = isNil(value) || Number.isNaN(parseFloat(value))
+    ? ''
+    : formatNumber(value, 100)
+
+  const [ displayValue, setDisplayValue ] = useState(initialValue)
+
+  return (
+    <InputGroupWrapper
+      inputLeftElement={ inputLeftElement }
+      inputRightElement={ inputRightElement }
+    >
+      <NumberInput
+        name={ name }
+        data-testid="number-input-field-test-id"
+        onInputChange={ (v) => {
+          setDisplayValue(v)
+          const parsed = formatNumber(parseFloat(v), 0.01)
+
+          onChange(parsed)
+          onChangeCallback(parsed)
+        } }
+        value={ displayValue }
+        onlyAcceptPercentage={ onlyAcceptPercentage }
+        { ...rest }
+      />
+    </InputGroupWrapper>
+  )
+}
+
 /**
  * The number input component wrapped in a <Field />
  * meant to be used only inside <Form />
@@ -40,35 +92,19 @@ export const NumberInputField = forwardRef<HTMLDivElement, NumberInputFieldProps
       validate={ validate }
       ref={ ref }
     >
-      { ({ onChange, value }) => {
-        const initialValue = isNil(value) || Number.isNaN(parseFloat(value))
-          ? ''
-          : formatNumber(value, 100)
-
-        const [ displayValue, setDisplayValue ] = useState(initialValue)
-
-        return (
-          <InputGroupWrapper
-            inputLeftElement={ inputLeftElement }
-            inputRightElement={ inputRightElement }
-          >
-            <NumberInput
-              name={ name }
-              data-testid="number-input-field-test-id"
-              onInputChange={ (v) => {
-                setDisplayValue(v)
-                const parsed = formatNumber(parseFloat(v), 0.01)
-
-                onChange(parsed)
-                onChangeCallback(parsed)
-              } }
-              value={ displayValue }
-              onlyAcceptPercentage={ onlyAcceptPercentage }
-              { ...rest }
-            />
-          </InputGroupWrapper>
-        )
-      } }
+      { ({ onChange, value }) => (
+        <NumberInputFieldInput
+          name={ name }
+          value={ value }
+          onChange={ onChange }
+          onChangeCallback={ onChangeCallback }
+          onlyAcceptPercentage={ onlyAcceptPercentage }
+          formatNumber={ formatNumber }
+          inputLeftElement={ inputLeftElement }
+          inputRightElement={ inputRightElement }
+          { ...rest }
+        />
+      ) }
     </Field>
   )
 })

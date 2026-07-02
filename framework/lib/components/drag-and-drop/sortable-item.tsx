@@ -32,14 +32,14 @@ export const SortableItem = ({
     isDragging,
     ...props
   } = useSortable({ ...rest })
+  const timeStampSnapchot = useRef(0)
+  const inEditMode = useRef(false)
   if (!listeners) {
     return (
       <DragItem itemLabel={ itemLabel } />
     )
   }
 
-  const timeStampSnapchot = useRef(0)
-  const inEditMode = useRef(false)
   const { onPointerDown, onKeyDown } = listeners
   const handlePointerDown = (e: PointerEvent<Element>) => {
     const elapsedTime = e.timeStamp - timeStampSnapchot.current

@@ -94,7 +94,7 @@ export function SortableList<T> ({
 }: SortableListProps<T>) {
   const [ activeItem, setActiveItem ] = useState<UniqueIdentifier | null>(null)
 
-  const identifierItems = useMemo(() => map(createKey, items), [ items ])
+  const identifierItems = useMemo(() => map(createKey, items), [ items, createKey ])
 
   const customSensors = useSensors(
     useSensor(PointerSensor),

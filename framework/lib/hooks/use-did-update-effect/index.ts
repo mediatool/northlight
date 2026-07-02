@@ -8,5 +8,7 @@ export const useDidUpdateEffect = (effect: EffectCallback, dependencies: Depende
       effect()
     }
     didMountRef.current = true
+    // ponytail: wrapper hook forwards caller's deps verbatim
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dependencies)
 }

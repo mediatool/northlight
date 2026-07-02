@@ -52,6 +52,9 @@ export function TagsInput<T extends Option> ({
 
   useEffect(() => {
     setSelectedOptions(value)
+    // ponytail: intentionally re-syncs only on tag-count change; adding `value`
+    // would overwrite local edits every parent render (fresh array literal each time)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ value.length ])
 
   const CustomSelect = CreatableSelect as FunctionComponent<TagsInputProps<T>>

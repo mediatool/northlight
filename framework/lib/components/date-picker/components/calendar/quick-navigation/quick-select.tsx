@@ -20,6 +20,8 @@ export const QuickSelect = ({
 }: QuickSelectProps) => {
   const { quickDates, fiscalQuarters, fiscalSemesters } = useMemo(
     () => getQuickSelectOptions(state, locale, fiscalStartMonth, fiscalStartDay),
+    // ponytail: run once on mount; state changes every render, deps would rebuild constantly
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   )
 

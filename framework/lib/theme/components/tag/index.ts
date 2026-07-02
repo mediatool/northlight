@@ -1,4 +1,5 @@
-import { ComponentMultiStyleConfig, useToken } from '@chakra-ui/react'
+import { ComponentMultiStyleConfig } from '@chakra-ui/react'
+import { getColor } from '@chakra-ui/theme-tools'
 import { getContrastColor } from '../../../utils'
 import { processColorSchemeBasedOnTheme } from '../../process-color-scheme-based-on-theme'
 
@@ -27,7 +28,7 @@ export const Tag: ComponentMultiStyleConfig = {
     },
   },
   variants: {
-    solid: ({ theme: { colors }, bgColor, colorScheme, currentTheme }) => {
+    solid: ({ theme, theme: { colors }, bgColor, colorScheme, currentTheme }) => {
       const processedColorScheme = processColorSchemeBasedOnTheme({ currentTheme, colorScheme })
 
       const tagBgColorRaw =
@@ -38,7 +39,7 @@ export const Tag: ComponentMultiStyleConfig = {
 
       const tagBgColor = typeof tagBgColorRaw === 'string' ? tagBgColorRaw.trim() : tagBgColorRaw
 
-      const tagColor = getContrastColor(useToken('colors', tagBgColor))
+      const tagColor = getContrastColor(getColor(theme, tagBgColor))
 
       return {
         container: {
@@ -47,7 +48,7 @@ export const Tag: ComponentMultiStyleConfig = {
         },
       }
     },
-    subtle: ({ theme: { colors }, colorScheme, bgColor, currentTheme }) => {
+    subtle: ({ theme, theme: { colors }, colorScheme, bgColor, currentTheme }) => {
       const processedColorScheme = processColorSchemeBasedOnTheme({ currentTheme, colorScheme })
 
       const tagBgColorRaw =
@@ -58,7 +59,7 @@ export const Tag: ComponentMultiStyleConfig = {
 
       const tagBgColor = typeof tagBgColorRaw === 'string' ? tagBgColorRaw.trim() : tagBgColorRaw
 
-      const tagColor = getContrastColor(useToken('colors', tagBgColor))
+      const tagColor = getContrastColor(getColor(theme, tagBgColor))
 
       return {
         container: {

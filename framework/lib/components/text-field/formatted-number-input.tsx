@@ -137,6 +137,9 @@ export const FormattedNumberInput = ({
 
   useEffect(() => {
     validateRange()
+    // ponytail: intentionally fires only on value change; adding validateRange
+    // would re-run on every parent render (fresh onChange/max/min closures)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ value ])
 
   return (
