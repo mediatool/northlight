@@ -10,7 +10,7 @@ import {
 import { Icon, StackDirection } from '@chakra-ui/react'
 import { ComponentProps, ComponentType, Ref } from 'react'
 import { RegisterOptions } from 'react-hook-form'
-import { InputFieldProps } from '../../types'
+import { ChakraReactSelectExtraProps, InputFieldProps } from '../../types'
 
 export type { SingleValue, MultiValue } from 'chakra-react-select'
 
@@ -26,7 +26,8 @@ export interface SelectProps<T, K extends boolean>
   extends Omit<
   ChakraReactSelectProps<T, K, GroupBase<T>>,
   'onChange' | 'value' | 'isMulti'
-  > {
+  >,
+  ChakraReactSelectExtraProps<T, K, GroupBase<T>> {
   /** Whatever is currently selected by the select will be controlled by value prop, if value is
    *  of type string then it will automatically pair it up with matching object from options list */
   value?: K extends true ? T[] | string[] : T | string | null

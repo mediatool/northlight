@@ -1,7 +1,7 @@
-import { Variant } from 'chakra-react-select/dist/types/types'
 import { ComponentProps } from 'react'
-import { CreatableSelectComponent } from 'chakra-react-select'
+import { CreatableSelectComponent, GroupBase } from 'chakra-react-select'
 import { Option } from '../select'
+import { ChakraReactSelectExtraProps, SelectVariant } from '../../types'
 
 export interface CreationOption <T extends string = string> extends Option<T> {
   isCreation: boolean
@@ -10,7 +10,8 @@ export interface CreationOption <T extends string = string> extends Option<T> {
 export type CreationOptionValue = 'add_field'
 
 export interface CreatableSelectDropdownProps<T extends string = string>
-  extends ComponentProps<CreatableSelectComponent> {
+  extends ComponentProps<CreatableSelectComponent>,
+  ChakraReactSelectExtraProps<unknown, boolean, GroupBase<unknown>> {
   /**
    * An array of "Option" objects that represents the initial options available in the dropdown.
    * Each "Option" object must have a "label" and a "value" property (both strings).
@@ -55,7 +56,7 @@ export interface CreatableSelectDropdownProps<T extends string = string>
    * The default value is 'outline'.
    *
   */
-  variant?: Variant
+  variant?: SelectVariant
 
   /**
    * Value of the initially selected option.
