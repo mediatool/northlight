@@ -1,9 +1,24 @@
+import type { ResponsiveObject } from '@chakra-ui/system'
 import type {
   ChakraStylesConfig,
   GroupBase,
   SelectedOptionStyle,
+  Size,
   TagVariant,
 } from 'chakra-react-select'
+
+/**
+ * The `size` value accepted by the underlying chakra `Input`/`Select`.
+ *
+ * Structurally identical to `chakra-react-select`'s internal `SizeProp`
+ * (`Size | ResponsiveObject<Size> | Size[]`), reconstructed here from the
+ * root-exported `Size` because `SizeProp` itself is not exported from the
+ * package entry. Keeping it identical to the type the removed module
+ * augmentation put on react-select's `Props` avoids a "cannot simultaneously
+ * extend" (TS2320) conflict for interfaces (`SelectProps`, `SearchBarProps`)
+ * that still inherit `size` through their `Props` chain.
+ */
+export type SelectSize = Size | ResponsiveObject<Size> | Size[]
 
 /**
  * The `variant` value forwarded to the underlying chakra `Input`/`Select`.
@@ -35,14 +50,17 @@ export type SelectVariant =
  * disappears from consumers' types. Declaring them here keeps `@northlight/ui`'s
  * select types self-contained and resolution-independent.
  *
- * Note: `size` is intentionally omitted — every consuming interface declares its
- * own narrower `size` prop.
  */
 export interface ChakraReactSelectExtraProps<
   Option,
   IsMulti extends boolean,
   Group extends GroupBase<Option> = GroupBase<Option>
 > {
+  /**
+   * The size of the base control; matches the sizes of the chakra `Input`
+   * component (`sm` | `md` | `lg`). A responsive array/object may also be passed.
+   */
+  size?: SelectSize
   /** Style transformation methods for each rendered chakra-react-select component. */
   chakraStyles?: ChakraStylesConfig<Option, IsMulti, Group>
   /** Chakra theme color key that styles the `MultiValue` tags. */
