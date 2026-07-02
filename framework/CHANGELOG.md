@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.44.4](https://github.com/mediatool/northlight/compare/@northlight/ui@2.44.3...@northlight/ui@2.44.4) (2026-07-02)
+
+
+### Bug Fixes
+
+* **select:** make Select types bundler/TS7-safe ([c830004](https://github.com/mediatool/northlight/commit/c830004fa5b1dc1aec69b3eabb7abb70eff2a247))
+
+
+
+
+
 ## [2.44.3](https://github.com/mediatool/northlight/compare/@northlight/ui@2.44.2...@northlight/ui@2.44.3) (2026-06-17)
 
 **Note:** Version bump only for package @northlight/ui
