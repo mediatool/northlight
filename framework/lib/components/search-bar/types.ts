@@ -7,7 +7,7 @@ import {
   GroupBase,
 } from 'chakra-react-select'
 import { RegisterOptions } from 'react-hook-form'
-import { InputFieldProps } from '../../types'
+import { ChakraReactSelectExtraProps, InputFieldProps } from '../../types'
 
 type Size = 'sm' | 'md' | 'lg'
 export interface SearchBarOptionType {
@@ -23,7 +23,8 @@ export interface SearchBarProps<T extends SearchBarOptionType, K extends boolean
   extends Omit<
   ChakraReactSelectProps<T, boolean, GroupBase<T>>,
   'onChange' | 'value'
-  > {
+  >,
+  ChakraReactSelectExtraProps<T, boolean, GroupBase<T>> {
   value?: T | T[]
   onChange?: (val: any, event: ActionMeta<T>) => void
   onAdd?: (val: unknown) => void
