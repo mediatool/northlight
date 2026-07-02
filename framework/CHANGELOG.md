@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.44.6](https://github.com/mediatool/northlight/compare/@northlight/ui@2.44.5...@northlight/ui@2.44.6) (2026-07-02)
+
+
+### Bug Fixes
+
+* **select:** restore size prop on CreatableSelectDropdown ([c283cb9](https://github.com/mediatool/northlight/commit/c283cb996ffa1b53446fc377283471f2c3163c8b))
+
+
+
+
+
 ## [2.44.5](https://github.com/mediatool/northlight/compare/@northlight/ui@2.44.4...@northlight/ui@2.44.5) (2026-07-02)
 
 
