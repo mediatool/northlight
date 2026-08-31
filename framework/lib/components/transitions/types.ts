@@ -19,7 +19,8 @@ export interface FadeProps extends ChakraFadeProps {
   exitDuration?: DurationType
   /** Makes the element not focusable when not visible */
   disableFocus?: boolean
-  /** Will remove the component from DOM tree if in is false */
+  /** Will remove the component from DOM tree if in is false. By Default this is set to [true]
+   * to prevent users from clicking area under the slideFade even if the slide is closed. */
   hideDisplay?: boolean
   enterDelay?: number
   exitDelay?: number
