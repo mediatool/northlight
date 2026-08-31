@@ -1,9 +1,7 @@
 export {
   Modal as ChakraModal,
-  ModalContent,
   ModalHeader,
   ModalFooter,
-  ModalCloseButton,
 } from '@chakra-ui/react'
 
 export * from './modal'
