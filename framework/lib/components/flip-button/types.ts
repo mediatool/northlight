@@ -58,11 +58,7 @@ export interface CustomFlipButtonProps {
   state: CheckboxGroupState | RadioGroupState | null
   flipButtonProps: CustomFlipButtonPropsType
   containerProps: CustomContainerPropsType
-  isFocused: boolean
   isSelected: boolean
-  isDisabled: boolean
-  isMulti: boolean
-  focusRing: FocusRingType
   label?: string
   value: string
 }
